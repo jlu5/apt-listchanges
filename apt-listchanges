@@ -139,8 +139,7 @@ frontend.progress_done()
 if config.save_seen:
     seen.close()
 
-all_news.sort(lambda a,b: cmp(a['urgency'], b['urgency']) or
-              cmp(a['package'],b['package']))
+all_news.sort(lambda a,b: cmp(a['package'],b['package']))
 all_changes.sort(lambda a,b: cmp(a['urgency'],b['urgency']) or
                  cmp(a['package'],b['package']))
 
