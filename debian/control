@@ -7,7 +7,7 @@ Build-Depends-Indep: debhelper, docbook-to-man, automake, autoconf, gettext
 
 Package: apt-listchanges
 Architecture: all
-Depends: ${perl:Depends}, apt (>= 0.5.0.1), liblocale-gettext-perl, debconf
+Depends: ${perl:Depends}, apt (>= 0.5.1), liblocale-gettext-perl, debconf
 Suggests: libnewt-perl
 Description: Display new Debian changelog entries from .deb archives
  apt-listchanges is a tool to show what has been changed in a new
