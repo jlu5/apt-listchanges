@@ -1,6 +1,7 @@
 # This can go away with python 2.2
 from __future__ import nested_scopes
 import DebianControlParser
+import apt_pkg
 import ConfigParser
 import getopt
 import string
@@ -43,16 +44,6 @@ def numeric_urgency(u):
     else:
         return 0
 
-# XXX Please replace me with apt_pkg.VersionCompare when python-apt is ready
-def VersionCompare(v1, op, v2):
-    ret = os.spawnlp(os.P_WAIT,'dpkg','dpkg','--compare-versions',v1,op,v2)
-
-    if ret < 0:
-        sys.stderr.write(_("%s exited with signal %s") % ('dpkg',-ret))
-        return None
-
-    return (ret == 0)
-
 changelog_header = re.compile('^\S+ \((?P<version>.*)\) .*;.*urgency=(?P<urgency>\w+).*')
 def extract_changelog(deb, version=None):
     """Extract changelog entries later than version from deb.
@@ -90,9 +81,8 @@ def extract_changelog(deb, version=None):
              if version:
                  match = changelog_header.match(line)
                  if match:
-                     if VersionCompare(match.group('version'),
-                                              'gt',
-                                              version):
+                     if apt_pkg.VersionCompare(match.group('version'),
+                                              version) > 0:
                          urgency = max(numeric_urgency(match.group('urgency')),
                                        urgency)
                      else:
@@ -271,10 +261,7 @@ class frontend:
     def confirm(self):
         return 1
 
-class ttyconfirm(frontend):
-    def __init__(self,packages):
-        apply(frontend.__init__, (self,packages))
-        
+class ttyconfirm:
     def confirm(self):
         tty = open('/dev/tty', 'r+')
         tty.write('apt-listchanges: ' +
@@ -285,11 +272,12 @@ class ttyconfirm(frontend):
             return 0
         return 1
 
-class simpleprogress(frontend):
+class simpleprogress:
     def __init__(self,packages):
-        apply(frontend.__init__, (self,packages))
-
         sys.stderr.write(_("Reading changelogs") + "...")
+
+    def update_progress(self):
+        pass
 
     def progress_done(self):
         sys.stdout.write('\n')
@@ -300,7 +288,6 @@ class mail(simpleprogress):
 
 class text(ttyconfirm,simpleprogress):
     def __init__(self,packages):
-        apply(ttyconfirm.__init__, (self,packages))
         apply(simpleprogress.__init__, (self,packages))
 
     def display_output(self,text):
@@ -309,6 +296,7 @@ class text(ttyconfirm,simpleprogress):
 class fancyprogress(frontend):
     def __init__(self,packages):
         apply(frontend.__init__, (self,packages))
+        self.progress = 0
     
     def update_progress(self):
         self.progress += 1
@@ -321,10 +309,7 @@ class fancyprogress(frontend):
 
 class pager(ttyconfirm,fancyprogress):
     def __init__(self,packages):
-        apply(ttyconfirm.__init__, (self,packages))
         apply(fancyprogress.__init__, (self,packages))
-
-        self.progress = 0
 
     def display_output(self, text):
         pipe = os.popen('sensible-pager', 'w')
