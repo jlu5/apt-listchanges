@@ -1,3 +1,10 @@
+apt-listchanges (1.20) unstable; urgency=low
+
+  * Fall back from more complex to less complex frontends when
+    initialization fails (Closes: #80477)
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 25 Dec 2000 20:23:51 -0500
+
 apt-listchanges (1.19) unstable; urgency=low
 
   * Change the name and meaning of the config file variable 'confirm' so
