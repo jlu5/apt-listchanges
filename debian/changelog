@@ -1,3 +1,14 @@
+apt-listchanges (2.30) unstable; urgency=low
+
+  * Updated French translation of debconf templates from Denis Barbier
+    <barbier@debian.org> (Closes: #179969)
+  * Updated Polish translation of message catalogs from Michal Politowski
+    <mpol@charybda.icm.edu.pl> (Closes: #179071)
+  * Don't specify the encoding for the subject if no locale is set; many
+    MUAs don't deal with this correctly (Closes: #179947)
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu,  6 Feb 2003 21:30:40 -0500
+
 apt-listchanges (2.29) unstable; urgency=low
 
   * Resurrect the space between binary package names with --headers
