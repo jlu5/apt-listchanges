@@ -1,3 +1,13 @@
+apt-listchanges (1.36) unstable; urgency=low
+
+  * Show which binary packages relate to the source packages for which
+    changes are being displayed (Closes: #85572)
+  * Now -w clean, as far as I can determine.  This may cause some warnings
+    to be displayed under certain circumstances now; I will try to fix
+    them as they come up.
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 11 Mar 2001 03:27:03 -0500
+
 apt-listchanges (1.35) unstable; urgency=low
 
   * Added Galician translation of message catalogs, thanks to Jacobo
