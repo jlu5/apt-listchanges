@@ -32,7 +32,10 @@ if [ "$action" = "configure" ]; then
         echo "save_seen=/var/lib/apt/listchanges.db" >> $PREFERENCES.new
     fi
 
+    db_stop
+
     ucf $PREFERENCES.new $PREFERENCES
+    rm -f $PREFERENCES.new
 
     ## Cleanup from older versions
 
