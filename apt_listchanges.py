@@ -340,8 +340,8 @@ class xterm(ttyconfirm,fancyprogress):
             pid = os.fork()
             if pid == 0:
                 os.close(write)
-                os.execlp('xterm',
-                          'xterm','-title','apt-listchanges',
+                os.execlp('x-terminal-emulator',
+                          'x-terminal-emulator','-title','apt-listchanges',
                           '-e','sh','-c','%s <&%d' % (self.pipecommand,read))
                 sys.exit(1)
             else:
