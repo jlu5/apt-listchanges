@@ -223,10 +223,12 @@ class Config:
         except getopt.GetoptError:
             return None
 
-        # Determine mode before processing other options
+        # Determine mode and profile before processing other options
         for opt, arg in optlist:
             if opt == '--profile':
                 self.profile = arg
+            elif opt == '--apt':
+                self.apt_mode = True
 
         # Provide a default profile if none has been specified
         if self.profile is None:
@@ -259,8 +261,6 @@ class Config:
                 self.headers = 1
             elif opt == '--save_seen':
                 self.save_seen = arg
-            elif opt == '--apt':
-                self.apt_mode = True
             elif opt == '--which':
                 if arg in self.allowed_which:
                     self.which = arg
