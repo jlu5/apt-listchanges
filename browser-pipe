@@ -33,7 +33,7 @@ elif test -n "$browser"; then
 
     TEMPFILE=`tempfile -s .html`
     cat > $TEMPFILE
-    $browser file:$TEMPFILE
+    $browser file:$TEMPFILE < /dev/tty
     printf "Press enter to continue..." >/dev/tty
     read junk </dev/tty
     rm -f $TEMPFILE
