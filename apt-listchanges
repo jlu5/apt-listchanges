@@ -37,13 +37,15 @@ my $apt_mode = 0;
 my $verbose = 0;
 my $frontend_opt = $config{'frontend'} || 'pager';
 my $email_address = $config{'email-address'} || 'root';
+my $show_all = 0;
 my $confirm;
 
 GetOptions("apt" => \$apt_mode,
 	   "verbose|v" => \$verbose,
 	   "frontend|f=s" => \$frontend_opt,
 	   "email-address=s" => \$email_address,
-	   "confirm|c!" => \$confirm) || die;
+	   "confirm|c!" => \$confirm,
+	   "all|a" => \$show_all) || die;
 
 if ($apt_mode) {
   $confirm ||= ( $config{'apt-mode-confirm'} eq 'yes' );
@@ -86,7 +88,7 @@ unless (@debs) {
 
 # Only reads the status file if we haven't already gotten the info
 # from apt via read_deb_filenames
-read_status(\%status);
+read_status(\%status) unless $show_all;
 
 # User interaction
 my $frontend = frontend_init($frontend_opt);
@@ -116,7 +118,7 @@ foreach my $deb (@debs) {
   }
 
   # Skip if the package is not installed
-  if (!$oldversion) {
+  if (!$show_all && !$oldversion) {
     $changes[$urgency{'low'}] .= "$pkg: will be newly installed\n\n"
 	if $verbose;
     next;
@@ -133,7 +135,7 @@ foreach my $deb (@debs) {
   }
 
   # Skip if we are looking at an older version
-  if (dpkg_compare_versions($version, 'le', $oldversion)) {
+  if (!$show_all && dpkg_compare_versions($version, 'le', $oldversion)) {
     $changes[$urgency{'low'}] .=
 	"$pkg: Version $version is older than installed version ($oldversion)\n\n"
 	if $verbose;
@@ -183,7 +185,7 @@ foreach my $deb (@debs) {
       }
       
       if ( /^\S+ \((.*)\) .*; urgency=(.*)$/ ) {
-	last if dpkg_compare_versions($1, 'le', $oldversion);
+	last if !$show_all && dpkg_compare_versions($1, 'le', $oldversion);
 
 	# Use the urgency of the most urgent changelog entry for the
 	# urgency of this package

@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.7 2000-12-27 19:20:03 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.8 2001-01-17 00:24:10 mdz Exp $
 -->
 
 <refentry>
@@ -177,6 +177,19 @@
 	    Once changelogs have been displayed, ask the user whether
 	    or not to proceed.  If the user chooses not to proceed, a
 	    nonzero exit status will be returned, and apt will abort.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+
+      <VARLISTENTRY>
+	<TERM>-a, --all</TERM>
+	<LISTITEM>
+	  <PARA>
+	    Rather than trying to display changelog entries that are
+	    newer than the currently installed version of the package,
+	    simply display all changelog entries for all packages.
+	    This is useful for viewing the entire changelog of a .deb
+	    before extracting it.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
