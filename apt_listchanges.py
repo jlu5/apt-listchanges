@@ -242,7 +242,7 @@ def mail_changes(address, changes):
 
     message['Subject'] = subject
     message['To'] = address
-    message.set_payload(changes)
+    message.set_payload(changes, 'utf-8')
 
     fh = os.popen('/usr/sbin/sendmail -t', 'w')
     fh.write(message.as_string())
