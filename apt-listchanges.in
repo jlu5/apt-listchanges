@@ -228,13 +228,8 @@ foreach my $deb (@debs) {
         last if dpkg_compare_versions($1, 'le', $oldversion);
 
 	# Use the urgency of the most urgent changelog entry for the
-	# urgency of this package
-	if ($urgency{$sourcepackage}) {
-	  $urgency{$sourcepackage} = min($urgency_map{$2},
-					 $urgency{$sourcepackage});
-	} else {
-	  $urgency{$sourcepackage} = $urgency_map{$2};
-	}
+	# urgency of this snippet
+	$urgency = min($urgency_map{$2}, $urgency);
       }
       
       $changes .= $_;
@@ -280,7 +275,9 @@ my @packages_by_urgency = sort { $urgency{$a} <=> $urgency{$b} } keys %changes;
 
 # Concatenate all the changes, ordered by urgency
 my $output = join('', map { $changes{$_} } @packages_by_urgency);
-$output .= "\nInformational notes:\n\n" . $notes if $verbose;
+if ($verbose) {
+  $output .= "\n" . gettext("Informational notes") . ":\n\n" . $notes;
+}
 
 if ($errors) {
   $output .= "\napt-listchanges: ". gettext("Error output follows") . "\n";
