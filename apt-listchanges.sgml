@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.6 2000-12-19 05:57:44 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.7 2000-12-27 19:20:03 mdz Exp $
 -->
 
 <refentry>
@@ -124,6 +124,17 @@
 	      <LISTITEM>
 		<PARA>
 		  Uses your favorite pager to display output.
+		</PARA>
+	      </LISTITEM>
+	    </VARLISTENTRY>
+	    <VARLISTENTRY>
+	      <TERM>xterm-pager</TERM>
+	      <LISTITEM>
+		<PARA>
+		  Uses your favorite pager to display output, but does
+		  so in an xterm in the background.  This allows you
+		  to go on with the upgrade if you like, and continue
+		  to browse the changelogs.
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
