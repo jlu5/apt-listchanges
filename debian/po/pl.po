@@ -15,7 +15,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2002-11-17 00:23-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-26 23:01-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Bartosz Zapa³owski <zapal@debian.linux.org.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Type: select
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
@@ -30,33 +32,39 @@ msgstr ""
 "pager, przegl±darka, pager w xtermie, przegl±darka w xtermie, tekst, poczta, "
 "nic"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "How should changelogs be displayed with apt?"
 msgstr "Jak maj± byæ wy¶wietlane dzienniki zmian gdy u¿ywany jest apt?"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid ""
 "apt-listchanges can display changelog entries in a number of different ways."
 msgstr "apt-listchanges mo¿e wy¶wietlaæ dzienniki zmian na ró¿ne sposoby."
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "pager - Use your preferred pager"
 msgstr "pager - u¿ywa preferowanego programu stronicuj±cego (pagera)"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "browser - Display HTML-formatted changelogs using a web browser"
 msgstr ""
 "przegl±darka - wy¶wietla dzienniki skonwertowane do HTML w przegl±darce"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-pager - Like pager, but in an xterm in the background"
 msgstr "pager w xtermie - pager uruchomiony w tle w emulatorze terminala"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
@@ -64,22 +72,26 @@ msgstr ""
 "przegl±darka w xtermie - przegl±darka uruchomiona w tle w emulatorze "
 "terminala"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "text  - Print changelogs to your terminal (without pausing)"
 msgstr "tekst - wypisuje dzienniki zmian na terminalu (bez stronicowania)"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changelogs via mail"
 msgstr "poczta - wy³±cznie wysy³a dzienniki poczt± elektroniczn±"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
 msgstr ""
 "nic - apt-listchanges nie jest uruchamiany automatycznie gdy uzywany jest apt"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid ""
@@ -91,16 +103,19 @@ msgstr ""
 "¶rodowiska. Ka¿da metoda oprócz \"nic\" pozwala na wysy³anie kopii "
 "dzienników zmian poczt±."
 
+#. Type: string
 #. Default
 #: ../templates:29
 msgid "root"
 msgstr "root"
 
+#. Type: string
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changelog entries?"
 msgstr "Do kogo apt-listchanges ma wysy³aæ dzienniki zmian?"
 
+#. Type: string
 #. Description
 #: ../templates:30
 msgid ""
@@ -110,19 +125,25 @@ msgstr ""
 "apt-listchanges mo¿e wysy³aæ kopie wy¶wietlanych dzienników zmian poczt± "
 "elektroniczn±. Pod jaki adres maj± byæ wysy³ane?"
 
+#. Type: string
 #. Description
 #: ../templates:30
-msgid "Leave this empty if you do not want any email to be sent."
+#, fuzzy
+msgid ""
+"Multiple addresses may be specified, delimited by commas.  Leave this empty "
+"if you do not want any email to be sent."
 msgstr "Je¶li listy nie powinny byæ wysy³ane nale¿y pozostawiæ to pole puste."
 
+#. Type: boolean
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changelogs?"
 msgstr "Czy pytaæ o potwierdzenie po wy¶wietleniu dzienników zmian?"
 
+#. Type: boolean
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "After giving you a chance to display changelog entries, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
@@ -134,8 +155,9 @@ msgstr ""
 "gdy¿ daje mo¿liwo¶æ przerwania uaktualniania w przypadku zauwa¿enia zmian, "
 "których nie chce siê (na razie) wprowadzaæ."
 
+#. Type: boolean
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
@@ -143,40 +165,15 @@ msgstr ""
 "To ustawienie nie dotyczy metod \"poczta\" i \"nic\". Mo¿e byæ ono "
 "przes³oniête parametrem linii poleceñ."
 
+#. Type: boolean
 #. Description
-#: ../templates:51
-msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
-msgstr "Czy nadpisywaæ plik /etc/apt/listchanges.conf?"
-
-#. Description
-#: ../templates:51
-msgid ""
-"apt-listchanges can configure all of the options in /etc/apt/listchanges."
-"conf by asking you questions.  This file is read and processed every time "
-"apt-listchanges is run, and is used to set defaults.  All of the options can "
-"be overridden on the command line."
-msgstr ""
-"apt-listchanges mo¿e skonfigurowaæ wszystkie swoje opcje zapisywane w /etc/"
-"apt/listchanges.conf zadaj±c pytania. Plik ten jest odczytywany przy ka¿dym "
-"uruchomieniu apt-listchanges i u¿ywany do ustalenia domy¶lnych warto¶ci "
-"opcji, jednak wszystkie opcje mog± byæ ustalone z linii poleceñ."
-
-#. Description
-#: ../templates:51
-msgid ""
-"If you want to edit /etc/apt/listchanges.conf manually for whatever reason, "
-"answer \"no\" now."
-msgstr ""
-"Je¶li z jakich¶ powodów preferowana jest rêczna edycja pliku /etc/apt/"
-"listchanges.conf nale¿y odpowiedzieæ \"nie\"."
-
-#. Description
-#: ../templates:63
+#: ../templates:52
 msgid "Should apt-listchanges skip changelogs that have already been seen?"
 msgstr "Czy apt-listchanges ma pomijaæ wpisy ju¿ wcze¶niej wy¶wietlone?"
 
+#. Type: boolean
 #. Description
-#: ../templates:63
+#: ../templates:52
 msgid ""
 "apt-listchanges has the capability to keep track of which changelog entries "
 "have already been displayed, and to skip them in future invocations. This is "
@@ -185,3 +182,24 @@ msgstr ""
 "apt-listchanges mo¿e ¶ledziæ, które wpisy w dziennikach zmian zosta³y "
 "wcze¶niej wy¶wietlone i pomijaæ je przy kolejnych wywo³aniach. Jest to "
 "u¿yteczne, na przyk³ad, przy wznawianiu uaktualnienia."
+
+#~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
+#~ msgstr "Czy nadpisywaæ plik /etc/apt/listchanges.conf?"
+
+#~ msgid ""
+#~ "apt-listchanges can configure all of the options in /etc/apt/listchanges."
+#~ "conf by asking you questions.  This file is read and processed every time "
+#~ "apt-listchanges is run, and is used to set defaults.  All of the options "
+#~ "can be overridden on the command line."
+#~ msgstr ""
+#~ "apt-listchanges mo¿e skonfigurowaæ wszystkie swoje opcje zapisywane w /"
+#~ "etc/apt/listchanges.conf zadaj±c pytania. Plik ten jest odczytywany przy "
+#~ "ka¿dym uruchomieniu apt-listchanges i u¿ywany do ustalenia domy¶lnych "
+#~ "warto¶ci opcji, jednak wszystkie opcje mog± byæ ustalone z linii poleceñ."
+
+#~ msgid ""
+#~ "If you want to edit /etc/apt/listchanges.conf manually for whatever "
+#~ "reason, answer \"no\" now."
+#~ msgstr ""
+#~ "Je¶li z jakich¶ powodów preferowana jest rêczna edycja pliku /etc/apt/"
+#~ "listchanges.conf nale¿y odpowiedzieæ \"nie\"."

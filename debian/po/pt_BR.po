@@ -14,7 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges_2.31\n"
-"POT-Creation-Date: 2002-11-17 00:23-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-26 23:01-0800\n"
 "PO-Revision-Date: 2003-03-03 18:22+0300\n"
 "Last-Translator: André Luís Lopes <andrelop@ig.com.br>\n"
 "Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
@@ -22,63 +23,72 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Type: select
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 msgstr ""
-"paginador, navegador, paginador-xterm, navegador-xterm, texto, e-mail, "
-"nenhum"
+"paginador, navegador, paginador-xterm, navegador-xterm, texto, e-mail, nenhum"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "How should changelogs be displayed with apt?"
 msgstr "Como changelogs devem ser mostrados com o APT?"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid ""
 "apt-listchanges can display changelog entries in a number of different ways."
 msgstr ""
-"O apt-listchanges pode mostrar entradas de changelog de diversas "
-"maneiras diferentes."
+"O apt-listchanges pode mostrar entradas de changelog de diversas maneiras "
+"diferentes."
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "pager - Use your preferred pager"
 msgstr "paginador - Usa seu paginador preferido"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "browser - Display HTML-formatted changelogs using a web browser"
 msgstr ""
 "navegador - Exibe changelogs formatados em HTML usando um navegador web"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr ""
-"paginador-xterm - Como o paginador, mas em um xterm em segundo plano"
+msgstr "paginador-xterm - Como o paginador, mas em um xterm em segundo plano"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
 msgstr "navegador-xterm - Como o navegador, mas em um xterm em segundo plano"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "text  - Print changelogs to your terminal (without pausing)"
 msgstr "texto - Exibe os changelogs em seu terminal (sem pausas)"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changelogs via mail"
 msgstr "e-mail - Envia os changelogs via e-mail"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
 msgstr "nenhum - Não executa automaticamente a partir do apt"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid ""
@@ -86,21 +96,23 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Esta configuração pode ser sobreescrita por uma opção de linha de "
-"comando ou uma variável de ambiente. Note que você ainda pode enviar "
-"uma cópia dos changelogs via e-mail usando todos os frontends, exceto "
-"a opção 'nenhum'."
+"Esta configuração pode ser sobreescrita por uma opção de linha de comando ou "
+"uma variável de ambiente. Note que você ainda pode enviar uma cópia dos "
+"changelogs via e-mail usando todos os frontends, exceto a opção 'nenhum'."
 
+#. Type: string
 #. Default
 #: ../templates:29
 msgid "root"
 msgstr "root"
 
+#. Type: string
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changelog entries?"
 msgstr "Para quem apt-listchanges deve enviar as entradas de changelog?"
 
+#. Type: string
 #. Description
 #: ../templates:30
 msgid ""
@@ -110,19 +122,25 @@ msgstr ""
 "Você escolheu enviar as entradas de changelod por email. Para qual endereço "
 "elas devem ser enviadas?"
 
+#. Type: string
 #. Description
 #: ../templates:30
-msgid "Leave this empty if you do not want any email to be sent."
+#, fuzzy
+msgid ""
+"Multiple addresses may be specified, delimited by commas.  Leave this empty "
+"if you do not want any email to be sent."
 msgstr "Deixe em branco se não quiser que qualquer mail seja enviado."
 
+#. Type: boolean
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changelogs?"
 msgstr "apt-listchanges deve pedir confirmação após mostrar os changelogs?"
 
+#. Type: boolean
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "After giving you a chance to display changelog entries, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
@@ -134,8 +152,9 @@ msgstr ""
 "partir do apt, já que lhe dá uma chance para abortar o upgrade se você vir "
 "uma mudança que não queira aplicar (ainda)."
 
+#. Type: boolean
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
@@ -143,40 +162,15 @@ msgstr ""
 "Esta configuração não se aplica aos frontends \"e-mail\" e \"nenhum\", e "
 "pode ser forçada com uma opção de linha de comando."
 
+#. Type: boolean
 #. Description
-#: ../templates:51
-msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
-msgstr "apt-listchanges deve modificar seu /etc/apt/listchanges.conf?"
-
-#. Description
-#: ../templates:51
-msgid ""
-"apt-listchanges can configure all of the options in /etc/apt/listchanges."
-"conf by asking you questions.  This file is read and processed every time "
-"apt-listchanges is run, and is used to set defaults.  All of the options can "
-"be overridden on the command line."
-msgstr ""
-"apt-listchanges pode configurar todas as opções em /etc/apt/listchanges.conf "
-"lhe fazendo algumas perguntas. Este arquivo é lido e processado toda vez que "
-"apt-listchanges é executado, e é usado para definir defaults. Todas as "
-"opções podem ser modificadas na linha de comando."
-
-#. Description
-#: ../templates:51
-msgid ""
-"If you want to edit /etc/apt/listchanges.conf manually for whatever reason, "
-"answer \"no\" now."
-msgstr ""
-"Se você quer editar /etc/apt/listchanges.conf mannualmente por qualquer "
-"razão, responda \"não\" agora."
-
-#. Description
-#: ../templates:63
+#: ../templates:52
 msgid "Should apt-listchanges skip changelogs that have already been seen?"
 msgstr "O apt-listchanges deve omitir changelogs que já foram vistos?"
 
+#. Type: boolean
 #. Description
-#: ../templates:63
+#: ../templates:52
 msgid ""
 "apt-listchanges has the capability to keep track of which changelog entries "
 "have already been displayed, and to skip them in future invocations. This is "
@@ -185,3 +179,24 @@ msgstr ""
 "O apt-listchanges tem a habilidade de se lembrar quais entradas de changelog "
 "já foram vistas, e as omitir em próximas vezes. Isto é útil, por exemplo, "
 "quando você estiver fazendo uma segunda tentativa de upgrade."
+
+#~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
+#~ msgstr "apt-listchanges deve modificar seu /etc/apt/listchanges.conf?"
+
+#~ msgid ""
+#~ "apt-listchanges can configure all of the options in /etc/apt/listchanges."
+#~ "conf by asking you questions.  This file is read and processed every time "
+#~ "apt-listchanges is run, and is used to set defaults.  All of the options "
+#~ "can be overridden on the command line."
+#~ msgstr ""
+#~ "apt-listchanges pode configurar todas as opções em /etc/apt/listchanges."
+#~ "conf lhe fazendo algumas perguntas. Este arquivo é lido e processado toda "
+#~ "vez que apt-listchanges é executado, e é usado para definir defaults. "
+#~ "Todas as opções podem ser modificadas na linha de comando."
+
+#~ msgid ""
+#~ "If you want to edit /etc/apt/listchanges.conf manually for whatever "
+#~ "reason, answer \"no\" now."
+#~ msgstr ""
+#~ "Se você quer editar /etc/apt/listchanges.conf mannualmente por qualquer "
+#~ "razão, responda \"não\" agora."

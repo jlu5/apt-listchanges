@@ -21,8 +21,9 @@ apt-listchanges (2.46) unstable; urgency=low
     specified
   * Spanish man page update from Ruben Porras <nahoo82@telefonica.net>
     (Closes: #231582)
+  * Run debconf-updatepo
 
- -- Matt Zimmerman <mdz@debian.org>  Thu, 26 Feb 2004 22:51:03 -0800
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 26 Feb 2004 23:01:49 -0800
 
 apt-listchanges (2.45) unstable; urgency=low
 

@@ -15,7 +15,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2002-11-17 00:23-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-26 23:01-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,57 +24,68 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Type: select
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 msgstr ""
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "How should changelogs be displayed with apt?"
 msgstr ""
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid ""
 "apt-listchanges can display changelog entries in a number of different ways."
 msgstr ""
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "pager - Use your preferred pager"
 msgstr ""
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "browser - Display HTML-formatted changelogs using a web browser"
 msgstr ""
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-pager - Like pager, but in an xterm in the background"
 msgstr ""
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
 msgstr ""
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "text  - Print changelogs to your terminal (without pausing)"
 msgstr ""
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changelogs via mail"
 msgstr ""
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
 msgstr ""
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid ""
@@ -82,16 +94,19 @@ msgid ""
 "frontends except 'none'."
 msgstr ""
 
+#. Type: string
 #. Default
 #: ../templates:29
 msgid "root"
 msgstr ""
 
+#. Type: string
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changelog entries?"
 msgstr ""
 
+#. Type: string
 #. Description
 #: ../templates:30
 msgid ""
@@ -99,19 +114,24 @@ msgid ""
 "address should they be sent?"
 msgstr ""
 
+#. Type: string
 #. Description
 #: ../templates:30
-msgid "Leave this empty if you do not want any email to be sent."
+msgid ""
+"Multiple addresses may be specified, delimited by commas.  Leave this empty "
+"if you do not want any email to be sent."
 msgstr ""
 
+#. Type: boolean
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changelogs?"
 msgstr ""
 
+#. Type: boolean
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "After giving you a chance to display changelog entries, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
@@ -119,41 +139,23 @@ msgid ""
 "you do not want to apply (yet)."
 msgstr ""
 
+#. Type: boolean
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
 
+#. Type: boolean
 #. Description
-#: ../templates:51
-msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
-msgstr ""
-
-#. Description
-#: ../templates:51
-msgid ""
-"apt-listchanges can configure all of the options in /etc/apt/listchanges."
-"conf by asking you questions.  This file is read and processed every time "
-"apt-listchanges is run, and is used to set defaults.  All of the options can "
-"be overridden on the command line."
-msgstr ""
-
-#. Description
-#: ../templates:51
-msgid ""
-"If you want to edit /etc/apt/listchanges.conf manually for whatever reason, "
-"answer \"no\" now."
-msgstr ""
-
-#. Description
-#: ../templates:63
+#: ../templates:52
 msgid "Should apt-listchanges skip changelogs that have already been seen?"
 msgstr ""
 
+#. Type: boolean
 #. Description
-#: ../templates:63
+#: ../templates:52
 msgid ""
 "apt-listchanges has the capability to keep track of which changelog entries "
 "have already been displayed, and to skip them in future invocations. This is "

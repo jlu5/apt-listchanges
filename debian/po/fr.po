@@ -15,7 +15,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2003-02-06 01:05+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-26 23:01-0800\n"
 "PO-Revision-Date: 2003-02-06 01:07+0100\n"
 "Last-Translator: Denis Barbier <barbier@linuxfr.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -23,17 +24,20 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Type: select
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 msgstr ""
 "pageur, navigateur, pageur xterm, navigateur xterm, texte, courriel, aucun"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "How should changelogs be displayed with apt?"
 msgstr "Comment le journal des changements doit-il être communiqué ?"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid ""
@@ -42,6 +46,7 @@ msgstr ""
 "apt-listchanges peut vous communiquer la liste des changements de plusieurs "
 "manières."
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "pager - Use your preferred pager"
@@ -49,6 +54,7 @@ msgstr ""
 "pageur - Utilise votre pageur (logiciel de pagination) préféré (« more », "
 "« less », etc.)"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "browser - Display HTML-formatted changelogs using a web browser"
@@ -56,6 +62,7 @@ msgstr ""
 "navigateur - Affiche dans un navigateur le journal des changements au format "
 "HTML"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-pager - Like pager, but in an xterm in the background"
@@ -63,6 +70,7 @@ msgstr ""
 "pageur xterm - Utilise votre pageur préféré dans un xterm lancé en tâche de "
 "fond"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
@@ -70,11 +78,13 @@ msgstr ""
 "navigateur xterm - Comme pour navigateur, mais dans un xterm lancé en tâche "
 "de fond"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "text  - Print changelogs to your terminal (without pausing)"
 msgstr "texte - Affiche les changements sur votre terminal (sans pause)"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changelogs via mail"
@@ -82,11 +92,13 @@ msgstr ""
 "courriel - Envoie le journal des changements par courrier électronique (à "
 "une adresse à préciser par la suite)"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
 msgstr "aucun - N'envoie rien depuis apt"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid ""
@@ -98,16 +110,19 @@ msgstr ""
 "variable d'environnement. Notez que vous pouvez toujours envoyer une copie "
 "par courrier électronique avec tous ces formats excepté « aucun »."
 
+#. Type: string
 #. Default
 #: ../templates:29
 msgid "root"
 msgstr "root"
 
+#. Type: string
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changelog entries?"
 msgstr "Adresse où envoyer les journaux des changements"
 
+#. Type: string
 #. Description
 #: ../templates:30
 msgid ""
@@ -117,6 +132,7 @@ msgstr ""
 "apt-listchanges peut envoyer par courrier électronique une copie des "
 "journaux des changements. À quelle adresse électronique faut-il les envoyer ?"
 
+#. Type: string
 #. Description
 #: ../templates:30
 msgid ""
@@ -127,12 +143,14 @@ msgstr ""
 "des virgules. Laissez ce champ vide si vous ne souhaitez pas recevoir de "
 "courriel."
 
+#. Type: boolean
 #. Description
 #: ../templates:40
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changelogs?"
 msgstr "Demande de confirmation après affichage des changements ?"
 
+#. Type: boolean
 #. Description
 #: ../templates:40
 msgid ""
@@ -147,6 +165,7 @@ msgstr ""
 "d'annuler une mise à jour si vous voyez un changement que vous ne désirez "
 "pas faire (ou pas tout de suite)."
 
+#. Type: boolean
 #. Description
 #: ../templates:40
 msgid ""
@@ -156,40 +175,15 @@ msgstr ""
 "Ce réglage ne s'applique pas aux formats « courriel » et « aucun », et il "
 "peut être remplacé par une option en ligne de commande."
 
+#. Type: boolean
 #. Description
 #: ../templates:52
-msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
-msgstr "Gérer /etc/apt/listchanges.conf avec debconf ?"
-
-#. Description
-#: ../templates:52
-msgid ""
-"apt-listchanges can configure all of the options in /etc/apt/listchanges."
-"conf by asking you questions.  This file is read and processed every time "
-"apt-listchanges is run, and is used to set defaults.  All of the options can "
-"be overridden on the command line."
-msgstr ""
-"apt-listchanges peut configurer toutes les options de /etc/apt/listchanges."
-"conf en vous posant quelques questions. Ce fichier, lu à chaque fois qu'apt-"
-"listchanges est lancé, est utilisé pour définir les valeurs par défaut. "
-"Toutes les options peuvent être imposées par la ligne de commande."
-
-#. Description
-#: ../templates:52
-msgid ""
-"If you want to edit /etc/apt/listchanges.conf manually for whatever reason, "
-"answer \"no\" now."
-msgstr ""
-"Si vous désirez modifier le fichier /etc/apt/listchanges.conf à la main "
-"(pour quelque raison que ce soit), répondez « no » à la question."
-
-#. Description
-#: ../templates:64
 msgid "Should apt-listchanges skip changelogs that have already been seen?"
 msgstr "Ignorer les changements déjà affichés ?"
 
+#. Type: boolean
 #. Description
-#: ../templates:64
+#: ../templates:52
 msgid ""
 "apt-listchanges has the capability to keep track of which changelog entries "
 "have already been displayed, and to skip them in future invocations. This is "
@@ -199,3 +193,25 @@ msgstr ""
 "qui ont déjà été affichées, et peut les ignorer lors d'appels ultérieurs. "
 "Cela peut être utile par exemple lors d'une nouvelle tentative de mise à "
 "jour."
+
+#~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
+#~ msgstr "Gérer /etc/apt/listchanges.conf avec debconf ?"
+
+#~ msgid ""
+#~ "apt-listchanges can configure all of the options in /etc/apt/listchanges."
+#~ "conf by asking you questions.  This file is read and processed every time "
+#~ "apt-listchanges is run, and is used to set defaults.  All of the options "
+#~ "can be overridden on the command line."
+#~ msgstr ""
+#~ "apt-listchanges peut configurer toutes les options de /etc/apt/"
+#~ "listchanges.conf en vous posant quelques questions. Ce fichier, lu à "
+#~ "chaque fois qu'apt-listchanges est lancé, est utilisé pour définir les "
+#~ "valeurs par défaut. Toutes les options peuvent être imposées par la ligne "
+#~ "de commande."
+
+#~ msgid ""
+#~ "If you want to edit /etc/apt/listchanges.conf manually for whatever "
+#~ "reason, answer \"no\" now."
+#~ msgstr ""
+#~ "Si vous désirez modifier le fichier /etc/apt/listchanges.conf à la main "
+#~ "(pour quelque raison que ce soit), répondez « no » à la question."

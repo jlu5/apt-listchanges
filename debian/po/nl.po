@@ -14,7 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2002-11-17 00:23-0500\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-26 23:01-0800\n"
 "PO-Revision-Date: 2003-08-09 14:59+0100\n"
 "Last-Translator: Bart Cornelis <cobaco@linux.be>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,118 +23,182 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Type: select
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 msgstr "pager, verkenner, xterm-pager, xterm-verkenner, tekst, email, geen"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "How should changelogs be displayed with apt?"
 msgstr "Hoe wilt u de wijzigingen zien vanuit apt?"
 
+#. Type: select
 #. Description
 #: ../templates:5
-msgid "apt-listchanges can display changelog entries in a number of different ways."
-msgstr "apt-listchanges kan de wijzigingen op een aantal verschillende manieren tonen."
+msgid ""
+"apt-listchanges can display changelog entries in a number of different ways."
+msgstr ""
+"apt-listchanges kan de wijzigingen op een aantal verschillende manieren "
+"tonen."
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "pager - Use your preferred pager"
 msgstr "pager - Gebruik uw favoriete pager"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "browser - Display HTML-formatted changelogs using a web browser"
 msgstr "verkenner - Toon in HTML geformateerde wijzingen via een webbrowser"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-pager - Like pager, but in an xterm in the background"
 msgstr "xterm-pager - Zoals pager, maar in een xterm in de achtergrond"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
 msgstr "xterm-verkenner - Zoals browser, maar in een xterm in de achtergrond"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "text  - Print changelogs to your terminal (without pausing)"
 msgstr "tekst - Toon wijzigingen op uw terminal (zonder te onderbreken)"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changelogs via mail"
 msgstr "email - Wijzigingen enkel via mail doorgeven"
 
+#. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
 msgstr "geen - Laat niet automatisch door apt uitvoeren"
 
+#. Type: select
 #. Description
 #: ../templates:5
-msgid "This setting can be overridden by a command-line option or an environment variable.  Note that you can still send a copy via mail with all of the frontends except 'none'."
-msgstr "Deze instelling kan via een commandoregel optie of een omgevingsvariable omgezet worden. Merk op dat u, met alle frontends buiten 'geen' nog steeds de mogelijkheid heeft omeen kopie door te mailen."
+msgid ""
+"This setting can be overridden by a command-line option or an environment "
+"variable.  Note that you can still send a copy via mail with all of the "
+"frontends except 'none'."
+msgstr ""
+"Deze instelling kan via een commandoregel optie of een omgevingsvariable "
+"omgezet worden. Merk op dat u, met alle frontends buiten 'geen' nog steeds "
+"de mogelijkheid heeft omeen kopie door te mailen."
 
+#. Type: string
 #. Default
 #: ../templates:29
 msgid "root"
 msgstr "root"
 
+#. Type: string
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changelog entries?"
 msgstr "Naar wie wilt u dat apt-listchanges de wijzigingen stuurt?"
 
+#. Type: string
 #. Description
 #: ../templates:30
-msgid "apt-listchanges can email a copy of displayed changelogs.  To what email address should they be sent?"
-msgstr "U heeft er voor gekozen om de wijzigingen via email te versturen. Naar welk emailadres wilt u deze wijzigingen versturen?"
+msgid ""
+"apt-listchanges can email a copy of displayed changelogs.  To what email "
+"address should they be sent?"
+msgstr ""
+"U heeft er voor gekozen om de wijzigingen via email te versturen. Naar welk "
+"emailadres wilt u deze wijzigingen versturen?"
 
+#. Type: string
 #. Description
 #: ../templates:30
-msgid "Leave this empty if you do not want any email to be sent."
+#, fuzzy
+msgid ""
+"Multiple addresses may be specified, delimited by commas.  Leave this empty "
+"if you do not want any email to be sent."
 msgstr "Laat dit leeg indien u niet wil dat er emails verzonden worden."
 
+#. Type: boolean
 #. Description
-#: ../templates:39
-msgid "Should apt-listchanges prompt for confirmation after displaying changelogs?"
-msgstr "Wilt u apt-listchanges laten vragen om bevestiging nadat de wijzigingen zijn getoond?"
+#: ../templates:40
+msgid ""
+"Should apt-listchanges prompt for confirmation after displaying changelogs?"
+msgstr ""
+"Wilt u apt-listchanges laten vragen om bevestiging nadat de wijzigingen zijn "
+"getoond?"
 
+#. Type: boolean
 #. Description
-#: ../templates:39
-msgid "After giving you a chance to display changelog entries, apt-listchanges can ask whether or not you would like to continue. This is useful when running from apt, as it gives you a chance to abort the upgrade if you see a change you do not want to apply (yet)."
-msgstr "apt-listchanges geeft je de kans om de wijzigingen te bekijken, en vraagt daarna of u wilt verdergaan. Bij gebruik vanuit apt geeft dit u de kans om een actualizering af te breken,wanneer je een wijziging opmerkt die u (nog) niet wilt doorvoeren."
+#: ../templates:40
+msgid ""
+"After giving you a chance to display changelog entries, apt-listchanges can "
+"ask whether or not you would like to continue. This is useful when running "
+"from apt, as it gives you a chance to abort the upgrade if you see a change "
+"you do not want to apply (yet)."
+msgstr ""
+"apt-listchanges geeft je de kans om de wijzigingen te bekijken, en vraagt "
+"daarna of u wilt verdergaan. Bij gebruik vanuit apt geeft dit u de kans om "
+"een actualizering af te breken,wanneer je een wijziging opmerkt die u (nog) "
+"niet wilt doorvoeren."
 
+#. Type: boolean
 #. Description
-#: ../templates:39
-msgid "This setting does not apply to the 'mail' or 'none' frontends, and can be overridden with a command line option."
-msgstr "De instelling is niet van toepassing op de 'email' en 'geen' frontends, en kan alleen via een commandoregel optie ingesteld worden."
+#: ../templates:40
+msgid ""
+"This setting does not apply to the 'mail' or 'none' frontends, and can be "
+"overridden with a command line option."
+msgstr ""
+"De instelling is niet van toepassing op de 'email' en 'geen' frontends, en "
+"kan alleen via een commandoregel optie ingesteld worden."
 
+#. Type: boolean
 #. Description
-#: ../templates:51
-msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
-msgstr "Wilt u apt-listchanges /etc/apt/listchanges.conf laten overschrijven?"
-
-#. Description
-#: ../templates:51
-msgid "apt-listchanges can configure all of the options in /etc/apt/listchanges.conf by asking you questions.  This file is read and processed every time apt-listchanges is run, and is used to set defaults.  All of the options can be overridden on the command line."
-msgstr "apt-listchanges kan alle opties in /etc/apt/listchanges.conf voor u instellen door u een aantal vragen te stellen. Dit bestand wordt elke keer dat u apt-listchanges uitvoert gelezen en verwerkt; ze wordt gebruikt om standaardinstellingen mee vast te stellen. Alle opties kunnen via de commandoregel overschreven worden."
-
-#. Description
-#: ../templates:51
-msgid "If you want to edit /etc/apt/listchanges.conf manually for whatever reason, answer \"no\" now."
-msgstr "Indien u, om welke reden dan ook, /etc/apt/listchanges.conf handmatig wilt aanpassen, antwoord dan Nee."
-
-#. Description
-#: ../templates:63
+#: ../templates:52
 msgid "Should apt-listchanges skip changelogs that have already been seen?"
 msgstr "Wilt u dat apt-listchanges reeds verstuurde wijzigingen overslaat?"
 
+#. Type: boolean
 #. Description
-#: ../templates:63
-msgid "apt-listchanges has the capability to keep track of which changelog entries have already been displayed, and to skip them in future invocations. This is useful, for example, when retrying an upgrade."
-msgstr "apt-listchanges kan bijhouden welke wijzigingen reeds getoond zijn, zodat elke wijziging slechts éénmaal getoond wordt. Dit is nuttig wanneer u, bijvoorbeeld, een actualizering opnieuw dient uit te voeren."
+#: ../templates:52
+msgid ""
+"apt-listchanges has the capability to keep track of which changelog entries "
+"have already been displayed, and to skip them in future invocations. This is "
+"useful, for example, when retrying an upgrade."
+msgstr ""
+"apt-listchanges kan bijhouden welke wijzigingen reeds getoond zijn, zodat "
+"elke wijziging slechts éénmaal getoond wordt. Dit is nuttig wanneer u, "
+"bijvoorbeeld, een actualizering opnieuw dient uit te voeren."
 
+#~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
+#~ msgstr ""
+#~ "Wilt u apt-listchanges /etc/apt/listchanges.conf laten overschrijven?"
+
+#~ msgid ""
+#~ "apt-listchanges can configure all of the options in /etc/apt/listchanges."
+#~ "conf by asking you questions.  This file is read and processed every time "
+#~ "apt-listchanges is run, and is used to set defaults.  All of the options "
+#~ "can be overridden on the command line."
+#~ msgstr ""
+#~ "apt-listchanges kan alle opties in /etc/apt/listchanges.conf voor u "
+#~ "instellen door u een aantal vragen te stellen. Dit bestand wordt elke "
+#~ "keer dat u apt-listchanges uitvoert gelezen en verwerkt; ze wordt "
+#~ "gebruikt om standaardinstellingen mee vast te stellen. Alle opties kunnen "
+#~ "via de commandoregel overschreven worden."
+
+#~ msgid ""
+#~ "If you want to edit /etc/apt/listchanges.conf manually for whatever "
+#~ "reason, answer \"no\" now."
+#~ msgstr ""
+#~ "Indien u, om welke reden dan ook, /etc/apt/listchanges.conf handmatig "
+#~ "wilt aanpassen, antwoord dan Nee."
