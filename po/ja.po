@@ -1,0 +1,74 @@
+# apt-listchanges Japanese
+# Copyright (C) 2002
+# Junichi Uekawa <dancer@debian.org>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges\n"
+"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
+"PO-Revision-Date: 2002-09-19 19:50+0900\n"
+"Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
+"Language-Team: Japanese \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=EUC-JP\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Generated-By: pygettext.py 1.4\n"
+
+
+#: ../apt-listchanges:109
+msgid "%s: will be newly installed"
+msgstr "%s: を新規にインストールします"
+
+#: ../apt-listchanges:121
+msgid "%s: Version %s has already been seen"
+msgstr "%s: バージョン %s は既にみられています"
+
+#: ../apt-listchanges:147
+msgid "Changes for %s"
+msgstr "%s の変更点"
+
+#: ../apt-listchanges:156
+msgid "Informational notes"
+msgstr "情報メモ"
+
+#: ../apt-listchanges:177
+msgid "didn't find any valid .deb archives"
+msgstr "有効な.debアーカイブを見付ける事ができませんでした"
+
+#: ../apt_listchanges.py:184
+msgid ""
+"Wrong or missing VERSION from apt pipeline\n"
+"(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
+msgstr ""
+"aptのパイプラインから来ているVERSIONが間違っているか，もしくは無いです．\n"
+"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version は 2になっていますか?)\n"
+
+#: ../apt_listchanges.py:225
+msgid "Mailing changelogs to %s"
+msgstr "%s にchangelogをメールしています"
+
+#: ../apt_listchanges.py:228
+msgid "apt-listchanges output for %s"
+msgstr "%s の apt-listchanges 出力"
+
+#: ../apt_listchanges.py:239
+msgid "The newt frontend is deprecated, using pager"
+msgstr "newt フロントエンドは廃止されました．pagerを使います"
+
+#: ../apt_listchanges.py:266
+msgid "Do you want to continue? [Y/n]? "
+msgstr "これでよろしいですか [Y(はい)/n(いいえ)]? "
+
+#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
+#: ../apt_listchanges.py:306
+msgid "Reading changelogs"
+msgstr "changelog を読んでいます"
+
+#: ../apt_listchanges.py:306
+msgid "Done"
+msgstr "完了"
+
+#: ../apt_listchanges.py:343
+msgid "%s exited with status %d"
+msgstr "%s が終了コード %d で終了しました"
+
