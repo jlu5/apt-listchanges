@@ -10,10 +10,13 @@ apt-listchanges (2.46) unstable; urgency=low
     catalog from "Carlos Z.F. Liu" <carlos_liu@yahoo.com>
     (Closes: #230814)
   * Make the frontends more customizable by passing in data from the
-    config file.  You can specify a different terminal emulator for the
-    xterm frontend, or a different web browser for the browser frontend
+    config file.  You can specify a pager for the pager frontend, a
+    terminal emulator for the xterm frontend, a web browser for the
+    browser frontend (Closes: #206811), or an email address to mail
+    changelogs to (Closes: #203395)
   * Print a brief message letting the user know what's going on when
     aborting based on the confirmation prompt (Closes: #202210)
+  * Handle the KeyboardInterrupt exception (Closes: #139265)
 
  --
 
