@@ -118,7 +118,7 @@ for deb in debs:
                                                                   srcversion))
         continue
 
-    (news, changelog) = apt_listchanges.Package(deb).extract_changes(config.which, fromversion)
+    (news, changelog) = pkg.extract_changes(config.which, fromversion)
 
     if news or changelog:
         found[srcpackage] = 1
