@@ -1,3 +1,10 @@
+apt-listchanges (1.16) unstable; urgency=low
+
+  * Fix bug that caused apt-listchanges to run if no packages were being
+    installed, only removed (Closes: #79479)
+
+ -- Matt Zimmerman <mdz@debian.org>  Tue, 12 Dec 2000 19:03:06 -0500
+
 apt-listchanges (1.15) unstable; urgency=low
 
   * All interactive frontends now have the option of asking the user
