@@ -280,7 +280,7 @@ class simpleprogress:
     def progress_done(self):
         sys.stdout.write('\n')
 
-class mail(simpleprogress):
+class mail(frontend,simpleprogress):
     def __init__(self,packages):
         apply(simpleprogress.__init__, (self,packages))
 
