@@ -1,16 +1,3 @@
-
-Package: apt-listchanges
-Severity: normal
-Version: 1.49
-Tags: patch
-
-Hello.
-
-I've translated the debconf templates into Portuguese, and I'm sending
-them.
-
-J.
-
 Template: apt-listchanges/email-address
 Type: string
 Default: root
@@ -125,7 +112,3 @@ Description-pt_BR: apt-listchanges deve modificar seu /etc/apt/listchanges.conf?
  .
  Se você quer editar /etc/apt/listchanges.conf mannualmente por qualquer
  razão, responda "não" agora.
-
-
-
-
