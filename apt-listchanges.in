@@ -96,7 +96,7 @@ my $notes;
 my @debs = read_deb_filenames($apt_mode, \%status);
 
 # If apt is in quiet mode, we should make ourselves loggable too
-if ($config{'quiet'}) {
+if ($config{'quiet'} && $frontend_opt ne 'mail') {
   $frontend_opt = 'text';
 }
 
