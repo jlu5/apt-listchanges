@@ -323,7 +323,7 @@ def read_apt_pipeline(config):
     return map(lambda pkg: filenames[pkg], order)
 
 def mail_changes(address, changes, subject):
-    print "apt-listchanges: " + _("Mailing changelogs to %s") % address
+    print "apt-listchanges: " + _("Mailing %s: %s") % (address,subject)
 
     message = email.Message.Message()
 # this way lies madness -mdz, 2003/06/29
