@@ -428,6 +428,8 @@ sub frontend_init {
 
       print "\n";
 
+      return 0 unless $output;
+
       my $host = hostname;
 
       open(MAIL, "|/usr/lib/sendmail -t") || die "sendmail: $!\n";
