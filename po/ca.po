@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 1.54\n"
 "POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
-"PO-Revision-Date: 2001-10-17 19:10+0200\n"
+"PO-Revision-Date: 2002-09-27 13:30+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Debian Catalan Team <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../apt_listchanges.py:225
 msgid "Mailing changelogs to %s"
-msgstr "Enviant changelogs a %s"
+msgstr "S'estan enviant els changelogs a %s"
 
 #: ../apt_listchanges.py:228
 msgid "apt-listchanges output for %s"
@@ -51,7 +51,7 @@ msgstr "eixida d'apt-listchanges per a %s"
 
 #: ../apt_listchanges.py:239
 msgid "The newt frontend is deprecated, using pager"
-msgstr "El frontend de newt està deprecat, fent servir pager"
+msgstr "El frontend de newt està descontinuat, s'usarà el paginador"
 
 #: ../apt_listchanges.py:266
 msgid "Do you want to continue? [Y/n]? "
@@ -60,7 +60,7 @@ msgstr "Voleu continuar? [Y/n] "
 #: ../apt_listchanges.py:275 ../apt_listchanges.py:301
 #: ../apt_listchanges.py:306
 msgid "Reading changelogs"
-msgstr "Llegint changelogs"
+msgstr "S'estan llegint els changelogs"
 
 #: ../apt_listchanges.py:306
 msgid "Done"
