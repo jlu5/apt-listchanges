@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 #
-#      @PACKAGE@ - Show changelog entries between the installed versions
+#      apt-listchanges - Show changelog entries between the installed versions
 #        of a set of packages and the versions contained in corresponding
 #        .deb files
 #
