@@ -46,7 +46,7 @@ GetOptions("apt" => \$apt_mode,
 	   "confirm|c!" => \$confirm) || die;
 
 if ($apt_mode) {
-  $confirm ||= $config{'apt-mode-confirm'};
+  $confirm ||= ( $config{'apt-mode-confirm'} eq 'yes' );
 }
 
 # Hash of package info from the status file
