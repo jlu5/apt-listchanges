@@ -27,6 +27,7 @@
 # debugging?
 
 import sys
+import apt_pkg
 import gettext
 import string
 import anydbm
@@ -45,6 +46,8 @@ debs = config.getopt(sys.argv)
 
 if (debs == None or len(debs) == 0) and config.mode != 'apt':
     config.usage(1);
+
+apt_pkg.InitSystem()
 
 # If apt is in quiet (loggable) mode, we should make our output
 # loggable too
@@ -112,8 +115,7 @@ for deb in debs:
     if found.has_key(srcpackage):
         continue
 
-    if apt_listchanges.VersionCompare(fromversion, 'ge',
-                                      srcversion):
+    if apt_pkg.VersionCompare(fromversion, srcversion) >= 0:
         notes.append(_("%s: Version %s has already been seen") % (binpackage,
                                                                   srcversion))
         continue
@@ -152,15 +154,15 @@ if config.verbose and len(notes) > 0:
     changes += _("Informational notes") + ":\n\n" + string.join(notes,'\n')
 
 if changes:
-    if config.email_address:
-        apt_listchanges.mail_changes(config.email_address, changes)
-        
     frontend.display_output(changes)
 
     if config.confirm:
         if not frontend.confirm():
             sys.exit(10)
             
+    if config.email_address:
+        apt_listchanges.mail_changes(config.email_address, changes)
+
 elif config.mode != 'apt' and not source_packages.keys():
     sys.stderr.write("apt-listchanges: "
                      + _("didn't find any valid .deb archives"))
