@@ -67,6 +67,7 @@ Description: To whom should apt-listchanges mail changelog entries?
 Description-es: ¿A quién debe enviar los changelogs apt-listchanges?
  Has elegido enviar los changelogs por correo.  ¿A qué dirección de correo
  quieres que sean enviados?
+
 Template: apt-listchanges/confirm
 Type: boolean
 Default: true
