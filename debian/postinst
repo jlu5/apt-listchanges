@@ -15,7 +15,7 @@ if [ "$action" = "configure" ]; then
     if [ "$RET" = "true" -o ! -e "$PREFERENCES" ]; then
 	[ -f "$PREFERENCES" ] && cp $PREFERENCES $PREFERENCES.old
 
-        if grep -q '^\[apt\]$' $PREFERENCES; then
+        if grep -q '^\[.*]$' $PREFERENCES; then
             # New-style config file, copy over everything except [apt]
             perl -ne 'print unless /^\[apt\]$/ .. (/^\[(.*)\]$/ && $1 ne "apt")' \
                 < $PREFERENCES.old > $PREFERENCES
