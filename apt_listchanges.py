@@ -235,6 +235,7 @@ def make_frontend(name, packages):
     frontends = { 'text' : text,
                   'pager' : pager,
                   'mail' : mail,
+                  'w3m' : w3m,
                   'xterm-pager' : xterm_pager,
                   'xterm-w3m' : xterm_w3m }
     
@@ -313,17 +314,19 @@ class fancyprogress(frontend):
         sys.stdout.write(_("Reading changelogs") + "... " + _("Done") + "\n")
 
 class pager(ttyconfirm,fancyprogress):
+    pager = 'sensible-pager'
+    
     def __init__(self,packages):
         apply(fancyprogress.__init__, (self,packages))
 
     def display_output(self, text):
-        pipe = os.popen('sensible-pager', 'w')
+        pipe = os.popen(self.pager, 'w')
         try:
             pipe.write(text)
-            pipe.close()
         except IOError:
             # Broken pipe is OK
             pass
+        pipe.close()
 
 class xterm(ttyconfirm,fancyprogress):
     def __init__(self,packages):
@@ -339,11 +342,15 @@ class xterm(ttyconfirm,fancyprogress):
                 os.close(write)
                 os.execlp('xterm',
                           'xterm','-title','apt-listchanges',
-                          '-e','sh','-c','%s <&%d' % (self.command,read))
+                          '-e','sh','-c','%s <&%d' % (self.pipecommand,read))
                 sys.exit(1)
             else:
                 os.close(read)
-                os.write(write,text)
+                try:
+                    os.write(write,text)
+                except IOError:
+                    # Broken pipe is OK
+                    pass
                 os.close(write)
                 (junk,status) = os.waitpid(pid,0)
                 if status != 0:
@@ -352,18 +359,16 @@ class xterm(ttyconfirm,fancyprogress):
                     sys.exit(1)
                 sys.exit(0)
 
-
 class xterm_pager(xterm):
-    command = 'pager'
+    pipecommand = 'sensible-pager'
 
-class xterm_w3m(xterm):
-    command = 'w3m -T text/html'
+class html:
     bug_re = re.compile('(bug|closes:?)\s+#(\d+)', re.IGNORECASE)
     # regxlib.com
     email_re = re.compile(r'([a-zA-Z0-9_\-\.]+)@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)')
-
-    def display_output(self,text):
-        html = '''<html>
+    
+    def htmlify(self,text):
+        htmltext = '''<html>
         <head>
         <title>apt-listchanges output</title>
         </head>
@@ -382,9 +387,28 @@ class xterm_w3m(xterm):
             line = re.sub(self.email_re,
                           r'<a href="mailto:\g<0>">\g<0></a>',
                           line)
-            html += line + '\n'
-        html += '''</body>
+            htmltext += line + '\n'
+        htmltext += '''</body>
         </pre>
 '''
 
-        xterm.display_output(self,html)
+        # With python 2.2...
+        #super(html,self).display_output(htmltext)
+        return htmltext
+
+    def display_output(self,text):
+        # One day, this will create a temporary file to allow use with
+        # any browser
+        pass
+
+class w3m(pager,html):
+    pager = 'w3m -T text/html'
+
+    def display_output(self,text):
+        pager.display_output(self,self.htmlify(text))
+
+class xterm_w3m(html,xterm_pager):
+    pipecommand = 'w3m -T text/html'
+
+    def display_output(self,text):
+        xterm.display_output(self,self.htmlify(text))
