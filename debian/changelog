@@ -1,3 +1,9 @@
+apt-listchanges (1.47) unstable; urgency=low
+
+  * Add Estonian translation of debconf templates
+
+ -- Matt Zimmerman <mdz@debian.org>  Fri, 27 Apr 2001 22:51:34 -0400
+
 apt-listchanges (1.46) unstable; urgency=low
 
   * Copy in the latest po/Makefile.in.in from gettext (Closes: #94750)
