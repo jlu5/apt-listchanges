@@ -5,7 +5,7 @@ apt-listchanges (2.48) unstable; urgency=low
   * Display news and changes in separate frontend invocations, and in
     separate email messages (Closes: #204175)
 
- --
+ -- Matt Zimmerman <mdz@debian.org>  Mon,  8 Mar 2004 20:45:00 -0800
 
 apt-listchanges (2.47) unstable; urgency=low
 
