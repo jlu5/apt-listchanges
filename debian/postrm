@@ -8,15 +8,17 @@ if [ "$1" = "purge" ]; then
     /etc/apt/listchanges.conf
 fi
 
-if [ -e /etc/apt/apt.conf ]; then
-    cp /etc/apt/apt.conf /etc/apt/apt.conf.old
-    (grep -v apt-listchanges /etc/apt/apt.conf.old > /etc/apt/apt.conf) || true
-    rm -f /etc/apt/apt.conf.old
+if [ "$1" = "remove" -o "$1" = "purge" ]; then
+    if [ -e /etc/apt/apt.conf ]; then
+	cp /etc/apt/apt.conf /etc/apt/apt.conf.old
+	(grep -v apt-listchanges /etc/apt/apt.conf.old > /etc/apt/apt.conf) || true
+	rm -f /etc/apt/apt.conf.old
 
-    # If we were all that was left, remove apt.conf
-    if [ ! -s /etc/apt/apt.conf ]; then
-	rm -f /etc/apt/apt.conf
-	rmdir --ignore-fail-on-non-empty -p /etc/apt/
+	# If we were all that was left, remove apt.conf
+	if [ ! -s /etc/apt/apt.conf ]; then
+	    rm -f /etc/apt/apt.conf
+	    rmdir --ignore-fail-on-non-empty -p /etc/apt/
+	fi
     fi
 fi
 
