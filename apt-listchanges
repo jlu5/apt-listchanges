@@ -252,8 +252,10 @@ sub frontend_init {
 
       # Initialize terminal graphics
       eval q{ use Newt; };
-      die "apt-listchanges: In order to use the newt frontend, you must install libnewt-perl\n"
-	  if $@;
+      if ($@) {
+	warn "apt-listchanges: In order to use the newt frontend, you must install libnewt-perl\n";
+	return undef;
+      }
 
     Newt::Init();
     Newt::Cls();
@@ -272,6 +274,8 @@ sub frontend_init {
       $main->Add(0, 1, $$newt{progress});
       $main->Add(0, 2, $$newt{current});
       $main->Draw();
+
+      1;
     },
     
     'update_progress' => sub {
@@ -327,6 +331,8 @@ sub frontend_init {
 
       # Set autoflush on stdout
       $| = 1;
+
+      1;
     },
     
     'update_progress' => sub {
@@ -383,7 +389,7 @@ sub frontend_init {
   };
 
   $frontends{'text'} = {
-    'init' => sub {},
+    'init' => sub { 1; },
     
     'update_progress' => $frontends{pager}->{update_progress},
     
@@ -399,7 +405,7 @@ sub frontend_init {
   };
 
   $frontends{'mail'} = {
-    'init' => sub {},
+    'init' => sub { 1; },
 
     'update_progress' => $frontends{pager}->{update_progress},
 
@@ -438,10 +444,26 @@ EOT
   my @display_debs = @debs;
   @display_debs = map { m%([^/]+)$%; $1; } @display_debs;
   $frontend->{display_debs} = \@display_debs;
-  
+
   # Initialize the frontend
-  &{ $frontend->{init} }($frontend);
-  
+  while (!&{ $frontend->{init} }($frontend)) {
+    # Initialization failed, fall back
+    my $new_frontend;
+    
+    if ($frontend eq $frontends{'newt'}) {
+      $new_frontend = 'pager';
+    } elsif ($frontend eq $frontends{'pager'}) {
+      $new_frontend = 'mail';
+    } elsif ($frontend eq $frontends{'mail'}) {
+      $new_frontend = 'text';
+    } elsif ($frontend eq $frontends{'text'}) {
+      die "apt-listchanges: Unable to initialize text frontend!  Giving up.\n";
+    }
+
+    warn "apt-listchanges: Falling back to $new_frontend frontend\n";
+    $frontend = $frontends{$new_frontend};
+  }
+    
   $frontend;
 }
 
