@@ -4,7 +4,7 @@ AM_INIT_AUTOMAKE(apt-listchanges, 1.34)
 # gettext needs this
 AC_PROG_CC
 
-ALL_LINGUAS="es"
+ALL_LINGUAS="es gl"
 AM_GNU_GETTEXT
 
 AC_OUTPUT([apt-listchanges Makefile intl/Makefile po/Makefile.in])
