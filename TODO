@@ -22,7 +22,7 @@
 
 - Implement a nice, frontend-independent way to ask the user "Should I
   continue with the upgrade?" after or during changelog display, like
-  the newt frontend currently does.
+  the newt frontend currently does (wishlist bug #78552)
 
 - Implement a way for the user to have changelogs mailed to them in
   addition to another method of display (wishlist bug #78448)
