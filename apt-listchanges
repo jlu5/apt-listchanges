@@ -158,7 +158,7 @@ if config.headers:
             header += ' (' + ' '.join(source_packages[package]) + ')'
         changes += '--- ' + header + ' ---\n' + rec.changes
 else:
-    if all_news:
+    if filter(lambda x: x.changes,all_news):
         news = 'NEWS\n----\n\n' + ''.join(map(lambda x: x.changes, all_news)) + '\n--------\nEND NEWS\n'
     else:
         news = ''
