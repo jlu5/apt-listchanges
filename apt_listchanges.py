@@ -269,10 +269,10 @@ class ttyconfirm:
         tty.flush()
         response = tty.readline()
         if not response:
-            return 0
-        if response[0] == 'n' or response[0] == 'N':
             return 1
-        return 0
+        if response[0] == 'n' or response[0] == 'N':
+            return 0
+        return 1
 
 class simpleprogress:
     def __init__(self,packages):
