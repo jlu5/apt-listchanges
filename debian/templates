@@ -11,7 +11,7 @@ Description: Should apt-listchanges be automatically run by apt?
  I can perform this configuration for you if you like.  Since you can also run
  apt-listchanges manually on .deb archives, this step is optional.
 
-Template: apt-listchanges/apt-mode-display-mode
+Template: apt-listchanges/apt-mode-frontend
 Type: select
 Choices: newt, pager, text, mail
 Default: newt
@@ -19,9 +19,12 @@ Description: How should changelogs be displayed when apt-listchanges is run by a
  apt-listchanges can display changelog entries in a number of different ways.
  .
  newt  - Use a terminal graphics interface, using text-mode windows
+ .
  pager - Use your preferred pager
- text  - Print the changelog entries to your terminal (without pausing)
- mail  - Send the changelogs via email (you will be prompted for an address)
+ .
+ text  - Print changelogs to your terminal (without pausing)
+ .
+ mail  - Send changelogs via email (you will be prompted for an address)
 
 Template: apt-listchanges/apt-mode-email-address
 Type: string
