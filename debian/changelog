@@ -1,3 +1,15 @@
+apt-listchanges (2.35) unstable; urgency=low
+
+  * Experimental NEWS.Debian support, based on a patch from Joe Drew.
+    NEWS.Debian has the same format as changelog.  Currently the only
+    difference is that the NEWS.Debian entries for all packages are
+    displayed ahead of any changelog entries.  In the future, there will
+    likely be an option to display only NEWS entries and skip changelogs,
+    and different frontends will be able to display the news differently
+    (Closes: #192089)
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed,  2 Jul 2003 23:44:39 -0400
+
 apt-listchanges (2.34) unstable; urgency=low
 
   * "Abort abort abort!"
