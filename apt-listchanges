@@ -463,6 +463,7 @@ sub read_deb_filenames {
     # filenames from it.
 
     my $peek = <>;
+    chomp($peek);
 
     if ($peek =~ /^VERSION (\d+)/) {
       while (<>) {
