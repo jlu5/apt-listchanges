@@ -1,3 +1,10 @@
+apt-listchanges (2.8) unstable; urgency=low
+
+  * Fix a bug which broke xterm-pager which was introduced when
+    reorganizing the frontends (Closes: #133068)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat,  9 Feb 2002 13:36:27 -0500
+
 apt-listchanges (2.7) unstable; urgency=low
 
   * Updated Finnish translations of debconf templates and message catalogs
