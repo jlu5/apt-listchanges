@@ -46,7 +46,8 @@ my $verbose = 0;
 my $frontend_opt = $config{'frontend'} || 'pager';
 my $email_address = $config{'email-address'} || 'root';
 my $show_all = 0;
-my $apt_mode_run = $config{'apt-mode-run'} eq 'yes';
+my $apt_mode_run = $config{'apt-mode-run'} ?
+    $config{'apt-mode-run'} eq 'yes' : 0;
 my $confirm;
 
 GetOptions("apt" => \$apt_mode,
@@ -657,6 +658,7 @@ sub read_config {
       $$config{$name} = $value;
     }
   }
+  close(CONF);
 }
 
 
