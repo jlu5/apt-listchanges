@@ -13,7 +13,7 @@ Description: Should apt-listchanges be automatically run by apt?
 
 Template: apt-listchanges/frontend
 Type: select
-Choices: pager, xterm-pager, text
+Choices: pager, xterm-pager, text, none
 Default: pager
 Description: How should changelogs be displayed by default?
  apt-listchanges can display changelog entries in a number of different ways.
