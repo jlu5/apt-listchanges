@@ -62,9 +62,9 @@ echo "email-address=$RET" >> $PREFERENCES
 
 db_get apt-listchanges/confirm
 if [ "$RET" = "true" ]; then
-  echo "confirm=yes" >> $PREFERENCES
+  echo "apt-mode-confirm=yes" >> $PREFERENCES
 else
-  echo "confirm=no" >> $PREFERENCES
+  echo "apt-mode-confirm=no" >> $PREFERENCES
 fi
 
 ## Cleanup from older versions (pre-1.14 and earlier)
