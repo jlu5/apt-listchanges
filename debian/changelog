@@ -1,3 +1,9 @@
+apt-listchanges (1.41) unstable; urgency=low
+
+  * Fixed an uninitialized value warning in the newt frontend
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 17 Mar 2001 23:09:50 -0500
+
 apt-listchanges (1.40) unstable; urgency=low
 
   * Don't display the per-package headers by default, as they can get in
