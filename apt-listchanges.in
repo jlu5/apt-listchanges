@@ -45,7 +45,7 @@ my $usage = "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n";
 my $apt_mode = 0;
 my $verbose = 0;
 my $frontend_opt = $ENV{'APT_LISTCHANGES_FRONTEND'} || $config{'frontend'}
-                   || 'pager';
+|| 'pager';
 my $email_address = $config{'email-address'} || 'root';
 my $show_all = 0;
 my $apt_mode_run = $config{'apt-mode-run'} ?
@@ -160,71 +160,69 @@ foreach my $deb (@debs) {
   my $srcpackage = $new{Source};
   my %current = get_status_info($binpackage, \%status);
 
-  if ($debug) {
-    print "Processing package $binpackage($srcpackage) from $deb\n";
-    print "Current version (source/bin): $current{SourceVersion}/$current{Version}\n";
-    print "New version (source/bin): $new{SourceVersion}/$new{Version}\n";
-    print "Last seen version (source): $seen{$srcpackage}\n";
-  }
-
   # Bail if things don't look right
   unless ($binpackage) {
     $errors .= "apt-listchanges: " .
 	sprintf(gettext("Unable to determine package name for file %s"), $deb)
-	    . "\n";
+        . "\n";
     next;
   }
   unless ($new{Version}) {
     $errors .= "apt-listchanges: " .
 	sprintf(gettext("Unable to determine version for file %s"), $deb)
-	    . "\n";
+        . "\n";
     next;
   }
 
   ++$valid;
 
   # Get last version seen from the database, or fall back to installed version
-  my $seen = $save_seen ? $seen{$srcpackage} : undef;
+  my $seen = $seen{$srcpackage};
   $seen ||= $current{SourceVersion};
 
-  # Skip if the package is not installed
-  if (!$show_all && !$current{Version}) {
-    $notes .=
-	sprintf(gettext("%s: will be newly installed"), $binpackage)
-	    . "\n\n";
-    next;
+  if ($debug) {
+    print "Processing package $binpackage($srcpackage)\n";
+    print " from $deb\n";
+    print " Current (source/bin): $current{SourceVersion}/$current{Version}\n";
+    print " New (source/bin): $new{SourceVersion}/$new{Version}\n";
+    print " Last seen (source): $seen{$srcpackage}\n";
   }
 
-  # Skip if we are looking at the same version (faster than asking dpkg)
-  if (!$show_all && $new{Version} eq $current{Version}) {
-    $notes .=
-	sprintf(gettext("%s: Version %s is already installed"),
-		$binpackage, $new{Version})
-	    . "\n\n";
-    next;
-  }
+  if (!$show_all) {
+    # Skip if the package is not installed
+    if (!$current{Version}) {
+      $notes .=
+          sprintf(gettext("%s: will be newly installed"), $binpackage)
+          . "\n\n";
+      next;
+    }
 
-  if (!$show_all && $new{SourceVersion} eq $seen) {
-    $notes .= sprintf(gettext("%s: Version %s changes have already been seen"),
-		      $binpackage, $new{Version})
-	. "\n\n";
-    next;
-  }
+    # Skip if we are looking at the same version (faster than asking dpkg)
+    if ($new{Version} eq $current{Version}) {
+      $notes .=
+          sprintf(gettext("%s: Version %s is already installed"),
+                  $binpackage, $new{Version})
+          . "\n\n";
+      next;
+    }
 
-  # Skip if we are looking at an older version
-  if (!$show_all && dpkg_compare_versions($new{Version}, 'le', $current{Version})) {
-    $notes .=
-	sprintf(gettext("%s: Version %s is older than installed version (%s)"),
-		$binpackage, $new{Version}, $current{Version})
-	    . "\n\n";
-    next;
-  }
+    if ($new{SourceVersion} eq $seen ||
+        dpkg_compare_versions($new{SourceVersion}, 'le', $seen) ) {
 
-  if (!$show_all && dpkg_compare_versions($new{Version}, 'le', $seen)) {
-    $notes .= sprintf(gettext("%s: Version %s changes have already been seen"),
-		      $binpackage, $new{Version})
-	. "\n\n";
-    next;
+          $notes .= sprintf(gettext("%s: Version %s changes have already been seen"),
+                            $binpackage, $new{Version})
+              . "\n\n";
+          next;
+        }
+
+    # Skip if we are looking at an older version
+    if (dpkg_compare_versions($new{Version}, 'le', $current{Version})) {
+      $notes .=
+          sprintf(gettext("%s: Version %s is older than installed version (%s)"),
+                  $binpackage, $new{Version}, $current{Version})
+          . "\n\n";
+      next;
+    }
   }
 
   # Add to the list of binary packages belonging to this source package
@@ -268,7 +266,10 @@ foreach my $deb (@debs) {
 #	"dpkg-parsechangelog -l- -v$oldversion|";
     #open(CHANGELOG, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f |$dpkg_parsechangelog") || die $!;
 
-    open(CHANGELOG, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f|") || die $!;
+    my $extract_command = "dpkg-deb --fsys-tarfile $deb | tar -xO --exclude '*/doc/*/*/*' -f - @$changelog_filenames 2>/dev/null | zcat -f";
+    print " $extract_command\n" if $debug;
+
+    open(CHANGELOG, "$extract_command|") || die $!;
 
     my $lines_read = 0;
     my $urgency = $urgency_map{'low'};
@@ -311,7 +312,7 @@ foreach my $deb (@debs) {
       # filenames)
       last;
     }
- }
+  }
 
 }
 
@@ -334,8 +335,8 @@ if ($show_headers) {
 
     $changes{$pkg} = "--- " .
 	sprintf(gettext("Changes for %s"), $pkg)
-	    . " $binary_text ---\n"
-		. $changes{$pkg};
+        . " $binary_text ---\n"
+        . $changes{$pkg};
   }
 }
 
@@ -344,7 +345,7 @@ my @packages_by_urgency = sort { $urgency{$a} <=> $urgency{$b} ||
 
 # Concatenate all the changes, ordered by urgency
 my $output = join('', map { $changes{$_} } @packages_by_urgency);
-if ($verbose) {
+if ($verbose && $notes) {
   $output .= "\n" . gettext("Informational notes") . ":\n\n$notes";
 }
 
@@ -394,12 +395,12 @@ sub frontend_init {
       if ($@) {
 	warn "apt-listchanges: " .
 	    gettext("In order to use the newt frontend, you must install libnewt-perl")
-		. "\n";
+            . "\n";
 	return undef;
       }
 
-    Newt::Init();
-    Newt::Cls();
+      Newt::Init();
+      Newt::Cls();
       my ($screen_width, $screen_height) = Newt::GetScreenSize();
 
       my $longest_pathname = longest(@{ $this->{display_debs} });
@@ -428,7 +429,7 @@ sub frontend_init {
       # Update progress filename
       $newt->{current}->Set( $display_deb );
       $newt->{progress}->Set( ++$this->{debs_processed} );
-    Newt::Refresh();
+      Newt::Refresh();
     },
     
     'display_output' => sub {
@@ -537,13 +538,13 @@ sub frontend_init {
       if (!defined $ENV{DISPLAY}) {
 	warn "apt-listchanges: " .
 	    gettext("DISPLAY environment variable must be set to use xterm-pager frontend")
-		. "\n";
+            . "\n";
 	return undef;
       }
 
       return 1;
     },
-      
+    
     'update_progress' => $frontends{pager}->{init},
 
     'display_output' => sub {
@@ -587,7 +588,7 @@ sub frontend_init {
 
     'confirm' => $frontends{pager}->{confirm}
   };
-      
+  
   
   $frontends{'text'} = {
     'init' => sub { print "Reading changelogs...\n"; STDOUT->flush; },
@@ -610,7 +611,7 @@ sub frontend_init {
     'init' => $config{'quiet'} ? $frontends{text}->{init} :
 	$frontends{pager}->{init},
 
-    'update_progress' => $config{'quiet'} ?
+        'update_progress' => $config{'quiet'} ?
 	$frontends{text}->{update_progress}
     : $frontends{pager}->{update_progress},
 
@@ -629,7 +630,7 @@ To: $email_address
 Subject: apt-listchanges output for $host
 
 EOT
-    print MAIL $output;
+print MAIL $output;
       close(MAIL);
 
       print sprintf(gettext("Changelogs mailed to %s"), $email_address), "\n";
@@ -642,7 +643,7 @@ EOT
 
   my $frontend = $frontends{$frontend_opt};
   die "Unknown frontend: $frontend_opt\n" unless defined $frontend;
-    
+  
   ## Common stuff for all frontends
   
   # Strip pathnames
@@ -840,6 +841,8 @@ sub dpkg_compare_versions {
   my @cmd = ('dpkg', '--compare-versions', $a, $op, $b);
   my $ret = system(@cmd);
   $ret <<= 8;
+
+  warn "dpkg_compare_versions($a, $op, $b) = $ret\n";
 
   $ret == 0;
 }
