@@ -445,17 +445,14 @@ sub frontend_init {
 
       TTY->autoflush;
 
-      while (1) {
-	print TTY "apt-listchanges: ",
-	gettext("Do you want to continue [Y/n]? ");
+      print TTY "apt-listchanges: ",
+      gettext("Do you want to continue [Y/n]? ");
 
-	my $response = <TTY>;
-	close(TTY);
+      my $response = <TTY>;
+      close(TTY);
 
-	return 1 unless $response;
-	return 0 if $response =~ /^[Nn]/;
-	return 1 if $response =~ /^[Yy]/;
-      }
+      return 0 if $response =~ /^[Nn]/;
+      return 1;
     }
   };
 
