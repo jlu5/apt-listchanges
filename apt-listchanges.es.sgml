@@ -8,14 +8,14 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.es.sgml,v 1.1 2003-07-09 02:43:48 mdz Exp $
+     $Id: apt-listchanges.es.sgml,v 1.2 2003-08-10 06:58:20 mdz Exp $
 -->
 
 <!-- 
 (c) 2003 Software in the Public Interest
 Esta traducción ha sido realizada por Rubén Porras Campo <nahoo@inicia.es>
 Está basada en la página de manual original:
-versión 1.1 del CVS de
+versión 1.3 del CVS de
 /cvs/debian-doc/manpages/english/apt-listchanges/apt-listchanges.sgml
  -->
 
@@ -28,7 +28,7 @@ versión 1.1 del CVS de
       <firstname>Matt</firstname>
       <surname>Zimmerman</surname>
     </author>
-    <date>2002-05-23</date>
+    <date>07-07-2003</date>
   </docinfo>
   <refmeta>
     <refentrytitle>apt-listchanges</refentrytitle>
@@ -60,18 +60,20 @@ versión 1.1 del CVS de
       cambios de una nueva versión de un paquete de Debian respecto a la versión
       instalada actualmente en el sistema.</para>
 
-    <para>Esto se realiza extrayendo las entradas relevantes del fichero de
-      cambios de Debian, normalmente en
-      <filename>/usr/doc/</filename><replaceable>paquete</replaceable><filename>/changelog.Debian.gz</filename>,
-      de los archivos de paquetes Debian.
+    <para>
+      Esto se realiza extrayendo las entradas relevantes de los ficheros
+      NEWS.Debian y changelog<optional>.Debian</optional>, normalmente se
+      encuentran en
+      <filename>/usr/doc/</filename><replaceable>paquete</replaceable>, de los
+      archivos de paquetes Debian.
     </para>
 
     <para>
       Cuando se le proporciona un conjunto de ficheros como argumentos (o leídos
-	  a través de apt con la opción <option>--apt</option>),
-	  <command>apt-listchanges</command> analizará los ficheros (asumiendo que
-	  son archivos de paquetes de Debian) en busca de las entradas relevantes del
-	  fichero de cambios, y mostrará un resumen, ordenado por urgencia.
+      a través de apt con la opción <option>--apt</option>),
+      <command>apt-listchanges</command> analizará los ficheros (asumiendo que
+      son archivos de paquetes de Debian) en busca de las entradas relevantes
+      del fichero de cambios, y mostrará un resumen, ordenado por urgencia.
     </para>
 
   </refsect1>
@@ -85,10 +87,10 @@ versión 1.1 del CVS de
 	</TERM>
 	<LISTITEM>
 	  <PARA>Lee los nombres de los ficheros de una tubería con un formato
-	    especial (tal como lo proporciona apt), en vez de la línea de órdenes, y
-	    tiene en cuenta ciertas opciones especificas de apt en el fichero de
-	    configuración. Esta tubería debe estar en el formato de la "versión 2",
-	    especificado en el fichero de configuración de apt.
+	    especial (tal como lo proporciona apt), en vez de la línea de
+	    órdenes, y tiene en cuenta ciertas opciones especificas de apt en el
+	    fichero de configuración. Esta tubería debe estar en el formato de
+	    la "versión 2", especificado en el fichero de configuración de apt.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
@@ -96,10 +98,10 @@ versión 1.1 del CVS de
 	<TERM><option>-v, --verbose</option>
 	</TERM>
 	<LISTITEM>
-	  <PARA>Muestra información adicional (normalmente no se quiere).
-	    Por ejemplo, mostrar un mensaje cuando un paquete con la misma versión o
-	    anterior va a ser instalado, o cuando es la primera vez que se instala
-	    el paquete.
+	  <PARA>Muestra información adicional (normalmente no se quiere). Por
+	    ejemplo, mostrar un mensaje cuando un paquete con la misma versión o
+	    anterior va a ser instalado, o cuando es la primera vez que se
+	    instala el paquete.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
@@ -142,9 +144,9 @@ versión 1.1 del CVS de
 	      <TERM>xterm-pager</TERM>
 	      <LISTITEM>
 		<PARA>
-		  Usa su paginador favorito para mostrar la salida, pero lo hace sobre
-		  un xterm de fondo. Esto le permite realizar la actualización mientras
-		  mira los cambios.
+		  Usa su paginador favorito para mostrar la salida, pero lo hace
+		  sobre un xterm de fondo. Esto le permite realizar la
+		  actualización mientras mira los cambios.
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
@@ -206,9 +208,9 @@ versión 1.1 del CVS de
 	<TERM><OPTION>-c, --confirm</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
-	    Una vez que se han mostrado los cambios, preguntar al usuario si desea
-	    continuar. Si el usuario elige no continuar, se devolverá un estado de
-	    salida distinto de cero, y apt abortará.
+	    Una vez que se han mostrado los cambios, preguntar al usuario si
+	    desea continuar. Si el usuario elige no continuar, se devolverá un
+	    estado de salida distinto de cero, y apt abortará.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
@@ -219,7 +221,8 @@ versión 1.1 del CVS de
 	  <PARA>
 	    En vez de tratar de mostrar los cambios desde la versión instalada,
 	    simplemente mostrar todos los cambios de todos los paquetes. Esto es
-	    útil para ver todo el fichero de cambios de un .deb antes de extraerlo.
+	    útil para ver todo el fichero de cambios de un .deb antes de
+	    extraerlo.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
@@ -230,9 +233,20 @@ versión 1.1 del CVS de
 	  <PARA>
 	    Esta opción hará que apt-listchanges lleve la cuenta de la última
 	    versión de un paquete para la que se han mostrado los cambios, para
-	    así, evitar mostrar los mismos cambios en futuras ejecuciones. La base
-	    de datos se guarda en el fichero especificado. Especifique 'none' para
-	    deshabilitar esta característica.
+	    así, evitar mostrar los mismos cambios en futuras ejecuciones. La
+	    base de datos se guarda en el fichero especificado. Especifique
+	    'none' para deshabilitar esta característica.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+
+      <VARLISTENTRY>
+	<TERM><OPTION>--which={news|changelogs|both}</OPTION></TERM>
+	<LISTITEM>
+	  <PARA>
+	    Esta opción indica si se deben mostrar la noticias (de NEWS.Debian
+	    et al.), registros de cambios (de changelog.Debian et al.) o
+	    ambos. Por omisión se muestran ambos.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
@@ -259,10 +273,11 @@ versión 1.1 del CVS de
 	<TERM><OPTION>-h, --headers</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
-	    Esta opción hará que apt-listchanges inserte una cabecera antes de los
-	    cambios de cada paquete, mostrando el nombre del paquete, y los nombres
-	    de los paquetes binarios que van a ser actualizados (si es que hay más
-	    de uno o difiere respecto del nombre del paquete fuente).
+	    Esta opción hará que apt-listchanges inserte una cabecera antes de
+	    los cambios de cada paquete, mostrando el nombre del paquete, y los
+	    nombres de los paquetes binarios que van a ser actualizados (si es
+	    que hay más de uno o difiere respecto del nombre del paquete
+	    fuente).
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
@@ -321,16 +336,16 @@ versión 1.1 del CVS de
 
           <example>
             <title>Fichero de configuración de ejemplo</title>
-<programlisting>
-[cmdline]
-frontend=pager
-
-[apt]
-frontend=xterm-pager
-email_address=root
-confirm=1
-</programlisting>
-              </example>
+	    <programlisting>
+	      [cmdline]
+	      frontend=pager
+	      
+	      [apt]
+	      frontend=xterm-pager
+	      email_address=root
+	      confirm=1
+	    </programlisting>
+	  </example>
 
           <para>El fichero de configuración anterior especifica que, en el modo
           línea de órdenes, la interfaz predeterminada es "pager".

@@ -4,6 +4,8 @@ apt-listchanges (2.40) unstable; urgency=low
     Yag?e <valyag@dat.etsit.upm.es> (Closes: #203993)
   * Updated Dutch translation of debconf templates from cobaco
     <cobaco@linux.be> (Closes: #204700)
+  * Updated Spanish man page from cvs.d.o/manpages/spanish
+    (Closes: #203763)
 
  --
 
