@@ -1,3 +1,11 @@
+apt-listchanges (1.31) unstable; urgency=low
+
+  * Remember to remove debconf questions when purging
+  * Finnish translation of debconf templates, thanks to Jaakko Kangasharju
+    <ashar@iki.fi> (Closes: #85433)
+
+ -- Matt Zimmerman <mdz@debian.org>  Fri,  9 Feb 2001 17:17:54 -0500
+
 apt-listchanges (1.30) unstable; urgency=low
 
   * Added Korean translation of debconf templates, thanks to Eungkyu Song
