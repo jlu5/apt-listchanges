@@ -1,3 +1,13 @@
+apt-listchanges (2.3) unstable; urgency=low
+
+  * Add 'none' option to apt-listchanges/frontend template
+    (Closes: #129325)
+  * Added back some things that shouldn't have been removed from po/Makefile
+  * Regenerate po/*.po and po/apt-listchanges.pot to make translators'
+    lives easier
+
+ -- Matt Zimmerman <mdz@debian.org>  Tue, 15 Jan 2002 19:20:19 -0500
+
 apt-listchanges (2.2) unstable; urgency=low
 
   * Clean up po/Makefile a bit
