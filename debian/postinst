@@ -34,7 +34,7 @@ if [ "$action" = "configure" ]; then
 
     db_stop
 
-    ucf $PREFERENCES.new $PREFERENCES
+    ucf $PREFERENCES.new $PREFERENCES </dev/tty
     rm -f $PREFERENCES.new
 
     ## Cleanup from older versions
