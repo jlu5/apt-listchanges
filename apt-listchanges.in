@@ -231,7 +231,7 @@ foreach my $deb (@debs) {
 
 	# Use the urgency of the most urgent changelog entry for the
 	# urgency of this snippet
-	$urgency = min($urgency_map{$2}, $urgency);
+	$urgency = min($urgency_map{lc($2)}, $urgency);
       }
       
       $changes .= $_;
