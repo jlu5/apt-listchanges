@@ -1,3 +1,11 @@
+apt-listchanges (2.57) unstable; urgency=low
+
+  * Fix typo in French translation of continuation prompt (Closes: #259465)
+  * Honor the meaning of APT's quiet variable when its value is >1
+    (suppress all ouptut)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 13 Nov 2004 17:32:11 -0800
+
 apt-listchanges (2.56) unstable; urgency=low
 
   * Another Danish debconf translation update from Claus Hindsgaul <claus_h@image.dk>

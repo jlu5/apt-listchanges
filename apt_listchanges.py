@@ -172,7 +172,7 @@ class Config:
         self.frontend = 'pager'
         self.email_address = None
         self.verbose = False
-        self.quiet = False
+        self.quiet = 0
         self.show_all = False
         self.confirm = False
         self.headers = False
@@ -396,6 +396,9 @@ class ttyconfirm:
 
 class simpleprogress:
     def update_progress(self):
+        if self.config.quiet > 1:
+            return
+        
         if not hasattr(self,'message_printed'):
             self.message_printed = 1
             sys.stderr.write(_("Reading changelogs") + "...\n")

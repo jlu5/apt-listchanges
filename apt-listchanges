@@ -55,10 +55,12 @@ def main():
 
     # If apt is in quiet (loggable) mode, we should make our output
     # loggable too
-    if config.quiet:
+    if config.quiet == 1:
         config.frontend = 'text'
+    elif config.quiet >= 2:
+        config.frontend = 'mail'
 
-    if config.frontend == 'none':
+    if config.quiet >= 2 or config.frontend == 'none':
         sys.exit(0)
 
     if not config.show_all:
