@@ -5,10 +5,10 @@
 
 # Ask our questions
 db_input medium apt-listchanges/apt-hook-p || true
-db_input medium apt-listchanges/apt-mode-display-mode || true
+db_input medium apt-listchanges/apt-mode-frontend || true
 db_go
 
-db_get apt-listchanges/apt-mode-display-mode
+db_get apt-listchanges/apt-mode-frontend
 if [ "$RET" = "mail" ]; then
   db_input medium apt-listchanges/apt-mode-email-address || true
   db_go
