@@ -55,7 +55,7 @@ if config.quiet:
     config.frontend = 'text'
 
 if config.mode == 'apt':
-    debs = apt_listchanges.read_apt_pipeline()
+    debs = apt_listchanges.read_apt_pipeline(config)
 
 if config.frontend == 'none':
     sys.exit(0)

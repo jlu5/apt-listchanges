@@ -13,6 +13,7 @@ from socket import gethostname
 
 # TODO:
 # newt-like frontend, or maybe some GUI bit
+# keep track of tar/dpkg-deb errors like in pre-2.0
 
 try:
     _ = gettext.translation('apt-listchanges').gettext
@@ -177,7 +178,7 @@ class Config:
 
         return args
 
-def read_apt_pipeline():
+def read_apt_pipeline(config):
     version = sys.stdin.readline().rstrip()
     if version != "VERSION 2":
         sys.stderr.write(_('''Wrong or missing VERSION from apt pipeline
