@@ -37,13 +37,17 @@ my $apt_mode = 0;
 my $verbose = 0;
 my $frontend_opt = $config{'frontend'} || 'pager';
 my $email_address = $config{'email-address'} || 'root';
-my $confirm = $config{'confirm'} eq 'yes' ? 1 : undef;
+my $confirm;
+
 GetOptions("apt" => \$apt_mode,
 	   "verbose|v" => \$verbose,
 	   "frontend|f=s" => \$frontend_opt,
 	   "email-address=s" => \$email_address,
 	   "confirm|c!" => \$confirm) || die;
 
+if ($apt_mode) {
+  $confirm ||= $config{'apt-mode-confirm'};
+}
 
 # Hash of package info from the status file
 my %status;
