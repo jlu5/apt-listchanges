@@ -147,13 +147,13 @@ if config.headers:
         header = _('Changes for %s') % package
         if len(filter(lambda x: x != package,source_packages[package])) > 0:
             # Differing source and binary packages
-            header += ' (' + string.join(source_packages[package]) + ')'
+            header += ' (' + ''.join(source_packages[package]) + ')'
         changes += '--- ' + header + ' ---\n' + rec['changes']
 else:
-    changes = string.join(map(lambda x: x['changes'], all_changes), '')
+    changes = ''.join(map(lambda x: x['changes'], all_changes))
 
 if config.verbose and len(notes) > 0:
-    changes += _("Informational notes") + ":\n\n" + string.join(notes,'\n')
+    changes += _("Informational notes") + ":\n\n" + '\n'.join(notes)
 
 if changes:
     frontend.display_output(changes)
