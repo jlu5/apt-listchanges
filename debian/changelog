@@ -1,3 +1,11 @@
+apt-listchanges (1.58) unstable; urgency=low
+
+  * Be sure to return a true value from the xterm-pager initialization
+    routine, thanks to Charles C.Fu <ccwf@bacchus.com> (Closes: #114245)
+  * Updated Catalan translation from Jordi Mallach <jordi@debian.org>
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 17 Oct 2001 15:59:26 -0400
+
 apt-listchanges (1.57) unstable; urgency=low
 
   * Don't get confused when there are no changelog entries for the
