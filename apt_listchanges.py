@@ -48,7 +48,7 @@ def VersionCompare(v1, op, v2):
     ret = os.spawnlp(os.P_WAIT,'dpkg','dpkg','--compare-versions',v1,op,v2)
 
     if ret < 0:
-        sys.stderr.write('dpkg exited with signal %s' % -ret)
+        sys.stderr.write(_("%s exited with signal %s") % ('dpkg',-ret))
         return None
 
     return (ret == 0)
@@ -237,7 +237,7 @@ def make_frontend(name, packages):
                   'xterm-pager' : xterm_pager }
     
     if name == 'newt':
-        sys.stderr.write("The newt frontend is deprecated, using pager")
+        sys.stderr.write(_("The newt frontend is deprecated, using pager"))
         name = 'pager'
         
     if not frontends.has_key(name):
@@ -329,6 +329,7 @@ class xterm_pager(pager):
                 os.close(write)
                 (junk,status) = os.waitpid(pid,0)
                 if status != 0:
-                    sys.stderr.write("pager exited with status %d" % status)
+                    sys.stderr.write(_("%s exited with status %d")
+                                     % ('xterm',status))
                     sys.exit(1)
                 sys.exit(0)
