@@ -2,8 +2,10 @@ apt-listchanges (2.21) unstable; urgency=low
 
   * Fix a bug which caused an ugly error when running on a .deb which was
     not installed, instead of just skipping it (Closes: #148348)
+  * Add a newline to the "Didn't find any valid .deb archives" error
+    message
 
- -- Matt Zimmerman <mdz@debian.org>  Wed, 29 May 2002 22:41:09 -0400
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 29 May 2002 23:23:49 -0400
 
 apt-listchanges (2.20) unstable; urgency=low
 
