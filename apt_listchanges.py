@@ -16,7 +16,6 @@ import shutil
 import gzip
 import errno
 import glob
-from socket import gethostname
 
 # TODO:
 # newt-like frontend, or maybe some GUI bit

@@ -33,6 +33,7 @@ import string
 import anydbm
 import DebianControlParser
 import apt_listchanges
+from socket import gethostname
 
 def main():
     try:
