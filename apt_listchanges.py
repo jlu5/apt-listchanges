@@ -173,13 +173,14 @@ class Config:
         # Defaults
         self.frontend = 'pager'
         self.email_address = None
-        self.verbose = 0
-        self.quiet = 0
-        self.show_all = 0
-        self.confirm = 0
-        self.headers = 0
-        self.debug = 0
+        self.verbose = False
+        self.quiet = False
+        self.show_all = False
+        self.confirm = False
+        self.headers = False
+        self.debug = False
         self.save_seen = None
+        self.apt_mode = False
         self.mode = 'cmdline'
         self.which = 'both'
         self.allowed_which = ('both', 'news', 'changelogs')
@@ -442,6 +443,7 @@ class runcommand:
         status = os.spawnl(os.P_WAIT, '/bin/sh', 'sh', '-c', shellcommand)
         if status != 0:
             raise OSError('Subprocess ' + shellcommand + ' exited with status ' + str(status))
+        sys.exit(0)
 
 class pager(runcommand,ttyconfirm,fancyprogress):
     command = 'sensible-pager'

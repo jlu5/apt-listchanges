@@ -1,3 +1,10 @@
+apt-listchanges (2.44) unstable; urgency=low
+
+  * Don't forget to have the child exit after it's finished, when running
+    a command in the background (Closes: #226631)
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed,  7 Jan 2004 16:34:42 -0800
+
 apt-listchanges (2.43) unstable; urgency=low
 
   * Clean up a bunch of pending stuff so that some new development can begin
