@@ -128,7 +128,7 @@ my $notes;
 
 my @debs = read_deb_filenames($apt_mode, \%status);
 
-if ($save_seen eq 'yes') {
+if ($save_seen) {
   tie %seen, 'DB_File', "/var/lib/apt/listchanges.db";
 }
 
