@@ -1,5 +1,6 @@
 apt-listchanges (2.43) unstable; urgency=low
 
+  * Clean up a bunch of pending stuff so that some new development can begin
   * Fix the documentation to reflect the removal of support for
     apt-listchanges-specific BROWSER environment variables; this is all
     done in the usual way now, using sensible-browser.
@@ -13,7 +14,7 @@ apt-listchanges (2.43) unstable; urgency=low
   * Updated Spanish translation of man page from Ruben Porras <nahoo82@telefonica.net>
     (Closes: #218742)
 
- --
+ -- Matt Zimmerman <mdz@debian.org>  Wed,  7 Jan 2004 09:25:09 -0800
 
 apt-listchanges (2.42) unstable; urgency=low
 
