@@ -77,11 +77,6 @@ if ($help_only) {
   exit 0;
 }
 
-if ($frontend_opt eq 'none') {
-  print "apt-listchanges: skipping changelogs\n";
-  exit 0;
-}
-
 if ($apt_mode) {
   $confirm ||= ( $config{'apt-mode-confirm'} eq 'yes' );
 }
@@ -134,7 +129,7 @@ if ($save_seen) {
 
 # We have to read all data from the pipeline before exiting, or apt
 # will complain
-exit 0 if ($apt_mode && !$apt_mode_run);
+exit 0 if ($apt_mode && !$apt_mode_run) || ($frontend_opt eq 'none');
 
 # If apt is in quiet mode, we should make ourselves loggable too
 if ($config{'quiet'} && $frontend_opt ne 'mail') {
