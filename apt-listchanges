@@ -24,9 +24,7 @@
 #
 
 # TODO:
-# verbose messages
 # debugging?
-# i18n, l10n
 
 import sys
 import gettext
@@ -149,7 +147,7 @@ if config.headers:
 else:
     changes = string.join(map(lambda x: x['changes'], all_changes), '')
 
-if len(notes) > 0:
+if config.verbose and len(notes) > 0:
     changes += _("Informational notes") + ":\n\n" + string.join(notes,'\n')
 
 if changes:
