@@ -3,8 +3,10 @@ apt-listchanges (2.6) unstable; urgency=low
   * Fix code which, in trying to filter out errors from tar while
     extracting the deb, mangled the changelog for the tar package
     (Closes: #132046)
+  * Updated Spanish and Catalan translations of debconf templates and
+    message catalogs from Jordi Mallach <jordi@debian.org>
 
- -- Matt Zimmerman <mdz@debian.org>  Sun,  3 Feb 2002 14:42:37 -0500
+ -- Matt Zimmerman <mdz@debian.org>  Sun,  3 Feb 2002 14:45:10 -0500
 
 apt-listchanges (2.5) unstable; urgency=low
 
