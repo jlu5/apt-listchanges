@@ -14,3 +14,7 @@
   (bug #80142)
 
 - Find a decent text menu frontend to supersede newt.
+
+- Maybe rewrite the whole thing in C++, use libapt-pkg and provide a
+  nice X frontend one day.  This could provide all of the navigation
+  features that people have wanted (expand/collapse, hyperlinks, etc.)
