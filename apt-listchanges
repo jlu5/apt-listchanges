@@ -65,7 +65,7 @@ if not config.show_all:
     status.readfile('/var/lib/dpkg/status')
     status.makeindex('Package')
     if config.save_seen:
-        seen = anydbm.open(config.save_seen, 'r')
+        seen = anydbm.open(config.save_seen, 'c')
         # Will replace seen after changes have actually been seen
         seen_new = {}
 
