@@ -526,7 +526,9 @@ sub frontend_init {
   };
 
   $frontends{'mail'} = {
-    'init' => sub { 1; },
+
+    'init' => $config{'quiet'} ? $frontends{text}->{update_progress} :
+	$frontends{pager}->{update_progress},
 
     'update_progress' => $frontends{pager}->{update_progress},
 
