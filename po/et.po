@@ -1,11 +1,10 @@
 # Estonian translations for apt-listchanges
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Ivar Smolin <okul@linux.ee>, 2001, 2002.
-
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.1\n"
-"POT-Creation-Date: Sat Jan 12 01:05:28 2002\n"
+"POT-Creation-Date: Mon Jan 14 16:24:41 2002\n"
 "PO-Revision-Date: 2002-01-14 09:01+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -33,7 +32,11 @@ msgstr "Informatiivsed märkused"
 msgid "didn't find any valid .deb archives"
 msgstr "ei leia ühtegi töökorras .deb arhiivi"
 
-#: ../apt_listchanges.py:183
+#: ../apt_listchanges.py:51
+msgid "%s exited with signal %s"
+msgstr ""
+
+#: ../apt_listchanges.py:188
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -41,24 +44,31 @@ msgstr ""
 "Vale või puuduolev VERSION apt torust\n"
 "(kas Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version on 2?)\n"
 
-#: ../apt_listchanges.py:218
+#: ../apt_listchanges.py:229
 msgid "Mailing changelogs to %s"
 msgstr "Mailin muutuste logid aadressile %s"
 
-#: ../apt_listchanges.py:221
+#: ../apt_listchanges.py:232
 msgid "apt-listchanges output for %s"
 msgstr "apt-listchanges väljund %s jaoks"
 
-#: ../apt_listchanges.py:261
+#: ../apt_listchanges.py:242
+msgid "The newt frontend is deprecated, using pager"
+msgstr ""
+
+#: ../apt_listchanges.py:272
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Soovite jätkata [Y/n]? "
 
-#: ../apt_listchanges.py:272 ../apt_listchanges.py:288
-#: ../apt_listchanges.py:293
+#: ../apt_listchanges.py:283 ../apt_listchanges.py:299
+#: ../apt_listchanges.py:304
 msgid "Reading changelogs"
 msgstr "Muudatuste logide lugemine"
 
-#: ../apt_listchanges.py:293
+#: ../apt_listchanges.py:304
 msgid "Done"
 msgstr "Korras"
 
+#: ../apt_listchanges.py:334
+msgid "%s exited with status %d"
+msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: Sat Jan 12 01:05:28 2002\n"
+"POT-Creation-Date: Mon Jan 14 16:24:41 2002\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,30 +35,42 @@ msgstr ""
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
-#: ../apt_listchanges.py:183
+#: ../apt_listchanges.py:51
+msgid "%s exited with signal %s"
+msgstr ""
+
+#: ../apt_listchanges.py:188
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 
-#: ../apt_listchanges.py:218
+#: ../apt_listchanges.py:229
 msgid "Mailing changelogs to %s"
 msgstr ""
 
-#: ../apt_listchanges.py:221
+#: ../apt_listchanges.py:232
 msgid "apt-listchanges output for %s"
 msgstr ""
 
-#: ../apt_listchanges.py:261
+#: ../apt_listchanges.py:242
+msgid "The newt frontend is deprecated, using pager"
+msgstr ""
+
+#: ../apt_listchanges.py:272
 msgid "Do you want to continue? [Y/n]? "
 msgstr ""
 
-#: ../apt_listchanges.py:272 ../apt_listchanges.py:288
-#: ../apt_listchanges.py:293
+#: ../apt_listchanges.py:283 ../apt_listchanges.py:299
+#: ../apt_listchanges.py:304
 msgid "Reading changelogs"
 msgstr ""
 
-#: ../apt_listchanges.py:293
+#: ../apt_listchanges.py:304
 msgid "Done"
+msgstr ""
+
+#: ../apt_listchanges.py:334
+msgid "%s exited with status %d"
 msgstr ""
 
