@@ -3,8 +3,10 @@ apt-listchanges (2.32) unstable; urgency=low
   * The "make joeyh happy" release
   * Use ucf rather than debconf to handle prompting about changes to the
     configuration file (Closes: #144510)
+  * Updated pt_BR translation of debconf templates from 
+    Andre Luis Lopes <andrelop@ig.com.br> (Closes: #183311)
 
- -- Matt Zimmerman <mdz@debian.org>  Fri,  2 May 2003 21:19:17 -0400
+ -- Matt Zimmerman <mdz@debian.org>  Fri,  2 May 2003 21:26:33 -0400
 
 apt-listchanges (2.31) unstable; urgency=low
 
