@@ -324,7 +324,7 @@ sub frontend_init {
       $this->{newt}->{confirm};
     }
   };
-  
+
   $frontends{'pager'} = {
     'init' => sub {
       my ($this) = @_;
@@ -388,8 +388,53 @@ sub frontend_init {
     }
   };
 
+  $frontends{'xterm-pager'} = {
+    'init' => $frontends{pager}->{init},
+
+    'update_progress' => $frontends{pager}->{init},
+
+    'display_output' => sub {
+      my ($this, $output) = @_;
+
+      return 0 unless $output;
+
+      my $tempfile = `tempfile`;
+      chomp($tempfile);
+
+      if (!open(TEMPFILE, ">$tempfile")) {
+	warn "apt-listchanges: Unable to open temporary file $tempfile: $!\n";
+	return undef;
+      }
+
+      print TEMPFILE $output;
+      close(TEMPFILE);
+
+      if (!fork) {
+	setpgrp();
+	chdir("/");
+	open(DEVNULL, "<+/dev/null");
+	open(STDIN, "<&DEVNULL");
+	open(STDOUT, ">&DEVNULL");
+	open(STDERR, ">&DEVNULL");
+
+	# We should do TIOCNOTTY here, but Perl doesn't seem to give
+	# us its value
+
+	system('x-terminal-emulator', '-e', 'sensible-pager', $tempfile);
+	unlink($tempfile);
+
+	exit(0);
+      }
+
+      1;
+    },
+
+    'confirm' => $frontends{pager}->{confirm}
+  };
+      
+  
   $frontends{'text'} = {
-    'init' => sub { 1; },
+    'init' => $frontends{pager}->{init},
     
     'update_progress' => $frontends{pager}->{update_progress},
     

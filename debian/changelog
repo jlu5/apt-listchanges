@@ -1,3 +1,10 @@
+apt-listchanges (1.21) unstable; urgency=low
+
+  * Added xterm-pager frontend, which starts an xterm in the background to
+    display changes (Closes: #78662)
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 25 Dec 2000 21:16:05 -0500
+
 apt-listchanges (1.20) unstable; urgency=low
 
   * Fall back from more complex to less complex frontends when
