@@ -115,7 +115,7 @@ for deb in debs:
     if found.has_key(srcpackage):
         continue
 
-    if apt_pkg.VersionCompare(fromversion, srcversion) >= 0:
+    if not config.show_all and apt_pkg.VersionCompare(fromversion, srcversion) >= 0:
         notes.append(_("%s: Version %s has already been seen") % (binpackage,
                                                                   srcversion))
         continue
