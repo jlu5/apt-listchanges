@@ -1,3 +1,9 @@
+apt-listchanges (2.18) unstable; urgency=medium
+
+  * Use x-terminal-emulator instead of plain xterm (Closes: #142684)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 13 Apr 2002 15:22:12 -0400
+
 apt-listchanges (2.17) unstable; urgency=low
 
   * Oops, forgot to include the updated debconf templates for the w3m ->
