@@ -2,8 +2,9 @@ apt-listchanges (1.23) unstable; urgency=low
 
   * Handle packages with different binary/source versions correctly
     (Closes: #82222)
+  * Use Build-Depends-Indep rather than Build-Depends
 
- -- Matt Zimmerman <mdz@debian.org>  Sun, 14 Jan 2001 18:00:32 -0500
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 14 Jan 2001 18:01:49 -0500
 
 apt-listchanges (1.22) unstable; urgency=low
 
