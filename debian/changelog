@@ -4,8 +4,10 @@ apt-listchanges (2.46) unstable; urgency=low
     profiles in /etc/apt/listchanges.conf (Closes: #203395)
   * Get rid of the --version command line option; I always forgot to
     update it and am too lazy to make it automatic
+  * Updated Finnish translation of debconf templates from Tommi
+    Vainikainen <thv+debian@iki.fi> (Closes: #226851)
 
- -- Matt Zimmerman <mdz@debian.org>  Thu,  8 Jan 2004 13:05:17 -0800
+ --
 
 apt-listchanges (2.45) unstable; urgency=low
 
