@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -w
 
 #
 #      @PACKAGE@ - Show changelog entries between the installed versions
@@ -64,26 +64,30 @@ if ($apt_mode) {
 # Hash of package info from the status file
 my %status;
 
-# List of filenames to process
-my @debs;
+# Hash of array refs mapping source to binary packages
+my %binary_packages;
 
-# Hash of source packages that we've processed (to avoid duplicates)
-my %source_packages_processed;
+# A separate hash of source packages used to avoid duplicates
+my %processed;
 
 # Numeric urgency values for sorting.  Unknown urgencies get sorted to
 # the top (equivalent to 'high'), since there is no fixed list of
 # urgency values and it would be much more probable that an unknown
 # urgency value would be higher than lower ("this package needs to get
 # out at extra-low priority!")
-my %urgency = ( 'low' => 2,
-		'medium' => 1,
-		'high' => 0 );
+my %urgency_map = ( 'low' => 2,
+		    'medium' => 1,
+		    'high' => 0 );
 
-# Changelog text
-my @changes;
+# Changelog text and urgency, by source package
+my %changes;
+my %urgency;
 
 # Error text
 my $errors;
+
+# Informational notes
+my $notes;
 
 ##
 ## Initialization
@@ -137,38 +141,40 @@ foreach my $deb (@debs) {
 
   # Skip if the package is not installed
   if (!$show_all && !$oldversion) {
-    $changes[$urgency{'low'}] .=
+    $notes .=
 	sprintf(gettext("%s: will be newly installed"), $pkg)
-	    . "\n\n"
-	if $verbose;
+	    . "\n\n";
     next;
   }
 
   # Skip if we are looking at the same version (faster than asking dpkg)
   if ($version eq $oldversion) {
-
-    $changes[$urgency{'low'}] .=
+    $notes .=
 	sprintf(gettext("%s: Version $version is already installed"),
 		$pkg)
-	    . "\n\n"
-	if $verbose;
-
+	    . "\n\n";
     next;
   }
 
   # Skip if we are looking at an older version
   if (!$show_all && dpkg_compare_versions($version, 'le', $oldversion)) {
-    $changes[$urgency{'low'}] .=
+    $notes .=
 	sprintf(gettext("%s: Version %s is older than installed version (%s)"),
 		$pkg, $version, $oldversion)
-	    . "\n\n"
-	if $verbose;
+	    . "\n\n";
     next;
+  }
+
+  # Add to the list of binary packages belonging to this source package
+  if (defined $binary_packages{$sourcepackage}) {
+    push(@{$binary_packages{$sourcepackage}}, $pkg);
+  } else {
+    $binary_packages{$sourcepackage} = [$pkg];
   }
 
   # Skip if we already processed another binary package from this
   # source package
-  next if $source_packages_processed{$sourcepackage};
+  next if $processed{$sourcepackage};
 
   # Determine the changelog filenames
   my @changelog_filenames = ('changelog.Debian');
@@ -200,12 +206,11 @@ foreach my $deb (@debs) {
     open(DPKGDEB, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f|") || die $!;
     
     my $lines_read = 0;
-    my $urgency = $urgency{'low'};
+    my $urgency = $urgency_map{'low'};
     my $changes;
     while (<DPKGDEB>) {
 #      next unless /^Changes:/ .. 0;
 #      next if /^Changes:/;
-      ++$lines_read;
       
       if ( /^(tar|dpkg-deb):/ ) {
 	# Errors from tar or dpkg-deb
@@ -218,35 +223,65 @@ foreach my $deb (@debs) {
 
 	# Use the urgency of the most urgent changelog entry for the
 	# urgency of this package
-	$urgency = $urgency{$2} < $urgency ? $urgency{$2} : $urgency;
+	if ($urgency{$sourcepackage}) {
+	  $urgency{$sourcepackage} = min($urgency_map{$2},
+					 $urgency{$sourcepackage});
+	} else {
+	  $urgency{$sourcepackage} = $urgency_map{$2};
+	}
       }
       
       $changes .= $_;
+      ++$lines_read;
     }
 
-    $changes[$urgency] .= $changes if $changes;
-    
     # Read any remaining data from a large changelog, to avoid a 'broken
     # pipe' error message on close
     while (<DPKGDEB>) {}
     close(DPKGDEB);
 
-    # Quit if we got something (don't try the next set of changelog
-    # filenames)
     if ( $lines_read > 0 ) {
-      ++$source_packages_processed{$sourcepackage};
+      $urgency{$sourcepackage} = $urgency;
+      $changes{$sourcepackage} = $changes if $changes;
+      ++$processed{$sourcepackage};
+
+      # Quit if we got something (don't try the next set of changelog
+      # filenames)
       last;
     }
  }
 
 }
 
-my $output = join('', @changes);
+# Prepend binary package info
+foreach my $pkg (keys %changes) {
+  my @binary_packages = @{$binary_packages{$pkg}};
+  my $binary_text;
+
+  if (@binary_packages == 1 && $binary_packages[0] eq $pkg) {
+    $binary_text = "";
+  } else {
+    $binary_text = "(@binary_packages) ";
+  }
+
+  $changes{$pkg} = "--- " .
+      sprintf(gettext("Changes for %s"), $pkg)
+	  . " $binary_text ---\n"
+      . $changes{$pkg};
+}
+
+my @packages_by_urgency = sort { $urgency{$a} <=> $urgency{$b} } keys %changes;
+
+# Concatenate all the changes, ordered by urgency
+my $output = join('', map { $changes{$_} } @packages_by_urgency);
+$output .= "\nInformational notes:\n\n" . $notes if $verbose;
+
 if ($errors) {
   $output .= "\napt-listchanges: ". gettext("Error output follows") . "\n";
   $output .= $errors;
 }
 
+# Display the output using the frontend
 &{ $frontend->{display_output} }($frontend, $output);
 
 if ($confirm && $output) {
@@ -384,7 +419,7 @@ sub frontend_init {
       print "\n";
       return 0 unless $output;
 
-      my $sigpipe_handler = $SIG{'PIPE'};
+      my $sigpipe_handler = $SIG{'PIPE'} || 'DEFAULT';
       $SIG{'PIPE'} = 'IGNORE';
 
       open(PAGER, "|/usr/bin/sensible-pager")
@@ -451,6 +486,7 @@ sub frontend_init {
 	setpgrp();
 	chdir("/");
 	open(DEVNULL, "<+/dev/null");
+	select(DEVNULL); # Avoid a warning from -w
 	open(STDIN, "<&DEVNULL");
 	open(STDOUT, ">&DEVNULL");
 	open(STDERR, ">&DEVNULL");
@@ -616,6 +652,13 @@ sub read_config {
   }
 }
 
+
+sub min {
+  my ($a, $b) = @_;
+
+  $a < $b ? $a : $b;
+}
+
 ##
 ## All the rest of this stuff should be replaced by a good set of Perl
 ## bindings for apt (or maybe I should reimplement this in Python)
@@ -641,7 +684,8 @@ sub get_package_info {
   # Look up installed version of $pkg, using the source package
   # version if different
   my $oldversion = $$status{$pkg}{Version};
-  if ($$status{$pkg}{Source} =~ /\((.*)\)/) {
+  if ($$status{$pkg}{Source}
+      && $$status{$pkg}{Source} =~ /\((.*)\)/) {
     $oldversion = $1;
   }
 
