@@ -1,3 +1,10 @@
+apt-listchanges (2.31) unstable; urgency=low
+
+  * Really include updated Polish translation (Closes: #179071)
+  * Depend on python >= 2.2 (Closes: #181062)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 15 Feb 2003 00:22:28 -0500
+
 apt-listchanges (2.30) unstable; urgency=low
 
   * Updated French translation of debconf templates from Denis Barbier
