@@ -65,7 +65,9 @@ if not config.show_all:
     status.readfile('/var/lib/dpkg/status')
     status.makeindex('Package')
     if config.save_seen:
-        seen = anydbm.open(config.save_seen, 'c')
+        seen = anydbm.open(config.save_seen, 'r')
+        # Will replace seen after changes have actually been seen
+        seen_new = {}
 
 all_changes = []
 notes = []
@@ -128,7 +130,7 @@ for deb in debs:
                              'changes' : changes,
                              'urgency' : urgency })
         if config.save_seen:
-            seen[srcpackage] = srcversion
+            seen_new[srcpackage] = srcversion
 
 frontend.progress_done()
 
@@ -162,6 +164,13 @@ if changes:
             
     if config.email_address:
         apt_listchanges.mail_changes(config.email_address, changes)
+
+    # Write out seen db
+    if config.save_seen:
+        seen = anydbm.open(config.save_seen, 'c')
+        for (key,value) in seen_new.items():
+            seen[key] = value
+        seen.close()
 
 elif config.mode != 'apt' and not source_packages.keys():
     sys.stderr.write("apt-listchanges: "
