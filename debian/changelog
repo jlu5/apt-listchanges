@@ -1,3 +1,13 @@
+apt-listchanges (1.53) unstable; urgency=low
+
+  * Added a feature to keep track of which changelogs have already been
+    seen by the user, and accompanying debconf question, config file
+    option, and command line option. (Closes: #77161, #103537)
+  * A respectable bit of code cleanup.  A rewrite is probably called for,
+    perhaps in a different language.  We'll wait and see.
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 16 Jul 2001 23:08:38 -0400
+
 apt-listchanges (1.52) unstable; urgency=low
 
   * Added support for APT_LISTCHANGES_FRONTEND environment variable to
