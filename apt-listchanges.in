@@ -208,9 +208,9 @@ foreach my $deb (@debs) {
   @changelog_filenames = map { ($_, "$_.gz") } @changelog_filenames;
 
   # Check both /usr/doc and /usr/share/doc
-  @changelog_filenames = map { ("./usr/doc/\\*/$_",
-				  "./usr/share/doc/\\*/$_") }
-				  @changelog_filenames;
+  @changelog_filenames = map { ("./$_", $_) } 
+  map { ("usr/doc/\\*/$_", "usr/share/doc/\\*/$_") }
+  @changelog_filenames;
 
   my @changelog_filenames_nodebian = @changelog_filenames;
 
