@@ -354,6 +354,9 @@ class frontend:
     def display_output(self,text):
         self._display_output(self._render(text))
 
+    def _display_output(self,text):
+        pass
+
     def _render(self,text):
         return text
 

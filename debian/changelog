@@ -1,3 +1,9 @@
+apt-listchanges (2.42) unstable; urgency=low
+
+  * Fix the mail frontend, broken in 2.40 (Closes: #205925)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 17 Aug 2003 12:04:01 -0400
+
 apt-listchanges (2.41) unstable; urgency=low
 
   * Don't print headers for packages where there are no changes to display
