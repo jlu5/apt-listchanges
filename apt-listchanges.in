@@ -84,8 +84,13 @@ my %status;
 # Hash of array refs mapping source to binary packages
 my %binary_packages;
 
-# A separate hash of source packages used to avoid duplicates
+# A separate hash of source packages used to avoid duplicates, updated
+# when we find changelogs to display for a package
 my %processed;
+
+# The number of packages we've successfully examined (even if we
+# didn't find anything to display)
+my $valid = 0;
 
 # Numeric urgency values for sorting.  Unknown urgencies get sorted to
 # the top (equivalent to 'high'), since there is no fixed list of
@@ -143,23 +148,18 @@ foreach my $deb (@debs) {
   # Bail if things don't look right
   unless ($pkg) {
     $errors .= "apt-listchanges: " .
-	sprintf(gettext("Unable to determine package name for %s"), $deb)
+	sprintf(gettext("Unable to determine package name for file %s"), $deb)
 	    . "\n";
     next;
   }
   unless ($version) {
     $errors .= "apt-listchanges: " .
-	sprintf(gettext("Unable to determine version for %s"), $deb)
+	sprintf(gettext("Unable to determine version for file %s"), $deb)
 	    . "\n";
     next;
   }
-  unless ($sourcepackage) {
-    $errors .= "apt-listchanges: " .
-	sprintf(gettext("Unable to determine source package name for %s"),
-		$deb)
-	    . "\n";
-    next;
-  }
+
+  ++$valid;
 
   # Skip if the package is not installed
   if (!$show_all && !$oldversion) {
@@ -270,7 +270,7 @@ foreach my $deb (@debs) {
 
 }
 
-if (keys(%processed) == 0) {
+if ($valid == 0) {
   # If we didn't find any valid packages, give the user a hint
   die "@PACKAGE@: didn't find any valid .deb archives\n$usage";
 }
