@@ -1,0 +1,72 @@
+# german po-file for apt-listchanges
+# Copyright (C) 2002 Free Software Foundation
+# Morten Brix Pedersen <morten@wtf.dk>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges 2.3\n"
+"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
+"PO-Revision-Date: 2002-02-01 15:28+0100\n"
+"Last-Translator: Morten Brix Pedersen <morten@wtf.dk>\n"
+"Language-Team: n/a\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+
+#: ../apt-listchanges:109
+msgid "%s: will be newly installed"
+msgstr "%s: vil blive installeret som ny"
+
+#: ../apt-listchanges:121
+msgid "%s: Version %s has already been seen"
+msgstr "%s: Version %s er allerede blevet set"
+
+#: ../apt-listchanges:147
+msgid "Changes for %s"
+msgstr "Ændringer for %s"
+
+#: ../apt-listchanges:156
+msgid "Informational notes"
+msgstr "Informationer"
+
+#: ../apt-listchanges:177
+msgid "didn't find any valid .deb archives"
+msgstr "fandt ikke noget validt .deb arkiv"
+
+#: ../apt_listchanges.py:184
+msgid ""
+"Wrong or missing VERSION from apt pipeline\n"
+"(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
+msgstr ""
+"Forkert eller manglende VERSION fra apt's kommunikations linje\n"
+"(er Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version sat til 2?)\n"
+
+#: ../apt_listchanges.py:225
+msgid "Mailing changelogs to %s"
+msgstr "Sender ændringsfiler til %s"
+
+#: ../apt_listchanges.py:228
+msgid "apt-listchanges output for %s"
+msgstr "apt-listchanges uddata for %s"
+
+#: ../apt_listchanges.py:239
+msgid "The newt frontend is deprecated, using pager"
+msgstr "Newt grænsefladen er uddateret, bruger pager"
+
+#: ../apt_listchanges.py:266
+msgid "Do you want to continue? [Y/n]? "
+msgstr "Vil du fortsætte? [Y/n]? "
+
+#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
+#: ../apt_listchanges.py:306
+msgid "Reading changelogs"
+msgstr "Læser ændringsfiler"
+
+#: ../apt_listchanges.py:306
+msgid "Done"
+msgstr "Færdig"
+
+#: ../apt_listchanges.py:343
+msgid "%s exited with status %d"
+msgstr "%s afsluttede med status %d"
