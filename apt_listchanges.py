@@ -235,12 +235,12 @@ def make_frontend(name, packages):
     frontends = { 'text' : text,
                   'pager' : pager,
                   'mail' : mail,
-                  'w3m' : w3m,
+                  'browser' : browser,
                   'xterm-pager' : xterm_pager,
-                  'xterm-w3m' : xterm_w3m }
+                  'xterm-browser' : xterm_browser }
     
-    if name == 'newt':
-        sys.stderr.write(_("The newt frontend is deprecated, using pager"))
+    if name in ('newt','w3m','xterm-w3m'):
+        sys.stderr.write((_("The %s frontend is deprecated, using pager") + '\n') % name)
         name = 'pager'
         
     if not frontends.has_key(name):
@@ -363,7 +363,7 @@ class xterm_pager(xterm):
     pipecommand = 'sensible-pager'
 
 class html:
-    bug_re = re.compile('(?P<linktext>#(?P<bugnum>\d+))(?P<trailing>(?:[\),]|$))', re.IGNORECASE)
+    bug_re = re.compile('(?P<linktext>#(?P<bugnum>[1-9]\d+))', re.IGNORECASE)
     # regxlib.com
     email_re = re.compile(r'([a-zA-Z0-9_\-\.]+)@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)')
 
@@ -382,7 +382,7 @@ class html:
                 '<', '&lt;').replace(
                 '>','&gt;')
             line = re.sub(self.bug_re,
-                          r'<a href="http://bugs.debian.org/\g<bugnum>">\g<linktext></a>\g<trailing>',
+                          r'<a href="http://bugs.debian.org/\g<bugnum>">\g<linktext></a>',
                           line)
             line = re.sub(self.email_re,
                           r'<a href="mailto:\g<0>">\g<0></a>',
@@ -401,14 +401,14 @@ class html:
         # any browser
         pass
 
-class w3m(pager,html):
-    pager = 'w3m -T text/html'
+class browser(pager,html):
+    pager = '/usr/lib/apt-listchanges/browser-pipe'
 
     def display_output(self,text):
         pager.display_output(self,self.htmlify(text))
 
-class xterm_w3m(html,xterm_pager):
-    pipecommand = 'w3m -T text/html'
+class xterm_browser(html,xterm_pager):
+    pipecommand = '/usr/lib/apt-listchanges/browser-pipe'
 
     def display_output(self,text):
         xterm.display_output(self,self.htmlify(text))
