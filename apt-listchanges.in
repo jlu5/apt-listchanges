@@ -527,10 +527,12 @@ sub frontend_init {
 
   $frontends{'mail'} = {
 
-    'init' => $config{'quiet'} ? $frontends{text}->{update_progress} :
-	$frontends{pager}->{update_progress},
+    'init' => $config{'quiet'} ? $frontends{text}->{init} :
+	$frontends{pager}->{init},
 
-    'update_progress' => $frontends{pager}->{update_progress},
+    'update_progress' => $config{'quiet'} ?
+	$frontends{text}->{update_progress}
+    : $frontends{pager}->{update_progress},
 
     'display_output' => sub {
       my ($this, $output) = @_;
