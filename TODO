@@ -3,7 +3,8 @@
   (this means making a second pass over either the .debs or the
   changelog output)
 
-- Hierarchical display for the newt frontend (wishlist bug #76500)
+- Hierarchical display for the newt frontend, allowing expansion and
+  collapse at the package level (wishlist bug #76500)
 
 - Accept (lists of) source packages as well as binary packages
 
@@ -18,3 +19,10 @@
   re-wrap the text on-the-fly?
 
 - Find a decent text menu frontend to supersede newt.  Try Term::Stool.
+
+- Implement a nice, frontend-independent way to ask the user "Should I
+  continue with the upgrade?" after or during changelog display, like
+  the newt frontend currently does.
+
+- Implement a way for the user to have changelogs mailed to them in
+  addition to another method of display (wishlist bug #78448)
