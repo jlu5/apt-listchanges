@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 1.54\n"
+"Project-Id-Version: apt-listchanges 2.4\n"
 "POT-Creation-Date: Sat Jan 19 17:07:43 2002\n"
 "PO-Revision-Date: 2002-01-22 13:57+0200\n"
 "Last-Translator: Jeronimo Pellegrini <pellegrini@mpcnet.com.br>\n"
@@ -18,7 +18,6 @@ msgid "%s: will be newly installed"
 msgstr "%s: será instalado pela primera vez"
 
 #: ../apt-listchanges:117
-#, fuzzy
 msgid "%s: Version %s has already been seen"
 msgstr "%s: A versão %s já foi vista"
 
@@ -39,21 +38,18 @@ msgid "%s exited with signal %s"
 msgstr "%s terminou com sinal %s"
 
 #: ../apt_listchanges.py:196
-#, fuzzy
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
-"VERSION proveniente do pipeline apt está errada ou inexistente"
-"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version está setado para 2?)"
+"VERSION proveniente do pipeline apt está errada ou inexistente\n"
+"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version está setado para 2?)\n"
 
 #: ../apt_listchanges.py:237
-#, fuzzy
 msgid "Mailing changelogs to %s"
 msgstr "Enviando changelogs para %s"
 
 #: ../apt_listchanges.py:240
-#, fuzzy
 msgid "apt-listchanges output for %s"
 msgstr "Resultado do apt-listchanges para %s"
 
@@ -62,7 +58,6 @@ msgid "The newt frontend is deprecated, using pager"
 msgstr "O frontend newt está obsoleto, usarei pager"
 
 #: ../apt_listchanges.py:281
-#, fuzzy
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Quer continuar? [Y/n]"
 
