@@ -1,3 +1,10 @@
+apt-listchanges (2.38) unstable; urgency=low
+
+  * Add Spanish man page from Ruben Porras <nahoo82@telefonica.net>
+    (Closes: #195445)
+
+ --
+
 apt-listchanges (2.37) unstable; urgency=low
 
   * Fix urgency sorting (forgot to commit this for 2.36)
