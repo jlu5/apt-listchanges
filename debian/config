@@ -6,7 +6,22 @@
 db_input medium apt-listchanges/frontend || true
 db_input low apt-listchanges/save-seen || true
 db_input low apt-listchanges/email-address || true
-db_input low apt-listchanges/which || true
+
+which_priority=low
+if [ "$1" = "configure" ]; then
+    if dpkg --compare-versions "$2" le 2.51; then
+        # Question was added in 2.51, but re-ask for users who
+        # upgraded to that version, because we're about to override
+        # their choice
+        db_fset apt-listchanges/which seen false
+        which_priority=high
+
+        # Preserve behaviour for users upgrading from older versions
+        db_set apt-listchanges/which both
+    fi
+fi
+
+db_input $which_priority apt-listchanges/which || true
 db_go
 
 db_get apt-listchanges/frontend

@@ -3,8 +3,12 @@ apt-listchanges (2.52) unstable; urgency=low
   * Danish translation of debconf templates from Claus Hindsgaul <claus_h@image.dk>
     (Closes: #239201)
   * Update description to reflect news capabilities (Closes: #240786)
+  * When upgrading from 2.51 or earlier, seed the apt-listchanges/which
+    debconf question to "both", rather than the new default of "news", so
+    that users upgrading from older versions get the old default, while
+    new users get the new default
 
- --
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 29 Mar 2004 10:00:23 -0800
 
 apt-listchanges (2.51) unstable; urgency=low
 
