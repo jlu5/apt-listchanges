@@ -20,7 +20,8 @@ Description: How should changelogs be displayed when apt-listchanges is run by a
  .
  pager - Use your preferred pager
  .
- newt  - Use a terminal graphics interface, using text-mode windows
+ newt - Use a terminal graphics interface, using text-mode windows
+ (you will need to install libnewt-perl to use this)
  .
  text  - Print changelogs to your terminal (without pausing)
  .
