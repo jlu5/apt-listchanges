@@ -24,8 +24,9 @@ Type: string
 Default: root
 Description: To whom should apt-listchanges mail changelog entries?
  apt-listchanges can email a copy of displayed changelogs.  To what
- email address should they be sent?  Specify "none" if no email should
- be sent.
+ email address should they be sent?
+ .
+ Leave this empty if you do not want any email to be sent.
 
 Template: apt-listchanges/confirm
 Type: boolean
@@ -36,8 +37,8 @@ Description: Should apt-listchanges prompt for confirmation after displaying cha
  This is useful when running from apt, as it gives you a chance to
  abort the upgrade if you see a change you do not want to apply (yet).
  .
- This setting only applies when running from apt.  Otherwise, it can be
- requested with a command line option.
+ This setting does not apply to the 'mail' or 'none' frontends, and can
+ be overridden with a command line option.
 
 Template: apt-listchanges/overwrite_etc_apt_listchanges_conf
 Type: boolean
