@@ -1,7 +1,7 @@
 Template: apt-listchanges/frontend
 Type: select
-Choices: pager, xterm-pager, text, mail, none
-Choices-ca: paginador, paginador-xterm, texte, correu, cap
+Choices: pager, browser, xterm-pager, xterm-browser, text, mail, none
+Choices-ca: paginador, navegador, paginador-xterm, text, correu, cap
 Default: pager
 Description: How should changelogs be displayed with apt?
  apt-listchanges can display changelog entries in a number of different
@@ -9,7 +9,11 @@ Description: How should changelogs be displayed with apt?
  .
  pager - Use your preferred pager
  .
- xterm-pager - Use your preferred pager in an xterm in the background
+ browser - Display HTML-formatted changelogs using a web browser
+ .
+ xterm-pager - Like pager, but in an xterm in the background
+ .
+ xterm-browser - Like browser, but in an xterm in the background
  .
  text  - Print changelogs to your terminal (without pausing)
  .
@@ -20,23 +24,25 @@ Description: How should changelogs be displayed with apt?
  This setting can be overridden by a command-line option or an environment
  variable.  Note that you can still send a copy via mail with all of the
  frontends except 'none'.
-Description-ca: Com s'haurien de mostrar els changelogs per defecte?
+Description-ca: Com s'haurien de mostrar els changelogs amb apt?
  apt-listchanges pot mostrar les entrades dels changelogs de diferents
  maneres.
  .
  paginador - Utilitza el vostre paginador preferit
  .
+ navegador - Mostra els changelogs en format HTML usant un navegador web
+ .
  paginador-xterm - Utilitza el vostre paginador preferit en una xterm
  .
- texte  - Imprimeix els canvis al terminal (sense fer cap pausa)
+ text  - Imprimeix els canvis al terminal (sense fer cap pausa)
  .
  correu - Només enviar els changelogs per correu
  .
  cap - no executar automàticament des de apt
  .
- Aquesta configuració es pot canviar amb una opció de la línia de comandes o
- una variable d'entorn. Teniu en compte que encara podeu enviar una copia per
- correu amb totes les interfícies excepte amb "cap".
+ Aquesta configuració es pot canviar amb una opció de la línia de
+ comandaments o una variable d'entorn. Teniu en compte que encara podeu
+ enviar una còpia per correu amb totes les interfícies excepte amb "cap".
 
 Template: apt-listchanges/email-address
 Type: string
@@ -77,7 +83,7 @@ Default: true
 Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
  apt-listchanges can configure all of the options in
  /etc/apt/listchanges.conf by asking you questions.  This file is read and
- processed every time apt-listchanges is run, and is used to set defaults. 
+ processed every time apt-listchanges is run, and is used to set defaults.
  All of the options can be overridden on the command line.
  .
  If you want to edit /etc/apt/listchanges.conf manually for whatever
