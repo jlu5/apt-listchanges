@@ -47,8 +47,12 @@ all: $(PACKAGE).pot $(MOFILES)
 # have been downloaded.
 
 $(PACKAGE).pot: $(POTFILES)
-	$(XGETTEXT) --default-domain=$(PACKAGE) \
-		--keyword=_ $(POTFILES)
+	if test -f $(XGETTEXT); then \
+		$(XGETTEXT) --default-domain=$(PACKAGE) \
+			--keyword=_ $(POTFILES); \
+	else \
+		touch $@; \
+	fi
 
 install: all
 	for file in $(MOFILES); do \
