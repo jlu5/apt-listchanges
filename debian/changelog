@@ -1,3 +1,14 @@
+apt-listchanges (1.44) unstable; urgency=low
+
+  * Added Galician translation of debconf templates, thanks to Jacobo
+    Tarrio <jtarrio@iname.com>
+  * Updated Galician translation of message catalog, thanks to Jacobo
+    Tarrio <jtarrio@iname.com>
+  * Give a more sensible error message if the user specifies something
+    other than .deb archives on the command line (Closes: #92058)
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 29 Mar 2001 03:29:15 -0500
+
 apt-listchanges (1.43) unstable; urgency=low
 
   * Added --version and --help options (Closes: #90929)
