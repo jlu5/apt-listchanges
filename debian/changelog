@@ -6,8 +6,11 @@ apt-listchanges (1.5) unstable; urgency=low
   * Use only one piece of whitespace to indent the debconf template
     description (Closes: #77157)
   * Updated TODO list
+  * Strip entire path from .deb pathnames for the progress display, not
+    just /var/cache/apt/archives.  This accounts for systems accessing a
+    local mirror via apt (Closes: #77158)
 
- -- Matt Zimmerman <mdz@debian.org>  Wed, 15 Nov 2000 23:35:23 -0500
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 15 Nov 2000 23:46:33 -0500
 
 apt-listchanges (1.4) unstable; urgency=low
 
