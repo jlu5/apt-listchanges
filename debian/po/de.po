@@ -27,7 +27,6 @@ msgstr ""
 #. Type: select
 #. Choices
 #: ../templates:3
-#, fuzzy
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 msgstr "pager, browser, xterm-pager, xterm-browser, text, mail, gar nicht"
 
@@ -40,7 +39,6 @@ msgstr "Wie sollen die Änderungen standardmäßig angezeigt werden?"
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid ""
 "apt-listchanges can display changelog entries in a number of different ways."
 msgstr ""
@@ -50,21 +48,18 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "pager - Use your preferred pager"
 msgstr "pager - Den Pager verwenden"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "browser - Display HTML-formatted changelogs using a web browser"
-msgstr "browser - Den Konsolen-Browser (z.B. lynx) verwenden"
+msgstr "browser - HTML-formatierte changelogs mittels eines Webbrowsers ansehen"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "xterm-pager - Like pager, but in an xterm in the background"
 msgstr ""
 "xterm-pager - Den Pager in einem xterm Fenster im Hintergrund verwenden"
@@ -72,7 +67,6 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "xterm-browser - Like browser, but in an xterm in the background"
 msgstr ""
 "xterm-browser - Den Konsolen-Browser (z.B. lynx) in einem xterm Fenster im "
@@ -81,35 +75,31 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "text  - Print changelogs to your terminal (without pausing)"
 msgstr "text  - Die Changelogs aufs Terminal ausgeben. (ohne Unterbrechung)"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "mail  - Only send changelogs via mail"
 msgstr "mail  - Sende die Changelogs nur als Mail"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "none  - Do not run automatically from apt"
 msgstr "garnicht - Nicht automatisch von apt aufrufen."
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid ""
 "This setting can be overridden by a command-line option or an environment "
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
 "Diese Einstellung kann mit einer Kommandozeilenoption oder einer "
-"Environmentvariablen umgangen werden. Beachten Sie, daß sie auf jedenfall "
+"Umgebungsvariablen umgangen werden. Beachten Sie, daß sie auf jedenfall "
 "eine Kopie per Mail bekommen können, mit Ausnahme der Option »garnicht«."
 
 #. Type: string
@@ -122,7 +112,7 @@ msgstr "root"
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changelog entries?"
-msgstr ""
+msgstr "An wen soll apt-listchanges changelog-Einträge senden?"
 
 #. Type: string
 #. Description
@@ -131,6 +121,8 @@ msgid ""
 "apt-listchanges can email a copy of displayed changelogs.  To what email "
 "address should they be sent?"
 msgstr ""
+"apt-listchanges kann eine Kopie der angezeigten changelogs versenden.  An "
+"welche Adresse sollen sie gesendet werden?"
 
 #. Type: string
 #. Description
@@ -139,6 +131,8 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
+"Mehrere Adresse können angegeben - durch Kommata getrennt, angegeben werden. "
+"Lassen sie dies frei, wenn Sie keinen Mailversand wünschen."
 
 #. Type: boolean
 #. Description

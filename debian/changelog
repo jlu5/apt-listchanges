@@ -2,6 +2,8 @@ apt-listchanges (2.55) unstable; urgency=low
 
   * Corrected Danish translation of debconf templates from Claus Hindsgaul
     <claus_h@image.dk>
+  * Updated German translation of debconf templates from Florian Ernst <florian@uni-hd.de>
+    (Closes: #244132)
 
  --
 
