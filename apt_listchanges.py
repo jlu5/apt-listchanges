@@ -12,6 +12,7 @@ import gettext
 import email.Message
 import email.Header
 import locale
+import cStringIO
 from socket import gethostname
 
 # TODO:
@@ -392,14 +393,14 @@ class html:
     email_re = re.compile(r'([a-zA-Z0-9_\-\.]+)@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)')
 
     def htmlify(self,text):
-        htmltext = '''<html>
+        htmltext = cStringIO.StringIO('''<html>
         <head>
         <title>apt-listchanges output</title>
         </head>
 
         <body>
         <pre>
-'''
+''')
         for line in text.split('\n'):
             line = line.replace(
                 '&', '&amp;').replace(
@@ -411,14 +412,14 @@ class html:
             line = re.sub(self.email_re,
                           r'<a href="mailto:\g<0>">\g<0></a>',
                           line)
-            htmltext += line + '\n'
-        htmltext += '''</body>
+            htmltext.write(line + '\n')
+        htmltext.write('''</body>
         </pre>
-'''
+''')
 
         # With python 2.2...
         #super(html,self).display_output(htmltext)
-        return htmltext
+        return htmltext.getvalue()
 
     def display_output(self,text):
         # One day, this will create a temporary file to allow use with
