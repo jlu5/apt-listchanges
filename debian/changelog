@@ -1,3 +1,11 @@
+apt-listchanges (1.6) unstable; urgency=low
+
+  * Remember to remove ourselves from apt.conf if we are reconfigured
+    using dpkg-reconfigure
+  * Resize ourselves properly (Closes: #77236)
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 16 Nov 2000 18:12:31 -0500
+
 apt-listchanges (1.5) unstable; urgency=low
 
   * Fixed a bug that would read the wrong changelog for Debian
