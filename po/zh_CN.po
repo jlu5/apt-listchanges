@@ -1,0 +1,73 @@
+# Simplified Chinese translation to apt-listchanges
+# Carlos Z.F. Liu <carlos_liu@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges\n"
+"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
+"PO-Revision-Date: 2004-02-03 05:53+1300\n"
+"Last-Translator: Carlos Z.F. Liu <carlos_liu@yahoo.com>\n"
+"Language-Team: Chinese/Simplified <i18n-translation@lists.linux.net.cn>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+
+
+#: ../apt-listchanges:109
+msgid "%s: will be newly installed"
+msgstr "%s：将被全新安装"
+
+#: ../apt-listchanges:121
+msgid "%s: Version %s has already been seen"
+msgstr "%s：%s 版已经被看过了"
+
+#: ../apt-listchanges:147
+msgid "Changes for %s"
+msgstr "%s 的变更"
+
+#: ../apt-listchanges:156
+msgid "Informational notes"
+msgstr "信息备忘"
+
+#: ../apt-listchanges:177
+msgid "didn't find any valid .deb archives"
+msgstr "没有找到任何有效的 .deb 档案"
+
+#: ../apt_listchanges.py:184
+msgid ""
+"Wrong or missing VERSION from apt pipeline\n"
+"(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
+msgstr ""
+"从 apt 传送来的信息缺少版本号或者存在错误的版本号\n"
+"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version 被设为 2 了吗？)\n"
+
+#: ../apt_listchanges.py:225
+msgid "Mailing changelogs to %s"
+msgstr "将变更记录(changelogs)邮寄给 %s"
+
+#: ../apt_listchanges.py:228
+msgid "apt-listchanges output for %s"
+msgstr "%s 的 apt-listchanges 输出"
+
+#: ../apt_listchanges.py:239
+msgid "The newt frontend is deprecated, using pager"
+msgstr "newt 界面已被废除，改用分页器"
+
+#: ../apt_listchanges.py:266
+msgid "Do you want to continue? [Y/n]? "
+msgstr "您想继续吗？[Y/n]？"
+
+#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
+#: ../apt_listchanges.py:306
+msgid "Reading changelogs"
+msgstr "读取变更记录(changelogs)"
+
+#: ../apt_listchanges.py:306
+msgid "Done"
+msgstr "完成"
+
+#: ../apt_listchanges.py:343
+msgid "%s exited with status %d"
+msgstr "%s 以状态 %d 退出"
+

@@ -6,8 +6,11 @@ apt-listchanges (2.46) unstable; urgency=low
     update it and am too lazy to make it automatic
   * Updated Finnish translation of debconf templates from Tommi
     Vainikainen <thv+debian@iki.fi> (Closes: #226851)
+  * Simplified Chinese translation of debconf templates and message
+    catalog from "Carlos Z.F. Liu" <carlos_liu@yahoo.com>
+    (Closes: #230814)
 
- --
+ -- Matt Zimmerman <mdz@debian.org>  Wed,  4 Feb 2004 21:31:12 -0800
 
 apt-listchanges (2.45) unstable; urgency=low
 
