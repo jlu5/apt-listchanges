@@ -6,7 +6,7 @@ apt-listchanges (1.11) unstable; urgency=low
     frontend, but I'll have to find another way.  Once again, this
     hopefully Closes: #77421.
   * The patch to order changelog entries by urgency slipped out of 1.10.
-    The functionality should be there now.
+    The functionality should be there now (Closes: #77420)
 
  -- Matt Zimmerman <mdz@debian.org>  Mon, 20 Nov 2000 19:58:12 -0500
 
