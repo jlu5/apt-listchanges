@@ -1,4 +1,4 @@
-# translation of apt-listchanges_2.51-da.po to Danish
+# translation of apt-listchanges debconf-po templates to Danish
 #
 #    Translators, if you are not familiar with the PO format, gettext
 #    documentation is worth reading, especially sections dedicated to
@@ -13,34 +13,35 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges_2.51-da\n"
+"Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-02-26 23:01-0800\n"
-"PO-Revision-Date: 2004-03-21 15:12+0100\n"
+"PO-Revision-Date: 2004-04-06 10:34+0200\n"
 "Last-Translator: Claus Hindsgaul <claus_h@image.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. Type: select
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr "tekstviser, netsÃ¸ger, xterm-tekstviser, xterm-netsÃ¸ger, tekst, post, ingen"
+msgstr "tekstviser, netsøger, xterm-tekstviser, xterm-netsøger, tekst, post, ingen"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "How should changelogs be displayed with apt?"
-msgstr "Hvordan skal Ã¦ndringsloggen (changelogs) vises med apt?"
+msgstr "Hvordan skal ændringsloggen (changelogs) vises med apt?"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "apt-listchanges can display changelog entries in a number of different ways."
-msgstr "apt-listchanges kan vise dele af Ã¦ndringslogger pÃ¥ flere forskellige mÃ¥der."
+msgstr "apt-listchanges kan vise dele af ændringslogger på flere forskellige måder."
 
 #. Type: select
 #. Description
@@ -52,7 +53,7 @@ msgstr "tekstviser - Brug din foretrukne tekstviser ('pager')"
 #. Description
 #: ../templates:5
 msgid "browser - Display HTML-formatted changelogs using a web browser"
-msgstr "netsÃ¸ger - Vis HTML-formaterede Ã¦ndringslogger med en netsÃ¸ger"
+msgstr "netsøger - Vis HTML-formaterede ændringslogger med en netsøger"
 
 #. Type: select
 #. Description
@@ -64,25 +65,25 @@ msgstr "xterm-tekstviser - Som tekstviser, men i en xterm-terminal i baggrunden"
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "xterm-netsÃ¸ger - Som netsÃ¸ger, men i en xterm-terminal i baggrunden"
+msgstr "xterm-netsøger - Som netsøger, men i en xterm-terminal i baggrunden"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "text  - Print changelogs to your terminal (without pausing)"
-msgstr "tekst  - Skriv Ã¦ndringsloggen til din terminal (uden pauser)"
+msgstr "tekst  - Skriv ændringsloggen til din terminal (uden pauser)"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changelogs via mail"
-msgstr "post  - Send kun Ã¦ndringsloggen via e-post"
+msgstr "post  - Send kun ændringsloggen via e-post"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
-msgstr "ingen - KÃ¸r ikke automatisk fra apt"
+msgstr "ingen - Kør ikke automatisk fra apt"
 
 #. Type: select
 #. Description
@@ -92,8 +93,8 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Denne indstilling kan tilsidesÃ¦ttes med et kommandolinje-tilvalg eller en "
-"miljÃ¸variabel. BemÃ¦rk at du stadig kan sende en kopi via e-post til alle "
+"Denne indstilling kan tilsidesættes med et kommandolinje-tilvalg eller en "
+"miljøvariabel. Bemærk at du stadig kan sende en kopi via e-post til alle "
 "metoderne, undtagen 'ingen'."
 
 #. Type: string
@@ -115,7 +116,7 @@ msgid ""
 "apt-listchanges can email a copy of displayed changelogs.  To what email "
 "address should they be sent?"
 msgstr ""
-"apt-listchanges kan sende en kopi af de viste Ã¦ndringslogs. Hvilken "
+"apt-listchanges kan sende en kopi af de viste ændringslogs. Hvilken "
 "e-postadresse skal de sendes til?"
 
 #. Type: string
@@ -125,14 +126,14 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Der kan angives flere adresser adskilt af komma. Lad feltet stÃ¥ tomt, hvis du "
+"Der kan angives flere adresser adskilt af komma. Lad feltet stå tomt, hvis du "
 "ikke vil have at der sendes nogen breve."
 
 #. Type: boolean
 #. Description
 #: ../templates:40
 msgid "Should apt-listchanges prompt for confirmation after displaying changelogs?"
-msgstr "Skal apt-listchanges bede om bekrÃ¦ftelse efter visning af Ã¦ndringsloggen?"
+msgstr "Skal apt-listchanges bede om bekræftelse efter visning af ændringsloggen?"
 
 #. Type: boolean
 #. Description
@@ -143,9 +144,9 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"NÃ¥r apt-listchanges har vist dig Ã¦ndringsloggen, kan den spÃ¸rge om du vil "
-"fortsÃ¦tte. Dette er nyttigt, nÃ¥r den kÃ¸res fra apt, da det giver dig mulighed "
-"for at afbryde opgraderingen hvis du opdager en Ã¦ndring, du ikke Ã¸nsker (endnu)."
+"Når apt-listchanges har vist dig ændringsloggen, kan den spørge om du vil "
+"fortsætte. Dette er nyttigt, når den køres fra apt, da det giver dig mulighed "
+"for at afbryde opgraderingen hvis du opdager en ændring, du ikke ønsker (endnu)."
 
 #. Type: boolean
 #. Description
@@ -154,16 +155,16 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Denne indstilling gÃ¦lder ikke metoderne \"post\" og \"ingen\", og kan "
-"omgÃ¥s med et kommandolinjetilvalg."
+"Denne indstilling gælder ikke metoderne \"post\" og \"ingen\", og kan "
+"omgås med et kommandolinjetilvalg."
 
 #. Type: boolean
 #. Description
 #: ../templates:52
 msgid "Should apt-listchanges skip changelogs that have already been seen?"
 msgstr ""
-"Skal apt-listchanges springe de Ã¦ndringslogger over, der er blevet vist "
-"fÃ¸r?"
+"Skal apt-listchanges springe de ændringslogger over, der er blevet vist "
+"før?"
 
 #. Type: boolean
 #. Description
@@ -173,7 +174,7 @@ msgid ""
 "have already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges kan holde styr pÃ¥ hvilke Ã¦ndringslogger, der allerede "
-"er blevet vist og springe dem over ved senere kÃ¸rsler. Dette er nyttigt "
-"hvis du f.eks. gentager et forsÃ¸g pÃ¥ at opgradere."
+"apt-listchanges kan holde styr på hvilke ændringslogger, der allerede "
+"er blevet vist og springe dem over ved senere kørsler. Dette er nyttigt "
+"hvis du f.eks. gentager et forsøg på at opgradere."
 
