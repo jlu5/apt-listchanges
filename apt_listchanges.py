@@ -128,10 +128,7 @@ class Config:
                     if option in ('confirm','run','show_all','headers','verbose'):
                         value = self.parser.getboolean(self.mode,option)
                     else:
-                        if value == 'none':
-                            value = None
-                        else:
-                            value = self.parser.get(self.mode,option)
+                        value = self.parser.get(self.mode,option)
                 setattr(self, option, value)
 
     def getopt(self,argv):
@@ -177,6 +174,11 @@ class Config:
                 self.save_seen = arg
             elif opt == '--debug':
                 self.debug = 1
+
+        if self.email_address == 'none':
+            self.email_address = None
+        if self.save_seen == 'none':
+            self.save_seen = None
 
         return args
 
