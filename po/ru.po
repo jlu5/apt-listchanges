@@ -1,0 +1,185 @@
+# translation of apt-listchanges_2.42.po to russian
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges_2.42\n"
+"POT-Creation-Date: 2002-11-17 00:23-0500\n"
+"PO-Revision-Date: 2003-10-05 15:35+0600\n"
+"Last-Translator: Ilgiz Kalmetev <translator@ilgiz.pp.ru>\n"
+"Language-Team: russian <debian-russian@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=KOI8-R\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+
+#. Choices
+#: ../templates:3
+msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+msgstr "просмотрщик, браузер, xterm-просмотрщик, xterm-браузер, текст, по почте, не отображать"
+
+#. Description
+#: ../templates:5
+msgid "How should changelogs be displayed with apt?"
+msgstr "Каким образом apt должен отображать журналы изменений?"
+
+#. Description
+#: ../templates:5
+msgid "apt-listchanges can display changelog entries in a number of different ways."
+msgstr "apt-listchanges может отображать записи журнала изменений несколькими способами."
+
+#. Description
+#: ../templates:5
+msgid "pager - Use your preferred pager"
+msgstr "просмотрщик - предпочитаемый Вами просмотрщик"
+
+#. Description
+#: ../templates:5
+msgid "browser - Display HTML-formatted changelogs using a web browser"
+msgstr ""
+"браузер - отображать журналы изменений, отформатированные в HTML, с "
+"помощью веб-браузера"
+
+#. Description
+#: ../templates:5
+msgid "xterm-pager - Like pager, but in an xterm in the background"
+msgstr "xterm-просмотрщик - Аналогично просто просмотрщику, но в окне xterm"
+
+#. Description
+#: ../templates:5
+msgid "xterm-browser - Like browser, but in an xterm in the background"
+msgstr "xterm-браузер - Аналогично просто браузеру, но в окне xterm"
+
+#. Description
+#: ../templates:5
+msgid "text  - Print changelogs to your terminal (without pausing)"
+msgstr "текст - Выводить журналы изменений на экран Вашего терминала (без пауз)"
+
+#. Description
+#: ../templates:5
+msgid "mail  - Only send changelogs via mail"
+msgstr "по почте - только отправлять журналы изменений по почте"
+
+#. Description
+#: ../templates:5
+msgid "none  - Do not run automatically from apt"
+msgstr "не отображать - не запускать из apt автоматически"
+
+#. Description
+#: ../templates:5
+msgid ""
+"This setting can be overridden by a command-line option or an environment "
+"variable.  Note that you can still send a copy via mail with all of the "
+"frontends except 'none'."
+msgstr ""
+"Эта установка может быть перекрыта опцией командной строки или "
+"переменной окружения. Обратите внимание, что Вы по прежнему будете "
+"получать копию по почте при любых способах отображения, кроме \"не отображать\"."
+
+#. Default
+#: ../templates:29
+msgid "root"
+msgstr "root"
+
+#. Description
+#: ../templates:30
+msgid "To whom should apt-listchanges mail changelog entries?"
+msgstr "Кому apt-listchanges должен отправлять записи журнала изменений?"
+
+#. Description
+#: ../templates:30
+msgid ""
+"apt-listchanges can email a copy of displayed changelogs.  To what email "
+"address should they be sent?"
+msgstr ""
+"apt-listchanges может отправлять копию отображаемых журналов изменений "
+"по электронной почте. Кому должна быть адресована эта почта?"
+
+#. Description
+#: ../templates:30
+msgid "Leave this empty if you do not want any email to be sent."
+msgstr "Оставьте поле пустым, если вообще не хотите отправлять почту."
+
+#. Description
+#: ../templates:39
+msgid "Should apt-listchanges prompt for confirmation after displaying changelogs?"
+msgstr ""
+"Должен ли apt-listchanges выдавать ожидать подтверждения после "
+"отображения журнала изменений?"
+
+#. Description
+#: ../templates:39
+msgid ""
+"After giving you a chance to display changelog entries, apt-listchanges can "
+"ask whether or not you would like to continue. This is useful when running "
+"from apt, as it gives you a chance to abort the upgrade if you see a change "
+"you do not want to apply (yet)."
+msgstr ""
+"После отображения журнала изменений apt-listchanges может спросить "
+"нужно ли продолжать или нет. Это полезно при запуске из apt, так как "
+"позволяет прервать обновление пакета, если Вы увидите, что в пакете "
+"произошли (пока) не устраивающие Вас изменения."
+
+#. Description
+#: ../templates:39
+msgid ""
+"This setting does not apply to the 'mail' or 'none' frontends, and can be "
+"overridden with a command line option."
+msgstr ""
+"Эта опция не применима при использовании етодов отображения \"по почте\" и "
+"\"не отображать\", и может быть перекрыта опцией командной строки."
+
+#. Description
+#: ../templates:51
+msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
+msgstr "Должен ли apt-listchanges перезаписывать Ваш файл /etc/apt/listchanges.conf?"
+
+#. Description
+#: ../templates:51
+msgid ""
+"apt-listchanges can configure all of the options in /etc/apt/listchanges."
+"conf by asking you questions.  This file is read and processed every time "
+"apt-listchanges is run, and is used to set defaults.  All of the options can "
+"be overridden on the command line."
+msgstr ""
+"apt-listchanges может настроить все опции в файле /etc/apt/listchanges.conf, "
+"задавая Вам вопросы. Этот файл читается и обрабатывается при каждом "
+"запуске apt-listchanges и используется для установки умолчаний. Все "
+"параметры могут быть переопределены в командной строке."
+
+#. Description
+#: ../templates:51
+msgid ""
+"If you want to edit /etc/apt/listchanges.conf manually for whatever reason, "
+"answer \"no\" now."
+msgstr ""
+"Если по какой-то причине Вы хотите отредактировать файл /etc/apt/listchanges.conf "
+"вручную, ответьте сейчас \"нет\"."
+
+#. Description
+#: ../templates:63
+msgid "Should apt-listchanges skip changelogs that have already been seen?"
+msgstr ""
+"Должен ли apt-listchanges пропускать журналы изменений, которые уже "
+"просматривались?"
+
+#. Description
+#: ../templates:63
+msgid ""
+"apt-listchanges has the capability to keep track of which changelog entries "
+"have already been displayed, and to skip them in future invocations. This is "
+"useful, for example, when retrying an upgrade."
+msgstr ""
+"apt-listchanges имеет возможность отслеживать, какие строки журнала изменений "
+"он уже показывал, и пропускать их в будущем. Это полезно, например, при "
+"обновлениях пакетов."
+

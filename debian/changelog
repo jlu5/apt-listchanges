@@ -7,6 +7,8 @@ apt-listchanges (2.43) unstable; urgency=low
     Zapalowski <bartek@klepisko.eu.org> (Closes: #208956)
   * Fix --which option to actually work, and to match the documentation
     (Closes: #215369)
+  * Russian translation of gettext catalog from Ilgiz Kalmetev <translator@ilgiz.pp.ru>
+    (Closes: #214383)
 
  --
 
