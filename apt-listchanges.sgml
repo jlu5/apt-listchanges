@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.20 2002-04-09 04:07:34 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.21 2002-05-24 02:32:28 mdz Exp $
 -->
 
 <refentry>
@@ -20,7 +20,7 @@
       <firstname>Matt</firstname>
       <surname>Zimmerman</surname>
     </author>
-    <date>2000-09-13</date>
+    <date>2002-05-23</date>
   </docinfo>
   <refmeta>
     <refentrytitle>apt-listchanges</refentrytitle>
@@ -163,11 +163,22 @@
 	    </VARLISTENTRY>
 
 	    <VARLISTENTRY>
+	      <TERM>mail</TERM>
+	      <LISTITEM>
+		<PARA>
+                  Sends mail to the address specified with
+                  --email-address, and does not display changelogs.
+		</PARA>
+	      </LISTITEM>
+	    </VARLISTENTRY>
+
+	    <VARLISTENTRY>
 	      <TERM>none</TERM>
 	      <LISTITEM>
 		<PARA>
-		  Does nothing.  Primarily for use with the
-		  --email-address option.
+		  Does nothing.  Can be used to prevent
+		  apt-listchanges from running when configured to run
+		  automatically from apt.
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
@@ -181,7 +192,7 @@
 	  <PARA>
             In addition to displaying it, mail a copy of the changelog
             data to the specified address.  To only mail changelog
-            entries, use this option with the special frontend 'none'.
+            entries, use this option with the special frontend 'mail'.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
