@@ -1,3 +1,10 @@
+apt-listchanges (1.55) unstable; urgency=low
+
+  * Add fallback from xterm-pager to pager (Closes: #107211)
+  * Fallback from pager->text, not pager->mail (what was I thinking?)
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed,  1 Aug 2001 15:34:32 -0400
+
 apt-listchanges (1.54) unstable; urgency=low
 
   * Fix various harmless Perl warnings (Closes: #106047)
@@ -526,6 +533,4 @@ debchanges (0.9) unstable; urgency=low
 
  -- Matt Zimmerman <mdz@csh.rit.edu>  Wed, 13 Sep 2000 21:11:29 -0400
 
-Local variables:
-mode: debian-changelog
-End:
+

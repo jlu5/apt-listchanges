@@ -1,3 +1,5 @@
+- Clean up the frontend bit to use real perloop
+
 - Accept (lists of) source packages as well as binary packages
 
 - Accept (lists of) package names, and retrieve changelogs from
