@@ -478,8 +478,8 @@ sub frontend_init {
 
       if (!open(TEMPFILE, ">$tempfile")) {
 	warn "apt-listchanges: "
-	    . sprintf(gettext("Unable to open temporary file %s: $!"),
-		      $tempfile) . "\n";
+	    . sprintf(gettext("Unable to open temporary file %s: %s"),
+		      $tempfile, $!) . "\n";
 	return undef;
       }
 
