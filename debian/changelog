@@ -1,3 +1,10 @@
+apt-listchanges (2.49) unstable; urgency=low
+
+  * Remove ugly ucf/debconf workaround, use ucf --debconf-ok and depend on
+    ucf >= 0.28 (Closes: #237181)
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 10 Mar 2004 08:16:41 -0800
+
 apt-listchanges (2.48) unstable; urgency=low
 
   * Updated pt_BR debconf translations from Andre Luis Lopes <andrelop@debian.org>
