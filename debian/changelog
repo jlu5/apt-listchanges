@@ -1,3 +1,9 @@
+apt-listchanges (2.58) unstable; urgency=low
+
+  * Correctly treat the quiet value from apt as an integer (Closes: #284982)
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 10 Jan 2005 18:03:00 -0800
+
 apt-listchanges (2.57) unstable; urgency=low
 
   * Fix typo in French translation of continuation prompt (Closes: #259465)

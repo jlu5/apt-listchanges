@@ -293,7 +293,7 @@ def read_apt_pipeline(config):
         (option, value) = aptconfig.rstrip().split('=', 1)
         
         if option == 'quiet':
-            config.quiet = value
+            config.quiet = int(value)
 
     filenames = {}
     order = []
