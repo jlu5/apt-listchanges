@@ -15,10 +15,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2002-11-17 00:23-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2003-02-06 01:05+0100\n"
+"PO-Revision-Date: 2003-02-06 01:07+0100\n"
+"Last-Translator: Denis Barbier <barbier@linuxfr.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -94,7 +94,7 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Ce réglage peut-être changé par une option en ligne de commande ou une "
+"Ce réglage peut être changé par une option en ligne de commande ou une "
 "variable d'environnement. Notez que vous pouvez toujours envoyer une copie "
 "par courrier électronique avec tous ces formats excepté « aucun »."
 
@@ -119,18 +119,22 @@ msgstr ""
 
 #. Description
 #: ../templates:30
-msgid "Leave this empty if you do not want any email to be sent."
+msgid ""
+"Multiple addresses may be specified, delimited by commas.  Leave this empty "
+"if you do not want any email to be sent."
 msgstr ""
-"Laissez l'emplacement vide si vous ne voulez pas qu'un message soit envoyé."
+"Plusieurs adresses peuvent être utilisées, elles doivent être séparées par "
+"des virgules. Laissez ce champ vide si vous ne souhaitez pas recevoir de "
+"courriel."
 
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changelogs?"
 msgstr "Demande de confirmation après affichage des changements ?"
 
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "After giving you a chance to display changelog entries, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
@@ -144,7 +148,7 @@ msgstr ""
 "pas faire (ou pas tout de suite)."
 
 #. Description
-#: ../templates:39
+#: ../templates:40
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
@@ -153,12 +157,12 @@ msgstr ""
 "peut être remplacé par une option en ligne de commande."
 
 #. Description
-#: ../templates:51
+#: ../templates:52
 msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 msgstr "Gérer /etc/apt/listchanges.conf avec debconf ?"
 
 #. Description
-#: ../templates:51
+#: ../templates:52
 msgid ""
 "apt-listchanges can configure all of the options in /etc/apt/listchanges."
 "conf by asking you questions.  This file is read and processed every time "
@@ -171,7 +175,7 @@ msgstr ""
 "Toutes les options peuvent être imposées par la ligne de commande."
 
 #. Description
-#: ../templates:51
+#: ../templates:52
 msgid ""
 "If you want to edit /etc/apt/listchanges.conf manually for whatever reason, "
 "answer \"no\" now."
@@ -180,12 +184,12 @@ msgstr ""
 "(pour quelque raison que ce soit), répondez « no » à la question."
 
 #. Description
-#: ../templates:63
+#: ../templates:64
 msgid "Should apt-listchanges skip changelogs that have already been seen?"
 msgstr "Ignorer les changements déjà affichés ?"
 
 #. Description
-#: ../templates:63
+#: ../templates:64
 msgid ""
 "apt-listchanges has the capability to keep track of which changelog entries "
 "have already been displayed, and to skip them in future invocations. This is "
