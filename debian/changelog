@@ -2,7 +2,7 @@ apt-listchanges (1.5) unstable; urgency=low
 
   * Fixed a bug that would read the wrong changelog for Debian
     native packages (notably dpkg) which have both a changelog.gz and
-    changelog.Debian.gz)
+    changelog.Debian.gz.
 
  -- Matt Zimmerman <mdz@debian.org>  Tue, 14 Nov 2000 18:54:02 -0500
 
