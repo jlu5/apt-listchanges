@@ -39,7 +39,7 @@ if [ "$RET" = "true" ]; then
     if ! grep -q apt-listchanges /etc/apt/apt.conf; then
 	cat <<EOF >> /etc/apt/apt.conf
 // apt-listchanges: Display changelogs for packages before they are installed.
-Dpkg::Pre-Install-Pkgs { "/usr/bin/apt-listchanges --apt"; }; // apt-listchanges
+Dpkg::Pre-Install-Pkgs { "/usr/bin/apt-listchanges --apt"; };
 EOF
     fi
 
