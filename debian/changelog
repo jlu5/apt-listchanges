@@ -1,3 +1,10 @@
+apt-listchanges (2.21) unstable; urgency=low
+
+  * Fix a bug which caused an ugly error when running on a .deb which was
+    not installed, instead of just skipping it (Closes: #148348)
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 29 May 2002 22:41:09 -0400
+
 apt-listchanges (2.20) unstable; urgency=low
 
   * Properly document use of the mail frontend (Closes: #147896)
