@@ -1,3 +1,15 @@
+apt-listchanges (1.11) unstable; urgency=low
+
+  * Always ignore the return value of the pager program...it's too
+    unpredictable to use for making a decision.  I would like for the user
+    to have some way to tell apt-listchanges to abort when using the pager
+    frontend, but I'll have to find another way.  Once again, this
+    hopefully Closes: #77421.
+  * The patch to order changelog entries by urgency slipped out of 1.10.
+    The functionality should be there now.
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 20 Nov 2000 19:58:12 -0500
+
 apt-listchanges (1.10) unstable; urgency=low
 
   * Order changelog entries by urgency (Closes: #77420)
