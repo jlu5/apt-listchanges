@@ -101,6 +101,7 @@ foreach my $deb (@debs) {
   my ($pkg, $version, $oldversion, $sourcepackage) =
       get_package_info($deb, \%status);
 
+  # Bail if things don't look right
   unless ($pkg) {
     $errors .= "apt-listchanges: Unable to determine package name for $deb\n";
     next;
@@ -605,12 +606,16 @@ sub get_package_info {
 
   $source ||= $pkg;
 
-  # Look up installed version of $pkg
+  # Look up installed version of $pkg, using the source package
+  # version if different
   my $oldversion = $$status{$pkg}{Version};
-
-  # Check for different source package version
-  if ($source =~ /\((.*)\)/) {
+  if ($$status{$pkg}{Source} =~ /\((.*)\)/) {
     $oldversion = $1;
+  }
+
+  # Check for different source package version for the deb
+  if ($source =~ /\((.*)\)/) {
+    $version = $1;
     $source =~ s/\s*\(.*\)//;
   }
 
@@ -632,6 +637,7 @@ sub read_status {
   while (<STATUS>) {
     /^Package: (.*)$/o && do { $pkg = $1 };
     /^Version: (.*)$/o && do { $$status{$pkg}{Version} = $1 };
+    /^Source: (.*)$/o && do  { $$status{$pkg}{Source} = $1; }
   }
   close(STATUS);
 }
