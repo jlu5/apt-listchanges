@@ -435,14 +435,13 @@ class xterm(ttyconfirm,fancyprogress):
         # Fork immediately so that we can get on with installation
         pid = os.fork()
         if pid == 0:
-            (read,write) = os.pipe()
             pid = os.fork()
             if pid == 0:
-                os.close(write)
-                os.execlp('x-terminal-emulator',
-                          'x-terminal-emulator','-title','apt-listchanges',
-                          '-e','sh','-c','%s <&%d' % (self.pipecommand,read))
-                sys.exit(1)
+                tmp = tempfile.NamedTemporaryFile(prefix='apt-listchanges')
+                os.spawnlp(os.P_WAIT, 'x-terminal-emulator',
+                           'x-terminal-emulator','-T','apt-listchanges',
+                           '-e','sh','-c','%s %s' % (self.pipecommand,tmp))
+                sys.exit(0)
             else:
                 os.close(read)
                 try:
@@ -502,13 +501,13 @@ class html:
         pass
 
 class browser(pager,html):
-    pager = '/usr/share/apt-listchanges/browser-pipe'
+    pager = 'sensible-browser'
 
     def display_output(self,text):
         pager.display_output(self,self.htmlify(text))
 
 class xterm_browser(html,xterm_pager):
-    pipecommand = '/usr/share/apt-listchanges/browser-pipe'
+    pipecommand = 'sensible-browser'
 
     def display_output(self,text):
         xterm.display_output(self,self.htmlify(text))

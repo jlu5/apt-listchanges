@@ -6,8 +6,15 @@ apt-listchanges (2.40) unstable; urgency=low
     <cobaco@linux.be> (Closes: #204700)
   * Updated Spanish man page from cvs.d.o/manpages/spanish
     (Closes: #203763)
+  * Python 2.3 now provides secure temporary files with names.  This means
+    that we don't need to do any more pipe tricks to pass things into
+    xterm, and we can get rid of the browser-pipe script.  Depends: python
+    (>= 2.3)
+    - This also happens to fix some problems with non-xterm terminal
+      emulators such as rxvt, which closed our pipe fd on use
+      (Closes: #205323)
 
- --
+ -- Matt Zimmerman <mdz@debian.org>  Fri, 15 Aug 2003 21:41:02 -0400
 
 apt-listchanges (2.39) unstable; urgency=low
 

@@ -15,8 +15,6 @@ install: all
 	install -d $(DESTDIR)/usr/share/man/man1 $(DESTDIR)/usr/share/man/es/man1
 	install -m 644 apt-listchanges.1 $(DESTDIR)/usr/share/man/man1
 	install -m 644 apt-listchanges.es.1 $(DESTDIR)/usr/share/man/es/man1/apt-listchanges.1
-	install -d $(DESTDIR)/usr/share/apt-listchanges
-	install -m 755 browser-pipe $(DESTDIR)/usr/share/apt-listchanges
 	$(MAKE) -C po install
 
 clean:
