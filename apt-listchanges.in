@@ -49,13 +49,15 @@ my $show_all = 0;
 my $apt_mode_run = $config{'apt-mode-run'} ?
     $config{'apt-mode-run'} eq 'yes' : 0;
 my $confirm;
+my $show_headers = 0;
 
 GetOptions("apt" => \$apt_mode,
 	   "verbose|v" => \$verbose,
 	   "frontend|f=s" => \$frontend_opt,
 	   "email-address=s" => \$email_address,
 	   "confirm|c!" => \$confirm,
-	   "all|a" => \$show_all) || die;
+	   "all|a" => \$show_all,
+	   "headers|h" => \$show_headers) || die;
 
 if ($apt_mode) {
   exit 0 unless $apt_mode_run;
@@ -255,20 +257,22 @@ foreach my $deb (@debs) {
 }
 
 # Prepend binary package info
-foreach my $pkg (keys %changes) {
-  my @binary_packages = @{$binary_packages{$pkg}};
-  my $binary_text;
-
-  if (@binary_packages == 1 && $binary_packages[0] eq $pkg) {
-    $binary_text = "";
-  } else {
-    $binary_text = "(@binary_packages) ";
+if ($show_headers) {
+  foreach my $pkg (keys %changes) {
+    my @binary_packages = @{$binary_packages{$pkg}};
+    my $binary_text;
+    
+    if (@binary_packages == 1 && $binary_packages[0] eq $pkg) {
+      $binary_text = "";
+    } else {
+      $binary_text = "(@binary_packages) ";
+    }
+    
+    $changes{$pkg} = "--- " .
+	sprintf(gettext("Changes for %s"), $pkg)
+	    . " $binary_text ---\n"
+		. $changes{$pkg};
   }
-
-  $changes{$pkg} = "--- " .
-      sprintf(gettext("Changes for %s"), $pkg)
-	  . " $binary_text ---\n"
-      . $changes{$pkg};
 }
 
 my @packages_by_urgency = sort { $urgency{$a} <=> $urgency{$b} } keys %changes;
