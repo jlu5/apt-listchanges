@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# Try to find a browser which accepts input from a pipe, otherwise
+# write a temp file and exec any old browser
+
+if test -n "$APT_LISTCHANGES_BROWSER_PIPE"; then
+    BROWSER_PIPE="$APT_LISTCHANGES_BROWSER_PIPE"
+elif test -n "$APT_LISTCHANGES_BROWSER"; then
+    BROWSER="$APT_LISTCHANGES_BROWSER"
+elif test -z "$BROWSER"; then
+    if type w3m >/dev/null 2>&1; then
+        BROWSER_PIPE="w3m -T text/html"
+    elif type lynx >/dev/null 2>&1; then
+        BROWSER_PIPE="lynx -force_html -stdin"
+    else
+        for BROWSER in links mozilla galeon konqueror; do
+            if type $BROWSER >/dev/null 2>&1; then
+                break
+            fi
+        done
+    fi
+fi
+
+if test -n "$BROWSER_PIPE"; then
+    exec $BROWSER_PIPE
+elif test -n "$BROWSER"; then
+    if ! type tempfile >/dev/null 2>&1; then
+        >&2 echo "apt-listchanges: browser requires a temporary file, install debianutils"
+        exit 1
+    fi
+
+    TEMPFILE=`tempfile -s .html`
+    cat > $TEMPFILE
+    $BROWSER file:$TEMPFILE
+    printf "Press enter to continue..." >/dev/tty
+    read junk </dev/tty
+    rm -f $TEMPFILE
+else
+    >&2 echo "apt-listchanges: browser-pipe: Unable to find a browser (see apt-listchanges(1))"
+    exit 1
+fi
