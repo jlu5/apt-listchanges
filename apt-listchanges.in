@@ -123,13 +123,11 @@ my $notes = "";
 
 my @debs = read_deb_filenames($apt_mode, \%status);
 
-if ($save_seen) {
-  tie %seen, 'DB_File', "/var/lib/apt/listchanges.db";
-}
-
 # We have to read all data from the pipeline before exiting, or apt
 # will complain
 exit 0 if ($apt_mode && !$apt_mode_run) || ($frontend_opt eq 'none');
+
+tie %seen, 'DB_File', "/var/lib/apt/listchanges.db" if $save_seen;  
 
 # If apt is in quiet mode, we should make ourselves loggable too
 if ($config{'quiet'} && $frontend_opt ne 'mail') {
@@ -521,7 +519,17 @@ sub frontend_init {
   };
 
   $frontends{'xterm-pager'} = {
-    'init' => $frontends{pager}->{init},
+    'init' => sub {
+      my ($this) = @_;
+
+      $| = 1;
+
+      if (!defined $ENV{DISPLAY}) {
+	warn "apt-listchanges: " .
+	    gettext("DISPLAY environment variable must be set to use xterm-pager frontend")
+		. "\n";
+	return undef;
+      }
 
     'update_progress' => $frontends{pager}->{init},
 
@@ -634,10 +642,12 @@ EOT
     # Initialization failed, fall back
     my $new_frontend;
     
-    if ($frontend eq $frontends{'newt'}) {
+    if ($frontend eq $frontends{'xterm-pager'}) {
+      $new_frontend = 'pager';
+    } elsif ($frontend eq $frontends{'newt'}) {
       $new_frontend = 'pager';
     } elsif ($frontend eq $frontends{'pager'}) {
-      $new_frontend = 'mail';
+      $new_frontend = 'text';
     } elsif ($frontend eq $frontends{'mail'}) {
       $new_frontend = 'text';
     } elsif ($frontend eq $frontends{'text'}) {
