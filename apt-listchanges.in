@@ -129,7 +129,7 @@ my $notes;
 my @debs = read_deb_filenames($apt_mode, \%status);
 
 if ($save_seen eq 'yes') {
-  tie %seen, 'DB_File', "listchanges.db";
+  tie %seen, 'DB_File', "/var/lib/apt/listchanges.db";
 }
 
 # We have to read all data from the pipeline before exiting, or apt
