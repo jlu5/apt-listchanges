@@ -323,15 +323,19 @@ class fancyprogress(frontend):
     def __init__(self,packages):
         apply(frontend.__init__, (self,packages))
         self.progress = 0
+        self.line_length = 0
     
     def update_progress(self):
         self.progress += 1
-        sys.stdout.write(_("Reading changelogs") + "... %d%%\r" %
-                         (self.progress * 100 / self.packages))
+        line = _("Reading changelogs") + "... %d%%" % (self.progress * 100 / self.packages)
+        self.line_length = len(line)
+        sys.stdout.write(line + '\r')
         sys.stdout.flush()
 
     def progress_done(self):
+        sys.stdout.write(' ' * self.line_length + '\r')
         sys.stdout.write(_("Reading changelogs") + "... " + _("Done") + "\n")
+        sys.stdout.flush()
 
 class pager(ttyconfirm,fancyprogress):
     pager = 'sensible-pager'
