@@ -3,9 +3,9 @@ apt-listchanges (1.35) unstable; urgency=low
   * Added Galician translation of message catalogs, thanks to Jacobo
     Tarrio <jtarrio@iname.com>
   * Modify apt.conf snippet to sanitize the exit code, so we don't cause
-    apt to abort unless we really want to.
+    apt to abort unless we really want to. (Closes: #88784)
   
- -- Matt Zimmerman <mdz@debian.org>  Sat, 10 Mar 2001 00:01:12 -0500
+ -- Matt Zimmerman <mdz@alcor.net>  Sat, 10 Mar 2001 00:05:08 -0500
 
 apt-listchanges (1.34) unstable; urgency=low
 
