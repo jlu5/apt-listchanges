@@ -70,7 +70,8 @@ class Package:
 
         news = None
         for filename in news_filenames:
-            news = self.read_changelog(filename, since_version)
+            news = self.read_changelog(os.path.join(tempdir,filename),
+                                       since_version)
             if news:
                 break
 
@@ -112,6 +113,7 @@ class Package:
         if len(filenames) > 1:
             raise RuntimeError("More than one file matched pattern '%s'" % filename)
         if len(filenames) < 1:
+            print "Nope: " + filename
             return None
 
         filename = filenames[0]
@@ -128,7 +130,7 @@ class Package:
         changes = ''
         for line in f.readlines():
             if since_version:
-                match = changelog_header.match(line)
+                match = self.changelog_header.match(line)
                 if match:
                     if apt_pkg.VersionCompare(match.group('version'),
                                              since_version) > 0:
