@@ -274,13 +274,15 @@ class ttyconfirm:
 
 class simpleprogress:
     def __init__(self,packages):
-        sys.stderr.write(_("Reading changelogs") + "...")
+        # XXX Should omit progress indication entirely if stdout not a
+        # terminal
+        sys.stderr.write(_("Reading changelogs") + "...\n")
 
     def update_progress(self):
         pass
 
     def progress_done(self):
-        sys.stderr.write('\n')
+        pass
 
 class mail(frontend,simpleprogress):
     def __init__(self,packages):
@@ -300,12 +302,12 @@ class fancyprogress(frontend):
     
     def update_progress(self):
         self.progress += 1
-        sys.stdout.write(_("Reading changelogs") + "...%d%%\r" %
+        sys.stdout.write(_("Reading changelogs") + "... %d%%\r" %
                          (self.progress * 100 / self.packages))
         sys.stdout.flush()
 
     def progress_done(self):
-        sys.stdout.write(_("Reading changelogs") + "..." + _("Done") + "\n")
+        sys.stdout.write(_("Reading changelogs") + "... " + _("Done") + "\n")
 
 class pager(ttyconfirm,fancyprogress):
     def __init__(self,packages):
