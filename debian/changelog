@@ -1,3 +1,14 @@
+apt-listchanges (2.37) unstable; urgency=low
+
+  * Fix urgency sorting (forgot to commit this for 2.36)
+  * Fix a few small buglets (--which option and headers mode) from 2.36's
+    reorg, spotted by Joe Drew
+  * Add a bit about NEWS.Debian to the man page, courtesy of Joe Drew
+  * Update man page to reflect /usr/share/doc as the standard location for
+    the changelog
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon,  7 Jul 2003 19:12:02 -0400
+
 apt-listchanges (2.36) unstable; urgency=low
 
   * Refactor lots of code, with many tangible benefits
