@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.4\n"
 "POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
-"PO-Revision-Date: 2002-02-03 12:45+0100\n"
-"Last-Translator: Jordi Mallach <jordi@debian.org>\n"
+"PO-Revision-Date: 2002-05-20 20:16+0100\n"
+"Last-Translator: David Martínez <ender@debian.org>\n"
 "Language-Team: Debian Spanish Team <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
@@ -23,7 +23,7 @@ msgstr "%s: La versión %s ya se ha visualizado"
 
 #: ../apt-listchanges:147
 msgid "Changes for %s"
-msgstr "Cambios para %s"
+msgstr "Cambios de %s"
 
 #: ../apt-listchanges:156
 msgid "Informational notes"
@@ -39,7 +39,7 @@ msgid ""
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 "VERSION errónea o inexistente desde la tubería de apt\n"
-"(¿está Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version a 2?)\n"
+"(¿Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version vale 2?)\n"
 
 #: ../apt_listchanges.py:225
 msgid "Mailing changelogs to %s"
@@ -55,7 +55,7 @@ msgstr "La interfaz newt está obsoleta, usando el paginador"
 
 #: ../apt_listchanges.py:266
 msgid "Do you want to continue? [Y/n]? "
-msgstr "Quieres continuar? [Y/n] "
+msgstr "¿Quiere continuar? [Y/n] "
 
 #: ../apt_listchanges.py:275 ../apt_listchanges.py:301
 #: ../apt_listchanges.py:306
@@ -64,7 +64,7 @@ msgstr "Leyendo bitácoras"
 
 #: ../apt_listchanges.py:306
 msgid "Done"
-msgstr "Hecho"
+msgstr "Hecho."
 
 #: ../apt_listchanges.py:343
 msgid "%s exited with status %d"
@@ -74,7 +74,7 @@ msgstr "%s ha salido con el estado %d"
 #~ msgstr "%s ha salido con la señal %s"
 
 #~ msgid "Must specify either --apt or filenames to process!"
-#~ msgstr "¡Tienes que especificar --apt o bien paquetes a procesar!"
+#~ msgstr "¡Tiene que especificar --apt o bien los paquetes a procesar!"
 
 #~ msgid "Unable to determine package name for file %s"
 #~ msgstr "No se puede determinar el nombre del paquete para el fichero %s"
@@ -89,16 +89,16 @@ msgstr "%s ha salido con el estado %d"
 #~ msgstr "%s: La versión %s es más antigua que la versión instalada (%s)"
 
 #~ msgid "Error output follows"
-#~ msgstr "La salida de error sigue"
+#~ msgstr "La salida de error es la siguiente"
 
 #~ msgid "In order to use the newt frontend, you must install libnewt-perl"
-#~ msgstr "Para usar el frontend de newt, necesitas instalar libnewt-perl"
+#~ msgstr "Para usar el frontend de newt, necesita instalar libnewt-perl"
 
 #~ msgid "Scanning packages..."
 #~ msgstr "Escaneando paquete..."
 
 #~ msgid "Displaying changelogs"
-#~ msgstr "Mostrando changelogs"
+#~ msgstr "Mostrando cambios"
 
 #~ msgid "Unable to open tty for confirmation, assuming yes"
 #~ msgstr "No se puede abrir la tty para pedir confirmación, asumiendo sí"
@@ -107,7 +107,7 @@ msgstr "%s ha salido con el estado %d"
 #~ msgstr "No se puede abrir archivo temporal %s: %s"
 
 #~ msgid "Changelogs mailed to %s"
-#~ msgstr "Changelogs enviados a %s"
+#~ msgstr "Cambios enviados a %s"
 
 #~ msgid "Wrong or missing VERSION from apt pipeline"
 #~ msgstr "VERSION errónea o inexistente proviniente de la tubería de apt"
