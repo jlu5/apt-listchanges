@@ -18,7 +18,6 @@ fi
 # If we are running from apt, check whether they want to be asked for
 # confirmation.
 db_get apt-listchanges/apt-hook-p
-echo "apt-listchanges/apt-hook-p: $RET"
 if [ "$RET" = "true" ]; then
   db_input medium apt-listchanges/confirm || true
 fi
