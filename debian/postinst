@@ -11,8 +11,7 @@ if [ "$action" = "configure" ]; then
     # Source debconf library.
     . /usr/share/debconf/confmodule
 
-    
-    echo "[apt]" >> $PREFERENCES.new
+    echo "[apt]" > $PREFERENCES.new
 
     db_get apt-listchanges/frontend
     echo "frontend=$RET" >> $PREFERENCES.new
