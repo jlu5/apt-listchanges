@@ -11,16 +11,16 @@ Description: Should apt-listchanges be automatically run by apt?
  I can perform this configuration for you if you like.  Since you can also
  run apt-listchanges manually on .deb archives, this step is optional.
 Description-ca: Deuria apt executar apt-listchanges automàticament?
- Una manera de utilitzar apt-listchanges és configurar apt per a que execute
- apt-listchanges sobre els paquets que s'han descarregat per ser
- instal·lats o actualitzats. D'aquesta manera, cada vegada que realitzeu una
- instal·lació o actualització fent servir apt, apt-listchanges mostrarà els
- canvis que estan a punt de tindre lloc en el vostre sistema.
+ Una manera de utilitzar apt-listchanges és configurar apt per a que
+ execute apt-listchanges sobre els paquets que s'han descarregat per ser
+ instal·lats o actualitzats. D'aquesta manera, cada vegada que realitzeu
+ una instal·lació o actualització fent servir apt, apt-listchanges mostrarà
+ els canvis que estan a punt de tindre lloc en el vostre sistema.
 
 Template: apt-listchanges/frontend
 Type: select
-Choices: pager, xterm-pager, newt, text, mail
-Choices-ca: paginador, paginador-xterm, newt, texte, correu
+Choices: pager, xterm-pager, text
+Choices-ca: paginador, paginador-xterm, texte
 Default: pager
 Description: How should changelogs be displayed by default?
  apt-listchanges can display changelog entries in a number of different
@@ -30,15 +30,11 @@ Description: How should changelogs be displayed by default?
  .
  xterm-pager - Use your preferred pager in an xterm in the background
  .
- newt - Use a terminal graphics interface, using text-mode windows (you
- will need to install libnewt-perl to use this)
- .
  text  - Print changelogs to your terminal (without pausing)
  .
- mail  - Send changelogs via email (you will be prompted for an address)
- .
- This setting can be overridden by a command-line option.
-Description-ca: Com es deurien mostrar els changelogs per defecte?
+ Choose 'none' if you only want to receive changelogs via email. This
+ setting can be overridden by a command-line option.
+Description-ca: Com s'haurien de mostrar els changelogs per defecte?
  apt-listchanges pot mostrar les entrades dels changelogs de diferents
  maneres.
  .
@@ -46,25 +42,22 @@ Description-ca: Com es deurien mostrar els changelogs per defecte?
  .
  paginador-xterm - Utilitza el vostre paginador preferit en una xterm
  .
- newt - Utilitza un interfaç gràfic per a terminals, per mitjà de finestres
- en mode texte (necessitareu instal·lar libnewt-perl per poder utilitzar açò)
- .
  texte - Imprimeix els canvis al terminal (sense fer pausa)
  .
- correu - Envia els canvis per correu (vos preguntaràn una adreça)
- .
- Aquesta configuració es pot canviar amb una opció de la línia de comandes.
+ Seleccioneu 'cap' si només voleu rebre els changelogs per correu. Aquesta
+ configuració es pot canviar amb una opció de la línia de comandes.
 
 Template: apt-listchanges/email-address
 Type: string
 Default: root
 Default-ca: root
 Description: To whom should apt-listchanges mail changelog entries?
- You have chosen to have changelog entries sent via email.  To what email
- address should they be sent?
-Description-ca: A qui deuria enviar apt-listchanges els changelogs?
- Heu triat rebre els canvis per correu electrònic. A quin mail deurien
- enviar-se?
+ apt-listchanges can email a copy of displayed changelogs.  To what email
+ address should they be sent?  Specify "none" if no email should be sent.
+Description-ca: A qui hauria d'enviar apt-listchanges els changelogs?
+ apt-listchanges pot enviar per correu una copia dels changelogs mostrats.
+ A quin mail deurien enviar-se? Especifiqueu "cap" si no s'hauria d'enviar
+ cap correu.
 
 Template: apt-listchanges/confirm
 Type: boolean
@@ -95,10 +88,11 @@ Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
  If you want to edit /etc/apt/listchanges.conf manually for whatever
  reason, answer "no" now.
 Description-ca: Deuria apt-listchanges sobrescriure /etc/apt/listchanges.conf?
- apt-listchanges pot configurar totes les opcions en /etc/apt/listchanges.conf
- fent unes preguntes. Aquest fitxer es llegit i processat cada vegada que
- apt-listchanges s'executa, i s'utilitza per establir valors per defecte.
- Totes les opcions poden ser canviades amb la línia de comandes.
+ apt-listchanges pot configurar totes les opcions en
+ /etc/apt/listchanges.conf fent unes preguntes. Aquest fitxer es llegit i
+ processat cada vegada que apt-listchanges s'executa, i s'utilitza per
+ establir valors per defecte. Totes les opcions poden ser canviades amb la
+ línia de comandes.
  .
  Si voleu editar /etc/apt/listchanges.conf manualment per alguna raó,
  contesteu "no" ara.
@@ -111,6 +105,6 @@ Description: Should apt-listchanges skip changelogs that have already been seen?
  have already been displayed, and to skip them in future invocations. This
  is useful, for example, when retrying an upgrade.
 Description-ca: Deuria apt-listchanges ignorar els canvis que ja s'han mostrat?
- apt-listchanges te la habilitat de fer un seguiment dels canvis que ja s'han
- mostrat anteriorment, i pot ignorar-los en futures invocacions. Açò és
- útil, per exemple, quan es re-intenta una actualització.
+ apt-listchanges te la habilitat de fer un seguiment dels canvis que ja
+ s'han mostrat anteriorment, i pot ignorar-los en futures invocacions. Açò
+ és útil, per exemple, quan es re-intenta una actualització.
