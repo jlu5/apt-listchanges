@@ -1,3 +1,13 @@
+apt-listchanges (1.42) unstable; urgency=low
+
+  * Added Finnish translation of message catalog, thanks to Jaakko
+    Kangasharju <ashar@iki.fi>
+  * Make urgency comparison case insensitive (to deal with urgency values
+    like HIGH, used by a recent xfree86 upload).  This caused "Use of
+    uninitialized value" warnings when such a value was encountered.
+
+ -- Matt Zimmerman <mdz@debian.org>  Tue, 20 Mar 2001 20:08:19 -0500
+
 apt-listchanges (1.41) unstable; urgency=low
 
   * Fixed an uninitialized value warning in the newt frontend
