@@ -32,6 +32,7 @@ clean:
 	rm -f build-stamp configure-stamp
 
 	rm -f *.py[co] *~
+	$(MAKE) clean
 
 	dh_clean
 
