@@ -11,8 +11,11 @@ apt-listchanges (2.36) unstable; urgency=low
   * Add 'which' option to specify whether news, changelogs or both should
     be displayed.  This is still very primitive and everything is
     concatenated together.
+  * Simplify urgency sorting
+  * Remove import from __future__ which is unnecessary now that we require
+    python 2.2 anyway
 
- --
+ -- Matt Zimmerman <mdz@debian.org>  Mon,  7 Jul 2003 01:31:03 -0400
 
 apt-listchanges (2.35) unstable; urgency=low
 
