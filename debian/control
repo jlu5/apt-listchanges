@@ -9,12 +9,11 @@ Package: apt-listchanges
 Architecture: all
 Depends: python (>= 2.3), apt (>= 0.5.3), python-apt, debconf, ucf (>= 0.28)
 Suggests: x-terminal-emulator, www-browser
-Description: Display new Debian changelog entries from .deb archives
+Description: Display change history from .deb archives
  apt-listchanges is a tool to show what has been changed in a new
  version of a Debian package, as compared to the version currently
  installed on the system.  It does this by extracting the relevant
- entries from the Debian changelog file, usually found in
- /usr/share/doc/package/changelog.Debian.gz
+ entries from the Debian changelog file, and the NEWS.Debian file.
  .
  It can be run on several .deb archives at a time to get a list of all
  of the changes that would be effected by installing or upgrading a
