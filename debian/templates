@@ -1,13 +1,17 @@
 Template: apt-listchanges/frontend
 Type: select
-Choices: pager, xterm-pager, text, mail, none
+Choices: pager, w3m, xterm-pager, xterm-w3m, text, mail, none
 Default: pager
 Description: How should changelogs be displayed with apt?
  apt-listchanges can display changelog entries in a number of different ways.
  .
  pager - Use your preferred pager
  .
- xterm-pager - Use your preferred pager in an xterm in the background
+ w3m - Display HTML-formatted changelogs using w3m
+ .
+ xterm-pager - Like pager, but in an xterm in the background
+ .
+ xterm-w3m - Like w3m, but in an xterm in the background
  .
  text  - Print changelogs to your terminal (without pausing)
  .
