@@ -12,8 +12,18 @@ if [ "$RET" = "true" ]; then
     db_input medium apt-listchanges/frontend || true
     db_input medium apt-listchanges/save-seen || true
     db_input medium apt-listchanges/email-address || true
-    db_input medium apt-listchanges/confirm || true
     db_go
+
+    db_get apt-listchanges/frontend
+    case "$RET" in
+        none|mail)
+            db_set apt-listchanges/confirm "true"
+            ;;
+        *)
+            db_input medium apt-listchanges/confirm || true
+            db_go
+            ;;
+    esac
 fi
 
 # Clean up questions we used to ask (1.14 and earlier)
