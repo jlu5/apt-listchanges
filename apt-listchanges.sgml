@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.18 2002-02-07 01:32:28 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.19 2002-04-04 04:41:40 mdz Exp $
 -->
 
 <refentry>
@@ -113,6 +113,17 @@
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
+
+            <varlistentry>
+              <term>w3m</term>
+              <listitem>
+                <para>
+                  Displays an HTML-formatted changelog using w3m, with
+                  hyperlinks for bugs and email addresses
+                </para>
+              </listitem>
+            </varlistentry>
+
 	    <VARLISTENTRY>
 	      <TERM>xterm-pager</TERM>
 	      <LISTITEM>
@@ -124,6 +135,16 @@
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
+
+            <varlistentry>
+              <term>xterm-w3m</term>
+              <listitem>
+                <para>
+                  The logical combination of xterm-pager and w3m
+                </para>
+              </listitem>
+            </varlistentry>
+
 	    <VARLISTENTRY>
 	      <TERM>text</TERM>
 	      <LISTITEM>
