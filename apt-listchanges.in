@@ -590,7 +590,7 @@ sub read_deb_filenames {
       }
     } else {
       warn "apt-listchanges: " . gettext("Wrong or missing VERSION from apt pipeline");
-      warn gettext("(is Dpkg::Tools::Options::<path>::Version set to 2?)") . "\n";
+      warn gettext("(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)") . "\n";
       exit 1;
     }
 
