@@ -109,7 +109,6 @@ class Config:
         self.verbose = 0
         self.quiet = 0
         self.show_all = 0
-        self.run = 1
         self.confirm = 0
         self.headers = 0
         self.debug = 0
@@ -130,6 +129,16 @@ class Config:
                     else:
                         value = self.parser.get(self.mode,option)
                 setattr(self, option, value)
+
+    def usage(self,exitcode):
+        if exitcode == 0:
+            fh = sys.stdout
+        else:
+            fh = sys.stderr
+            
+        fh.write("Usage: apt-listchanges [options] {--apt | filename.deb ...}\n")
+        sys.exit(exitcode)
+
 
     def getopt(self,argv):
         try:
@@ -153,8 +162,7 @@ class Config:
         # Override with command-line options
         for opt, arg in optlist:
             if opt == '--help':
-                usage()
-                sys.exit(0)
+                self.usage(0)
             if opt == '--version':
                 print "apt-listchanges version 2.0"
                 sys.exit(0)
@@ -236,6 +244,7 @@ def mail_changes(address, changes):
 def make_frontend(name, packages):
     frontends = { 'text' : text,
                   'pager' : pager,
+                  'mail' : mail,
                   'xterm-pager' : xterm_pager }
     
     if name == 'newt':
@@ -262,7 +271,7 @@ class frontend:
     def confirm(self):
         return 1
 
-class tty(frontend):
+class ttyconfirm(frontend):
     def __init__(self,packages):
         apply(frontend.__init__, (self,packages))
         
@@ -276,24 +285,31 @@ class tty(frontend):
             return 0
         return 1
 
-class text(tty):
+class simpleprogress(frontend):
     def __init__(self,packages):
-        apply(tty.__init__, (self,packages))
+        apply(frontend.__init__, (self,packages))
 
         sys.stderr.write(_("Reading changelogs") + "...")
 
     def progress_done(self):
         sys.stdout.write('\n')
 
+class mail(simpleprogress):
+    def __init__(self,packages):
+        apply(simpleprogress.__init__, (self,packages))
+
+class text(ttyconfirm,simpleprogress):
+    def __init__(self,packages):
+        apply(ttyconfirm.__init__, (self,packages))
+        apply(simpleprogress.__init__, (self,packages))
+
     def display_output(self,text):
         sys.stdout.write(text)
 
-class pager(tty):
+class fancyprogress(frontend):
     def __init__(self,packages):
-        apply(tty.__init__, (self,packages))
-
-        self.progress = 0
-
+        apply(frontend.__init__, (self,packages))
+    
     def update_progress(self):
         self.progress += 1
         sys.stdout.write(_("Reading changelogs") + "...%d%%\r" %
@@ -302,7 +318,14 @@ class pager(tty):
 
     def progress_done(self):
         sys.stdout.write(_("Reading changelogs") + "..." + _("Done") + "\n")
-            
+
+class pager(ttyconfirm,fancyprogress):
+    def __init__(self,packages):
+        apply(ttyconfirm.__init__, (self,packages))
+        apply(fancyprogress.__init__, (self,packages))
+
+        self.progress = 0
+
     def display_output(self, text):
         pipe = os.popen('sensible-pager', 'w')
         try:
@@ -312,7 +335,11 @@ class pager(tty):
             # Broken pipe is OK
             pass
 
-class xterm_pager(pager):
+class xterm_pager(ttyconfirm,fancyprogress):
+    def __init__(self,packages):
+        apply(ttyconfirm.__init__, (self,packages))
+        apply(fancyprogress.__init__, (self,packages))
+    
     def display_output(self,text):
         # Fork immediately so that we can get on with installation
         pid = os.fork()
