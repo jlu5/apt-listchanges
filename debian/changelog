@@ -1,3 +1,11 @@
+apt-listchanges (2.23) unstable; urgency=low
+
+  * Fix Polish translation of confirmation prompt (Closes: #153758)
+  * Add Japanese translation of message catalog, thanks to Junichi Uekawa
+    <dancer@netfort.gr.jp> (Closes: #161477)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 21 Sep 2002 19:14:34 -0400
+
 apt-listchanges (2.22) unstable; urgency=low
 
   * Fix confirmation prompt to be more conservative, and more like apt's
