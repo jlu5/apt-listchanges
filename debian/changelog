@@ -1,3 +1,9 @@
+apt-listchanges (1.22) unstable; urgency=low
+
+  * Handle apt-mode-confirm=no correctly (Closes: #81026)
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed,  3 Jan 2001 22:44:41 -0500
+
 apt-listchanges (1.21) unstable; urgency=low
 
   * Added xterm-pager frontend, which starts an xterm in the background to
