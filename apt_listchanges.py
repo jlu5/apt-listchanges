@@ -235,13 +235,12 @@ def mail_changes(address, changes):
     hostname = gethostname()
     message = email.Message.Message()
     subject = _("apt-listchanges output for %s") % hostname
-    try:
-        subject = email.Header.Header(subject,
-                                      locale.nl_langinfo(locale.CODESET))
-    except UnicodeError:
-        subject = email.Header.Header(subject, 'US-ASCII')
-    except LookupError:
-        subject = email.Header.Header(subject, 'UTF-8')
+# this way lies madness -mdz, 2003/06/29
+#     try:
+#         subject = email.Header.Header(subject,
+#                                       locale.nl_langinfo(locale.CODESET))
+#     except:
+#         subject = email.Header.Header(subject, 'UTF-8')
 
     message['Subject'] = subject
     message['To'] = address
