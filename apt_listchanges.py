@@ -1,5 +1,3 @@
-# This can go away with python 2.2
-from __future__ import nested_scopes
 import DebianControlParser
 import apt_pkg
 import ConfigParser
