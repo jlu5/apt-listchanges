@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.25 2003-08-26 03:40:48 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.26 2004-01-08 21:05:24 mdz Exp $
 -->
 
 <refentry>
@@ -245,15 +245,6 @@
 	<LISTITEM>
 	  <PARA>
 	    Displays syntax information.
-	  </PARA>
-	</LISTITEM>
-      </VARLISTENTRY>
-
-      <VARLISTENTRY>
-	<TERM><OPTION>--version</OPTION></TERM>
-	<LISTITEM>
-	  <PARA>
-	    Displays the version number.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>

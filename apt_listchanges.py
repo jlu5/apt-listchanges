@@ -171,7 +171,7 @@ class Changes:
 class Config:
     def __init__(self):
         # Defaults
-        self.frontend = 'pager'
+        self.frontend = None
         self.email_address = None
         self.verbose = False
         self.quiet = False
@@ -181,7 +181,7 @@ class Config:
         self.debug = False
         self.save_seen = None
         self.apt_mode = False
-        self.mode = 'cmdline'
+        self.profile = None
         self.which = 'both'
         self.allowed_which = ('both', 'news', 'changelogs')
 
@@ -190,14 +190,14 @@ class Config:
         self.parser.read(file)
 
     def expose(self):
-        if self.parser.has_section(self.mode):
-            for option in self.parser.options(self.mode):
+        if self.parser.has_section(self.profile):
+            for option in self.parser.options(self.profile):
                 value = None
-                if self.parser.has_option(self.mode,option):
+                if self.parser.has_option(self.profile,option):
                     if option in ('confirm','run','show_all','headers','verbose'):
-                        value = self.parser.getboolean(self.mode,option)
+                        value = self.parser.getboolean(self.profile,option)
                     else:
-                        value = self.parser.get(self.mode,option)
+                        value = self.parser.get(self.profile,option)
                 setattr(self, option, value)
 
     def usage(self,exitcode):
@@ -214,29 +214,34 @@ class Config:
         try:
             (optlist, args) = getopt.getopt(argv[1:], 'vf:s:cah', [
                 "apt", "verbose", "frontend=", "email-address=", "confirm",
-                "all", "headers", "save_seen=", "debug", "which=", "version", "help"])
+                "all", "headers", "save_seen=", "debug", "which=", "help",
+                "profile="])
         except getopt.GetoptError:
             return None
 
         # Determine mode before processing other options
         for opt, arg in optlist:
-            if opt == '--apt':
-                self.mode = 'apt'
+            if opt == '--profile':
+                self.profile = arg
+
+        # Provide a default profile if none has been specified
+        if self.profile is None:
+            if self.apt_mode:
+                self.profile = 'apt'
+            else:
+                self.profile = 'cmdline'
 
         # Expose defaults from config file
         self.expose()
 
-        # Override with environment variables
+        # Environment variables override config file
         self.frontend = os.getenv('APT_LISTCHANGES_FRONTEND', self.frontend)
 
-        # Override with command-line options
+        # Command-line options override environment and config file
         for opt, arg in optlist:
             if opt == '--help':
                 self.usage(0)
-            if opt == '--version':
-                print "apt-listchanges version 2.0"
-                sys.exit(0)
-            if opt in ('-v', '--verbose'):
+            elif opt in ('-v', '--verbose'):
                 self.verbose = 1
             elif opt in ('-f', '--frontend'):
                 self.frontend = arg
@@ -250,6 +255,8 @@ class Config:
                 self.headers = 1
             elif opt == '--save_seen':
                 self.save_seen = arg
+            elif opt == '--apt':
+                self.apt_mode = True
             elif opt == '--which':
                 if arg in self.allowed_which:
                     self.which = arg

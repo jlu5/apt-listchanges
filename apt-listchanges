@@ -43,12 +43,12 @@ config = apt_listchanges.Config()
 config.read('/etc/apt/listchanges.conf')
 debs = config.getopt(sys.argv)
 
-if (debs == None or len(debs) == 0) and config.mode != 'apt':
+if (debs == None or len(debs) == 0) and not config.apt_mode:
     config.usage(1);
 
 apt_pkg.InitSystem()
 
-if config.mode == 'apt':
+if config.apt_mode:
     debs = apt_listchanges.read_apt_pipeline(config)
 
 # If apt is in quiet (loggable) mode, we should make our output
@@ -193,7 +193,7 @@ if news or changes:
             seen[key] = value
         seen.close()
 
-elif config.mode != 'apt' and not source_packages.keys():
+elif not config.apt_mode and not source_packages.keys():
     sys.stderr.write("apt-listchanges: "
                      + _("didn't find any valid .deb archives") + "\n")
     sys.exit(1)
