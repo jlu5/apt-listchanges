@@ -1,0 +1,96 @@
+# Spanish po-file for apt-listchanges
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Jordi Mallach <jordi@debian.org>, 2001
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges 1.32\n"
+"POT-Creation-Date: 2001-02-13 00:10+0100\n"
+"PO-Revision-Date: 2001-02-13 00:15+0100\n"
+"Last-Translator: Jordi Mallach <jordi@debian.org>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apt-listchanges:95
+msgid "Must specify either --apt or filenames to process!"
+msgstr "Tienes que especificar --apt o bien paquetes a procesar!"
+
+#: apt-listchanges:118
+#, c-format
+msgid "Unable to determine package name for %s"
+msgstr "No se puede determinar el nombre del paquete en %s"
+
+#: apt-listchanges:124
+#, c-format
+msgid "Unable to determine version for %s"
+msgstr "No se puede determinar la versión en %s"
+
+#: apt-listchanges:130
+#, c-format
+msgid "Unable to determine source package name for %s"
+msgstr "No se puede determinar el nombre del paquete de fuentes en %s"
+
+#: apt-listchanges:139
+#, c-format
+msgid "%s: will be newly installed"
+msgstr "%s: se instalará por primera vez"
+
+#: apt-listchanges:149
+#, c-format
+msgid "%s: Version $version is already installed"
+msgstr "%s: La versión $version ya está instalada"
+
+#: apt-listchanges:160
+#, c-format
+msgid "%s: Version %s is older than installed version (%s)"
+msgstr "%s: La versión %s es más antigua que la versión instalada (%s)"
+
+#: apt-listchanges:239
+msgid "Error output follows"
+msgstr "La salida de error sigue"
+
+#: apt-listchanges:282
+msgid "In order to use the newt frontend, you must install libnewt-perl"
+msgstr "Para usar el frontend de newt, necesitas instalar libnewt-perl"
+
+#: apt-listchanges:295
+msgid "Reading changelogs"
+msgstr "Leyendo changelogs"
+
+#: apt-listchanges:300
+msgid "Scanning packages..."
+msgstr "Escaneando paquete..."
+
+#: apt-listchanges:329
+msgid "Displaying changelogs"
+msgstr "Mostrando changelogs"
+
+#: apt-listchanges:370
+#, c-format
+msgid "Reading changelogs...%s"
+msgstr "Leyendo changelogs...%s"
+
+#: apt-listchanges:371
+msgid "Done"
+msgstr "Hecho"
+
+#: apt-listchanges:399
+msgid "Unable to open tty for confirmation, assuming yes"
+msgstr "No se puede abrir la tty para pedir confirmación, asumiendo sí"
+
+#: apt-listchanges:408
+msgid "Do you want to continue [Y/n]? "
+msgstr "Quieres continuar? [Y/n]"
+
+#: apt-listchanges:435
+#, c-format
+msgid "Unable to open temporary file %s: $!"
+msgstr "No se puede abrir archivo temporal %s: $!"
+
+#: apt-listchanges:506
+#, c-format
+msgid "Changelogs mailed to %s"
+msgstr "Changelogs enviados a %s"
