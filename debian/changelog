@@ -1,3 +1,12 @@
+apt-listchanges (2.12) unstable; urgency=low
+
+  * Updated Spanish translation from David Martinez Moreno
+    <ender@debian.org>
+  * Skip the question about confirmation if the 'mail' or 'none' frontend
+    is chosen (Closes: #137241)
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu,  7 Mar 2002 22:04:35 -0500
+
 apt-listchanges (2.11) unstable; urgency=low
 
   * Skip packages which are being removed (Closes: #135166)
