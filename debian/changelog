@@ -10,6 +10,8 @@ apt-listchanges (2.43) unstable; urgency=low
   * Russian translation of gettext catalog from Ilgiz Kalmetev <translator@ilgiz.pp.ru>
     (Closes: #214383)
   * Update copyright years
+  * Updated Spanish translation of man page from Ruben Porras <nahoo82@telefonica.net>
+    (Closes: #218742)
 
  --
 

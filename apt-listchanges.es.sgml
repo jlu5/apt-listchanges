@@ -8,18 +8,18 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.es.sgml,v 1.2 2003-08-10 06:58:20 mdz Exp $
+     $Id: apt-listchanges.es.sgml,v 1.3 2004-01-07 17:11:03 mdz Exp $
 -->
 
 <!-- 
 (c) 2003 Software in the Public Interest
 Esta traducción ha sido realizada por Rubén Porras Campo <nahoo@inicia.es>
 Está basada en la página de manual original:
-versión 1.3 del CVS de
+versión 1.4 del CVS de
 /cvs/debian-doc/manpages/english/apt-listchanges/apt-listchanges.sgml
  -->
 
-<refentry>
+<refentry lang=es>
   <docinfo>
     <address>
       <email>mdz@debian.org</email>
@@ -145,8 +145,9 @@ versión 1.3 del CVS de
 	      <LISTITEM>
 		<PARA>
 		  Usa su paginador favorito para mostrar la salida, pero lo hace
-		  sobre un xterm de fondo. Esto le permite realizar la
-		  actualización mientras mira los cambios.
+		  sobre un xterm (usando la alternativa x-terminal-emulator) de
+		  fondo. Esto le permite realizar la actualización mientras mira
+		  los cambios.
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
@@ -370,6 +371,14 @@ versión 1.3 del CVS de
       apt-listchanges fue escrito por Matt Zimmerman
       &lt;mdz@debian.org&gt;
     </PARA>
+  </refsect1>
+
+  <refsect1>
+    <title>TRADUCTOR</title>
+    <para>
+      Traducción de Rubén Porras Campo
+      &lt;debian-l10n-spanish@lists.debian.org&gt;
+    </para>
   </refsect1>
 
   <refsect1>
