@@ -2,8 +2,10 @@ apt-listchanges (1.51) unstable; urgency=low
 
   * Fix to work with .debs created by older versions of dpkg-dev
     (Closes: #100975)
+  * Update extended description to refer to /usr/share/doc
+    (Closes: #103017)
 
- -- Matt Zimmerman <mdz@debian.org>  Wed, 27 Jun 2001 02:22:40 -0400
+ -- Matt Zimmerman <mdz@debian.org>  Sun,  1 Jul 2001 18:01:14 -0400
 
 apt-listchanges (1.50) unstable; urgency=low
 
