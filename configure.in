@@ -1,5 +1,5 @@
 AC_INIT(apt-listchanges.in)
-AM_INIT_AUTOMAKE(apt-listchanges, 1.34)
+AM_INIT_AUTOMAKE(apt-listchanges, 1.36)
 
 # gettext needs this
 AC_PROG_CC
