@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.21 2002-05-24 02:32:28 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.22 2003-07-07 05:16:09 mdz Exp $
 -->
 
 <refentry>
@@ -230,6 +230,17 @@
 	    been displayed, to avoid redisplaying the same changelogs
 	    in a future invocation.  The database is stored in the
 	    named file.  Specify 'none' to disable this feature.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+
+      <VARLISTENTRY>
+	<TERM><OPTION>--which={news|changelogs|both}</OPTION></TERM>
+	<LISTITEM>
+	  <PARA>
+	    This option selects whether news (from NEWS.Debian et
+	    al.), changelogs (from changelog.Debian et al.) or both
+	    should be displayed.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>

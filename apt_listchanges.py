@@ -13,6 +13,11 @@ import email.Message
 import email.Header
 import locale
 import cStringIO
+import tempfile
+import shutil
+import gzip
+import errno
+import glob
 from socket import gethostname
 
 # TODO:
@@ -24,17 +29,6 @@ try:
     _ = gettext.translation('apt-listchanges').gettext
 except IOError:
     _ = lambda str: str
-
-def changelog_variations(filename):
-    formats = ['usr/doc/\\*/%s.gz',
-               'usr/share/doc/\\*/%s.gz',
-               'usr/doc/\\*/%s',
-               'usr/share/doc/\\*/%s',
-               './usr/doc/\\*/%s.gz',
-               './usr/share/doc/\\*/%s.gz',
-               './usr/doc/\\*/%s',
-               './usr/share/doc/\\*/%s']
-    return map(lambda format: format % filename, formats)
 
 def numeric_urgency(u):
     u = string.lower(u)
@@ -49,56 +43,126 @@ def numeric_urgency(u):
     else:
         return 0
 
-changelog_header = re.compile('^\S+ \((?P<version>.*)\) .*;.*urgency=(?P<urgency>\w+).*')
-def extract_changelog_file(deb, version, filenames):
-     changes = ''
-     urgency = numeric_urgency('low')
-     extract_command = "dpkg-deb --fsys-tarfile %s \
-     | tar -xO --exclude '*/doc/*/*/*' -f - %s 2>/dev/null \
-     | zcat -f" % (deb, string.join(filenames))
+class Package:
+    changelog_header = re.compile('^\S+ \((?P<version>.*)\) .*;.*urgency=(?P<urgency>\w+).*')
 
-     for line in os.popen(extract_command).readlines():
-         if line.startswith('tar:') or line.startswith('dpkg-deb'):
-             # XXX, keep track of errors
-             continue
-
-         if version:
-             match = changelog_header.match(line)
-             if match:
-                 if apt_pkg.VersionCompare(match.group('version'),
-                                          version) > 0:
-                     urgency = min(numeric_urgency(match.group('urgency')),
-                                   urgency)
-                 else:
-                     break
-         changes += line
-
-     return (changes, urgency)
-
-def extract_changes(deb, version=None):
-    """Extract changelog entries later than version from deb.
-    returns (text, urgency) where urgency is the highest urgency
-    of the entries selected"""
+    def __init__(self, path):
+        self.path = path
+        
+        parser = DebianControlParser.DebianControlParser()
+        parser.readdeb(self.path)
+        pkgdata = parser.stanzas[0]
     
-    parser = DebianControlParser.DebianControlParser()
-    parser.readdeb(deb)
-    pkgdata = parser.stanzas[0]
-    
-    binpackage = pkgdata.Package
-    srcpackage = pkgdata.source()
+        self.binary = pkgdata.Package
+        self.source = pkgdata.source()
+        self.source_version = pkgdata.sourceversion()
 
-    news_filenames = changelog_variations('NEWS.Debian')
-    changelog_filenames = changelog_variations('changelog.Debian')
-    changelog_filenames_nodebian = changelog_variations('changelog')
+    def extract_changes(self, which, since_version=None):
+        '''Extract changelog entries, news or both from the package.
+        If since_version is specified, only return entries later than the specified version.
+        returns a sequence of Changes objects.'''
 
-    (news, newsurgency) = extract_changelog_file(deb, version, news_filenames)
-    (changes, changelogurgency) = extract_changelog_file(deb, version, changelog_filenames)
-    if not changes:
-        (changes, changelogurgency) = extract_changelog_file(deb, version, changelog_filenames_nodebian)
+        news_filenames = self._changelog_variations('NEWS.Debian')
+        changelog_filenames = self._changelog_variations('changelog.Debian')
+        changelog_filenames_native = self._changelog_variations('changelog')
 
-    urgency = min(newsurgency,changelogurgency)
+        filenames = []
+        if which == 'both' or which == 'news':
+            filenames.extend(news_filenames)
+        if which == 'both' or which == 'changelog':
+            filenames.extend(changelog_filenames)
+            filenames.extend(changelog_filenames_native)
 
-    return (news, changes, urgency)
+        tempdir = self.extract_contents(filenames)
+
+        news = None
+        for filename in news_filenames:
+            news = self.read_changelog(filename, since_version)
+            if news:
+                break
+
+        changelog = None
+        for batch in (changelog_filenames, changelog_filenames_native):
+            for filename in batch:
+                changelog = self.read_changelog(os.path.join(tempdir,filename),
+                                                since_version)
+                if changelog:
+                    break
+            if changelog:
+                break
+
+        shutil.rmtree(tempdir,1)
+        
+        return (news, changelog)
+        
+    def extract_contents(self, filenames):
+        try:
+            tempdir = tempfile.mkdtemp(prefix='apt-listchanges')
+        except AttributeError:
+            tempdir = tempfile.mktemp()
+            os.mkdir(tempdir)
+
+        extract_command = 'dpkg-deb --fsys-tarfile %s |tar xf - -C %s %s 2>/dev/null' % (
+            self.path,
+            tempdir,
+            ' '.join(map(lambda x: "'%s'" % x, filenames))
+            )
+        
+        # tar exits unsuccessfully if _any_ of the files we wanted
+        # were not available, so we can't do much with its status
+        os.system(extract_command)
+
+        return tempdir
+
+    def read_changelog(self, filename, since_version):
+        filenames = glob.glob(filename)
+        if len(filenames) > 1:
+            raise RuntimeError("More than one file matched pattern '%s'" % filename)
+        if len(filenames) < 1:
+            return None
+
+        filename = filenames[0]
+        try:
+            if filename.endswith('.gz'):
+                f = gzip.GzipFile(filename)
+            else:
+                f = open(filename)
+        except IOError, e:
+            if e.errno == errno.ENOENT:
+                return None
+
+        urgency = numeric_urgency('low')
+        changes = ''
+        for line in f.readlines():
+            if since_version:
+                match = changelog_header.match(line)
+                if match:
+                    if apt_pkg.VersionCompare(match.group('version'),
+                                             since_version) > 0:
+                        urgency = min(numeric_urgency(match.group('urgency')),
+                                      urgency)
+                    else:
+                        break
+            changes += line
+
+        return Changes(self.source, changes, urgency)
+
+    def _changelog_variations(self,filename):
+        formats = ['usr/doc/*/%s.gz',
+                   'usr/share/doc/*/%s.gz',
+                   'usr/doc/*/%s',
+                   'usr/share/doc/*/%s',
+                   './usr/doc/*/%s.gz',
+                   './usr/share/doc/*/%s.gz',
+                   './usr/doc/*/%s',
+                   './usr/share/doc/*/%s']
+        return map(lambda format: format % filename, formats)
+
+class Changes:
+    def __init__(self, package, changes, urgency):
+        self.package = package
+        self.changes = changes
+        self.urgency = urgency
 
 class Config:
     def __init__(self):
@@ -113,6 +177,7 @@ class Config:
         self.debug = 0
         self.save_seen = None
         self.mode = 'cmdline'
+        self.which = 'both'
 
     def read(self,file):
         self.parser = ConfigParser.ConfigParser()

@@ -1,3 +1,19 @@
+apt-listchanges (2.36) unstable; urgency=low
+
+  * Refactor lots of code, with many tangible benefits
+    - Make only a single pass through the deb, extracting all files we
+      might be interested in, no matter how many different files we are
+      interested in.  This makes searching for NEWS.Debian free, and speeds
+      up processing of packages with only native changelogs (no
+      changelog.Debian
+    - OOPify several interfaces
+    - Use the gzip module rather than forking zcat (faster and cleaner)
+  * Add 'which' option to specify whether news, changelogs or both should
+    be displayed.  This is still very primitive and everything is
+    concatenated together.
+
+ --
+
 apt-listchanges (2.35) unstable; urgency=low
 
   * Experimental NEWS.Debian support, based on a patch from Joe Drew.
