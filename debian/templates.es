@@ -3,7 +3,6 @@ Type: select
 Choices: pager, xterm-pager, text, mail, none
 Choices-es: paginador, paginador-xterm, texto, correo, ninguna
 Default: pager
-Default-es: paginador
 Description: How should changelogs be displayed with apt?
  apt-listchanges can display changelog entries in a number of different
  ways.
