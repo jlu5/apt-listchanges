@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 1.54\n"
-"POT-Creation-Date: Sat Jan 19 17:07:43 2002\n"
+"POT-Creation-Date: Tue Jan 22 11:38:21 2002\n"
 "PO-Revision-Date: 2001-08-27 19:57+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Debian Spanish l10n <debian-l10n-spanish@lists.debian.org>\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 1.40\n"
-"POT-Creation-Date: Sat Jan 19 17:07:43 2002\n"
+"POT-Creation-Date: Tue Jan 22 11:38:21 2002\n"
 "PO-Revision-Date: 2001-03-17 17:30+0200\n"
 "Last-Translator: Jaakko Kangasharju <ashar@iki.fi>\n"
 "MIME-Version: 1.0\n"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.4\n"
-"POT-Creation-Date: Sat Jan 19 17:07:43 2002\n"
+"POT-Creation-Date: Tue Jan 22 11:38:21 2002\n"
 "PO-Revision-Date: 2002-01-22 08:27+0100\n"
 "Last-Translator: Jacobo Tarrio <jtarrio@trasno.net>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"

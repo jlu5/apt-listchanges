@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.1\n"
-"POT-Creation-Date: Sat Jan 19 17:07:43 2002\n"
+"POT-Creation-Date: Tue Jan 22 11:38:21 2002\n"
 "PO-Revision-Date: 2002-01-14 09:01+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
