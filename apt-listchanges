@@ -67,18 +67,19 @@ unless (@debs) {
   die "apt-listchanges: Must specify either --apt or filenames to process!\n";
 }
 
+# Initialize terminal graphics
+Newt::Init();
+Newt::Cls();
+my ($screen_width, $screen_height) = Newt::GetScreenSize();
+
 # Strip pathnames, and find the longest filename for sizing the dialog
 my @display_debs = @debs;
 @display_debs = map { m%([^/]+)$%; $1; } @display_debs;
 my $longest_pathname = longest(@display_debs);
 
-# Initialize terminal graphics
-Newt::Init();
-Newt::Cls();
-
 # Create widgets
 my $main = Newt::Panel(1,3, 'Reading changelogs');
-my $progress = Newt::Scale(20, scalar(@debs));
+my $progress = Newt::Scale($screen_width - 10, scalar(@debs));
 my $current = Newt::Label(' ' x length($longest_pathname));
 $main->Add(0, 0, Newt::Label("Scanning packages..."));
 $main->Add(0, 1, $progress);
@@ -220,7 +221,7 @@ my $ret = 0;
 if ($output) {
   # Display changelogs and errors
   $main = Newt::Panel(1, 2, "Displaying changelogs");
-  $main->Add(0, 0, Newt::Textbox(70, 15,
+  $main->Add(0, 0, Newt::Textbox($screen_width - 10, $screen_height - 10,
 				 NEWT_FLAG_WRAP|NEWT_FLAG_SCROLL,
 				 $output));
   $main->Add(0, 1, Newt::Panel(2, 1)
