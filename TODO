@@ -1,0 +1,9 @@
+- Should the progress dialog use newt, or a one-line status indicator
+  a la debconf?
+
+- For each source package processed, list the binary packages
+  belonging to it that are in the list of packages to be installed
+  (this means making a second pass over either the .debs or the
+  changelog output)
+
+
