@@ -493,13 +493,13 @@ class html:
         pass
 
 class browser(pager,html):
-    pager = '/usr/lib/apt-listchanges/browser-pipe'
+    pager = '/usr/share/apt-listchanges/browser-pipe'
 
     def display_output(self,text):
         pager.display_output(self,self.htmlify(text))
 
 class xterm_browser(html,xterm_pager):
-    pipecommand = '/usr/lib/apt-listchanges/browser-pipe'
+    pipecommand = '/usr/share/apt-listchanges/browser-pipe'
 
     def display_output(self,text):
         xterm.display_output(self,self.htmlify(text))

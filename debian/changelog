@@ -6,6 +6,7 @@ apt-listchanges (2.37) unstable; urgency=low
   * Add a bit about NEWS.Debian to the man page, courtesy of Joe Drew
   * Update man page to reflect /usr/share/doc as the standard location for
     the changelog
+  * Move browser-pipe into /usr/share/apt-listchanges
 
  -- Matt Zimmerman <mdz@debian.org>  Mon,  7 Jul 2003 19:12:02 -0400
 
