@@ -331,7 +331,8 @@ if ($show_headers) {
   }
 }
 
-my @packages_by_urgency = sort { $urgency{$a} <=> $urgency{$b} } keys %changes;
+my @packages_by_urgency = sort { $urgency{$a} <=> $urgency{$b} ||
+				     $a cmp $b } keys %changes;
 
 # Concatenate all the changes, ordered by urgency
 my $output = join('', map { $changes{$_} } @packages_by_urgency);
