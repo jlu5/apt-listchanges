@@ -235,8 +235,10 @@ def mail_changes(address, changes):
     hostname = gethostname()
     message = email.Message.Message()
     subject = _("apt-listchanges output for %s") % hostname
-    message['Subject'] = email.Header.Header(subject,
-                                             locale.nl_langinfo(locale.CODESET))
+    if locale.getlocale()[0]:
+        subject = email.Header.Header(subject,
+                                      locale.nl_langinfo(locale.CODESET))
+    message['Subject'] = 
     message['To'] = address
     message.set_payload(changes)
     fh = os.popen('/usr/sbin/sendmail -t', 'w')
