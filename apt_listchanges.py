@@ -443,7 +443,10 @@ class runcommand:
         status = os.spawnl(os.P_WAIT, '/bin/sh', 'sh', '-c', shellcommand)
         if status != 0:
             raise OSError('Subprocess ' + shellcommand + ' exited with status ' + str(status))
-        sys.exit(0)
+
+        if self.mode == os.P_NOWAIT:
+            # We are a child; exit
+            sys.exit(0)
 
 class pager(runcommand,ttyconfirm,fancyprogress):
     command = 'sensible-pager'

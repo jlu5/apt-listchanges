@@ -1,3 +1,9 @@
+apt-listchanges (2.45) unstable; urgency=low
+
+  * Oops, only exit if we actually forked a child
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu,  8 Jan 2004 12:25:33 -0800
+
 apt-listchanges (2.44) unstable; urgency=low
 
   * Don't forget to have the child exit after it's finished, when running
