@@ -630,7 +630,8 @@ sub longest {
 
 sub read_deb_filenames {
   my ($apt_mode, $status) = @_;
-  my @debs;
+  my %debs;
+  my @order;
 
   if ($apt_mode) {
 
@@ -648,10 +649,18 @@ sub read_deb_filenames {
 
 	  next unless my ($pkg, $oldversion, $newversion, $filename)
 	      = /^(\S+)\s+(\S+)\s+<\s+(\S+)\s+(\S+)$/;
+
+	  if ($filename =~ /^\*\*(.*)\*\*$/) {
+	    if ($1 eq 'CONFIGURE') {
+	      push(@order, $pkg);
+	    } else {
+	      next;
+	    }
+	  }
 	  next if $filename =~ /^\*\*.*\*\*$/;
 	  next if $oldversion eq '-';
-	  
-	  push(@debs, $filename);
+
+	  $debs{$pkg} = $filename;
 	  $status{$pkg}{Version} = $oldversion;
 	  $status{$pkg}{NewVersion} = $newversion; # Not used yet
 	}
@@ -664,10 +673,11 @@ sub read_deb_filenames {
 
   } else {
     # Not in apt mode, use filenames from the command line
-    @debs = @ARGV;
+    return @ARGV;
   }
 
-  @debs;
+  # Sort by configuration order
+  map { $debs{$_} } @order;
 }
 
 # Simple-minded config file parser
