@@ -1,3 +1,12 @@
+apt-listchanges (1.7) unstable; urgency=low
+
+  * Multiple frontend support added.  You can now choose to view
+    changelogs with a pager, a simple text dump, via email, or with the
+    old newt interface (Closes: #77186)
+  * Remember to include the TODO list (oops)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 18 Nov 2000 00:10:12 -0500
+
 apt-listchanges (1.6) unstable; urgency=low
 
   * Remember to remove ourselves from apt.conf if we are reconfigured
