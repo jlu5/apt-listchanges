@@ -1,3 +1,11 @@
+apt-listchanges (1.39) unstable; urgency=low
+
+  * Prevent an obscure warning that only happened if apt-listchanges was
+    run unconfigured.
+  * Fix urgency sorting (broken in 1.36, I think)
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 15 Mar 2001 01:21:22 -0500
+
 apt-listchanges (1.38) unstable; urgency=low
 
   * The text frontend will no longer display a progress indicator, so that
