@@ -181,7 +181,7 @@ foreach my $deb (@debs) {
 	next;
       }
       
-      if ( /^\S+ \((.*)\) \S+; urgency=(.*)$/ ) {
+      if ( /^\S+ \((.*)\) .*; urgency=(.*)$/ ) {
 	last if dpkg_compare_versions($1, 'le', $oldversion);
 
 	# Use the urgency of the most urgent changelog entry for the
