@@ -4,8 +4,11 @@ apt-listchanges (1.45) unstable; urgency=low
     should never show up anyway, since we won't usually be displaying the
     last entry in the changelog.  It seems to come up anyway, usually
     during weird package splits/merges and the like. (Closes: #93332)
+  * Still read the status file, even if we are getting some information
+    from the apt pipeline.  apt doesn't give us the source package
+    version, which we need to do our job.  Darn. (Closes: #93790)
 
- -- Matt Zimmerman <mdz@debian.org>  Sun,  8 Apr 2001 22:20:03 -0400
+ -- Matt Zimmerman <mdz@debian.org>  Fri, 13 Apr 2001 18:58:30 -0400
 
 apt-listchanges (1.44) unstable; urgency=low
 
