@@ -26,3 +26,6 @@
 
 - Implement a way for the user to have changelogs mailed to them in
   addition to another method of display (wishlist bug #78448)
+
+- Fall back from more complicated to simpler frontends if things go
+  badly.
