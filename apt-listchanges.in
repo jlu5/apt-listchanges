@@ -270,6 +270,11 @@ foreach my $deb (@debs) {
 
 }
 
+if (keys(%processed) == 0) {
+  # If we didn't find any valid packages, give the user a hint
+  die "@PACKAGE@: didn't find any valid .deb archives\n$usage";
+}
+
 # Prepend binary package info
 if ($show_headers) {
   foreach my $pkg (keys %changes) {
@@ -703,6 +708,11 @@ sub get_package_info {
   }
   close(DPKGDEB);
 
+  # Bail quickly if it wasn't even a .deb
+  return unless defined $pkg && defined $version;
+
+  # If no source package is specified, source package has the same
+  # name as the binary package
   $source ||= $pkg;
 
   # Look up installed version of $pkg, using the source package
