@@ -37,8 +37,7 @@ import apt_listchanges
 try:
     _ = gettext.translation('apt-listchanges').gettext
 except IOError:
-    def gettext_null(str): return str
-    _ = gettext_null
+    _ = lambda str: str
 
 config = apt_listchanges.Config()
 config.read('/etc/apt/listchanges.conf')
@@ -69,6 +68,7 @@ if not config.show_all:
         # Will replace seen after changes have actually been seen
         seen_new = {}
 
+all_news = []
 all_changes = []
 notes = []
 
@@ -122,10 +122,12 @@ for deb in debs:
                                                                   srcversion))
         continue
 
-    (changes, urgency) = apt_listchanges.extract_changelog(deb, fromversion)
+    (news, changes, urgency) = apt_listchanges.extract_changes(deb, fromversion)
 
-    if changes:
+    if news or changes:
         found[srcpackage] = 1
+        all_news.append({ 'package' : srcpackage,
+                          'news'    : news })
         all_changes.append({ 'package' : srcpackage,
                              'changes' : changes,
                              'urgency' : urgency })
@@ -137,11 +139,22 @@ frontend.progress_done()
 if config.save_seen:
     seen.close()
 
+all_news.sort(lambda a,b: cmp(a['urgency'], b['urgency']) or
+              cmp(a['package'],b['package']))
 all_changes.sort(lambda a,b: cmp(a['urgency'],b['urgency']) or
                  cmp(a['package'],b['package']))
 
 if config.headers:
     changes = ''
+    news = ''
+    for rec in all_news:
+        package = rec['package']
+        header = _('News for %s') % package
+        if len(filter(lambda x: x != package,source_packages[package])) > 0:
+            # Differing source and binary packages
+            header += ' (' + ' '.join(source_packages[package]) + ')'
+        news += '--- ' + header + ' ---\n' + rec['news']
+
     for rec in all_changes:
         package = rec['package']
         header = _('Changes for %s') % package
@@ -150,16 +163,19 @@ if config.headers:
             header += ' (' + ' '.join(source_packages[package]) + ')'
         changes += '--- ' + header + ' ---\n' + rec['changes']
 else:
+    if all_news:
+        news = 'NEWS\n----\n\n' + ''.join(map(lambda x: x['news'], all_news)) + '\n--------\nEND NEWS\n'
+    else:
+        news = ''
     changes = ''.join(map(lambda x: x['changes'], all_changes))
 
 if config.verbose and len(notes) > 0:
     changes += _("Informational notes") + ":\n\n" + '\n'.join(notes)
 
-if changes:
-    frontend.display_output(changes)
+if news or changes:
+    frontend.display_output(news + '\n' + changes)
 
-    if config.confirm:
-        if not frontend.confirm():
+    if config.confirm and not frontend.confirm():
             sys.exit(10)
             
     if config.email_address:

@@ -50,7 +50,32 @@ def numeric_urgency(u):
         return 0
 
 changelog_header = re.compile('^\S+ \((?P<version>.*)\) .*;.*urgency=(?P<urgency>\w+).*')
-def extract_changelog(deb, version=None):
+def extract_changelog_file(deb, version, filenames):
+     changes = ''
+     urgency = numeric_urgency('low')
+     extract_command = "dpkg-deb --fsys-tarfile %s \
+     | tar -xO --exclude '*/doc/*/*/*' -f - %s 2>/dev/null \
+     | zcat -f" % (deb, string.join(filenames))
+
+     for line in os.popen(extract_command).readlines():
+         if line.startswith('tar:') or line.startswith('dpkg-deb'):
+             # XXX, keep track of errors
+             continue
+
+         if version:
+             match = changelog_header.match(line)
+             if match:
+                 if apt_pkg.VersionCompare(match.group('version'),
+                                          version) > 0:
+                     urgency = min(numeric_urgency(match.group('urgency')),
+                                   urgency)
+                 else:
+                     break
+         changes += line
+
+     return (changes, urgency)
+
+def extract_changes(deb, version=None):
     """Extract changelog entries later than version from deb.
     returns (text, urgency) where urgency is the highest urgency
     of the entries selected"""
@@ -62,39 +87,18 @@ def extract_changelog(deb, version=None):
     binpackage = pkgdata.Package
     srcpackage = pkgdata.source()
 
+    news_filenames = changelog_variations('NEWS.Debian')
     changelog_filenames = changelog_variations('changelog.Debian')
     changelog_filenames_nodebian = changelog_variations('changelog')
 
-    found = 0
-    changes = None
-    urgency = numeric_urgency('low')
-    for filenames in [changelog_filenames, changelog_filenames_nodebian]:
-         extract_command = "dpkg-deb --fsys-tarfile %s \
-         | tar -xO --exclude '*/doc/*/*/*' -f - %s 2>/dev/null \
-         | zcat -f" % (deb, string.join(filenames))
+    (news, newsurgency) = extract_changelog_file(deb, version, news_filenames)
+    (changes, changelogurgency) = extract_changelog_file(deb, version, changelog_filenames)
+    if not changes:
+        (changes, changelogurgency) = extract_changelog_file(deb, version, changelog_filenames_nodebian)
 
-         if (found > 0): break
+    urgency = min(newsurgency,changelogurgency)
 
-         changes = ''
-         for line in os.popen(extract_command).readlines():
-             if line.startswith('tar:') or line.startswith('dpkg-deb'):
-                 # XXX, keep track of errors
-                 continue
-
-             found = 1
-
-             if version:
-                 match = changelog_header.match(line)
-                 if match:
-                     if apt_pkg.VersionCompare(match.group('version'),
-                                              version) > 0:
-                         urgency = min(numeric_urgency(match.group('urgency')),
-                                       urgency)
-                     else:
-                         break
-             changes += line
-
-    return (changes, urgency)
+    return (news, changes, urgency)
 
 class Config:
     def __init__(self):
