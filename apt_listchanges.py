@@ -268,7 +268,9 @@ class ttyconfirm:
                        _('Do you want to continue? [Y/n]? '))
         tty.flush()
         response = tty.readline()
-        if response and (response[0] == 'y' or response[0] == 'Y'):
+        if not response:
+            return 1
+        if response[0] == 'n' or response[0] == 'N':
             return 1
         return 0
 
