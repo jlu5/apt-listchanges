@@ -17,9 +17,9 @@ from socket import gethostname
 # newt-like frontend, or maybe some GUI bit
 # keep track of tar/dpkg-deb errors like in pre-2.0
 
+locale.setlocale(locale.LC_ALL,'')
 try:
     _ = gettext.translation('apt-listchanges').gettext
-    locale.setlocale(locale.LC_ALL,'')
 except IOError:
     def gettext_null(str): return str
     _ = gettext_null
