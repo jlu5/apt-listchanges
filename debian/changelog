@@ -1,3 +1,12 @@
+apt-listchanges (1.43) unstable; urgency=low
+
+  * Added --version and --help options (Closes: #90929)
+  * Automatically substitute package version from changelog into
+    configure.in, so that it doesn't fall out of sync when I forget to
+    update it.
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 25 Mar 2001 02:20:42 -0500
+
 apt-listchanges (1.42) unstable; urgency=low
 
   * Added Finnish translation of message catalog, thanks to Jaakko
