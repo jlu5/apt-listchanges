@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Matt Zimmerman <mdz@debian.org>
 Standards-Version: 3.2.1
-Build-Depends-Indep: debhelper, docbook-to-man, gettext, python (>= 2.1), po-debconf
+Build-Depends-Indep: debhelper (>= 4.1.16), docbook-to-man, gettext, python (>= 2.1), po-debconf
 
 Package: apt-listchanges
 Architecture: all
