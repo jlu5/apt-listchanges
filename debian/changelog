@@ -1,14 +1,16 @@
 apt-listchanges (2.33) unstable; urgency=low
 
   * Remove obsolete debconf template
-  * Updated Catalan translation of debconf templates from
+  * Updated Catalan translation of debconf templates and message catalog from
     Jordi Mallach <jordi@debian.org>
   * Japanese translation of debconf templates from Kenshi Muto
     <kmuto@debian.org> (Closes: #193708)
-  * Set email character set to utf-8, and depend on python >= 2.2.2
-    (Closes: #185786)
+  * Try to solve the locale problems in a simpler way, by falling back to UTF-8 or
+    US-ASCII (Closes: #185786)
+  * If the browser doesn't understand pipes, give it /dev/tty as stdin
+    when viewing a file: URL (Closes: #196282)
 
- -- Matt Zimmerman <mdz@debian.org>  Sat, 24 May 2003 13:34:05 -0400
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 21 Jun 2003 18:51:21 -0400
 
 apt-listchanges (2.32) unstable; urgency=low
 
