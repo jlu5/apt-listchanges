@@ -1,3 +1,17 @@
+apt-listchanges (2.16) unstable; urgency=low
+
+  * Make the bug regex more useful.  It should now match a superset of the
+    closes: syntax, while also trying to pick out plain-language bug
+    references. (Closes: #141461)
+  * Based on feedback about the w3m frontend, it seems a lot of folks
+    prefer lynx.  Added a quick and dirty script which allows the user to
+    specify a browser via the environment, or searches the path for some
+    common browsers (Closes: #141457)
+  * Use #!/usr/bin/python instead of #!/usr/bin/env python
+    (Closes: #141701)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun,  7 Apr 2002 22:11:55 -0400
+
 apt-listchanges (2.15) unstable; urgency=low
 
   * The "I never forget a wishlist bug" release.
