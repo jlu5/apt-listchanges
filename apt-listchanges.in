@@ -115,7 +115,6 @@ my $notes;
 ##
 
 my @debs = read_deb_filenames($apt_mode, \%status);
-print join("\n", @debs), "\n";
 
 # We have to read all data from the pipeline before exiting, or apt
 # will complain
