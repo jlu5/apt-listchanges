@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.9 2001-03-05 02:55:30 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.10 2001-03-16 04:32:29 mdz Exp $
 -->
 
 <refentry>
@@ -45,11 +45,26 @@
       <group choice=opt>
 	<arg><option>--email-address=addr</option></arg>
       </group>
+      <group choice=opt>
+	<arg><option>-c</option></arg>
+	<arg><option>--confirm</option></arg>
+      </group>
+
+      <group choice=opt>
+	<arg><option>-a</option></arg>
+	<arg><option>--all</option></arg>
+      </group>
+
+      <group choice=opt>
+	<arg><option>-h</option></arg>
+	<arg><option>--headers</option></arg>
+      </group>
 
       <group choice=req>
 	<arg><option>--apt</option></arg>
 	<arg rep=repeat><replaceable>package.deb</replaceable></arg>
       </group>
+
     </cmdsynopsis>
   </refsynopsisdiv>
   <refsect1>
@@ -67,11 +82,11 @@
     </para>
 
     <para>
-      Given a set of filenames as arguments (or read from standard
-      input when using <option>--apt</option>),
-      <command>apt-listchanges</command> will scan the files (assumed
-      to be Debian package archives) for the relevant changelog
-      entries, and display them all in a summary, sorted by urgency.
+      Given a set of filenames as arguments (or read from apt when
+       using <option>--apt</option>),
+       <command>apt-listchanges</command> will scan the files (assumed
+       to be Debian package archives) for the relevant changelog
+       entries, and display them all in a summary, sorted by urgency.
     </para>
 
   </refsect1>
@@ -84,9 +99,9 @@
 	<TERM><option>--apt</option>
 	</TERM>
 	<LISTITEM>
-	  <PARA>Read filenames from standard input, rather than from
-	    command line arguments, and honor certain apt-specific
-	    options in the config file.
+	  <PARA>Read filenames from a specially-formatted pipeline (as
+	    provided by apt), rather than from command line arguments,
+	    and honor certain apt-specific options in the config file.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
@@ -191,6 +206,19 @@
 	    simply display all changelog entries for all packages.
 	    This is useful for viewing the entire changelog of a .deb
 	    before extracting it.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+
+      <VARLISTENTRY>
+	<TERM>-h, --headers</TERM>
+	<LISTITEM>
+	  <PARA>
+	    These options will cause apt-listchanges to insert a
+	    header before each package's changelog showing the name of
+	    the package, and the names of the binary packages which
+	    are being upgraded (if there is more than one, or it
+	    differs from the source package name).
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
