@@ -10,6 +10,7 @@ import re
 import sys
 import gettext
 import email.Message
+import email.Header
 import locale
 from socket import gethostname
 
@@ -233,8 +234,9 @@ def mail_changes(address, changes):
     print "apt-listchanges: " + _("Mailing changelogs to %s") % address
     hostname = gethostname()
     message = email.Message.Message()
-    message['Subject'] = email.Header(_("apt-listchanges output for %s") % hostname,
-                                      locale.nl_langinfo(locale.CODESET))
+    subject = _("apt-listchanges output for %s") % hostname
+    message['Subject'] = email.Header.Header(subject,
+                                             locale.nl_langinfo(locale.CODESET))
     message['To'] = address
     message.set_payload(changes)
     fh = os.popen('/usr/sbin/sendmail -t', 'w')
