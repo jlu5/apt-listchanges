@@ -202,13 +202,13 @@ foreach my $deb (@debs) {
     # Extract relevant changelog info
     #my $dpkg_parsechangelog = $show_all ? '' :
 #	"dpkg-parsechangelog -l- -v$oldversion|";
-    #open(DPKGDEB, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f |$dpkg_parsechangelog") || die $!;
-    open(DPKGDEB, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f|") || die $!;
+    #open(CHANGELOG, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f |$dpkg_parsechangelog") || die $!;
+    open(CHANGELOG, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f|") || die $!;
     
     my $lines_read = 0;
     my $urgency = $urgency_map{'low'};
     my $changes;
-    while (<DPKGDEB>) {
+    while (<CHANGELOG>) {
 #      next unless /^Changes:/ .. 0;
 #      next if /^Changes:/;
       
@@ -218,7 +218,7 @@ foreach my $deb (@debs) {
 	next;
       }
       
-      if ( !$show_all && /^\S+ \((.*)\) .*; urgency=(.*)$/ ) {
+      if ( !$show_all && /^\S+ \((.*)\) .*;.*urgency=(\w+)/ ) {
         last if dpkg_compare_versions($1, 'le', $oldversion);
 
 	# Use the urgency of the most urgent changelog entry for the
@@ -237,8 +237,8 @@ foreach my $deb (@debs) {
 
     # Read any remaining data from a large changelog, to avoid a 'broken
     # pipe' error message on close
-    while (<DPKGDEB>) {}
-    close(DPKGDEB);
+    while (<CHANGELOG>) {}
+    close(CHANGELOG);
 
     if ( $lines_read > 0 ) {
       $urgency{$sourcepackage} = $urgency;

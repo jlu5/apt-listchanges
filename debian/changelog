@@ -1,3 +1,10 @@
+apt-listchanges (1.37) unstable; urgency=low
+
+  * Parse the urgency value correctly, even when there are multiple
+    key/value pairs in the changelog header (Closes: #89492)
+
+ -- Matt Zimmerman <mdz@debian.org>  Tue, 13 Mar 2001 07:43:00 -0500
+
 apt-listchanges (1.36) unstable; urgency=low
 
   * Show which binary packages relate to the source packages for which
