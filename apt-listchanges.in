@@ -91,6 +91,10 @@ my $errors;
 
 my @debs = read_deb_filenames($apt_mode, \%status);
 
+if (!$apt_mode && !$show_all) {
+  read_status(\%status);
+}
+
 unless (@debs) {
   exit 0 if ($apt_mode);
   die "apt-listchanges: " .
@@ -190,12 +194,17 @@ foreach my $deb (@debs) {
 				   \@changelog_filenames_nodebian) {
 
     # Extract relevant changelog info
+    #my $dpkg_parsechangelog = $show_all ? '' :
+#	"dpkg-parsechangelog -l- -v$oldversion|";
+    #open(DPKGDEB, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f |$dpkg_parsechangelog") || die $!;
     open(DPKGDEB, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f|") || die $!;
     
     my $lines_read = 0;
     my $urgency = $urgency{'low'};
     my $changes;
     while (<DPKGDEB>) {
+#      next unless /^Changes:/ .. 0;
+#      next if /^Changes:/;
       ++$lines_read;
       
       if ( /^(tar|dpkg-deb):/ ) {
@@ -204,8 +213,8 @@ foreach my $deb (@debs) {
 	next;
       }
       
-      if ( /^\S+ \((.*)\) .*; urgency=(.*)$/ ) {
-	last if !$show_all && dpkg_compare_versions($1, 'le', $oldversion);
+      if ( !$show_all && /^\S+ \((.*)\) .*; urgency=(.*)$/ ) {
+        last if dpkg_compare_versions($1, 'le', $oldversion);
 
 	# Use the urgency of the most urgent changelog entry for the
 	# urgency of this package
@@ -642,6 +651,26 @@ sub get_package_info {
   }
 
   ($pkg, $version, $oldversion, $source);
+}
+
+# Read in package names and versions from the status file and store
+# them in the hash ref $status
+sub read_status {
+  my ($status) = @_;
+
+  # Exit if we already have status info (from apt?)
+  return if scalar(keys %$status) > 0;
+
+  my $statusfile = "/var/lib/dpkg/status";
+
+  open(STATUS, $statusfile) || die "$statusfile: $!\n";
+  my $pkg;
+  while (<STATUS>) {
+    /^Package: (.*)$/o && do { $pkg = $1 };
+    /^Version: (.*)$/o && do { $$status{$pkg}{Version} = $1 };
+    /^Source: (.*)$/o && do  { $$status{$pkg}{Source} = $1; }
+  }
+  close(STATUS);
 }
 
 sub dpkg_compare_versions {
