@@ -9,8 +9,9 @@ apt-listchanges (2.16) unstable; urgency=low
     common browsers (Closes: #141457)
   * Use #!/usr/bin/python instead of #!/usr/bin/env python
     (Closes: #141701)
+  * Suggest xterm, www-browser and debianutils
 
- -- Matt Zimmerman <mdz@debian.org>  Sun,  7 Apr 2002 22:11:55 -0400
+ -- Matt Zimmerman <mdz@debian.org>  Tue,  9 Apr 2002 00:08:44 -0400
 
 apt-listchanges (2.15) unstable; urgency=low
 
