@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 #
-#      apt-listchanges - Show changelog entries between the installed versions
+#      @PACKAGE@ - Show changelog entries between the installed versions
 #        of a set of packages and the versions contained in corresponding
 #        .deb files
 #
@@ -23,12 +23,18 @@
 #      MA 02111-1307 USA
 #
 
-# This is @PACKAGE@, version @VERSION@
+# This is version @VERSION@
 
 use strict;
 use Getopt::Long;
 use Sys::Hostname;
 use IO::Handle;
+use Locale::gettext;
+use POSIX qw(setlocale);
+
+# Initialize locale settings
+setlocale(LC_MESSAGES, '');
+textdomain('apt-listchanges');
 
 # Read config file
 my %config;
@@ -85,7 +91,8 @@ my @debs = read_deb_filenames($apt_mode, \%status);
 
 unless (@debs) {
   exit 0 if ($apt_mode);
-  die "apt-listchanges: Must specify either --apt or filenames to process!\n";
+  die "apt-listchanges: " .
+      gettext("Must specify either --apt or filenames to process!") . "\n";
 }
 
 # Only reads the status file if we haven't already gotten the info
@@ -107,21 +114,30 @@ foreach my $deb (@debs) {
 
   # Bail if things don't look right
   unless ($pkg) {
-    $errors .= "apt-listchanges: Unable to determine package name for $deb\n";
+    $errors .= "apt-listchanges: " .
+	sprintf(gettext("Unable to determine package name for %s"), $deb)
+	    . "\n";
     next;
   }
   unless ($version) {
-    $errors .= "apt-listchanges: Unable to determine version for $deb\n";
+    $errors .= "apt-listchanges: " .
+	sprintf(gettext("Unable to determine version for %s"), $deb)
+	    . "\n";
     next;
   }
   unless ($sourcepackage) {
-    $errors .= "apt-listchanges: Unable to determine source package name for $deb\n";
+    $errors .= "apt-listchanges: " .
+	sprintf(gettext("Unable to determine source package name for %s"),
+		$deb)
+	    . "\n";
     next;
   }
 
   # Skip if the package is not installed
   if (!$show_all && !$oldversion) {
-    $changes[$urgency{'low'}] .= "$pkg: will be newly installed\n\n"
+    $changes[$urgency{'low'}] .=
+	sprintf(gettext("%s: will be newly installed"), $pkg)
+	    . "\n\n"
 	if $verbose;
     next;
   }
@@ -130,7 +146,9 @@ foreach my $deb (@debs) {
   if ($version eq $oldversion) {
 
     $changes[$urgency{'low'}] .=
-	"$pkg: Version $version is already installed\n\n"
+	sprintf(gettext("%s: Version $version is already installed"),
+		$pkg)
+	    . "\n\n"
 	if $verbose;
 
     next;
@@ -139,7 +157,9 @@ foreach my $deb (@debs) {
   # Skip if we are looking at an older version
   if (!$show_all && dpkg_compare_versions($version, 'le', $oldversion)) {
     $changes[$urgency{'low'}] .=
-	"$pkg: Version $version is older than installed version ($oldversion)\n\n"
+	sprintf(gettext("%s: Version %s is older than installed version (%s)"),
+		$pkg, $version, $oldversion)
+	    . "\n\n"
 	if $verbose;
     next;
   }
@@ -216,7 +236,7 @@ foreach my $deb (@debs) {
 
 my $output = join('', @changes);
 if ($errors) {
-  $output .= "\napt-listchanges: Error output follows\n";
+  $output .= "\napt-listchanges: ". gettext("Error output follows") . "\n";
   $output .= $errors;
 }
 
@@ -258,7 +278,9 @@ sub frontend_init {
       # Initialize terminal graphics
       eval q{ use Newt; };
       if ($@) {
-	warn "apt-listchanges: In order to use the newt frontend, you must install libnewt-perl\n";
+	warn "apt-listchanges: " .
+	    gettext("In order to use the newt frontend, you must install libnewt-perl")
+		. "\n";
 	return undef;
       }
 
@@ -270,12 +292,12 @@ sub frontend_init {
       
       # Create widgets
       my $newt = $this->{newt};
-      $$newt{main} = Newt::Panel(1,3, 'Reading changelogs');
+      $$newt{main} = Newt::Panel(1,3, gettext("Reading changelogs"));
       $$newt{progress} = Newt::Scale($screen_width - 10, scalar(@debs));
       $$newt{current} = Newt::Label(' ' x length($longest_pathname));
       
       my $main = $$newt{main};
-      $main->Add(0, 0, Newt::Label("Scanning packages..."));
+      $main->Add(0, 0, Newt::Label(gettext("Scanning packages...")));
       $main->Add(0, 1, $$newt{progress});
       $main->Add(0, 2, $$newt{current});
       $main->Draw();
@@ -304,7 +326,7 @@ sub frontend_init {
       if ($output) {
 	my ($screen_width, $screen_height) = Newt::GetScreenSize();
 	
-	$$newt{main} = Newt::Panel(1, 2, "Displaying changelogs");
+	$$newt{main} = Newt::Panel(1, 2, gettext("Displaying changelogs"));
 	$$newt{main}->Add(0, 0, Newt::Textbox($screen_width - 10, $screen_height - 10,
 					      &Newt::NEWT_FLAG_WRAP|
 					      &Newt::NEWT_FLAG_SCROLL,
@@ -345,8 +367,8 @@ sub frontend_init {
       
       my $percent = int(++$this->{debs_processed} / scalar(@debs) * 100);
 
-      printf "Reading changelogs...%s\r",
-      $percent == 100 ? "Done" : "$percent%";
+      printf gettext("Reading changelogs...%s") . "\r",
+      $percent == 100 ? gettext("Done") : "$percent%";
     },
     
     'display_output' => sub {
@@ -374,14 +396,16 @@ sub frontend_init {
       my ($this) = @_;
 
       unless (open(TTY, "+</dev/tty")) {
-	warn "Unable to open tty for confirmation, assuming yes\n";
+	warn gettext("Unable to open tty for confirmation, assuming yes")
+	    . "\n";
 	return 1;
       }
 
       TTY->autoflush;
 
       while (1) {
-	print TTY "apt-listchanges: Do you want to continue [Y/n]? ";
+	print TTY "apt-listchanges: ",
+	gettext("Do you want to continue [Y/n]? ");
 
 	my $response = <TTY>;
 	close(TTY);
@@ -407,7 +431,9 @@ sub frontend_init {
       chomp($tempfile);
 
       if (!open(TEMPFILE, ">$tempfile")) {
-	warn "apt-listchanges: Unable to open temporary file $tempfile: $!\n";
+	warn "apt-listchanges: "
+	    . sprintf(gettext("Unable to open temporary file %s: $!"),
+		      $tempfile) . "\n";
 	return undef;
       }
 
@@ -477,7 +503,7 @@ EOT
     print MAIL $output;
       close(MAIL);
 
-      print "Changelogs mailed to $email_address\n";
+      print sprintf(gettext("Changelogs mailed to %s"), $email_address), "\n";
       $? >> 8;
     },
 
