@@ -66,6 +66,17 @@ if [ "$action" = "configure" ]; then
 	    rmdir --ignore-fail-on-non-empty -p /etc/apt/
 	fi
     fi
+
+    # Config file rename (pre-1.56)
+    OLDAPTCONFIG=/etc/apt/apt.conf.d/20-apt-listchanges.conf
+    NEWAPTCONFIG=/etc/apt/apt.conf.d/20listchanges
+    if dpkg --compare-versions "$version" lt 1.56 \
+	&& test -f "$OLDAPTCONFIG"; then
+	if ! cmp --silent "$OLDAPTCONFIG" "$NEWAPTCONFIG"; then
+	  cp "$OLDAPTCONFIG" "$NEWAPTCONFIG"
+        fi
+	rm -f "$OLDAPTCONFIG"
+    fi
 fi
 
 # dh_installdeb will replace this with shell code automatically
