@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Matt Zimmerman <mdz@debian.org>
 Standards-Version: 3.2.1
-Build-Depends: debhelper, docbook-to-man
+Build-Depends-Indep: debhelper, docbook-to-man
 
 Package: apt-listchanges
 Architecture: all
