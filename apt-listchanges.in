@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 #
 #      apt-listchanges - Show changelog entries between the installed versions
@@ -112,10 +112,10 @@ my %changes;
 my %urgency;
 
 # Error text
-my $errors;
+my $errors = "";
 
 # Informational notes
-my $notes;
+my $notes = "";
 
 ##
 ## Initialization
@@ -188,7 +188,7 @@ foreach my $deb (@debs) {
   }
 
   # Skip if we are looking at the same version (faster than asking dpkg)
-  if ($new{Version} eq $current{Version}) {
+  if (!$show_all && $new{Version} eq $current{Version}) {
     $notes .=
 	sprintf(gettext("%s: Version %s is already installed"),
 		$new{Package}, $new{Version})
@@ -196,7 +196,7 @@ foreach my $deb (@debs) {
     next;
   }
 
-  if ($new{Version} eq $seen) {
+  if (!$show_all && $new{Version} eq $seen) {
     $notes .= sprintf(gettext("%s: Version %s changes have already been seen"),
 		      $new{Package}, $new{Version})
 	. "\n\n";
