@@ -13,14 +13,14 @@ Description: Should apt-listchanges be automatically run by apt?
 
 Template: apt-listchanges/apt-mode-frontend
 Type: select
-Choices: newt, pager, text, mail
-Default: newt
+Choices: pager, newt, text, mail
+Default: pager
 Description: How should changelogs be displayed when apt-listchanges is run by apt?
  apt-listchanges can display changelog entries in a number of different ways.
  .
- newt  - Use a terminal graphics interface, using text-mode windows
- .
  pager - Use your preferred pager
+ .
+ newt  - Use a terminal graphics interface, using text-mode windows
  .
  text  - Print changelogs to your terminal (without pausing)
  .
