@@ -1,35 +1,26 @@
-Template: apt-listchanges/email-address
-Type: string
-Default: root
-Description: To whom should apt-listchanges mail changelog entries?
- You have chosen to have changelog entries sent via email.  To what email
- address should they be sent?  
-Description-fi: Kenelle apt-listchanges l‰hett‰‰ muutoslokit?
- Valitsit muutoslokit l‰hetett‰v‰ksi postina. Mihin osoitteseen
- ne l‰hetet‰‰n?
-
 Template: apt-listchanges/frontend
 Type: select
-Choices: pager, xterm-pager, newt, text, mail
-Choices-fi: sivutin, x-sivutin, newt, teksti, posti
+Choices: pager, xterm-pager, text, mail, none
+Choices-fi: sivutin, x-sivutin, teksti, posti, ei mik‰‰n
 Default: pager
-Description: How should changelogs be displayed by default?
+Description: How should changelogs be displayed with apt?
  apt-listchanges can display changelog entries in a number of different
- ways.  
+ ways.
  .
- pager - Use your preferred pager  
+ pager - Use your preferred pager
  .
- xterm-pager - Use your preferred pager in an xterm in the background  
+ xterm-pager - Use your preferred pager in an xterm in the background
  .
- newt - Use a terminal graphics interface, using text-mode windows (you
- will need to install libnewt-perl to use this)  
+ text  - Print changelogs to your terminal (without pausing)
  .
- text  - Print changelogs to your terminal (without pausing)  
+ mail  - Only send changelogs via mail
  .
- mail  - Send changelogs via email (you will be prompted for an address)  
+ none  - Do not run automatically from apt
  .
- This setting can be overridden by a command-line option.  
-Description-fi: Miten muutoslokit n‰ytet‰‰n?
+ This setting can be overridden by a command-line option or an environment
+ variable.  Note that you can still send a copy via mail with all of the
+ frontends except 'none'.
+Description-fi: Miten muutoslokit n‰ytet‰‰n aptin ajon yhteydess‰?
  apt-listchanges osaa n‰ytt‰‰ muutoslokit usealla eri tavalla.
  .
  sivutin - K‰yt‰ oletussivutintasi
@@ -37,34 +28,30 @@ Description-fi: Miten muutoslokit n‰ytet‰‰n?
  x-sivutin - K‰yt‰ oletussivutintasi tausta-ajossa olevassa
  x-p‰‰teikkunassa
  .
- newt - K‰yt‰ graafista liittym‰‰ p‰‰tteell‰ (t‰m‰n k‰yttˆˆn tarvitset
- paketin libnewt-perl)
- .
  teksti - Tulosta lokit p‰‰teikkunalle ilman sivutusta
  .
- posti - L‰het‰ lokit postina (sinulta kysyt‰‰n kohdeosoitetta)
+ posti - L‰het‰ muutoslokit vain postina
  .
- T‰m‰n valinnan voi ohittaa komentorivivalitsimella.
+ ei mik‰‰n - ƒl‰ aja automaattisesti aptin ajon yhteydess‰
+ .
+ T‰m‰n valinnan voi ohittaa komentorivivalitsimella tai
+ ymp‰ristˆmuuttujalla.  Lis‰ksi voit l‰hett‰‰ kopion postina, jos et
+ valitse 'ei mik‰‰n'-vaihtoehtoa.
 
-Template: apt-listchanges/apt-hook-p
-Type: boolean
-Default: true
-Description: Should apt-listchanges be automatically run by apt?
- One way to use apt-listchanges is to configure apt to run apt-listchanges
- on packages that have been downloaded for installation or upgrade.  This
- way, each time you perform an installation or upgrade using apt,
- apt-listchanges will show you the changes that are about to be made to
- your system.  
+Template: apt-listchanges/email-address
+Type: string
+Default: root
+Default-fi: root
+Description: To whom should apt-listchanges mail changelog entries?
+ apt-listchanges can email a copy of displayed changelogs.  To what email
+ address should they be sent?
  .
- I can perform this configuration for you if you like.  Since you can also
- run apt-listchanges manually on .deb archives, this step is optional.  
-Description-fi: Asetetaanko apt ajamaan apt-listchanges automaattisesti?
- aptin voi asettaa automaattisesti ajamaan apt-listchangesin asennettaville
- ja p‰ivitett‰ville paketeille. T‰llˆin apt-listchanges n‰ytt‰‰ kaikki
- teht‰v‰t muutokset, kun asennat tai p‰ivit‰t j‰rjestelm‰‰si aptilla.
+ Leave this empty if you do not want any email to be sent.
+Description-fi: Kenelle apt-listchanges l‰hett‰‰ muutoslokit?
+ apt-listchanges voi l‰hett‰‰ muutoslokit postina.  Mihin osoitteeseen
+ haluat niiden tulevan?
  .
- Koska voit myˆs ajaa apt-listchangesin k‰sin .deb-paketeille, t‰m‰
- asetus on valinnainen.
+ J‰t‰ t‰m‰ kohta tyhj‰ksi, jos et halua postia l‰hetett‰v‰n.
 
 Template: apt-listchanges/confirm
 Type: boolean
@@ -73,18 +60,18 @@ Description: Should apt-listchanges prompt for confirmation after displaying cha
  After giving you a chance to display changelog entries, apt-listchanges
  can ask whether or not you would like to continue. This is useful when
  running from apt, as it gives you a chance to abort the upgrade if you see
- a change you do not want to apply (yet).  
+ a change you do not want to apply (yet).
  .
- This setting only applies when running from apt.  Otherwise, it can be
- requested with a command line option.  
+ This setting does not apply to the 'mail' or 'none' frontends, and can be
+ overridden with a command line option.
 Description-fi: Pit‰isikˆ apt-listchangesin kysy‰ vahvistusta muutoslokien n‰ytˆn j‰lkeen?
  apt-listchanges voi kysy‰ muutoslokien n‰ytt‰misen j‰lkeen, haluatko
  jatkaa asennusta. T‰st‰ on hyˆty‰ aptin tekem‰ss‰ automaattiajossa, koska
  saat mahdollisuuden keskeytt‰‰ p‰ivityksen, jos et halua viel‰ tehd‰
- muutoksia.
+ jotain n‰kem‰‰si muutosta.
  .
- T‰ll‰ asetuksella on merkityst‰ vain aptin suorittamassa ajossa. Muuten
- vahvistuksen kysymisen saa komentorivivalitsimella.
+ T‰t‰ asetusta ei huomioida 'posti'- ja 'ei mik‰‰n'-liittymiss‰.
+ Asetuksen voi myˆs ohittaa komentorivivalitsimella.
 
 Template: apt-listchanges/overwrite_etc_apt_listchanges_conf
 Type: boolean
@@ -93,10 +80,10 @@ Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
  apt-listchanges can configure all of the options in
  /etc/apt/listchanges.conf by asking you questions.  This file is read and
  processed every time apt-listchanges is run, and is used to set defaults. 
- All of the options can be overridden on the command line.  
+ All of the options can be overridden on the command line.
  .
  If you want to edit /etc/apt/listchanges.conf manually for whatever
- reason, answer "no" now.  
+ reason, answer "no" now.
 Description-fi: Saako apt-listchanges asentaa oman /etc/apt/listchanges.conf-tiedoston?
  Voit luoda asetustiedoston /etc/apt/listchanges.conf vastaamalla n‰ihin
  kysymyksiin. apt-listchanges lukee oletusasetuksensa t‰st‰ tiedostosta
@@ -104,3 +91,15 @@ Description-fi: Saako apt-listchanges asentaa oman /etc/apt/listchanges.conf-tie
  komentorivivalitsimilla.
  .
  Jos haluat jostain syyst‰ muokata asetustiedostoa k‰sin, vastaa t‰h‰n ei.
+
+Template: apt-listchanges/save-seen
+Type: boolean
+Default: true
+Description: Should apt-listchanges skip changelogs that have already been seen?
+ apt-listchanges has the capability to keep track of which changelog
+ entries have already been displayed, and to skip them in future
+ invocations. This is useful, for example, when retrying an upgrade.
+Description-fi: Haluatko apt-listchangesin ohittavan jo n‰hdyt muutoslokit?
+ apt-listchanges voi pit‰‰ kirjaa muutoslokien n‰ytetyist‰ osista ja j‰tt‰‰
+ n‰m‰ n‰ytt‰m‰tt‰ myˆhemmin. T‰st‰ on hyˆty‰ esimerkiksi yritett‰ess‰
+ p‰ivityst‰ uudelleen.
