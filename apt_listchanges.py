@@ -406,10 +406,10 @@ class simpleprogress:
     def progress_done(self):
         pass
 
-class mail(frontend,simpleprogress):
+class mail(simpleprogress,frontend):
     pass
 
-class text(frontend,ttyconfirm,simpleprogress):
+class text(simpleprogress,ttyconfirm,frontend):
     def display_output(self,text):
         sys.stdout.write(text)
 
@@ -456,12 +456,12 @@ class runcommand:
     def get_command(self):
         return self.command
 
-class pager(frontend,runcommand,ttyconfirm,fancyprogress):
+class pager(runcommand,ttyconfirm,fancyprogress,frontend):
     def __init__(self,*args):
         apply(frontend.__init__,[self] + list(args))
         self.command = self.config.get('pager', 'sensible-pager')
 
-class xterm(frontend,runcommand,ttyconfirm,fancyprogress):
+class xterm(runcommand,ttyconfirm,fancyprogress,frontend):
     def __init__(self,*args):
         apply(frontend.__init__,[self] + list(args))
         self.mode = os.P_NOWAIT
