@@ -1,3 +1,17 @@
+apt-listchanges (2.34) unstable; urgency=low
+
+  * "Abort abort abort!"
+  * Give up trying to properly encode the character set of the subjects of
+    emails we send out.  Pretend everything is OK.  (Closes: #180823)
+  * This reopens #159122 (Subject is not encoded properly), but since it's
+    archived, we'll call it #199318 now.
+  * Make sure we overwrite the entire progress message when finished
+    (Closes: #199268)
+  * Use cStringIO to build up the big string for the HTML frontend.  This
+    should make it much faster with large strings (Closes: #186561)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 29 Jun 2003 21:55:41 -0400
+
 apt-listchanges (2.33) unstable; urgency=low
 
   * Remove obsolete debconf template
