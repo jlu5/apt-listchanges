@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.13 2001-07-17 03:26:13 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.14 2001-11-13 03:32:20 mdz Exp $
 -->
 
 <refentry>
@@ -185,7 +185,7 @@
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM>--email-address</TERM>
+	<TERM><OPTION>--email-address</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
 	    Specify the email address to which output should be mailed
@@ -195,7 +195,7 @@
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM>-c, --confirm, --noconfirm</TERM>
+	<TERM><OPTION>-c, --confirm, --noconfirm</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
 	    Once changelogs have been displayed, ask the user whether
@@ -206,7 +206,7 @@
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM>-a, --all</TERM>
+	<TERM><OPTION>-a, --all</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
 	    Rather than trying to display changelog entries that are
@@ -219,7 +219,7 @@
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM>--saveseen, --nosaveseen</TERM>
+	<TERM><OPTION>--saveseen, --nosaveseen</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
 	    This option (which defaults to on) will cause
@@ -231,7 +231,7 @@
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM>--help</TERM>
+	<TERM><OPTION>--help</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
 	    Displays syntax information.
@@ -240,7 +240,7 @@
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM>--version</TERM>
+	<TERM><OPTION>--version</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
 	    Displays the version number.
@@ -249,7 +249,7 @@
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM>-h, --headers</TERM>
+	<TERM><OPTION>-h, --headers</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
 	    These options will cause apt-listchanges to insert a
@@ -290,12 +290,12 @@
       <varlistentry>
 	<term>/etc/apt/listchanges.conf</term>
 
-	<para>Configuration file</para>
+        <listitem><para>Configuration file</para></listitem>
       </varlistentry>
 
       <varlistentry>
 	<term>/var/lib/apt/listchanges.db</term>
-	<para>Database used for save-seen</para>
+        <listitem><para>Database used for save-seen</para></listitem>
       </varlistentry>
     </variablelist>
   </refsect1>
