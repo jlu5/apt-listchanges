@@ -2,6 +2,8 @@ apt-listchanges (2.40) unstable; urgency=low
 
   * Updated Spanish translation of debconf templates from Carlos Valdivia
     Yag?e <valyag@dat.etsit.upm.es> (Closes: #203993)
+  * Updated Dutch translation of debconf templates from cobaco
+    <cobaco@linux.be> (Closes: #204700)
 
  --
 
