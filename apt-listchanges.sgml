@@ -4,17 +4,17 @@
 ]>
 
 <!-- Manual page for debchanges, DocBook source file
-     (C) 2000 Matt Zimmerman <mdz@csh.rit.edu>
+     (C) 2000 Matt Zimmerman <mdz@debian.org>
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.1 2000-10-19 03:28:44 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.2 2000-11-02 03:37:13 mdz Exp $
 -->
 
 <refentry>
   <docinfo>
     <address>
-      <email>mdz@csh.rit.edu</email>
+      <email>mdz@debian.org</email>
     </address>
     <author>
       <firstname>Matt</firstname>
