@@ -1,3 +1,9 @@
+apt-listchanges (1.61) unstable; urgency=low
+
+  * Remove a stray debugging statement (Closes: #125586)
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 17 Dec 2001 20:24:04 -0500
+
 apt-listchanges (1.60) unstable; urgency=low
 
   * Added a --debug option to help with debugging future problems
