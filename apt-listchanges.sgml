@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.4 2000-11-18 09:48:13 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.5 2000-12-11 19:03:56 mdz Exp $
 -->
 
 <refentry>
@@ -138,12 +138,24 @@
 	  </VARIABLELIST>
 	</LISTITEM>
       </VARLISTENTRY>
+
       <VARLISTENTRY>
 	<TERM>--email-address</TERM>
 	<LISTITEM>
 	  <PARA>
 	    Specify the email address to which output should be mailed
 	    when using the mail frontend.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+
+      <VARLISTENTRY>
+	<TERM>-c, --confirm, --noconfirm</TERM>
+	<LISTITEM>
+	  <PARA>
+	    Once changelogs have been displayed, ask the user whether
+	    or not to proceed.  If the user chooses not to proceed, a
+	    nonzero exit status will be returned, and apt will abort.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
