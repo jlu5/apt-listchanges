@@ -9,14 +9,25 @@ db_input medium apt-listchanges/frontend || true
 db_go
 
 # If the mail frontend was selected, ask for an email address.  If
-# not, take the default.
+# not, take the default (which will still be used on the command line).
 db_get apt-listchanges/frontend
 if [ "$RET" = "mail" ]; then
   db_input medium apt-listchanges/email-address || true
-  db_go
 fi
 
-db_input medium apt-listchanges/confirm || true
+# If we are running from apt, check whether they want to be asked for
+# confirmation.
+db_get apt-listchanges/apt-hook-p
+echo "apt-listchanges/apt-hook-p: $RET"
+if [ "$RET" = "true" ]; then
+  db_input medium apt-listchanges/confirm || true
+fi
+
+# Ask the conditional questions, if any
 db_go
+
+# Clean up questions we used to ask (1.14 and earlier)
+db_unregister apt-listchanges/apt-mode-frontend || true
+db_unregister apt-listchanges/apt-mode-email-address || true
 
 exit 0
