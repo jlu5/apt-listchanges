@@ -1,3 +1,17 @@
+apt-listchanges (2.4) unstable; urgency=low
+
+  * Add back the 'mail' frontend, so that 'none' can continue to mean
+    "don't even look for changelogs". (Closes: #129991, #129794)
+  * Add an error message for an unknown frontend (Closes: #129993)
+  * Fix --help, usage() was lost when moving code to the module
+    (Closes: #129992)
+  * Get rid of the hackish 'run' configuration option, since frontend=none
+    accomplishes the same purpose
+  * Update the debconf templates to reflect several minor configuration
+    differences
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 19 Jan 2002 17:09:16 -0500
+
 apt-listchanges (2.3) unstable; urgency=low
 
   * Add 'none' option to apt-listchanges/frontend template
