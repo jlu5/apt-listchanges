@@ -394,7 +394,7 @@ sub frontend_init {
 
       $SIG{'PIPE'} = $sigpipe_handler;
 
-      $? >> 8;
+      0;
     }
   };
 
