@@ -1,3 +1,14 @@
+apt-listchanges (2.25) unstable; urgency=low
+
+  * Use sensible-browser from debianutils in the browser frontends if it
+    is available
+  * Add Danish translation of message catalog from Morten Brix Pedersen
+    <morten@wtf.dk> (Closes: #174074)
+  * Use locale.YESEXPR to localize the confirmation prompt
+    (Closes: #174635)
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 29 Jan 2003 19:11:33 -0500
+
 apt-listchanges (2.24) unstable; urgency=low
 
   * Updated Catalan templates and catalog from Jordi Mallach
