@@ -1,3 +1,16 @@
+apt-listchanges (2.15) unstable; urgency=low
+
+  * The "I never forget a wishlist bug" release.
+  * Add w3m frontend which creates HTML output with hyperlinks for bugs
+    and email addresses, and a corresponding xterm-w3m frontend which does
+    the same thing in an xterm in the background.  (Closes: #82360)
+  * Only works with w3m for now, because that is the only browser that I
+    am aware of which accepts input from a pipe.  Perhaps eventually, I
+    will find a way to securely create temporary files for this purpose in
+    Python, and any browser can be supported
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed,  3 Apr 2002 23:35:05 -0500
+
 apt-listchanges (2.14) unstable; urgency=low
 
   * Fix the confirm prompt so that it defaults to yes
