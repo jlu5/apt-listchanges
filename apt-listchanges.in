@@ -842,7 +842,7 @@ sub dpkg_compare_versions {
   my $ret = system(@cmd);
   $ret <<= 8;
 
-  warn "dpkg_compare_versions($a, $op, $b) = $ret\n";
+  #warn "dpkg_compare_versions($a, $op, $b) = $ret\n";
 
   $ret == 0;
 }
