@@ -25,7 +25,7 @@
 
 use strict;
 use Getopt::Long;
-use Newt qw(:macros NEWT_FLAG_SCROLL NEWT_FLAG_WRAP NEWT_EXIT_COMPONENT);
+use Sys::Hostname;
 
 # Read config file
 my %config;
@@ -299,7 +299,12 @@ sub frontend_init {
     'init' => sub {
       my ($this) = @_;
       $this->{newt} = {};
+
       # Initialize terminal graphics
+      eval q{ use Newt; };
+      die "apt-listchanges: In order to use the newt frontend, you must install libnewt-perl\n"
+	  if $@;
+
     Newt::Init();
     Newt::Cls();
       my ($screen_width, $screen_height) = Newt::GetScreenSize();
@@ -341,14 +346,16 @@ sub frontend_init {
 	my $newt = $this->{newt};
 	$$newt{main} = Newt::Panel(1, 2, "Displaying changelogs");
 	$$newt{main}->Add(0, 0, Newt::Textbox($screen_width - 10, $screen_height - 10,
-					      NEWT_FLAG_WRAP|NEWT_FLAG_SCROLL,
+					      &Newt::NEWT_FLAG_WRAP|
+					      &Newt::NEWT_FLAG_SCROLL,
 					      $output));
 	$$newt{main}->Add(0, 1, Newt::Panel(2, 1)
-			  ->Add(0, 0, OK_BUTTON)
-			  ->Add(1, 0, CANCEL_BUTTON));
+			  ->Add(0, 0, &Newt::OK_BUTTON)
+			  ->Add(1, 0, &Newt::CANCEL_BUTTON));
 	
 	my ($reason, $data) = $$newt{main}->Run();
-	if ($reason eq NEWT_EXIT_COMPONENT && $data->Tag() eq 'CANCEL') {
+	if ($reason eq &Newt::NEWT_EXIT_COMPONENT
+	    && $data->Tag() eq 'CANCEL') {
 	  # User pressed cancel, so we should exit with nonzero status
 	  $ret = 1;
 	};
@@ -421,10 +428,12 @@ sub frontend_init {
 
       print "\n";
 
+      my $host = hostname;
+
       open(MAIL, "|/usr/lib/sendmail -t") || die "sendmail: $!\n";
       print MAIL <<EOT;
 To: $email_address
-Subject: apt-listchanges output
+Subject: apt-listchanges output for $host
 
 EOT
     print MAIL $output;
