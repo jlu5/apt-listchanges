@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.2 2000-11-02 03:37:13 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.3 2000-11-18 09:46:23 mdz Exp $
 -->
 
 <refentry>
@@ -38,6 +38,14 @@
 	<arg><option>-v</option></arg>
 	<arg><option>--verbose</option></arg>
       </group>
+      <group choice=opt>
+	<arg><option>-f</option></arg>
+	<arg><option>--frontend=frontend</option></arg>
+      </group>
+      <group choice=opt>
+	<arg><option>--email-address=addr</option></arg>
+      </group>
+
       <group choice=req>
 	<arg><option>--apt</option></arg>
 	<arg rep=repeat><replaceable>deb</replaceable></arg>
@@ -45,7 +53,7 @@
     </cmdsynopsis>
   </refsynopsisdiv>
   <refsect1>
-    <title>Description</title>
+    <title>DESCRIPTION</title>
 
     <para><command>debchanges</command> is a tool to show what has
       been changed in a new version of a Debian package, as compared to
@@ -58,7 +66,7 @@
   </refsect1>
 
   <refsect1>
-    <title>Options</title>
+    <title>OPTIONS</title>
 
     <VARIABLELIST>
       <VARLISTENTRY>
@@ -81,8 +89,74 @@
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
+      <VARLISTENTRY>
+	<TERM><option>-f, --frontend</option>
+	</TERM>
+	<LISTITEM>
+	  <PARA>
+	    Select which frontend to use to display information to the
+	    user.  Current frontends include:
+	  </PARA>
+	  <VARIABLELIST>
+	    <VARLISTENTRY>
+	      <TERM>newt</TERM>
+	      <LISTITEM>
+		<PARA>
+		  A terminal graphics interface, using text mode
+		  windows based on the newt toolkit.  Displays output
+		  in a scrollable window.
+		</PARA>
+	      </LISTITEM>
+	    </VARLISTENTRY>
+	    <VARLISTENTRY>
+	      <TERM>pager</TERM>
+	      <LISTITEM>
+		<PARA>
+		Uses your favorite pager to display output.
+		</PARA>
+	      </LISTITEM>
+	    </VARLISTENTRY>
+	    <VARLISTENTRY>
+	      <TERM>text</TERM>
+	      <LISTITEM>
+		<PARA>
+		  Dumps output to stdout, with no pauses.
+		</PARA>
+	      </LISTITEM>
+	    </VARLISTENTRY>
+	    <VARLISTENTRY>
+	      <TERM>mail</TERM>
+	      <LISTITEM>
+		<PARA>
+		Sends output via email, to the address specified in
+		<filename>/etc/apt-listchanges.conf</filename> or by the
+		<option>--email-address</option> option
+		</PARA>
+	      </LISTITEM>
+	    </VARLISTENTRY>
+	  </VARIABLELIST>
+	</LISTITEM>
+      </VARLISTENTRY>
+      <VARLISTENTRY>
+	<TERM>--email-address</TERM>
+	<LISTITEM>
+	  <PARA>
+	    Specify the email address to which output should be mailed
+	    when using the mail frontend.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
     </VARIABLELIST>
 
+  </refsect1>
+
+  <refsect1>
+    <title>AUTHOR</title>
+
+    <PARA>
+      apt-listchanges was written by Matt Zimmerman
+      &lt;mdz@debian.org&gt;
+    </PARA>
   </refsect1>
 
 </refentry>
