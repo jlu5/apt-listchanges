@@ -1,3 +1,19 @@
+apt-listchanges (1.60) unstable; urgency=low
+
+  * Added a --debug option to help with debugging future problems
+  * Work around tar's ridiculous globbing, so that we don't pick up things
+    that look like changelogs but are in a subdirectory of .../doc
+    (Closes: #118382)
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 13 Dec 2001 04:20:30 -0500
+
+apt-listchanges (1.59) unstable; urgency=low
+
+  * Fix formatting in man page, thanks to Andras BALI <bali@debian.org>
+    (part of bug #111013)
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 12 Nov 2001 22:32:47 -0500
+
 apt-listchanges (1.58) unstable; urgency=low
 
   * Be sure to return a true value from the xterm-pager initialization
