@@ -1,3 +1,10 @@
+apt-listchanges (2.40) unstable; urgency=low
+
+  * Updated Spanish translation of debconf templates from Carlos Valdivia
+    Yag?e <valyag@dat.etsit.upm.es> (Closes: #203993)
+
+ --
+
 apt-listchanges (2.39) unstable; urgency=low
 
   * Ignore changelog files which don't look like Debian changelogs.  This
