@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges\n"
+"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
+"PO-Revision-Date: 2004-06-03 12:00+0100\n"
+"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../apt-listchanges:109
+msgid "%s: will be newly installed"
+msgstr "%s : sera installé pour la première fois"
+
+#: ../apt-listchanges:121
+msgid "%s: Version %s has already been seen"
+msgstr "%s : la version %s a déjà été vue"
+
+#: ../apt-listchanges:147
+msgid "Changes for %s"
+msgstr "Modifications pour %s"
+
+#: ../apt-listchanges:156
+msgid "Informational notes"
+msgstr "Notes d'information"
+
+#: ../apt-listchanges:177
+msgid "didn't find any valid .deb archives"
+msgstr "impossible de trouver une archive .deb valide"
+
+#: ../apt_listchanges.py:184
+msgid ""
+"Wrong or missing VERSION from apt pipeline\n"
+"(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
+msgstr ""
+"VERSION incorrecte ou manquante dans l'affichage d'apt\n"
+"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version est-il bien à 0 ?)\n"
+
+#: ../apt_listchanges.py:225
+msgid "Mailing changelogs to %s"
+msgstr "Envoi des modifications par courriel à %s"
+
+#: ../apt_listchanges.py:228
+msgid "apt-listchanges output for %s"
+msgstr "Affichage d'état d'apt-listchanges pour %s"
+
+#: ../apt_listchanges.py:239
+msgid "The newt frontend is deprecated, using pager"
+msgstr "L'interface newt est obsolète, utilisation de l'afficheur page à page"
+
+#: ../apt_listchanges.py:266
+msgid "Do you want to continue? [Y/n]? "
+msgstr "Souhaitez-vous continer [Y/n ?"
+
+#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
+#: ../apt_listchanges.py:306
+msgid "Reading changelogs"
+msgstr "Lecture des fichiers « changelog »"
+
+#: ../apt_listchanges.py:306
+msgid "Done"
+msgstr "Terminé"
+
+#: ../apt_listchanges.py:343
+msgid "%s exited with status %d"
+msgstr "%s s'est terminé avec l'état %d"
