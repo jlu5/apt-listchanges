@@ -8,12 +8,16 @@
 # This is the debhelper compatability version to use.
 export DH_COMPAT=2
 package=apt-listchanges
+version=$(shell dpkg-parsechangelog | sed -n -e '/^Version:/s/^Version: //p')
 tmp=`pwd`/debian/$(package)
 
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
-	# Add here commands to configure the package.
+# Add here commands to configure the package.
+
+# Substitute version into configure.in
+	perl -pi.orig -e 's/^AM_INIT_AUTOMAKE/AM_INIT_AUTOMAKE($(package), $(version))/g' configure.in
 
 	automake --foreign --add-missing
 	aclocal
