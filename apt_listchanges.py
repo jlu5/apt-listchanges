@@ -22,8 +22,7 @@ locale.setlocale(locale.LC_ALL,'')
 try:
     _ = gettext.translation('apt-listchanges').gettext
 except IOError:
-    def gettext_null(str): return str
-    _ = gettext_null
+    _ = lambda str: return str
 
 def changelog_variations(filename):
     formats = ['usr/doc/\\*/%s.gz',
@@ -236,9 +235,13 @@ def mail_changes(address, changes):
     hostname = gethostname()
     message = email.Message.Message()
     subject = _("apt-listchanges output for %s") % hostname
-    if locale.getlocale()[0]:
+    try:
         subject = email.Header.Header(subject,
                                       locale.nl_langinfo(locale.CODESET))
+    except UnicodeError:
+        subject = email.Header.Header(subject, 'US-ASCII')
+    except LookupError:
+        subject = email.Header.Header(subject, 'UTF-8')
 
     message['Subject'] = subject
     message['To'] = address
