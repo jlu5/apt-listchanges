@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.16 2002-01-12 03:47:51 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.17 2002-01-19 21:49:14 mdz Exp $
 -->
 
 <refentry>
@@ -297,12 +297,6 @@ confirm=1
           In apt mode, the xterm-pager frontend is default, a copy
           of the changelogs (if any) should be emailed to root, and
           apt-listchanges should ask for confirmation.</para>
-
-          <para>There is one special config file option, 'run', which
-          is typically only used in apt mode.  This option specifies
-          that apt-listchanges should not run at all, and provides a
-          convenient way to temporarily disable it without editing the
-          apt configuration</para>
 
         </listitem>
       </varlistentry>
