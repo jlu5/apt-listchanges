@@ -3,8 +3,8 @@
 set -e
 
 if [ "$1" = "purge" ]; then
-  rm -f /etc/apt-listchanges.conf /etc/apt-listchanges.conf.old \
-    /etc/apt/listchanges.conf
+  rm -f /etc/apt-listchanges.conf /etc/apt-listchanges.conf.old
+  ucf -p /etc/apt/listchanges.conf
 fi
 
 # dh_installdeb will replace this with shell code automatically
