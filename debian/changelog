@@ -11,7 +11,7 @@ apt-listchanges (2.56) unstable; urgency=low
   * Updated French translation of message catalog from Christian Perrier <bubulle@debian.org>
     (Closes: #254819)
 
- --
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 27 Jun 2004 18:10:01 -0700
 
 apt-listchanges (2.55) unstable; urgency=low
 
