@@ -9,7 +9,7 @@ db_input low apt-listchanges/email-address || true
 
 which_priority=low
 if [ "$1" = "configure" ]; then
-    if dpkg --compare-versions "$2" le 2.51; then
+    if [ -n "$2" ] && dpkg --compare-versions "$2" le 2.51; then
         # Question was added in 2.51, but re-ask for users who
         # upgraded to that version, because we're about to override
         # their choice
