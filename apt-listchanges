@@ -44,9 +44,7 @@ config.read('/etc/apt/listchanges.conf')
 debs = config.getopt(sys.argv)
 
 if (debs == None or len(debs) == 0) and config.mode != 'apt':
-    # XXX, display usage
-    sys.stderr.write("Usage: apt-listchanges [options] {--apt | filename.deb ...}\n")
-    sys.exit(1)
+    config.usage(1);
 
 # If apt is in quiet (loggable) mode, we should make our output
 # loggable too
@@ -56,7 +54,7 @@ if config.quiet:
 if config.mode == 'apt':
     debs = apt_listchanges.read_apt_pipeline()
 
-if not config.run or config.frontend == 'none':
+if config.frontend == 'none':
     sys.exit(0)
 
 if not config.show_all:
@@ -76,6 +74,9 @@ source_packages = {}
 found = {}
 
 frontend = apt_listchanges.make_frontend(config.frontend,len(debs))
+if frontend == None:
+    sys.stderr.write("Unknown frontend: %s\n" % config.frontend)
+    sys.exit(1)
 
 # Main loop
 for deb in debs:
