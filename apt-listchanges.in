@@ -43,7 +43,8 @@ my $usage = "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n";
 # Config file options can be overridden by command line options
 my $apt_mode = 0;
 my $verbose = 0;
-my $frontend_opt = $config{'frontend'} || 'pager';
+my $frontend_opt = $ENV{'APT_LISTCHANGES_FRONTEND'} || $config{'frontend'}
+                   || 'pager';
 my $email_address = $config{'email-address'} || 'root';
 my $show_all = 0;
 my $apt_mode_run = $config{'apt-mode-run'} ?
@@ -70,6 +71,11 @@ if ($version_only) {
 
 if ($help_only) {
   print $usage;
+  exit 0;
+}
+
+if ($frontend_opt eq 'none') {
+  print "apt-listchanges: skipping changelogs\n";
   exit 0;
 }
 
