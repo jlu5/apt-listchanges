@@ -11,13 +11,12 @@
 #
 #    Developers do not need to manually edit POT or PO files.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: apt-listchanges\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-04-29 20:33-0700\n"
-"PO-Revision-Date: 2004-06-01 11:11-0200\n"
+"PO-Revision-Date: 2005-02-04 17:00-0100\n"
 "Last-Translator: Helge Kreutzmann <kreutzm@itp.uni-hannover.de>\n"
 "Language-Team: de <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -86,7 +85,7 @@ msgstr "Text  - Die Änderungen aufs Terminal ausgeben (ohne Unterbrechung)"
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changes via mail"
-msgstr "E-Mail  - Sende die Änderungen nur als Mail"
+msgstr "E-Mail  - Sende die Änderungen nur als E-Mail"
 
 #. Type: select
 #. Description
@@ -103,7 +102,7 @@ msgid ""
 "frontends except 'none'."
 msgstr ""
 "Diese Einstellung kann mit einer Kommandozeilenoption oder einer "
-"Umgebungsvariablen umgangen werden. Beachten Sie, daß sie auf jedenfall eine "
+"Umgebungsvariablen umgangen werden. Beachten Sie, daß Sie auf jedenfall eine "
 "Kopie per E-Mail bekommen können, mit Ausnahme der Option »Garnicht«."
 
 #. Type: string
@@ -136,7 +135,7 @@ msgid ""
 "if you do not want any email to be sent."
 msgstr ""
 "Mehrere Adresse können, durch Kommata getrennt, angegeben werden. "
-"Lassen sie dies frei, wenn Sie keinen E-Mailversand wünschen."
+"Lassen Sie dies frei, wenn Sie keinen E-Mailversand wünschen."
 
 #. Type: boolean
 #. Description
@@ -158,7 +157,7 @@ msgid ""
 msgstr ""
 "apt-listchanges kann Sie nach dem Anzeigen der Änderungen fragen, ob Sie "
 "fortfahren wollen. Das ist nützlich, wenn apt-listchanges von apt gestartet "
-"wird, da Sie so Sie Gelegenheit haben, das Upgrade abzubrechen, wenn Sie "
+"wird, da Sie so Gelegenheit haben, das Upgrade abzubrechen, wenn Sie "
 "Änderungen bemerken, die Sie (noch) nicht wollen."
 
 #. Type: boolean
@@ -168,7 +167,7 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Diese Einstellung funktioniert nicht mit der »E-Mail«- oder"
+"Diese Einstellung funktioniert nicht mit der »E-Mail«- oder "
 "»Garnicht«-Schnittstelle. Die Einstellung kann durch Kommandozeilenoptionen "
 "aufgehoben werden."
 
@@ -200,7 +199,7 @@ msgstr "News-Dateien, beide, Changelog-Dateien"
 #. Description
 #: ../templates:61
 msgid "Which types of changes should be displayed with apt?"
-msgstr "Welche Arten von Ändrungen sollen mit apt angezeigt werden?"
+msgstr "Welche Arten von Änderungen sollen mit apt angezeigt werden?"
 
 #. Type: select
 #. Description
@@ -210,9 +209,9 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" News - Nur wichtige Neuigkeiten\n"
-" Both - Sowohl News und detailierte Changelogs\n"
-" Changelogs - Nur detailierte Changelogs (Änderungen)"
+" News-Dateien - Nur wichtige Neuigkeiten\n"
+" Beide - Sowohl News und detailierte Changelogs\n"
+" Changelog-Dateien - Nur detailierte Changelogs (Änderungen)"
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 #~ msgstr "Soll apt-listchanges /etc/apt/listchanges.conf überschreiben?"

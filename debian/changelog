@@ -1,3 +1,26 @@
+apt-listchanges (2.59-0.1) unstable; urgency=low
+
+  * Non-maintainer upload for fixing l10n issues. Made
+    with maintainer's agreement
+  * Program translations:
+    - The French mess is now sorted out. Closes: #285440, #260534
+    - Fix the headers of the Finnish and Brazilian translations
+    - German corrected. Closes: #293594
+  * Debconf translations:
+    - Brazilian Portuguese fixed. Closes: #262603
+    - Czech updated. Closes: #259171
+    - Dutch updated. Closes: #260295
+    - Danish updated. Closes: #251084
+    - Simplified Chinese updated
+    - Traditional Chinese added
+    - Italian added
+    - German corrected. Closes: #293594
+  * Documentation translations:
+    - French added. Closes: #283357
+  * Fix wrong UTF-8 encoding in the 1.25 changelog entry
+
+ -- Christian Perrier <bubulle@debian.org>  Sat, 29 Jan 2005 09:46:43 +0100
+
 apt-listchanges (2.59) unstable; urgency=low
 
   * Updated French translation from Christian Perrier (Closes: #260534)
@@ -1004,7 +1027,7 @@ apt-listchanges (1.26) unstable; urgency=low
 
 apt-listchanges (1.25) unstable; urgency=low
 
-  * Added Swedish translation of debconf templates, thanks to André
+  * Added Swedish translation of debconf templates, thanks to AndrÃ©
     Dahlqvist <anedah-9@sm.luth.se>
   * Added German translation of debconf templates, thanks to Leonard
     Michlmayr <Leonard.Michlmayr@ap.univie.ac.at>

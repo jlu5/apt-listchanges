@@ -32,7 +32,7 @@ msgstr "Anmerkungen"
 
 #: ../apt-listchanges:177
 msgid "didn't find any valid .deb archives"
-msgstr "konnte keine gültigen .deb Archive finden"
+msgstr "konnte keine gültigen .deb-Archive finden"
 
 #: ../apt_listchanges.py:184
 msgid ""

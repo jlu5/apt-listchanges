@@ -13,10 +13,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges_2.55_da\n"
+"Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-04-29 20:33-0700\n"
-"PO-Revision-Date: 2004-05-01 23:35+0200\n"
+"PO-Revision-Date: 2004-05-26 21:22+0200\n"
 "Last-Translator: Claus Hindsgaul <claus_h@image.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
@@ -29,31 +29,31 @@ msgstr ""
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr "tekstviser, netsøger, xterm-tekstviser, xterm-netsøger, tekst, post, ingen"
+msgstr "tekstviser, browser, xterm-tekstviser, xterm-browser, tekst, post, ingen"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "How should changes be displayed with apt?"
-msgstr "Hvordan skal ændringerne vises med apt?"
+msgstr "Hvordan skal ændringer vises med apt?"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "apt-listchanges can display package changes in a number of different ways."
-msgstr "apt-listchanges kan vise oplysningerne om ændringer i pakker på flere forskellige måder."
+msgstr "apt-listchanges kan vise pakkeændringer på flere forskellige måder."
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "tekstviser - Brug din tekstviser ('pager') til at vise ændringerne én ad gangen."
+msgstr "tekstviser - Brug din foretrukne tekstviser til at vise én side ad gangen"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "netsøger - Vis HTML-formaterede ændringer med en netsøger"
+msgstr "browser - Vis HTML-formaterede ændringer med en webbrowser"
 
 #. Type: select
 #. Description
@@ -65,19 +65,19 @@ msgstr "xterm-tekstviser - Som tekstviser, men i en xterm-terminal i baggrunden"
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "xterm-netsøger - Som netsøger, men i en xterm-terminal i baggrunden"
+msgstr "xterm-browser - Som browser, men i en xterm-terminal i baggrunden"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "tekst  - Skriv ændringerne til din terminal (uden ophold)"
+msgstr "tekst  - Skriv ændringer til din terminal (uden pauser)"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changes via mail"
-msgstr "post  - Send udelukkende ændringerne via e-post"
+msgstr "post  - Send kun ændringer via e-post"
 
 #. Type: select
 #. Description
@@ -107,7 +107,7 @@ msgstr "root"
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changes?"
-msgstr "Hvem skal apt-listchanges sende ændringerne til?"
+msgstr "Hvem skal apt-listchanges sende ændringer til?"
 
 #. Type: string
 #. Description
@@ -133,7 +133,7 @@ msgstr ""
 #. Description
 #: ../templates:40
 msgid "Should apt-listchanges prompt for confirmation after displaying changes?"
-msgstr "Skal apt-listchanges bede om bekræftelse efter visning af ændringerne?"
+msgstr "Skal apt-listchanges bede om bekræftelse efter visning af ændringer?"
 
 #. Type: boolean
 #. Description
@@ -144,10 +144,10 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Når apt-listchanges har vist dig ændringerne, kan den spørge om du vil "
-"fortsætte. Dette er nyttigt, når den køres fra apt, da det giver dig "
-"mulighed for at afbryde opgraderingen hvis du opdager en ændring, du ikke "
-"ønsker (endnu)."
+"Når apt-listchanges har givet dig mulighed for at se listen over "
+"ændringer, kan den spørge om du vil fortsætte. Dette er nyttigt, når "
+"den køres fra apt, da det giver dig mulighed for at afbryde "
+"opgraderingen hvis du opdager en ændring, du ikke ønsker (endnu)."
 
 #. Type: boolean
 #. Description
@@ -180,13 +180,13 @@ msgstr ""
 #. Choices
 #: ../templates:59
 msgid "news, both, changelogs"
-msgstr "nyheder, begge, ændringslog"
+msgstr "nyheder, begge, ændringslogger (changelogs)"
 
 #. Type: select
 #. Description
 #: ../templates:61
 msgid "Which types of changes should be displayed with apt?"
-msgstr "Hvilke type ændringer skal vises med apt?"
+msgstr "Hvilke typer ændringer skal vises med apt?"
 
 #. Type: select
 #. Description
@@ -196,7 +196,7 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" nyheder - kun vigtige nyhedser\n"
-" begge - både nyheder og detaljeret ændringslog\n"
-" ændringslog -kun detaljeret ændringslog (changelog)"
+" nyheder - kun vigtige nyheder\n"
+" begge - både nyheder og detaljerede ændringslogger\n"
+" ændringslogger (changelogs) - kun detaljerede ændringslogger"
 

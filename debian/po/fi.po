@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: apt-listchanges\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-04-29 20:33-0700\n"
-"PO-Revision-Date: 2004-01-14 12:09+0200\n"
+"PO-Revision-Date: 2005-02-01 10:20+0200\n"
 "Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
 "Language-Team: Finnish <debian-l10-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,31 +32,27 @@ msgstr "sivutin, selain, xterm-sivutin, xterm-selain, teksti, posti, ei mikään
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "How should changes be displayed with apt?"
-msgstr "Miten muutoslokit näytetään aptin ajon yhteydessä?"
+msgstr "Miten muutokset näytetään aptin ajon yhteydessä?"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
-msgstr "apt-listchanges osaa näyttää muutoslokimerkinnät usealla eri tavalla."
+msgstr "apt-listchanges osaa näyttää pakettien muutokset usealla eri tavalla."
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "sivutin - Käytä mielisivutintasi"
+msgstr "sivutin - Lue muutokset sivu kerrallaan mielisivuttimellasi"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "selain - Näytä HTML-muotoillut muutoslokit www-selaimella"
+msgstr "selain - Näytä HTML-muotoillut muutokset www-selaimella"
 
 #. Type: select
 #. Description
@@ -73,16 +69,14 @@ msgstr "xterm-selain - Kuten selain, mutta xtermissä taustalla"
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "teksti - Tulosta muutoslokit päätteeseen (ilman taukoja)"
+msgstr "teksti - Tulosta muutokset päätteeseen (ilman taukoja)"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "mail  - Only send changes via mail"
-msgstr "posti - Lähetä muutoslokit postitse"
+msgstr "posti - Lähetä muutokset postitse"
 
 #. Type: select
 #. Description
@@ -111,53 +105,41 @@ msgstr "root"
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid "To whom should apt-listchanges mail changes?"
-msgstr "Kenelle apt-listchanges lähettää muutoslokit?"
+msgstr "Kenelle apt-listchanges lähettää muutokset?"
 
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
-msgstr ""
-"apt-listchanges voi lähettää muutoslokit postina.  Mihin osoitteeseen haluat "
-"niiden tulevan?"
+msgstr "apt-listchanges voi lähettää muutoksista kopion sähköpostissa. Mihin osoitteeseen haluat niiden tulevan?"
 
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
-msgstr "Jätä tämä kohta tyhjäksi, jos et halua postia lähetettävän."
+msgstr "Pilkulla erottelemalla voit antaa useita osoitteita. Jätä tämä kohta tyhjäksi, jos et halua sähköpostia lähetettävän."
 
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changes?"
-msgstr ""
-"Pitäisikö apt-listchangesin kysyä vahvistusta muutoslokien näytön jälkeen?"
+msgstr "Pitäisikö apt-listchangesin kysyä vahvistusta muutoksien näytön jälkeen?"
 
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
-msgstr ""
-"apt-listchanges voi kysyä muutoslokien näyttämisen jälkeen haluatko jatkaa "
-"asennusta. Tästä on hyötyä aptin tekemässä automaattiajossa, koska saat "
-"mahdollisuuden keskeyttää päivityksen, jos et halua vielä tehdä jotain "
-"näkemääsi muutosta."
+msgstr "Luettuasi muutosluettelon, apt-listchanges voi kysyä muutoslokien näyttämisen jälkeen haluatko jatkaa asennusta. Tästä on hyötyä aptin tekemässä automaattiajossa, koska saat mahdollisuuden keskeyttää päivityksen, jos et halua (vielä) tehdä jotain näkemääsi muutosta."
 
 #. Type: boolean
 #. Description
@@ -172,35 +154,29 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "Haluatko apt-listchangesin ohittavan jo nähdyt muutoslokit?"
+msgstr "Haluatko apt-listchangesin ohittavan jo nähdyt muutokset?"
 
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
-msgstr ""
-"apt-listchanges voi pitää kirjaa muutoslokien näytetyistä osista ja jättää "
-"nämä näyttämättä myöhemmin. Tästä on hyötyä esimerkiksi yritettäessä "
-"päivitystä uudelleen."
+msgstr "apt-listchanges voi pitää kirjaa jo näytetyistä muutoksista ja jättää nämä näyttämättä myöhemmin. Tästä on hyötyä esimerkiksi yritettäessä päivitystä uudelleen."
 
 #. Type: select
 #. Choices
 #: ../templates:59
 msgid "news, both, changelogs"
-msgstr ""
+msgstr "uutiset, molemmat, muutoslokit"
 
 #. Type: select
 #. Description
 #: ../templates:61
-#, fuzzy
 msgid "Which types of changes should be displayed with apt?"
-msgstr "Miten muutoslokit näytetään aptin ajon yhteydessä?"
+msgstr "Minkä tyyppiset muutokset näytetään aptin ajon yhteydessä?"
 
 #. Type: select
 #. Description
@@ -210,10 +186,9 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-
-#~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
-#~ msgstr ""
-#~ "Saako apt-listchanges asentaa oman /etc/apt/listchanges.conf-tiedoston?"
+" uutiset - ainoastaan tärkeät uutiset\n"
+" molemmat - sekä uutiset että tarkat muutoslokit\n"
+" muutoslokit - ainoastaan tarkat muutoslokit"
 
 #~ msgid ""
 #~ "apt-listchanges can configure all of the options in /etc/apt/listchanges."
