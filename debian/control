@@ -8,7 +8,7 @@ Build-Depends-Indep: debhelper (>= 4.1.16), docbook-to-man, gettext, python (>= 
 Package: apt-listchanges
 Architecture: all
 Depends: python (>= 2.3), apt (>= 0.5.3), python-apt, debconf, ucf
-Suggests: x-terminal-emulator, www-browser, debianutils
+Suggests: x-terminal-emulator, www-browser
 Description: Display new Debian changelog entries from .deb archives
  apt-listchanges is a tool to show what has been changed in a new
  version of a Debian package, as compared to the version currently
