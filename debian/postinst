@@ -39,13 +39,6 @@ if [ "$action" = "configure" ]; then
 	  echo "confirm=0" >> $PREFERENCES
 	fi
 
-	db_get apt-listchanges/apt-hook-p
-	if [ "$RET" = "true" ]; then
-	  echo "run=1" >> $PREFERENCES
-	else
-          echo "run=0" >> $PREFERENCES
-	fi
-
 	db_get apt-listchanges/save-seen
 	if [ "$RET" = "true" ]; then
 	  echo "save_seen=/var/lib/apt/listchanges.db" >> $PREFERENCES
