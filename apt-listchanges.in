@@ -653,14 +653,14 @@ sub read_deb_filenames {
 	  next unless my ($pkg, $oldversion, $newversion, $filename)
 	      = /^(\S+)\s+(\S+)\s+<\s+(\S+)\s+(\S+)$/;
 
-	  if ($filename =~ /^\*\*(.*)\*\*$/) {
+	  if ($filename =~ /^\*\*(.+)\*\*$/) {
 	    if ($1 eq 'CONFIGURE') {
 	      push(@order, $pkg);
 	    } else {
 	      next;
 	    }
 	  }
-	  next if $filename =~ /^\*\*.*\*\*$/;
+
 	  next if $oldversion eq '-';
 
 	  $debs{$pkg} = $filename;
