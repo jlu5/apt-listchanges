@@ -13,11 +13,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges_2.31\n"
+"Project-Id-Version: apt-listchanges_2.46\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-02-26 23:01-0800\n"
-"PO-Revision-Date: 2003-03-03 18:22+0300\n"
-"Last-Translator: André Luís Lopes <andrelop@ig.com.br>\n"
+"PO-Revision-Date: 2004-02-28 21:34-0300\n"
+"Last-Translator: André Luís Lopes <andrelop@debian.org>\n"
 "Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
@@ -34,7 +34,7 @@ msgstr ""
 #. Description
 #: ../templates:5
 msgid "How should changelogs be displayed with apt?"
-msgstr "Como changelogs devem ser mostrados com o APT?"
+msgstr "Como os changelogs devem ser exibidos com o APT ?"
 
 #. Type: select
 #. Description
@@ -42,14 +42,14 @@ msgstr "Como changelogs devem ser mostrados com o APT?"
 msgid ""
 "apt-listchanges can display changelog entries in a number of different ways."
 msgstr ""
-"O apt-listchanges pode mostrar entradas de changelog de diversas maneiras "
+"O apt-listchanges pode exibir entradas de changelogs de diversas maneiras "
 "diferentes."
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "pager - Use your preferred pager"
-msgstr "paginador - Usa seu paginador preferido"
+msgstr "paginador - Utiliza seu paginador preferido"
 
 #. Type: select
 #. Description
@@ -96,8 +96,8 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Esta configuração pode ser sobreescrita por uma opção de linha de comando ou "
-"uma variável de ambiente. Note que você ainda pode enviar uma cópia dos "
+"Essa configuração pode ser sobreescrita por uma opção de linha de comando "
+"ou uma variável de ambiente. Note que você ainda pode enviar uma cópia dos "
 "changelogs via e-mail usando todos os frontends, exceto a opção 'nenhum'."
 
 #. Type: string
@@ -110,7 +110,7 @@ msgstr "root"
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changelog entries?"
-msgstr "Para quem apt-listchanges deve enviar as entradas de changelog?"
+msgstr "Para quem o apt-listchanges deve enviar as entradas de changelogs ?"
 
 #. Type: string
 #. Description
@@ -119,24 +119,26 @@ msgid ""
 "apt-listchanges can email a copy of displayed changelogs.  To what email "
 "address should they be sent?"
 msgstr ""
-"Você escolheu enviar as entradas de changelod por email. Para qual endereço "
-"elas devem ser enviadas?"
+"Você optou por enviar as entradas de changelogs via e-mail. Para qual "
+"endereço de e-mail as mesmas devem ser enviadas?"
 
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
-msgstr "Deixe em branco se não quiser que qualquer mail seja enviado."
+msgstr ""
+"Múltiplos endereços podem ser especificados, separados por vírgulas. "
+"Mantenha em branco caso você não deseje que nenhuma mensagem seja enviada."
 
 #. Type: boolean
 #. Description
 #: ../templates:40
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changelogs?"
-msgstr "apt-listchanges deve pedir confirmação após mostrar os changelogs?"
+msgstr ""
+"O apt-listchanges deverá pedir confirmação após exibir os changelogs?"
 
 #. Type: boolean
 #. Description
@@ -147,10 +149,11 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Depois de lhe dar a chance de mostrar entradas de changelog, apt-listchanges "
-"pode perguntar se você quer ou não continuar. Isto é útil quando rodando a "
-"partir do apt, já que lhe dá uma chance para abortar o upgrade se você vir "
-"uma mudança que não queira aplicar (ainda)."
+"Depois de oferecer a chance de exibir as entradas de changelogs, o "
+"apt-listchanges poderá perguntar se você deseja ou não continuar. Isto "
+"é útil quando o apt-listchanges é executado a partir do apt, já que lhe "
+"oferece uma oportunidade de abortar a atualização caso você perceba alguma "
+"mudança que não deseje que seja aplicada (ainda)."
 
 #. Type: boolean
 #. Description
@@ -159,14 +162,14 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Esta configuração não se aplica aos frontends \"e-mail\" e \"nenhum\", e "
+"Essa configuração não se aplica aos frontends \"e-mail\" e \"nenhum\", e "
 "pode ser forçada com uma opção de linha de comando."
 
 #. Type: boolean
 #. Description
 #: ../templates:52
 msgid "Should apt-listchanges skip changelogs that have already been seen?"
-msgstr "O apt-listchanges deve omitir changelogs que já foram vistos?"
+msgstr "O apt-listchanges deverá omitir changelogs que já foram vistos?"
 
 #. Type: boolean
 #. Description
@@ -176,9 +179,10 @@ msgid ""
 "have already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"O apt-listchanges tem a habilidade de se lembrar quais entradas de changelog "
-"já foram vistas, e as omitir em próximas vezes. Isto é útil, por exemplo, "
-"quando você estiver fazendo uma segunda tentativa de upgrade."
+"O apt-listchanges possui a habilidade de lembrar quais entradas de "
+"changelogs já foram exibidas e a omití-las futuramente. Isto é útil, "
+"por exemplo, quando você estiver fazendo uma segunda tentativa de "
+"atualização."
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 #~ msgstr "apt-listchanges deve modificar seu /etc/apt/listchanges.conf?"

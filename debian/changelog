@@ -1,3 +1,10 @@
+apt-listchanges (2.48) unstable; urgency=low
+
+  * Updated pt_BR debconf translations from Andre Luis Lopes <andrelop@debian.org>
+    (Closes: #235383)
+
+ --
+
 apt-listchanges (2.47) unstable; urgency=low
 
   * Fix the progress meter not to blow up if nothing was displayed
