@@ -7,7 +7,7 @@ Build-Depends-Indep: debhelper, docbook-to-man, gettext, python (>= 2.1)
 
 Package: apt-listchanges
 Architecture: all
-Depends: python (>= 2.1), apt (>= 0.5.3), debconf
+Depends: python (>= 2.1), apt (>= 0.5.3), python-apt, debconf
 Description: Display new Debian changelog entries from .deb archives
  apt-listchanges is a tool to show what has been changed in a new
  version of a Debian package, as compared to the version currently
