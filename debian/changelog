@@ -2,7 +2,8 @@ apt-listchanges (2.28) unstable; urgency=low
 
   * Use a shell variable named something other than BROWSER in the
     browser-pipe script, so that it doesn't clobber a BROWSER environment
-    variable and cause sensible-browser to call itself recursively
+    variable and cause sensible-browser to call itself recursively.
+    Isn't the bourne shell wonderful?
     (Closes: #179366)
   * Use the current locale's character set to encode the Subject header of
     email messages.  Hopefully this matches the character set used by
