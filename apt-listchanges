@@ -143,6 +143,9 @@ if config.headers:
     changes = ''
     news = ''
     for rec in all_news:
+        if not rec.changes:
+            continue
+
         package = rec.package
         header = _('News for %s') % package
         if len(filter(lambda x: x != package,source_packages[package])) > 0:
@@ -151,6 +154,9 @@ if config.headers:
         news += '--- ' + header + ' ---\n' + rec.changes
 
     for rec in all_changelogs:
+        if not rec.changes:
+            continue
+        
         package = rec.package
         header = _('Changes for %s') % package
         if len(filter(lambda x: x != package,source_packages[package])) > 0:
