@@ -1,3 +1,14 @@
+apt-listchanges (1.40) unstable; urgency=low
+
+  * Don't display the per-package headers by default, as they can get in
+    the way of an easy visual scan.  Instead, they can be turned on using
+    the -h or --headers command line options.  Edit
+    /etc/apt/apt.conf.d/20-apt-listchanges.conf and add the option there
+    if you want the headers back. (Closes: #89821)
+  * Add missing build-dependency on the new perl
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 15 Mar 2001 23:33:43 -0500
+
 apt-listchanges (1.39) unstable; urgency=low
 
   * Prevent an obscure warning that only happened if apt-listchanges was
