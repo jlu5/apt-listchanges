@@ -1,21 +1,8 @@
-Template: apt-listchanges/apt-hook-p
-Type: boolean
-Default: true
-Description: Should apt-listchanges be automatically run by apt?
- One way to use apt-listchanges is to configure apt to run apt-listchanges on
- packages that have been downloaded for installation or upgrade.  This way,
- each time you perform an installation or upgrade using apt,
- apt-listchanges will show you the changes that are about to be made
- to your system.
- .
- I can perform this configuration for you if you like.  Since you can also run
- apt-listchanges manually on .deb archives, this step is optional.
-
 Template: apt-listchanges/frontend
 Type: select
-Choices: pager, xterm-pager, text, none
+Choices: pager, xterm-pager, text, mail, none
 Default: pager
-Description: How should changelogs be displayed by default?
+Description: How should changelogs be displayed with apt?
  apt-listchanges can display changelog entries in a number of different ways.
  .
  pager - Use your preferred pager
@@ -24,8 +11,13 @@ Description: How should changelogs be displayed by default?
  .
  text  - Print changelogs to your terminal (without pausing)
  .
- Choose 'none' if you only want to receive changelogs via email.
- This setting can be overridden by a command-line option.
+ mail  - Only send changelogs via mail
+ .
+ none  - Do not run automatically from apt
+ .
+ This setting can be overridden by a command-line option or an
+ environment variable.  Note that you can still send a copy via mail
+ with all of the frontends except 'none'.
 
 Template: apt-listchanges/email-address
 Type: string
@@ -63,6 +55,6 @@ Template: apt-listchanges/save-seen
 Type: boolean
 Default: true
 Description: Should apt-listchanges skip changelogs that have already been seen?
- apt-listchanges has the ability to keep track of which changelog
+ apt-listchanges has the capability to keep track of which changelog
  entries have already been displayed, and to skip them in future invocations.
  This is useful, for example, when retrying an upgrade.
