@@ -64,3 +64,21 @@ clean: mostlyclean
 
 distclean: clean
 	rm -f *.mo $(PACKAGE).pot
+
+update-po: Makefile
+	$(MAKE) $(PACKAGE).pot
+	if test "$(PACKAGE)" = "gettext"; then PATH=`pwd`/../src:$$PATH; fi; \
+        cd $(srcdir); \
+        catalogs='$(MOFILES)'; \
+        for cat in $$catalogs; do \
+          cat=`basename $$cat`; \
+          lang=`echo $$cat | sed 's/\.mo$$//'`; \
+          echo "$$lang:"; \
+          if $(MSGMERGE) $$lang.po $(PACKAGE).pot -o $$lang.new.po; then \
+            mv -f $$lang.new.po $$lang.po; \
+          else \
+            echo "msgmerge for $$cat failed!"; \
+            rm -f $$lang.new.po; \
+          fi; \
+        done
+
