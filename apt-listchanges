@@ -344,6 +344,9 @@ sub frontend_init {
   $frontends{'pager'} = {
     'init' => sub {
       my ($this) = @_;
+
+      # Set autoflush on stdout
+      $| = 1;
     },
     
     'update_progress' => sub {
@@ -361,10 +364,18 @@ sub frontend_init {
       print "\n";
       return 0 unless $output;
 
+      my $sigpipe_handler = $SIG{'PIPE'};
+      $SIG{'PIPE'} = 'IGNORE';
+
       open(PAGER, "|/usr/bin/sensible-pager")
 	  || die "/usr/bin/sensible-pager: $!\n";
+
       print PAGER $output;
+
       close(PAGER);
+
+      $SIG{'PIPE'} = $sigpipe_handler;
+
       $? >> 8;
     }
   };
