@@ -232,15 +232,18 @@ def read_apt_pipeline(config):
 
 def mail_changes(address, changes):
     print "apt-listchanges: " + _("Mailing changelogs to %s") % address
+
     hostname = gethostname()
     message = email.Message.Message()
     subject = _("apt-listchanges output for %s") % hostname
     if locale.getlocale()[0]:
         subject = email.Header.Header(subject,
                                       locale.nl_langinfo(locale.CODESET))
-    message['Subject'] = 
+
+    message['Subject'] = subject
     message['To'] = address
     message.set_payload(changes)
+
     fh = os.popen('/usr/sbin/sendmail -t', 'w')
     fh.write(message.as_string())
     fh.close()
