@@ -9,6 +9,7 @@ import os
 import re
 import sys
 import gettext
+import email.Message
 from socket import gethostname
 
 # TODO:
@@ -229,9 +230,12 @@ def read_apt_pipeline(config):
 def mail_changes(address, changes):
     print "apt-listchanges: " + _("Mailing changelogs to %s") % address
     hostname = gethostname()
+    message = email.Message.Message()
+    message['Subject'] = _("apt-listchanges output for %s") % hostname
+    message['To'] = address
+    message.set_payload(changes)
     fh = os.popen('/usr/sbin/sendmail -t', 'w')
-    subject = _("apt-listchanges output for %s") % hostname
-    fh.write("To: %s\nSubject: %s\n\n%s" % (address,subject,changes))
+    fh.write(message.as_string())
     fh.close()
 
 def make_frontend(name, packages):
