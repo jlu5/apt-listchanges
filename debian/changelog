@@ -3,7 +3,8 @@ apt-listchanges (1.12) unstable; urgency=low
   * Make newt optional.  We only load it if the user is using the newt
     frontend, and fail with an informative message if it's unavailable.
     This also means we now Suggest newt, rather than depending on it, and
-    it is no longer the default in debconf.
+    it is no longer the default in debconf.  All you pager users can purge
+    libnewt-perl and libnewt0 now.
   * Include the hostname when using the mail frontend (Closes: #77588)
 
  -- Matt Zimmerman <mdz@debian.org>  Tue, 21 Nov 2000 00:01:15 -0500
