@@ -1,32 +1,22 @@
+# Catalan translation of apt-listchanges Debconf templates
+# Copyright (C) 2003 Software In the Public Interest, Inc.
+# Jordi Mallach <jordi@debian.org>, 2003.
 #
-#    Translators, if you are not familiar with the PO format, gettext
-#    documentation is worth reading, especially sections dedicated to
-#    this format, e.g. by running:
-#         info -n '(gettext)PO Files'
-#         info -n '(gettext)Header Entry'
-#
-#    Some information specific to po-debconf are available at
-#            /usr/share/doc/po-debconf/README-trans
-#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
-#
-#    Developers do not need to manually edit POT or PO files.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.24\n"
+"Project-Id-Version: apt-listchanges 2.33\n"
 "POT-Creation-Date: 2002-11-17 00:23-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2003-05-04 21:57+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr "paginador, navegador, paginador-xterm, text, correu, cap"
+msgstr "paginador, navegador, paginador-xterm, navegador-xterm, text, correu, cap"
 
 #. Description
 #: ../templates:5
@@ -35,58 +25,44 @@ msgstr "Com s'haurien de mostrar els changelogs amb apt?"
 
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid ""
 "apt-listchanges can display changelog entries in a number of different ways."
-msgstr ""
-"apt-listchanges pot mostrar les entrades dels changelogs de diferents "
-"maneres."
+msgstr "apt-listchanges pot mostrar les entrades dels canvis de diferents maneres."
 
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "pager - Use your preferred pager"
 msgstr "paginador - Utilitza el vostre paginador preferit"
 
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "browser - Display HTML-formatted changelogs using a web browser"
-msgstr ""
-"navegador - Mostra els changelogs en format HTML usant un navegador web"
+msgstr "navegador - Mostra els canvis en format HTML utilitzant un navegador web"
 
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "paginador-xterm - Utilitza el vostre paginador preferit en una xterm"
+msgstr "paginador-xterm - Com el paginador, però dins d'una xterm en segon pla"
 
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "text  - Imprimeix els canvis al terminal (sense fer cap pausa)"
+msgstr "text  - Com el navegador, però dins d'una xterm en segon pla"
 
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "text  - Print changelogs to your terminal (without pausing)"
-msgstr "correu - Només envia els changelogs per correu"
+msgstr "text - Mostra els canvis en el vostre terminal (sense fer cap pausa)"
 
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "mail  - Only send changelogs via mail"
-msgstr "cap - no s'executa automàticament des de apt"
+msgstr "correu - Només envia els canvis per correu"
 
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "none  - Do not run automatically from apt"
-msgstr ""
-"Aquesta configuració es pot canviar amb una opció de la línia d'ordres o amb "
-"una variable d'entorn. Teniu en compte que encara podeu enviar una còpia per "
-"correu amb totes les interfícies excepte amb \"cap\"."
+msgstr "cap - No s'executa automàticament des d'apt"
 
 #. Description
 #: ../templates:5
@@ -94,7 +70,7 @@ msgid ""
 "This setting can be overridden by a command-line option or an environment "
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
-msgstr ""
+msgstr "Aquesta configuració es pot canviar amb una opció de la línia d'ordres o una variable d'entorn. Teniu en compte que encara podeu enviar una còpia per correu amb totes les interfícies excepte amb «cap»."
 
 #. Default
 #: ../templates:29
@@ -104,22 +80,19 @@ msgstr "root"
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changelog entries?"
-msgstr "A qui hauria d'enviar apt-listchanges els changelogs?"
+msgstr "A quí hauria d'enviar apt-listchanges les entrades de canvis?"
 
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changelogs.  To what email "
 "address should they be sent?"
-msgstr ""
-"apt-listchanges pot enviar per correu una copia dels changelogs mostrats. A "
-"quin mail s'haurien d'enviar?"
+msgstr "apt-listchanges pot enviar per correu una còpia dels canvis mostrats. A quina adreça s'haurien d'enviar?"
 
 #. Description
 #: ../templates:30
 msgid "Leave this empty if you do not want any email to be sent."
-msgstr ""
+msgstr "Deixeu això buit si no voleu que s'envie cap correu."
 
 #. Description
 #: ../templates:39
@@ -135,20 +108,14 @@ msgid ""
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
-msgstr ""
-"Després de mostrar els canvis, apt-listchanges pot preguntar si voleu o no "
-"continuar. Açò es útil si s'està executant des d'apt, ja que vos dona la "
-"oportunitat de avortar l'actualització si veieu un canvi que no voleu "
-"aplicar (encara)."
+msgstr "Després de mostrar els canvis, apt-listchanges pot preguntar si voleu o no continuar. Açò es útil si s'està executant des d'apt, ja que vos dona la oportunitat d'avortar l'actualització si veieu un canvi que no voleu aplicar (encara)."
 
 #. Description
 #: ../templates:39
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
-msgstr ""
-"Aquesta opció no es aplicable a les interfícies \"mail\" o \"cap\" i pot ser "
-"reemplaçada amb una opció de la línia d'ordres."
+msgstr "Aquesta opció no és aplicable a les interfícies «mail» o «cap» i pot ser reemplaçada amb una opció de la línia d'ordres."
 
 #. Description
 #: ../templates:51
@@ -162,11 +129,7 @@ msgid ""
 "conf by asking you questions.  This file is read and processed every time "
 "apt-listchanges is run, and is used to set defaults.  All of the options can "
 "be overridden on the command line."
-msgstr ""
-"apt-listchanges pot configurar totes les opcions en /etc/apt/listchanges."
-"conf fent unes preguntes. Aquest fitxer es llegit i processat cada vegada "
-"que apt-listchanges s'executa, i s'utilitza per establir valors per defecte. "
-"Totes les opcions poden ser canviades amb la línia d'ordres."
+msgstr "apt-listchanges pot configurar totes les opcions en /etc/apt/listchanges.conf fent unes preguntes. Aquest fitxer és llegit i processat cada vegada que s'executa apt-listchanges, i s'utilitza per establir valors per defecte. Totes les opcions poden ser canviades amb la línia d'ordres."
 
 #. Description
 #: ../templates:51
@@ -188,7 +151,4 @@ msgid ""
 "apt-listchanges has the capability to keep track of which changelog entries "
 "have already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
-msgstr ""
-"apt-listchanges té la habilitat de fer un seguiment dels canvis que ja s'han "
-"mostrat anteriorment, i pot ignorar-los en futures invocacions. Açò és útil, "
-"per exemple, quan es re-intenta una actualització."
+msgstr "apt-listchanges té l'habilitat de fer un seguiment dels canvis que ja s'han mostrat anteriorment, i pot descartar-los en futures invocacions. Açò és útil, per exemple, quan es reintenta una actualització."
