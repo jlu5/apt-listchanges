@@ -9,8 +9,13 @@ apt-listchanges (2.46) unstable; urgency=low
   * Simplified Chinese translation of debconf templates and message
     catalog from "Carlos Z.F. Liu" <carlos_liu@yahoo.com>
     (Closes: #230814)
+  * Make the frontends more customizable by passing in data from the
+    config file.  You can specify a different terminal emulator for the
+    xterm frontend, or a different web browser for the browser frontend
+  * Print a brief message letting the user know what's going on when
+    aborting based on the confirmation prompt (Closes: #202210)
 
- -- Matt Zimmerman <mdz@debian.org>  Wed,  4 Feb 2004 21:31:12 -0800
+ --
 
 apt-listchanges (2.45) unstable; urgency=low
 

@@ -78,7 +78,7 @@ source_packages = {}
 # Flag for each source package, only set if changelogs were actually found
 found = {}
 
-frontend = apt_listchanges.make_frontend(config.frontend,len(debs))
+frontend = apt_listchanges.make_frontend(config.frontend,len(debs),config)
 if frontend == None:
     sys.stderr.write("Unknown frontend: %s\n" % config.frontend)
     sys.exit(1)
@@ -181,7 +181,8 @@ if news or changes:
     frontend.display_output(output)
 
     if config.confirm and not frontend.confirm():
-            sys.exit(10)
+        sys.stderr.write('Aborting.\n')
+        sys.exit(10)
             
     if config.email_address:
         apt_listchanges.mail_changes(config.email_address, changes)
