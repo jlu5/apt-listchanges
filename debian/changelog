@@ -7,8 +7,9 @@ apt-listchanges (1.45) unstable; urgency=low
   * Still read the status file, even if we are getting some information
     from the apt pipeline.  apt doesn't give us the source package
     version, which we need to do our job.  Darn. (Closes: #93790)
+  * Miscellaneous fixes to work with the most recent automake
 
- -- Matt Zimmerman <mdz@debian.org>  Fri, 13 Apr 2001 18:58:30 -0400
+ -- Matt Zimmerman <mdz@debian.org>  Fri, 13 Apr 2001 19:05:55 -0400
 
 apt-listchanges (1.44) unstable; urgency=low
 
