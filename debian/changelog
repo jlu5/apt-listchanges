@@ -1,3 +1,15 @@
+apt-listchanges (1.52) unstable; urgency=low
+
+  * Added support for APT_LISTCHANGES_FRONTEND environment variable to
+    allow easy frontend selection when apt-listchanges is being called by
+    another program.
+  * Added a new, snazzy frontend called 'none' which will cause
+    apt-listchanges to exit without doing anything.
+  * These two features can be used together to skip the changelogs for a
+    particular run. (Closes: #77988, #105423)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 15 Jul 2001 22:36:03 -0400
+
 apt-listchanges (1.51) unstable; urgency=low
 
   * Fix to work with .debs created by older versions of dpkg-dev
