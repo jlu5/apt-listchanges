@@ -122,7 +122,8 @@ class Package:
             except IOError, e:
                 if e.errno == errno.ENOENT:
                     pass
-                raise
+                else:
+                    raise
 
         if not fd:
             return None
