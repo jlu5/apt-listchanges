@@ -142,7 +142,7 @@ foreach my $deb (@debs) {
 
   # Skip if we already processed another binary package from this
   # source package
-  next if $source_packages_processed{$sourcepackage}++;
+  next if $source_packages_processed{$sourcepackage};
 
   # Determine the changelog filenames
   my @changelog_filenames = ('changelog.Debian');
@@ -201,7 +201,10 @@ foreach my $deb (@debs) {
 
     # Quit if we got something (don't try the next set of changelog
     # filenames)
-    last if $lines_read > 0;
+    if ( $lines_read > 0 ) {
+      ++$source_packages_processed{$sourcepackage};
+      last;
+    }
  }
 
 }
