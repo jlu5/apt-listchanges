@@ -175,12 +175,16 @@ foreach my $deb (@debs) {
       next;
     }
 
-    if ( /^(\S+) \((.*)\)/ ) {
-      last if dpkg_compare_versions($2, 'le', $oldversion);
+    if ( /^\S+ \((.*)\)/ ) {
+      last if dpkg_compare_versions($1, 'le', $oldversion);
     }
 
     $changes .= $_;
   }
+
+  # Read any remaining data from a large changelog, to avoid a 'broken
+  # pipe' error message on close
+  while (<DPKGDEB>) {}
   close(DPKGDEB);
 
 } continue {
