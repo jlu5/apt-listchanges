@@ -1,0 +1,108 @@
+# Estonian translations for apt-listchanges
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Ivar Smolin <okul@linux.ee>, 2001.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges 1.46\n"
+"POT-Creation-Date: 2001-04-26 08:22+0200\n"
+"PO-Revision-Date: 2001-04-26 08:25+0200\n"
+"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
+"Language-Team: Estonian <et@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: apt-listchanges:132
+msgid "Must specify either --apt or filenames to process!"
+msgstr "Töödeldava faili nimi või --apt peavad olema määratud!"
+
+#: apt-listchanges:151
+#, c-format
+msgid "Unable to determine package name for file %s"
+msgstr "Ei suuda tuvastada paki nime failile %s"
+
+#: apt-listchanges:157
+#, c-format
+msgid "Unable to determine version for file %s"
+msgstr "Ei suuda tuvastada faili %s versiooni"
+
+#: apt-listchanges:167
+#, c-format
+msgid "%s: will be newly installed"
+msgstr "%s: paigaldatakse uuesti"
+
+#: apt-listchanges:175
+#, c-format
+msgid "%s: Version $version is already installed"
+msgstr "%s: Versioon $version on juba paigaldatud"
+
+#: apt-listchanges:184
+#, c-format
+msgid "%s: Version %s is older than installed version (%s)"
+msgstr "%s: Versioon %s on vanem kui pigaldatud versioon (%s)"
+
+#: apt-listchanges:292
+#, c-format
+msgid "Changes for %s"
+msgstr "Muudatused %s jaoks"
+
+#: apt-listchanges:303
+msgid "Informational notes"
+msgstr "Informatiivsed märkused"
+
+#: apt-listchanges:307
+msgid "Error output follows"
+msgstr "Järgneb veaväljund"
+
+#: apt-listchanges:351
+msgid "In order to use the newt frontend, you must install libnewt-perl"
+msgstr "Enne newt liidese kasutamist tuleb paigaldada libnewt-perl"
+
+#: apt-listchanges:364
+msgid "Reading changelogs"
+msgstr "Muudatuste logide lugemine"
+
+#: apt-listchanges:369
+msgid "Scanning packages..."
+msgstr "Pakkide skanneerimine..."
+
+#: apt-listchanges:398
+msgid "Displaying changelogs"
+msgstr "Muudatuste logide kuvamine"
+
+#: apt-listchanges:439
+#, c-format
+msgid "Reading changelogs...%s"
+msgstr "Muudatuste logide lugemine...%s"
+
+#: apt-listchanges:440
+msgid "Done"
+msgstr "Korras"
+
+#: apt-listchanges:468
+msgid "Unable to open tty for confirmation, assuming yes"
+msgstr ""
+"Ei suuda avada tty'd kinnituse küsimiseks. Eeldan, et vastatakse jaatavalt."
+
+#: apt-listchanges:476
+msgid "Do you want to continue [Y/n]? "
+msgstr "Soovite jätkata [Y/n]? "
+
+#: apt-listchanges:501
+#, c-format
+msgid "Unable to open temporary file %s: %s"
+msgstr "Ei suuda avada ajutist faili %s: %s"
+
+#: apt-listchanges:577
+#, c-format
+msgid "Changelogs mailed to %s"
+msgstr "Muudatuste logid mailiti aadressile %s"
+
+#: apt-listchanges:657
+msgid "Wrong or missing VERSION from apt pipeline"
+msgstr "Vale või puuduv versioon apt torust"
+
+#: apt-listchanges:658
+msgid "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)"
+msgstr "(kas Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version on 2?)"
