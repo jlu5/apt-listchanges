@@ -104,7 +104,7 @@ def extract_changelog(deb, version=None):
 class Config:
     def __init__(self):
         # Defaults
-        self.frontend = os.getenv('APT_LISTCHANGES_FRONTEND', 'pager')
+        self.frontend = 'pager'
         self.email_address = None
         self.verbose = 0
         self.quiet = 0
@@ -149,6 +149,9 @@ class Config:
 
         # Expose defaults from config file
         self.expose()
+
+        # Override with environment variables
+        self.frontend = os.getenv('APT_LISTCHANGES_FRONTEND', self.frontend)
 
         # Override with command-line options
         for opt, arg in optlist:
