@@ -226,7 +226,7 @@ def read_apt_pipeline():
 def mail_changes(address, changes):
     print "apt-listchanges: " + _("Mailing changelogs to %s") % address
     hostname = gethostname()
-    fh = os.popen('/usr/lib/sendmail -t', 'w')
+    fh = os.popen('/usr/sbin/sendmail -t', 'w')
     subject = _("apt-listchanges output for %s") % hostname
     fh.write("To: %s\nSubject: %s\n\n%s" % (address,subject,changes))
     fh.close()
