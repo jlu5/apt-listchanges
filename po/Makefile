@@ -32,15 +32,10 @@ POTFILES = ../apt-listchanges ../apt_listchanges.py ../DebianControlParser.py
 
 all: $(PACKAGE).pot $(MOFILES)
 
-.SUFFIXES: .po .mo .gmo
+.SUFFIXES: .po .mo
 
 .po.mo:
 	$(MSGFMT) -o $@ $<
-
-.po.gmo:
-	file=$(srcdir)/`echo $* | sed 's,.*/,,'`.gmo \
-	  && rm -f $$file && $(GMSGFMT) --statistics -o $$file $<
-
 
 # Note: Target 'all' must not depend on target '$(srcdir)/$(PACKAGE).pot',
 # otherwise packages like GCC can not be built if only parts of the source
@@ -69,29 +64,3 @@ clean: mostlyclean
 
 distclean: clean
 	rm -f *.mo $(PACKAGE).pot
-
-maintainer-clean: distclean
-	@echo "This command is intended for maintainers to use;"
-	@echo "it deletes files that may require special tools to rebuild."
-	rm -f $(GMOFILES)
-
-update-po: Makefile
-	$(MAKE) $(PACKAGE).pot
-	if test "$(PACKAGE)" = "gettext"; then PATH=`pwd`/../src:$$PATH; fi; \
-	cd $(srcdir); \
-	catalogs='$(GMOFILES)'; \
-	for cat in $$catalogs; do \
-	  cat=`basename $$cat`; \
-	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
-	  echo "$$lang:"; \
-	  if $(MSGMERGE) $$lang.po $(PACKAGE).pot -o $$lang.new.po; then \
-	    mv -f $$lang.new.po $$lang.po; \
-	  else \
-	    echo "msgmerge for $$cat failed!"; \
-	    rm -f $$lang.new.po; \
-	  fi; \
-	done
-	$(MAKE) update-gmo
-
-update-gmo: Makefile $(GMOFILES)
-	@:
