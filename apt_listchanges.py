@@ -323,12 +323,10 @@ def read_apt_pipeline(config):
     
     return map(lambda pkg: filenames[pkg], order)
 
-def mail_changes(address, changes):
+def mail_changes(address, changes, subject):
     print "apt-listchanges: " + _("Mailing changelogs to %s") % address
 
-    hostname = gethostname()
     message = email.Message.Message()
-    subject = _("apt-listchanges output for %s") % hostname
 # this way lies madness -mdz, 2003/06/29
 #     try:
 #         subject = email.Header.Header(subject,

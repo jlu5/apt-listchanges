@@ -174,19 +174,26 @@ def main():
     if config.verbose and len(notes) > 0:
         changes += _("Informational notes") + ":\n\n" + '\n'.join(notes)
 
+    if news:
+        frontend.display_output(news)
+        
+    if changes:
+        frontend.display_output(changes)
+        
     if news or changes:
-        output = ''
-        if news:
-            output += news + '\n'
-        output += changes
-        frontend.display_output(output)
-
         if config.confirm and not frontend.confirm():
             sys.stderr.write('Aborting.\n')
             sys.exit(10)
 
+        hostname = gethostname()
+        
         if config.email_address and changes:
-            apt_listchanges.mail_changes(config.email_address, changes)
+            subject = _("apt-listchanges: changelogs for %s") % hostname
+            apt_listchanges.mail_changes(config.email_address, changes, subject)
+
+        if config.email_address and news:
+            subject = _("apt-listchanges: news for %s") % hostname
+            apt_listchanges.mail_changes(config.email_address, news, subject)
 
         # Write out seen db
         if config.save_seen:

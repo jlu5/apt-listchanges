@@ -2,6 +2,8 @@ apt-listchanges (2.48) unstable; urgency=low
 
   * Updated pt_BR debconf translations from Andre Luis Lopes <andrelop@debian.org>
     (Closes: #235383)
+  * Display news and changes in separate frontend invocations, and in
+    separate email messages (Closes: #204175)
 
  --
 
