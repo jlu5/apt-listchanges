@@ -1,3 +1,16 @@
+apt-listchanges (2.2) unstable; urgency=low
+
+  * Clean up po/Makefile a bit
+  * gettextize some messages that were overlooked, and update Catalan
+    templates, both thanks to Jordi Mallach <jordi@debian.org>
+  * Fix instantiation of gettext classes (Closes: #129123)
+  * Update Estonian translations of message catalogs, thanks to Ivar
+    Smolin <okul@linux.ee>
+  * Do what the documentation says we should do when email_address ==
+    'none'. (Closes: #129150)
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 14 Jan 2002 03:58:39 -0500
+
 apt-listchanges (2.1) unstable; urgency=low
 
   * On upgrade, remove /var/lib/apt/listchanges.db instead of truncating
