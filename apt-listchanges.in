@@ -652,6 +652,7 @@ sub read_deb_filenames {
 
 	  next unless my ($pkg, $oldversion, $newversion, $filename)
 	      = /^(\S+)\s+(\S+)\s+<\s+(\S+)\s+(\S+)$/;
+	  next if $oldversion eq '-';
 
 	  if ($filename =~ /^\*\*(.+)\*\*$/) {
 	    if ($1 eq 'CONFIGURE') {
@@ -659,8 +660,6 @@ sub read_deb_filenames {
 	    }
 	    next;
 	  }
-
-	  next if $oldversion eq '-';
 
 	  $debs{$pkg} = $filename;
 	  $status{$pkg}{Version} = $oldversion;
@@ -679,7 +678,13 @@ sub read_deb_filenames {
   }
 
   # Sort by configuration order
-  map { $debs{$_} } @order;
+  my @ret;
+  foreach (@order) {
+    if (defined $debs{$_}) {
+      push(@ret, $debs{$_});
+    }
+  }
+  @ret;
 }
 
 # Simple-minded config file parser
