@@ -1,7 +1,7 @@
 apt-listchanges (1.32) unstable; urgency=low
 
   * apt-listchanges is now internationalized.  New catalogs can be added
-    in the po/ directory.  Translations are welcome.
+    in the po/ directory.  Translations are welcome. (Closes: #85432)
   * The build system has been reworked to use automake, for easier
     integration with gettext
 
