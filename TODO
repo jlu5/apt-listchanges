@@ -14,3 +14,6 @@
 - Maybe rewrite the whole thing in C++, use libapt-pkg and provide a
   nice X frontend one day.  This could provide all of the navigation
   features that people have wanted (expand/collapse, hyperlinks, etc.)
+  Or wait for useable scripting language interfaces to libapt-pkg.
+
+- Multi-level sort: upload urgency, package priority, package name, what else?

@@ -1,3 +1,13 @@
+apt-listchanges (1.54) unstable; urgency=low
+
+  * Fix various harmless Perl warnings (Closes: #106047)
+  * No longer ship with #!/usr/bin/perl -w; it's more trouble than it's
+    worth in the wild.
+  * Do a secondary sort on package name after the upload urgency sort
+    (Closes: #106045)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 21 Jul 2001 17:46:03 -0400
+
 apt-listchanges (1.53) unstable; urgency=low
 
   * Added a feature to keep track of which changelogs have already been
