@@ -137,9 +137,8 @@ class Package:
             if match:
                 is_debian_changelog = 1
                 if since_version:
-                    is_debian_changelog = 1
                     if apt_pkg.VersionCompare(match.group('version'),
-                                             since_version) > 0:
+                                              since_version) > 0:
                         urgency = max(numeric_urgency(match.group('urgency')),
                                       urgency)
                     else:
@@ -199,6 +198,11 @@ class Config:
                     else:
                         value = self.parser.get(self.profile,option)
                 setattr(self, option, value)
+
+    def get(self,option,defvalue=None):
+        if hasattr(self,option):
+            return getattr(self,option)
+        return defvalue
 
     def usage(self,exitcode):
         if exitcode == 0:
@@ -340,7 +344,7 @@ def mail_changes(address, changes):
     fh.write(message.as_string())
     fh.close()
 
-def make_frontend(name, packages):
+def make_frontend(name, packages,config):
     frontends = { 'text' : text,
                   'pager' : pager,
                   'mail' : mail,
@@ -354,11 +358,12 @@ def make_frontend(name, packages):
         
     if not frontends.has_key(name):
         return None
-    return frontends[name](packages)
+    return frontends[name](packages,config)
          
 class frontend:
-    def __init__(self,packages):
+    def __init__(self,packages,config):
         self.packages = packages
+        self.config = config
 
     def update_progress(self):
         pass
@@ -393,35 +398,28 @@ class ttyconfirm:
         return 0
 
 class simpleprogress:
-    def __init__(self,packages):
-        # XXX Should omit progress indication entirely if stdout not a
-        # terminal
-        sys.stderr.write(_("Reading changelogs") + "...\n")
-
     def update_progress(self):
-        pass
+        if not hasattr(self,'message_printed'):
+            self.message_printed = 1
+            sys.stderr.write(_("Reading changelogs") + "...\n")
 
     def progress_done(self):
         pass
 
 class mail(frontend,simpleprogress):
-    def __init__(self,packages):
-        apply(simpleprogress.__init__, (self,packages))
+    pass
 
-class text(ttyconfirm,simpleprogress):
-    def __init__(self,packages):
-        apply(simpleprogress.__init__, (self,packages))
-
+class text(frontend,ttyconfirm,simpleprogress):
     def display_output(self,text):
         sys.stdout.write(text)
 
-class fancyprogress(frontend):
-    def __init__(self,packages):
-        apply(frontend.__init__, (self,packages))
-        self.progress = 0
-        self.line_length = 0
-    
+class fancyprogress:
     def update_progress(self):
+        if not hasattr(self,'progress'):
+            # First call
+            self.progress = 0
+            self.line_length = 0
+        
         self.progress += 1
         line = _("Reading changelogs") + "... %d%%" % (self.progress * 100 / self.packages)
         self.line_length = len(line)
@@ -445,7 +443,7 @@ class runcommand:
         tmp = tempfile.NamedTemporaryFile(suffix=self.suffix)
         tmp.write(self._render(text))
         tmp.flush()
-        shellcommand = self.command + ' ' + tmp.name
+        shellcommand = self.get_command() + ' ' + tmp.name
     
         status = os.spawnl(os.P_WAIT, '/bin/sh', 'sh', '-c', shellcommand)
         if status != 0:
@@ -455,20 +453,27 @@ class runcommand:
             # We are a child; exit
             sys.exit(0)
 
-class pager(runcommand,ttyconfirm,fancyprogress):
-    command = 'sensible-pager'
+    def get_command(self):
+        return self.command
 
-    def __init__(self,packages):
-        apply(fancyprogress.__init__, (self,packages))
+class pager(runcommand,ttyconfirm,fancyprogress,frontend):
+    def __init__(self,*args):
+        apply(frontend.__init__,[self] + list(args))
+        self.command = self.config.get('pager', 'sensible-pager')
 
-class xterm(runcommand,ttyconfirm,fancyprogress):
-    def __init__(self,packages):
-        apply(fancyprogress.__init__, (self,packages))
+class xterm(runcommand,ttyconfirm,fancyprogress,frontend):
+    def __init__(self,*args):
+        apply(frontend.__init__,[self] + list(args))
         self.mode = os.P_NOWAIT
-        self.command = 'x-terminal-emulator -T apt-listchanges -e ' + self.xterm_command
+        self.xterm = self.config.get('xterm', 'x-terminal-emulator')
+
+    def get_command(self):
+        return self.xterm + ' -T apt-listchanges -e ' + self.xterm_command
 
 class xterm_pager(xterm):
-    xterm_command = 'sensible-pager'
+    def __init__(self,*args):
+        apply(xterm.__init__,[self] + list(args))
+        self.xterm_command = self.config.get('pager', 'sensible-pager')
 
 class html:
     suffix = '.html'
@@ -506,8 +511,13 @@ class html:
         return htmltext.getvalue()
 
 class browser(html,pager):
-    command = 'sensible-browser'
+    def __init__(self,*args):
+        apply(pager.__init__,[self] + list(args))
+        self.command = self.config.get('browser','sensible-browser')
 
 class xterm_browser(html,xterm):
-    xterm_command = 'sensible-browser'
+    def __init__(self,*args):
+        apply(xterm.__init__,[self] + list(args))
+        self.xterm_command = self.config.get('browser','sensible-browser')
+
 
