@@ -1,3 +1,14 @@
+apt-listchanges (1.38) unstable; urgency=low
+
+  * The text frontend will no longer display a progress indicator, so that
+    its output can be usefully redirected to a file.
+  * If APT::quiet has been set (e.g. by apt-get -q), apt-listchanges will
+    force the text frontend to be used, so that apt-get -q output will be
+    loggable.
+  * Closes: #89511
+
+ -- Matt Zimmerman <mdz@debian.org>  Tue, 13 Mar 2001 17:25:04 -0500
+
 apt-listchanges (1.37) unstable; urgency=low
 
   * Parse the urgency value correctly, even when there are multiple

@@ -95,6 +95,11 @@ my $notes;
 
 my @debs = read_deb_filenames($apt_mode, \%status);
 
+# If apt is in quiet mode, we should make ourselves loggable too
+if ($config{'quiet'}) {
+  $frontend_opt = 'text';
+}
+
 if (!$apt_mode && !$show_all) {
   read_status(\%status);
 }
@@ -505,9 +510,9 @@ sub frontend_init {
       
   
   $frontends{'text'} = {
-    'init' => $frontends{pager}->{init},
+    'init' => sub { print "Reading changelogs...\n"; STDOUT->flush; },
     
-    'update_progress' => $frontends{pager}->{update_progress},
+    'update_progress' => sub {},
     
     'display_output' => sub {
       my ($this, $output) = @_;
@@ -600,26 +605,27 @@ sub read_deb_filenames {
 
   if ($apt_mode) {
 
-    # In apt mode, see whether apt is new enough to give us the
-    # information we need through the pipe.  If not, just read a list of
-    # filenames from it.
-
     my $peek = <STDIN>;
     chomp($peek);
 
     if ($peek eq "VERSION 2") {
       while (<STDIN>) {
-	# Skip configuration data
-	next if 1 .. /^$/;
+	if (2 .. /^$/) {
+	  # APT configuration data
 
-	next unless my ($pkg, $oldversion, $newversion, $filename)
-	    = /^(\S+)\s+(\S+)\s+<\s+(\S+)\s+(\S+)$/;
-	next if $filename =~ /^\*\*.*\*\*$/;
-	next if $oldversion eq '-';
+	  /^quiet=(\d+)/ && do { $config{'quiet'} = $1; };
 
-	push(@debs, $filename);
-	$status{$pkg}{Version} = $oldversion;
-	$status{$pkg}{NewVersion} = $newversion; # Not used yet
+	} else {
+
+	  next unless my ($pkg, $oldversion, $newversion, $filename)
+	      = /^(\S+)\s+(\S+)\s+<\s+(\S+)\s+(\S+)$/;
+	  next if $filename =~ /^\*\*.*\*\*$/;
+	  next if $oldversion eq '-';
+	  
+	  push(@debs, $filename);
+	  $status{$pkg}{Version} = $oldversion;
+	  $status{$pkg}{NewVersion} = $newversion; # Not used yet
+	}
       }
     } else {
       warn "apt-listchanges: " . gettext("Wrong or missing VERSION from apt pipeline");
