@@ -20,8 +20,10 @@ apt-listchanges (2.50) unstable; urgency=low
       prompt.  Feedback welcome.
   * Minor clarifications to some templates based on display of news as
     well as changelogs.  Mostly s/changelogs/changes/
+  * With these changes, I think apt-listchanges would be suitable for
+    priority: standard
 
- -- Matt Zimmerman <mdz@debian.org>  Sat, 13 Mar 2004 15:37:55 -0800
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 13 Mar 2004 15:38:29 -0800
 
 apt-listchanges (2.49) unstable; urgency=low
 
