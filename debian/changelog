@@ -1,3 +1,13 @@
+apt-listchanges (2.27) unstable; urgency=low
+
+  * Updated Brazilian Portuguese translation of message catalog from Andre Luis Lopes
+    <andrelop@ig.com.br> (Closes: #177216)
+  * Updated Catalan translations of debconf templates and message catalog
+    from Jordi Mallach <jordi@debian.org> (Closes: #167284)
+    I converted this to po-debconf, let me know if it did not turn out OK
+  
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 29 Jan 2003 21:55:50 -0500
+
 apt-listchanges (2.26) unstable; urgency=low
 
   * Add call to locale.setlocale(), which really Closes: #153760
