@@ -208,8 +208,8 @@ foreach my $deb (@debs) {
   @changelog_filenames = map { ($_, "$_.gz") } @changelog_filenames;
 
   # Check both /usr/doc and /usr/share/doc
-  @changelog_filenames = map { ("./usr/doc/$pkg/$_",
-				  "./usr/share/doc/$pkg/$_") }
+  @changelog_filenames = map { ("./usr/doc/\\*/$_",
+				  "./usr/share/doc/\\*/$_") }
 				  @changelog_filenames;
 
   my @changelog_filenames_nodebian = @changelog_filenames;
@@ -225,9 +225,12 @@ foreach my $deb (@debs) {
 				   \@changelog_filenames_nodebian) {
 
     # Extract relevant changelog info
+
+    # Maybe one day, dpkg-parsechangelog will be useful to us
     #my $dpkg_parsechangelog = $show_all ? '' :
 #	"dpkg-parsechangelog -l- -v$oldversion|";
     #open(CHANGELOG, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f |$dpkg_parsechangelog") || die $!;
+
     open(CHANGELOG, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f|") || die $!;
     
     my $lines_read = 0;
