@@ -320,7 +320,6 @@ class pager(ttyconfirm,fancyprogress):
 
 class xterm_pager(ttyconfirm,fancyprogress):
     def __init__(self,packages):
-        apply(ttyconfirm.__init__, (self,packages))
         apply(fancyprogress.__init__, (self,packages))
     
     def display_output(self,text):
