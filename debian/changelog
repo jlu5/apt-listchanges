@@ -1,3 +1,12 @@
+apt-listchanges (1.19) unstable; urgency=low
+
+  * Change the name and meaning of the config file variable 'confirm' so
+    that it only applies to apt mode.  A config file default for this
+    doesn't make sense when running from the command line.(Closes: #80082)
+  * Clean up old debconf questions that we don't ask anymore
+
+ -- Matt Zimmerman <mdz@debian.org>  Tue, 19 Dec 2000 23:15:38 -0500
+
 apt-listchanges (1.18) unstable; urgency=low
 
   * Clarify and extend man page (Closes: #79698)
