@@ -70,8 +70,7 @@ Description-nl: Wilt u apt-listchanges automatisch laten draaien door apt?
 
 Template: apt-listchanges/confirm
 Type: boolean
-Description: Should apt-listchanges prompt for confirmation after
-displaying changelogs?
+Description: Should apt-listchanges prompt for confirmation after displaying changelogs?
  After giving you a chance to display changelog entries, apt-listchanges
  can ask whether or not you would like to continue. This is useful when
  running from apt, as it gives you a chance to abort the upgrade if you
@@ -79,8 +78,7 @@ displaying changelogs?
  .
  This setting only applies when running from apt.  Otherwise, it can be
  requested with a command line option.
-Description-nl: Wilt u apt-listchanges laten vragen om bevestiging nadat
-de wijzigingen zijn getoond?
+Description-nl: Wilt u apt-listchanges laten vragen om bevestiging nadat de wijzigingen zijn getoond?
  Nadat apt-listchanges u de wijzigingen heeft laten zien, kan
  apt-listchanges u vragen of u door wilt gaan of niet. Dit kan handig
  zijn als u apt-listchanges vanuit apt laat uitvoeren daar u hiermee de
@@ -101,8 +99,7 @@ Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
  .
  If you want to edit /etc/apt/listchanges.conf manually for whatever
  reason, answer "no" now.
-Description-nl: Wilt u apt-listchanges /etc/apt/listchanges.conf laten
-overschrijven?
+Description-nl: Wilt u apt-listchanges /etc/apt/listchanges.conf laten overschrijven?
  apt-listchanges kan alle opties in /etc/apt/listchanges.conf voor u
  instellen door u een aantal vragen te stellen. Dit bestand wordt elke
  keer dat u apt-listchanges uitvoert gelezen en verwerkt; ze wordt
