@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.5 2000-12-11 19:03:56 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.6 2000-12-19 05:57:44 mdz Exp $
 -->
 
 <refentry>
@@ -28,7 +28,7 @@
   </refmeta>
   <refnamediv>
     <refname>apt-listchanges</refname> <refpurpose>Show new changelog
-      entries from a Debian package archive
+      entries from Debian package archives
     </refpurpose>
   </refnamediv>
   <refsynopsisdiv>
@@ -48,7 +48,7 @@
 
       <group choice=req>
 	<arg><option>--apt</option></arg>
-	<arg rep=repeat><replaceable>deb</replaceable></arg>
+	<arg rep=repeat><replaceable>package.deb</replaceable></arg>
       </group>
     </cmdsynopsis>
   </refsynopsisdiv>
@@ -62,7 +62,17 @@
 
     <para>It does this by extracting the relevant entries from the
       Debian changelog file, usually found in
-      <filename>/usr/doc/<replaceable>package</replaceable>/changelog.Debian.gz</filename></para>
+      <filename>/usr/doc/</filename><replaceable>package</replaceable><filename>/changelog.Debian.gz</filename>,
+      from Debian package archives.
+    </para>
+
+    <para>
+      Given a set of filenames as arguments (or read from standard
+      input when using <option>--apt</option>),
+      <command>apt-listchanges</command> will scan the files (assumed
+      to be Debian package archives) for the relevant changelog
+      entries, and display them all in a summary, sorted by urgency.
+    </para>
 
   </refsect1>
 
@@ -130,8 +140,8 @@
 	      <LISTITEM>
 		<PARA>
 		  Sends output via email, to the address specified in
-		  <filename>/etc/apt-listchanges.conf</filename> or by the
-		  <option>--email-address</option> option
+		  <filename>/etc/apt/listchanges.conf</filename> or by
+		  the <option>--email-address</option> option
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
@@ -164,6 +174,24 @@
   </refsect1>
 
   <refsect1>
+    <title>FILES</title>
+
+    <variablelist>
+      <varlistentry>
+	  <term><filename>/etc/apt/listchanges.conf</filename></term>
+
+	  <listitem>
+	    <para>
+	      Primary configuration file.  Defaults for the frontend,
+	      email address, and whether to ask for confirmation are
+	      read from here.
+	    </para>
+	  </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+
+  <refsect1>
     <title>AUTHOR</title>
 
     <PARA>
@@ -172,6 +200,13 @@
     </PARA>
   </refsect1>
 
+  <refsect1>
+    <title>SEE ALSO</title>
+
+    <para>
+      <citerefentry><refentrytitle>apt.conf</refentrytitle><manvolnum>5</manvolnum></citerefentry>
+    </para>
+  </refsect1>
 </refentry>
 
 <!-- Keep this comment at the end of the file
