@@ -1,0 +1,191 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2002-11-17 00:23-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Choices
+#: ../templates:3
+#, fuzzy
+msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+msgstr "pager, xterm-pager, texto, e-mail, nenhum"
+
+#. Description
+#: ../templates:5
+msgid "How should changelogs be displayed with apt?"
+msgstr "Como changelogs devem ser mostrados com o APT?"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid ""
+"apt-listchanges can display changelog entries in a number of different ways."
+msgstr ""
+"apt-listchanges pode mostrar entradas de changelog de algumas maneiras "
+"diferentes."
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "pager - Use your preferred pager"
+msgstr "pager - Use seu pager preferido"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "browser - Display HTML-formatted changelogs using a web browser"
+msgstr "xterm-pager - Use seu pager preferido em um xterm em background"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "xterm-pager - Like pager, but in an xterm in the background"
+msgstr "texto - Mostra os changelogs em seu terminal (sem pausa)"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "xterm-browser - Like browser, but in an xterm in the background"
+msgstr "e-mail - Envia os changelogs por email (você escolherá um endereço)"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "text  - Print changelogs to your terminal (without pausing)"
+msgstr ""
+"nenhum - Não rodar automaticamente através do APT Você pode forçar a mudança "
+"da opção através de um flag de linha de comando ou variável de ambiente. "
+"Note que você ainda pode mandar uma cópia adicional por e-mail com todos os "
+"frontends exceto se escolher \"nenhum\"."
+
+#. Description
+#: ../templates:5
+msgid "mail  - Only send changelogs via mail"
+msgstr ""
+
+#. Description
+#: ../templates:5
+msgid "none  - Do not run automatically from apt"
+msgstr ""
+
+#. Description
+#: ../templates:5
+msgid ""
+"This setting can be overridden by a command-line option or an environment "
+"variable.  Note that you can still send a copy via mail with all of the "
+"frontends except 'none'."
+msgstr ""
+
+#. Default
+#: ../templates:29
+msgid "root"
+msgstr ""
+
+#. Description
+#: ../templates:30
+msgid "To whom should apt-listchanges mail changelog entries?"
+msgstr "Para quem apt-listchanges deve enviar as entradas de changelog?"
+
+#. Description
+#: ../templates:30
+msgid ""
+"apt-listchanges can email a copy of displayed changelogs.  To what email "
+"address should they be sent?"
+msgstr ""
+"Você escolheu enviar as entradas de changelod por email. Para qual endereço "
+"elas devem ser enviadas?"
+
+#. Description
+#: ../templates:30
+msgid "Leave this empty if you do not want any email to be sent."
+msgstr "Deixe em branco se não quiser que qualquer mail seja enviado."
+
+#. Description
+#: ../templates:39
+msgid ""
+"Should apt-listchanges prompt for confirmation after displaying changelogs?"
+msgstr "apt-listchanges deve pedir confirmação após mostrar os changelogs?"
+
+#. Description
+#: ../templates:39
+msgid ""
+"After giving you a chance to display changelog entries, apt-listchanges can "
+"ask whether or not you would like to continue. This is useful when running "
+"from apt, as it gives you a chance to abort the upgrade if you see a change "
+"you do not want to apply (yet)."
+msgstr ""
+"Depois de lhe dar a chance de mostrar entradas de changelog, apt-listchanges "
+"pode perguntar se você quer ou não continuar. Isto é útil quando rodando a "
+"partir do apt, já que lhe dá uma chance para abortar o upgrade se você vir "
+"uma mudança que não queira aplicar (ainda)."
+
+#. Description
+#: ../templates:39
+msgid ""
+"This setting does not apply to the 'mail' or 'none' frontends, and can be "
+"overridden with a command line option."
+msgstr ""
+"Esta configuração não se aplica aos frontends \"e-mail\" e \"nenhum\", e "
+"pode ser forçada com uma opção de linha de comando."
+
+#. Description
+#: ../templates:51
+msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
+msgstr "apt-listchanges deve modificar seu /etc/apt/listchanges.conf?"
+
+#. Description
+#: ../templates:51
+msgid ""
+"apt-listchanges can configure all of the options in /etc/apt/listchanges."
+"conf by asking you questions.  This file is read and processed every time "
+"apt-listchanges is run, and is used to set defaults.  All of the options can "
+"be overridden on the command line."
+msgstr ""
+"apt-listchanges pode configurar todas as opções em /etc/apt/listchanges.conf "
+"lhe fazendo algumas perguntas. Este arquivo é lido e processado toda vez que "
+"apt-listchanges é executado, e é usado para definir defaults. Todas as "
+"opções podem ser modificadas na linha de comando."
+
+#. Description
+#: ../templates:51
+msgid ""
+"If you want to edit /etc/apt/listchanges.conf manually for whatever reason, "
+"answer \"no\" now."
+msgstr ""
+"Se você quer editar /etc/apt/listchanges.conf mannualmente por qualquer "
+"razão, responda \"não\" agora."
+
+#. Description
+#: ../templates:63
+msgid "Should apt-listchanges skip changelogs that have already been seen?"
+msgstr "O apt-listchanges deve omitir changelogs que já foram vistos?"
+
+#. Description
+#: ../templates:63
+msgid ""
+"apt-listchanges has the capability to keep track of which changelog entries "
+"have already been displayed, and to skip them in future invocations. This is "
+"useful, for example, when retrying an upgrade."
+msgstr ""
+"O apt-listchanges tem a habilidade de se lembrar quais entradas de changelog "
+"já foram vistas, e as omitir em próximas vezes. Isto é útil, por exemplo, "
+"quando você estiver fazendo uma segunda tentativa de upgrade."

@@ -1,9 +1,10 @@
 Template: apt-listchanges/frontend
 Type: select
-Choices: pager, browser, xterm-pager, xterm-browser, text, mail, none
+_Choices: pager, browser, xterm-pager, xterm-browser, text, mail, none
 Default: pager
-Description: How should changelogs be displayed with apt?
- apt-listchanges can display changelog entries in a number of different ways.
+_Description: How should changelogs be displayed with apt?
+ apt-listchanges can display changelog entries in a number of different
+ ways.
  .
  pager - Use your preferred pager
  .
@@ -19,39 +20,39 @@ Description: How should changelogs be displayed with apt?
  .
  none  - Do not run automatically from apt
  .
- This setting can be overridden by a command-line option or an
- environment variable.  Note that you can still send a copy via mail
- with all of the frontends except 'none'.
+ This setting can be overridden by a command-line option or an environment
+ variable.  Note that you can still send a copy via mail with all of the
+ frontends except 'none'.
 
 Template: apt-listchanges/email-address
 Type: string
-Default: root
-Description: To whom should apt-listchanges mail changelog entries?
- apt-listchanges can email a copy of displayed changelogs.  To what
- email address should they be sent?
+_Default: root
+_Description: To whom should apt-listchanges mail changelog entries?
+ apt-listchanges can email a copy of displayed changelogs.  To what email
+ address should they be sent?
  .
  Leave this empty if you do not want any email to be sent.
 
 Template: apt-listchanges/confirm
 Type: boolean
 Default: true
-Description: Should apt-listchanges prompt for confirmation after displaying changelogs?
- After giving you a chance to display changelog entries,
- apt-listchanges can ask whether or not you would like to continue.
- This is useful when running from apt, as it gives you a chance to
- abort the upgrade if you see a change you do not want to apply (yet).
+_Description: Should apt-listchanges prompt for confirmation after displaying changelogs?
+ After giving you a chance to display changelog entries, apt-listchanges
+ can ask whether or not you would like to continue. This is useful when
+ running from apt, as it gives you a chance to abort the upgrade if you see
+ a change you do not want to apply (yet).
  .
- This setting does not apply to the 'mail' or 'none' frontends, and can
- be overridden with a command line option.
+ This setting does not apply to the 'mail' or 'none' frontends, and can be
+ overridden with a command line option.
 
 Template: apt-listchanges/overwrite_etc_apt_listchanges_conf
 Type: boolean
 Default: true
-Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
+_Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
  apt-listchanges can configure all of the options in
- /etc/apt/listchanges.conf by asking you questions.  This file is read
- and processed every time apt-listchanges is run, and is used to set
- defaults.  All of the options can be overridden on the command line.
+ /etc/apt/listchanges.conf by asking you questions.  This file is read and
+ processed every time apt-listchanges is run, and is used to set defaults. 
+ All of the options can be overridden on the command line.
  .
  If you want to edit /etc/apt/listchanges.conf manually for whatever
  reason, answer "no" now.
@@ -59,7 +60,7 @@ Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
 Template: apt-listchanges/save-seen
 Type: boolean
 Default: true
-Description: Should apt-listchanges skip changelogs that have already been seen?
+_Description: Should apt-listchanges skip changelogs that have already been seen?
  apt-listchanges has the capability to keep track of which changelog
- entries have already been displayed, and to skip them in future invocations.
- This is useful, for example, when retrying an upgrade.
+ entries have already been displayed, and to skip them in future
+ invocations. This is useful, for example, when retrying an upgrade.

@@ -1,0 +1,188 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2002-11-17 00:23-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=EUC-KR\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Choices
+#: ../templates:3
+msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+msgstr ""
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "How should changelogs be displayed with apt?"
+msgstr "기본적으로 어떻게 changelog를 표시하게 할까요?"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid ""
+"apt-listchanges can display changelog entries in a number of different ways."
+msgstr ""
+"apt-listchanges는 changelog 항목을 여러가지 방법으로 표시할 수 있습니다."
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "pager - Use your preferred pager"
+msgstr "pager - 선호하는 pager를 사용합니다"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "browser - Display HTML-formatted changelogs using a web browser"
+msgstr "xterm-pager - 선호하는 pager를 백그라운드의 xterm 안에서 사용합니다"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "xterm-pager - Like pager, but in an xterm in the background"
+msgstr ""
+"newt - 텍스트모드 창을 사용하는, 터미널 그래픽 인터페이스를 사용합니다 (이것"
+"을 사용하기 위해서는 libnewt-perl를 설치해야 합니다)"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "xterm-browser - Like browser, but in an xterm in the background"
+msgstr "text  - changelog를 터미널에 출력합니다 (중지 없이)"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "text  - Print changelogs to your terminal (without pausing)"
+msgstr "mail  - Email을 거쳐서 changelog를 보냅니다 (주소를 물어볼 것입니다)"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "mail  - Only send changelogs via mail"
+msgstr "이 설정은 명령행 옵션에서 무시할 수 있습니다."
+
+#. Description
+#: ../templates:5
+msgid "none  - Do not run automatically from apt"
+msgstr ""
+
+#. Description
+#: ../templates:5
+msgid ""
+"This setting can be overridden by a command-line option or an environment "
+"variable.  Note that you can still send a copy via mail with all of the "
+"frontends except 'none'."
+msgstr ""
+
+#. Default
+#: ../templates:29
+msgid "root"
+msgstr ""
+
+#. Description
+#: ../templates:30
+msgid "To whom should apt-listchanges mail changelog entries?"
+msgstr "누구에게 changelog 항목으로 mail로 보낼까요?"
+
+#. Description
+#: ../templates:30
+#, fuzzy
+msgid ""
+"apt-listchanges can email a copy of displayed changelogs.  To what email "
+"address should they be sent?"
+msgstr ""
+"Email을 통해 changelog 항목으로 보내도록 선택했습니다.  어떤 주소로 그것을 보"
+"낼까요?"
+
+#. Description
+#: ../templates:30
+msgid "Leave this empty if you do not want any email to be sent."
+msgstr ""
+
+#. Description
+#: ../templates:39
+msgid ""
+"Should apt-listchanges prompt for confirmation after displaying changelogs?"
+msgstr "changelog를 표시한 다음에 확인하는 질문을 할까요?"
+
+#. Description
+#: ../templates:39
+#, fuzzy
+msgid ""
+"After giving you a chance to display changelog entries, apt-listchanges can "
+"ask whether or not you would like to continue. This is useful when running "
+"from apt, as it gives you a chance to abort the upgrade if you see a change "
+"you do not want to apply (yet)."
+msgstr ""
+"changelog 항목을 표시한 다음에, apt-listchanges는 계속할지 말지 질문을 할 수 "
+"있습니다. 이것은 apt로부터 실행될 때 유용합니다. (아직) 원하지 않는 변경을 확"
+"인했을 때 업그레이드를 취소할 기회를 주기 때문입니다."
+
+#. Description
+#: ../templates:39
+#, fuzzy
+msgid ""
+"This setting does not apply to the 'mail' or 'none' frontends, and can be "
+"overridden with a command line option."
+msgstr ""
+"이 설정은 apt로부터 실행할 때만 적용됩니다.  다른 경우에는, 명령줄 옵션으로 "
+"요청할 수 있습니다."
+
+#. Description
+#: ../templates:51
+msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
+msgstr "apt-listchanges가 /etc/apt/listchanges.conf를 덮어쓰도록 할까요?"
+
+#. Description
+#: ../templates:51
+msgid ""
+"apt-listchanges can configure all of the options in /etc/apt/listchanges."
+"conf by asking you questions.  This file is read and processed every time "
+"apt-listchanges is run, and is used to set defaults.  All of the options can "
+"be overridden on the command line."
+msgstr ""
+"apt-listchanges는 /etc/apt/listchanges.conf의 모든 옵션을 질문으로 설정할 수 "
+"있습니다. 이 파일은 apt-listchanges가 실행될 때마다 읽고, 기본값을 설정하기 "
+"위해서 쓰입니다.  모든 옵션은 명령줄에서 무시될 수 있습니다."
+
+#. Description
+#: ../templates:51
+msgid ""
+"If you want to edit /etc/apt/listchanges.conf manually for whatever reason, "
+"answer \"no\" now."
+msgstr ""
+"어떤 이유에든 /etc/apt/listchanges.conf를 손수 수정하고 싶다면, 지금 \"아니오"
+"\"에 답하세요."
+
+#. Description
+#: ../templates:63
+#, fuzzy
+msgid "Should apt-listchanges skip changelogs that have already been seen?"
+msgstr "누구에게 changelog 항목으로 mail로 보낼까요?"
+
+#. Description
+#: ../templates:63
+msgid ""
+"apt-listchanges has the capability to keep track of which changelog entries "
+"have already been displayed, and to skip them in future invocations. This is "
+"useful, for example, when retrying an upgrade."
+msgstr ""

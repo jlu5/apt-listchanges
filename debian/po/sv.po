@@ -1,0 +1,190 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2002-11-17 00:23-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Choices
+#: ../templates:3
+#, fuzzy
+msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+msgstr "pager, xterm-pager, newt, text, post"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "How should changelogs be displayed with apt?"
+msgstr "Hur ska förändringsloggar visas som standard?"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid ""
+"apt-listchanges can display changelog entries in a number of different ways."
+msgstr "apt-listchanges kan visa poster från förändringloggar på flera sätt."
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "pager - Use your preferred pager"
+msgstr "pager - Använd din föredragna \"pager\""
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "browser - Display HTML-formatted changelogs using a web browser"
+msgstr ""
+"xterm-pager - Använd din föredragna \"pager\" i en xterm som körs i "
+"bakgrunden"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "xterm-pager - Like pager, but in an xterm in the background"
+msgstr ""
+"newt - Använd ett grafiskt läge för terminalen, som använder fönster i text-"
+"läge (du måste installera libnewt-perl för att använda detta)"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "xterm-browser - Like browser, but in an xterm in the background"
+msgstr "text - Skriv ut förändringsloggar till din terminal (utan att pausa)"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "text  - Print changelogs to your terminal (without pausing)"
+msgstr ""
+"post - Skicka förändringsloggar via e-post (en adress kommer att efterfrågas)"
+
+#. Description
+#: ../templates:5
+#, fuzzy
+msgid "mail  - Only send changelogs via mail"
+msgstr "Denna inställning kan åsidosättas genom en flagga på kommandoraden."
+
+#. Description
+#: ../templates:5
+msgid "none  - Do not run automatically from apt"
+msgstr ""
+
+#. Description
+#: ../templates:5
+msgid ""
+"This setting can be overridden by a command-line option or an environment "
+"variable.  Note that you can still send a copy via mail with all of the "
+"frontends except 'none'."
+msgstr ""
+
+#. Default
+#: ../templates:29
+msgid "root"
+msgstr ""
+
+#. Description
+#: ../templates:30
+msgid "To whom should apt-listchanges mail changelog entries?"
+msgstr "Till vem ska apt-listchanges skicka poster från förändringsloggar?"
+
+#. Description
+#: ../templates:30
+#, fuzzy
+msgid ""
+"apt-listchanges can email a copy of displayed changelogs.  To what email "
+"address should they be sent?"
+msgstr ""
+"Du har valt att få poster från förändringsloggar skickade via e-post. Till "
+"vilken e-post adress ska dessa skickas?"
+
+#. Description
+#: ../templates:30
+msgid "Leave this empty if you do not want any email to be sent."
+msgstr ""
+
+#. Description
+#: ../templates:39
+msgid ""
+"Should apt-listchanges prompt for confirmation after displaying changelogs?"
+msgstr ""
+"Ska apt-listchanges begära konfirmation efter att ha visat förändringsloggar?"
+
+#. Description
+#: ../templates:39
+#, fuzzy
+msgid ""
+"After giving you a chance to display changelog entries, apt-listchanges can "
+"ask whether or not you would like to continue. This is useful when running "
+"from apt, as it gives you a chance to abort the upgrade if you see a change "
+"you do not want to apply (yet)."
+msgstr ""
+"Efter att ha gett dig en möjlighet att visa poster från förändringsloggar "
+"kan apt-listchanges fråga dig om du vill fortsätta. Detta är användbart när "
+"den körs från apt eftersom det ger dig en möjlighet att avbryta uppgradering "
+"om du ser en förändring som du inte vill ska ske (ännu.)"
+
+#. Description
+#: ../templates:39
+msgid ""
+"This setting does not apply to the 'mail' or 'none' frontends, and can be "
+"overridden with a command line option."
+msgstr ""
+
+#. Description
+#: ../templates:51
+msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
+msgstr "Ska apt-listchanges skriva över din /etc/apt/listchanges.conf"
+
+#. Description
+#: ../templates:51
+#, fuzzy
+msgid ""
+"apt-listchanges can configure all of the options in /etc/apt/listchanges."
+"conf by asking you questions.  This file is read and processed every time "
+"apt-listchanges is run, and is used to set defaults.  All of the options can "
+"be overridden on the command line."
+msgstr ""
+"apt-listchanges kan konfigurera alla alternativ i /etc/apt/listchanges.conf "
+"genom att fråga dig frågor. Denna fil läses och behandlas vara gång apt-"
+"listchanges körs, och den används för att ställa in normalvärden. Alla "
+"alternativen kan åsidosättas på kommandoraden."
+
+#. Description
+#: ../templates:51
+msgid ""
+"If you want to edit /etc/apt/listchanges.conf manually for whatever reason, "
+"answer \"no\" now."
+msgstr ""
+
+#. Description
+#: ../templates:63
+#, fuzzy
+msgid "Should apt-listchanges skip changelogs that have already been seen?"
+msgstr "Till vem ska apt-listchanges skicka poster från förändringsloggar?"
+
+#. Description
+#: ../templates:63
+msgid ""
+"apt-listchanges has the capability to keep track of which changelog entries "
+"have already been displayed, and to skip them in future invocations. This is "
+"useful, for example, when retrying an upgrade."
+msgstr ""
