@@ -55,6 +55,7 @@ my $show_headers = 0;
 my $version_only = 0;
 my $help_only = 0;
 my $save_seen = $config{'save-seen'} ? $config{'save-seen'} eq 'yes' : 1;
+my $debug = 0;
 
 GetOptions("apt" => \$apt_mode,
 	   "verbose|v" => \$verbose,
@@ -65,6 +66,7 @@ GetOptions("apt" => \$apt_mode,
 	   "headers|h" => \$show_headers,
 	   "help" => \$help_only,
 	   "saveseen!" => \$save_seen,
+           "debug" => \$debug,
 	   "version" => \$version_only) || die $usage;
 
 if ($version_only) {
@@ -144,7 +146,6 @@ unless (@debs) {
       gettext("Must specify either --apt or filenames to process!") . "\n";
 }
 
-# User interaction
 my $frontend = frontend_init($frontend_opt);
 
 ##
@@ -155,10 +156,19 @@ foreach my $deb (@debs) {
 
   # Find out what package we are installing
   my %new = get_deb_info($deb);
-  my %current = get_status_info($new{Package}, \%status);
+  my $binpackage = $new{Package};
+  my $srcpackage = $new{Source};
+  my %current = get_status_info($binpackage, \%status);
+
+  if ($debug) {
+    print "Processing package $binpackage($srcpackage) from $deb\n";
+    print "Current version (source/bin): $current{SourceVersion}/$current{Version}\n";
+    print "New version (source/bin): $new{SourceVersion}/$new{Version}\n";
+    print "Last seen version (source): $seen{$srcpackage}\n";
+  }
 
   # Bail if things don't look right
-  unless ($new{Package}) {
+  unless ($binpackage) {
     $errors .= "apt-listchanges: " .
 	sprintf(gettext("Unable to determine package name for file %s"), $deb)
 	    . "\n";
@@ -174,13 +184,13 @@ foreach my $deb (@debs) {
   ++$valid;
 
   # Get last version seen from the database, or fall back to installed version
-  my $seen = $save_seen ? $seen{$new{Source}} : undef;
+  my $seen = $save_seen ? $seen{$srcpackage} : undef;
   $seen ||= $current{SourceVersion};
 
   # Skip if the package is not installed
   if (!$show_all && !$current{Version}) {
     $notes .=
-	sprintf(gettext("%s: will be newly installed"), $new{Package})
+	sprintf(gettext("%s: will be newly installed"), $binpackage)
 	    . "\n\n";
     next;
   }
@@ -189,14 +199,14 @@ foreach my $deb (@debs) {
   if (!$show_all && $new{Version} eq $current{Version}) {
     $notes .=
 	sprintf(gettext("%s: Version %s is already installed"),
-		$new{Package}, $new{Version})
+		$binpackage, $new{Version})
 	    . "\n\n";
     next;
   }
 
-  if (!$show_all && $new{Version} eq $seen) {
+  if (!$show_all && $new{SourceVersion} eq $seen) {
     $notes .= sprintf(gettext("%s: Version %s changes have already been seen"),
-		      $new{Package}, $new{Version})
+		      $binpackage, $new{Version})
 	. "\n\n";
     next;
   }
@@ -205,28 +215,28 @@ foreach my $deb (@debs) {
   if (!$show_all && dpkg_compare_versions($new{Version}, 'le', $current{Version})) {
     $notes .=
 	sprintf(gettext("%s: Version %s is older than installed version (%s)"),
-		$new{Package}, $new{Version}, $current{Version})
+		$binpackage, $new{Version}, $current{Version})
 	    . "\n\n";
     next;
   }
 
   if (!$show_all && dpkg_compare_versions($new{Version}, 'le', $seen)) {
     $notes .= sprintf(gettext("%s: Version %s changes have already been seen"),
-		      $new{Package}, $new{Version})
+		      $binpackage, $new{Version})
 	. "\n\n";
     next;
   }
 
   # Add to the list of binary packages belonging to this source package
-  if (defined $binary_packages{$new{Source}}) {
-    push(@{$binary_packages{$new{Source}}}, $new{Package});
+  if (defined $binary_packages{$srcpackage}) {
+    push(@{$binary_packages{$srcpackage}}, $binpackage);
   } else {
-    $binary_packages{$new{Source}} = [$new{Package}];
+    $binary_packages{$srcpackage} = [$binpackage];
   }
 
   # Skip if we already processed another binary package from this
   # source package
-  next if $processed{$new{Source}};
+  next if $processed{$srcpackage};
 
   # Determine the changelog filenames
   my @changelog_filenames = ('changelog.Debian');
@@ -259,7 +269,7 @@ foreach my $deb (@debs) {
     #open(CHANGELOG, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f |$dpkg_parsechangelog") || die $!;
 
     open(CHANGELOG, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f|") || die $!;
-    
+
     my $lines_read = 0;
     my $urgency = $urgency_map{'low'};
     my $changes;
@@ -268,13 +278,13 @@ foreach my $deb (@debs) {
 #      next unless /^Changes:/ .. 0;
 #      next if /^Changes:/;
       last if /^Local variables:/;
-      
+
       if ( /^(tar|dpkg-deb):/ ) {
 	# Errors from tar or dpkg-deb
 	$errors .= $_;
 	next;
       }
-      
+
       if ( !$show_all && /^\S+ \((.*)\) .*;.*urgency=(\w+)/ ) {
         last if dpkg_compare_versions($1, 'le', $seen);
 
@@ -282,7 +292,7 @@ foreach my $deb (@debs) {
 	# urgency of this snippet
 	$urgency = min($urgency_map{lc($2)}, $urgency);
       }
-      
+
       $changes .= $_;
     }
 
@@ -292,10 +302,10 @@ foreach my $deb (@debs) {
     close(CHANGELOG);
 
     if ( $lines_read > 0 ) {
-      $urgency{$new{Source}} = $urgency;
-      $changes{$new{Source}} = $changes if $changes;
-      ++$processed{$new{Source}};
-      $seen{$new{Source}} = $new{SourceVersion};
+      $urgency{$srcpackage} = $urgency;
+      $changes{$srcpackage} = $changes if $changes;
+      ++$processed{$srcpackage};
+      $seen{$srcpackage} = $new{SourceVersion};
 
       # Quit if we got something (don't try the next set of changelog
       # filenames)
@@ -315,13 +325,13 @@ if ($show_headers) {
   foreach my $pkg (keys %changes) {
     my @binary_packages = @{$binary_packages{$pkg}};
     my $binary_text;
-    
+
     if (@binary_packages == 1 && $binary_packages[0] eq $pkg) {
       $binary_text = "";
     } else {
       $binary_text = "(@binary_packages) ";
     }
-    
+
     $changes{$pkg} = "--- " .
 	sprintf(gettext("Changes for %s"), $pkg)
 	    . " $binary_text ---\n"
@@ -391,15 +401,15 @@ sub frontend_init {
     Newt::Init();
     Newt::Cls();
       my ($screen_width, $screen_height) = Newt::GetScreenSize();
-      
+
       my $longest_pathname = longest(@{ $this->{display_debs} });
-      
+
       # Create widgets
       my $newt = $this->{newt};
       $$newt{main} = Newt::Panel(1,3, gettext("Reading changelogs"));
       $$newt{progress} = Newt::Scale($screen_width - 10, scalar(@debs));
       $$newt{current} = Newt::Label(' ' x length($longest_pathname));
-      
+
       my $main = $$newt{main};
       $main->Add(0, 0, Newt::Label(gettext("Scanning packages...")));
       $main->Add(0, 1, $$newt{progress});
@@ -644,7 +654,7 @@ EOT
   while (!&{ $frontend->{init} }($frontend)) {
     # Initialization failed, fall back
     my $new_frontend;
-    
+
     if ($frontend eq $frontends{'xterm-pager'}) {
       $new_frontend = 'pager';
     } elsif ($frontend eq $frontends{'newt'}) {
@@ -660,7 +670,7 @@ EOT
     warn "apt-listchanges: Falling back to $new_frontend frontend\n";
     $frontend = $frontends{$new_frontend};
   }
-    
+
   $frontend;
 }
 
@@ -695,7 +705,7 @@ sub read_deb_filenames {
 	} else {
 
 	  next unless my ($pkg, $oldversion, $newversion, $filename)
-	      = /^(\S+)\s+(\S+)\s+<\s+(\S+)\s+(\S+)$/;
+	      = /^(\S+)\s+(\S+)\s+\<\s+(\S+)\s+(\S+)$/;
 	  next if $oldversion eq '-';
 
 	  if ($filename =~ /^\*\*(.+)\*\*$/) {
@@ -755,7 +765,8 @@ sub min {
 
 ##
 ## All the rest of this stuff should be replaced by a good set of Perl
-## bindings for apt (or maybe I should reimplement this in Python)
+## bindings for apt (or maybe I should reimplement this another
+## language)
 ##
 
 # Extract the package name and version from a .deb file
