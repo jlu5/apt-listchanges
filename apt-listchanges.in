@@ -115,6 +115,7 @@ my $notes;
 ##
 
 my @debs = read_deb_filenames($apt_mode, \%status);
+print join("\n", @debs), "\n";
 
 # We have to read all data from the pipeline before exiting, or apt
 # will complain
@@ -656,9 +657,8 @@ sub read_deb_filenames {
 	  if ($filename =~ /^\*\*(.+)\*\*$/) {
 	    if ($1 eq 'CONFIGURE') {
 	      push(@order, $pkg);
-	    } else {
-	      next;
 	    }
+	    next;
 	  }
 
 	  next if $oldversion eq '-';
