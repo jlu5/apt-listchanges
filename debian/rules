@@ -20,7 +20,7 @@ configure-stamp:
 	perl -pi.orig -e 's/^AM_INIT_AUTOMAKE.*$$/AM_INIT_AUTOMAKE($(package), $(version))/g' configure.in
 
 	aclocal
-	autoconf
+	autoconf2.50
 	automake --foreign --add-missing
 	./configure --prefix=/usr
 
@@ -56,7 +56,7 @@ install: build
 
 	install -d $(tmp)/etc/apt/apt.conf.d
 	install -m 644 debian/apt.conf \
-		$(tmp)/etc/apt/apt.conf.d/20-apt-listchanges.conf
+		$(tmp)/etc/apt/apt.conf.d/20listchanges
 
 # Build architecture-dependent files here.
 binary-arch: build install
