@@ -68,7 +68,10 @@ class DebianControlParser:
                             
     def find(self,field,value):
         if self.index.has_key(field):
-            return self.index[field][value]
+            if self.index[field].has_key(value):
+                return self.index[field][value]
+            else:
+                return None
         else:
             for stanza in self.stanzas:
                 if hasattr(stanza,field) and getattr(stanza,field) == value:
