@@ -54,7 +54,7 @@ my $confirm;
 my $show_headers = 0;
 my $version_only = 0;
 my $help_only = 0;
-my $save_seen = $config{'save-seen'} || 'yes';
+my $save_seen = $config{'save-seen'} ? $config{'save-seen'} eq 'yes' : 1;
 
 GetOptions("apt" => \$apt_mode,
 	   "verbose|v" => \$verbose,
