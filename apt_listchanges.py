@@ -273,11 +273,11 @@ class ttyconfirm:
                        _('Do you want to continue? [Y/n]? '))
         tty.flush()
         response = tty.readline()
-        if not response:
+        if (not response) or response[0] == 'y' or response[0] == 'Y' :
             return 1
         if response[0] == 'n' or response[0] == 'N':
             return 0
-        return 1
+        return 0
 
 class simpleprogress:
     def __init__(self,packages):
