@@ -12,8 +12,8 @@ Description: Should apt-listchanges be automatically run by apt?
  run apt-listchanges manually on .deb archives, this step is optional.
 Description-ca: Deuria apt executar apt-listchanges automàticament?
  Una manera de utilitzar apt-listchanges és configurar apt per a que execute
- apt-listchanges sobre els paquets que han segut descarregats per ser
- instal·lats o actualitzats. D'aquesta manera, cada vegada que realitzes una
+ apt-listchanges sobre els paquets que s'han descarregat per ser
+ instal·lats o actualitzats. D'aquesta manera, cada vegada que realitzeu una
  instal·lació o actualització fent servir apt, apt-listchanges mostrarà els
  canvis que estan a punt de tindre lloc en el vostre sistema.
 
@@ -63,7 +63,7 @@ Description: To whom should apt-listchanges mail changelog entries?
  You have chosen to have changelog entries sent via email.  To what email
  address should they be sent?
 Description-ca: A qui deuria enviar apt-listchanges els changelogs?
- Has elegit rebre els canvis per correu electrònic. A quin mail deurien
+ Heu triat rebre els canvis per correu electrònic. A quin mail deurien
  enviar-se?
 
 Template: apt-listchanges/confirm

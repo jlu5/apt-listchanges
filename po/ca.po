@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 1.54\n"
 "POT-Creation-Date: 2001-08-27 18:51+0200\n"
-"PO-Revision-Date: 2001-08-27 19:47+0200\n"
+"PO-Revision-Date: 2001-10-17 19:10+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Debian Catalan l10n <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr "La sortida de errada segueix"
 
 #: apt-listchanges:388
 msgid "In order to use the newt frontend, you must install libnewt-perl"
-msgstr "Per utilitzar el frontend de newt, necessiteu instal·lar libnewt-perl"
+msgstr "Per utilitzar la interfície de newt, necessiteu instal·lar libnewt-perl"
 
 #: apt-listchanges:401
 msgid "Reading changelogs"
@@ -105,7 +105,7 @@ msgstr "Changelogs enviats a %s"
 
 #: apt-listchanges:701
 msgid "Wrong or missing VERSION from apt pipeline"
-msgstr "VERSION errónea o inexistent provinent de la tuberia d'apt"
+msgstr "VERSION errònia o inexistent provinent de la tuberia d'apt"
 
 #: apt-listchanges:702
 msgid "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)"
