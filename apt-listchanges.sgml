@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.24 2003-07-30 12:53:37 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.25 2003-08-26 03:40:48 mdz Exp $
 -->
 
 <refentry>
@@ -120,13 +120,7 @@
                 <para>
                   Displays an HTML-formatted changelog using a web
                   browser, with hyperlinks for bugs and email
-                  addresses.  If the environment variable
-                  APT_LISTCHANGES_BROWSER_PIPE is set, it will be
-                  executed and fed input via stdin.  Otherwise, if
-                  APT_LISTCHANGES_BROWSER or BROWSER is set, it is
-                  executed and fed a file: URL to a temporary file.
-                  If none of these environment variables are set, some
-                  common browsers will be searched for.
+                  addresses.
                 </para>
               </listitem>
             </varlistentry>

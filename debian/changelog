@@ -1,3 +1,11 @@
+apt-listchanges (2.43) unstable; urgency=low
+
+  * Fix the documentation to reflect the removal of support for
+    apt-listchanges-specific BROWSER environment variables; this is all
+    done in the usual way now, using sensible-browser.
+
+ --
+
 apt-listchanges (2.42) unstable; urgency=low
 
   * Fix the mail frontend, broken in 2.40 (Closes: #205925)
