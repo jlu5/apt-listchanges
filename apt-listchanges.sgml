@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.28 2004-02-27 06:42:28 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.29 2004-02-27 06:43:18 mdz Exp $
 -->
 
 <refentry>
@@ -125,8 +125,10 @@
                   Displays an HTML-formatted changelog using a web
                   browser, with hyperlinks for bugs and email
                   addresses.  By default, the BROWSER environment
-                  variable will be used.  You can also specify a
-                  "browser" option in the configuration file.
+                  variable will be used.  The
+                  "browser" option may be specified in the
+                  configuration file to select a specific browser for
+                  use with apt-listchanges.
                 </para>
               </listitem>
             </varlistentry>
