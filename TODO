@@ -1,8 +1,3 @@
-- For each source package processed, list the binary packages
-  belonging to it that are in the list of packages to be installed
-  (this means making a second pass over either the .debs or the
-  changelog output) (should be easy now with apt 0.5)
-
 - Accept (lists of) source packages as well as binary packages
 
 - Accept (lists of) package names, and retrieve changelogs from
@@ -11,7 +6,8 @@
   #80123.
 
 - Use dpkg-parsechangelog once it's fixed to accept piped/gzip input
-  (bug #80142)
+  (bug #80142).  This is not yet feasible because of bug #95579:
+  dpkg-parsechangelog loses information.
 
 - Find a decent text menu frontend to supersede newt.
 
