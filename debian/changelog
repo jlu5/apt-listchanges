@@ -12,7 +12,6 @@ apt-listchanges (1.3) unstable; urgency=low
 apt-listchanges (1.2) unstable; urgency=low
 
   * Change maintainer email address
-  * First official upload
 
  -- Matt Zimmerman <mdz@debian.org>  Wed,  1 Nov 2000 22:34:52 -0500
 
