@@ -530,7 +530,8 @@ sub frontend_init {
 		. "\n";
 	return undef;
       }
-
+    },
+      
     'update_progress' => $frontends{pager}->{init},
 
     'display_output' => sub {
