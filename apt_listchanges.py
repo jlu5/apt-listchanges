@@ -202,7 +202,7 @@ class Config:
         try:
             (optlist, args) = getopt.getopt(argv[1:], 'vf:s:cah', [
                 "apt", "verbose", "frontend=", "email-address=", "confirm",
-                "all", "headers", "save_seen=", "debug", "version", "help"])
+                "all", "headers", "save_seen=", "debug", "which", "version", "help"])
         except getopt.GetoptError:
             return None
 
@@ -238,6 +238,8 @@ class Config:
                 self.headers = 1
             elif opt == '--save_seen':
                 self.save_seen = arg
+            elif opt == '--which':
+                self.which = arg
             elif opt == '--debug':
                 self.debug = 1
 
