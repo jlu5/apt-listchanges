@@ -194,11 +194,7 @@ if ($errors) {
   $output .= $errors;
 }
 
-if ($output) {
-  exit &{ $frontend->{display_output} }($frontend, $output);
-}
-
-exit 0;
+exit &{ $frontend->{display_output} }($frontend, $output);
 
 ## End top level ##
 
@@ -319,25 +315,28 @@ sub frontend_init {
     
     'display_output' => sub {
       my ($this, $output) = @_;
-      my ($screen_width, $screen_height) = Newt::GetScreenSize();
+
+      my $ret = 0;
+      if ($output) {
+	my ($screen_width, $screen_height) = Newt::GetScreenSize();
+	
+	my $newt = $this->{newt};
+	$$newt{main} = Newt::Panel(1, 2, "Displaying changelogs");
+	$$newt{main}->Add(0, 0, Newt::Textbox($screen_width - 10, $screen_height - 10,
+					      NEWT_FLAG_WRAP|NEWT_FLAG_SCROLL,
+					      $output));
+	$$newt{main}->Add(0, 1, Newt::Panel(2, 1)
+			  ->Add(0, 0, OK_BUTTON)
+			  ->Add(1, 0, CANCEL_BUTTON));
+	
+	my ($reason, $data) = $$newt{main}->Run();
+	if ($reason eq NEWT_EXIT_COMPONENT && $data->Tag() eq 'CANCEL') {
+	  # User pressed cancel, so we should exit with nonzero status
+	  $ret = 1;
+	};
+      }
       
-      my $newt = $this->{newt};
-      $$newt{main} = Newt::Panel(1, 2, "Displaying changelogs");
-      $$newt{main}->Add(0, 0, Newt::Textbox($screen_width - 10, $screen_height - 10,
-					    NEWT_FLAG_WRAP|NEWT_FLAG_SCROLL,
-					    $output));
-      $$newt{main}->Add(0, 1, Newt::Panel(2, 1)
-			->Add(0, 0, OK_BUTTON)
-			->Add(1, 0, CANCEL_BUTTON));
-      
-      my $ret;
-      my ($reason, $data) = $$newt{main}->Run();
-      if ($reason eq NEWT_EXIT_COMPONENT && $data->Tag() eq 'CANCEL') {
-	# User pressed cancel, so we should exit with nonzero status
-	$ret = 1;
-      };
-      
-    Newt::Finished();
+      Newt::Finished();
       $ret;
     }
   };
@@ -360,6 +359,8 @@ sub frontend_init {
       my ($this, $output) = @_;
       
       print "\n";
+      return 0 unless $output;
+
       open(PAGER, "|/usr/bin/sensible-pager")
 	  || die "/usr/bin/sensible-pager: $!\n";
       print PAGER $output;
