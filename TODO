@@ -14,3 +14,7 @@
 - Make better use of python-apt
   control file parsing
   tar extraction
+
+- What should be done in the situation where the installed version is
+  newer than the seen version?  Currently, the seen version is used, but
+  it might make more sense to use the installed version.
