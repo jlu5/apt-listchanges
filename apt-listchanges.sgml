@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.3 2000-11-18 09:46:23 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.4 2000-11-18 09:48:13 mdz Exp $
 -->
 
 <refentry>
@@ -23,17 +23,17 @@
     <date>2000-09-13</date>
   </docinfo>
   <refmeta>
-    <refentrytitle>debchanges</refentrytitle>
+    <refentrytitle>apt-listchanges</refentrytitle>
     <manvolnum>1</manvolnum>
   </refmeta>
   <refnamediv>
-    <refname>debchanges</refname> <refpurpose>Show new changelog
+    <refname>apt-listchanges</refname> <refpurpose>Show new changelog
       entries from a Debian package archive
-      </refpurpose>
+    </refpurpose>
   </refnamediv>
   <refsynopsisdiv>
     <cmdsynopsis>
-      <command>debchanges</command>
+      <command>apt-listchanges</command>
       <group choice=opt>
 	<arg><option>-v</option></arg>
 	<arg><option>--verbose</option></arg>
@@ -55,13 +55,14 @@
   <refsect1>
     <title>DESCRIPTION</title>
 
-    <para><command>debchanges</command> is a tool to show what has
-      been changed in a new version of a Debian package, as compared to
-      the version currently installed on the system.</para>
+    <para><command>apt-listchanges</command> is a tool to show what
+      has been changed in a new version of a Debian package, as
+      compared to the version currently installed on the
+      system.</para>
 
     <para>It does this by extracting the relevant entries from the
-    Debian changelog file, usually found in
-    <filename>/usr/doc/<replaceable>package</replaceable>/changelog.Debian.gz</filename></para>
+      Debian changelog file, usually found in
+      <filename>/usr/doc/<replaceable>package</replaceable>/changelog.Debian.gz</filename></para>
 
   </refsect1>
 
@@ -74,7 +75,7 @@
 	</TERM>
 	<LISTITEM>
 	  <PARA>Read filenames from standard input, rather than from
-	  command line arguments.
+	    command line arguments.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
@@ -112,7 +113,7 @@
 	      <TERM>pager</TERM>
 	      <LISTITEM>
 		<PARA>
-		Uses your favorite pager to display output.
+		  Uses your favorite pager to display output.
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
@@ -128,9 +129,9 @@
 	      <TERM>mail</TERM>
 	      <LISTITEM>
 		<PARA>
-		Sends output via email, to the address specified in
-		<filename>/etc/apt-listchanges.conf</filename> or by the
-		<option>--email-address</option> option
+		  Sends output via email, to the address specified in
+		  <filename>/etc/apt-listchanges.conf</filename> or by the
+		  <option>--email-address</option> option
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
