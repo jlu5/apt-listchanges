@@ -67,7 +67,9 @@ unless (@debs) {
   die "apt-listchanges: Must specify either --apt or filenames to process!\n";
 }
 
-# Find the longest pathname, for sizing the dialog
+# Strip pathnames, and find the longest filename for sizing the dialog
+my @display_debs = @debs;
+map { s%([^/]+)%$1%; } @display_debs;
 my $longest_pathname = longest(@debs);
 
 # Initialize terminal graphics
@@ -89,9 +91,8 @@ my $debs_processed = 0;
 # Main loop
 #
 foreach my $deb (@debs) {
-  # Remove common prefix from deb pathnames
-  my $display_deb = $deb;
-  $display_deb =~ s%/var/cache/apt/archives/%%;
+  # Display an abbreviated filename in the progress dialog
+  my $display_deb = pop @display_debs;
 
   # Update progress filename
   $current->Set( $display_deb );
