@@ -19,6 +19,8 @@ apt-listchanges (2.46) unstable; urgency=low
   * Handle the KeyboardInterrupt exception (Closes: #139265)
   * Don't send empty email if there are no changes and --which=news is
     specified
+  * Spanish man page update from Ruben Porras <nahoo82@telefonica.net>
+    (Closes: #231582)
 
  --
 

@@ -8,14 +8,14 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.es.sgml,v 1.3 2004-01-07 17:11:03 mdz Exp $
+     $Id: apt-listchanges.es.sgml,v 1.4 2004-02-27 06:47:48 mdz Exp $
 -->
 
 <!-- 
 (c) 2003 Software in the Public Interest
 Esta traducción ha sido realizada por Rubén Porras Campo <nahoo@inicia.es>
 Está basada en la página de manual original:
-versión 1.4 del CVS de
+versión 1.5 del CVS de
 /cvs/debian-doc/manpages/english/apt-listchanges/apt-listchanges.sgml
  -->
 
@@ -128,14 +128,8 @@ versión 1.4 del CVS de
               <listitem>
                 <para>
                   Muestra los cambios en formato HTML usando un navegador, con
-                  enlaces a las páginas del sistema de seguimiento de fallos de
-                  Debian y direcciones de correo electrónico. Si la variable de
-                  entorno APT_LISTCHANGES_BROWSER_PIPE está establecida, este
-                  programa se ejecutará y recogerá la salida de stdin. De otro
-                  modo, si APT_LISTCHANGES_BROWSER o BROWSER está establecida,
-                  se ejecuta y usa la URL de un fichero temporal. Si no existe
-                  ninguna de estas variables de entorno, se buscarán los
-                  navegadores más comunes.
+                  enlaces para los fallos y las direcciones de correo
+		  electrónico.
                 </para>
               </listitem>
             </varlistentry>
