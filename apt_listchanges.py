@@ -19,6 +19,7 @@ from socket import gethostname
 
 try:
     _ = gettext.translation('apt-listchanges').gettext
+    locale.setlocale(locale.LC_ALL,'')
 except IOError:
     def gettext_null(str): return str
     _ = gettext_null
@@ -279,7 +280,7 @@ class ttyconfirm:
         tty.flush()
         response = tty.readline()
         if response == '\n' or re.search(locale.nl_langinfo(locale.YESEXPR),
-                                         response[0]):
+                                         response):
             return 1
 #         if re.match(locale.nl_langinfo(locale.NOEXPR),response[0]):
 #             return 0
