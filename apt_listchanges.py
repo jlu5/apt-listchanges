@@ -211,7 +211,14 @@ def read_apt_pipeline():
         else:
             filenames[pkgname] = (filename)
 
-    # Sort by configuration order
+    # Sort by configuration order.  THIS IS IMPORTANT.  Sometimes, a
+    # situation exists where package X contains changelog.gz (upstream
+    # changelog) and depends on package Y which contains
+    # changelog.Debian.gz (Debian changelog).  Until we have a more
+    # reliable method for determining whether a package is Debian
+    # native, this allows things to work, since Y will always be
+    # configured first.
+    
     return map(lambda pkg: filenames[pkg], order)
 
 def mail_changes(address, changes):
