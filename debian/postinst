@@ -36,6 +36,13 @@ if [ "$action" = "configure" ]; then
           echo "apt-mode-run=no" >> $PREFERENCES
 	fi
 
+	db_get apt-listchanges/save-seen
+	if [ "$RET" = "true" ]; then
+	  echo "save-seen=yes" >> $PREFERENCES
+        else
+          echo "save-seen=no" >> $PREFERENCES
+	fi
+
 	rm -f $PREFERENCES.old
     fi
 

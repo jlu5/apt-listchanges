@@ -11,6 +11,7 @@ db_get apt-listchanges/overwrite_etc_apt_listchanges_conf
 if [ "$RET" = "true" ]; then
     db_input medium apt-listchanges/apt-hook-p || true
     db_input medium apt-listchanges/frontend || true
+    db_input medium apt-listchanges/save-seen || true
     db_go
 
     # If the mail frontend was selected, ask for an email address.  If

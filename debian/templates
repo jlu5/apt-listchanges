@@ -61,3 +61,11 @@ Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
  .
  If you want to edit /etc/apt/listchanges.conf manually for whatever
  reason, answer "no" now.
+
+Template: apt-listchanges/save-seen
+Type: boolean
+Default: true
+Description: Should apt-listchanges skip changelogs that have already been seen?
+ apt-listchanges has the ability to keep track of which changelog
+ entries have already been displayed, and to skip them in future invocations.
+ This is useful, for example, when retrying an upgrade.
