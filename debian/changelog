@@ -18,8 +18,13 @@ apt-listchanges (2.0) unstable; urgency=low
   * Get rid of the automake cruft and just do it by hand.  Automake was
     starting to do way too much unnecessary work
   * Document the config file format
+  * Since this was as much a redesign as a rewrite, it is possible that an
+    old bug or two may have crept back in; some of the logic is fragile
+    due to lax standardization of certain aspects of Debian packaging.  I
+    have squashed a few already as I have noticed them.  Send in those bug
+    reports for ones that I may have missed.
 
- -- Matt Zimmerman <mdz@debian.org>  Fri, 11 Jan 2002 22:47:12 -0500
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 13 Jan 2002 03:17:16 -0500
 
 apt-listchanges (1.61) unstable; urgency=low
 
