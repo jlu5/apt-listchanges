@@ -69,8 +69,8 @@ unless (@debs) {
 
 # Strip pathnames, and find the longest filename for sizing the dialog
 my @display_debs = @debs;
-@display_debs = map { s%([^/]+)%$1%; } @display_debs;
-my $longest_pathname = longest(@debs);
+@display_debs = map { m%([^/]+)$%; $1; } @display_debs;
+my $longest_pathname = longest(@display_debs);
 
 # Initialize terminal graphics
 Newt::Init();
@@ -92,7 +92,7 @@ my $debs_processed = 0;
 #
 foreach my $deb (@debs) {
   # Display an abbreviated filename in the progress dialog
-  my $display_deb = pop @display_debs;
+  my $display_deb = shift @display_debs;
 
   # Update progress filename
   $current->Set( $display_deb );
