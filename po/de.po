@@ -1,0 +1,77 @@
+# german po-file for apt-listchanges
+# Copyright (C) 2002 Free Software Foundation
+# Leonard Michlmayr <leonard.michlmayr@ap.univie.ac.at>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges 2.3\n"
+"POT-Creation-Date: Sat Jan 19 17:07:43 2002\n"
+"PO-Revision-Date: 2002-02-01 15:28+0100\n"
+"Last-Translator: Leonard Michlmayr <leonard.michlmayr@ap.univie.ac.at>\n"
+"Language-Team: German <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+
+#: ../apt-listchanges:104
+msgid "%s: will be newly installed"
+msgstr "%s: wird erstmals installiert"
+
+#: ../apt-listchanges:117
+msgid "%s: Version %s has already been seen"
+msgstr "%s: Version %s wurde schon einmal angezeigt"
+
+#: ../apt-listchanges:143
+msgid "Changes for %s"
+msgstr "Änderungen für %s"
+
+#: ../apt-listchanges:152
+msgid "Informational notes"
+msgstr "Anmerkungen"
+
+#: ../apt-listchanges:166
+msgid "didn't find any valid .deb archives"
+msgstr "konnte keine gültigen .deb Archive finden"
+
+#: ../apt_listchanges.py:51
+msgid "%s exited with signal %s"
+msgstr "%s mit dem Signal %s beendet"
+
+#: ../apt_listchanges.py:196
+msgid ""
+"Wrong or missing VERSION from apt pipeline\n"
+"(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
+msgstr ""
+"Falsche oder fehlende VERSION von der apt Pipeline\n"
+"(ist Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version auf 2 "
+"gesetzt?)\n"
+
+#: ../apt_listchanges.py:237
+msgid "Mailing changelogs to %s"
+msgstr "Sende Changelogs an %s"
+
+#: ../apt_listchanges.py:240
+msgid "apt-listchanges output for %s"
+msgstr "apt-listchanges Ausgabe für %s"
+
+#: ../apt_listchanges.py:251
+msgid "The newt frontend is deprecated, using pager"
+msgstr "Das newt Frontend wird abgelehnt, benütze den Pager"
+
+#: ../apt_listchanges.py:281
+msgid "Do you want to continue? [Y/n]? "
+msgstr "Wollen Sie fortsetzen? [J/n]? "
+
+#: ../apt_listchanges.py:292 ../apt_listchanges.py:315
+#: ../apt_listchanges.py:320
+msgid "Reading changelogs"
+msgstr "Lese Changelogs"
+
+#: ../apt_listchanges.py:320
+msgid "Done"
+msgstr "Fertig"
+
+#: ../apt_listchanges.py:361
+msgid "%s exited with status %d"
+msgstr "%s mit Status %d beendet"
