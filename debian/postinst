@@ -88,7 +88,7 @@ if [ "$action" = "configure" ]; then
 
     # Re-create database (pre-2.0)
     if dpkg --compare-versions "$version" lt 2.0; then
-        : > /var/lib/apt/listchanges.db
+        rm /var/lib/apt/listchanges.db
     fi
 fi
 
