@@ -5,31 +5,31 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 1.40\n"
-"POT-Creation-Date: Mon Jan 14 16:24:41 2002\n"
+"POT-Creation-Date: Sat Jan 19 17:07:43 2002\n"
 "PO-Revision-Date: 2001-03-17 17:30+0200\n"
 "Last-Translator: Jaakko Kangasharju <ashar@iki.fi>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../apt-listchanges:103
+#: ../apt-listchanges:104
 msgid "%s: will be newly installed"
 msgstr "%s on uusi asennus"
 
-#: ../apt-listchanges:116
+#: ../apt-listchanges:117
 #, fuzzy
 msgid "%s: Version %s has already been seen"
 msgstr "Paketin %s versio $version on jo asennettu"
 
-#: ../apt-listchanges:142
+#: ../apt-listchanges:143
 msgid "Changes for %s"
 msgstr "Muutokset pakettiin %s"
 
-#: ../apt-listchanges:151
+#: ../apt-listchanges:152
 msgid "Informational notes"
 msgstr "Tiedotukset"
 
-#: ../apt-listchanges:165
+#: ../apt-listchanges:166
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
@@ -37,7 +37,7 @@ msgstr ""
 msgid "%s exited with signal %s"
 msgstr ""
 
-#: ../apt_listchanges.py:188
+#: ../apt_listchanges.py:196
 #, fuzzy
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
@@ -45,35 +45,35 @@ msgid ""
 msgstr ""
 "(onko Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version arvoltaan 2?)"
 
-#: ../apt_listchanges.py:229
+#: ../apt_listchanges.py:237
 #, fuzzy
 msgid "Mailing changelogs to %s"
 msgstr "Luen muutoslokeja...%s"
 
-#: ../apt_listchanges.py:232
+#: ../apt_listchanges.py:240
 #, fuzzy
 msgid "apt-listchanges output for %s"
 msgstr "Muutokset pakettiin %s"
 
-#: ../apt_listchanges.py:242
+#: ../apt_listchanges.py:251
 msgid "The newt frontend is deprecated, using pager"
 msgstr ""
 
-#: ../apt_listchanges.py:272
+#: ../apt_listchanges.py:281
 #, fuzzy
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Haluatko jatkaa [Kyllä=y/ei=n]? "
 
-#: ../apt_listchanges.py:283 ../apt_listchanges.py:299
-#: ../apt_listchanges.py:304
+#: ../apt_listchanges.py:292 ../apt_listchanges.py:315
+#: ../apt_listchanges.py:320
 msgid "Reading changelogs"
 msgstr "Luen muutoslokeja"
 
-#: ../apt_listchanges.py:304
+#: ../apt_listchanges.py:320
 msgid "Done"
 msgstr "Valmis"
 
-#: ../apt_listchanges.py:334
+#: ../apt_listchanges.py:361
 msgid "%s exited with status %d"
 msgstr ""
 
