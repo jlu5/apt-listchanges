@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.11 2001-03-25 07:19:53 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.12 2001-07-17 03:17:33 mdz Exp $
 -->
 
 <refentry>
@@ -214,6 +214,18 @@
 	    simply display all changelog entries for all packages.
 	    This is useful for viewing the entire changelog of a .deb
 	    before extracting it.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+
+      <VARLISTENTRY>
+	<TERM>--saveseen, --nosaveseen</TERM>
+	<LISTITEM>
+	  <PARA>
+	    This option (which defaults to on) will cause
+	    apt-listchanges to keep track of the last version of a
+	    package for which changelogs have been displayed, to avoid
+	    redisplaying the same changelogs in a future invocation.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
