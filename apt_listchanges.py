@@ -363,10 +363,10 @@ class xterm_pager(xterm):
     pipecommand = 'sensible-pager'
 
 class html:
-    bug_re = re.compile('(bug|closes:?)\s+#(\d+)', re.IGNORECASE)
+    bug_re = re.compile('(?P<linktext>#(?P<bugnum>\d+))(?P<trailing>(?:[\),]|$))', re.IGNORECASE)
     # regxlib.com
     email_re = re.compile(r'([a-zA-Z0-9_\-\.]+)@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)')
-    
+
     def htmlify(self,text):
         htmltext = '''<html>
         <head>
@@ -382,7 +382,7 @@ class html:
                 '<', '&lt;').replace(
                 '>','&gt;')
             line = re.sub(self.bug_re,
-                          r'<a href="http://bugs.debian.org/\g<1>">\g<0></a>',
+                          r'<a href="http://bugs.debian.org/\g<bugnum>">\g<linktext></a>\g<trailing>',
                           line)
             line = re.sub(self.email_re,
                           r'<a href="mailto:\g<0>">\g<0></a>',
