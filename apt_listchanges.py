@@ -4,7 +4,6 @@ import DebianControlParser
 import apt_pkg
 import ConfigParser
 import getopt
-import string
 import os
 import re
 import sys
@@ -31,17 +30,13 @@ except IOError:
     _ = lambda str: str
 
 def numeric_urgency(u):
-    u = string.lower(u)
-    if u == 'low':
-        return 4
-    elif u == 'medium':
-        return 3
-    elif u == 'high':
-        return 2
-    elif u == 'emergency' or u == 'critical':
-        return 1
-    else:
-        return 0
+    urgency_map = { 'low' : 1,
+                    'medium' : 2,
+                    'high' : 3,
+                    'emergency' : 4,
+                    'critical' : 4 }
+
+    return urgency_map.get(u.lower(), 5)
 
 class Package:
     changelog_header = re.compile('^\S+ \((?P<version>.*)\) .*;.*urgency=(?P<urgency>\w+).*')
@@ -139,7 +134,7 @@ class Package:
                 if match:
                     if apt_pkg.VersionCompare(match.group('version'),
                                              since_version) > 0:
-                        urgency = min(numeric_urgency(match.group('urgency')),
+                        urgency = max(numeric_urgency(match.group('urgency')),
                                       urgency)
                     else:
                         break
