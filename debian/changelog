@@ -1,3 +1,14 @@
+apt-listchanges (2.22) unstable; urgency=low
+
+  * Fix confirmation prompt to be more conservative, and more like apt's
+    (Closes: #153476)
+  * Polish translation of debconf templates, thanks to  Michal Politowski
+    <mpol@charybda.icm.edu.pl> (Closes: #153486)
+  * Polish translation of message catalogs, thanks to  Michal Politowski
+    <mpol@charybda.icm.edu.pl> (Closes: #153487)
+
+ -- Matt Zimmerman <mdz@debian.org>  Fri, 19 Jul 2002 20:55:15 -0400
+
 apt-listchanges (2.21) unstable; urgency=low
 
   * Fix a bug which caused an ugly error when running on a .deb which was
