@@ -169,7 +169,7 @@ class Changes:
 class Config:
     def __init__(self):
         # Defaults
-        self.frontend = None
+        self.frontend = 'pager'
         self.email_address = None
         self.verbose = False
         self.quiet = False
