@@ -166,10 +166,13 @@ def main():
             changes += '--- ' + header + ' ---\n' + rec.changes
     else:
         if filter(lambda x: x.changes,all_news):
-            news = 'NEWS\n----\n\n' + ''.join(map(lambda x: x.changes, all_news)) + '\n--------\nEND NEWS\n'
+            news = ''.join(map(lambda x: x.changes, all_news))
         else:
             news = ''
-        changes = ''.join(map(lambda x: x.changes, all_changelogs))
+        if filter(lambda x: x.changes,all_changelogs):
+            changes = ''.join(map(lambda x: x.changes, all_changelogs))
+        else:
+            changes = ''
 
     if config.verbose and len(notes) > 0:
         changes += _("Informational notes") + ":\n\n" + '\n'.join(notes)
