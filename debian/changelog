@@ -4,6 +4,8 @@ apt-listchanges (2.56) unstable; urgency=low
     (Closes: #246863)
   * Updated Japanese translation of debconf templates from Kenshi Muto <kmuto@debian.org>
     (Closes: #244684)
+  * Updated French translation of debconf templates from Denis Barbier <barbier@debian.org>
+    (Closes: #248523)
 
  --
 

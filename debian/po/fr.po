@@ -11,13 +11,12 @@
 #
 #    Developers do not need to manually edit POT or PO files.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: apt-listchanges\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-04-29 20:33-0700\n"
-"PO-Revision-Date: 2003-02-06 01:07+0100\n"
+"PO-Revision-Date: 2004-05-10 08:07+0200\n"
 "Last-Translator: Denis Barbier <barbier@linuxfr.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,80 +28,73 @@ msgstr ""
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 msgstr ""
-"pageur, navigateur, pageur xterm, navigateur xterm, texte, courriel, aucun"
+"Pageur, Navigateur, Pageur xterm, Navigateur xterm, Texte, Courriel, Aucun"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "How should changes be displayed with apt?"
-msgstr "Comment le journal des changements doit-il être communiqué ?"
+msgstr "Mode d'affichage des changements par apt :"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"apt-listchanges peut vous communiquer la liste des changements de plusieurs "
-"manières."
+"Apt-listchanges peut vous communiquer la liste des changements de plusieurs "
+"manières :"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "pager - Use your preferred pager to display changes one page at a time"
 msgstr ""
-"pageur - Utilise votre pageur (logiciel de pagination) préféré (« more », "
-"« less », etc.)"
+"- Pageur : utilise votre pageur (logiciel de pagination) préféré (« more », "
+"« less », etc.) pour afficher les changements page par page ;"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "browser - Display HTML-formatted changes using a web browser"
 msgstr ""
-"navigateur - Affiche dans un navigateur le journal des changements au format "
-"HTML"
+"- Navigateur : affiche dans un navigateur les changements au format HTML ;"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-pager - Like pager, but in an xterm in the background"
 msgstr ""
-"pageur xterm - Utilise votre pageur préféré dans un xterm lancé en tâche de "
-"fond"
+"- Pageur xterm : utilise votre pageur préféré dans un xterm lancé en tâche "
+"de fond ;"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
 msgstr ""
-"navigateur xterm - Comme pour navigateur, mais dans un xterm lancé en tâche "
-"de fond"
+"- Navigateur xterm : comme pour « Navigateur », mais dans un xterm lancé en "
+"tâche de fond ;"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "texte - Affiche les changements sur votre terminal (sans pause)"
+msgstr "- Texte : affiche les changements sur votre terminal (sans pause) ;"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "mail  - Only send changes via mail"
 msgstr ""
-"courriel - Envoie le journal des changements par courrier électronique (à "
-"une adresse à préciser par la suite)"
+"- Courriel :  envoie les changements par courrier électronique (à une "
+"adresse à préciser par la suite) ;"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
-msgstr "aucun - N'envoie rien depuis apt"
+msgstr "- Aucun : n'envoie rien depuis apt."
 
 #. Type: select
 #. Description
@@ -114,7 +106,7 @@ msgid ""
 msgstr ""
 "Ce réglage peut être changé par une option en ligne de commande ou une "
 "variable d'environnement. Notez que vous pouvez toujours envoyer une copie "
-"par courrier électronique avec tous ces formats excepté « aucun »."
+"par courrier électronique avec tous ces formats excepté « Aucun »."
 
 #. Type: string
 #. Default
@@ -125,20 +117,18 @@ msgstr "root"
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid "To whom should apt-listchanges mail changes?"
-msgstr "Adresse où envoyer les journaux des changements"
+msgstr "Adresse où envoyer les changements :"
 
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
 msgstr ""
-"apt-listchanges peut envoyer par courrier électronique une copie des "
-"journaux des changements. À quelle adresse électronique faut-il les envoyer ?"
+"Apt-listchanges peut envoyer par courrier électronique une copie des "
+"changements. Veuillez choisir l'adresse électronique où elle sera envoyée."
 
 #. Type: string
 #. Description
@@ -154,7 +144,6 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changes?"
 msgstr "Demande de confirmation après affichage des changements ?"
@@ -162,7 +151,6 @@ msgstr "Demande de confirmation après affichage des changements ?"
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
@@ -182,42 +170,38 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Ce réglage ne s'applique pas aux formats « courriel » et « aucun », et il "
+"Ce réglage ne s'applique pas aux formats « Courriel » et « Aucun », et il "
 "peut être remplacé par une option en ligne de commande."
 
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "Ignorer les changements déjà affichés ?"
 
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges garde la trace des entrées dans les journaux des changements "
-"qui ont déjà été affichées, et peut les ignorer lors d'appels ultérieurs. "
-"Cela peut être utile par exemple lors d'une nouvelle tentative de mise à "
-"jour."
+"Apt-listchanges garde la trace des changements qui ont déjà été affichés, et "
+"peut les ignorer lors d'appels ultérieurs. Cela peut être utile par exemple "
+"lors d'une nouvelle tentative de mise à jour."
 
 #. Type: select
 #. Choices
 #: ../templates:59
 msgid "news, both, changelogs"
-msgstr ""
+msgstr "Nouveautés, Les deux, Journaux"
 
 #. Type: select
 #. Description
 #: ../templates:61
-#, fuzzy
 msgid "Which types of changes should be displayed with apt?"
-msgstr "Comment le journal des changements doit-il être communiqué ?"
+msgstr "Types de changements affichés par apt :"
 
 #. Type: select
 #. Description
@@ -227,25 +211,6 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-
-#~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
-#~ msgstr "Gérer /etc/apt/listchanges.conf avec debconf ?"
-
-#~ msgid ""
-#~ "apt-listchanges can configure all of the options in /etc/apt/listchanges."
-#~ "conf by asking you questions.  This file is read and processed every time "
-#~ "apt-listchanges is run, and is used to set defaults.  All of the options "
-#~ "can be overridden on the command line."
-#~ msgstr ""
-#~ "apt-listchanges peut configurer toutes les options de /etc/apt/"
-#~ "listchanges.conf en vous posant quelques questions. Ce fichier, lu à "
-#~ "chaque fois qu'apt-listchanges est lancé, est utilisé pour définir les "
-#~ "valeurs par défaut. Toutes les options peuvent être imposées par la ligne "
-#~ "de commande."
-
-#~ msgid ""
-#~ "If you want to edit /etc/apt/listchanges.conf manually for whatever "
-#~ "reason, answer \"no\" now."
-#~ msgstr ""
-#~ "Si vous désirez modifier le fichier /etc/apt/listchanges.conf à la main "
-#~ "(pour quelque raison que ce soit), répondez « no » à la question."
+" - Nouveautés : seulement les nouveautés importantes ;\n"
+" - Les deux   : les nouveautés importantes et les journaux détaillés ;\n"
+" - Journaux   : seulement les journaux des changements détaillés."
