@@ -26,43 +26,30 @@
 use strict;
 use Getopt::Long;
 use Sys::Hostname;
+use IO::Handle;
 
 # Read config file
 my %config;
-&read_config('/etc/apt-listchanges.conf', \%config);
+&read_config('/etc/apt/listchanges.conf', \%config);
 
 # Config file options can be overridden by command line options
 my $apt_mode = 0;
 my $verbose = 0;
-my $frontend_opt = $config{'apt-mode-frontend'} || 'newt';
-my $email_address = $config{'apt-mode-email-address'} || 'root';
+my $frontend_opt = $config{'frontend'} || 'pager';
+my $email_address = $config{'email-address'} || 'root';
+my $confirm = $config{'confirm'} eq 'yes' ? 1 : undef;
 GetOptions("apt" => \$apt_mode,
 	   "verbose|v" => \$verbose,
 	   "frontend|f=s" => \$frontend_opt,
-	   "email-address=s" => \$email_address) || die;
+	   "email-address=s" => \$email_address,
+	   "confirm|c!" => \$confirm) || die;
 
-
-# List of filenames to process
-my @debs;
-if ($apt_mode) {
-  # In apt mode, read filenames from stdin
-  while (<>) {
-    chomp;
-    push(@debs, $_);
-  }
-} else {
-  # Otherwise, use filenames from the command line
-  @debs = @ARGV;
-}
-
-unless (@debs) {
-  exit 0 if ($apt_mode);
-  die "apt-listchanges: Must specify either --apt or filenames to process!\n";
-}
 
 # Hash of package info from the status file
 my %status;
-read_status(\%status);
+
+# List of filenames to process
+my @debs;
 
 # Hash of source packages that we've processed (to avoid duplicates)
 my %source_packages_processed;
@@ -82,6 +69,21 @@ my @changes;
 # Error text
 my $errors;
 
+##
+## Initialization
+##
+
+my @debs = read_deb_filenames($apt_mode, \%status);
+
+unless (@debs) {
+  exit 0 if ($apt_mode);
+  die "apt-listchanges: Must specify either --apt or filenames to process!\n";
+}
+
+# Only reads the status file if we haven't already gotten the info
+# from apt via read_deb_filenames
+read_status(\%status);
+
 # User interaction
 my $frontend = frontend_init($frontend_opt);
 
@@ -91,9 +93,9 @@ my $frontend = frontend_init($frontend_opt);
 foreach my $deb (@debs) {
   &{ $frontend->{update_progress} }($frontend);
 
-  my ($pkg, $version) = get_name_and_version($deb);
-
-  $errors .= $version if $pkg eq 'ERROR';
+  # Find out what package we are installing
+  my ($pkg, $version, $oldversion, $sourcepackage) =
+      get_package_info($deb, \%status);
 
   unless ($pkg) {
     $errors .= "apt-listchanges: Unable to determine package name for $deb\n";
@@ -103,16 +105,9 @@ foreach my $deb (@debs) {
     $errors .= "apt-listchanges: Unable to determine version for $deb\n";
     next;
   }
-
-  # Look up installed version of $pkg
-  my $oldversion = $status{$pkg}{Version};
-
-  my $sourcepackage = $status{$pkg}{Source} || $pkg;
-
-  # Check for different source package version
-  if ($sourcepackage =~ /\((.*)\)/) {
-    $oldversion = $1;
-    $sourcepackage =~ s/\s*\(.*\)//;
+  unless ($sourcepackage) {
+    $errors .= "apt-listchanges: Unable to determine source package name for $deb\n";
+    next;
   }
 
   # Skip if the package is not installed
@@ -157,6 +152,7 @@ foreach my $deb (@debs) {
 
   my @changelog_filenames_nodebian = @changelog_filenames;
 
+  # Strip .Debian to check native packages
   map { s/\.Debian//g } @changelog_filenames_nodebian;
 
   # First try changelog.Debian and friends.  If we don't find one, it
@@ -215,92 +211,39 @@ if ($errors) {
   $output .= $errors;
 }
 
-exit &{ $frontend->{display_output} }($frontend, $output);
+&{ $frontend->{display_output} }($frontend, $output);
+
+if ($confirm) {
+  exit 1 unless &{ $frontend->{confirm} }($frontend);
+}
+
+exit 0;
 
 ## End top level ##
 
-# Extract the package name and version from a .deb file
-sub get_name_and_version {
-  my ($deb) = @_;
-
-  my ($pkg, $version);
-
-  open(DPKGDEB, "dpkg-deb -f $deb Package Version 2>&1|") || die;
-  while (<DPKGDEB>) {
-    chomp;
-    /^Package: (.*)$/ && do { $pkg = $1 };
-    /^Version: (.*)$/ && do { $version = $1 };
-  }
-  close(DPKGDEB);
-
-  ($pkg, $version);
-}
-
-# Read in package names and versions from the status file and store
-# them in the hash ref $status
-sub read_status {
-  my ($status) = @_;
-
-  my $statusfile = "/var/lib/dpkg/status";
-
-  open(STATUS, $statusfile) || die "$statusfile: $!\n";
-  my $pkg;
-  while (<STATUS>) {
-    /^Package: (.*)$/o && do { $pkg = $1 };
-    /^Version: (.*)$/o && do { $$status{$pkg}{Version} = $1 };
-    /^Source: (.*)$/o && do { $$status{$pkg}{Source} = $1 };
-  }
-  close(STATUS);
-}
-
-# Find the longest scalar in an array
-sub longest {
-  my $max;
-
-  foreach my $x (@_) {
-    $max = $x if length($x) > length($max);
-  }
-
-  $max;
-}
-
-sub dpkg_compare_versions {
-  my ($a, $op, $b) = @_;
-
-  my @cmd = ('dpkg', '--compare-versions', $a, $op, $b);
-  my $ret = system(@cmd);
-  $ret <<= 8;
-
-  $ret == 0;
-}
-
-sub read_config {
-  my ($config_file, $config) = @_;
-
-  open(CONF, $config_file) || return undef;
-  while (<CONF>) {
-    next if /^#/;
-    my ($name, $value);
-    if ( ($name, $value) = /^([^=]+)=(.*)$/ ) {
-      $$config{$name} = $value;
-    }
-  }
-}
-
 # Initialize the frontend...this is a little bit hairy.  We return a
-# reference (really, a fake object) containing subroutine refs called
-# update_progress and display_output.  These expect to be called with
-# a reference to the fake object as their first argument, just as a
-# real object's methods would.  The code for all of the frontends is
-# in here.
+# reference (really, a fake object) containing subroutine refs These
+# expect to be called with a reference to the fake object as their
+# first argument, just as a real object's methods would.  The code for
+# all of the frontends is in here.
+#
+# The subroutine refs are:
+#
+# init - Initialize the frontend
+# update_progress - update a progress meter
+# display_output - Show the user some text
+# confirm - Ask the user whether to continue (return false if not)
+#
 
 sub frontend_init {
   my ($frontend_opt) = @_;
   
   my %frontends;
+
   $frontends{'newt'} = {
     'init' => sub {
       my ($this) = @_;
+
       $this->{newt} = {};
 
       # Initialize terminal graphics
@@ -331,7 +274,7 @@ sub frontend_init {
       my $this = shift;
       my $display_debs = $this->{display_debs};
       my $display_deb = shift @$display_debs;
-      
+
       my $newt = $this->{newt};
       # Update progress filename
       $newt->{current}->Set( $display_deb );
@@ -342,11 +285,12 @@ sub frontend_init {
     'display_output' => sub {
       my ($this, $output) = @_;
 
-      my $ret = 0;
+      my $newt = $this->{newt};
+      $newt->{confirm} = 1;
+
       if ($output) {
 	my ($screen_width, $screen_height) = Newt::GetScreenSize();
 	
-	my $newt = $this->{newt};
 	$$newt{main} = Newt::Panel(1, 2, "Displaying changelogs");
 	$$newt{main}->Add(0, 0, Newt::Textbox($screen_width - 10, $screen_height - 10,
 					      &Newt::NEWT_FLAG_WRAP|
@@ -359,13 +303,17 @@ sub frontend_init {
 	my ($reason, $data) = $$newt{main}->Run();
 	if ($reason eq &Newt::NEWT_EXIT_COMPONENT
 	    && $data->Tag() eq 'CANCEL') {
-	  # User pressed cancel, so we should exit with nonzero status
-	  $ret = 1;
+	  $newt->{confirm} = 0;
 	};
       }
       
       Newt::Finished();
-      $ret;
+    },
+
+    'confirm' => sub {
+      my ($this) = @_;
+
+      $this->{newt}->{confirm};
     }
   };
   
@@ -405,6 +353,28 @@ sub frontend_init {
       $SIG{'PIPE'} = $sigpipe_handler;
 
       0;
+    },
+
+    'confirm' => sub {
+      my ($this) = @_;
+
+      unless (open(TTY, "+</dev/tty")) {
+	warn "Unable to open tty for confirmation, assuming yes\n";
+	return 1;
+      }
+
+      TTY->autoflush;
+
+      while (1) {
+	print TTY "apt-listchanges: Do you want to continue [Y/n]? ";
+
+	my $response = <TTY>;
+	close(TTY);
+
+	return 1 unless $response;
+	return 0 if $response =~ /^[Nn]/;
+	return 1 if $response =~ /^[Yy]/;
+      }
     }
   };
 
@@ -418,7 +388,10 @@ sub frontend_init {
       
       print "\n", $output;
       0;
-    }
+    },
+
+    'confirm' => $frontends{pager}->{confirm}
+
   };
 
   $frontends{'mail'} = {
@@ -446,7 +419,10 @@ EOT
 
       print "Changelogs mailed to $email_address\n";
       $? >> 8;
-    }
+    },
+
+    'confirm' => sub { 1; }
+
   };
 
   my $frontend = $frontends{$frontend_opt};
@@ -463,4 +439,137 @@ EOT
   &{ $frontend->{init} }($frontend);
   
   $frontend;
+}
+
+# Find the longest scalar in an array
+sub longest {
+  my $max;
+
+  foreach my $x (@_) {
+    $max = $x if length($x) > length($max);
+  }
+
+  $max;
+}
+
+sub read_deb_filenames {
+  my ($apt_mode, $status) = @_;
+  my @debs;
+
+  if ($apt_mode) {
+
+    # In apt mode, see whether apt is new enough to give us the
+    # information we need through the pipe.  If not, just read a list of
+    # filenames from it.
+
+    my $peek = <>;
+
+    if ($peek =~ /^VERSION (\d+)/) {
+      while (<>) {
+	# Skip configuration data
+	next if 1 .. /^$/;
+
+	next unless my ($pkg, $oldversion, $newversion, $filename)
+	    = /^(\S+)\s+(\S+)\s+<\s+(\S+)\s+(\S+)$/;
+	next if $filename =~ /^\*\*.*\*\*$/;
+
+	push(@debs, $filename);
+	$status{$pkg}{Version} = $oldversion;
+	$status{$pkg}{NewVersion} = $newversion; # Not used yet
+      }
+    } else {
+
+      # Older apt, just read filenames
+
+      # The one we already read
+      push(@debs, $peek);
+      
+      while (<>) {
+	chomp;
+	push(@debs, $_);
+      }
+    }
+
+  } else {
+    # Not in apt mode, use filenames from the command line
+    @debs = @ARGV;
+  }
+
+  @debs;
+}
+
+sub read_config {
+  my ($config_file, $config) = @_;
+
+  open(CONF, $config_file) || return undef;
+  while (<CONF>) {
+    next if /^#/;
+    my ($name, $value);
+    if ( ($name, $value) = /^([^=]+)=(.*)$/ ) {
+      $$config{$name} = $value;
+    }
+  }
+}
+
+##
+## All the rest of this stuff should be replaced by a good set of Perl
+## bindings for apt (or maybe I should reimplement this in Python)
+##
+
+# Extract the package name and version from a .deb file
+sub get_package_info {
+  my ($deb, $status) = @_;
+
+  my ($pkg, $version, $source);
+
+  open(DPKGDEB, "dpkg-deb -f $deb Package Version Source 2>&1|") || die;
+  while (<DPKGDEB>) {
+    chomp;
+    /^Package: (.*)$/ && do { $pkg = $1 };
+    /^Version: (.*)$/ && do { $version = $1 };
+    /^Source: (.*)$/ && do { $source = $1 };
+  }
+  close(DPKGDEB);
+
+  $source ||= $pkg;
+
+  # Look up installed version of $pkg
+  my $oldversion = $$status{$pkg}{Version};
+
+  # Check for different source package version
+  if ($source =~ /\((.*)\)/) {
+    $oldversion = $1;
+    $source =~ s/\s*\(.*\)//;
+  }
+
+  ($pkg, $version, $oldversion, $source);
+}
+
+# Read in package names and versions from the status file and store
+# them in the hash ref $status
+sub read_status {
+  my ($status) = @_;
+
+  # Exit if we already have status info (from apt?)
+  return if scalar(keys %$status) > 0;
+
+  my $statusfile = "/var/lib/dpkg/status";
+
+  open(STATUS, $statusfile) || die "$statusfile: $!\n";
+  my $pkg;
+  while (<STATUS>) {
+    /^Package: (.*)$/o && do { $pkg = $1 };
+    /^Version: (.*)$/o && do { $$status{$pkg}{Version} = $1 };
+  }
+  close(STATUS);
+}
+
+sub dpkg_compare_versions {
+  my ($a, $op, $b) = @_;
+
+  my @cmd = ('dpkg', '--compare-versions', $a, $op, $b);
+  my $ret = system(@cmd);
+  $ret <<= 8;
+
+  $ret == 0;
 }
