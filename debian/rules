@@ -17,7 +17,7 @@ configure-stamp:
 # Add here commands to configure the package.
 
 # Substitute version into configure.in
-	perl -pi.orig -e 's/^AM_INIT_AUTOMAKE/AM_INIT_AUTOMAKE($(package), $(version))/g' configure.in
+	perl -pi.orig -e 's/^AM_INIT_AUTOMAKE.*$/AM_INIT_AUTOMAKE($(package), $(version))/g' configure.in
 
 	automake --foreign --add-missing
 	aclocal
