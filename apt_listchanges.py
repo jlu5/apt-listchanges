@@ -273,10 +273,11 @@ class ttyconfirm:
                        _('Do you want to continue? [Y/n]? '))
         tty.flush()
         response = tty.readline()
-        if response == '\n' or response[0] == 'y' or response[0] == 'Y' :
+        if response == '\n' or re.search(locale.nl_langinfo(locale.YESEXPR),
+                                         response[0]):
             return 1
-        if response[0] == 'n' or response[0] == 'N':
-            return 0
+#         if re.match(locale.nl_langinfo(locale.NOEXPR),response[0]):
+#             return 0
         return 0
 
 class simpleprogress:
