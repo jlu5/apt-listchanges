@@ -418,43 +418,30 @@ class pager(ttyconfirm,fancyprogress):
     def __init__(self,packages):
         apply(fancyprogress.__init__, (self,packages))
 
-    def display_output(self, text):
-        tmp = tempfile.NamedTemporaryFile(prefix='apt-listchanges')
+    def display_output(self, text, suffix=''):
+        tmp = tempfile.NamedTemporaryFile(prefix='apt-listchanges',suffix=suffix)
         tmp.write(text)
-        os.spawnlp(os.P_WAIT, pager)
+        status = os.spawnlp(os.P_WAIT, self.pager, self.pager, tmp.name)
+        if status != 0:
+            raise OSError(self.pager + ' exited with status ' + str(status))
 
 class xterm(ttyconfirm,fancyprogress):
     def __init__(self,packages):
         apply(fancyprogress.__init__, (self,packages))
     
-    def display_output(self,text):
+    def display_output(self,text,suffix=''):
         # Fork immediately so that we can get on with installation
-        pid = os.fork()
-        if pid == 0:
-            pid = os.fork()
-            if pid == 0:
-                tmp = tempfile.NamedTemporaryFile(prefix='apt-listchanges')
-                os.spawnlp(os.P_WAIT, 'x-terminal-emulator',
-                           'x-terminal-emulator','-T','apt-listchanges',
-                           '-e','sh','-c','%s %s' % (self.pipecommand,tmp))
-                sys.exit(0)
-            else:
-                os.close(read)
-                try:
-                    os.write(write,text)
-                    os.close(write)
-                except IOError:
-                    # Broken pipe is OK
-                    pass
-                (junk,status) = os.waitpid(pid,0)
-                if status != 0:
-                    sys.stderr.write(_("%s exited with status %d")
-                                     % ('xterm',status))
-                    sys.exit(1)
-                sys.exit(0)
+        if os.fork() == 0:
+            tmp = tempfile.NamedTemporaryFile(prefix='apt-listchanges',suffix=suffix)
+            tmp.write(text)
+            tmp.flush()
+            os.spawnlp(os.P_WAIT, 'x-terminal-emulator',
+                       'x-terminal-emulator','-T','apt-listchanges',
+                       '-e','sh','-c','%s %s' % (self.command,tmp.name))
+            sys.exit(0)
 
 class xterm_pager(xterm):
-    pipecommand = 'sensible-pager'
+    command = 'sensible-pager'
 
 class html:
     bug_re = re.compile('(?P<linktext>#(?P<bugnum>[1-9]\d+))', re.IGNORECASE)
@@ -499,11 +486,16 @@ class html:
 class browser(pager,html):
     pager = 'sensible-browser'
 
+    def __init__(self,packages):
+        pager.__init__(self,packages)
+        if os.environ.has_key('APT_LISTCHANGES_BROWSER'):
+            self.pager = os.environ['APT_LISTCHANGES_BROWSER']
+
     def display_output(self,text):
-        pager.display_output(self,self.htmlify(text))
+        pager.display_output(self,self.htmlify(text),suffix='.html')
 
 class xterm_browser(html,xterm_pager):
-    pipecommand = 'sensible-browser'
+    command = 'sensible-browser'
 
     def display_output(self,text):
-        xterm.display_output(self,self.htmlify(text))
+        xterm.display_output(self,self.htmlify(text),suffix='.html')
