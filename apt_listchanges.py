@@ -233,7 +233,9 @@ def mail_changes(address, changes):
     print "apt-listchanges: " + _("Mailing changelogs to %s") % address
     hostname = gethostname()
     message = email.Message.Message()
-    message['Subject'] = _("apt-listchanges output for %s") % hostname
+    charset = 
+    message['Subject'] = email.Header(_("apt-listchanges output for %s") % hostname,
+                                      locale.nl_langinfo(locale.CODESET))
     message['To'] = address
     message.set_payload(changes)
     fh = os.popen('/usr/sbin/sendmail -t', 'w')
