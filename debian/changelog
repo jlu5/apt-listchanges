@@ -1,3 +1,12 @@
+apt-listchanges (1.25) unstable; urgency=low
+
+  * Added Swedish translation of debconf templates, thanks to André
+    Dahlqvist <anedah-9@sm.luth.se>
+  * Added German translation of debconf templates, thanks to Leonard
+    Michlmayr <Leonard.Michlmayr@ap.univie.ac.at>
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 25 Jan 2001 00:28:11 -0500
+
 apt-listchanges (1.24) unstable; urgency=low
 
   * Added -a/--all option, which ignores version checks and just dumps the
