@@ -174,5 +174,5 @@ if changes:
 
 elif config.mode != 'apt' and not source_packages.keys():
     sys.stderr.write("apt-listchanges: "
-                     + _("didn't find any valid .deb archives"))
+                     + _("didn't find any valid .deb archives") + "\n")
     sys.exit(1)
