@@ -13,15 +13,17 @@ if [ "$action" = "configure" ]; then
 
     db_get apt-listchanges/overwrite_etc_apt_listchanges_conf
     if [ "$RET" = "true" -o ! -e "$PREFERENCES" ]; then
-	[ -f "$PREFERENCES" ] && cp $PREFERENCES $PREFERENCES.old
+        if test -f $PREFERENCES; then
+            cp $PREFERENCES $PREFERENCES.old
 
-        if grep -q '^\[.*]$' $PREFERENCES; then
-            # New-style config file, copy over everything except [apt]
-            perl -ne 'print unless /^\[apt\]$/ .. (/^\[(.*)\]$/ && $1 ne "apt")' \
-                < $PREFERENCES.old > $PREFERENCES
-        else
-            # Old-style config file or no [apt] section, start fresh
-            : > $PREFERENCES
+            if grep -q '^\[.*]$' $PREFERENCES; then
+                # New-style config file, copy over everything except [apt]
+                perl -ne 'print unless /^\[apt\]$/ .. (/^\[(.*)\]$/ && $1 ne "apt")' \
+                    < $PREFERENCES.old > $PREFERENCES
+            else
+                # Old-style config file or no [apt] section, start fresh
+                : > $PREFERENCES
+            fi
         fi
 
         echo "[apt]" >> $PREFERENCES
