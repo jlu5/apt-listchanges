@@ -22,7 +22,7 @@ locale.setlocale(locale.LC_ALL,'')
 try:
     _ = gettext.translation('apt-listchanges').gettext
 except IOError:
-    _ = lambda str: return str
+    _ = lambda str: str
 
 def changelog_variations(filename):
     formats = ['usr/doc/\\*/%s.gz',
