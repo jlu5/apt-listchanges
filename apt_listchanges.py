@@ -130,10 +130,13 @@ class Package:
 
         urgency = numeric_urgency('low')
         changes = ''
+        is_debian_changelog = 0
         for line in fd.readlines():
-            if since_version:
-                match = self.changelog_header.match(line)
-                if match:
+            match = self.changelog_header.match(line)
+            if match:
+                is_debian_changelog = 1
+                if since_version:
+                    is_debian_changelog = 1
                     if apt_pkg.VersionCompare(match.group('version'),
                                              since_version) > 0:
                         urgency = max(numeric_urgency(match.group('urgency')),
@@ -141,6 +144,9 @@ class Package:
                     else:
                         break
             changes += line
+
+        if not is_debian_changelog:
+            return None
 
         return Changes(self.source, changes, urgency)
 

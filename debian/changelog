@@ -1,3 +1,12 @@
+apt-listchanges (2.39) unstable; urgency=low
+
+  * Ignore changelog files which don't look like Debian changelogs.  This
+    will provide a nicer failure condition for situations like #161325,
+    where changelog data is not actually available (but we previously
+    thought it was)
+
+ -- Matt Zimmerman <mdz@debian.org>  Tue, 29 Jul 2003 19:40:57 -0400
+
 apt-listchanges (2.38) unstable; urgency=low
 
   * Add Spanish man page from Ruben Porras <nahoo82@telefonica.net>
