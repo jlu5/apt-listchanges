@@ -1,8 +1,9 @@
 apt-listchanges (2.58) unstable; urgency=low
 
   * Correctly treat the quiet value from apt as an integer (Closes: #284982)
+  * Updated fr.po from Loic Le Loarer (Closes: #285440, #260534)
 
- -- Matt Zimmerman <mdz@debian.org>  Mon, 10 Jan 2005 18:03:00 -0800
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 10 Jan 2005 18:03:37 -0800
 
 apt-listchanges (2.57) unstable; urgency=low
 
