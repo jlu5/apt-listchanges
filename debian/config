@@ -15,3 +15,4 @@ if [ "$RET" = "mail" ]; then
 fi
 
 db_input medium apt-listchanges/confirm
+db_go
