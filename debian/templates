@@ -45,4 +45,5 @@ Description: Should apt-listchanges prompt for confirmation after displaying cha
  This is useful when running from apt, as it gives you a chance to
  abort the upgrade if you see a change you do not want to apply (yet).
  .
- This setting can be overridden by a command-line option.
+ This setting only applies when running from apt.  Otherwise, it can be
+ requested with a command line option.
