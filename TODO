@@ -1,10 +1,9 @@
-- Should the progress dialog use newt, or a one-line status indicator
-  a la debconf?
-
 - For each source package processed, list the binary packages
   belonging to it that are in the list of packages to be installed
   (this means making a second pass over either the .debs or the
   changelog output)
+
+- Hierarchical display for the newt frontend (wishlist bug #76500)
 
 - Accept (lists of) source packages as well as binary packages
 
@@ -12,11 +11,8 @@
   get-changelog.cgi or similar (when it works)
 
 - Changelogs are typically wrapped expecting an 80 character wide
-  display.  Our dialog window is somewhat smaller.  Should
-  apt-listchanges try to use a larger window?  This may work, but will
-  be ugly and counter-intuitive.  For example, the scrollbar will not be
-  visible.  Or should we try to re-wrap the text on-the-fly?
-
-- Allow the user to choose a text display (using a pager), a terminal
-  graphics display (like the current one), email
-  notification...others?
+  display.  Our dialog window when using newt is somewhat smaller, if
+  the terminal is 80 characters wide.  Should apt-listchanges try to use a
+  larger window?  This may work, but will be ugly and counter-intuitive.
+  For example, the scrollbar will not be visible.  Or should we try to
+  re-wrap the text on-the-fly?
