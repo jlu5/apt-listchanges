@@ -208,6 +208,8 @@ def read_apt_pipeline(config):
 
         if filename == '**CONFIGURE**':
             order.append(pkgname)
+        elif filename == '**REMOVE**':
+            continue
         else:
             filenames[pkgname] = filename
 
@@ -278,7 +280,7 @@ class simpleprogress:
         pass
 
     def progress_done(self):
-        sys.stdout.write('\n')
+        sys.stderr.write('\n')
 
 class mail(frontend,simpleprogress):
     def __init__(self,packages):
