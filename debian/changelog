@@ -1,3 +1,14 @@
+apt-listchanges (1.56) unstable; urgency=low
+
+  * Updated Galician translation of Debconf templates from Jacobo Tarrio
+    <jtarrio@trasno.net>
+  * Updated Spanish translations of Debconf templates and message catalogs
+    from Jordi Mallach <jordi@debian.org>
+  * Added Catalan translations of Debconf templates and message catalogs
+    from Jordi Mallach <jordi@debian.org>
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 27 Aug 2001 15:01:52 -0400
+
 apt-listchanges (1.55) unstable; urgency=low
 
   * Add fallback from xterm-pager to pager (Closes: #107211)
