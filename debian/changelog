@@ -1,3 +1,10 @@
+apt-listchanges (1.26) unstable; urgency=low
+
+  * Fixed a bug in the urgency sorting code; some higher-priority entries
+    would incorrectly be sorted equal to low-priority entries
+
+ -- Matt Zimmerman <mdz@debian.org>  Fri, 26 Jan 2001 14:28:59 -0500
+
 apt-listchanges (1.25) unstable; urgency=low
 
   * Added Swedish translation of debconf templates, thanks to André

@@ -173,7 +173,7 @@ foreach my $deb (@debs) {
     open(DPKGDEB, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f|") || die $!;
     
     my $lines_read = 0;
-    my $urgency = 0;
+    my $urgency = $urgency{'low'};
     my $changes;
     while (<DPKGDEB>) {
       ++$lines_read;
@@ -189,7 +189,7 @@ foreach my $deb (@debs) {
 
 	# Use the urgency of the most urgent changelog entry for the
 	# urgency of this package
-	$urgency = $urgency{$2} > $urgency ? $urgency{$2} : $urgency;
+	$urgency = $urgency{$2} < $urgency ? $urgency{$2} : $urgency;
       }
       
       $changes .= $_;
