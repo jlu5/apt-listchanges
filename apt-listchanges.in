@@ -28,6 +28,7 @@ use Getopt::Long;
 use Sys::Hostname;
 use IO::Handle;
 use Locale::gettext;
+use DB_File;
 use POSIX qw(setlocale);
 
 # Initialize locale settings
@@ -53,6 +54,7 @@ my $confirm;
 my $show_headers = 0;
 my $version_only = 0;
 my $help_only = 0;
+my $save_seen = $config{'save-seen'} || 'yes';
 
 GetOptions("apt" => \$apt_mode,
 	   "verbose|v" => \$verbose,
@@ -62,6 +64,7 @@ GetOptions("apt" => \$apt_mode,
 	   "all|a" => \$show_all,
 	   "headers|h" => \$show_headers,
 	   "help" => \$help_only,
+	   "saveseen!" => \$save_seen,
 	   "version" => \$version_only) || die $usage;
 
 if ($version_only) {
@@ -93,6 +96,9 @@ my %binary_packages;
 # when we find changelogs to display for a package
 my %processed;
 
+# Database of which changelogs have already been seen
+my %seen;
+
 # The number of packages we've successfully examined (even if we
 # didn't find anything to display)
 my $valid = 0;
@@ -121,6 +127,10 @@ my $notes;
 ##
 
 my @debs = read_deb_filenames($apt_mode, \%status);
+
+if ($save_seen eq 'yes') {
+  tie %seen, 'DB_File', "listchanges.db";
+}
 
 # We have to read all data from the pipeline before exiting, or apt
 # will complain
@@ -151,17 +161,17 @@ foreach my $deb (@debs) {
   &{ $frontend->{update_progress} }($frontend);
 
   # Find out what package we are installing
-  my ($pkg, $version, $oldversion, $sourcepackage) =
-      get_package_info($deb, \%status);
+  my %new = get_deb_info($deb);
+  my %current = get_status_info($new{Package}, \%status);
 
   # Bail if things don't look right
-  unless ($pkg) {
+  unless ($new{Package}) {
     $errors .= "apt-listchanges: " .
 	sprintf(gettext("Unable to determine package name for file %s"), $deb)
 	    . "\n";
     next;
   }
-  unless ($version) {
+  unless ($new{Version}) {
     $errors .= "apt-listchanges: " .
 	sprintf(gettext("Unable to determine version for file %s"), $deb)
 	    . "\n";
@@ -170,42 +180,60 @@ foreach my $deb (@debs) {
 
   ++$valid;
 
+  # Get last version seen from the database, or fall back to installed version
+  my $seen = $save_seen ? $seen{$new{Source}} : undef;
+  $seen ||= $current{SourceVersion};
+
   # Skip if the package is not installed
-  if (!$show_all && !$oldversion) {
+  if (!$show_all && !$current{Version}) {
     $notes .=
-	sprintf(gettext("%s: will be newly installed"), $pkg)
+	sprintf(gettext("%s: will be newly installed"), $new{Package})
 	    . "\n\n";
     next;
   }
 
   # Skip if we are looking at the same version (faster than asking dpkg)
-  if ($version eq $oldversion) {
+  if ($new{Version} eq $current{Version}) {
     $notes .=
-	sprintf(gettext("%s: Version $version is already installed"),
-		$pkg)
+	sprintf(gettext("%s: Version %s is already installed"),
+		$new{Package}, $new{Version})
 	    . "\n\n";
+    next;
+  }
+
+  if ($new{Version} eq $seen) {
+    $notes .= sprintf(gettext("%s: Version %s changes have already been seen"),
+		      $new{Package}, $new{Version})
+	. "\n\n";
     next;
   }
 
   # Skip if we are looking at an older version
-  if (!$show_all && dpkg_compare_versions($version, 'le', $oldversion)) {
+  if (!$show_all && dpkg_compare_versions($new{Version}, 'le', $current{Version})) {
     $notes .=
 	sprintf(gettext("%s: Version %s is older than installed version (%s)"),
-		$pkg, $version, $oldversion)
+		$new{Package}, $new{Version}, $current{Version})
 	    . "\n\n";
     next;
   }
 
+  if (!$show_all && dpkg_compare_versions($new{Version}, 'le', $seen)) {
+    $notes .= sprintf(gettext("%s: Version %s changes have already been seen"),
+		      $new{Package}, $new{Version})
+	. "\n\n";
+    next;
+  }
+
   # Add to the list of binary packages belonging to this source package
-  if (defined $binary_packages{$sourcepackage}) {
-    push(@{$binary_packages{$sourcepackage}}, $pkg);
+  if (defined $binary_packages{$new{Source}}) {
+    push(@{$binary_packages{$new{Source}}}, $new{Package});
   } else {
-    $binary_packages{$sourcepackage} = [$pkg];
+    $binary_packages{$new{Source}} = [$new{Package}];
   }
 
   # Skip if we already processed another binary package from this
   # source package
-  next if $processed{$sourcepackage};
+  next if $processed{$new{Source}};
 
   # Determine the changelog filenames
   my @changelog_filenames = ('changelog.Debian');
@@ -254,7 +282,7 @@ foreach my $deb (@debs) {
       }
       
       if ( !$show_all && /^\S+ \((.*)\) .*;.*urgency=(\w+)/ ) {
-        last if dpkg_compare_versions($1, 'le', $oldversion);
+        last if dpkg_compare_versions($1, 'le', $seen);
 
 	# Use the urgency of the most urgent changelog entry for the
 	# urgency of this snippet
@@ -271,9 +299,10 @@ foreach my $deb (@debs) {
     close(CHANGELOG);
 
     if ( $lines_read > 0 ) {
-      $urgency{$sourcepackage} = $urgency;
-      $changes{$sourcepackage} = $changes if $changes;
-      ++$processed{$sourcepackage};
+      $urgency{$new{Source}} = $urgency;
+      $changes{$new{Source}} = $changes if $changes;
+      ++$processed{$new{Source}};
+      $seen{$new{Source}} = $new{SourceVersion};
 
       # Quit if we got something (don't try the next set of changelog
       # filenames)
@@ -721,42 +750,51 @@ sub min {
 ##
 
 # Extract the package name and version from a .deb file
-sub get_package_info {
-  my ($deb, $status) = @_;
+sub get_deb_info {
+  my ($deb) = @_;
 
-  my ($pkg, $version, $source);
+  my %fields;
 
   open(DPKGDEB, "dpkg-deb -f $deb Package Version Source 2>&1|") || die;
   while (<DPKGDEB>) {
     chomp;
-    /^Package: (.*)$/ && do { $pkg = $1 };
-    /^Version: (.*)$/ && do { $version = $1 };
-    /^Source: (.*)$/ && do { $source = $1 };
+    /^Package: (.*)$/ && do { $fields{Package} = $1 };
+    /^Version: (.*)$/ && do { $fields{Version} = $fields{SourceVersion} = $1 };
+    /^Source: (.*)$/ && do { $fields{Source} = $1 };
   }
   close(DPKGDEB);
 
   # Bail quickly if it wasn't even a .deb
-  return unless defined $pkg && defined $version;
+  return unless defined $fields{Package} && defined $fields{Version};
 
   # If no source package is specified, source package has the same
   # name as the binary package
-  $source ||= $pkg;
+  $fields{Source} ||= $fields{Package};
+
+  # Check for different source package version for the deb
+  if ($fields{Source} =~ /\((.*)\)/) {
+    $fields{SourceVersion} = $1;
+    $fields{Source} =~ s/\s*\(.*\)//;
+  }
+
+  %fields;
+}
+
+sub get_status_info {
+  my ($pkg, $status) = @_;
+  my %fields;
+
+  return %fields unless defined $pkg && defined $$status{$pkg};
 
   # Look up installed version of $pkg, using the source package
   # version if different
-  my $oldversion = $$status{$pkg}{Version};
+  $fields{Version} = $fields{SourceVersion} = $$status{$pkg}{Version};
   if ($$status{$pkg}{Source}
       && $$status{$pkg}{Source} =~ /\((.*)\)/) {
-    $oldversion = $1;
+    $fields{SourceVersion} = $1;
   }
 
-  # Check for different source package version for the deb
-  if ($source =~ /\((.*)\)/) {
-    $version = $1;
-    $source =~ s/\s*\(.*\)//;
-  }
-
-  ($pkg, $version, $oldversion, $source);
+  %fields;
 }
 
 # Read in package names and versions from the status file and store
