@@ -233,6 +233,7 @@ foreach my $deb (@debs) {
     while (<CHANGELOG>) {
 #      next unless /^Changes:/ .. 0;
 #      next if /^Changes:/;
+      last if /^Local variables:/;
       
       if ( /^(tar|dpkg-deb):/ ) {
 	# Errors from tar or dpkg-deb
