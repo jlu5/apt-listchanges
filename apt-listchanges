@@ -213,7 +213,7 @@ if ($errors) {
 
 &{ $frontend->{display_output} }($frontend, $output);
 
-if ($confirm) {
+if ($confirm && $output) {
   exit 1 unless &{ $frontend->{confirm} }($frontend);
 }
 
