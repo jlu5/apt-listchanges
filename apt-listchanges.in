@@ -5,7 +5,7 @@
 #        of a set of packages and the versions contained in corresponding
 #        .deb files
 #
-#      Copyright (C) 2000  Matt Zimmerman <mdz@debian.org>
+#      Copyright (C) 2000, 2001  Matt Zimmerman <mdz@debian.org>
 #
 #      This program is free software; you can redistribute it and/or modify
 #      it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ use POSIX qw(setlocale);
 
 # Initialize locale settings
 setlocale(LC_MESSAGES, '');
-textdomain('apt-listchanges');
+textdomain('@PACKAGE@');
 
 # Read config file
 my %config;
@@ -46,6 +46,7 @@ my $verbose = 0;
 my $frontend_opt = $config{'frontend'} || 'pager';
 my $email_address = $config{'email-address'} || 'root';
 my $show_all = 0;
+my $apt_mode_run = $config{'apt-mode-run'} eq 'yes';
 my $confirm;
 
 GetOptions("apt" => \$apt_mode,
@@ -56,6 +57,7 @@ GetOptions("apt" => \$apt_mode,
 	   "all|a" => \$show_all) || die;
 
 if ($apt_mode) {
+  exit 0 unless $apt_mode_run;
   $confirm ||= ( $config{'apt-mode-confirm'} eq 'yes' );
 }
 
@@ -94,10 +96,6 @@ unless (@debs) {
   die "apt-listchanges: " .
       gettext("Must specify either --apt or filenames to process!") . "\n";
 }
-
-# Only reads the status file if we haven't already gotten the info
-# from apt via read_deb_filenames
-read_status(\%status) unless $show_all;
 
 # User interaction
 my $frontend = frontend_init($frontend_opt);
@@ -564,11 +562,11 @@ sub read_deb_filenames {
     # information we need through the pipe.  If not, just read a list of
     # filenames from it.
 
-    my $peek = <>;
+    my $peek = <STDIN>;
     chomp($peek);
 
-    if ($peek =~ /^VERSION (\d+)/) {
-      while (<>) {
+    if ($peek eq "VERSION 2") {
+      while (<STDIN>) {
 	# Skip configuration data
 	next if 1 .. /^$/;
 
@@ -577,20 +575,13 @@ sub read_deb_filenames {
 	next if $filename =~ /^\*\*.*\*\*$/;
 
 	push(@debs, $filename);
-	$status{$pkg}{Version} = $oldversion;
+	$status{$pkg}{Version} = $oldversion unless $oldversion eq '-';
 	$status{$pkg}{NewVersion} = $newversion; # Not used yet
       }
     } else {
-
-      # Older apt, just read filenames
-
-      # The one we already read
-      push(@debs, $peek) if $peek;
-      
-      while (<>) {
-	chomp;
-	push(@debs, $_);
-      }
+      warn "apt-listchanges: " . gettext("Wrong or missing VERSION from apt pipeline");
+      warn gettext("(is Dpkg::Tools::Options::<path>::Version set to 2?)") . "\n";
+      exit 1;
     }
 
   } else {
@@ -601,6 +592,7 @@ sub read_deb_filenames {
   @debs;
 }
 
+# Simple-minded config file parser
 sub read_config {
   my ($config_file, $config) = @_;
 
@@ -650,26 +642,6 @@ sub get_package_info {
   }
 
   ($pkg, $version, $oldversion, $source);
-}
-
-# Read in package names and versions from the status file and store
-# them in the hash ref $status
-sub read_status {
-  my ($status) = @_;
-
-  # Exit if we already have status info (from apt?)
-  return if scalar(keys %$status) > 0;
-
-  my $statusfile = "/var/lib/dpkg/status";
-
-  open(STATUS, $statusfile) || die "$statusfile: $!\n";
-  my $pkg;
-  while (<STATUS>) {
-    /^Package: (.*)$/o && do { $pkg = $1 };
-    /^Version: (.*)$/o && do { $$status{$pkg}{Version} = $1 };
-    /^Source: (.*)$/o && do  { $$status{$pkg}{Source} = $1; }
-  }
-  close(STATUS);
 }
 
 sub dpkg_compare_versions {
