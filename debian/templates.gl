@@ -1,32 +1,9 @@
-Template: apt-listchanges/apt-hook-p
-Type: boolean
-Default: true
-Description: Should apt-listchanges be automatically run by apt?
- One way to use apt-listchanges is to configure apt to run apt-listchanges
- on packages that have been downloaded for installation or upgrade.  This
- way, each time you perform an installation or upgrade using apt,
- apt-listchanges will show you the changes that are about to be made to
- your system.
- .
- I can perform this configuration for you if you like.  Since you can also
- run apt-listchanges manually on .deb archives, this step is optional.
-Description-gl: ¿Debería apt executar apt-listchanges automáticamente?
- Un xeito de usar apt-listchanges é configurar apt para executar
- apt-listchanges nos paquetes que foron descargados para instalar ou
- actualizar. Deste xeito, cada vez que Vd. realice unha instalación ou unha
- actualización empregando apt, apt-listchanges amosaralle os cambios que
- estarán a piques de se facer no seu sistema. 
- .
- Podo realizar esta configuración por Vd. se o prefire. Como tamén pode
- executar apt-listchanges manualmente nos arquivos .deb, este paso é
- opcional. 
-
 Template: apt-listchanges/frontend
 Type: select
-Choices: pager, xterm-pager, newt, text, mail
-Choices-gl: paxinador, paxinador-xterm, newt, texto, correo
+Choices: pager, xterm-pager, text, mail, none
+Choices-gl: visor, visor-xterm, texto, correo, ningunha
 Default: pager
-Description: How should changelogs be displayed by default?
+Description: How should changelogs be displayed with apt?
  apt-listchanges can display changelog entries in a number of different
  ways.
  .
@@ -34,29 +11,28 @@ Description: How should changelogs be displayed by default?
  .
  xterm-pager - Use your preferred pager in an xterm in the background
  .
- newt - Use a terminal graphics interface, using text-mode windows (you
- will need to install libnewt-perl to use this)
- .
  text  - Print changelogs to your terminal (without pausing)
  .
- mail  - Send changelogs via email (you will be prompted for an address)
+ mail  - Only send changelogs via mail
  .
- This setting can be overridden by a command-line option.
-Description-gl: ¿Como se deberían amosa-los cambios por defecto?
+ none  - Do not run automatically from apt
+ .
+ This setting can be overridden by a command-line option or an environment
+ variable.  Note that you can still send a copy via mail with all of the
+ frontends except 'none'.
+Description-gl: ¿Como se deberían amosa-los cambios con apt?
  apt-listchanges pode amosa-las entradas dos rexistros de cambios de moitas
  maneiras diferentes. 
  .
- paxinador - Empregando o seu paxinador de preferencia 
+ visor - Emprega-lo seu visor de preferencia 
  .
- paxinador-xterm - Empregando o seu paxinador de preferencia nunha xterm 
- .
- newt - Empregando unha interface gráfica, empregando fiestras en modo
- texto (terá que instalar libnewt-perl para empregalo) 
+ visor-xterm - Emprega-lo seu visor de preferencia nunha xterm
  .
  texto - Amosa-los cambios no terminal (sen facer pausas) 
  .
- correo - Manda-los cambios por correo electrónico (pediráselle un
- enderezo) 
+ correo - Manda-los cambios por correo electrónico
+ .
+ ningunha - Non executar automaticamente dende apt
  .
  Pódese ignorar esta configuración indicando outra na liña de comando. 
 
@@ -65,11 +41,15 @@ Type: string
 Default: root
 Default-gl: root
 Description: To whom should apt-listchanges mail changelog entries?
- You have chosen to have changelog entries sent via email.  To what email
+ apt-listchanges can email a copy of displayed changelogs.  To what email
  address should they be sent?
+ .
+ Leave this empty if you do not want any email to be sent.
 Description-gl: ¿A quen se lle han de envia-los cambios por correo electrónico?
- Vd. solicitou que os cambios se enviaran por correo electrónico. ¿A que
- enderezo hai que os enviar? 
+ apt-listchanges pode enviar por correo unha copia dos cambios amosados. 
+ ¿A que enderezo hai que envialos?
+ .
+ Déixeo en branco se non quere que se envíe ningún correo.
 
 Template: apt-listchanges/confirm
 Type: boolean
@@ -80,13 +60,16 @@ Description: Should apt-listchanges prompt for confirmation after displaying cha
  running from apt, as it gives you a chance to abort the upgrade if you see
  a change you do not want to apply (yet).
  .
- This setting only applies when running from apt.  Otherwise, it can be
- requested with a command line option.
+ This setting does not apply to the 'mail' or 'none' frontends, and can be
+ overridden with a command line option.
 Description-gl: ¿Debería apt-listchanges pedir unha confirmación despois de amosa-los cambios?
  Despois de lle dar unha oportunidade de ve-los cambios, apt-listchanges
  pode preguntarlle a Vd. se quere continuar ou non. Isto é útil cando se
  está a executar dende apt, porque lle dá a oportunidad de aborta-la
  actualización se ve un cambio que non quere aplicar (ainda). 
+ .
+ Esta configuración non funciona nas interfaces 'correo' ou 'ningunha', e
+ pódese ignorar cunha opción de liña de comandos.
 
 Template: apt-listchanges/overwrite_etc_apt_listchanges_conf
 Type: boolean
@@ -110,11 +93,11 @@ Template: apt-listchanges/save-seen
 Type: boolean
 Default: true
 Description: Should apt-listchanges skip changelogs that have already been seen?
- apt-listchanges has the ability to keep track of which changelog entries
- have already been displayed, and to skip them in future invocations. This
- is useful, for example, when retrying an upgrade.
+ apt-listchanges has the capability to keep track of which changelog
+ entries have already been displayed, and to skip them in future
+ invocations. This is useful, for example, when retrying an upgrade.
 Description-gl: ¿Debería apt-listchanges omiti-los rexistros xa enviados?
- apt-listchanges pode leva-la conta de que entradas dos rexistros de cambios
- están xa amosadas, e omitilas en posteriores execucións. Isto é útil, por
- exemplo, ao repetir unha tentativa de actualización.
+ apt-listchanges pode leva-la conta de que entradas dos rexistros de
+ cambios están xa amosadas, e omitilas en posteriores execucións. Isto é
+ útil, por exemplo, ao repetir unha tentativa de actualización.
 

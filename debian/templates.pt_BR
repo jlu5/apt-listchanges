@@ -1,36 +1,25 @@
-Template: apt-listchanges/email-address
-Type: string
-Default: root
-Default-pt_BR: root
-Description: To whom should apt-listchanges mail changelog entries?
- You have chosen to have changelog entries sent via email.  To what email
- address should they be sent? 
-Description-pt_BR: Para quem apt-listchanges deve enviar as entradas de changelog?
- Você escolheu enviar as entradas de changelod por email. Para qual
- endereço elas devem ser enviadas?
-
 Template: apt-listchanges/frontend
 Type: select
-Choices: pager, xterm-pager, newt, text, mail
-Choices-pt_BR: pager, xterm-pager, newt, texto, mail
+Choices: pager, xterm-pager, text, mail, none
+Choices-pt_BR: pager, xterm-pager, texto, e-mail, nenhum
 Default: pager
-Description: How should changelogs be displayed by default?
- apt-listchanges can display changelog entries in a number of different
- ways. 
+Description: How should changelogs be displayed with apt?
+ apt-listchanges can display changelog entries in a number of different ways.
  .
- pager - Use your preferred pager 
+ pager - Use your preferred pager
  .
- xterm-pager - Use your preferred pager in an xterm in the background 
+ xterm-pager - Use your preferred pager in an xterm in the background
  .
- newt - Use a terminal graphics interface, using text-mode windows (you
- will need to install libnewt-perl to use this) 
+ text  - Print changelogs to your terminal (without pausing)
  .
- text  - Print changelogs to your terminal (without pausing) 
+ mail  - Only send changelogs via mail
  .
- mail  - Send changelogs via email (you will be prompted for an address) 
+ none  - Do not run automatically from apt
  .
- This setting can be overridden by a command-line option. 
-Description-pt_BR: Como changelogs devem ser mostrados por default?
+ This setting can be overridden by a command-line option or an
+ environment variable.  Note that you can still send a copy via mail
+ with all of the frontends except 'none'.
+Description-pt_BR: Como changelogs devem ser mostrados com o APT?
  apt-listchanges pode mostrar entradas de changelog de algumas maneiras
  diferentes.
  .
@@ -38,73 +27,63 @@ Description-pt_BR: Como changelogs devem ser mostrados por default?
  .
  xterm-pager - Use seu pager preferido em um xterm em background
  .
- newt - Use uma interface gráfica para terminal, usando janela
- em modo texto (você vai precisar instalar o pacote libnewt-perl para
- usar este modo)
- .
  texto - Mostra os changelogs em seu terminal (sem pausa)
  .
- mail - Envia os changelogs por email (você escolherá um endereço)
+ e-mail - Envia os changelogs por email (você escolherá um endereço)
  .
+ nenhum - Não rodar automaticamente através do APT   
  Você pode forçar a mudança da opção através de um flag de linha de
- comando.
+ comando ou variável de ambiente. Note que você ainda pode mandar uma 
+ cópia adicional por e-mail com todos os frontends exceto se escolher 
+ "nenhum".
 
-Template: apt-listchanges/apt-hook-p
-Type: boolean
-Default: true
-Description: Should apt-listchanges be automatically run by apt?
- One way to use apt-listchanges is to configure apt to run apt-listchanges
- on packages that have been downloaded for installation or upgrade.  This
- way, each time you perform an installation or upgrade using apt,
- apt-listchanges will show you the changes that are about to be made to
- your system. 
+Template: apt-listchanges/email-address
+Type: string
+Default: root
+Description: To whom should apt-listchanges mail changelog entries?
+ apt-listchanges can email a copy of displayed changelogs.  To what
+ email address should they be sent?
  .
- I can perform this configuration for you if you like.  Since you can also
- run apt-listchanges manually on .deb archives, this step is optional. 
-Description-pt_BR: apt-listchanges deve ser chamado automaticamente pelo apt?
- Uma maneira de usar o apt-listchanges é configurar o apt para executar
- apt-listchanges nos pacotes que foram baixados para instalação ou upgrade.
- Desta forma, cada vez que você fizer uma instalação ou upgrade usando
- via apt, o apt-listchanges lhe mostrará as mudanças que estão para ser feitas 
- em seu sistema.
+ Leave this empty if you do not want any email to be sent.
+Description-pt_BR: Para quem apt-listchanges deve enviar as entradas de changelog?
+ Você escolheu enviar as entradas de changelod por email. Para qual
+ endereço elas devem ser enviadas?
  .
- Eu posso realizar esta configuração para você se você quiser. Como você
- também pode executar apt-listchanges em arquivos .deb, este passo é
- opcional.
+ Deixe em branco se não quiser que qualquer mail seja enviado.
 
 Template: apt-listchanges/confirm
 Type: boolean
 Default: true
 Description: Should apt-listchanges prompt for confirmation after displaying changelogs?
- After giving you a chance to display changelog entries, apt-listchanges
- can ask whether or not you would like to continue. This is useful when
- running from apt, as it gives you a chance to abort the upgrade if you see
- a change you do not want to apply (yet). 
+ After giving you a chance to display changelog entries,
+ apt-listchanges can ask whether or not you would like to continue.
+ This is useful when running from apt, as it gives you a chance to
+ abort the upgrade if you see a change you do not want to apply (yet).
  .
- This setting only applies when running from apt.  Otherwise, it can be
- requested with a command line option. 
+ This setting does not apply to the 'mail' or 'none' frontends, and can
+ be overridden with a command line option.
 Description-pt_BR: apt-listchanges deve pedir confirmação após mostrar os changelogs?
  Depois de lhe dar a chance de mostrar entradas de changelog, 
  apt-listchanges pode perguntar se você quer ou não continuar. Isto é 
  útil quando rodando a partir do apt, já que lhe dá uma chance para
  abortar o upgrade se você vir uma mudança que não queira aplicar (ainda).
  .
- Esta configuração só se aplica quando você estiver rodando via apt. Em outros
- casos, pode ser forçada com uma opção de linha de comando.
+ Esta configuração não se aplica aos frontends "e-mail" e "nenhum", e pode ser 
+ forçada com uma opção de linha de comando.    
 
 Template: apt-listchanges/overwrite_etc_apt_listchanges_conf
 Type: boolean
 Default: true
 Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
  apt-listchanges can configure all of the options in
- /etc/apt/listchanges.conf by asking you questions.  This file is read and
- processed every time apt-listchanges is run, and is used to set defaults. 
- All of the options can be overridden on the command line. 
+ /etc/apt/listchanges.conf by asking you questions.  This file is read
+ and processed every time apt-listchanges is run, and is used to set
+ defaults.  All of the options can be overridden on the command line.
  .
  If you want to edit /etc/apt/listchanges.conf manually for whatever
- reason, answer "no" now. 
+ reason, answer "no" now.
 Description-pt_BR: apt-listchanges deve modificar seu /etc/apt/listchanges.conf?
- apt-listchanges pode configurar todas as opções em 
+ apt-listchanges pode configurar todas as opções em
  /etc/apt/listchanges.conf lhe fazendo algumas perguntas. Este arquivo
  é lido e processado toda vez que apt-listchanges é executado, e é usado
  para definir defaults.
@@ -112,3 +91,16 @@ Description-pt_BR: apt-listchanges deve modificar seu /etc/apt/listchanges.conf?
  .
  Se você quer editar /etc/apt/listchanges.conf mannualmente por qualquer
  razão, responda "não" agora.
+
+Template: apt-listchanges/save-seen
+Type: boolean
+Default: true
+Description: Should apt-listchanges skip changelogs that have already been seen?
+ apt-listchanges has the capability to keep track of which changelog
+ entries have already been displayed, and to skip them in future invocations.
+ This is useful, for example, when retrying an upgrade.
+Description-pt_BR: O apt-listchanges deve omitir changelogs que já foram vistos?
+ O apt-listchanges tem a habilidade de se lembrar quais entradas de changelog já
+ foram vistas, e as omitir em próximas vezes.
+ Isto é útil, por exemplo, quando você estiver fazendo uma segunda tentativa de
+ upgrade.
