@@ -323,10 +323,10 @@ class pager(ttyconfirm,fancyprogress):
         pipe = os.popen(self.pager, 'w')
         try:
             pipe.write(text)
+            pipe.close()
         except IOError:
             # Broken pipe is OK
             pass
-        pipe.close()
 
 class xterm(ttyconfirm,fancyprogress):
     def __init__(self,packages):
@@ -348,10 +348,10 @@ class xterm(ttyconfirm,fancyprogress):
                 os.close(read)
                 try:
                     os.write(write,text)
+                    os.close(write)
                 except IOError:
                     # Broken pipe is OK
                     pass
-                os.close(write)
                 (junk,status) = os.waitpid(pid,0)
                 if status != 0:
                     sys.stderr.write(_("%s exited with status %d")
