@@ -1,3 +1,23 @@
+apt-listchanges (1.34) unstable; urgency=low
+
+  * We now interface with apt by dropping a conffile in
+    /etc/apt/apt.conf.d.  This allows us to avoid sharing a config file
+    with anyone else, and to have a defined execution order in relation
+    to, e.g. dpkg-preconfigure.
+  * debian/control: depend on apt (>= 0.5.1)
+  * debian/control: depend on debconf (this should have been there long
+    ago)
+  * debian/rules: install /etc/apt/apt.conf.d/20-apt-listchanges.conf
+  * debian/postinst: updated for apt 0.5 (no more apt.conf hackery!)
+  * debian/postinst: added apt-mode-run config option, necessary for the
+    new way of interfacing with apt
+  * apt-listchanges.in: added apt-mode-run config option
+  * Added Spanish translation of message catalogs, thanks to Jordi Mallach
+    <jordi@debian.org>
+  * apt-listchanges.sgml: Clarify the meaning of the --apt option
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun,  4 Mar 2001 21:58:23 -0500
+
 apt-listchanges (1.33) unstable; urgency=low
 
   * Depend on liblocale-gettext-perl (I forgot to commit this change along
