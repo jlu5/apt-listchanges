@@ -70,7 +70,7 @@ def extract_changelog(deb, version=None):
 
          changes = ''
          for line in os.popen(extract_command).readlines():
-             if line[:4] == 'tar:' or line[:8] == 'dpkg-deb':
+             if line.startswith('tar:') or line.startswith('dpkg-deb'):
                  # XXX, keep track of errors
                  continue
 
@@ -235,7 +235,8 @@ def make_frontend(name, packages):
     frontends = { 'text' : text,
                   'pager' : pager,
                   'mail' : mail,
-                  'xterm-pager' : xterm_pager }
+                  'xterm-pager' : xterm_pager,
+                  'xterm-w3m' : xterm_w3m }
     
     if name == 'newt':
         sys.stderr.write(_("The newt frontend is deprecated, using pager"))
@@ -324,7 +325,7 @@ class pager(ttyconfirm,fancyprogress):
             # Broken pipe is OK
             pass
 
-class xterm_pager(ttyconfirm,fancyprogress):
+class xterm(ttyconfirm,fancyprogress):
     def __init__(self,packages):
         apply(fancyprogress.__init__, (self,packages))
     
@@ -338,7 +339,7 @@ class xterm_pager(ttyconfirm,fancyprogress):
                 os.close(write)
                 os.execlp('xterm',
                           'xterm','-title','apt-listchanges',
-                          '-e','sh','-c','less <&%d' % read)
+                          '-e','sh','-c','%s <&%d' % (self.command,read))
                 sys.exit(1)
             else:
                 os.close(read)
@@ -350,3 +351,40 @@ class xterm_pager(ttyconfirm,fancyprogress):
                                      % ('xterm',status))
                     sys.exit(1)
                 sys.exit(0)
+
+
+class xterm_pager(xterm):
+    command = 'pager'
+
+class xterm_w3m(xterm):
+    command = 'w3m -T text/html'
+    bug_re = re.compile('(bug|closes:?)\s+#(\d+)', re.IGNORECASE)
+    # regxlib.com
+    email_re = re.compile(r'([a-zA-Z0-9_\-\.]+)@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)')
+
+    def display_output(self,text):
+        html = '''<html>
+        <head>
+        <title>apt-listchanges output</title>
+        </head>
+
+        <body>
+        <pre>
+'''
+        for line in text.split('\n'):
+            line = line.replace(
+                '&', '&amp;').replace(
+                '<', '&lt;').replace(
+                '>','&gt;')
+            line = re.sub(self.bug_re,
+                          r'<a href="http://bugs.debian.org/\g<1>">\g<0></a>',
+                          line)
+            line = re.sub(self.email_re,
+                          r'<a href="mailto:\g<0>">\g<0></a>',
+                          line)
+            html += line + '\n'
+        html += '''</body>
+        </pre>
+'''
+
+        xterm.display_output(self,html)
