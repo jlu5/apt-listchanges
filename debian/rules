@@ -19,9 +19,9 @@ configure-stamp:
 # Substitute version into configure.in
 	perl -pi.orig -e 's/^AM_INIT_AUTOMAKE.*$$/AM_INIT_AUTOMAKE($(package), $(version))/g' configure.in
 
-	automake --foreign --add-missing
 	aclocal
 	autoconf
+	automake --foreign --add-missing
 	./configure --prefix=/usr
 
 	touch configure-stamp
