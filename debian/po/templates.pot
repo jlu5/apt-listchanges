@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-26 23:01-0800\n"
+"POT-Creation-Date: 2004-04-29 20:33-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,26 +33,26 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "How should changelogs be displayed with apt?"
+msgid "How should changes be displayed with apt?"
 msgstr ""
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid ""
-"apt-listchanges can display changelog entries in a number of different ways."
+"apt-listchanges can display package changes in a number of different ways."
 msgstr ""
 
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "pager - Use your preferred pager"
+msgid "pager - Use your preferred pager to display changes one page at a time"
 msgstr ""
 
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "browser - Display HTML-formatted changelogs using a web browser"
+msgid "browser - Display HTML-formatted changes using a web browser"
 msgstr ""
 
 #. Type: select
@@ -70,13 +70,13 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "text  - Print changelogs to your terminal (without pausing)"
+msgid "text  - Print changes to your terminal (without pausing)"
 msgstr ""
 
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "mail  - Only send changelogs via mail"
+msgid "mail  - Only send changes via mail"
 msgstr ""
 
 #. Type: select
@@ -103,14 +103,14 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../templates:30
-msgid "To whom should apt-listchanges mail changelog entries?"
+msgid "To whom should apt-listchanges mail changes?"
 msgstr ""
 
 #. Type: string
 #. Description
 #: ../templates:30
 msgid ""
-"apt-listchanges can email a copy of displayed changelogs.  To what email "
+"apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
 msgstr ""
 
@@ -126,14 +126,14 @@ msgstr ""
 #. Description
 #: ../templates:40
 msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changelogs?"
+"Should apt-listchanges prompt for confirmation after displaying changes?"
 msgstr ""
 
 #. Type: boolean
 #. Description
 #: ../templates:40
 msgid ""
-"After giving you a chance to display changelog entries, apt-listchanges can "
+"After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
@@ -150,14 +150,35 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:52
-msgid "Should apt-listchanges skip changelogs that have already been seen?"
+msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr ""
 
 #. Type: boolean
 #. Description
 #: ../templates:52
 msgid ""
-"apt-listchanges has the capability to keep track of which changelog entries "
-"have already been displayed, and to skip them in future invocations. This is "
+"apt-listchanges has the capability to keep track of which changes have "
+"already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:59
+msgid "news, both, changelogs"
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../templates:61
+msgid "Which types of changes should be displayed with apt?"
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../templates:61
+msgid ""
+" news - important news items only\n"
+" both - both news and detailed changelogs\n"
+" changelogs - detailed changelogs only"
 msgstr ""

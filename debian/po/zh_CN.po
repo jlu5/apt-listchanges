@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges debconf\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-26 23:01-0800\n"
+"POT-Creation-Date: 2004-04-29 20:33-0700\n"
 "PO-Revision-Date: 2004-01-28 03:20+1300\n"
 "Last-Translator: Carlos Z.F. Liu <carlos_liu@yahoo.com>\n"
 "Language-Team: Chinese/Simplified <i18n-translation@lists.linux.net.cn>\n"
@@ -32,26 +32,30 @@ msgstr "分页器, 浏览器, xterm-分页器, xterm-浏览器, 文本, 邮件, 
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "How should changelogs be displayed with apt?"
+#, fuzzy
+msgid "How should changes be displayed with apt?"
 msgstr "apt 该如何显示变更记录(changelogs)呢？"
 
 #. Type: select
 #. Description
 #: ../templates:5
+#, fuzzy
 msgid ""
-"apt-listchanges can display changelog entries in a number of different ways."
+"apt-listchanges can display package changes in a number of different ways."
 msgstr "apt-listchanges 可以用几种不同的方式显示变更记录(changelogs)。"
 
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "pager - Use your preferred pager"
+#, fuzzy
+msgid "pager - Use your preferred pager to display changes one page at a time"
 msgstr "分页器 - 使用您喜欢的分页器"
 
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "browser - Display HTML-formatted changelogs using a web browser"
+#, fuzzy
+msgid "browser - Display HTML-formatted changes using a web browser"
 msgstr "浏览器 - 使用网页浏览器显示 HTML 格式的变更记录(changelogs)"
 
 #. Type: select
@@ -69,13 +73,15 @@ msgstr "xterm-浏览器 - 类似于浏览器，但是在 xterm 中运行"
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "text  - Print changelogs to your terminal (without pausing)"
+#, fuzzy
+msgid "text  - Print changes to your terminal (without pausing)"
 msgstr "文本 - 将变更记录(changelogs)打印到您的终端上(没有暂停)"
 
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "mail  - Only send changelogs via mail"
+#, fuzzy
+msgid "mail  - Only send changes via mail"
 msgstr "邮件 - 仅通过邮件发送变更记录(changelogs)"
 
 #. Type: select
@@ -104,14 +110,16 @@ msgstr "root"
 #. Type: string
 #. Description
 #: ../templates:30
-msgid "To whom should apt-listchanges mail changelog entries?"
+#, fuzzy
+msgid "To whom should apt-listchanges mail changes?"
 msgstr "apt-listchangelogs 应该将变更记录寄给谁？"
 
 #. Type: string
 #. Description
 #: ../templates:30
+#, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changelogs.  To what email "
+"apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
 msgstr ""
 "apt-changelogs 可以邮寄所显示的变更记录的副本。该把它寄到谁的邮件地址呢？"
@@ -128,15 +136,17 @@ msgstr "如果您不想寄出任何邮件，请置空"
 #. Type: boolean
 #. Description
 #: ../templates:40
+#, fuzzy
 msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changelogs?"
+"Should apt-listchanges prompt for confirmation after displaying changes?"
 msgstr "需要 apt-listchanges 在显示变更记录后提示您确认吗？"
 
 #. Type: boolean
 #. Description
 #: ../templates:40
+#, fuzzy
 msgid ""
-"After giving you a chance to display changelog entries, apt-listchanges can "
+"After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
@@ -156,19 +166,43 @@ msgstr "此设置在“邮件”和“无”界面中是无效的，而且可以
 #. Type: boolean
 #. Description
 #: ../templates:52
-msgid "Should apt-listchanges skip changelogs that have already been seen?"
+#, fuzzy
+msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "apt-listchanges 是否应该忽略那些已经被看过的变更记录呢？"
 
 #. Type: boolean
 #. Description
 #: ../templates:52
+#, fuzzy
 msgid ""
-"apt-listchanges has the capability to keep track of which changelog entries "
-"have already been displayed, and to skip them in future invocations. This is "
+"apt-listchanges has the capability to keep track of which changes have "
+"already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
 "apt-listchanges 有能力跟踪哪些变更记录已经被显示过了，并在未来的使用中忽略它"
 "们。这会是很有用的，例如，当您尝试重新进行升级时。"
+
+#. Type: select
+#. Choices
+#: ../templates:59
+msgid "news, both, changelogs"
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../templates:61
+#, fuzzy
+msgid "Which types of changes should be displayed with apt?"
+msgstr "apt 该如何显示变更记录(changelogs)呢？"
+
+#. Type: select
+#. Description
+#: ../templates:61
+msgid ""
+" news - important news items only\n"
+" both - both news and detailed changelogs\n"
+" changelogs - detailed changelogs only"
+msgstr ""
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 #~ msgstr "apt-listchanges 可以覆盖您的 /etc/apt/listchanges.conf 吗？"

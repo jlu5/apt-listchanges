@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges_2.46\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-26 23:01-0800\n"
+"POT-Creation-Date: 2004-04-29 20:33-0700\n"
 "PO-Revision-Date: 2004-02-28 21:34-0300\n"
 "Last-Translator: André Luís Lopes <andrelop@debian.org>\n"
 "Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
@@ -33,14 +33,16 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "How should changelogs be displayed with apt?"
+#, fuzzy
+msgid "How should changes be displayed with apt?"
 msgstr "Como os changelogs devem ser exibidos com o APT ?"
 
 #. Type: select
 #. Description
 #: ../templates:5
+#, fuzzy
 msgid ""
-"apt-listchanges can display changelog entries in a number of different ways."
+"apt-listchanges can display package changes in a number of different ways."
 msgstr ""
 "O apt-listchanges pode exibir entradas de changelogs de diversas maneiras "
 "diferentes."
@@ -48,13 +50,15 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "pager - Use your preferred pager"
+#, fuzzy
+msgid "pager - Use your preferred pager to display changes one page at a time"
 msgstr "paginador - Utiliza seu paginador preferido"
 
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "browser - Display HTML-formatted changelogs using a web browser"
+#, fuzzy
+msgid "browser - Display HTML-formatted changes using a web browser"
 msgstr ""
 "navegador - Exibe changelogs formatados em HTML usando um navegador web"
 
@@ -73,13 +77,15 @@ msgstr "navegador-xterm - Como o navegador, mas em um xterm em segundo plano"
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "text  - Print changelogs to your terminal (without pausing)"
+#, fuzzy
+msgid "text  - Print changes to your terminal (without pausing)"
 msgstr "texto - Exibe os changelogs em seu terminal (sem pausas)"
 
 #. Type: select
 #. Description
 #: ../templates:5
-msgid "mail  - Only send changelogs via mail"
+#, fuzzy
+msgid "mail  - Only send changes via mail"
 msgstr "e-mail - Envia os changelogs via e-mail"
 
 #. Type: select
@@ -96,8 +102,8 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Essa configuração pode ser sobreescrita por uma opção de linha de comando "
-"ou uma variável de ambiente. Note que você ainda pode enviar uma cópia dos "
+"Essa configuração pode ser sobreescrita por uma opção de linha de comando ou "
+"uma variável de ambiente. Note que você ainda pode enviar uma cópia dos "
 "changelogs via e-mail usando todos os frontends, exceto a opção 'nenhum'."
 
 #. Type: string
@@ -109,14 +115,16 @@ msgstr "root"
 #. Type: string
 #. Description
 #: ../templates:30
-msgid "To whom should apt-listchanges mail changelog entries?"
+#, fuzzy
+msgid "To whom should apt-listchanges mail changes?"
 msgstr "Para quem o apt-listchanges deve enviar as entradas de changelogs ?"
 
 #. Type: string
 #. Description
 #: ../templates:30
+#, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changelogs.  To what email "
+"apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
 msgstr ""
 "Você optou por enviar as entradas de changelogs via e-mail. Para qual "
@@ -135,25 +143,26 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:40
+#, fuzzy
 msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changelogs?"
-msgstr ""
-"O apt-listchanges deverá pedir confirmação após exibir os changelogs?"
+"Should apt-listchanges prompt for confirmation after displaying changes?"
+msgstr "O apt-listchanges deverá pedir confirmação após exibir os changelogs?"
 
 #. Type: boolean
 #. Description
 #: ../templates:40
+#, fuzzy
 msgid ""
-"After giving you a chance to display changelog entries, apt-listchanges can "
+"After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Depois de oferecer a chance de exibir as entradas de changelogs, o "
-"apt-listchanges poderá perguntar se você deseja ou não continuar. Isto "
-"é útil quando o apt-listchanges é executado a partir do apt, já que lhe "
-"oferece uma oportunidade de abortar a atualização caso você perceba alguma "
-"mudança que não deseje que seja aplicada (ainda)."
+"Depois de oferecer a chance de exibir as entradas de changelogs, o apt-"
+"listchanges poderá perguntar se você deseja ou não continuar. Isto é útil "
+"quando o apt-listchanges é executado a partir do apt, já que lhe oferece uma "
+"oportunidade de abortar a atualização caso você perceba alguma mudança que "
+"não deseje que seja aplicada (ainda)."
 
 #. Type: boolean
 #. Description
@@ -168,21 +177,44 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:52
-msgid "Should apt-listchanges skip changelogs that have already been seen?"
+#, fuzzy
+msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "O apt-listchanges deverá omitir changelogs que já foram vistos?"
 
 #. Type: boolean
 #. Description
 #: ../templates:52
+#, fuzzy
 msgid ""
-"apt-listchanges has the capability to keep track of which changelog entries "
-"have already been displayed, and to skip them in future invocations. This is "
+"apt-listchanges has the capability to keep track of which changes have "
+"already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
 "O apt-listchanges possui a habilidade de lembrar quais entradas de "
-"changelogs já foram exibidas e a omití-las futuramente. Isto é útil, "
-"por exemplo, quando você estiver fazendo uma segunda tentativa de "
-"atualização."
+"changelogs já foram exibidas e a omití-las futuramente. Isto é útil, por "
+"exemplo, quando você estiver fazendo uma segunda tentativa de atualização."
+
+#. Type: select
+#. Choices
+#: ../templates:59
+msgid "news, both, changelogs"
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../templates:61
+#, fuzzy
+msgid "Which types of changes should be displayed with apt?"
+msgstr "Como os changelogs devem ser exibidos com o APT ?"
+
+#. Type: select
+#. Description
+#: ../templates:61
+msgid ""
+" news - important news items only\n"
+" both - both news and detailed changelogs\n"
+" changelogs - detailed changelogs only"
+msgstr ""
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 #~ msgstr "apt-listchanges deve modificar seu /etc/apt/listchanges.conf?"

@@ -7,8 +7,9 @@ apt-listchanges (2.55) unstable; urgency=low
   * Depends: debianutils (>= 2.0.2) because that is when sensible-browser
     was added, and sensible-browser is used by the browser frontend
     (Closes: #246508)
+  * Run debconf-updatepo
 
- -- Matt Zimmerman <mdz@debian.org>  Thu, 29 Apr 2004 20:32:14 -0700
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 29 Apr 2004 20:33:33 -0700
 
 apt-listchanges (2.54) unstable; urgency=low
 
