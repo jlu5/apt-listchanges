@@ -582,9 +582,10 @@ sub read_deb_filenames {
 	next unless my ($pkg, $oldversion, $newversion, $filename)
 	    = /^(\S+)\s+(\S+)\s+<\s+(\S+)\s+(\S+)$/;
 	next if $filename =~ /^\*\*.*\*\*$/;
+	next if $oldversion eq '-';
 
 	push(@debs, $filename);
-	$status{$pkg}{Version} = $oldversion unless $oldversion eq '-';
+	$status{$pkg}{Version} = $oldversion;
 	$status{$pkg}{NewVersion} = $newversion; # Not used yet
       }
     } else {
