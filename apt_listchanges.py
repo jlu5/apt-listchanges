@@ -113,7 +113,6 @@ class Package:
         if len(filenames) > 1:
             raise RuntimeError("More than one file matched pattern '%s'" % filename)
         if len(filenames) < 1:
-            print "Nope: " + filename
             return None
 
         filename = filenames[0]
