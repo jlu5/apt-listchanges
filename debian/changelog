@@ -2,8 +2,11 @@ apt-listchanges (1.47) unstable; urgency=low
 
   * Add Estonian translation of message catalogs, thanks to Ivar Smolin
     <okul@linux.ee>
+  * Make sure we read all of the piped data from apt, even if we are just
+    going to exit because we won't do anything.  If we don't, apt thinks
+    we broke. (Closes: #96114)
 
- -- Matt Zimmerman <mdz@debian.org>  Wed,  2 May 2001 02:29:36 -0400
+ -- Matt Zimmerman <mdz@debian.org>  Wed,  2 May 2001 18:14:40 -0400
 
 apt-listchanges (1.46) unstable; urgency=low
 
