@@ -1,3 +1,10 @@
+apt-listchanges (1.49) unstable; urgency=low
+
+  * Fix a bogus error when installing a package from scratch, appeared in
+    1.48.
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 23 May 2001 16:52:27 -0400
+
 apt-listchanges (1.48) unstable; urgency=low
 
   * Updated Galician translation of debconf templates, thanks to Jacobo
