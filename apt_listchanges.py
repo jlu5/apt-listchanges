@@ -29,10 +29,7 @@ def changelog_variations(filename):
                './usr/share/doc/\\*/%s.gz',
                './usr/doc/\\*/%s',
                './usr/share/doc/\\*/%s']
-    # Silly python2.1.  Go back to doing it this way when
-    # python2.2 is the default
     return map(lambda format: format % filename, formats)
-    #return map(lambda format,filename=filename: format % filename, formats)
 
 def numeric_urgency(u):
     if u == 'low':
