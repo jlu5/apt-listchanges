@@ -1,0 +1,105 @@
+<!doctype refentry PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+  <!ENTITY debian  "<productname>Debian GNU/Linux</productname>">
+  <!ENTITY docbook "<productname>DocBook</productname>">
+]>
+
+<!-- Manual page for debchanges, DocBook source file
+     (C) 2000 Matt Zimmerman <mdz@csh.rit.edu>
+
+     Based on the example page docbook-to-man.sgml from docbook-to-man
+
+     $Id: apt-listchanges.sgml,v 1.1 2000-10-19 03:28:44 mdz Exp $
+-->
+
+<refentry>
+  <docinfo>
+    <address>
+      <email>mdz@csh.rit.edu</email>
+    </address>
+    <author>
+      <firstname>Matt</firstname>
+      <surname>Zimmerman</surname>
+    </author>
+    <date>2000-09-13</date>
+  </docinfo>
+  <refmeta>
+    <refentrytitle>debchanges</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+  <refnamediv>
+    <refname>debchanges</refname> <refpurpose>Show new changelog
+      entries from a Debian package archive
+      </refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>debchanges</command>
+      <group choice=opt>
+	<arg><option>-v</option></arg>
+	<arg><option>--verbose</option></arg>
+      </group>
+      <group choice=req>
+	<arg><option>--apt</option></arg>
+	<arg rep=repeat><replaceable>deb</replaceable></arg>
+      </group>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>Description</title>
+
+    <para><command>debchanges</command> is a tool to show what has
+      been changed in a new version of a Debian package, as compared to
+      the version currently installed on the system.</para>
+
+    <para>It does this by extracting the relevant entries from the
+    Debian changelog file, usually found in
+    <filename>/usr/doc/<replaceable>package</replaceable>/changelog.Debian.gz</filename></para>
+
+  </refsect1>
+
+  <refsect1>
+    <title>Options</title>
+
+    <VARIABLELIST>
+      <VARLISTENTRY>
+	<TERM><option>--apt</option>
+	</TERM>
+	<LISTITEM>
+	  <PARA>Read filenames from standard input, rather than from
+	  command line arguments.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+      <VARLISTENTRY>
+	<TERM><option>-v, --verbose</option>
+	</TERM>
+	<LISTITEM>
+	  <PARA>Display additional (usually unwanted) information.
+	    For instance, print a message when a package of the same
+	    or older version is to be installed, or when a package is
+	    to be newly installed.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+    </VARIABLELIST>
+
+  </refsect1>
+
+</refentry>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

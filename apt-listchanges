@@ -1,0 +1,277 @@
+#!/usr/bin/perl
+
+#
+#      apt-listchanges - Show changelog entries between the installed versions
+#        of a set of packages and the versions contained in corresponding
+#        .deb files
+#
+#      Copyright (C) 2000  Matt Zimmerman <mdz@csh.rit.edu>
+#
+#      This program is free software; you can redistribute it and/or modify
+#      it under the terms of the GNU General Public License as published by
+#      the Free Software Foundation; either version 2 of the License, or
+#      (at your option) any later version.
+#
+#      This program is distributed in the hope that it will be useful,
+#      but WITHOUT ANY WARRANTY; without even the implied warranty of
+#      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#      GNU General Public License for more details.
+#
+#      You should have received a copy of the GNU General Public
+#      License along with this program; if not, write to the Free
+#      Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+#      MA 02111-1307 USA
+#
+
+use strict;
+use Getopt::Long;
+use Newt qw(:macros NEWT_FLAG_SCROLL NEWT_FLAG_WRAP NEWT_EXIT_COMPONENT);
+
+# Option processing
+my $apt_mode = 0;
+my $verbose = 0;
+GetOptions("apt" => \$apt_mode,
+	   "verbose|v" => \$verbose) || die;
+
+# List of filenames to process
+my @debs;
+
+# Hash of package info from the status file
+my %status;
+
+# Hash of source packages that we've processed (to avoid duplicates)
+my %source_packages_processed;
+
+# Changelog text
+my $changes;
+
+# Error text
+my $errors;
+
+# Read in installed versions from the status file
+read_status(\%status);
+
+if ($apt_mode) {
+  # In apt mode, read filenames from stdin
+  while (<>) {
+    chomp;
+    push(@debs, $_);
+  }
+} else {
+  # Otherwise, use filenames from the command line
+  @debs = @ARGV;
+}
+
+unless (@debs) {
+  exit 0 if ($apt_mode);
+  die "apt-listchanges: Must specify either --apt or filenames to process!\n";
+}
+
+# Find the longest pathname, for sizing the dialog
+my $longest_pathname = longest(@debs);
+
+# Initialize terminal graphics
+Newt::Init();
+Newt::Cls();
+
+# Create widgets
+my $main = Newt::Panel(1,3, 'Reading changelogs');
+my $progress = Newt::Scale(20, scalar(@debs));
+my $current = Newt::Label(' ' x length($longest_pathname));
+$main->Add(0, 0, Newt::Label("Scanning packages..."));
+$main->Add(0, 1, $progress);
+$main->Add(0, 2, $current);
+$main->Draw();
+
+my $debs_processed = 0;
+
+#
+# Main loop
+#
+foreach my $deb (@debs) {
+  # Remove common prefix from deb pathnames
+  my $display_deb = $deb;
+  $display_deb =~ s%/var/cache/apt/archives/%%;
+
+  # Update progress filename
+  $current->Set( $display_deb );
+ Newt::Refresh();
+
+  my ($pkg, $version) = get_name_and_version($deb);
+
+  $errors .= $version if $pkg eq 'ERROR';
+
+  unless ($pkg) {
+    $errors .= "apt-listchanges: Unable to determine package name for $deb\n";
+    next;
+  }
+  unless ($version) {
+    $errors .= "apt-listchanges: Unable to determine version for $deb\n";
+    next;
+  }
+
+  # Look up installed version of $pkg
+  my $oldversion = $status{$pkg}{Version};
+
+  my $sourcepackage = $status{$pkg}{Source} || $pkg;
+
+  # Check for different source package version
+  if ($sourcepackage =~ /\((.*)\)/) {
+    $oldversion = $1;
+    $sourcepackage =~ s/\s*\(.*\)//;
+  }
+
+  # Skip if the package is not installed
+  if (!$oldversion) {
+    $changes .= "$pkg: will be newly installed\n\n"
+	if $verbose;
+    next;
+  }
+
+  # Skip if we are looking at the same version (faster than asking dpkg)
+  if ($version eq $oldversion) {
+
+    $changes .= "$pkg: Version $version is already installed\n\n"
+	if $verbose;
+
+    next;
+  }
+
+  # Skip if we are looking at an older version
+  if (dpkg_compare_versions($version, 'le', $oldversion)) {
+    $changes .= "$pkg: Version $version is older than installed version ($oldversion)\n\n"
+	if $verbose;
+    next;
+  }
+
+  # Skip if we already processed another binary package from this
+  # source package
+  next if $source_packages_processed{$sourcepackage}++;
+
+  # Determine the changelog filenames
+  my @changelog_filenames;
+  if ($version =~ /-/) {
+    @changelog_filenames = ('changelog.Debian');
+  } else {
+    # Debian native package
+    @changelog_filenames = ('changelog');
+  }
+
+  # Check both compressed and uncompressed
+  @changelog_filenames = map { ($_, "$_.gz") } @changelog_filenames;
+
+  # Check both /usr/doc and /usr/share/doc
+  @changelog_filenames = map { ("./usr/doc/$pkg/$_",
+				  "./usr/share/doc/$pkg/$_") }
+				  @changelog_filenames;
+
+  # Extract relevant changelog info
+  open(DPKGDEB, "dpkg-deb --fsys-tarfile $deb | tar xOf - @changelog_filenames 2>/dev/null | zcat -f|") || die $!;
+  
+  while (<DPKGDEB>) {
+    if ( /^(tar|dpkg-deb):/ ) {
+      # Errors from tar or dpkg-deb
+      $errors .= $_;
+      next;
+    }
+
+    if ( /^(\S+) \((.*)\)/ ) {
+      last if dpkg_compare_versions($2, 'le', $oldversion);
+    }
+
+    $changes .= $_;
+  }
+  close(DPKGDEB);
+
+} continue {
+  # Update the progress bar
+  $progress->Set(++$debs_processed);
+  $main->Draw();
+ Newt::Refresh();
+}
+
+# Final output text (append errors if any)
+my $output = $changes;
+if ($errors) {
+  $output .= "\napt-listchanges: Error output follows\n";
+  $output .= $errors;
+}
+
+my $ret = 0;
+
+if ($output) {
+  # Display changelogs and errors
+  $main = Newt::Panel(1, 2, "Displaying changelogs");
+  $main->Add(0, 0, Newt::Textbox(70, 15,
+				 NEWT_FLAG_WRAP|NEWT_FLAG_SCROLL,
+				 $output));
+  $main->Add(0, 1, Newt::Panel(2, 1)
+	     ->Add(0, 0, OK_BUTTON)
+	     ->Add(1, 0, CANCEL_BUTTON));
+  
+  my ($reason, $data) = $main->Run();
+  if ($reason eq NEWT_EXIT_COMPONENT && $data->Tag() eq 'CANCEL') {
+      # User pressed cancel, so we should exit with nonzero status
+      $ret = 1;
+  }
+}
+
+Newt::Finished();
+
+exit $ret;
+
+## End top level ##
+
+# Extract the package name and version from a .deb file
+sub get_name_and_version {
+  my ($deb) = @_;
+
+  my ($pkg, $version);
+
+  open(DPKGDEB, "dpkg-deb -f $deb Package Version 2>&1|") || die;
+  while (<DPKGDEB>) {
+    chomp;
+    /^Package: (.*)$/ && do { $pkg = $1 };
+    /^Version: (.*)$/ && do { $version = $1 };
+  }
+  close(DPKGDEB);
+
+  ($pkg, $version);
+}
+
+# Read in package names and versions from the status file and store
+# them in the hash ref $status
+sub read_status {
+  my ($status) = @_;
+
+  my $statusfile = "/var/lib/dpkg/status";
+
+  open(STATUS, $statusfile) || die "$statusfile: $!\n";
+  my $pkg;
+  while (<STATUS>) {
+    /^Package: (.*)$/o && do { $pkg = $1 };
+    /^Version: (.*)$/o && do { $$status{$pkg}{Version} = $1 };
+    /^Source: (.*)$/o && do { $$status{$pkg}{Source} = $1 };
+  }
+  close(STATUS);
+}
+
+# Find the longest scalar in an array
+sub longest {
+  my $max;
+  foreach my $x (@_) {
+    $max = $x if length($x) > length($max);
+  }
+
+  $max;
+}
+
+sub dpkg_compare_versions {
+  my ($a, $op, $b) = @_;
+
+  my @cmd = ('dpkg', '--compare-versions', $a, $op, $b);
+  my $ret = system(@cmd);
+  $ret <<= 8;
+
+  $ret == 0;
+}

@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+# Source debconf library
+. /usr/share/debconf/confmodule
+
+# Ask our questions
+db_input medium apt-listchanges/apt-hook-p || true
+db_go

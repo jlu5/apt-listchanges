@@ -1,0 +1,18 @@
+Source: apt-listchanges
+Section: utils
+Priority: optional
+Maintainer: Matt Zimmerman <mdz@csh.rit.edu>
+Standards-Version: 3.1.1
+Build-Depends: debhelper, docbook-to-man
+
+Package: apt-listchanges
+Architecture: all
+Depends: ${perl:Depends}, libnewt-perl
+Description: Display new Debian changelog entries from .deb archives
+  apt-listchanges is a tool to show what has been changed in a new version
+  of a Debian package, as compared to the version currently installed on
+  the system.
+  .
+  It does this by extracting the relevant entries from the Debian
+  changelog file, usually found in
+  /usr/doc/package/changelog.Debian.gz

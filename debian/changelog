@@ -1,0 +1,55 @@
+apt-listchanges (1.1) unstable; urgency=low
+
+  * Added debconf support.
+  * Optionally add ourselves to /etc/apt/apt.conf when installed, and
+    remove when we are removed.
+
+  -- Matt Zimmerman <mdz@csh.rit.edu>  Wed, 18 Oct 2000 19:48:53 -0400
+
+apt-listchanges (1.0) unstable; urgency=low
+
+  * Package renamed to apt-listchanges
+
+ -- Matt Zimmerman <mdz@csh.rit.edu>  Wed, 18 Oct 2000 18:15:48 -0400
+
+debchanges (0.13) unstable; urgency=low
+
+  * Check for packages whose source package version differs from the
+    binary package version, and do the right thing.
+  * Added a cancel button (causes exit with nonzero status).
+  * Fixed a bug in the source package check that caused packages to be
+    skipped when they shouldn't have been
+
+ -- Matt Zimmerman <mdz@csh.rit.edu>  Tue, 17 Oct 2000 01:40:43 -0400
+
+debchanges (0.12) unstable; urgency=low
+
+  * It is not an error if --apt is specified and no package files are sent
+    to stdin.
+
+ -- Matt Zimmerman <mdz@csh.rit.edu>  Sun,  8 Oct 2000 23:09:26 -0400
+
+debchanges (0.11) unstable; urgency=low
+
+  * Only process one binary package from each source package (changelogs
+    should be the same)
+
+ -- Matt Zimmerman <mdz@csh.rit.edu>  Wed, 27 Sep 2000 14:19:39 -0700
+
+debchanges (0.10) unstable; urgency=low
+
+  * Fixed a bug that caused an empty dialog to be displayed (thanks to
+    Matthias Klose <doko@cs.tu-berlin.de>>
+  * Set Architecture: all (oops)
+
+ -- Matt Zimmerman <mdz@csh.rit.edu>  Sat, 23 Sep 2000 02:43:46 -0400
+
+debchanges (0.9) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Matt Zimmerman <mdz@csh.rit.edu>  Wed, 13 Sep 2000 21:11:29 -0400
+
+Local variables:
+mode: debian-changelog
+End:
