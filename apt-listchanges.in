@@ -264,6 +264,7 @@ foreach my $deb (@debs) {
     my $urgency = $urgency_map{'low'};
     my $changes;
     while (<CHANGELOG>) {
+      ++$lines_read;
 #      next unless /^Changes:/ .. 0;
 #      next if /^Changes:/;
       last if /^Local variables:/;
@@ -283,7 +284,6 @@ foreach my $deb (@debs) {
       }
       
       $changes .= $_;
-      ++$lines_read;
     }
 
     # Read any remaining data from a large changelog, to avoid a 'broken
