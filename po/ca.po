@@ -1,0 +1,112 @@
+# Spanish po-file for apt-listchanges
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Jordi Mallach <jordi@debian.org>, 2001
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges 1.54\n"
+"POT-Creation-Date: 2001-08-27 18:51+0200\n"
+"PO-Revision-Date: 2001-08-27 19:47+0200\n"
+"Last-Translator: Jordi Mallach <jordi@debian.org>\n"
+"Language-Team: Debian Catalan l10n <debian-l10n-catalan@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apt-listchanges:146
+msgid "Must specify either --apt or filenames to process!"
+msgstr "Teniu que especificar --apt o be paquets a processar!"
+
+#: apt-listchanges:165
+#, c-format
+msgid "Unable to determine package name for file %s"
+msgstr "No es pot determinar el nom del paquet per al fitxer %s"
+
+#: apt-listchanges:171
+#, c-format
+msgid "Unable to determine version for file %s"
+msgstr "No es pot determinar la versió per al fitxer %s"
+
+#: apt-listchanges:185
+#, c-format
+msgid "%s: will be newly installed"
+msgstr "%s: s'instal·larà per primera vegada"
+
+#: apt-listchanges:193
+#, c-format
+msgid "%s: Version %s is already installed"
+msgstr "%s: La versió %s ja està instal·lada"
+
+#: apt-listchanges:200 apt-listchanges:216
+#, c-format
+msgid "%s: Version %s changes have already been seen"
+msgstr "%s: La versió %s ja està instal·lada"
+
+#: apt-listchanges:209
+#, c-format
+msgid "%s: Version %s is older than installed version (%s)"
+msgstr "%s: La versió %s és més antiga que la versió instal·lada (%s)"
+
+#: apt-listchanges:328
+#, c-format
+msgid "Changes for %s"
+msgstr "Canvis per a %s"
+
+#: apt-listchanges:340
+msgid "Informational notes"
+msgstr "Notes informatives"
+
+#: apt-listchanges:344
+msgid "Error output follows"
+msgstr "La sortida de errada segueix"
+
+#: apt-listchanges:388
+msgid "In order to use the newt frontend, you must install libnewt-perl"
+msgstr "Per utilitzar el frontend de newt, necessiteu instal·lar libnewt-perl"
+
+#: apt-listchanges:401
+msgid "Reading changelogs"
+msgstr "Llegint changelogs"
+
+#: apt-listchanges:406
+msgid "Scanning packages..."
+msgstr "Escanejant paquet..."
+
+#: apt-listchanges:435
+msgid "Displaying changelogs"
+msgstr "Mostrant changelogs"
+
+#: apt-listchanges:476
+#, c-format
+msgid "Reading changelogs...%s"
+msgstr "Llegint changelogs...%s"
+
+#: apt-listchanges:477
+msgid "Done"
+msgstr "Fet"
+
+#: apt-listchanges:505
+msgid "Unable to open tty for confirmation, assuming yes"
+msgstr "No es pot obrir la tty per demanar confirmació, assumint sí"
+
+#: apt-listchanges:513
+msgid "Do you want to continue [Y/n]? "
+msgstr "Voleu continuar? [Y/n]"
+
+#: apt-listchanges:538
+#, c-format
+msgid "Unable to open temporary file %s: %s"
+msgstr "No es pot obrir el fitxer temporal %s: %s"
+
+#: apt-listchanges:614
+#, c-format
+msgid "Changelogs mailed to %s"
+msgstr "Changelogs enviats a %s"
+
+#: apt-listchanges:701
+msgid "Wrong or missing VERSION from apt pipeline"
+msgstr "VERSION errónea o inexistent provinent de la tuberia d'apt"
+
+#: apt-listchanges:702
+msgid "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)"
+msgstr "(està Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version a 2?)"
