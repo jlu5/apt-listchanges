@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.10 2001-03-16 04:32:29 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.11 2001-03-25 07:19:53 mdz Exp $
 -->
 
 <refentry>
@@ -63,6 +63,14 @@
       <group choice=req>
 	<arg><option>--apt</option></arg>
 	<arg rep=repeat><replaceable>package.deb</replaceable></arg>
+      </group>
+
+      <group choice=opt>
+	<arg><option>--help</option></arg>
+      </group>
+
+      <group choice=opt>
+	<arg><option>--version</option></arg>
       </group>
 
     </cmdsynopsis>
@@ -211,6 +219,24 @@
       </VARLISTENTRY>
 
       <VARLISTENTRY>
+	<TERM>--help</TERM>
+	<LISTITEM>
+	  <PARA>
+	    Displays syntax information.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+
+      <VARLISTENTRY>
+	<TERM>--version</TERM>
+	<LISTITEM>
+	  <PARA>
+	    Displays the version number.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+
+      <VARLISTENTRY>
 	<TERM>-h, --headers</TERM>
 	<LISTITEM>
 	  <PARA>
@@ -222,6 +248,7 @@
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
+
     </VARIABLELIST>
 
   </refsect1>

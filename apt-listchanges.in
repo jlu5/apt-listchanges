@@ -23,8 +23,6 @@
 #      MA 02111-1307 USA
 #
 
-# This is version @VERSION@
-
 use strict;
 use Getopt::Long;
 use Sys::Hostname;
@@ -40,6 +38,8 @@ textdomain('@PACKAGE@');
 my %config;
 &read_config('/etc/apt/listchanges.conf', \%config);
 
+my $usage = "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n";
+
 # Config file options can be overridden by command line options
 my $apt_mode = 0;
 my $verbose = 0;
@@ -50,6 +50,8 @@ my $apt_mode_run = $config{'apt-mode-run'} ?
     $config{'apt-mode-run'} eq 'yes' : 0;
 my $confirm;
 my $show_headers = 0;
+my $version_only = 0;
+my $help_only = 0;
 
 GetOptions("apt" => \$apt_mode,
 	   "verbose|v" => \$verbose,
@@ -57,7 +59,19 @@ GetOptions("apt" => \$apt_mode,
 	   "email-address=s" => \$email_address,
 	   "confirm|c!" => \$confirm,
 	   "all|a" => \$show_all,
-	   "headers|h" => \$show_headers) || die;
+	   "headers|h" => \$show_headers,
+	   "help" => \$help_only,
+	   "version" => \$version_only) || die $usage;
+
+if ($version_only) {
+  print "@PACKAGE@ version @VERSION@\n";
+  exit 0;
+}
+
+if ($help_only) {
+  print $usage;
+  exit 0;
+}
 
 if ($apt_mode) {
   exit 0 unless $apt_mode_run;
