@@ -4,8 +4,13 @@ apt-listchanges (2.28) unstable; urgency=low
     browser-pipe script, so that it doesn't clobber a BROWSER environment
     variable and cause sensible-browser to call itself recursively
     (Closes: #179366)
+  * Use the current locale's character set to encode the Subject header of
+    email messages.  Hopefully this matches the character set used by
+    gettext, because gettext doesn't seem to want to tell me what it's
+    using
+    (Closes: #159122)
 
- -- Matt Zimmerman <mdz@debian.org>  Sat,  1 Feb 2003 16:32:07 -0500
+ -- Matt Zimmerman <mdz@debian.org>  Sat,  1 Feb 2003 16:57:00 -0500
 
 apt-listchanges (2.27) unstable; urgency=low
 
