@@ -110,24 +110,26 @@ class Package:
 
     def read_changelog(self, filename, since_version):
         filenames = glob.glob(filename)
-        if len(filenames) > 1:
-            raise RuntimeError("More than one file matched pattern '%s'" % filename)
-        if len(filenames) < 1:
-            return None
 
-        filename = filenames[0]
-        try:
-            if filename.endswith('.gz'):
-                f = gzip.GzipFile(filename)
-            else:
-                f = open(filename)
-        except IOError, e:
-            if e.errno == errno.ENOENT:
-                return None
+        fd = None
+        for filename in filenames:
+            try:
+                if filename.endswith('.gz'):
+                    fd = gzip.GzipFile(filename)
+                else:
+                    fd = open(filename)
+                break
+            except IOError, e:
+                if e.errno == errno.ENOENT:
+                    pass
+                raise
+
+        if not fd:
+            return None
 
         urgency = numeric_urgency('low')
         changes = ''
-        for line in f.readlines():
+        for line in fd.readlines():
             if since_version:
                 match = self.changelog_header.match(line)
                 if match:
