@@ -17,7 +17,7 @@ if [ "$RET" = "true" ]; then
     db_get apt-listchanges/frontend
     case "$RET" in
         none|mail)
-            db_set apt-listchanges/confirm "true"
+            db_set apt-listchanges/confirm "false"
             ;;
         *)
             db_input medium apt-listchanges/confirm || true
