@@ -72,7 +72,7 @@ def extract_changelog(deb, version=None):
 
          changes = ''
          for line in os.popen(extract_command).readlines():
-             if line[:3] == 'tar' or line[:8] == 'dpkg-deb':
+             if line[:4] == 'tar:' or line[:8] == 'dpkg-deb':
                  # XXX, keep track of errors
                  continue
 
