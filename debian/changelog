@@ -1,3 +1,11 @@
+apt-listchanges (2.24) unstable; urgency=low
+
+  * Updated Catalan templates and catalog from Jordi Mallach
+    <jordi@debian.org>
+  * Switch to po-debconf.  I hope this works... (Closes: #167287)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 17 Nov 2002 00:24:32 -0500
+
 apt-listchanges (2.23) unstable; urgency=low
 
   * Fix Polish translation of confirmation prompt (Closes: #153758)
