@@ -27,30 +27,23 @@ use strict;
 use Getopt::Long;
 use Newt qw(:macros NEWT_FLAG_SCROLL NEWT_FLAG_WRAP NEWT_EXIT_COMPONENT);
 
-# Option processing
+# Read config file
+my %config;
+&read_config('/etc/apt-listchanges.conf', \%config);
+
+# Config file options can be overridden by command line options
 my $apt_mode = 0;
 my $verbose = 0;
+my $frontend_opt = $config{'apt-mode-frontend'} || 'newt';
+my $email_address = $config{'apt-mode-email-address'} || 'root';
 GetOptions("apt" => \$apt_mode,
-	   "verbose|v" => \$verbose) || die;
+	   "verbose|v" => \$verbose,
+	   "frontend|f=s" => \$frontend_opt,
+	   "email-address=s" => \$email_address) || die;
+
 
 # List of filenames to process
 my @debs;
-
-# Hash of package info from the status file
-my %status;
-
-# Hash of source packages that we've processed (to avoid duplicates)
-my %source_packages_processed;
-
-# Changelog text
-my $changes;
-
-# Error text
-my $errors;
-
-# Read in installed versions from the status file
-read_status(\%status);
-
 if ($apt_mode) {
   # In apt mode, read filenames from stdin
   while (<>) {
@@ -67,37 +60,28 @@ unless (@debs) {
   die "apt-listchanges: Must specify either --apt or filenames to process!\n";
 }
 
-# Initialize terminal graphics
-Newt::Init();
-Newt::Cls();
-my ($screen_width, $screen_height) = Newt::GetScreenSize();
+# Hash of package info from the status file
+my %status;
+read_status(\%status);
 
-# Strip pathnames, and find the longest filename for sizing the dialog
-my @display_debs = @debs;
-@display_debs = map { m%([^/]+)$%; $1; } @display_debs;
-my $longest_pathname = longest(@display_debs);
+# Hash of source packages that we've processed (to avoid duplicates)
+my %source_packages_processed;
 
-# Create widgets
-my $main = Newt::Panel(1,3, 'Reading changelogs');
-my $progress = Newt::Scale($screen_width - 10, scalar(@debs));
-my $current = Newt::Label(' ' x length($longest_pathname));
-$main->Add(0, 0, Newt::Label("Scanning packages..."));
-$main->Add(0, 1, $progress);
-$main->Add(0, 2, $current);
-$main->Draw();
+# Changelog text
+my $changes;
 
+# Error text
+my $errors;
+
+# Progress info
+my $frontend = frontend_init($frontend_opt);
 my $debs_processed = 0;
 
 #
 # Main loop
 #
 foreach my $deb (@debs) {
-  # Display an abbreviated filename in the progress dialog
-  my $display_deb = shift @display_debs;
-
-  # Update progress filename
-  $current->Set( $display_deb );
- Newt::Refresh();
+  &{ $frontend->{update_progress} }($frontend);
 
   my ($pkg, $version) = get_name_and_version($deb);
 
@@ -202,42 +186,19 @@ foreach my $deb (@debs) {
     last if $lines_read > 0;
  }
 
-} continue {
-  # Update the progress bar
-  $progress->Set(++$debs_processed);
-  $main->Draw();
- Newt::Refresh();
 }
 
-# Final output text (append errors if any)
 my $output = $changes;
 if ($errors) {
   $output .= "\napt-listchanges: Error output follows\n";
   $output .= $errors;
 }
 
-my $ret = 0;
-
 if ($output) {
-  # Display changelogs and errors
-  $main = Newt::Panel(1, 2, "Displaying changelogs");
-  $main->Add(0, 0, Newt::Textbox($screen_width - 10, $screen_height - 10,
-				 NEWT_FLAG_WRAP|NEWT_FLAG_SCROLL,
-				 $output));
-  $main->Add(0, 1, Newt::Panel(2, 1)
-	     ->Add(0, 0, OK_BUTTON)
-	     ->Add(1, 0, CANCEL_BUTTON));
-  
-  my ($reason, $data) = $main->Run();
-  if ($reason eq NEWT_EXIT_COMPONENT && $data->Tag() eq 'CANCEL') {
-      # User pressed cancel, so we should exit with nonzero status
-      $ret = 1;
-  }
+  exit &{ $frontend->{display_output} }($frontend, $output);
 }
 
-Newt::Finished();
-
-exit $ret;
+exit 0;
 
 ## End top level ##
 
@@ -278,6 +239,7 @@ sub read_status {
 # Find the longest scalar in an array
 sub longest {
   my $max;
+
   foreach my $x (@_) {
     $max = $x if length($x) > length($max);
   }
@@ -293,4 +255,168 @@ sub dpkg_compare_versions {
   $ret <<= 8;
 
   $ret == 0;
+}
+
+sub read_config {
+  my ($config_file, $config) = @_;
+
+  open(CONF, $config_file) || return undef;
+  while (<CONF>) {
+    next if /^#/;
+    my ($name, $value);
+    if ( ($name, $value) = /^([^=]+)=(.*)$/ ) {
+      $$config{$name} = $value;
+    }
+  }
+}
+
+# Initialize the frontend...this is a little bit hairy.  We return a
+# reference (really, a fake object) containing subroutine refs called
+# update_progress and display_output.  These expect to be called with
+# a reference to the fake object as their first argument, just as a
+# real object's methods would.  The code for all of the frontends is
+# in here.
+
+sub frontend_init {
+  my ($frontend_opt) = @_;
+  
+  my %frontends;
+  $frontends{'newt'} = {
+    'init' => sub {
+      my ($this) = @_;
+      $this->{newt} = {};
+      # Initialize terminal graphics
+    Newt::Init();
+    Newt::Cls();
+      my ($screen_width, $screen_height) = Newt::GetScreenSize();
+      
+      my $longest_pathname = longest(@{ $this->{display_debs} });
+      
+      # Create widgets
+      my $newt = $this->{newt};
+      $$newt{main} = Newt::Panel(1,3, 'Reading changelogs');
+      $$newt{progress} = Newt::Scale($screen_width - 10, scalar(@debs));
+      $$newt{current} = Newt::Label(' ' x length($longest_pathname));
+      
+      my $main = $$newt{main};
+      $main->Add(0, 0, Newt::Label("Scanning packages..."));
+      $main->Add(0, 1, $$newt{progress});
+      $main->Add(0, 2, $$newt{current});
+      $main->Draw();
+    },
+    
+    'update_progress' => sub {
+      my $this = shift;
+      my $display_debs = $this->{display_debs};
+      my $display_deb = shift @$display_debs;
+      
+      my $newt = $this->{newt};
+      # Update progress filename
+      $newt->{current}->Set( $display_deb );
+      $newt->{progress}->Set( ++$this->{debs_processed} );
+    Newt::Refresh();
+    },
+    
+    'display_output' => sub {
+      my ($this, $output) = @_;
+      my ($screen_width, $screen_height) = Newt::GetScreenSize();
+      
+      my $newt = $this->{newt};
+      $$newt{main} = Newt::Panel(1, 2, "Displaying changelogs");
+      $$newt{main}->Add(0, 0, Newt::Textbox($screen_width - 10, $screen_height - 10,
+					    NEWT_FLAG_WRAP|NEWT_FLAG_SCROLL,
+					    $output));
+      $$newt{main}->Add(0, 1, Newt::Panel(2, 1)
+			->Add(0, 0, OK_BUTTON)
+			->Add(1, 0, CANCEL_BUTTON));
+      
+      my $ret;
+      my ($reason, $data) = $$newt{main}->Run();
+      if ($reason eq NEWT_EXIT_COMPONENT && $data->Tag() eq 'CANCEL') {
+	# User pressed cancel, so we should exit with nonzero status
+	$ret = 1;
+      };
+      
+    Newt::Finished();
+      $ret;
+    }
+  };
+  
+  $frontends{'pager'} = {
+    'init' => sub {
+      my ($this) = @_;
+    },
+    
+    'update_progress' => sub {
+      my ($this) = @_;
+      
+      my $percent = int(++$this->{debs_processed} / scalar(@debs) * 100);
+
+      printf "Reading changelogs...%s\r",
+      $percent == 100 ? "Done" : "$percent%";
+    },
+    
+    'display_output' => sub {
+      my ($this, $output) = @_;
+      
+      print "\n";
+      open(PAGER, "|/usr/bin/sensible-pager")
+	  || die "/usr/bin/sensible-pager: $!\n";
+      print PAGER $output;
+      close(PAGER);
+      $? >> 8;
+    }
+  };
+
+  $frontends{'text'} = {
+    'init' => sub {},
+    
+    'update_progress' => $frontends{pager}->{update_progress},
+    
+    'display_output' => sub {
+      my ($this, $output) = @_;
+      
+      print "\n", $output;
+      0;
+    }
+  };
+
+  $frontends{'mail'} = {
+    'init' => sub {},
+
+    'update_progress' => $frontends{pager}->{update_progress},
+
+    'display_output' => sub {
+      my ($this, $output) = @_;
+
+      print "\n";
+
+      open(MAIL, "|/usr/lib/sendmail -t") || die "sendmail: $!\n";
+      print MAIL <<EOT;
+To: $email_address
+Subject: apt-listchanges output
+
+EOT
+    print MAIL $output;
+      close(MAIL);
+
+      print "Changelogs mailed to $email_address\n";
+      $? >> 8;
+    }
+  };
+
+  my $frontend = $frontends{$frontend_opt};
+  die "Unknown frontend: $frontend_opt\n" unless defined $frontend;
+    
+  ## Common stuff for all frontends
+  
+  # Strip pathnames
+  my @display_debs = @debs;
+  @display_debs = map { m%([^/]+)$%; $1; } @display_debs;
+  $frontend->{display_debs} = \@display_debs;
+  
+  # Initialize the frontend
+  &{ $frontend->{init} }($frontend);
+  
+  $frontend;
 }
