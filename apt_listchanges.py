@@ -10,6 +10,7 @@ import re
 import sys
 import gettext
 import email.Message
+import locale
 from socket import gethostname
 
 # TODO:
