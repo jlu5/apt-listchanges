@@ -42,7 +42,7 @@ else
   echo "confirm=no" >> $PREFERENCES
 fi
 
-## Cleanup from older versions (1.13 and earlier)
+## Cleanup from older versions (pre-1.14 and earlier)
 
 # Remove config files from older versions
 rm -f /etc/apt-listchanges.conf /etc/apt-listchanges.conf.old
