@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.27 2004-02-27 06:37:09 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.28 2004-02-27 06:42:28 mdz Exp $
 -->
 
 <refentry>
@@ -109,7 +109,11 @@
 	      <TERM>pager</TERM>
 	      <LISTITEM>
 		<PARA>
-		  Uses your favorite pager to display output.
+		  Uses your favorite pager to display output.  By
+		  default, the PAGER environment variable will be
+		  used.  The "pager" option may be specified in the
+		  configuration file to select a specific pager for
+		  use with apt-listchanges.
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
@@ -120,7 +124,9 @@
                 <para>
                   Displays an HTML-formatted changelog using a web
                   browser, with hyperlinks for bugs and email
-                  addresses.
+                  addresses.  By default, the BROWSER environment
+                  variable will be used.  You can also specify a
+                  "browser" option in the configuration file.
                 </para>
               </listitem>
             </varlistentry>
@@ -133,7 +139,9 @@
 		  so in an xterm (using the x-terminal-emulator
                   alternative) in the background.  This allows you
 		  to go on with the upgrade if you like, and continue
-		  to browse the changelogs.
+		  to browse the changelogs.  You can override the
+		  terminal emulator to be used with the "xterm"
+		  configuration option.
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
@@ -297,15 +305,7 @@
 
     <variablelist>
       <varlistentry>
-        <term>APT_LISTCHANGES_BROWSER_PIPE</term>
-        <listitem><para>Used by the browser frontend, should be set to
-        a command expecting HTML input on stdin</para></listitem>
-      </varlistentry>
-    </variablelist>
-
-    <variablelist>
-      <varlistentry>
-        <term>APT_LISTCHANGES_BROWSER, BROWSER</term>
+        <term>BROWSER</term>
         <listitem><para>Used by
             the browser frontend, should be set to a command expecting a
             file: URL for an HTML file to display.</para>
