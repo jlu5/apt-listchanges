@@ -1,3 +1,13 @@
+apt-listchanges (2.5) unstable; urgency=low
+
+  * Start using python-apt (only version comparisons so far).  This gives
+    a significant performance improvement, around 10%
+  * Send mail after displaying changelogs, rather than before
+  * Fix some funny business with the progress indicator
+  * More translation updates, though things still aren't up to date
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 30 Jan 2002 01:07:19 -0500
+
 apt-listchanges (2.4) unstable; urgency=low
 
   * Add back the 'mail' frontend, so that 'none' can continue to mean
