@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.22 2003-07-07 05:16:09 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.23 2003-07-08 14:00:44 mdz Exp $
 -->
 
 <refentry>
@@ -20,7 +20,7 @@
       <firstname>Matt</firstname>
       <surname>Zimmerman</surname>
     </author>
-    <date>2002-05-23</date>
+    <date>2003-07-07</date>
   </docinfo>
   <refmeta>
     <refentrytitle>apt-listchanges</refentrytitle>
@@ -53,9 +53,9 @@
       compared to the version currently installed on the
       system.</para>
 
-    <para>It does this by extracting the relevant entries from the
-      Debian changelog file, usually found in
-      <filename>/usr/doc/</filename><replaceable>package</replaceable><filename>/changelog.Debian.gz</filename>,
+    <para>It does this by extracting the relevant entries from both the
+      NEWS.Debian and changelog<optional>.Debian</optional> files, usually found in
+      <filename>/usr/share/doc/</filename><replaceable>package</replaceable>,
       from Debian package archives.
     </para>
 
@@ -240,7 +240,7 @@
 	  <PARA>
 	    This option selects whether news (from NEWS.Debian et
 	    al.), changelogs (from changelog.Debian et al.) or both
-	    should be displayed.
+	    should be displayed.  The default is to display both.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
