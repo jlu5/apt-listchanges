@@ -1,6 +1,7 @@
 apt-listchanges (2.60) unstable; urgency=low
 
   * Fix clean target to remove translated man pages
+  * Document the corresponding configuration file option for --all
 
  -- 
 
