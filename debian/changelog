@@ -1,3 +1,9 @@
+apt-listchanges (2.47) unstable; urgency=low
+
+  * Fix the progress meter not to blow up if nothing was displayed
+
+ -- Matt Zimmerman <mdz@debian.org>  Fri, 27 Feb 2004 13:36:44 -0800
+
 apt-listchanges (2.46) unstable; urgency=low
 
   * Implement a --profile= command line option to select between different

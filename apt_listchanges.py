@@ -427,9 +427,10 @@ class fancyprogress:
         sys.stdout.flush()
 
     def progress_done(self):
-        sys.stdout.write(' ' * self.line_length + '\r')
-        sys.stdout.write(_("Reading changelogs") + "... " + _("Done") + "\n")
-        sys.stdout.flush()
+        if hasattr(self, 'line_length'):
+            sys.stdout.write(' ' * self.line_length + '\r')
+            sys.stdout.write(_("Reading changelogs") + "... " + _("Done") + "\n")
+            sys.stdout.flush()
 
 class runcommand:
     mode = os.P_WAIT
