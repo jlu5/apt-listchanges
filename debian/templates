@@ -31,7 +31,8 @@ _Description: To whom should apt-listchanges mail changelog entries?
  apt-listchanges can email a copy of displayed changelogs.  To what email
  address should they be sent?
  .
- Leave this empty if you do not want any email to be sent.
+ Multiple addresses may be specified, delimited by commas.  Leave this
+ empty if you do not want any email to be sent.
 
 Template: apt-listchanges/confirm
 Type: boolean
