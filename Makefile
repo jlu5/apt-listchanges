@@ -16,3 +16,7 @@ install: all
 	install -d $(DESTDIR)/usr/lib/apt-listchanges
 	install -m 755 browser-pipe $(DESTDIR)/usr/lib/apt-listchanges
 	$(MAKE) -C po install
+
+clean:
+	rm -f apt-listchanges.1
+	make -C po clean
