@@ -6,8 +6,11 @@ apt-listchanges (1.48) unstable; urgency=low
     us find changelogs in the new perl, and may speed things up a bit for
     packages where .../doc/foo -> bar and foo Depends: bar.
     (Closes: #98442)
+  * Fix up Makefile.in to work with the latest automake.  Use _SCRIPTS
+    instead of _PROGRAMS, which I should have probably done in the first
+    place.
 
- -- Matt Zimmerman <mdz@debian.org>  Tue, 22 May 2001 21:09:35 -0400
+ -- Matt Zimmerman <mdz@debian.org>  Tue, 22 May 2001 21:29:39 -0400
 
 apt-listchanges (1.47) unstable; urgency=low
 
