@@ -1,3 +1,10 @@
+apt-listchanges (2.41) unstable; urgency=low
+
+  * Don't print headers for packages where there are no changes to display
+    (Closes: #205858)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 17 Aug 2003 00:54:23 -0400
+
 apt-listchanges (2.40) unstable; urgency=low
 
   * Updated Spanish translation of debconf templates from Carlos Valdivia
