@@ -352,7 +352,10 @@ class frontend:
         pass
 
     def display_output(self,text):
-        pass
+        self._display_output(self._render(text))
+
+    def _render(self,text):
+        return text
 
     def confirm(self):
         return 1
@@ -412,43 +415,47 @@ class fancyprogress(frontend):
         sys.stdout.write(_("Reading changelogs") + "... " + _("Done") + "\n")
         sys.stdout.flush()
 
-class pager(ttyconfirm,fancyprogress):
-    pager = 'sensible-pager'
+class runcommand:
+    mode = os.P_WAIT
+    suffix = ''
     
-    def __init__(self,packages):
-        apply(fancyprogress.__init__, (self,packages))
+    def display_output(self, text):
+        if self.mode == os.P_NOWAIT:
+            if os.fork() != 0:
+                return
 
-    def display_output(self, text, suffix=''):
-        tmp = tempfile.NamedTemporaryFile(prefix='apt-listchanges',suffix=suffix)
-        tmp.write(text)
-        status = os.spawnlp(os.P_WAIT, self.pager, self.pager, tmp.name)
+        tmp = tempfile.NamedTemporaryFile(suffix=self.suffix)
+        tmp.write(self._render(text))
+        tmp.flush()
+        shellcommand = self.command + ' ' + tmp.name
+    
+        status = os.spawnl(os.P_WAIT, '/bin/sh', 'sh', '-c', shellcommand)
         if status != 0:
-            raise OSError(self.pager + ' exited with status ' + str(status))
+            raise OSError('Subprocess ' + shellcommand + ' exited with status ' + str(status))
 
-class xterm(ttyconfirm,fancyprogress):
-    def __init__(self,packages):
-        apply(fancyprogress.__init__, (self,packages))
-    
-    def display_output(self,text,suffix=''):
-        # Fork immediately so that we can get on with installation
-        if os.fork() == 0:
-            tmp = tempfile.NamedTemporaryFile(prefix='apt-listchanges',suffix=suffix)
-            tmp.write(text)
-            tmp.flush()
-            os.spawnlp(os.P_WAIT, 'x-terminal-emulator',
-                       'x-terminal-emulator','-T','apt-listchanges',
-                       '-e','sh','-c','%s %s' % (self.command,tmp.name))
-            sys.exit(0)
-
-class xterm_pager(xterm):
+class pager(runcommand,ttyconfirm,fancyprogress):
     command = 'sensible-pager'
 
+    def __init__(self,packages):
+        apply(fancyprogress.__init__, (self,packages))
+
+class xterm(runcommand,ttyconfirm,fancyprogress):
+    def __init__(self,packages):
+        apply(fancyprogress.__init__, (self,packages))
+        self.mode = os.P_NOWAIT
+        self.command = 'x-terminal-emulator -T apt-listchanges -e ' + self.xterm_command
+
+class xterm_pager(xterm):
+    xterm_command = 'sensible-pager'
+
 class html:
+    suffix = '.html'
+    
     bug_re = re.compile('(?P<linktext>#(?P<bugnum>[1-9]\d+))', re.IGNORECASE)
     # regxlib.com
     email_re = re.compile(r'([a-zA-Z0-9_\-\.]+)@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)')
 
-    def htmlify(self,text):
+    def _render(self,text):
         htmltext = cStringIO.StringIO()
         htmltext.write('''<html>
         <head>
@@ -478,24 +485,9 @@ class html:
         #super(html,self).display_output(htmltext)
         return htmltext.getvalue()
 
-    def display_output(self,text):
-        # One day, this will create a temporary file to allow use with
-        # any browser
-        pass
-
-class browser(pager,html):
-    pager = 'sensible-browser'
-
-    def __init__(self,packages):
-        pager.__init__(self,packages)
-        if os.environ.has_key('APT_LISTCHANGES_BROWSER'):
-            self.pager = os.environ['APT_LISTCHANGES_BROWSER']
-
-    def display_output(self,text):
-        pager.display_output(self,self.htmlify(text),suffix='.html')
-
-class xterm_browser(html,xterm_pager):
+class browser(html,pager):
     command = 'sensible-browser'
 
-    def display_output(self,text):
-        xterm.display_output(self,self.htmlify(text),suffix='.html')
+class xterm_browser(html,xterm):
+    xterm_command = 'sensible-browser'
+
