@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.1\n"
-"POT-Creation-Date: Wed Feb  6 20:27:32 2002\n"
+"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
 "PO-Revision-Date: 2002-01-14 09:01+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -12,23 +12,23 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: ../apt-listchanges:107
+#: ../apt-listchanges:109
 msgid "%s: will be newly installed"
 msgstr "%s: paigaldatakse uuesti"
 
-#: ../apt-listchanges:119
+#: ../apt-listchanges:121
 msgid "%s: Version %s has already been seen"
 msgstr "%s: Versioon %s on juba nähtud"
 
-#: ../apt-listchanges:145
+#: ../apt-listchanges:147
 msgid "Changes for %s"
 msgstr "Muudatused %s jaoks"
 
-#: ../apt-listchanges:154
+#: ../apt-listchanges:156
 msgid "Informational notes"
 msgstr "Informatiivsed märkused"
 
-#: ../apt-listchanges:168
+#: ../apt-listchanges:177
 msgid "didn't find any valid .deb archives"
 msgstr "ei leia ühtegi töökorras .deb arhiivi"
 
@@ -65,6 +65,6 @@ msgstr "Muudatuste logide lugemine"
 msgid "Done"
 msgstr "Korras"
 
-#: ../apt_listchanges.py:344
+#: ../apt_listchanges.py:343
 msgid "%s exited with status %d"
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: Wed Feb  6 20:27:32 2002\n"
+"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,23 +15,23 @@ msgstr ""
 "Generated-By: pygettext.py 1.4\n"
 
 
-#: ../apt-listchanges:107
+#: ../apt-listchanges:109
 msgid "%s: will be newly installed"
 msgstr ""
 
-#: ../apt-listchanges:119
+#: ../apt-listchanges:121
 msgid "%s: Version %s has already been seen"
 msgstr ""
 
-#: ../apt-listchanges:145
+#: ../apt-listchanges:147
 msgid "Changes for %s"
 msgstr ""
 
-#: ../apt-listchanges:154
+#: ../apt-listchanges:156
 msgid "Informational notes"
 msgstr ""
 
-#: ../apt-listchanges:168
+#: ../apt-listchanges:177
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Done"
 msgstr ""
 
-#: ../apt_listchanges.py:344
+#: ../apt_listchanges.py:343
 msgid "%s exited with status %d"
 msgstr ""
 

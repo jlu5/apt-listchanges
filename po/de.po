@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.3\n"
-"POT-Creation-Date: Wed Feb  6 20:27:32 2002\n"
+"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
 "PO-Revision-Date: 2002-02-01 15:28+0100\n"
 "Last-Translator: Leonard Michlmayr <leonard.michlmayr@ap.univie.ac.at>\n"
 "Language-Team: German <de@li.org>\n"
@@ -14,23 +14,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: ../apt-listchanges:107
+#: ../apt-listchanges:109
 msgid "%s: will be newly installed"
 msgstr "%s: wird erstmals installiert"
 
-#: ../apt-listchanges:119
+#: ../apt-listchanges:121
 msgid "%s: Version %s has already been seen"
 msgstr "%s: Version %s wurde schon einmal angezeigt"
 
-#: ../apt-listchanges:145
+#: ../apt-listchanges:147
 msgid "Changes for %s"
 msgstr "Änderungen für %s"
 
-#: ../apt-listchanges:154
+#: ../apt-listchanges:156
 msgid "Informational notes"
 msgstr "Anmerkungen"
 
-#: ../apt-listchanges:168
+#: ../apt-listchanges:177
 msgid "didn't find any valid .deb archives"
 msgstr "konnte keine gültigen .deb Archive finden"
 
@@ -68,7 +68,7 @@ msgstr "Lese Changelogs"
 msgid "Done"
 msgstr "Fertig"
 
-#: ../apt_listchanges.py:344
+#: ../apt_listchanges.py:343
 msgid "%s exited with status %d"
 msgstr "%s mit Status %d beendet"
 
