@@ -1,3 +1,9 @@
+apt-listchanges (2.60) unstable; urgency=low
+
+  * Fix clean target to remove translated man pages
+
+ -- 
+
 apt-listchanges (2.59-0.1) unstable; urgency=low
 
   * Non-maintainer upload for fixing l10n issues. Made
