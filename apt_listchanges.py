@@ -33,11 +33,14 @@ def changelog_variations(filename):
     return map(lambda format: format % filename, formats)
 
 def numeric_urgency(u):
+    u = string.lower(u)
     if u == 'low':
-        return 3
+        return 4
     elif u == 'medium':
-        return 2
+        return 3
     elif u == 'high':
+        return 2
+    elif u == 'emergency' or u == 'critical':
         return 1
     else:
         return 0
