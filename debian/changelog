@@ -4,7 +4,7 @@ apt-listchanges (1.1) unstable; urgency=low
   * Optionally add ourselves to /etc/apt/apt.conf when installed, and
     remove when we are removed.
 
-  -- Matt Zimmerman <mdz@csh.rit.edu>  Wed, 18 Oct 2000 19:48:53 -0400
+ -- Matt Zimmerman <mdz@csh.rit.edu>  Wed, 18 Oct 2000 19:48:53 -0400
 
 apt-listchanges (1.0) unstable; urgency=low
 
