@@ -599,7 +599,7 @@ sub longest {
   my $max;
 
   foreach my $x (@_) {
-    $max = $x if length($x) > length($max);
+    $max = $x if length($x) > length($max) || !defined($max);
   }
 
   $max;
