@@ -1,3 +1,11 @@
+apt-listchanges (2.10) unstable; urgency=low
+
+  * Fix a reversed urgency test which caused incorrect sorting when
+    multiple versions with different urgencies were included in the same
+    changelog display (Closes: #134345)
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 17 Feb 2002 00:16:27 -0500
+
 apt-listchanges (2.9) unstable; urgency=low
 
   * Don't show a harmless error message when the config file does not
