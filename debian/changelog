@@ -1,3 +1,11 @@
+apt-listchanges (2.11) unstable; urgency=low
+
+  * Skip packages which are being removed (Closes: #135166)
+  * Print newline to stderr instead of stdout in the text frontend
+    (Closes: #136381)
+
+ -- Matt Zimmerman <mdz@debian.org>  Fri,  1 Mar 2002 20:27:44 -0500
+
 apt-listchanges (2.10) unstable; urgency=low
 
   * Fix a reversed urgency test which caused incorrect sorting when
