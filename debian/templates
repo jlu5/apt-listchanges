@@ -2,21 +2,21 @@ Template: apt-listchanges/frontend
 Type: select
 _Choices: pager, browser, xterm-pager, xterm-browser, text, mail, none
 Default: pager
-_Description: How should changelogs be displayed with apt?
- apt-listchanges can display changelog entries in a number of different
+_Description: How should changes be displayed with apt?
+ apt-listchanges can display package changes in a number of different
  ways.
  .
- pager - Use your preferred pager
+ pager - Use your preferred pager to display changes one page at a time
  .
- browser - Display HTML-formatted changelogs using a web browser
+ browser - Display HTML-formatted changes using a web browser
  .
  xterm-pager - Like pager, but in an xterm in the background
  .
  xterm-browser - Like browser, but in an xterm in the background
  .
- text  - Print changelogs to your terminal (without pausing)
+ text  - Print changes to your terminal (without pausing)
  .
- mail  - Only send changelogs via mail
+ mail  - Only send changes via mail
  .
  none  - Do not run automatically from apt
  .
@@ -27,8 +27,8 @@ _Description: How should changelogs be displayed with apt?
 Template: apt-listchanges/email-address
 Type: string
 _Default: root
-_Description: To whom should apt-listchanges mail changelog entries?
- apt-listchanges can email a copy of displayed changelogs.  To what email
+_Description: To whom should apt-listchanges mail changes?
+ apt-listchanges can email a copy of displayed changes.  To what email
  address should they be sent?
  .
  Multiple addresses may be specified, delimited by commas.  Leave this
@@ -36,9 +36,9 @@ _Description: To whom should apt-listchanges mail changelog entries?
 
 Template: apt-listchanges/confirm
 Type: boolean
-Default: true
-_Description: Should apt-listchanges prompt for confirmation after displaying changelogs?
- After giving you a chance to display changelog entries, apt-listchanges
+Default: false
+_Description: Should apt-listchanges prompt for confirmation after displaying changes?
+ After giving you a chance to read the list of changes, apt-listchanges
  can ask whether or not you would like to continue. This is useful when
  running from apt, as it gives you a chance to abort the upgrade if you see
  a change you do not want to apply (yet).
@@ -49,7 +49,16 @@ _Description: Should apt-listchanges prompt for confirmation after displaying ch
 Template: apt-listchanges/save-seen
 Type: boolean
 Default: true
-_Description: Should apt-listchanges skip changelogs that have already been seen?
- apt-listchanges has the capability to keep track of which changelog
- entries have already been displayed, and to skip them in future
+_Description: Should apt-listchanges skip changes that have already been seen?
+ apt-listchanges has the capability to keep track of which changes
+ have already been displayed, and to skip them in future
  invocations. This is useful, for example, when retrying an upgrade.
+
+Template: apt-listchanges/which
+Type: select
+_Choices: news, both, changelogs
+Default: news
+_Description: Which types of changes should be displayed with apt?
+  news - important news items only
+  both - both news and detailed changelogs
+  changelogs - detailed changelogs only

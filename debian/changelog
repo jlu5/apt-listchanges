@@ -1,3 +1,28 @@
+apt-listchanges (2.50) unstable; urgency=low
+
+  * Update debhelper compatibility level to 4 and remove debian/conffiles
+  * Use debian/compat rather than DH_COMPAT
+  * Standards-Version: 3.6.1 (no changes needed)
+  * Add new debconf question to ask whether to display news, changelogs or
+    both.  Ask it at low priority, and default to news (Closes: #222362)
+  * Adjust priorities and defaults of debconf questions to be less
+    intrusive, and oriented towards a wider range of users:
+    - Reduce priority of apt-listchanges/save-seen to low (almost
+      everybody seems to want the default)
+    - Reduce priority of apt-listchanges/email-address to low
+      (still mails root by default; scream if you think this should remain
+      medium)
+    - Reduce priority of apt-listchanges/confirm to low, and change the
+      default to false (no confirmation prompt)
+    - End result: an installation at priority medium or higher will
+      ask only one question (apt-listchanges/frontend), and display only
+      NEWS.Debian items to the user on upgrades, with no confirmation
+      prompt.  Feedback welcome.
+  * Minor clarifications to some templates based on display of news as
+    well as changelogs.  Mostly s/changelogs/changes/
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 13 Mar 2004 15:37:55 -0800
+
 apt-listchanges (2.49) unstable; urgency=low
 
   * Remove ugly ucf/debconf workaround, use ucf --debconf-ok and depend on

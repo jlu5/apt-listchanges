@@ -31,6 +31,9 @@ if [ "$action" = "configure" ]; then
         echo "save_seen=/var/lib/apt/listchanges.db" >> $PREFERENCES.new
     fi
 
+    db_get apt-listchanges/which
+    echo "which=$RET" >> $PREFERENCES.new
+
     ucf --debconf-ok $PREFERENCES.new $PREFERENCES
     rm -f $PREFERENCES.new
 

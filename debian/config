@@ -4,8 +4,9 @@
 . /usr/share/debconf/confmodule
 
 db_input medium apt-listchanges/frontend || true
-db_input medium apt-listchanges/save-seen || true
-db_input medium apt-listchanges/email-address || true
+db_input low apt-listchanges/save-seen || true
+db_input low apt-listchanges/email-address || true
+db_input low apt-listchanges/which || true
 db_go
 
 db_get apt-listchanges/frontend
@@ -14,7 +15,7 @@ case "$RET" in
         db_set apt-listchanges/confirm "false"
         ;;
     *)
-        db_input medium apt-listchanges/confirm || true
+        db_input low apt-listchanges/confirm || true
         db_go
         ;;
 esac
