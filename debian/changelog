@@ -1,3 +1,11 @@
+apt-listchanges (1.57) unstable; urgency=low
+
+  * Don't get confused when there are no changelog entries for the
+    newly-installed version of a package.  This should never happen, of
+    course, but it just did with cracklib2.
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu,  6 Sep 2001 20:10:04 -0400
+
 apt-listchanges (1.56) unstable; urgency=low
 
   * Updated Galician translation of Debconf templates from Jacobo Tarrio
