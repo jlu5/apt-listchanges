@@ -1,8 +1,9 @@
 Template: apt-listchanges/frontend
 Type: select
 Choices: pager, xterm-pager, text, mail, none
-Choices-es: paginador, paginador-xterm, texto, correo, ninguno
+Choices-es: paginador, paginador-xterm, texto, correo, ninguna
 Default: pager
+Default-es: paginador
 Description: How should changelogs be displayed with apt?
  apt-listchanges can display changelog entries in a number of different
  ways.
@@ -20,35 +21,35 @@ Description: How should changelogs be displayed with apt?
  This setting can be overridden by a command-line option or an environment
  variable.  Note that you can still send a copy via mail with all of the
  frontends except 'none'.
-Description-es: ¿Cómo quieres que se muestren las bitácoras con apt?
+Description-es: ¿Cómo quiere que se muestren las bitácoras (logs) con apt?
  apt-listchanges puede mostrar las bitácoras de varias maneras.
  .
- paginador - Usa tu paginador preferido
+ paginador - Usa su paginador preferido
  .
- paginador-xterm - Usa tu paginador preferido sobre una xterm en el fondo
+ paginador-xterm - Usa su paginador preferido sobre una xterm
  .
- texto   - Imprime las bitácoras en tu terminal (sin hacer ninguna pausa)
+ texto   - Imprime las bitácoras en su terminal (sin hacer ninguna pausa)
  .
  correo  - Sólo envía las bitácoras por correo
  .
  ninguno - No ejecutar automáticamente desde apt
  .
- Puedes reemplazar esta configuración usando una opción en la línea de
- comandos o con una variable de entorno. Ten en cuenta que puedes mandar
- una copia por correo con todas las interfaces excepto "ninguno".
+ Puede reemplazar esta configuración usando una opción en la línea de
+ comandos o con una variable de entorno. Tenga en cuenta que aún así se
+ puede mandar una copia por correo habiendo seleccionado cualquiera de
+ las maneras de mostrar las bitácoras, excepto con «ninguna».
 
 Template: apt-listchanges/email-address
 Type: string
 Default: root
-Default-es: root
 Description: To whom should apt-listchanges mail changelog entries?
  apt-listchanges can email a copy of displayed changelogs.  To what email
  address should they be sent?
  .
  Leave this empty if you do not want any email to be sent.
-Description-es: ¿A quién debe enviar las bitácoras apt-listchanges?
+Description-es: ¿A quién debe apt-listchanges enviar las bitácoras?
  apt-listchanges puede enviar una copia de las bitácoras mostradas. ¿A qué
- dirección de correo quieres que sean enviadas?
+ dirección de correo quiere que se envíen?
 
 Template: apt-listchanges/confirm
 Type: boolean
@@ -62,13 +63,13 @@ Description: Should apt-listchanges prompt for confirmation after displaying cha
  This setting does not apply to the 'mail' or 'none' frontends, and can be
  overridden with a command line option.
 Description-es: ¿Debería apt-listchanges pedir confirmación después de mostrar las bitácoras?
- Después de darte la oportunidad de mostrar las bitácoras, apt-listchanges
- puede preguntar si quieres o no continuar. Ésto es útil cuando se ejecuta
- desde apt, ya que te da la oportunidad de abortar la actualización si ves
- algún cambio que no quieres aplicar (todavía).
+ Después de darle la oportunidad de mostrar las bitácoras, apt-listchanges
+ puede preguntar si quiere o no continuar. Ésto es útil cuando se ejecuta
+ desde apt, ya que le ofrece la oportunidad de abortar la actualización si
+ ve algún cambio que no quiere aplicar (aún).
  .
- Esta opción no afecta a las interfaces "mail" o "ninguno" y se puede
- reemplazar desde la línea de comandos.
+ Esta opción no afecta a las maneras de mostrar las bitácoras «correo» o
+ «ninguna» y se puede reemplazar desde la línea de comandos.
 
 Template: apt-listchanges/overwrite_etc_apt_listchanges_conf
 Type: boolean
@@ -83,13 +84,13 @@ Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
  reason, answer "no" now.
 Description-es: ¿Debería apt-listchanges sobreescribir /etc/apt/listchanges.conf?
  apt-listchanges puede configurar todas las opciones en
- /etc/apt/listchanges.conf haciéndote preguntas.  Este fichero es leído y
- procesado cada vez que se ejecuta apt-listchanges, y se usa para
- establecer opciones por defecto. Todas las opciones pueden reemplazarse en
- la línea de comandos.
+ /etc/apt/listchanges.conf haciéndole preguntas.  Este fichero se lee y
+ procesa cada vez que se ejecuta apt-listchanges, y se usa para
+ establecer opciones por defecto. Todas las opciones pueden reemplazarse
+ en la línea de comandos.
  .
- Si quieres editar /etc/apt/listchanges.conf manualmente por alguna razón,
- contesta "no" ahora.
+ Si quiere editar /etc/apt/listchanges.conf manualmente por alguna razón,
+ conteste «no» ahora.
 
 Template: apt-listchanges/save-seen
 Type: boolean
@@ -98,7 +99,7 @@ Description: Should apt-listchanges skip changelogs that have already been seen?
  apt-listchanges has the capability to keep track of which changelog
  entries have already been displayed, and to skip them in future
  invocations. This is useful, for example, when retrying an upgrade.
-Description-es: Debería apt-listchanges ignorar los cambios que ya se han visto?
+Description-es: ¿Debería apt-listchanges ignorar los cambios que ya se han visto?
  apt-listchanges puede hacer un seguimiento de las bitácoras que ya se han
- mostrado anteriormente, e ignorarlos en futuras ejecuciones. Esto
+ mostrado anteriormente, e ignorarlas en futuras ejecuciones. Esto
  es útil, por ejemplo, cuando se reintenta una actualización.
