@@ -1,72 +1,179 @@
-# german po-file for apt-listchanges
-# Copyright (C) 2002 Free Software Foundation
-# Morten Brix Pedersen <morten@wtf.dk>, 2002.
+# translation of apt-listchanges_2.51-da.po to Danish
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans#
+#    Developers do not need to manually edit POT or PO files.
+# Claus Hindsgaul <claus_h@image.dk>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.3\n"
-"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
-"PO-Revision-Date: 2002-02-01 15:28+0100\n"
-"Last-Translator: Morten Brix Pedersen <morten@wtf.dk>\n"
-"Language-Team: n/a\n"
+"Project-Id-Version: apt-listchanges_2.51-da\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-26 23:01-0800\n"
+"PO-Revision-Date: 2004-03-21 15:12+0100\n"
+"Last-Translator: Claus Hindsgaul <claus_h@image.dk>\n"
+"Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: pygettext.py 1.4\n"
+"X-Generator: KBabel 1.3.1\n"
 
-#: ../apt-listchanges:109
-msgid "%s: will be newly installed"
-msgstr "%s: vil blive installeret som ny"
+#. Type: select
+#. Choices
+#: ../templates:3
+msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+msgstr "tekstviser, netsøger, xterm-tekstviser, xterm-netsøger, tekst, post, ingen"
 
-#: ../apt-listchanges:121
-msgid "%s: Version %s has already been seen"
-msgstr "%s: Version %s er allerede blevet set"
+#. Type: select
+#. Description
+#: ../templates:5
+msgid "How should changelogs be displayed with apt?"
+msgstr "Hvordan skal ændringsloggen (changelogs) vises med apt?"
 
-#: ../apt-listchanges:147
-msgid "Changes for %s"
-msgstr "�ndringer for %s"
+#. Type: select
+#. Description
+#: ../templates:5
+msgid "apt-listchanges can display changelog entries in a number of different ways."
+msgstr "apt-listchanges kan vise dele af ændringslogger på flere forskellige måder."
 
-#: ../apt-listchanges:156
-msgid "Informational notes"
-msgstr "Informationer"
+#. Type: select
+#. Description
+#: ../templates:5
+msgid "pager - Use your preferred pager"
+msgstr "tekstviser - Brug din foretrukne tekstviser ('pager')"
 
-#: ../apt-listchanges:177
-msgid "didn't find any valid .deb archives"
-msgstr "fandt ikke noget validt .deb arkiv"
+#. Type: select
+#. Description
+#: ../templates:5
+msgid "browser - Display HTML-formatted changelogs using a web browser"
+msgstr "netsøger - Vis HTML-formaterede ændringslogger med en netsøger"
 
-#: ../apt_listchanges.py:184
+#. Type: select
+#. Description
+#: ../templates:5
+msgid "xterm-pager - Like pager, but in an xterm in the background"
+msgstr "xterm-tekstviser - Som tekstviser, men i en xterm-terminal i baggrunden"
+
+#. Type: select
+#. Description
+#: ../templates:5
+msgid "xterm-browser - Like browser, but in an xterm in the background"
+msgstr "xterm-netsøger - Som netsøger, men i en xterm-terminal i baggrunden"
+
+#. Type: select
+#. Description
+#: ../templates:5
+msgid "text  - Print changelogs to your terminal (without pausing)"
+msgstr "tekst  - Skriv ændringsloggen til din terminal (uden pauser)"
+
+#. Type: select
+#. Description
+#: ../templates:5
+msgid "mail  - Only send changelogs via mail"
+msgstr "post  - Send kun ændringsloggen via e-post"
+
+#. Type: select
+#. Description
+#: ../templates:5
+msgid "none  - Do not run automatically from apt"
+msgstr "ingen - Kør ikke automatisk fra apt"
+
+#. Type: select
+#. Description
+#: ../templates:5
 msgid ""
-"Wrong or missing VERSION from apt pipeline\n"
-"(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
+"This setting can be overridden by a command-line option or an environment "
+"variable.  Note that you can still send a copy via mail with all of the "
+"frontends except 'none'."
 msgstr ""
-"Forkert eller manglende VERSION fra apt's kommunikations linje\n"
-"(er Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version sat til 2?)\n"
+"Denne indstilling kan tilsidesættes med et kommandolinje-tilvalg eller en "
+"miljøvariabel. Bemærk at du stadig kan sende en kopi via e-post til alle "
+"metoderne, undtagen 'ingen'."
 
-#: ../apt_listchanges.py:225
-msgid "Mailing changelogs to %s"
-msgstr "Sender �ndringsfiler til %s"
+#. Type: string
+#. Default
+#: ../templates:29
+msgid "root"
+msgstr "root"
 
-#: ../apt_listchanges.py:228
-msgid "apt-listchanges output for %s"
-msgstr "apt-listchanges uddata for %s"
+#. Type: string
+#. Description
+#: ../templates:30
+msgid "To whom should apt-listchanges mail changelog entries?"
+msgstr "Hvem skal apt-listchanges sende changsloggen til?"
 
-#: ../apt_listchanges.py:239
-msgid "The newt frontend is deprecated, using pager"
-msgstr "Newt gr�nsefladen er uddateret, bruger pager"
+#. Type: string
+#. Description
+#: ../templates:30
+msgid ""
+"apt-listchanges can email a copy of displayed changelogs.  To what email "
+"address should they be sent?"
+msgstr ""
+"apt-listchanges kan sende en kopi af de viste ændringslogs. Hvilken "
+"e-postadresse skal de sendes til?"
 
-#: ../apt_listchanges.py:266
-msgid "Do you want to continue? [Y/n]? "
-msgstr "Vil du forts�tte? [Y/n]? "
+#. Type: string
+#. Description
+#: ../templates:30
+msgid ""
+"Multiple addresses may be specified, delimited by commas.  Leave this empty "
+"if you do not want any email to be sent."
+msgstr ""
+"Der kan angives flere adresser adskilt af komma. Lad feltet stå tomt, hvis du "
+"ikke vil have at der sendes nogen breve."
 
-#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
-#: ../apt_listchanges.py:306
-msgid "Reading changelogs"
-msgstr "L�ser �ndringsfiler"
+#. Type: boolean
+#. Description
+#: ../templates:40
+msgid "Should apt-listchanges prompt for confirmation after displaying changelogs?"
+msgstr "Skal apt-listchanges bede om bekræftelse efter visning af ændringsloggen?"
 
-#: ../apt_listchanges.py:306
-msgid "Done"
-msgstr "F�rdig"
+#. Type: boolean
+#. Description
+#: ../templates:40
+msgid ""
+"After giving you a chance to display changelog entries, apt-listchanges can "
+"ask whether or not you would like to continue. This is useful when running "
+"from apt, as it gives you a chance to abort the upgrade if you see a change "
+"you do not want to apply (yet)."
+msgstr ""
+"Når apt-listchanges har vist dig ændringsloggen, kan den spørge om du vil "
+"fortsætte. Dette er nyttigt, når den køres fra apt, da det giver dig mulighed "
+"for at afbryde opgraderingen hvis du opdager en ændring, du ikke ønsker (endnu)."
 
-#: ../apt_listchanges.py:343
-msgid "%s exited with status %d"
-msgstr "%s afsluttede med status %d"
+#. Type: boolean
+#. Description
+#: ../templates:40
+msgid ""
+"This setting does not apply to the 'mail' or 'none' frontends, and can be "
+"overridden with a command line option."
+msgstr ""
+"Denne indstilling gælder ikke metoderne \"post\" og \"ingen\", og kan "
+"omgås med et kommandolinjetilvalg."
+
+#. Type: boolean
+#. Description
+#: ../templates:52
+msgid "Should apt-listchanges skip changelogs that have already been seen?"
+msgstr ""
+"Skal apt-listchanges springe de ændringslogger over, der er blevet vist "
+"før?"
+
+#. Type: boolean
+#. Description
+#: ../templates:52
+msgid ""
+"apt-listchanges has the capability to keep track of which changelog entries "
+"have already been displayed, and to skip them in future invocations. This is "
+"useful, for example, when retrying an upgrade."
+msgstr ""
+"apt-listchanges kan holde styr på hvilke ændringslogger, der allerede "
+"er blevet vist og springe dem over ved senere kørsler. Dette er nyttigt "
+"hvis du f.eks. gentager et forsøg på at opgradere."
+
