@@ -12,7 +12,7 @@ install: all
 	install -d $(DESTDIR)/etc/apt/apt.conf.d
 	install -m 644 debian/apt.conf \
 		$(DESTDIR)/etc/apt/apt.conf.d/20listchanges
-	install -d $(DESTDIR)/usr/share/man/man1 $(DESTDIR)/us/share/man/es/man1
+	install -d $(DESTDIR)/usr/share/man/man1 $(DESTDIR)/usr/share/man/es/man1
 	install -m 644 apt-listchanges.1 $(DESTDIR)/usr/share/man/man1
 	install -m 644 apt-listchanges.es.1 $(DESTDIR)/usr/share/man/es/man1
 	install -d $(DESTDIR)/usr/share/apt-listchanges
