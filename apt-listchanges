@@ -149,13 +149,7 @@ foreach my $deb (@debs) {
   next if $source_packages_processed{$sourcepackage}++;
 
   # Determine the changelog filenames
-  my @changelog_filenames;
-  if ($version =~ /-/) {
-    @changelog_filenames = ('changelog.Debian');
-  } else {
-    # Debian native package
-    @changelog_filenames = ('changelog');
-  }
+  my @changelog_filenames = ('changelog.Debian');
 
   # Check both compressed and uncompressed
   @changelog_filenames = map { ($_, "$_.gz") } @changelog_filenames;
@@ -165,27 +159,46 @@ foreach my $deb (@debs) {
 				  "./usr/share/doc/$pkg/$_") }
 				  @changelog_filenames;
 
-  # Extract relevant changelog info
-  open(DPKGDEB, "dpkg-deb --fsys-tarfile $deb | tar xOf - @changelog_filenames 2>/dev/null | zcat -f|") || die $!;
-  
-  while (<DPKGDEB>) {
-    if ( /^(tar|dpkg-deb):/ ) {
-      # Errors from tar or dpkg-deb
-      $errors .= $_;
-      next;
-    }
+  my @changelog_filenames_nodebian = @changelog_filenames;
 
-    if ( /^\S+ \((.*)\)/ ) {
+  map { s/\.Debian//g } @changelog_filenames_nodebian;
+
+  # First try changelog.Debian and friends.  If we don't find one, it
+  # will be a native package that doesn't provide a changelog.Debian,
+  # so we try plain changelog
+
+  foreach my $changelog_filenames (\@changelog_filenames,
+				   \@changelog_filenames_nodebian) {
+
+    # Extract relevant changelog info
+    open(DPKGDEB, "dpkg-deb --fsys-tarfile $deb | tar xOf - @$changelog_filenames 2>/dev/null | zcat -f|") || die $!;
+    
+    my $lines_read = 0;
+    while (<DPKGDEB>) {
+      ++$lines_read;
+      
+      if ( /^(tar|dpkg-deb):/ ) {
+	# Errors from tar or dpkg-deb
+	$errors .= $_;
+	next;
+      }
+      
+      if ( /^\S+ \((.*)\)/ ) {
       last if dpkg_compare_versions($1, 'le', $oldversion);
     }
-
+      
     $changes .= $_;
-  }
+    }
+    
+    # Read any remaining data from a large changelog, to avoid a 'broken
+    # pipe' error message on close
+    while (<DPKGDEB>) {}
+    close(DPKGDEB);
 
-  # Read any remaining data from a large changelog, to avoid a 'broken
-  # pipe' error message on close
-  while (<DPKGDEB>) {}
-  close(DPKGDEB);
+    # Quit if we got something (don't try the next set of changelog
+    # filenames)
+    last if $lines_read > 0;
+ }
 
 } continue {
   # Update the progress bar
