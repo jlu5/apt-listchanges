@@ -4,6 +4,7 @@ import ConfigParser
 import getopt
 import os
 import re
+import string
 import sys
 import gettext
 import email.Message
@@ -62,7 +63,7 @@ class Package:
         filenames = []
         if which == 'both' or which == 'news':
             filenames.extend(news_filenames)
-        if which == 'both' or which == 'changelog':
+        if which == 'both' or which == 'changelogs':
             filenames.extend(changelog_filenames)
             filenames.extend(changelog_filenames_native)
 
@@ -181,6 +182,7 @@ class Config:
         self.save_seen = None
         self.mode = 'cmdline'
         self.which = 'both'
+        self.allowed_which = ('both', 'news', 'changelogs')
 
     def read(self,file):
         self.parser = ConfigParser.ConfigParser()
@@ -211,7 +213,7 @@ class Config:
         try:
             (optlist, args) = getopt.getopt(argv[1:], 'vf:s:cah', [
                 "apt", "verbose", "frontend=", "email-address=", "confirm",
-                "all", "headers", "save_seen=", "debug", "which", "version", "help"])
+                "all", "headers", "save_seen=", "debug", "which=", "version", "help"])
         except getopt.GetoptError:
             return None
 
@@ -248,7 +250,12 @@ class Config:
             elif opt == '--save_seen':
                 self.save_seen = arg
             elif opt == '--which':
-                self.which = arg
+                if arg in self.allowed_which:
+                    self.which = arg
+                else:
+                    print 'Unknown option %s for --which.  Allowed are: %s.' % \
+                        (arg, string.join(self.allowed_which, ", "))
+                    sys.exit(1)
             elif opt == '--debug':
                 self.debug = 1
 

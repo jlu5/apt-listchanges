@@ -3,6 +3,10 @@ apt-listchanges (2.43) unstable; urgency=low
   * Fix the documentation to reflect the removal of support for
     apt-listchanges-specific BROWSER environment variables; this is all
     done in the usual way now, using sensible-browser.
+  * Updated Polish translation of debconf templates from Bartosz
+    Zapalowski <bartek@klepisko.eu.org> (Closes: #208956)
+  * Fix --which option to actually work, and to match the documentation
+    (Closes: #215369)
 
  --
 
