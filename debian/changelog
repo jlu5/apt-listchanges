@@ -1,3 +1,10 @@
+apt-listchanges (1.56) unstable; urgency=low
+
+  * Rename apt.conf.d/20-apt-listchanges.conf to apt.conf.d/20listchanges
+    to meet the new filename restrictions in apt 0.5.4
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 25 Aug 2001 18:08:56 -0400
+
 apt-listchanges (1.55) unstable; urgency=low
 
   * Add fallback from xterm-pager to pager (Closes: #107211)
