@@ -193,7 +193,7 @@ def read_apt_pipeline():
         if not aptconfig or aptconfig == '\n':
             break
 
-        (option, value, rest) = aptconfig.rstrip().split('=', 2)
+        (option, value) = aptconfig.rstrip().split('=', 1)
         
         if option == 'quiet':
             config.quiet = value
