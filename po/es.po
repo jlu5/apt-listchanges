@@ -2,95 +2,111 @@
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Jordi Mallach <jordi@debian.org>, 2001
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 1.32\n"
-"POT-Creation-Date: 2001-02-13 00:10+0100\n"
-"PO-Revision-Date: 2001-02-13 00:15+0100\n"
+"Project-Id-Version: apt-listchanges 1.54\n"
+"POT-Creation-Date: 2001-08-27 18:51+0200\n"
+"PO-Revision-Date: 2001-08-27 19:57+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"Language-Team: Debian Spanish l10n <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso8859-1\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apt-listchanges:95
+#: apt-listchanges:146
 msgid "Must specify either --apt or filenames to process!"
-msgstr "Tienes que especificar --apt o bien paquetes a procesar!"
+msgstr "¡Tienes que especificar --apt o bien paquetes a procesar!"
 
-#: apt-listchanges:118
+#: apt-listchanges:165
 #, c-format
-msgid "Unable to determine package name for %s"
-msgstr "No se puede determinar el nombre del paquete en %s"
+msgid "Unable to determine package name for file %s"
+msgstr "No se puede determinar el nombre del paquete para el fichero %s"
 
-#: apt-listchanges:124
+#: apt-listchanges:171
 #, c-format
-msgid "Unable to determine version for %s"
-msgstr "No se puede determinar la versión en %s"
+msgid "Unable to determine version for file %s"
+msgstr "No se puede determinar la versión para el fichero %s"
 
-#: apt-listchanges:130
-#, c-format
-msgid "Unable to determine source package name for %s"
-msgstr "No se puede determinar el nombre del paquete de fuentes en %s"
-
-#: apt-listchanges:139
+#: apt-listchanges:185
 #, c-format
 msgid "%s: will be newly installed"
 msgstr "%s: se instalará por primera vez"
 
-#: apt-listchanges:149
+#: apt-listchanges:193
 #, c-format
-msgid "%s: Version $version is already installed"
-msgstr "%s: La versión $version ya está instalada"
+msgid "%s: Version %s is already installed"
+msgstr "%s: La versión %s ya está instalada"
 
-#: apt-listchanges:160
+#: apt-listchanges:200 apt-listchanges:216
+#, c-format
+msgid "%s: Version %s changes have already been seen"
+msgstr "%s: La versión %s ya está instalada"
+
+#: apt-listchanges:209
 #, c-format
 msgid "%s: Version %s is older than installed version (%s)"
 msgstr "%s: La versión %s es más antigua que la versión instalada (%s)"
 
-#: apt-listchanges:239
+#: apt-listchanges:328
+#, c-format
+msgid "Changes for %s"
+msgstr "Cambios para %s"
+
+#: apt-listchanges:340
+msgid "Informational notes"
+msgstr "Notas informativas"
+
+#: apt-listchanges:344
 msgid "Error output follows"
 msgstr "La salida de error sigue"
 
-#: apt-listchanges:282
+#: apt-listchanges:388
 msgid "In order to use the newt frontend, you must install libnewt-perl"
 msgstr "Para usar el frontend de newt, necesitas instalar libnewt-perl"
 
-#: apt-listchanges:295
+#: apt-listchanges:401
 msgid "Reading changelogs"
 msgstr "Leyendo changelogs"
 
-#: apt-listchanges:300
+#: apt-listchanges:406
 msgid "Scanning packages..."
 msgstr "Escaneando paquete..."
 
-#: apt-listchanges:329
+#: apt-listchanges:435
 msgid "Displaying changelogs"
 msgstr "Mostrando changelogs"
 
-#: apt-listchanges:370
+#: apt-listchanges:476
 #, c-format
 msgid "Reading changelogs...%s"
 msgstr "Leyendo changelogs...%s"
 
-#: apt-listchanges:371
+#: apt-listchanges:477
 msgid "Done"
 msgstr "Hecho"
 
-#: apt-listchanges:399
+#: apt-listchanges:505
 msgid "Unable to open tty for confirmation, assuming yes"
 msgstr "No se puede abrir la tty para pedir confirmación, asumiendo sí"
 
-#: apt-listchanges:408
+#: apt-listchanges:513
 msgid "Do you want to continue [Y/n]? "
 msgstr "Quieres continuar? [Y/n]"
 
-#: apt-listchanges:435
+#: apt-listchanges:538
 #, c-format
-msgid "Unable to open temporary file %s: $!"
-msgstr "No se puede abrir archivo temporal %s: $!"
+msgid "Unable to open temporary file %s: %s"
+msgstr "No se puede abrir archivo temporal %s: %s"
 
-#: apt-listchanges:506
+#: apt-listchanges:614
 #, c-format
 msgid "Changelogs mailed to %s"
 msgstr "Changelogs enviados a %s"
+
+#: apt-listchanges:701
+msgid "Wrong or missing VERSION from apt pipeline"
+msgstr "VERSION errónea o inexistente proviniente de la tubería de apt"
+
+#: apt-listchanges:702
+msgid "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)"
+msgstr "(¿está Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version a 2?)"
