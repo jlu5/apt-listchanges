@@ -53,8 +53,8 @@ $(PACKAGE).pot: $(POTFILES)
 install: all
 	for file in $(MOFILES); do \
                 lang=`echo $$file | sed 's/\.mo//'`; \
-                install -d $(DESTDIR)$(prefix)/usr/share/locale/$$lang/LC_MESSAGES/; \
-                install -m 0644 $$file $(DESTDIR)$(prefix)/usr/share/locale/$$lang/LC_MESSAGES/$(PACKAGE).mo; \
+                install -d $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/; \
+                install -m 0644 $$file $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(PACKAGE).mo; \
         done
 
 mostlyclean:
