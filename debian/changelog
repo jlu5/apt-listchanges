@@ -1,3 +1,10 @@
+apt-listchanges (1.8) unstable; urgency=low
+
+  * Documented frontend and email-address options in manpage, corrected
+    program name in manpage.
+
+ -- Matt Zimmerman <mdz@debian.org>  Sat, 18 Nov 2000 04:46:52 -0500
+
 apt-listchanges (1.7) unstable; urgency=low
 
   * Multiple frontend support added.  You can now choose to view
