@@ -250,7 +250,7 @@ if ($errors) {
 &{ $frontend->{display_output} }($frontend, $output);
 
 if ($confirm && $output) {
-  exit 1 unless &{ $frontend->{confirm} }($frontend);
+  exit 10 unless &{ $frontend->{confirm} }($frontend);
 }
 
 exit 0;
