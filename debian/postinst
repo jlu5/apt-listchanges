@@ -11,43 +11,28 @@ if [ "$action" = "configure" ]; then
     # Source debconf library.
     . /usr/share/debconf/confmodule
 
-    db_get apt-listchanges/overwrite_etc_apt_listchanges_conf
-    if [ "$RET" = "true" -o ! -e "$PREFERENCES" ]; then
-        if test -f $PREFERENCES; then
-            cp $PREFERENCES $PREFERENCES.old
+    
+    echo "[apt]" >> $PREFERENCES.new
 
-            if grep -q '^\[.*]$' $PREFERENCES; then
-                # New-style config file, copy over everything except [apt]
-                perl -ne 'print unless /^\[apt\]$/ .. (/^\[(.*)\]$/ && $1 ne "apt")' \
-                    < $PREFERENCES.old > $PREFERENCES
-            else
-                # Old-style config file or no [apt] section, start fresh
-                : > $PREFERENCES
-            fi
-        fi
+    db_get apt-listchanges/frontend
+    echo "frontend=$RET" >> $PREFERENCES.new
 
-        echo "[apt]" >> $PREFERENCES
+    db_get apt-listchanges/email-address
+    echo "email_address=$RET" >> $PREFERENCES.new
 
-	db_get apt-listchanges/frontend
-	echo "frontend=$RET" >> $PREFERENCES
-
-	db_get apt-listchanges/email-address
-	echo "email_address=$RET" >> $PREFERENCES
-
-	db_get apt-listchanges/confirm
-	if [ "$RET" = "true" ]; then
-	  echo "confirm=1" >> $PREFERENCES
-	else
-	  echo "confirm=0" >> $PREFERENCES
-	fi
-
-	db_get apt-listchanges/save-seen
-	if [ "$RET" = "true" ]; then
-	  echo "save_seen=/var/lib/apt/listchanges.db" >> $PREFERENCES
-	fi
-
-	rm -f $PREFERENCES.old
+    db_get apt-listchanges/confirm
+    if [ "$RET" = "true" ]; then
+        echo "confirm=1" >> $PREFERENCES.new
+    else
+        echo "confirm=0" >> $PREFERENCES.new
     fi
+
+    db_get apt-listchanges/save-seen
+    if [ "$RET" = "true" ]; then
+        echo "save_seen=/var/lib/apt/listchanges.db" >> $PREFERENCES.new
+    fi
+
+    ucf $PREFERENCES.new $PREFERENCES
 
     ## Cleanup from older versions
 
