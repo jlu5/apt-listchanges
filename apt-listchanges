@@ -102,7 +102,7 @@ for deb in debs:
             fromversion = seen[srcpackage]
         else:
             statusentry = status.find('Package',binpackage)
-            if statusentry.installed():
+            if statusentry and statusentry.installed():
                 fromversion = statusentry.sourceversion()
             else:
                 # Package not installed or seen
