@@ -1,3 +1,22 @@
+apt-listchanges (1.15) unstable; urgency=low
+
+  * All interactive frontends now have the option of asking the user
+    whether or not to continue, in a way appropriate for the selected
+    frontend.  Right now, this is a simple text prompt for all of them
+    except mail, which is noninteractive.
+  * Configuration file moved to /etc/apt/listchanges.conf
+  * Renamed debconf variables to suit their actual use (which turned out
+    to be different from their intended one).  This will cause all
+    questions to get asked again, but since there is a new question to ask
+    anyway, nobody should mind too much.
+  * Some support for the new apt (0.4), which gives us a lot more information
+    in the pipeline in addition to the .deb filenames.  This means that we
+    won't have to read the status file anymore.  There is also a newer and
+    better way to configure our hook into apt, but we can't use it until
+    there is a new released version of apt to Depend on.
+
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 10 Dec 2000 00:22:12 -0500
+
 apt-listchanges (1.14) unstable; urgency=low
 
   * Only skip based on the source package name if we actually got changelogs
