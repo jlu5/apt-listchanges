@@ -11,17 +11,16 @@
 #
 #    Developers do not need to manually edit POT or PO files.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges\n"
+"Project-Id-Version: apt-listchanges 2.54\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-29 20:33-0700\n"
-"PO-Revision-Date: 2003-05-18 17:39+0900\n"
+"POT-Creation-Date: 2004-04-19 23:19+0900\n"
+"PO-Revision-Date: 2004-04-19 23:26+0900\n"
 "Last-Translator: Kenshi Muto <kmuto@debian.org>\n"
-"Language-Team: Japanese <LL@li.org>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=euc-jp\n"
+"Content-Type: text/plain; charset=EUC-JP\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: select
@@ -35,32 +34,27 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "How should changes be displayed with apt?"
-msgstr "changelog を apt でどのように表示しますか?"
+msgstr "変更内容を apt でどのように表示しますか?"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
-msgstr "apt-listchanges には changelog エントリの表示方法がいくつかあります。"
+msgstr "apt-listchanges にはパッケージの変更内容を表示する方法がいくつかあります。"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "ページャ - あなたの好みのページャを使う"
+msgstr "ページャ - 一度に 1 ページずつ変更を表示するために、あなたの好みのページャを使う"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr ""
-"ブラウザ - Web ブラウザを使って、 HTML で整形された changelog を表示する"
+msgstr "ブラウザ - Web ブラウザを使って、 HTML で整形された変更内容を表示する"
 
 #. Type: select
 #. Description
@@ -81,16 +75,14 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "テキスト - changelog を端末に表示する (ページングを行わない)"
+msgstr "テキスト - 変更内容を端末に表示する (ページングを行わない)"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "mail  - Only send changes via mail"
-msgstr "メール - メールで changelog を送るだけにする"
+msgstr "メール - メールで変更内容を送るだけにする"
 
 #. Type: select
 #. Description
@@ -119,20 +111,16 @@ msgstr "root"
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid "To whom should apt-listchanges mail changes?"
-msgstr "changelog エントリを誰にメールしますか?"
+msgstr "変更内容を apt-listchanges から誰にメールしますか?"
 
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
-msgstr ""
-"apt-listchanges は表示した changelog のコピーをメールできます。送るべきメール"
-"アドレスは何ですか?"
+msgstr "apt-listchanges は表示した変更のコピーをメールで送ることができます。送るべきメールアドレスは何ですか?"
 
 #. Type: string
 #. Description
@@ -147,24 +135,19 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changes?"
-msgstr "changelog を表示したあと、 確認のプロンプトを表示しますか?"
+msgstr "変更内容を表示したあと、 apt-listchanges で確認のプロンプトを表示しますか?"
 
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
-msgstr ""
-"changelog エントリを表示したあと、 apt-listchanges はあなたに継続するかどうか"
-"尋ねます。 変更が望まないもので適用したくないときに、 ここでアップグレードを"
-"中止できるようにすると、apt から実行する際に便利です。"
+msgstr "変更内容を表示したあと、 apt-listchanges はあなたに継続するかどうか尋ねます。 変更が望まないもので適用したくないときに、 ここでアップグレードを中止できるようにすると、apt から実行する際に便利です。"
 
 #. Type: boolean
 #. Description
@@ -179,35 +162,29 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "すでに見た changelog は飛ばしますか?"
+msgstr "すでに見た変更内容は apt-listchanges で飛ばしますか?"
 
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
-msgstr ""
-"apt-listchanges は表示済みの changelog エントリの情報を保有する機能があるの"
-"で、 以降の呼び出しではそれらのエントリを飛ばすようにできます。 これはアップ"
-"グレードを再試行するときなどに便利です。"
+msgstr "apt-listchanges は表示済みの変更内容の情報を保有する機能があるので、 以降の呼び出しではそれらの内容を飛ばすようにできます。 これはアップグレードを再試行するときなどに便利です。"
 
 #. Type: select
 #. Choices
 #: ../templates:59
 msgid "news, both, changelogs"
-msgstr ""
+msgstr "ニュース, 両方, changelog"
 
 #. Type: select
 #. Description
 #: ../templates:61
-#, fuzzy
 msgid "Which types of changes should be displayed with apt?"
-msgstr "changelog を apt でどのように表示しますか?"
+msgstr "変更内容を apt でどのように表示しますか?"
 
 #. Type: select
 #. Description
@@ -217,27 +194,6 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-
-#~ msgid "Leave this empty if you do not want any email to be sent."
-#~ msgstr "誰にもメールを送りたくないときは、 ここを空にしてください。"
-
-#~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
-#~ msgstr "既存の /etc/apt/listchanges.conf の設定を上書きしますか?"
-
-#~ msgid ""
-#~ "apt-listchanges can configure all of the options in /etc/apt/listchanges."
-#~ "conf by asking you questions.  This file is read and processed every time "
-#~ "apt-listchanges is run, and is used to set defaults.  All of the options "
-#~ "can be overridden on the command line."
-#~ msgstr ""
-#~ "apt-listchanges は質問形式で /etc/apt/listchanges.conf にあるオプションす"
-#~ "べてを設定できます。 このファイルは apt-listchanges が実行されるたび、デ"
-#~ "フォルトの設定として毎回読み込まれ処理されます。 オプションすべては、コマ"
-#~ "ンドラインで上書きすることもできます。"
-
-#~ msgid ""
-#~ "If you want to edit /etc/apt/listchanges.conf manually for whatever "
-#~ "reason, answer \"no\" now."
-#~ msgstr ""
-#~ "もし /etc/apt/listchanges.conf を何らかの理由で編集したいのであれば、 「い"
-#~ "いえ (no)」とここでは答えてください。"
+"ニュース - 重要なニュース項目のみ\n"
+"両方 - ニュースと詳細な changelog の両方\n"
+"changelog - 詳細な changelog のみ"

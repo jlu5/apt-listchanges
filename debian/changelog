@@ -2,6 +2,8 @@ apt-listchanges (2.56) unstable; urgency=low
 
   * Another Danish debconf translation update from Claus Hindsgaul <claus_h@image.dk>
     (Closes: #246863)
+  * Updated Japanese translation of debconf templates from Kenshi Muto <kmuto@debian.org>
+    (Closes: #244684)
 
  --
 
