@@ -3,8 +3,10 @@ apt-listchanges (2.14) unstable; urgency=low
   * Fix the confirm prompt so that it defaults to yes
     again (oops)
     (Closes: #139413)
+  * Force apt-listchanges/confirm to false for 'none' ond 'mail' frontends
+    (Closes: #139393)
 
- -- Matt Zimmerman <mdz@debian.org>  Thu, 21 Mar 2002 20:51:28 -0500
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 21 Mar 2002 22:03:21 -0500
 
 apt-listchanges (2.13) unstable; urgency=low
 
