@@ -14,7 +14,7 @@ from socket import gethostname
 # newt-like frontend, or maybe some GUI bit
 
 try:
-    _ = gettext.translation('apt-listchanges')
+    _ = gettext.translation('apt-listchanges').gettext
 except IOError:
     def gettext_null(str): return str
     _ = gettext_null
