@@ -60,7 +60,7 @@ def extract_changelog(deb, version=None):
 
     found = 0
     changes = None
-    urgency = 0
+    urgency = numeric_urgency('low')
     for filenames in [changelog_filenames, changelog_filenames_nodebian]:
          extract_command = "dpkg-deb --fsys-tarfile %s \
          | tar -xO --exclude '*/doc/*/*/*' -f - %s 2>/dev/null \
@@ -81,7 +81,7 @@ def extract_changelog(deb, version=None):
                  if match:
                      if apt_pkg.VersionCompare(match.group('version'),
                                               version) > 0:
-                         urgency = max(numeric_urgency(match.group('urgency')),
+                         urgency = min(numeric_urgency(match.group('urgency')),
                                        urgency)
                      else:
                          break
