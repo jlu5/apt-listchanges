@@ -481,8 +481,6 @@ class html:
         </pre>
 ''')
 
-        # With python 2.2...
-        #super(html,self).display_output(htmltext)
         return htmltext.getvalue()
 
 class browser(html,pager):
