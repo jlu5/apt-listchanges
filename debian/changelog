@@ -1,3 +1,12 @@
+apt-listchanges (2.13) unstable; urgency=low
+
+  * Minor cosmetic changes to the progress indicators to make them more
+    uniform and closer to apt's (Closes: #137736)
+  * Be more conservative about the user's answer to the confirmation
+    question (Closes: #137804)
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 20 Mar 2002 23:07:07 -0500
+
 apt-listchanges (2.12) unstable; urgency=low
 
   * Updated Spanish translation from David Martinez Moreno
