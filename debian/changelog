@@ -1,3 +1,13 @@
+apt-listchanges (2.20) unstable; urgency=low
+
+  * Properly document use of the mail frontend (Closes: #147896)
+  * Updated Estonian translation of message catalogs from
+    Ivar Smolin <okul@linux.ee>
+  * Updated Spanish translation of message catalogs from
+    David Martinez Moreno <ender@debian.org> (Closes: #147568)
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 23 May 2002 22:36:14 -0400
+
 apt-listchanges (2.19) unstable; urgency=low
 
   * Updated Catalan translation of debconf templates from Antoni Bella
