@@ -3,6 +3,7 @@ apt-listchanges (1.15) unstable; urgency=low
   * All interactive frontends now have the option of asking the user
     whether or not to continue, in a way appropriate for the selected
     frontend.  Right now, this is a simple text prompt for all of them.
+    (Closes: #78552)
   * Configuration file moved to /etc/apt/listchanges.conf
   * Renamed debconf variables to suit their actual use (which turned out
     to be different from their intended one).  This will cause all
