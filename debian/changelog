@@ -1,3 +1,10 @@
+apt-listchanges (1.33) unstable; urgency=low
+
+  * Depend on liblocale-gettext-perl (I forgot to commit this change along
+    with the i18n changes in 1.32 (Closes: #85751, #85780)
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 12 Feb 2001 23:13:08 -0500
+
 apt-listchanges (1.32) unstable; urgency=low
 
   * apt-listchanges is now internationalized.  New catalogs can be added
