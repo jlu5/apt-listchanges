@@ -2,11 +2,11 @@ Template: apt-listchanges/apt-hook-p
 Type: boolean
 Default: true
 Description: Should apt-listchanges be automatically run by apt?
-  One way to use apt-listchanges is to configure apt to run apt-listchanges on
-  packages that have been downloaded for installation or upgrade.  This way,
-  each time you perform an installation or upgrade using apt,
-  apt-listchanges will show you the changes that are about to be made
-  to your system.
-  .
-  I can perform this configuration for you if you like.  Since you can also run
-  apt-listchanges manually on .deb archives, this step is optional.
+ One way to use apt-listchanges is to configure apt to run apt-listchanges on
+ packages that have been downloaded for installation or upgrade.  This way,
+ each time you perform an installation or upgrade using apt,
+ apt-listchanges will show you the changes that are about to be made
+ to your system.
+ .
+ I can perform this configuration for you if you like.  Since you can also run
+ apt-listchanges manually on .deb archives, this step is optional.
