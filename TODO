@@ -16,3 +16,5 @@
   larger window?  This may work, but will be ugly and counter-intuitive.
   For example, the scrollbar will not be visible.  Or should we try to
   re-wrap the text on-the-fly?
+
+- Get rid of newt.  Try libterm-stool-perl maybe.
