@@ -1,3 +1,9 @@
+apt-listchanges (1.13) unstable; urgency=low
+
+  * Don't send empty messages when using the mail frontend (Closes: #77993)
+
+ -- Matt Zimmerman <mdz@debian.org>  Mon, 27 Nov 2000 14:37:22 -0500
+
 apt-listchanges (1.12) unstable; urgency=low
 
   * Make newt optional.  We only load it if the user is using the newt
