@@ -193,7 +193,7 @@ def read_apt_pipeline():
         if not aptconfig or aptconfig == '\n':
             break
 
-        (option, value) = aptconfig.rstrip().split('=')
+        (option, value, rest) = aptconfig.rstrip().split('=', 2)
         
         if option == 'quiet':
             config.quiet = value
@@ -201,7 +201,6 @@ def read_apt_pipeline():
     filenames = {}
     order = []
     for pkgline in sys.stdin.readlines():
-        pkgline.rstrip()
         if not pkgline:
             break
         
@@ -212,7 +211,7 @@ def read_apt_pipeline():
         if filename == '**CONFIGURE**':
             order.append(pkgname)
         else:
-            filenames[pkgname] = (filename)
+            filenames[pkgname] = filename
 
     # Sort by configuration order.  THIS IS IMPORTANT.  Sometimes, a
     # situation exists where package X contains changelog.gz (upstream
