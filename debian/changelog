@@ -1,3 +1,10 @@
+apt-listchanges (1.29) unstable; urgency=low
+
+  * Added Spanish translation of debconf templates, thanks to Jordi
+    Mallach <jordi@debian.org>
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu,  1 Feb 2001 02:36:33 -0500
+
 apt-listchanges (1.28) unstable; urgency=low
 
   * Added Dutch translation of debconf templates, thanks to "Thomas
