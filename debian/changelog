@@ -1,3 +1,12 @@
+apt-listchanges (1.14) unstable; urgency=low
+
+  * Only skip based on the source package name if we actually got changelogs
+    from another binary package with the same source package.  This fixes
+    a problem when processing multi-binary packages which symlink
+    subdirectories in /usr/share/doc (e.g. xmms/xmms-dev).
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 30 Nov 2000 04:56:49 -0500
+
 apt-listchanges (1.13) unstable; urgency=low
 
   * Don't send empty messages when using the mail frontend (Closes: #77993)
