@@ -136,7 +136,7 @@ if config.save_seen:
     seen.close()
 
 for batch in (all_news,all_changelogs):
-    batch.sort(lambda a,b: cmp(a.urgency,b.urgency) or
+    batch.sort(lambda a,b: -cmp(a.urgency,b.urgency) or
                cmp(a.package,b.package))
 
 if config.headers:
@@ -148,7 +148,7 @@ if config.headers:
         if len(filter(lambda x: x != package,source_packages[package])) > 0:
             # Differing source and binary packages
             header += ' (' + ' '.join(source_packages[package]) + ')'
-        news += '--- ' + header + ' ---\n' + rec['news']
+        news += '--- ' + header + ' ---\n' + rec.changes
 
     for rec in all_changelogs:
         package = rec.package
@@ -156,7 +156,7 @@ if config.headers:
         if len(filter(lambda x: x != package,source_packages[package])) > 0:
             # Differing source and binary packages
             header += ' (' + ' '.join(source_packages[package]) + ')'
-        changes += '--- ' + header + ' ---\n' + rec['changes']
+        changes += '--- ' + header + ' ---\n' + rec.changes
 else:
     if all_news:
         news = 'NEWS\n----\n\n' + ''.join(map(lambda x: x.changes, all_news)) + '\n--------\nEND NEWS\n'
