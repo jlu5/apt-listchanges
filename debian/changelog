@@ -2,8 +2,15 @@ apt-listchanges (2.38) unstable; urgency=low
 
   * Add Spanish man page from Ruben Porras <nahoo82@telefonica.net>
     (Closes: #195445)
+  * Handle the case where a package contains multiple changelogs in
+    different subdirectories of /usr/share/doc(!).  e2fsprogs does this:
+    it Provides: libcomerr2 and libss2 and contains
+    /usr/share/doc/{libcomerr2,libss2}/changelog.Debian.gz.  I have no
+    idea why it does this, but there could be others, and it is easy
+    enough to work around.  Take the first one which we can open
+    successfully (Closes: #201152)
 
- --
+ -- Matt Zimmerman <mdz@debian.org>  Sun, 13 Jul 2003 18:45:30 -0400
 
 apt-listchanges (2.37) unstable; urgency=low
 
