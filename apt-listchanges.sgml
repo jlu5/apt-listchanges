@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.17 2002-01-19 21:49:14 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.18 2002-02-07 01:32:28 mdz Exp $
 -->
 
 <refentry>
@@ -235,24 +235,6 @@
 
     </VARIABLELIST>
 
-  </refsect1>
-
-  <refsect1>
-    <title>FILES</title>
-
-    <variablelist>
-      <varlistentry>
-	  <term><filename>/etc/apt/listchanges.conf</filename></term>
-
-	  <listitem>
-	    <para>
-	      Primary configuration file.  Defaults for the frontend,
-	      email address, and whether to ask for confirmation are
-	      read from here.
-	    </para>
-	  </listitem>
-      </varlistentry>
-    </variablelist>
   </refsect1>
 
   <refsect1>
