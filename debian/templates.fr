@@ -1,0 +1,105 @@
+Template: apt-listchanges/email-address
+Type: string
+Default: root
+Description: To whom should apt-listchanges mail changelog entries?
+ You have chosen to have changelog entries sent via email.  To what email
+ address should they be sent?
+Description-fr: A qui apt-listchanges doit-il envoyer les journaux des changements?
+ Vous avez choisi que les journaux des changements soient envoyés par
+ email. A quelle adresse doivent-ils être envoyés ?
+
+Template: apt-listchanges/frontend
+Type: select
+Choices: pager, xterm-pager, newt, text, mail
+Default: pager
+Description: How should changelogs be displayed by default?
+ apt-listchanges can display changelog entries in a number of different
+ ways.
+ .
+ pager - Use your preferred pager
+ .
+ xterm-pager - Use your preferred pager in an xterm in the background
+ .
+ newt - Use a terminal graphics interface, using text-mode windows (you
+ will need to install libnewt-perl to use this)
+ .
+ text  - Print changelogs to your terminal (without pausing)
+ .
+ mail  - Send changelogs via email (you will be prompted for an address)
+ .
+ This setting can be overridden by a command-line option.
+Description-fr: Comment le journal des changement doit-il être communiquê?
+ apt-listchanges peut vous communiquer la liste des changements dans un
+ certain nombre de manières diffêrentes.
+ .
+ pager - Utilise votre pageur (logiciel de pagination) préféré ('more', 'less' etc.)
+ .
+ xterm-pager - Utilise votre pageur préféré dans une xterm lancee en tache de fond
+ .
+ newt - Utilise une interface graphique pour terminaux, utilisant des
+ fenêtres en mode texte (vous devez installer libnewt-perl pour utiliser ceci)
+ .
+ text - Affiche les changements sur votre terminal (sans pause).
+ .
+ mail - Envoie le journal des changements par mail (à une adresse à
+ préciser par la suite)
+ .
+ Ce réglage peut-être changé par une option en ligne de commande.
+
+Template: apt-listchanges/apt-hook-p
+Type: boolean
+Default: true
+Description: Should apt-listchanges be automatically run by apt?
+ One way to use apt-listchanges is to configure apt to run apt-listchanges
+ on packages that have been downloaded for installation or upgrade.  This
+ way, each time you perform an installation or upgrade using apt,
+ apt-listchanges will show you the changes that are about to be made to
+ your system.
+ .
+ I can perform this configuration for you if you like.  Since you can also
+ run apt-listchanges manually on .deb archives, this step is optional.
+Description-fr: apt-listchanges doit-il être lancé automatiquement par apt?
+ Une façon d'utiliser apt-listchanges est de configurer apt pour lancer
+ apt-listchanges sur les paquets qui viennent d'être téléchargés pour une
+ installation ou une mise à jour. Ainsi, chaque fois que vous ferez une
+ installation ou une mise à jour avec apt, apt-listchanges vous montrera
+ les changements qui sont en passe d'être faits sur votre système.
+ .
+ Je peux faire cette configuration pour vous si vous voulez. Comme vous
+ pouvez aussi lancer apt-listchanges manuellement sur les archives .deb,
+ cette étape est facultative.
+
+Template: apt-listchanges/confirm
+Type: boolean
+Default: true
+Description: Should apt-listchanges prompt for confirmation after displaying changelogs?
+ After giving you a chance to display changelog entries, apt-listchanges
+ can ask whether or not you would like to continue. This is useful when
+ running from apt, as it gives you a chance to abort the upgrade if you see
+ a change you do not want to apply (yet).
+ .
+ This setting only applies when running from apt.  Otherwise, it can be
+ requested with a command line option.
+Description-fr: apt-listchanges doit-il demander confirmation après avoir affiché les changements?
+ Apres vous avoir montré les changements, apt-listchanges peut faire une
+ pause, vous demandant si vous voulez continuer. C'est utile quand
+ apt-listchanges est lancé à partir de apt, car cela vous laisse une
+ chance d'annuler une mise a jour si vous voyez un changement que vous ne
+ désirez pas faire (ou pas tout de suite).
+
+Template: apt-listchanges/overwrite_etc_apt_listchanges_conf
+Type: boolean
+Default: true
+Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
+ apt-listchanges can configure all of the options in
+ /etc/apt/listchanges.conf by asking you questions.  This file is read and
+ processed every time apt-listchanges is run, and is used to set defaults.
+ All of the options can be overridden on the command line.
+ .
+ If you want to edit /etc/apt/listchanges.conf manually for whatever
+ reason, answer "no" now.
+Description-fr: apt-listchanges doit-il écraser /etc/apt/listchanges.conf?
+ apt-listchanges peut configurer toutes les options de /etc/apt/listchanges.conf
+ en vous posant quelques questions. Ce fichier est lu à chaque fois que
+ apt-listchanges est lancé, et est utilisé pour définir les valeur par
+ défaut. Toutes les options peuvent être imposêes en ligne de commande.
