@@ -1,3 +1,14 @@
+apt-listchanges (1.48) unstable; urgency=low
+
+  * Updated Galician translation of debconf templates, thanks to Jacobo
+    Tarrio <jtarrio@trasno.net>
+  * Read .debs in the order in which apt will configure them.  This lets
+    us find changelogs in the new perl, and may speed things up a bit for
+    packages where .../doc/foo -> bar and foo Depends: bar.
+    (Closes: #98442)
+
+ -- Matt Zimmerman <mdz@debian.org>  Tue, 22 May 2001 21:09:35 -0400
+
 apt-listchanges (1.47) unstable; urgency=low
 
   * Add Estonian translation of message catalogs, thanks to Ivar Smolin
