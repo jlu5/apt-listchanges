@@ -8,6 +8,8 @@ db_input medium apt-listchanges/apt-hook-p || true
 db_input medium apt-listchanges/frontend || true
 db_go
 
+# If the mail frontend was selected, ask for an email address.  If
+# not, take the default.
 db_get apt-listchanges/frontend
 if [ "$RET" = "mail" ]; then
   db_input medium apt-listchanges/email-address || true
@@ -16,3 +18,5 @@ fi
 
 db_input medium apt-listchanges/confirm
 db_go
+
+exit 0
