@@ -1,3 +1,10 @@
+apt-listchanges (2.26) unstable; urgency=low
+
+  * Add call to locale.setlocale(), which really Closes: #153760
+    (which I called #174635 in the last version)
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 29 Jan 2003 21:13:00 -0500
+
 apt-listchanges (2.25) unstable; urgency=low
 
   * Use sensible-browser from debianutils in the browser frontends if it
@@ -6,8 +13,10 @@ apt-listchanges (2.25) unstable; urgency=low
     <morten@wtf.dk> (Closes: #174074)
   * Use locale.YESEXPR to localize the confirmation prompt
     (Closes: #174635)
+  * Use python's email module to build the email message, which should
+    MIMEify things correctly (Closes: #159122)
 
- -- Matt Zimmerman <mdz@debian.org>  Wed, 29 Jan 2003 19:11:33 -0500
+ -- Matt Zimmerman <mdz@debian.org>  Wed, 29 Jan 2003 19:16:02 -0500
 
 apt-listchanges (2.24) unstable; urgency=low
 
