@@ -10,3 +10,7 @@
   dpkg-parsechangelog loses information.
 
 - Multi-level sort: upload urgency, package priority, package name, what else?
+
+- Make better use of python-apt
+  control file parsing
+  tar extraction
