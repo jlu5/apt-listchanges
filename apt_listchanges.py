@@ -419,13 +419,9 @@ class pager(ttyconfirm,fancyprogress):
         apply(fancyprogress.__init__, (self,packages))
 
     def display_output(self, text):
-        pipe = os.popen(self.pager, 'w')
-        try:
-            pipe.write(text)
-            pipe.close()
-        except IOError:
-            # Broken pipe is OK
-            pass
+        tmp = tempfile.NamedTemporaryFile(prefix='apt-listchanges')
+        tmp.write(text)
+        os.spawnlp(os.P_WAIT, pager)
 
 class xterm(ttyconfirm,fancyprogress):
     def __init__(self,packages):
