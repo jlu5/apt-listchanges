@@ -147,7 +147,7 @@ if config.headers:
         header = _('Changes for %s') % package
         if len(filter(lambda x: x != package,source_packages[package])) > 0:
             # Differing source and binary packages
-            header += ' (' + ''.join(source_packages[package]) + ')'
+            header += ' (' + ' '.join(source_packages[package]) + ')'
         changes += '--- ' + header + ' ---\n' + rec['changes']
 else:
     changes = ''.join(map(lambda x: x['changes'], all_changes))
