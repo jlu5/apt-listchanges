@@ -1,3 +1,12 @@
+apt-listchanges (1.24) unstable; urgency=low
+
+  * Added -a/--all option, which ignores version checks and just dumps the
+    entire changelog (Closes: #82225)
+  * Prompt whether or not to overwrite an existing
+    /etc/apt/listchanges.conf (Closes: #80983)
+
+ -- Matt Zimmerman <mdz@debian.org>  Thu, 18 Jan 2001 17:38:11 -0500
+
 apt-listchanges (1.23) unstable; urgency=low
 
   * Handle packages with different binary/source versions correctly

@@ -10,15 +10,11 @@ mkdir -p /etc/apt/apt.conf.d
 # Source debconf library.
 . /usr/share/debconf/confmodule
 
-# Wipe out any old configuration (preserve permissions, though)
-##waiting for apt 0.4## [ -f "$APT_CONFIG" ] && : > $APT_CONFIG 
-[ -f "$PREFERENCES" ] && : > $PREFERENCES
-
 # Should we hook into apt?
 db_get apt-listchanges/apt-hook-p
 
 ##waiting for apt 0.4##  if [ "$RET" = "true" ]; then
-##waiting for apt 0.4##    cat <<EOF >> $APT_CONFIG
+##waiting for apt 0.4##    cat <<EOF > $APT_CONFIG
 ##waiting for apt 0.4##  DPkg::Pre-Install-Pkgs { "/usr/bin/apt-listchanges --apt"; };
 ##waiting for apt 0.4##  EOF
 ##waiting for apt 0.4##  else
@@ -50,21 +46,22 @@ elif [ "$RET" = "false" ]; then
     rm -f /etc/apt/apt.conf.apt-listchanges-old
 fi
 
-echo "# Changes made here will be lost.  Please use dpkg-reconfigure apt-listchanges" >> $PREFERENCES
+db_get apt-listchanges/overwrite_etc_apt_listchanges_conf
+if [ "$RET" = "true" -o ! -e "$PREFERENCES" ]; then
+    [ -f "$PREFERENCES" ] && : > $PREFERENCES
 
-db_get apt-listchanges/frontend
+    db_get apt-listchanges/frontend
+    echo "frontend=$RET" >> $PREFERENCES
 
-echo "frontend=$RET" >> $PREFERENCES
+    db_get apt-listchanges/email-address
+    echo "email-address=$RET" >> $PREFERENCES
 
-db_get apt-listchanges/email-address
-
-echo "email-address=$RET" >> $PREFERENCES
-
-db_get apt-listchanges/confirm
-if [ "$RET" = "true" ]; then
-  echo "apt-mode-confirm=yes" >> $PREFERENCES
-else
-  echo "apt-mode-confirm=no" >> $PREFERENCES
+    db_get apt-listchanges/confirm
+    if [ "$RET" = "true" ]; then
+      echo "apt-mode-confirm=yes" >> $PREFERENCES
+    else
+      echo "apt-mode-confirm=no" >> $PREFERENCES
+    fi
 fi
 
 ## Cleanup from older versions (pre-1.14 and earlier)

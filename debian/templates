@@ -49,3 +49,15 @@ Description: Should apt-listchanges prompt for confirmation after displaying cha
  .
  This setting only applies when running from apt.  Otherwise, it can be
  requested with a command line option.
+
+Template: apt-listchanges/overwrite_etc_apt_listchanges_conf
+Type: boolean
+Default: true
+Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
+ apt-listchanges can configure all of the options in
+ /etc/apt/listchanges.conf by asking you questions.  This file is read
+ and processed every time apt-listchanges is run, and is used to set
+ defaults.  All of the options can be overridden on the command line.
+ .
+ If you want to edit /etc/apt/listchanges.conf manually for whatever
+ reason, answer "no" now.

@@ -4,27 +4,32 @@
 . /usr/share/debconf/confmodule
 
 # Ask our questions
-db_input medium apt-listchanges/apt-hook-p || true
-db_input medium apt-listchanges/frontend || true
+db_input medium apt-listchanges/overwrite_etc_apt_listchanges_conf || true
 db_go
 
-# If the mail frontend was selected, ask for an email address.  If
-# not, take the default (which will still be used on the command line).
-db_get apt-listchanges/frontend
-if [ "$RET" = "mail" ]; then
-  db_input medium apt-listchanges/email-address || true
-fi
-
-# If we are running from apt, check whether they want to be asked for
-# confirmation.
-db_get apt-listchanges/apt-hook-p
+db_get apt-listchanges/overwrite_etc_apt_listchanges_conf
 if [ "$RET" = "true" ]; then
-  db_input medium apt-listchanges/confirm || true
+    db_input medium apt-listchanges/apt-hook-p || true
+    db_input medium apt-listchanges/frontend || true
+    db_go
+
+    # If the mail frontend was selected, ask for an email address.  If
+    # not, take the default (which will still be used on the command line).
+    db_get apt-listchanges/frontend
+    if [ "$RET" = "mail" ]; then
+      db_input medium apt-listchanges/email-address || true
+    fi
+
+    # If we are running from apt, check whether they want to be asked for
+    # confirmation.
+    db_get apt-listchanges/apt-hook-p
+    if [ "$RET" = "true" ]; then
+      db_input medium apt-listchanges/confirm || true
+    fi
+
+    # Ask the conditional questions, if any
+    db_go
 fi
-
-# Ask the conditional questions, if any
-db_go
-
 
 # Clean up questions we used to ask (1.14 and earlier)
 db_unregister apt-listchanges/apt-mode-frontend || true
