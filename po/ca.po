@@ -83,6 +83,7 @@ msgstr "%s ha eixit amb l'estat %d"
 #~ msgid "Unable to determine version for file %s"
 #~ msgstr "No es pot determinar la versió per al fitxer %s"
 
+#~ msgid "%s: Version %s changes have already been seen"
 #~ msgstr "%s: La versió %s ja està instal·lada"
 
 #~ msgid "%s: Version %s is older than installed version (%s)"
