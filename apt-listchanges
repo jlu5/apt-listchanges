@@ -185,7 +185,7 @@ def main():
             sys.stderr.write('Aborting.\n')
             sys.exit(10)
 
-        if config.email_address:
+        if config.email_address and changes:
             apt_listchanges.mail_changes(config.email_address, changes)
 
         # Write out seen db

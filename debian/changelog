@@ -17,6 +17,8 @@ apt-listchanges (2.46) unstable; urgency=low
   * Print a brief message letting the user know what's going on when
     aborting based on the confirmation prompt (Closes: #202210)
   * Handle the KeyboardInterrupt exception (Closes: #139265)
+  * Don't send empty email if there are no changes and --which=news is
+    specified
 
  --
 
