@@ -1,3 +1,10 @@
+apt-listchanges (2.54) unstable; urgency=low
+
+  * Spanish man page update from Ruben Porras <nahoo82@telefonica.net>
+    (Closes: #239909)
+
+ --
+
 apt-listchanges (2.53) unstable; urgency=low
 
   * Don't bother twiddling the 'seen' flag (Closes: #240915)

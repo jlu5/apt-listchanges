@@ -8,14 +8,14 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.es.sgml,v 1.4 2004-02-27 06:47:48 mdz Exp $
+     $Id: apt-listchanges.es.sgml,v 1.5 2004-04-04 05:58:12 mdz Exp $
 -->
 
 <!-- 
 (c) 2003 Software in the Public Interest
 Esta traducción ha sido realizada por Rubén Porras Campo <nahoo@inicia.es>
 Está basada en la página de manual original:
-versión 1.5 del CVS de
+versión 1.6 del CVS de
 /cvs/debian-doc/manpages/english/apt-listchanges/apt-listchanges.sgml
  -->
 
@@ -118,7 +118,10 @@ versión 1.5 del CVS de
 	      <TERM>pager</TERM>
 	      <LISTITEM>
 		<PARA>
-		  Usa su paginador favorito para mostrar la salida.
+		  Usa su paginador favorito para mostrar la salida. Por omisión,
+		  se usará la variable de entorno PAGER. La opción "pager" puede
+		  especificarse en el fichero de configuración para que
+		  apt-listchanges use un paginador específico.
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
@@ -129,7 +132,10 @@ versión 1.5 del CVS de
                 <para>
                   Muestra los cambios en formato HTML usando un navegador, con
                   enlaces para los fallos y las direcciones de correo
-		  electrónico.
+		  electrónico. Por omisión, se usará la variable de entorno
+                  BROWSER. La opción "browser" puede especificarse en el fichero
+                  de configuración para que apt-listchanges use un navegador
+                  específico.
                 </para>
               </listitem>
             </varlistentry>
@@ -141,7 +147,8 @@ versión 1.5 del CVS de
 		  Usa su paginador favorito para mostrar la salida, pero lo hace
 		  sobre un xterm (usando la alternativa x-terminal-emulator) de
 		  fondo. Esto le permite realizar la actualización mientras mira
-		  los cambios.
+		  los cambios. Puede cambiar el emulador de terminal con la
+		  opción "xterm".
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
@@ -256,15 +263,6 @@ versión 1.5 del CVS de
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM><OPTION>--version</OPTION></TERM>
-	<LISTITEM>
-	  <PARA>
-	    Muestra el número de versión.
-	  </PARA>
-	</LISTITEM>
-      </VARLISTENTRY>
-
-      <VARLISTENTRY>
 	<TERM><OPTION>-h, --headers</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
@@ -284,6 +282,18 @@ versión 1.5 del CVS de
         </listitem>
       </varlistentry>
 
+      <varlistentry>
+	<term><option>--profile=<replaceable>nombre</replaceable></option></term>
+	<listitem>
+	  <para>Selecciona un perfil.
+	    <replaceable>nombre</replaceable> corresponde a una sección en
+	    <filename>/etc/apt/listchanges.conf</filename>.  De forma
+	    predeterminada, cuando se invoca desde apt es "apt", y "cmdline" en
+	    otro caso.
+	  </para>
+	</listitem>
+      </varlistentry>
+
     </VARIABLELIST>
 
   </refsect1>
@@ -300,15 +310,7 @@ versión 1.5 del CVS de
 
     <variablelist>
       <varlistentry>
-        <term>APT_LISTCHANGES_BROWSER_PIPE</term>
-        <listitem><para>Usado por la interfaz browser, debería ser una orden
-        que espere recibir HTML por stdin</para></listitem>
-      </varlistentry>
-    </variablelist>
-
-    <variablelist>
-      <varlistentry>
-        <term>APT_LISTCHANGES_BROWSER, BROWSER</term>
+        <term>BROWSER</term>
         <listitem><para>Usado por la interfaz browser, debería ser una orden que
         espere una URL de un fichero en formato HTML a mostrar.</para>
 
@@ -339,6 +341,10 @@ versión 1.5 del CVS de
 	      frontend=xterm-pager
 	      email_address=root
 	      confirm=1
+
+	      [custom]
+	      frontend=browser
+	      browser=mozilla
 	    </programlisting>
 	  </example>
 
@@ -346,7 +352,9 @@ versión 1.5 del CVS de
           línea de órdenes, la interfaz predeterminada es "pager".
           En modo apt, la interfaz predeterminado es xterm-pager, una copia de
           los cambios (si es que hay algunos) debe enviarse al superusuario, y
-          apt-listchanges debe pedir confirmación.</para>
+          apt-listchanges debe pedir confirmación. Si se invoca a
+          apt-listchanges con --profile=custom se usará la interfaz de
+          navegador, y se ejecutará mozilla.</para>
 
         </listitem>
       </varlistentry>
