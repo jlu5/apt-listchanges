@@ -269,7 +269,7 @@ class ttyconfirm:
         tty.flush()
         response = tty.readline()
         if not response:
-            return 1
+            return 0
         if response[0] == 'n' or response[0] == 'N':
             return 1
         return 0
