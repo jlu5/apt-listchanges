@@ -16,7 +16,7 @@ if [ "$RET" = "mail" ]; then
   db_go
 fi
 
-db_input medium apt-listchanges/confirm
+db_input medium apt-listchanges/confirm || true
 db_go
 
 exit 0
