@@ -74,7 +74,6 @@ if ($help_only) {
 }
 
 if ($apt_mode) {
-  exit 0 unless $apt_mode_run;
   $confirm ||= ( $config{'apt-mode-confirm'} eq 'yes' );
 }
 
@@ -116,6 +115,10 @@ my $notes;
 ##
 
 my @debs = read_deb_filenames($apt_mode, \%status);
+
+# We have to read all data from the pipeline before exiting, or apt
+# will complain
+exit 0 if ($apt_mode && !$apt_mode_run);
 
 # If apt is in quiet mode, we should make ourselves loggable too
 if ($config{'quiet'} && $frontend_opt ne 'mail') {
