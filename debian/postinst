@@ -9,6 +9,9 @@ db_get apt-listchanges/apt-hook-p
 
 # This was mostly snarfed from debconf
 if [ "$RET" = "true" ]; then
+
+	# Add ourselves to apt.conf
+
 	# Create /etc/apt/apt.conf if it doesn't already exist
 	if [ ! -e /etc/apt/apt.conf ]; then
 		mkdir -p /etc/apt/ 2>/dev/null || true
@@ -21,6 +24,11 @@ if [ "$RET" = "true" ]; then
 Dpkg::Pre-Install-Pkgs { "/usr/bin/apt-listchanges --apt"; }; // apt-listchanges
 EOF
 	fi
+elif [ "$RET" = "false" ]; then
+	# Remove ourselves from apt.conf
+	cp /etc/apt/apt.conf /etc/apt/apt.conf.apt-listchanges-old
+	grep -v apt-listchanges /etc/apt/apt.conf.apt-listchanges-old > /etc/apt/apt.conf
+	rm -f /etc/apt/apt.conf.apt-listchanges-old
 fi
 
 # dh_installdeb will replace this with shell code automatically
