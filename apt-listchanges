@@ -160,7 +160,7 @@ if changes:
         if not frontend.confirm():
             sys.exit(10)
             
-elif not source_packages.keys():
+elif config.mode != 'apt' and not source_packages.keys():
     sys.stderr.write("apt-listchanges: "
                      + _("didn't find any valid .deb archives"))
     sys.exit(1)
