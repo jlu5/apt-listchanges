@@ -126,11 +126,13 @@ for deb in debs:
 
     if news or changes:
         found[srcpackage] = 1
-        all_news.append({ 'package' : srcpackage,
-                          'news'    : news })
-        all_changes.append({ 'package' : srcpackage,
-                             'changes' : changes,
-                             'urgency' : urgency })
+        if news:
+            all_news.append({ 'package' : srcpackage,
+                              'news'    : news })
+        if changes:
+            all_changes.append({ 'package' : srcpackage,
+                                 'changes' : changes,
+                                 'urgency' : urgency })
         if config.save_seen:
             seen_new[srcpackage] = srcversion
 
