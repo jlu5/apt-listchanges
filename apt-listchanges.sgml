@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.15 2001-12-13 09:18:00 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.16 2002-01-12 03:47:51 mdz Exp $
 -->
 
 <refentry>
@@ -35,46 +35,12 @@
     <cmdsynopsis>
       <command>apt-listchanges</command>
       <group choice=opt>
-	<arg><option>-v</option></arg>
-	<arg><option>--verbose</option></arg>
-      </group>
-      <group choice=opt>
-	<arg><option>-f</option></arg>
-	<arg><option>--frontend=frontend</option></arg>
-      </group>
-      <group choice=opt>
-	<arg><option>--email-address=addr</option></arg>
-      </group>
-      <group choice=opt>
-	<arg><option>-c</option></arg>
-	<arg><option>--confirm</option></arg>
-      </group>
-
-      <group choice=opt>
-	<arg><option>-a</option></arg>
-	<arg><option>--all</option></arg>
-      </group>
-
-      <group choice=opt>
-	<arg><option>-h</option></arg>
-	<arg><option>--headers</option></arg>
-      </group>
-
-      <group choice=opt>
-        <arg><option>--debug</option></arg>
+        <arg rep=repeat><replaceable>options</replaceable></arg>
       </group>
 
       <group choice=req>
 	<arg><option>--apt</option></arg>
 	<arg rep=repeat><replaceable>package.deb</replaceable></arg>
-      </group>
-
-      <group choice=opt>
-	<arg><option>--help</option></arg>
-      </group>
-
-      <group choice=opt>
-	<arg><option>--version</option></arg>
       </group>
 
     </cmdsynopsis>
@@ -113,7 +79,9 @@
 	<LISTITEM>
 	  <PARA>Read filenames from a specially-formatted pipeline (as
 	    provided by apt), rather than from command line arguments,
-	    and honor certain apt-specific options in the config file.
+	    and honor certain apt-specific options in the config
+	    file.  This pipeline must be in "version 2" format,
+	    specified in the apt configuration.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
@@ -137,16 +105,6 @@
 	    user.  Current frontends include:
 	  </PARA>
 	  <VARIABLELIST>
-	    <VARLISTENTRY>
-	      <TERM>newt</TERM>
-	      <LISTITEM>
-		<PARA>
-		  A terminal graphics interface, using text mode
-		  windows based on the newt toolkit.  Displays output
-		  in a scrollable window.
-		</PARA>
-	      </LISTITEM>
-	    </VARLISTENTRY>
 	    <VARLISTENTRY>
 	      <TERM>pager</TERM>
 	      <LISTITEM>
@@ -174,32 +132,33 @@
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
+
 	    <VARLISTENTRY>
-	      <TERM>mail</TERM>
+	      <TERM>none</TERM>
 	      <LISTITEM>
 		<PARA>
-		  Sends output via email, to the address specified in
-		  <filename>/etc/apt/listchanges.conf</filename> or by
-		  the <option>--email-address</option> option
+		  Does nothing.  Primarily for use with the
+		  --email-address option.
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
 	  </VARIABLELIST>
-	</LISTITEM>
+        </LISTITEM>
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM><OPTION>--email-address</OPTION></TERM>
+	<TERM><OPTION>--email-address=address</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
-	    Specify the email address to which output should be mailed
-	    when using the mail frontend.
+            In addition to displaying it, mail a copy of the changelog
+            data to the specified address.  To only mail changelog
+            entries, use this option with the special frontend 'none'.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM><OPTION>-c, --confirm, --noconfirm</OPTION></TERM>
+	<TERM><OPTION>-c, --confirm</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
 	    Once changelogs have been displayed, ask the user whether
@@ -223,13 +182,14 @@
       </VARLISTENTRY>
 
       <VARLISTENTRY>
-	<TERM><OPTION>--saveseen, --nosaveseen</OPTION></TERM>
+	<TERM><OPTION>--save_seen=file</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
-	    This option (which defaults to on) will cause
-	    apt-listchanges to keep track of the last version of a
-	    package for which changelogs have been displayed, to avoid
-	    redisplaying the same changelogs in a future invocation.
+	    This option will cause apt-listchanges to keep track of
+	    the last version of a package for which changelogs have
+	    been displayed, to avoid redisplaying the same changelogs
+	    in a future invocation.  The database is stored in the
+	    named file.  Specify 'none' to disable this feature.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>
@@ -296,13 +256,55 @@
   </refsect1>
 
   <refsect1>
+    <title>ENVIRONMENT</title>
+
+    <variablelist>
+      <varlistentry>
+        <term>APT_LISTCHANGES_FRONTEND</term>
+        <listitem><para>Frontend to use</para></listitem>
+      </varlistentry>
+    </variablelist>
+
+  </refsect1>
+
+  <refsect1>
     <title>FILES</title>
 
     <variablelist>
       <varlistentry>
 	<term>/etc/apt/listchanges.conf</term>
 
-        <listitem><para>Configuration file</para></listitem>
+        <listitem>
+          <para>Configuration file.  Most options have the same names
+          as command-line options, with hyphens translated to
+          underscores.</para>
+
+          <example>
+            <title>Example configuration file</title>
+<programlisting>
+[cmdline]
+frontend=pager
+
+[apt]
+frontend=xterm-pager
+email_address=root
+confirm=1
+</programlisting>
+              </example>
+
+          <para>The above configuration file specifies that in
+          command-line mode, the default frontend should be "pager".
+          In apt mode, the xterm-pager frontend is default, a copy
+          of the changelogs (if any) should be emailed to root, and
+          apt-listchanges should ask for confirmation.</para>
+
+          <para>There is one special config file option, 'run', which
+          is typically only used in apt mode.  This option specifies
+          that apt-listchanges should not run at all, and provides a
+          convenient way to temporarily disable it without editing the
+          apt configuration</para>
+
+        </listitem>
       </varlistentry>
 
       <varlistentry>

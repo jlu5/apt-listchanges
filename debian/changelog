@@ -1,3 +1,26 @@
+apt-listchanges (2.0) unstable; urgency=low
+
+  * The Python release
+  * Complete rewrite in python, and lots of code cleanup
+  * ATTENTION: The configuration file format has changed, it now uses
+    python's ConfigParser.  Folks configuring based on the debconf
+    questions should be migrated automagically.  Others will need to RTFM.
+  * The newt frontend is gone, and good riddance.  Try the pager frontend,
+    fix newt, or send me a patch for something better.
+    (Closes: #78814, #94572, #126055)
+  * Mail can now be sent in addition to running one of the usual
+    frontends, using --email-address=me@there.  If this option is not
+    specified, no mail is sent.  An argument of 'none' overrides a
+    configured default. (Closes: #78448)
+  * --nosaveseen is gone.  --saveseen now accepts an argument, which is
+    the database file to use, so you can use different databases for
+    different tasks.  --saveseen=none will act like the old --nosaveseen.
+  * Get rid of the automake cruft and just do it by hand.  Automake was
+    starting to do way too much unnecessary work
+  * Document the config file format
+
+ -- Matt Zimmerman <mdz@debian.org>  Fri, 11 Jan 2002 22:47:12 -0500
+
 apt-listchanges (1.61) unstable; urgency=low
 
   * Remove a stray debugging statement (Closes: #125586)

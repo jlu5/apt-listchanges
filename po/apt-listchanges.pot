@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: Fri Jan 11 22:46:14 2002\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.4\n"
+
+
+#: ../apt-listchanges:105
+msgid "%s: will be newly installed"
+msgstr ""
+
+#: ../apt-listchanges:118
+msgid "%s: Version %s has already been seen"
+msgstr ""
+
+#: ../apt-listchanges:144
+msgid "Changes for %s"
+msgstr ""
+
+#: ../apt-listchanges:153
+msgid "Informational notes"
+msgstr ""
+
+#: ../apt-listchanges:167
+msgid "didn't find any valid .deb archives"
+msgstr ""
+
+#: ../apt_listchanges.py:183
+msgid ""
+"Wrong or missing VERSION from apt pipeline\n"
+"(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
+msgstr ""
+
+#: ../apt_listchanges.py:218
+msgid "Mailing changelogs to %s"
+msgstr ""
+
+#: ../apt_listchanges.py:221
+msgid "apt-listchanges output for %s"
+msgstr ""
+
+#: ../apt_listchanges.py:261
+msgid "Do you want to continue? [Y/n]? "
+msgstr ""
+
+#: ../apt_listchanges.py:272 ../apt_listchanges.py:288
+#: ../apt_listchanges.py:293
+msgid "Reading changelogs"
+msgstr ""
+
+#: ../apt_listchanges.py:293
+msgid "Done"
+msgstr ""
+

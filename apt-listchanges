@@ -1,0 +1,168 @@
+#! /usr/bin/env python
+
+#
+#      apt-listchanges - Show changelog entries between the installed versions
+#        of a set of packages and the versions contained in corresponding
+#        .deb files
+#
+#      Copyright (C) 2000-2002  Matt Zimmerman <mdz@debian.org>
+#
+#      This program is free software; you can redistribute it and/or modify
+#      it under the terms of the GNU General Public License as published by
+#      the Free Software Foundation; either version 2 of the License, or
+#      (at your option) any later version.
+#
+#      This program is distributed in the hope that it will be useful,
+#      but WITHOUT ANY WARRANTY; without even the implied warranty of
+#      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#      GNU General Public License for more details.
+#
+#      You should have received a copy of the GNU General Public
+#      License along with this program; if not, write to the Free
+#      Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+#      MA 02111-1307 USA
+#
+
+# TODO:
+# verbose messages
+# debugging?
+# i18n, l10n
+
+import sys
+import gettext
+import string
+import anydbm
+import DebianControlParser
+import apt_listchanges
+
+try:
+    _ = gettext.translation('apt-listchanges')
+except IOError:
+    def gettext_null(str): return str
+    _ = gettext_null
+
+config = apt_listchanges.Config()
+config.read('/etc/apt/listchanges.conf')
+debs = config.getopt(sys.argv)
+
+if (debs == None or len(debs) == 0) and config.mode != 'apt':
+    # XXX, display usage
+    sys.stderr.write("Usage: apt-listchanges [options] {--apt | filename.deb ...}\n")
+    sys.exit(1)
+
+# If apt is in quiet (loggable) mode, we should make our output
+# loggable too
+if config.quiet:
+    config.frontend = 'text'
+
+if config.mode == 'apt':
+    debs = apt_listchanges.read_apt_pipeline()
+
+if not config.run or config.frontend == 'none':
+    sys.exit(0)
+
+if not config.show_all:
+    status = DebianControlParser.DebianControlParser()
+    status.readfile('/var/lib/dpkg/status')
+    status.makeindex('Package')
+    if config.save_seen:
+        seen = anydbm.open(config.save_seen, 'c')
+
+all_changes = []
+notes = []
+
+# Mapping of source->binary packages
+source_packages = {}
+
+# Flag for each source package, only set if changelogs were actually found
+found = {}
+
+frontend = apt_listchanges.make_frontend(config.frontend,len(debs))
+
+# Main loop
+for deb in debs:
+    parser = DebianControlParser.DebianControlParser()
+    parser.readdeb(deb)
+    pkgdata = parser.stanzas[0]
+    binpackage = pkgdata.Package
+    srcpackage = pkgdata.source()
+    srcversion = pkgdata.sourceversion()
+    frontend.update_progress()
+    # Show changes later than fromversion
+    fromversion = None
+
+    #print "Processing %s (%s)" % (binpackage, srcpackage)
+
+    if not config.show_all:
+        if config.save_seen and seen.has_key(srcpackage):
+            fromversion = seen[srcpackage]
+        else:
+            statusentry = status.find('Package',binpackage)
+            if statusentry.installed():
+                fromversion = statusentry.sourceversion()
+            else:
+                # Package not installed or seen
+                notes.append(_("%s: will be newly installed") % binpackage)
+                continue
+
+    if source_packages.has_key(srcpackage):
+        source_packages[srcpackage].append(binpackage)
+    else:
+        source_packages[srcpackage] = [binpackage]
+
+    if found.has_key(srcpackage):
+        continue
+
+    if apt_listchanges.VersionCompare(fromversion, 'ge',
+                                      srcversion):
+        notes.append(_("%s: Version %s has already been seen") % (binpackage,
+                                                                  srcversion))
+        continue
+
+    (changes, urgency) = apt_listchanges.extract_changelog(deb, fromversion)
+
+    if changes:
+        found[srcpackage] = 1
+        all_changes.append({ 'package' : srcpackage,
+                             'changes' : changes,
+                             'urgency' : urgency })
+        if config.save_seen:
+            seen[srcpackage] = srcversion
+
+frontend.progress_done()
+
+if config.save_seen:
+    seen.close()
+
+all_changes.sort(lambda a,b: cmp(a['urgency'],b['urgency']) or
+                 cmp(a['package'],b['package']))
+
+if config.headers:
+    changes = ''
+    for rec in all_changes:
+        package = rec['package']
+        header = _('Changes for %s') % package
+        if len(filter(lambda x: x != package,source_packages[package])) > 0:
+            # Differing source and binary packages
+            header += ' (' + string.join(source_packages[package]) + ')'
+        changes += '--- ' + header + ' ---\n' + rec['changes']
+else:
+    changes = string.join(map(lambda x: x['changes'], all_changes), '')
+
+if len(notes) > 0:
+    changes += _("Informational notes") + ":\n\n" + string.join(notes,'\n')
+
+if changes:
+    if config.email_address:
+        apt_listchanges.mail_changes(config.email_address, changes)
+        
+    frontend.display_output(changes)
+
+    if config.confirm:
+        if not frontend.confirm():
+            sys.exit(10)
+            
+elif not source_packages.keys():
+    sys.stderr.write("apt-listchanges: "
+                     + _("didn't find any valid .deb archives"))
+    sys.exit(1)

@@ -3,12 +3,11 @@ Section: utils
 Priority: optional
 Maintainer: Matt Zimmerman <mdz@debian.org>
 Standards-Version: 3.2.1
-Build-Depends-Indep: debhelper, docbook-to-man, automake, autoconf (>= 2.50-1), gettext, perl (>= 5.6.0-16)
+Build-Depends-Indep: debhelper, docbook-to-man, gettext, python (>= 2.1)
 
 Package: apt-listchanges
 Architecture: all
-Depends: ${perl:Depends}, apt (>= 0.5.3), liblocale-gettext-perl, debconf
-Suggests: libnewt-perl
+Depends: python (>= 2.1), apt (>= 0.5.3), debconf
 Description: Display new Debian changelog entries from .deb archives
  apt-listchanges is a tool to show what has been changed in a new
  version of a Debian package, as compared to the version currently

@@ -14,33 +14,41 @@ if [ "$action" = "configure" ]; then
     db_get apt-listchanges/overwrite_etc_apt_listchanges_conf
     if [ "$RET" = "true" -o ! -e "$PREFERENCES" ]; then
 	[ -f "$PREFERENCES" ] && cp $PREFERENCES $PREFERENCES.old
-	: > $PREFERENCES
+
+        if grep -q '^\[apt\]$' $PREFERENCES; then
+            # New-style config file, copy over everything except [apt]
+            perl -ne 'print unless /^\[apt\]$/ .. (/^\[(.*)\]$/ && $1 ne "apt")' \
+                < $PREFERENCES.old > $PREFERENCES
+        else
+            # Old-style config file or no [apt] section, start fresh
+            : > $PREFERENCES
+        fi
+
+        echo "[apt]" >> $PREFERENCES
 
 	db_get apt-listchanges/frontend
 	echo "frontend=$RET" >> $PREFERENCES
 
 	db_get apt-listchanges/email-address
-	echo "email-address=$RET" >> $PREFERENCES
+	echo "email_address=$RET" >> $PREFERENCES
 
 	db_get apt-listchanges/confirm
 	if [ "$RET" = "true" ]; then
-	  echo "apt-mode-confirm=yes" >> $PREFERENCES
+	  echo "confirm=1" >> $PREFERENCES
 	else
-	  echo "apt-mode-confirm=no" >> $PREFERENCES
+	  echo "confirm=0" >> $PREFERENCES
 	fi
 
 	db_get apt-listchanges/apt-hook-p
 	if [ "$RET" = "true" ]; then
-	  echo "apt-mode-run=yes" >> $PREFERENCES
+	  echo "run=1" >> $PREFERENCES
 	else
-          echo "apt-mode-run=no" >> $PREFERENCES
+          echo "run=0" >> $PREFERENCES
 	fi
 
 	db_get apt-listchanges/save-seen
 	if [ "$RET" = "true" ]; then
-	  echo "save-seen=yes" >> $PREFERENCES
-        else
-          echo "save-seen=no" >> $PREFERENCES
+	  echo "save_seen=/var/lib/apt/listchanges.db" >> $PREFERENCES
 	fi
 
 	rm -f $PREFERENCES.old
@@ -76,6 +84,11 @@ if [ "$action" = "configure" ]; then
 	  cp "$OLDAPTCONFIG" "$NEWAPTCONFIG"
         fi
 	rm -f "$OLDAPTCONFIG"
+    fi
+
+    # Re-create database (pre-2.0)
+    if dpkg --compare-versions "$version" lt 2.0; then
+        : > /var/lib/apt/listchanges.db
     fi
 fi
 

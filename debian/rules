@@ -16,22 +16,13 @@ configure-stamp:
 	dh_testdir
 # Add here commands to configure the package.
 
-# Substitute version into configure.in
-	perl -pi.orig -e 's/^AM_INIT_AUTOMAKE.*$$/AM_INIT_AUTOMAKE($(package), $(version))/g' configure.in
-
-	aclocal
-	autoconf2.50
-	automake --foreign --add-missing
-	./configure --prefix=/usr
+	perl -pi.orig -e 's/##VERSION##/$(version)/g' apt_listchanges.py
 
 	touch configure-stamp
 
 build: configure-stamp build-stamp
 build-stamp:
 	dh_testdir
-
-	# Add here commands to compile the package.
-	$(MAKE)
 
 	touch build-stamp
 
@@ -40,8 +31,7 @@ clean:
 	dh_testroot
 	rm -f build-stamp configure-stamp
 
-	# Add here commands to clean up after the build process.
-	-$(MAKE) clean
+	rm -f *.py[co] *~
 
 	dh_clean
 
@@ -49,14 +39,9 @@ install: build
 	dh_testdir
 	dh_testroot
 	dh_clean -k
-	dh_installdirs
+	dh_installdirs usr/bin usr/lib/site-python
 
-	# Add here commands to install the package into debian/tmp.
 	$(MAKE) install DESTDIR=$(tmp)
-
-	install -d $(tmp)/etc/apt/apt.conf.d
-	install -m 644 debian/apt.conf \
-		$(tmp)/etc/apt/apt.conf.d/20listchanges
 
 # Build architecture-dependent files here.
 binary-arch: build install
