@@ -2,8 +2,12 @@ apt-listchanges (2.54) unstable; urgency=low
 
   * Spanish man page update from Ruben Porras <nahoo82@telefonica.net>
     (Closes: #239909)
+  * Danish translation of message catalog from Claus Hindsgaul <claus_h@image.dk>
+  * Move Danish translation of debconf templates into the correct place
+    (Closes: #239201)
+  
 
- --
+ -- Matt Zimmerman <mdz@debian.org>  Mon,  5 Apr 2004 08:41:19 -0700
 
 apt-listchanges (2.53) unstable; urgency=low
 
