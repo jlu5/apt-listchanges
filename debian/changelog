@@ -4,7 +4,7 @@ apt-listchanges (1.34) unstable; urgency=low
     /etc/apt/apt.conf.d.  This allows us to avoid sharing a config file
     with anyone else, and to have a defined execution order in relation
     to, e.g. dpkg-preconfigure.
-  * debian/control: depend on apt (>= 0.5.2)
+  * debian/control: depend on apt (>= 0.5.3)
   * debian/control: depend on debconf (this should have been there long
     ago)
   * debian/rules: install /etc/apt/apt.conf.d/20-apt-listchanges.conf
