@@ -5,11 +5,13 @@
 
 # Ask our questions
 db_input medium apt-listchanges/apt-hook-p || true
-db_input medium apt-listchanges/default-frontend || true
+db_input medium apt-listchanges/frontend || true
 db_go
 
-db_get apt-listchanges/default-frontend
+db_get apt-listchanges/frontend
 if [ "$RET" = "mail" ]; then
-  db_input medium apt-listchanges/default-email-address || true
+  db_input medium apt-listchanges/email-address || true
   db_go
 fi
+
+db_input medium apt-listchanges/confirm

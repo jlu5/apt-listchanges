@@ -11,7 +11,7 @@ Description: Should apt-listchanges be automatically run by apt?
  I can perform this configuration for you if you like.  Since you can also run
  apt-listchanges manually on .deb archives, this step is optional.
 
-Template: apt-listchanges/default-frontend
+Template: apt-listchanges/frontend
 Type: select
 Choices: pager, newt, text, mail
 Default: pager
@@ -29,9 +29,20 @@ Description: How should changelogs be displayed by default?
  .
  This setting can be overridden by a command-line option.
 
-Template: apt-listchanges/default-email-address
+Template: apt-listchanges/email-address
 Type: string
 Default: root
 Description: To whom should apt-listchanges mail changelog entries?
  You have chosen to have changelog entries sent via email.  To what email
  address should they be sent?
+
+Template: apt-listchanges/confirm
+Type: boolean
+Default: true
+Description: Should apt-listchanges prompt for confirmation after displaying changelogs?
+ After giving you a chance to display changelog entries,
+ apt-listchanges can ask whether or not you would like to continue.
+ This is useful when running from apt, as it gives you a chance to
+ abort the upgrade if you see a change you do not want to apply (yet).
+ .
+ This setting can be overridden by a command-line option.
