@@ -49,13 +49,13 @@ if (debs == None or len(debs) == 0) and config.mode != 'apt':
 
 apt_pkg.InitSystem()
 
+if config.mode == 'apt':
+    debs = apt_listchanges.read_apt_pipeline(config)
+
 # If apt is in quiet (loggable) mode, we should make our output
 # loggable too
 if config.quiet:
     config.frontend = 'text'
-
-if config.mode == 'apt':
-    debs = apt_listchanges.read_apt_pipeline(config)
 
 if config.frontend == 'none':
     sys.exit(0)
