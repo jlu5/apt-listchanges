@@ -46,18 +46,6 @@ _Description: Should apt-listchanges prompt for confirmation after displaying ch
  This setting does not apply to the 'mail' or 'none' frontends, and can be
  overridden with a command line option.
 
-Template: apt-listchanges/overwrite_etc_apt_listchanges_conf
-Type: boolean
-Default: true
-_Description: Should apt-listchanges overwrite your /etc/apt/listchanges.conf?
- apt-listchanges can configure all of the options in
- /etc/apt/listchanges.conf by asking you questions.  This file is read and
- processed every time apt-listchanges is run, and is used to set defaults. 
- All of the options can be overridden on the command line.
- .
- If you want to edit /etc/apt/listchanges.conf manually for whatever
- reason, answer "no" now.
-
 Template: apt-listchanges/save-seen
 Type: boolean
 Default: true
