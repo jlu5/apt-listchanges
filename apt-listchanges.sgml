@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.19 2002-04-04 04:41:40 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.20 2002-04-09 04:07:34 mdz Exp $
 -->
 
 <refentry>
@@ -115,11 +115,18 @@
 	    </VARLISTENTRY>
 
             <varlistentry>
-              <term>w3m</term>
+              <term>browser</term>
               <listitem>
                 <para>
-                  Displays an HTML-formatted changelog using w3m, with
-                  hyperlinks for bugs and email addresses
+                  Displays an HTML-formatted changelog using a web
+                  browser, with hyperlinks for bugs and email
+                  addresses.  If the environment variable
+                  APT_LISTCHANGES_BROWSER_PIPE is set, it will be
+                  executed and fed input via stdin.  Otherwise, if
+                  APT_LISTCHANGES_BROWSER or BROWSER is set, it is
+                  executed and fed a file: URL to a temporary file.
+                  If none of these environment variables are set, some
+                  common browsers will be searched for.
                 </para>
               </listitem>
             </varlistentry>
@@ -137,10 +144,11 @@
 	    </VARLISTENTRY>
 
             <varlistentry>
-              <term>xterm-w3m</term>
+              <term>xterm-browser</term>
               <listitem>
                 <para>
-                  The logical combination of xterm-pager and w3m
+                  The logical combination of xterm-pager and browser.
+                  Only appropriate for text-mode browsers.
                 </para>
               </listitem>
             </varlistentry>
@@ -268,6 +276,23 @@
       </varlistentry>
     </variablelist>
 
+    <variablelist>
+      <varlistentry>
+        <term>APT_LISTCHANGES_BROWSER_PIPE</term>
+        <listitem><para>Used by the browser frontend, should be set to
+        a command expecting HTML input on stdin</para></listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>APT_LISTCHANGES_BROWSER, BROWSER</term>
+        <listitem><para>Used by
+            the browser frontend, should be set to a command expecting a
+            file: URL for an HTML file to display.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
   </refsect1>
 
   <refsect1>
