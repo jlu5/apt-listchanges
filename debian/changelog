@@ -5,8 +5,10 @@ apt-listchanges (1.53) unstable; urgency=low
     option, and command line option. (Closes: #77161, #103537)
   * A respectable bit of code cleanup.  A rewrite is probably called for,
     perhaps in a different language.  We'll wait and see.
+  * Remember to read all of the pipeline data when using the 'none'
+    frontend (Closes: #105701)
 
- -- Matt Zimmerman <mdz@debian.org>  Mon, 16 Jul 2001 23:08:38 -0400
+ -- Matt Zimmerman <mdz@debian.org>  Tue, 17 Jul 2001 18:08:16 -0400
 
 apt-listchanges (1.52) unstable; urgency=low
 
