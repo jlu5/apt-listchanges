@@ -456,12 +456,12 @@ class runcommand:
     def get_command(self):
         return self.command
 
-class pager(runcommand,ttyconfirm,fancyprogress,frontend):
+class pager(frontend,runcommand,ttyconfirm,fancyprogress):
     def __init__(self,*args):
         apply(frontend.__init__,[self] + list(args))
         self.command = self.config.get('pager', 'sensible-pager')
 
-class xterm(runcommand,ttyconfirm,fancyprogress,frontend):
+class xterm(frontend,runcommand,ttyconfirm,fancyprogress):
     def __init__(self,*args):
         apply(frontend.__init__,[self] + list(args))
         self.mode = os.P_NOWAIT
