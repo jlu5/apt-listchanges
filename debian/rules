@@ -14,6 +14,7 @@ configure-stamp:
 	dh_testdir
 	# Add here commands to configure the package.
 
+	./configure --prefix=/usr
 
 	touch configure-stamp
 
@@ -43,7 +44,7 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/tmp.
-	$(MAKE) install DESTDIR=`pwd`/debian/$(PACKAGE)/usr
+	$(MAKE) install DESTDIR=`pwd`/debian/$(PACKAGE)
 
 # Build architecture-dependent files here.
 binary-arch: build install

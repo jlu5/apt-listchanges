@@ -23,6 +23,8 @@
 #      MA 02111-1307 USA
 #
 
+# This is @PACKAGE@, version @VERSION@
+
 use strict;
 use Getopt::Long;
 use Sys::Hostname;
