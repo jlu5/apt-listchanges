@@ -1,3 +1,19 @@
+apt-listchanges (2.7) unstable; urgency=low
+
+  * Updated Finnish translations of debconf templates and message catalogs
+    from Jaakko Kangasharju <ashar@iki.fi>
+  * Added German translations of message catalogs, and updated
+    translations of debconf templates, from Leonard Michlmayr
+    <Leonard.Michlmayr@ap.univie.ac.at>
+  * Fix APT::quiet handling (Closes: #132501)
+  * Fix --all (Closes: #132393)
+  * Fix the mail frontend (Closes: #132428)
+  * Remove duplicate FILES section from the man page (Closes: #132490)
+  * Updated French translations of debconf templates from Denis Barbier
+    <barbier@debian.org> (Closes: #132384)
+
+ -- Matt Zimmerman <mdz@debian.org>  Wed,  6 Feb 2002 20:34:58 -0500
+
 apt-listchanges (2.6) unstable; urgency=low
 
   * Fix code which, in trying to filter out errors from tar while
