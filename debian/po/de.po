@@ -17,9 +17,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-04-29 20:33-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2004-06-01 11:11-0200\n"
+"Last-Translator: Helge Kreutzmann <kreutzm@itp.uni-hannover.de>\n"
+"Language-Team: de <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,74 +28,71 @@ msgstr ""
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr "pager, browser, xterm-pager, xterm-browser, text, mail, gar nicht"
+msgstr "Anzeigeprogramm, Browser, xterm-Anzeigeprogramm, xterm-Browser, Text, "
+"E-Mail, Garnicht"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "How should changes be displayed with apt?"
-msgstr "Wie sollen die Änderungen standardmäßig angezeigt werden?"
+msgstr "Wie sollen die Änderungen mit apt angezeigt werden?"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"apt-listchanges kann die Changelog-Einträge auf mehrere verschiedene Arten "
+"apt-listchanges kann die Änderungen in Paketen auf mehrere verschiedene Arten "
 "anzeigen."
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "pager - Den Pager verwenden"
+msgstr ""
+"Anzeigeprogramm - Benutzen Sie das von Ihnen bevorzugten Anzeigeprogramm um "
+"Änderungen Seite für Seite anzuzeigen"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "browser - Display HTML-formatted changes using a web browser"
 msgstr ""
-"browser - HTML-formatierte changelogs mittels eines Webbrowsers ansehen"
+"Browser - HTML-formatierte Änderungen mittels Webbrowsers anzeigen"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-pager - Like pager, but in an xterm in the background"
 msgstr ""
-"xterm-pager - Den Pager in einem xterm Fenster im Hintergrund verwenden"
+"xterm-Anzeigeprogramm - Wie Anzeigeprogramm, aber in einem xterm im "
+"Hintergrund"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
 msgstr ""
-"xterm-browser - Den Konsolen-Browser (z.B. lynx) in einem xterm Fenster im "
-"Hintergrund verwenden"
+"xterm-browser - Wie Browser, aber in einem xterm im Hintergrund"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "text  - Die Changelogs aufs Terminal ausgeben. (ohne Unterbrechung)"
+msgstr "Text  - Die Änderungen aufs Terminal ausgeben (ohne Unterbrechung)"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "mail  - Only send changes via mail"
-msgstr "mail  - Sende die Changelogs nur als Mail"
+msgstr "E-Mail  - Sende die Änderungen nur als Mail"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
-msgstr "garnicht - Nicht automatisch von apt aufrufen."
+msgstr "Garnicht - Nicht automatisch von apt aufrufen."
 
 #. Type: select
 #. Description
@@ -107,7 +104,7 @@ msgid ""
 msgstr ""
 "Diese Einstellung kann mit einer Kommandozeilenoption oder einer "
 "Umgebungsvariablen umgangen werden. Beachten Sie, daß sie auf jedenfall eine "
-"Kopie per Mail bekommen können, mit Ausnahme der Option »garnicht«."
+"Kopie per E-Mail bekommen können, mit Ausnahme der Option »Garnicht«."
 
 #. Type: string
 #. Default
@@ -118,20 +115,18 @@ msgstr "root"
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid "To whom should apt-listchanges mail changes?"
 msgstr "An wen soll apt-listchanges changelog-Einträge senden?"
 
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
 msgstr ""
-"apt-listchanges kann eine Kopie der angezeigten changelogs versenden.  An "
-"welche Adresse sollen sie gesendet werden?"
+"apt-listchanges kann eine Kopie der angezeigten Änderungen versenden.  An "
+"welche E-Mail-Adresse sollen sie gesendet werden?"
 
 #. Type: string
 #. Description
@@ -140,33 +135,31 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Mehrere Adresse können angegeben - durch Kommata getrennt, angegeben werden. "
-"Lassen sie dies frei, wenn Sie keinen Mailversand wünschen."
+"Mehrere Adresse können, durch Kommata getrennt, angegeben werden. "
+"Lassen sie dies frei, wenn Sie keinen E-Mailversand wünschen."
 
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changes?"
 msgstr ""
-"Soll apt-listchanges nach dem Anzeigen der Changelogs um eine Bestätigung "
+"Soll apt-listchanges nach dem Anzeigen der Änderungen um eine Bestätigung "
 "bitten?"
 
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"apt-listchanges kann Sie nach dem Anzeigen der Changelogs fragen, ob sie "
+"apt-listchanges kann Sie nach dem Anzeigen der Änderungen fragen, ob Sie "
 "fortfahren wollen. Das ist nützlich, wenn apt-listchanges von apt gestartet "
-"wird: so haben Sie Gelegenheit das Upgrade abbrechen, wenn Sie Änderungen "
-"bemerken, die sie (noch) nicht wollen."
+"wird, da Sie so Sie Gelegenheit haben, das Upgrade abzubrechen, wenn Sie "
+"Änderungen bemerken, die Sie (noch) nicht wollen."
 
 #. Type: boolean
 #. Description
@@ -175,42 +168,39 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Diese Einstellung funktioniert nicht mit dem »Mail« oder »garnicht« "
-"Frontend. Die Einstellung kann durch Kommandozeilenoptionen aufgehoben "
-"werden."
+"Diese Einstellung funktioniert nicht mit der »E-Mail«- oder"
+"»Garnicht«-Schnittstelle. Die Einstellung kann durch Kommandozeilenoptionen "
+"aufgehoben werden."
 
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "Sollen bereits gesehene Einträge weggelassen werden?"
+msgstr "Sollen bereits gesehene Einträge übersprungen werden?"
 
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
 "apt-listchanges kann sich merken, welche Changelog-Einträge bereits "
-"angezeigt wurden, und diese bei späteren Aufrufen übergehen. Das ist zum "
+"angezeigt wurden, und diese bei späteren Aufrufen zu übergehen. Das ist zum "
 "Beispiel nützlich, wenn Sie ein Upgrade wiederholen."
 
 #. Type: select
 #. Choices
 #: ../templates:59
 msgid "news, both, changelogs"
-msgstr ""
+msgstr "News-Dateien, beide, Changelog-Dateien"
 
 #. Type: select
 #. Description
 #: ../templates:61
-#, fuzzy
 msgid "Which types of changes should be displayed with apt?"
-msgstr "Wie sollen die Änderungen standardmäßig angezeigt werden?"
+msgstr "Welche Arten von Ändrungen sollen mit apt angezeigt werden?"
 
 #. Type: select
 #. Description
@@ -220,6 +210,9 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
+" News - Nur wichtige Neuigkeiten\n"
+" Both - Sowohl News und detailierte Changelogs\n"
+" Changelogs - Nur detailierte Changelogs (Änderungen)"
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 #~ msgstr "Soll apt-listchanges /etc/apt/listchanges.conf überschreiben?"

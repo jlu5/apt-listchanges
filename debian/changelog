@@ -6,6 +6,8 @@ apt-listchanges (2.56) unstable; urgency=low
     (Closes: #244684)
   * Updated French translation of debconf templates from Denis Barbier <barbier@debian.org>
     (Closes: #248523)
+  * Updated German translation of debconf templates from Helge Kreutzmann <kreutzm@itp.uni-hannover.de>
+    (Closes: #252051)
 
  --
 
