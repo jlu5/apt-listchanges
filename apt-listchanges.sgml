@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.26 2004-01-08 21:05:24 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.27 2004-02-27 06:37:09 mdz Exp $
 -->
 
 <refentry>
@@ -270,6 +270,17 @@
         </listitem>
       </varlistentry>
 
+      <varlistentry>
+        <term><option>--profile=<replaceable>name</replaceable></option></term>
+        <listitem>
+          <para>Select an option profile.
+          <replaceable>name</replaceable> corresponds to a section in
+          <filename>/etc/apt/listchanges.conf</filename>.  The default
+          when invoked from apt is "apt", and "cmdline" otherwise.
+          </para>
+        </listitem>
+      </varlistentry>
+
     </VARIABLELIST>
 
   </refsect1>
@@ -325,6 +336,10 @@ frontend=pager
 frontend=xterm-pager
 email_address=root
 confirm=1
+
+[custom]
+frontend=browser
+browser=mozilla
 </programlisting>
               </example>
 
@@ -332,7 +347,9 @@ confirm=1
           command-line mode, the default frontend should be "pager".
           In apt mode, the xterm-pager frontend is default, a copy
           of the changelogs (if any) should be emailed to root, and
-          apt-listchanges should ask for confirmation.</para>
+          apt-listchanges should ask for confirmation.  If
+          apt-listchanges is invoked with --profile=custom, the
+          browser frontend will be used, and invoke mozilla.</para>
 
         </listitem>
       </varlistentry>
