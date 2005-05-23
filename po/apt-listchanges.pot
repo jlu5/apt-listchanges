@@ -1,72 +1,84 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR ORGANIZATION
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-22 20:39-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"
-"Generated-By: pygettext.py 1.4\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-
-#: ../apt-listchanges:109
+#: ../apt-listchanges:112
+#, python-format
 msgid "%s: will be newly installed"
 msgstr ""
 
 #: ../apt-listchanges:121
+#, python-format
 msgid "%s: Version %s has already been seen"
 msgstr ""
 
-#: ../apt-listchanges:147
+#: ../apt-listchanges:154
+#, python-format
+msgid "News for %s"
+msgstr ""
+
+#: ../apt-listchanges:165
+#, python-format
 msgid "Changes for %s"
 msgstr ""
 
-#: ../apt-listchanges:156
+#: ../apt-listchanges:181
 msgid "Informational notes"
 msgstr ""
 
-#: ../apt-listchanges:177
+#: ../apt-listchanges:197
+#, python-format
+msgid "apt-listchanges: changelogs for %s"
+msgstr ""
+
+#: ../apt-listchanges:201
+#, python-format
+msgid "apt-listchanges: news for %s"
+msgstr ""
+
+#: ../apt-listchanges:213
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
-#: ../apt_listchanges.py:184
+#: ../apt_listchanges.py:283
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 
-#: ../apt_listchanges.py:225
-msgid "Mailing changelogs to %s"
+#: ../apt_listchanges.py:326
+#, python-format
+msgid "Mailing %s: %s"
 msgstr ""
 
-#: ../apt_listchanges.py:228
-msgid "apt-listchanges output for %s"
+#: ../apt_listchanges.py:353
+#, python-format
+msgid "The %s frontend is deprecated, using pager"
 msgstr ""
 
-#: ../apt_listchanges.py:239
-msgid "The newt frontend is deprecated, using pager"
-msgstr ""
-
-#: ../apt_listchanges.py:266
+#: ../apt_listchanges.py:387
 msgid "Do you want to continue? [Y/n]? "
 msgstr ""
 
-#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
-#: ../apt_listchanges.py:306
+#: ../apt_listchanges.py:404 ../apt_listchanges.py:424
+#: ../apt_listchanges.py:432
 msgid "Reading changelogs"
 msgstr ""
 
-#: ../apt_listchanges.py:306
+#: ../apt_listchanges.py:432
 msgid "Done"
 msgstr ""
-
-#: ../apt_listchanges.py:343
-msgid "%s exited with status %d"
-msgstr ""
-

@@ -2,6 +2,9 @@ apt-listchanges (2.60) unstable; urgency=low
 
   * Fix clean target to remove translated man pages
   * Document the corresponding configuration file option for --all
+  * Patch from Frédéric Bothamy to regenerate apt-listchanges.pot correctly (Closes: #302548)
+  * Regenerate apt-listchanges.pot in the source package
+  
 
  -- 
 
