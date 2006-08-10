@@ -126,7 +126,7 @@
                   Affiche le journal des modifications formaté en HTML dans un
                   navigateur web avec des hyperliens vers les pages de bugs et
                   pour les adresses électroniques. Par défaut, la variable
-                  d'environnement PAGER sera utilisée.  L'option
+                  d'environnement BROWSER sera utilisée.  L'option
                   «&nbsp;browser&nbsp;» peut être spécifiée dans le fichier de
                   configuration pour sélectionner un navigateur spécifique à
                   utiliser avec apt-listchanges.
