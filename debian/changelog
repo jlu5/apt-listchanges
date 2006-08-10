@@ -1,3 +1,16 @@
+apt-listchanges (2.61) UNRELEASED; urgency=low
+
+  * Packaging:
+    + add a dependency on mail-transport-agent (Closes: #280892, #327590).
+    + update depends upon debconf (Closes: #331748).
+    + test if apt-listchanges is still there in 20listchanges before calling
+      it (Closes: #237334, #262682)
+
+  * l10n:
+    + update de.po, thanks to Jens Seidel (Closes: #313665).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 10 Aug 2006 20:45:46 +0200
+
 apt-listchanges (2.60) unstable; urgency=low
 
   * Change of maintainer (and upstream):

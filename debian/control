@@ -5,11 +5,13 @@ Maintainer: Pierre Habouzit <madcoder@debian.org>
 Uploaders: Matt Zimmerman <mdz@debian.org>
 Standards-Version: 3.7.2
 Build-Depends: debhelper (>= 5)
-Build-Depends-Indep: docbook-to-man, gettext, python-dev, po-debconf, python-support (>= 0.4.0)
+Build-Depends-Indep: docbook-to-man, gettext, python-dev, po-debconf,
+ python-support (>= 0.4.0)
 
 Package: apt-listchanges
 Architecture: all
-Depends: ${python:Depends}, apt (>= 0.5.3), python-apt, debconf, ucf (>= 0.28), debianutils (>= 2.0.2)
+Depends: ${python:Depends}, apt (>= 0.5.3), python-apt, debconf | debconf-2.0,
+ ucf (>= 0.28), debianutils (>= 2.0.2), exim4 | mail-transport-agent
 Suggests: x-terminal-emulator, www-browser
 Description: Display change history from .deb archives
  apt-listchanges is a tool to show what has been changed in a new
