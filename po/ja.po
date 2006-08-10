@@ -1,12 +1,12 @@
 # apt-listchanges Japanese
 # Copyright (C) 2002
-# Junichi Uekawa <dancer@debian.org>, 2002
+# Junichi Uekawa <dancer@debian.org>, 2002, 2005
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
-"PO-Revision-Date: 2002-09-19 19:50+0900\n"
+"POT-Creation-Date: 2005-07-16 02:46+JST\n"
+"PO-Revision-Date: 2005-07-16 03:06+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Japanese \n"
 "MIME-Version: 1.0\n"
@@ -14,8 +14,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Generated-By: pygettext.py 1.4\n"
 
+#: ../apt-listchanges:87
+msgid "Unknown frontend: %s\n"
+msgstr "不明なフロントエンド: %s\n"
 
-#: ../apt-listchanges:109
+#: ../apt-listchanges:112
 msgid "%s: will be newly installed"
 msgstr "%s: を新規にインストールします"
 
@@ -23,52 +26,67 @@ msgstr "%s: を新規にインストールします"
 msgid "%s: Version %s has already been seen"
 msgstr "%s: バージョン %s は既にみられています"
 
-#: ../apt-listchanges:147
+#: ../apt-listchanges:154
+msgid "News for %s"
+msgstr "%s のニュース"
+
+#: ../apt-listchanges:165
 msgid "Changes for %s"
 msgstr "%s の変更点"
 
-#: ../apt-listchanges:156
+#: ../apt-listchanges:181
 msgid "Informational notes"
 msgstr "情報メモ"
 
-#: ../apt-listchanges:177
+#: ../apt-listchanges:197
+msgid "apt-listchanges: changelogs for %s"
+msgstr "apt-listchanges: %s の changelog "
+
+#: ../apt-listchanges:201
+msgid "apt-listchanges: news for %s"
+msgstr "apt-listchanges: %s のニュース"
+
+#: ../apt-listchanges:213
 msgid "didn't find any valid .deb archives"
 msgstr "有効な.debアーカイブを見付ける事ができませんでした"
 
-#: ../apt_listchanges.py:184
+#: ../apt_listchanges.py:212
+msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
+msgstr "使用方法: apt-listchanges [オプション] {--apt | ファイル名.deb ...}\n"
+
+#: ../apt_listchanges.py:267
+msgid "Unknown option %s for --which.  Allowed are: %s."
+msgstr "--which に対しての不正なオプション %s です． 可能なオプションは: %s."
+
+#: ../apt_listchanges.py:283
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 "aptのパイプラインから来ているVERSIONが間違っているか，もしくは無いです．\n"
-"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version は 2になっていますか?)\n"
+"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version は 2になっています"
+"か?)\n"
 
-#: ../apt_listchanges.py:225
-msgid "Mailing changelogs to %s"
-msgstr "%s にchangelogをメールしています"
+#: ../apt_listchanges.py:326
+msgid "Mailing %s: %s"
+msgstr "%s にメール: %s"
 
-#: ../apt_listchanges.py:228
-msgid "apt-listchanges output for %s"
-msgstr "%s の apt-listchanges 出力"
+#: ../apt_listchanges.py:353
+msgid "The %s frontend is deprecated, using pager"
+msgstr "%s フロントエンドは廃止されました， pagerを使います"
 
-#: ../apt_listchanges.py:239
-msgid "The newt frontend is deprecated, using pager"
-msgstr "newt フロントエンドは廃止されました．pagerを使います"
-
-#: ../apt_listchanges.py:266
+#: ../apt_listchanges.py:387
 msgid "Do you want to continue? [Y/n]? "
 msgstr "これでよろしいですか [Y(はい)/n(いいえ)]? "
 
-#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
-#: ../apt_listchanges.py:306
+#: ../apt_listchanges.py:404 ../apt_listchanges.py:424
+#: ../apt_listchanges.py:432
 msgid "Reading changelogs"
 msgstr "changelog を読んでいます"
 
-#: ../apt_listchanges.py:306
+#: ../apt_listchanges.py:432
 msgid "Done"
 msgstr "完了"
 
-#: ../apt_listchanges.py:343
-msgid "%s exited with status %d"
-msgstr "%s が終了コード %d で終了しました"
-
+#~ msgid "%s exited with status %d"
+#~ msgstr "%s が終了コード %d で終了しました"

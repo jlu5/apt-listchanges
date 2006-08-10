@@ -11,36 +11,29 @@
 #
 #    Developers do not need to manually edit POT or PO files.
 #
-# Jordi Mallach <jordi@debian.org>, 2002
-# David Martínez Moreno <ender@debian.org>, 2002
-# Carlos Valdivia Yagüe <valyag@dat.etsit.upm.es>, 2003
-# Ricardo Mones <mones@aic.uniovi.es>, 2005
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.39\n"
+"Project-Id-Version: apt-listchanges\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-04-29 20:33-0700\n"
-"PO-Revision-Date: 2005-02-13 12:57+0100\n"
-"Last-Translator: Ricardo Mones <mones@aic.uniovi.es>\n"
-"Language-Team: Debian L10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"PO-Revision-Date: 2004-07-11 22:05+0200\n"
+"Last-Translator: Jan Outrata <outrataj@upcase.inf.upol.cz>\n"
+"Language-Team: Czech <provoz@debian.cz>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: select
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr ""
-"paginador, navegador, paginador-xterm, navegador-xterm, texto, correo, "
-"ninguna"
+msgstr "pager, browser, xterm-pager, xterm-browser, text, mail, nijak"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "How should changes be displayed with apt?"
-msgstr "¿Cómo deberían mostrarse los cambios con apt?"
+msgstr "Jak se mají zobrazovat zmìny s apt?"
 
 #. Type: select
 #. Description
@@ -48,49 +41,52 @@ msgstr "¿Cómo deberían mostrarse los cambios con apt?"
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"apt-listchanges puede mostrar los cambios en los paquetes de varias maneras."
+"apt-listchanges mù¾e zobrazovat zmìny v balíècích mnoha rùznými "
+"zpùsoby."
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "paginador - Usa su paginador preferido para mostrar los cambios página a página"
+msgstr ""
+"pager - Pou¾ije vá¹ oblíbený stránkovaè pro zobrazení zmìn po "
+"stránkách"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "navegador - Muestra los cambios en formato HTML usando un navegador web"
+msgstr "browser - Zobrazí HTML-formátované zmìny pomocí web prohlí¾eèe"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "paginador-xterm - Como paginador, pero bajo una xterm en segundo plano"
+msgstr "xterm-pager - Jako pager, ale v xtermu na pozadí"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "navegador-xterm - Como navegador, pero bajo una xterm en segundo plano"
+msgstr "xterm-browser - Jako browser, ale v xtermu na pozadí"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "texto - Imprime los cambios en su terminal (sin pausas)"
+msgstr "text - Vypí¹e zmìny na terminál (bez pøestávky)"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changes via mail"
-msgstr "correo - Sólo envía los cambios por correo"
+msgstr "mail - Jen po¹le zmìny mailem"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
-msgstr "ninguna - No ejecutar automáticamente desde apt"
+msgstr "nijak - Nespou¹tìt automaticky z apt"
 
 #. Type: select
 #. Description
@@ -100,10 +96,9 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Puede reemplazar esta configuración usando una opción en la línea de "
-"órdenes o con una variable de entorno. Tenga en cuenta que aún así puede "
-"mandar una copia por correo habiendo seleccionado cualquiera de las maneras "
-"de mostrar los cambios, excepto con «ninguna»."
+"Volba pøíkazové øádky nebo promìnná prostøedí má pøednost pøed tímto "
+"nastavením. Poznamenejme, ¾e stále mù¾ete zaslat kopii mailem se v¹emi "
+"frontendy kromì 'nijak'."
 
 #. Type: string
 #. Default
@@ -115,7 +110,7 @@ msgstr "root"
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changes?"
-msgstr "¿A quién debe apt-listchanges enviar por correo los cambios?"
+msgstr "Komu má apt-listchanges zasílat mailem zmìny?"
 
 #. Type: string
 #. Description
@@ -124,8 +119,8 @@ msgid ""
 "apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
 msgstr ""
-"apt-listchanges puede enviar una copia de los cambios mostrados. ¿A qué "
-"dirección de correo quiere que se envíen?"
+"apt-listchanges mù¾e zaslat emailem kopii zobrazovaných zmìn. Na jakou "
+"emailovou adresu mají být zaslány?"
 
 #. Type: string
 #. Description
@@ -134,16 +129,15 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Se pueden indicar múltiples direcciones, separadas por comas. Déjelo en blanco "
-"si no quiere que se mande ningún correo."
+"Mù¾ete zadat více adres, oddìlených èárkami. Nechte pole prázdné, "
+"pokud nechcete zasílat ¾ádné emaily."
 
 #. Type: boolean
 #. Description
 #: ../templates:40
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changes?"
-msgstr ""
-"¿Debería apt-listchanges pedir confirmación después de mostrar los cambios?"
+msgstr "Má se apt-listchanges ptát na potvrzení po zobrazení zmìn?"
 
 #. Type: boolean
 #. Description
@@ -154,10 +148,10 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Después de darle la oportunidad de mostrar los cambios, apt-listchanges "
-"puede preguntar si quiere o no continuar. Ésto es útil cuando se ejecuta "
-"desde apt, ya que le ofrece la oportunidad de abortar la actualización si ve "
-"algún cambio que no quiere aplicar (aún)."
+"Po zobrazení seznamu zmìn se mù¾e apt-listchanges zeptat, jestli "
+"chcete pokraèovat nebo ne. Toto je u¾iteèné pøi spu¹tìní z apt, "
+"proto¾e vám to dává ¹anci pøeru¹it aktualizaci, pokud uvidíte zmìnu, "
+"kterou nechcete aplikovat (momentálnì)."
 
 #. Type: boolean
 #. Description
@@ -166,14 +160,14 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Esta opción no afecta a las maneras de mostrar los cambios «correo» o "
-"«ninguna» y se puede modificar desde la línea de comandos."
+"Toto nastavení neplatí pro frontendy 'mail' nebo 'nijak' a volba "
+"pøíkazové øádky má pøed ním pøednost."
 
 #. Type: boolean
 #. Description
 #: ../templates:52
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "¿Debería apt-listchanges ignorar los cambios que ya se han visto?"
+msgstr "Má apt-listchanges pøeskoèit zmìny, které ji¾ byly shlédnuty?"
 
 #. Type: boolean
 #. Description
@@ -183,21 +177,21 @@ msgid ""
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges puede hacer un seguimiento de los cambios que ya se han "
-"mostrado anteriormente, e ignorarlos en futuras ejecuciones. Esto es útil, "
-"por ejemplo, cuando se reintenta una actualización."
+"apt-listchanges má schopnost zaznamenat si, které zmìny ji¾ byly "
+"zobrazeny, a pøeskoèit je pøi dal¹ích spu¹tìních. Toto je u¾iteèné "
+"napøíklad pøi opìtovném pokusu o aktualizaci."
 
 #. Type: select
 #. Choices
 #: ../templates:59
 msgid "news, both, changelogs"
-msgstr "noticias, ambos, cambios"
+msgstr "novinky, obojí, changelogy"
 
 #. Type: select
 #. Description
 #: ../templates:61
 msgid "Which types of changes should be displayed with apt?"
-msgstr "¿Qué tipos de cambios deberían mostrarse con apt?"
+msgstr "Které typy zmìn se mají zobrazovat s apt?"
 
 #. Type: select
 #. Description
@@ -207,6 +201,6 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" noticias - sólo noticias importantes\n"
-" ambos - noticias y listas de cambios detallados\n"
-" cambios - sólo las listas de cambios detallados"
+" novinky - jen dùle¾ité novinky\n"
+" obojí - novinky i detailní seznamy zmìn\n"
+" changelogy - jen detailní seznamy zmìn"

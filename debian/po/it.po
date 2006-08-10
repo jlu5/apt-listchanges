@@ -1,46 +1,31 @@
-#
-#    Translators, if you are not familiar with the PO format, gettext
-#    documentation is worth reading, especially sections dedicated to
-#    this format, e.g. by running:
-#         info -n '(gettext)PO Files'
-#         info -n '(gettext)Header Entry'
-#
-#    Some information specific to po-debconf are available at
-#            /usr/share/doc/po-debconf/README-trans
-#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
-#
-#    Developers do not need to manually edit POT or PO files.
-#
-# Jordi Mallach <jordi@debian.org>, 2002
-# David Martínez Moreno <ender@debian.org>, 2002
-# Carlos Valdivia Yagüe <valyag@dat.etsit.upm.es>, 2003
-# Ricardo Mones <mones@aic.uniovi.es>, 2005
+# Italian translation of po-debconf templates for apt-listchanges.
+# Copyright (C) 2005 Software in the Public Interest
+# This file is distributed under the same license as the apt-listchanges package.
+# Luca Monducci, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.39\n"
+"Project-Id-Version: apt-listchanges 2.57 debconf templates\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-04-29 20:33-0700\n"
-"PO-Revision-Date: 2005-02-13 12:57+0100\n"
-"Last-Translator: Ricardo Mones <mones@aic.uniovi.es>\n"
-"Language-Team: Debian L10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"PO-Revision-Date: 2005-01-31 23:14+0100\n"
+"Last-Translator: Luca Monducci <luca.mo@tiscali.it>\n"
+"Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: select
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr ""
-"paginador, navegador, paginador-xterm, navegador-xterm, texto, correo, "
-"ninguna"
+msgstr "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "How should changes be displayed with apt?"
-msgstr "¿Cómo deberían mostrarse los cambios con apt?"
+msgstr "Come devono essere mostrati i cambiamenti in APT?"
 
 #. Type: select
 #. Description
@@ -48,49 +33,55 @@ msgstr "¿Cómo deberían mostrarse los cambios con apt?"
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"apt-listchanges puede mostrar los cambios en los paquetes de varias maneras."
+"apt-listchanges può mostrare le modifiche in un pacchetto usando molti modi "
+"diversi."
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "paginador - Usa su paginador preferido para mostrar los cambios página a página"
+msgstr ""
+"pager - Usa il paginatore preferito per mostrare le modifiche una pagina "
+"alla volta"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "navegador - Muestra los cambios en formato HTML usando un navegador web"
+msgstr ""
+"browser - Mostra le modifiche formattate in HTML usando un browser web"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "paginador-xterm - Como paginador, pero bajo una xterm en segundo plano"
+msgstr ""
+"xterm-pager - Come «pager» ma all'interno di un xterm in background"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "navegador-xterm - Como navegador, pero bajo una xterm en segundo plano"
+msgstr ""
+"xterm-browser - Come «browser» ma all'interno di un xterm in background"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "texto - Imprime los cambios en su terminal (sin pausas)"
+msgstr "text  - Mostra le modifiche sul terminale (senza pause)"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changes via mail"
-msgstr "correo - Sólo envía los cambios por correo"
+msgstr "mail  - Invia le modifiche per posta elettronica"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
-msgstr "ninguna - No ejecutar automáticamente desde apt"
+msgstr "none  - Non viene eseguito automaticamente da apt"
 
 #. Type: select
 #. Description
@@ -100,10 +91,9 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Puede reemplazar esta configuración usando una opción en la línea de "
-"órdenes o con una variable de entorno. Tenga en cuenta que aún así puede "
-"mandar una copia por correo habiendo seleccionado cualquiera de las maneras "
-"de mostrar los cambios, excepto con «ninguna»."
+"Questa impostazione può essere ignorata tramite un'opzione sulla riga di "
+"comando o con una variabile d'ambiente. Notare che con tutte le interfacce, "
+"eccetto «none», è possibile inviare una copia per posta elettronica."
 
 #. Type: string
 #. Default
@@ -115,7 +105,7 @@ msgstr "root"
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changes?"
-msgstr "¿A quién debe apt-listchanges enviar por correo los cambios?"
+msgstr "A chi devono essere inviare le email con le modifiche?"
 
 #. Type: string
 #. Description
@@ -124,8 +114,8 @@ msgid ""
 "apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
 msgstr ""
-"apt-listchanges puede enviar una copia de los cambios mostrados. ¿A qué "
-"dirección de correo quiere que se envíen?"
+"apt-listchanges può inviare via email una copia delle modifiche che ha "
+"mostrato. A quale indirizzo devono essere inviate le email?"
 
 #. Type: string
 #. Description
@@ -134,8 +124,8 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Se pueden indicar múltiples direcciones, separadas por comas. Déjelo en blanco "
-"si no quiere que se mande ningún correo."
+"Si possono specificare più indirizzi separandoli con delle virgole. "
+"Lasciare il campo vuoto se non si vuole inviare nessuna email."
 
 #. Type: boolean
 #. Description
@@ -143,7 +133,7 @@ msgstr ""
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changes?"
 msgstr ""
-"¿Debería apt-listchanges pedir confirmación después de mostrar los cambios?"
+"apt-listchanges deve chiedere una conferma dopo aver mostrato le modifiche?"
 
 #. Type: boolean
 #. Description
@@ -154,10 +144,11 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Después de darle la oportunidad de mostrar los cambios, apt-listchanges "
-"puede preguntar si quiere o no continuar. Ésto es útil cuando se ejecuta "
-"desde apt, ya que le ofrece la oportunidad de abortar la actualización si ve "
-"algún cambio que no quiere aplicar (aún)."
+"Dopo aver dato l'opportunità di leggere l'elenco delle modifiche, "
+"apt-listchanges può chiedere se si vuole continuare. Questo è utile "
+"quando viene eseguito da APT perché permette di interrompere "
+"l'aggiornamento se si nota un cambiamento che non si desidera (ancora) "
+"applicare."
 
 #. Type: boolean
 #. Description
@@ -166,14 +157,15 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Esta opción no afecta a las maneras de mostrar los cambios «correo» o "
-"«ninguna» y se puede modificar desde la línea de comandos."
+"Questa impostazione non si applica alle interfacce «mail» e «none» e può "
+"essere ignorata tramite un'opzione sulla riga di comando."
 
 #. Type: boolean
 #. Description
 #: ../templates:52
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "¿Debería apt-listchanges ignorar los cambios que ya se han visto?"
+msgstr ""
+"Ignorare le modifiche che sono già state mostrate?"
 
 #. Type: boolean
 #. Description
@@ -183,21 +175,21 @@ msgid ""
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges puede hacer un seguimiento de los cambios que ya se han "
-"mostrado anteriormente, e ignorarlos en futuras ejecuciones. Esto es útil, "
-"por ejemplo, cuando se reintenta una actualización."
+"apt-listchanges è in grado di tener traccia delle modifiche che sono già "
+"state mostrate e di ignorarle nelle successive esecuzioni. Questo è utile, "
+"per esempio, quando si riprova nuovamente un aggiornamento."
 
 #. Type: select
 #. Choices
 #: ../templates:59
 msgid "news, both, changelogs"
-msgstr "noticias, ambos, cambios"
+msgstr "news, both, changelogs"
 
 #. Type: select
 #. Description
 #: ../templates:61
 msgid "Which types of changes should be displayed with apt?"
-msgstr "¿Qué tipos de cambios deberían mostrarse con apt?"
+msgstr "Quale tipo di modifiche devono essere mostrate con APT?"
 
 #. Type: select
 #. Description
@@ -207,6 +199,6 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" noticias - sólo noticias importantes\n"
-" ambos - noticias y listas de cambios detallados\n"
-" cambios - sólo las listas de cambios detallados"
+" news - solo le notizie più importanti\n"
+" both - le notizie e i changelog dettagliati\n"
+" changelogs - solo i changelog dettagliati"

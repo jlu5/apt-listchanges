@@ -1,57 +1,64 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR ORGANIZATION
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-22 20:39-0700\n"
+"POT-Creation-Date: 2006-08-10 18:25+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
 
-#: ../apt-listchanges:112
-#, python-format
+
+#: ../apt-listchanges:86
+msgid ""
+"Unknown frontend: %s\n"
+msgstr ""
+
+#: ../apt-listchanges:111
 msgid "%s: will be newly installed"
 msgstr ""
 
-#: ../apt-listchanges:121
-#, python-format
+#: ../apt-listchanges:120
 msgid "%s: Version %s has already been seen"
 msgstr ""
 
-#: ../apt-listchanges:154
-#, python-format
+#: ../apt-listchanges:153
 msgid "News for %s"
 msgstr ""
 
-#: ../apt-listchanges:165
-#, python-format
+#: ../apt-listchanges:164
 msgid "Changes for %s"
 msgstr ""
 
-#: ../apt-listchanges:181
+#: ../apt-listchanges:180
 msgid "Informational notes"
 msgstr ""
 
-#: ../apt-listchanges:197
-#, python-format
+#: ../apt-listchanges:196
 msgid "apt-listchanges: changelogs for %s"
 msgstr ""
 
-#: ../apt-listchanges:201
-#, python-format
+#: ../apt-listchanges:200
 msgid "apt-listchanges: news for %s"
 msgstr ""
 
-#: ../apt-listchanges:213
+#: ../apt-listchanges:212
 msgid "didn't find any valid .deb archives"
+msgstr ""
+
+#: ../apt_listchanges.py:212
+msgid ""
+"Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
+msgstr ""
+
+#: ../apt_listchanges.py:267
+msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
 #: ../apt_listchanges.py:283
@@ -61,12 +68,10 @@ msgid ""
 msgstr ""
 
 #: ../apt_listchanges.py:326
-#, python-format
 msgid "Mailing %s: %s"
 msgstr ""
 
 #: ../apt_listchanges.py:353
-#, python-format
 msgid "The %s frontend is deprecated, using pager"
 msgstr ""
 
@@ -82,3 +87,4 @@ msgstr ""
 #: ../apt_listchanges.py:432
 msgid "Done"
 msgstr ""
+

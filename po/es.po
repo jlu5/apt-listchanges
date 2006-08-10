@@ -1,13 +1,14 @@
 # Spanish po-file for apt-listchanges
 # Copyright (C) 2001, 2002 Free Software Foundation, Inc.
 # Jordi Mallach <jordi@debian.org>, 2001, 2002.
+# David Martínez <ender@debian.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.4\n"
 "POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
 "PO-Revision-Date: 2002-05-20 20:16+0100\n"
-"Last-Translator: David Martínez <ender@debian.org>\n"
+"Last-Translator: Ricardo Mones <mones@aic.uniovi.es>\n"
 "Language-Team: Debian Spanish Team <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-1\n"
@@ -43,7 +44,7 @@ msgstr ""
 
 #: ../apt_listchanges.py:225
 msgid "Mailing changelogs to %s"
-msgstr "Enviando bitácoras a %s"
+msgstr "Enviando listas de cambios a %s"
 
 #: ../apt_listchanges.py:228
 msgid "apt-listchanges output for %s"
@@ -60,7 +61,7 @@ msgstr "¿Quiere continuar? [Y/n] "
 #: ../apt_listchanges.py:275 ../apt_listchanges.py:301
 #: ../apt_listchanges.py:306
 msgid "Reading changelogs"
-msgstr "Leyendo bitácoras"
+msgstr "Leyendo lista de cambios"
 
 #: ../apt_listchanges.py:306
 msgid "Done"

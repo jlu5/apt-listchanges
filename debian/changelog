@@ -1,12 +1,68 @@
 apt-listchanges (2.60) unstable; urgency=low
 
-  * Fix clean target to remove translated man pages
-  * Document the corresponding configuration file option for --all
-  * Patch from Frédéric Bothamy to regenerate apt-listchanges.pot correctly (Closes: #302548)
-  * Regenerate apt-listchanges.pot in the source package
-  * Vietnamese translation of debconf templates from Clytie Siddall (Closes: #308744)
+  * Change of maintainer (and upstream):
+    + put myself as maintainer.
+    + put Matt into Uploaders (thanks for all your work on this package !).
+    + ack NMUs (Closes: #251084, 259171, 260295, 260534, 262603, 280323,
+      283357, 285440, 292739, 293594, 293594, 294948, 375300, 375953, 375956,
+      380759)
+    + update debian/copyright accordingly.
+  * Python policy last touch:
+    + do not use dh_python anymore.
+    + .pyc are handled correctly (Closes: #133306).
+  * Bump DH_COMPAT to 5.
+  * Ensure ucf is here before purging in postrm (Closes: #315174).
+  * apt-listchanges new translations:
+    + Traditional Chinese thanks to Kanru Chen (Closes: #297242).
+    + Czech thanks to Miroslav Kure (Closes: #327508).
+  * apt-listchanges templates po:
+    + Portuguese templates thanks to Miguel Figueiredo (Closes: #330195).
+    + Swedish update thanks to Daniel Nylander (Closes: #332443, 375748).
+    + Japanese update thanks to Junichi Uekawa (Closes: #318499).
+    + Vietnamese thanks to Clytie Siddall (Closes: #308744).
+  * BTS Patches:
+    + Make more strings translateable thanks to Junichi too (Closes: #318496).
+    + Fix pot file generation (Closes: #318498, 302548).
+    + Fix frontend=none behaviour thanks to Colin Watson (Closes: #341845).
 
- -- 
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 10 Aug 2006 18:25:39 +0200
+
+apt-listchanges (2.59-0.4) unstable; urgency=low
+
+  * Non-maintainer upload with maintainer permission.
+  * Update package to the new Python policy (Closes: #380759).
+  * Bumping standards version to 3.7.2.
+  * Put all the modules into an apt_listchange semi-public module.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Thu,  3 Aug 2006 08:31:17 +0200
+
+apt-listchanges (2.59-0.3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * add --wildcards to tar call (Closes: #375300, 375953, 375956).
+  * Fix B-D-I/B-D wrt clean: target.
+  * Fix old FSF address.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun,  2 Jul 2006 16:51:25 +0200
+
+apt-listchanges (2.59-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload for fixing l10n issues. Made
+    with maintainer's agreement
+  * Debconf translations:
+    - Italian really added
+    - Catalan updated. Closes: #292739
+    - Galician updated. Closes: #294948
+    - Polish updated.
+    - Spanish updated.
+  * Program translations:
+    - Corrections to Spanish. Closes: #280323
+    - One fuzzy strong corrected in Catalan
+    - Remove Brazilian which was indeed a debconf translation
+    - Moved Russian to debconf translation. It was in the programs translation
+      directory by mistake
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 13 Feb 2005 21:36:18 +0100
 
 apt-listchanges (2.59-0.1) unstable; urgency=low
 

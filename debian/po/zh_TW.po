@@ -11,86 +11,80 @@
 #
 #    Developers do not need to manually edit POT or PO files.
 #
-# Jordi Mallach <jordi@debian.org>, 2002
-# David Mart�nez Moreno <ender@debian.org>, 2002
-# Carlos Valdivia Yag�e <valyag@dat.etsit.upm.es>, 2003
-# Ricardo Mones <mones@aic.uniovi.es>, 2005
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.39\n"
+"Project-Id-Version: apt-listchanges 2.59\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-04-29 20:33-0700\n"
-"PO-Revision-Date: 2005-02-13 12:57+0100\n"
-"Last-Translator: Ricardo Mones <mones@aic.uniovi.es>\n"
-"Language-Team: Debian L10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"PO-Revision-Date: 2005-02-04 16:47+0800\n"
+"Last-Translator: Asho Yeh <asho@debian.org.tw>\n"
+"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: TAIWAN\n"
 
 #. Type: select
 #. Choices
 #: ../templates:3
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr ""
-"paginador, navegador, paginador-xterm, navegador-xterm, texto, correo, "
-"ninguna"
+msgstr "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "How should changes be displayed with apt?"
-msgstr "�C�mo deber�an mostrarse los cambios con apt?"
+msgstr "指定搭配 apt 使用時顯示更動部份的方式？"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
-msgstr ""
-"apt-listchanges puede mostrar los cambios en los paquetes de varias maneras."
+msgstr "apt-listchanges 有三種方式來顯示套件的更動部份。"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "paginador - Usa su paginador preferido para mostrar los cambios p�gina a p�gina"
+msgstr "pager - 使用您偏好的分頁器來顯示更動部份"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "navegador - Muestra los cambios en formato HTML usando un navegador web"
+msgstr "browser - 更動的部份以 HTML 格式輸出並用瀏覽器顯示"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "paginador-xterm - Como paginador, pero bajo una xterm en segundo plano"
+msgstr "xterm-pager - 類似 pager，但在 xterm 的背景下"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "navegador-xterm - Como navegador, pero bajo una xterm en segundo plano"
+msgstr "xterm-browser - 類似瀏覽器，但在 xterm 的背景下"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "texto - Imprime los cambios en su terminal (sin pausas)"
+msgstr "text  - 印出更動的部份到終端機 (不會暫停)"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "mail  - Only send changes via mail"
-msgstr "correo - S�lo env�a los cambios por correo"
+msgstr "mail  - 透過 mail 只送出更動的部份"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
-msgstr "ninguna - No ejecutar autom�ticamente desde apt"
+msgstr "none  - 取消執行 apt 時自動執行 apt-listchanges"
 
 #. Type: select
 #. Description
@@ -100,10 +94,8 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Puede reemplazar esta configuraci�n usando una opci�n en la l�nea de "
-"�rdenes o con una variable de entorno. Tenga en cuenta que a�n as� puede "
-"mandar una copia por correo habiendo seleccionado cualquiera de las maneras "
-"de mostrar los cambios, excepto con �ninguna�."
+"該設定可由命令列參數或環境變數強制改變。注意的是您仍可寄出除了 \"none\" 之外"
+"所有的前端訊息。"
 
 #. Type: string
 #. Default
@@ -115,7 +107,7 @@ msgstr "root"
 #. Description
 #: ../templates:30
 msgid "To whom should apt-listchanges mail changes?"
-msgstr "�A qui�n debe apt-listchanges enviar por correo los cambios?"
+msgstr "apt-listchanges 要將更動的部份寄給誰？"
 
 #. Type: string
 #. Description
@@ -123,9 +115,7 @@ msgstr "�A qui�n debe apt-listchanges enviar por correo los cambios?"
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
-msgstr ""
-"apt-listchanges puede enviar una copia de los cambios mostrados. �A qu� "
-"direcci�n de correo quiere que se env�en?"
+msgstr "apt-listchanges 能寄出顯示的更動部份。要寄到那一個 Email Address 呢？"
 
 #. Type: string
 #. Description
@@ -133,17 +123,14 @@ msgstr ""
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
-msgstr ""
-"Se pueden indicar m�ltiples direcciones, separadas por comas. D�jelo en blanco "
-"si no quiere que se mande ning�n correo."
+msgstr "多個位址是可允許的，請用逗號(,)隔開。不想送出郵件的話請保留空白。"
 
 #. Type: boolean
 #. Description
 #: ../templates:40
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changes?"
-msgstr ""
-"�Deber�a apt-listchanges pedir confirmaci�n despu�s de mostrar los cambios?"
+msgstr "是否 apt-listchanges 顯示完更動部份後要提出確認嗎？"
 
 #. Type: boolean
 #. Description
@@ -154,10 +141,8 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Despu�s de darle la oportunidad de mostrar los cambios, apt-listchanges "
-"puede preguntar si quiere o no continuar. �sto es �til cuando se ejecuta "
-"desde apt, ya que le ofrece la oportunidad de abortar la actualizaci�n si ve "
-"alg�n cambio que no quiere aplicar (a�n)."
+"從您有機會閱讀更動的列表後，apt-listchanges 會詢問您是否要繼續。搭配 apt 執行"
+"時是非常有用的，因為這允許您看到不期望的更動時可以中止升級的動作。"
 
 #. Type: boolean
 #. Description
@@ -166,14 +151,14 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Esta opci�n no afecta a las maneras de mostrar los cambios �correo� o "
-"�ninguna� y se puede modificar desde la l�nea de comandos."
+"該設定不會套用到 \"mail\" 或 \"none\" 前端訊息，使用命令列參數可以強制改變這"
+"些設定。"
 
 #. Type: boolean
 #. Description
 #: ../templates:52
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "�Deber�a apt-listchanges ignorar los cambios que ya se han visto?"
+msgstr "跳過 apt-listchanges 已顯示的更動嗎？"
 
 #. Type: boolean
 #. Description
@@ -183,21 +168,20 @@ msgid ""
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges puede hacer un seguimiento de los cambios que ya se han "
-"mostrado anteriormente, e ignorarlos en futuras ejecuciones. Esto es �til, "
-"por ejemplo, cuando se reintenta una actualizaci�n."
+"apt-listchanges 會記錄已顯示的更動部份，未來遇到相同的情況會自動跳過。這個功"
+"能很有用，例如重複嘗試升級時。"
 
 #. Type: select
 #. Choices
 #: ../templates:59
 msgid "news, both, changelogs"
-msgstr "noticias, ambos, cambios"
+msgstr "news, both, changelogs"
 
 #. Type: select
 #. Description
 #: ../templates:61
 msgid "Which types of changes should be displayed with apt?"
-msgstr "�Qu� tipos de cambios deber�an mostrarse con apt?"
+msgstr "指定搭配 apt 使用時顯示更動部份的格式？"
 
 #. Type: select
 #. Description
@@ -207,6 +191,6 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" noticias - s�lo noticias importantes\n"
-" ambos - noticias y listas de cambios detallados\n"
-" cambios - s�lo las listas de cambios detallados"
+" news - 只顯示重要的 news 項目\n"
+" both - news 和和詳細的更動記錄\n"
+" changelogs - 只顯示詳細的更動記錄"

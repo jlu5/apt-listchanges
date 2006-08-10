@@ -96,7 +96,7 @@ class Package:
             tempdir = tempfile.mktemp()
             os.mkdir(tempdir)
 
-        extract_command = 'dpkg-deb --fsys-tarfile %s |tar xf - -C %s %s 2>/dev/null' % (
+        extract_command = 'dpkg-deb --fsys-tarfile %s |tar xf - --wildcards -C %s %s 2>/dev/null' % (
             self.path,
             tempdir,
             ' '.join(map(lambda x: "'%s'" % x, filenames))
@@ -209,7 +209,7 @@ class Config:
         else:
             fh = sys.stderr
             
-        fh.write("Usage: apt-listchanges [options] {--apt | filename.deb ...}\n")
+        fh.write(_("Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"))
         sys.exit(exitcode)
 
 
@@ -264,7 +264,7 @@ class Config:
                 if arg in self.allowed_which:
                     self.which = arg
                 else:
-                    print 'Unknown option %s for --which.  Allowed are: %s.' % \
+                    print _('Unknown option %s for --which.  Allowed are: %s.') % \
                         (arg, string.join(self.allowed_which, ", "))
                     sys.exit(1)
             elif opt == '--debug':

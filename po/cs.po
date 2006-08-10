@@ -1,0 +1,76 @@
+# Czech translation of apt-listchanges.
+# Copyright (C) 2005 Free Software Foundation
+# Miroslav Kure <kurem@debian.cz>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges\n"
+"POT-Creation-Date: 2005-09-08 19:49+CEST\n"
+"PO-Revision-Date: 2005-09-08 19:56+0200\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+
+#: ../apt-listchanges:112
+msgid "%s: will be newly installed"
+msgstr "%s: bude nově instalován"
+
+#: ../apt-listchanges:121
+msgid "%s: Version %s has already been seen"
+msgstr "%s: Verze %s již byla zobrazena"
+
+#: ../apt-listchanges:154
+msgid "News for %s"
+msgstr "Novinky v %s"
+
+#: ../apt-listchanges:165
+msgid "Changes for %s"
+msgstr "Změny v %s"
+
+#: ../apt-listchanges:181
+msgid "Informational notes"
+msgstr "Informační poznámky"
+
+#: ../apt-listchanges:197
+msgid "apt-listchanges: changelogs for %s"
+msgstr "apt-listchanges: změny pro %s"
+
+#: ../apt-listchanges:201
+msgid "apt-listchanges: news for %s"
+msgstr "apt-listchanges: novinky pro %s"
+
+#: ../apt-listchanges:213
+msgid "didn't find any valid .deb archives"
+msgstr "nebyly nalezeny žádné platné .deb archivy"
+
+#: ../apt_listchanges.py:283
+msgid ""
+"Wrong or missing VERSION from apt pipeline\n"
+"(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
+msgstr ""
+"Chybná nebo chybějící verze z roury aptu\n"
+"(je Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version nastavena na 2?\n"
+
+#: ../apt_listchanges.py:326
+msgid "Mailing %s: %s"
+msgstr "Zasílám %s: %s"
+
+#: ../apt_listchanges.py:353
+msgid "The %s frontend is deprecated, using pager"
+msgstr "Rozhraní %s je již překonané, používám pager"
+
+#: ../apt_listchanges.py:387
+msgid "Do you want to continue? [Y/n]? "
+msgstr "Přejete si pokračovat? [Y/n]? "
+
+#: ../apt_listchanges.py:404 ../apt_listchanges.py:424
+#: ../apt_listchanges.py:432
+msgid "Reading changelogs"
+msgstr "Načítám soubory se změnami"
+
+#: ../apt_listchanges.py:432
+msgid "Done"
+msgstr "Hotovo"

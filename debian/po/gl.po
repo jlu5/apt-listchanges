@@ -26,74 +26,64 @@ msgstr ""
 #. Type: select
 #. Choices
 #: ../templates:3
-#, fuzzy
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr "visor, visor-xterm, texto, correo, ningunha"
+msgstr "visor, navegador, visor-xterm, navegador-xterm, texto, correo, ningunha"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "How should changes be displayed with apt?"
-msgstr "¿Como se deberían amosa-los cambios con apt?"
+msgstr "¿Como se deberían amosar os cambios con apt?"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"apt-listchanges pode amosa-las entradas dos rexistros de cambios de moitas "
-"maneiras diferentes."
+"apt-listchanges pode amosar os cambios dos paquetes de varios xeitos."
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "visor - Emprega-lo seu visor de preferencia"
+msgstr "visor - Empregar o seu visor preferido para ver os cambios páxina a páxina"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "visor-xterm - Emprega-lo seu visor de preferencia nunha xterm"
+msgstr "navegador - Amosar os cambios en HTML empregando un navegador web"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "texto - Amosa-los cambios no terminal (sen facer pausas)"
+msgstr "visor-xterm - Coma o visor, pero nun xterm en segundo plano"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "correo - Manda-los cambios por correo electrónico"
+msgstr "navegador-xterm - Coma o navegador, pero nun xterm en segundo plano"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "ningunha - Non executar automaticamente dende apt"
+msgstr "texto - Amosar os cambios no terminal (sen facer pausas)"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "mail  - Only send changes via mail"
-msgstr "Pódese ignorar esta configuración indicando outra na liña de comando."
+msgstr "correo - Enviar os cambios por correo electrónico"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
-msgstr ""
+msgstr "ningunha - Non executar de xeito automatico dende apt"
 
 #. Type: select
 #. Description
@@ -103,6 +93,9 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
+"Esta configuración pódese sustituir por unha opción de liña de comando ou "
+"unha variable de ambiente. Teña en conta que tamén se pode enviar unha "
+"copia por correo electrónico empregando calquera sistema agás 'ningunha'."
 
 #. Type: string
 #. Default
@@ -113,54 +106,50 @@ msgstr "root"
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid "To whom should apt-listchanges mail changes?"
-msgstr "¿A quen se lle han de envia-los cambios por correo electrónico?"
+msgstr "¿A quen se lle han de enviar os cambios por correo electrónico?"
 
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  To what email "
 "address should they be sent?"
 msgstr ""
-"apt-listchanges pode enviar por correo unha copia dos cambios amosados. ¿A "
-"que enderezo hai que envialos?"
+"apt-listchanges pode enviar por correo electrónico unha copia dos cambios "
+"que se amosen. ¿A que enderezo hai que envialos?"
 
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
-msgstr "Déixeo en branco se non quere que se envíe ningún correo."
+msgstr ""
+"Pódense indicar varios enderezos, delimitados por comas. Déixeo baleiro se "
+"non quere que se envíe ningún correo electrónico."
 
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
 msgid ""
 "Should apt-listchanges prompt for confirmation after displaying changes?"
 msgstr ""
-"¿Debería apt-listchanges pedir unha confirmación despois de amosa-los "
-"cambios?"
+"¿Debería pedirse unha confirmación despois de amosar os cambios?"
 
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Despois de lle dar unha oportunidade de ve-los cambios, apt-listchanges pode "
-"preguntarlle a Vd. se quere continuar ou non. Isto é útil cando se está a "
-"executar dende apt, porque lle dá a oportunidad de aborta-la actualización "
-"se ve un cambio que non quere aplicar (ainda)."
+"Despois de lle dar a oportunidade de ler a lista de cambios, "
+"apt-listchanges pode preguntarlle e quere continuar. Isto é útil cando "
+"se está a executar dende apt, xa que lle dá a oportunidade de abortar a "
+"actualización se ve un cambio que (aínda) non quere aplicar."
 
 #. Type: boolean
 #. Description
@@ -175,35 +164,32 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "¿Debería apt-listchanges omiti-los rexistros xa enviados?"
+msgstr "¿Debería apt-listchanges omitir os cambios que xa se enviaron?"
 
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges pode leva-la conta de que entradas dos rexistros de cambios "
-"están xa amosadas, e omitilas en posteriores execucións. Isto é útil, por "
-"exemplo, ao repetir unha tentativa de actualización."
+"apt-listchanges pode levar a conta dos cambios que xa se amosaron, e "
+"omitilos en execucións posteriores. Isto é útil, por exemplo, ao repetir "
+"unha tentativa de actualización."
 
 #. Type: select
 #. Choices
 #: ../templates:59
 msgid "news, both, changelogs"
-msgstr ""
+msgstr "novas, ambos, cambios"
 
 #. Type: select
 #. Description
 #: ../templates:61
-#, fuzzy
 msgid "Which types of changes should be displayed with apt?"
-msgstr "¿Como se deberían amosa-los cambios con apt?"
+msgstr "¿Que tipos de cambios se deberían amosar con apt?"
 
 #. Type: select
 #. Description
@@ -213,10 +199,13 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
+" novas - só novas importantes\n"
+" ambos - novas e cambios detallados\n"
+" cambios - só cambios detallados"
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 #~ msgstr ""
-#~ "¿Debería apt-listchanges sobrescribi-lo seu ficheiro /etc/apt/listchanges."
+#~ "¿Debería apt-listchanges sobrescribir o seu ficheiro /etc/apt/listchanges."
 #~ "conf?"
 
 #, fuzzy
@@ -228,5 +217,5 @@ msgstr ""
 #~ msgstr ""
 #~ "apt-listchanges pode configurar tódalas opcións de /etc/apt/listchanges."
 #~ "conf facéndolle preguntas. Este ficheiro lese e procésase cada vez que se "
-#~ "executa apt-listchanges, e emprégase para estabrece-las opcións por "
+#~ "executa apt-listchanges, e emprégase para estabrecer as opcións por "
 #~ "defecto. Pódense ignorar tódalas opcións indicándoas na liña de comandos."

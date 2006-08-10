@@ -1,3 +1,5 @@
+LIBDEST := $(DESTDIR)/usr/lib/$(shell pyversions -d)/site-packages/apt_listchanges
+
 all:
 	docbook-to-man apt-listchanges.sgml > apt-listchanges.1
 	docbook-to-man apt-listchanges.es.sgml > apt-listchanges.es.1
@@ -7,9 +9,8 @@ all:
 install: all
 	install -d $(DESTDIR)/usr/bin
 	install -m 755 apt-listchanges $(DESTDIR)/usr/bin
-	install -d $(DESTDIR)/usr/lib/site-python
-	install -m 644 DebianControlParser.py apt_listchanges.py \
-		$(DESTDIR)/usr/lib/site-python
+	install -d $(LIBDEST)
+	install -m 644 DebianControlParser.py apt_listchanges.py __init__.py $(LIBDEST)
 	install -d $(DESTDIR)/etc/apt/apt.conf.d
 	install -m 644 debian/apt.conf \
 		$(DESTDIR)/etc/apt/apt.conf.d/20listchanges
@@ -20,5 +21,5 @@ install: all
 	$(MAKE) -C po install
 
 clean:
-	rm -f apt-listchanges.1 apt-listchanges.es.1 apt-listchanges.fr.1
+	rm -f apt-listchanges.1
 	make -C po clean

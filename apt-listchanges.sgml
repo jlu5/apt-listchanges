@@ -8,7 +8,7 @@
 
      Based on the example page docbook-to-man.sgml from docbook-to-man
 
-     $Id: apt-listchanges.sgml,v 1.30 2005-02-07 18:46:17 mdz Exp $
+     $Id: apt-listchanges.sgml,v 1.29 2004/02/27 06:43:18 mdz Exp $
 -->
 
 <refentry>
@@ -221,8 +221,7 @@
 	    newer than the currently installed version of the package,
 	    simply display all changelog entries for all packages.
 	    This is useful for viewing the entire changelog of a .deb
-	    before extracting it.  The corresponding configuration
-            	file option is <literal>show_all</literal>.
+	    before extracting it.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>

@@ -31,8 +31,7 @@ import apt_pkg
 import gettext
 import string
 import anydbm
-import DebianControlParser
-import apt_listchanges
+from apt_listchanges import apt_listchanges,DebianControlParser
 from socket import gethostname
 
 def main():
@@ -53,15 +52,15 @@ def main():
     if config.apt_mode:
         debs = apt_listchanges.read_apt_pipeline(config)
 
+    if config.quiet >= 2 or config.frontend == 'none':
+        sys.exit(0)
+
     # If apt is in quiet (loggable) mode, we should make our output
     # loggable too
     if config.quiet == 1:
         config.frontend = 'text'
     elif config.quiet >= 2:
         config.frontend = 'mail'
-
-    if config.quiet >= 2 or config.frontend == 'none':
-        sys.exit(0)
 
     if not config.show_all:
         status = DebianControlParser.DebianControlParser()
@@ -84,7 +83,7 @@ def main():
 
     frontend = apt_listchanges.make_frontend(config.frontend,len(debs),config)
     if frontend == None:
-        sys.stderr.write("Unknown frontend: %s\n" % config.frontend)
+        sys.stderr.write(_("Unknown frontend: %s\n") % config.frontend)
         sys.exit(1)
 
     # Main loop

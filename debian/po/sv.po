@@ -13,11 +13,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges\n"
+"Project-Id-Version: apt-listchanges 2.59-0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-04-29 20:33-0700\n"
-"PO-Revision-Date: 2004-04-29 20:33-0700\n"
-"Last-Translator: Andre Dahlqvist <anedah-9@sm.luth.se>\n"
+"PO-Revision-Date: 2006-06-27 23:18+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
@@ -26,179 +26,134 @@ msgstr ""
 #. Type: select
 #. Choices
 #: ../templates:3
-#, fuzzy
 msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr "pager, xterm-pager, newt, text, post"
+msgstr "visare, webbläsare, xterm-visare, xterm-bläddrare, text, e-post, ingen"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "How should changes be displayed with apt?"
-msgstr "Hur ska förändringsloggar visas som standard?"
+msgstr "Hur ska ändringsloggar visas med apt?"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
-msgid ""
-"apt-listchanges can display package changes in a number of different ways."
-msgstr "apt-listchanges kan visa poster från förändringloggar på flera sätt."
+msgid "apt-listchanges can display package changes in a number of different ways."
+msgstr "apt-listchanges kan visa paketändringar på ett flertal olika sätt."
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "pager - Använd din föredragna \"pager\""
+msgstr "visare - Använd din föredragna visare för att visa ändringar en sida åt gången"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr ""
-"xterm-pager - Använd din föredragna \"pager\" i en xterm som körs i "
-"bakgrunden"
+msgstr "webbläsare - Visa HTML-formaterade ändringar med en webbläsare"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr ""
-"newt - Använd ett grafiskt läge för terminalen, som använder fönster i text-"
-"läge (du måste installera libnewt-perl för att använda detta)"
+msgstr "xterm-visare - Som visare men i en xterm i bakgrunden"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "text - Skriv ut förändringsloggar till din terminal (utan att pausa)"
+msgstr "xterm-bläddrare - Som webbläsare men i en xterm i bakgrunden"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "text  - Print changes to your terminal (without pausing)"
-msgstr ""
-"post - Skicka förändringsloggar via e-post (en adress kommer att efterfrågas)"
+msgstr "text - Skriv ut ändringar till din termina (utan paus)"
 
 #. Type: select
 #. Description
 #: ../templates:5
-#, fuzzy
 msgid "mail  - Only send changes via mail"
-msgstr "Denna inställning kan åsidosättas genom en flagga på kommandoraden."
+msgstr "e-post  - Skicka endast ändringar via e-post"
 
 #. Type: select
 #. Description
 #: ../templates:5
 msgid "none  - Do not run automatically from apt"
-msgstr ""
+msgstr "ingen - Kör inte automatiskt från apt"
 
 #. Type: select
 #. Description
 #: ../templates:5
-msgid ""
-"This setting can be overridden by a command-line option or an environment "
-"variable.  Note that you can still send a copy via mail with all of the "
-"frontends except 'none'."
-msgstr ""
+msgid "This setting can be overridden by a command-line option or an environment variable.  Note that you can still send a copy via mail with all of the frontends except 'none'."
+msgstr "Denna inställning kan åsidosättas av en kommandoradsflagga eller en miljövariabel.  Notera att du kan fortfarande skicka en kopia via e-post med alla gränssnitt förutom \"ingen\"."
 
 #. Type: string
 #. Default
 #: ../templates:29
 msgid "root"
-msgstr ""
+msgstr "root"
 
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
 msgid "To whom should apt-listchanges mail changes?"
-msgstr "Till vem ska apt-listchanges skicka poster från förändringsloggar?"
+msgstr "Till vem ska apt-listchanges skicka ändringar via e-post?"
 
 #. Type: string
 #. Description
 #: ../templates:30
-#, fuzzy
-msgid ""
-"apt-listchanges can email a copy of displayed changes.  To what email "
-"address should they be sent?"
-msgstr ""
-"Du har valt att få poster från förändringsloggar skickade via e-post. Till "
-"vilken e-post adress ska dessa skickas?"
+msgid "apt-listchanges can email a copy of displayed changes.  To what email address should they be sent?"
+msgstr "apt-listchanges kan skicka en kopia av visade ändringar via e-post. Till vilken e-postadress ska de skickas?"
 
 #. Type: string
 #. Description
 #: ../templates:30
-msgid ""
-"Multiple addresses may be specified, delimited by commas.  Leave this empty "
-"if you do not want any email to be sent."
-msgstr ""
+msgid "Multiple addresses may be specified, delimited by commas.  Leave this empty if you do not want any email to be sent."
+msgstr "Flera adresser kan anges, avgränsade med kommatecken.  Lämna denna blank om du inte vill att några e-postmeddelanden ska skickas."
 
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
-msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changes?"
-msgstr ""
-"Ska apt-listchanges begära konfirmation efter att ha visat förändringsloggar?"
+msgid "Should apt-listchanges prompt for confirmation after displaying changes?"
+msgstr "Ska apt-listchanges fråga efter bekräftelse efter visning av ändringar?"
 
 #. Type: boolean
 #. Description
 #: ../templates:40
-#, fuzzy
-msgid ""
-"After giving you a chance to read the list of changes, apt-listchanges can "
-"ask whether or not you would like to continue. This is useful when running "
-"from apt, as it gives you a chance to abort the upgrade if you see a change "
-"you do not want to apply (yet)."
-msgstr ""
-"Efter att ha gett dig en möjlighet att visa poster från förändringsloggar "
-"kan apt-listchanges fråga dig om du vill fortsätta. Detta är användbart när "
-"den körs från apt eftersom det ger dig en möjlighet att avbryta uppgradering "
-"om du ser en förändring som du inte vill ska ske (ännu.)"
+msgid "After giving you a chance to read the list of changes, apt-listchanges can ask whether or not you would like to continue. This is useful when running from apt, as it gives you a chance to abort the upgrade if you see a change you do not want to apply (yet)."
+msgstr "Efter att ha gett dig en chans att läsa listan av ändringar kan apt-listchanges fråga dig om du vill fortsätta eller inte. Detta är användbart när den körs från apt eftersom det ger dig en chans att avbryta uppgradering om du ser en ändring som du inte vill genomföra (ännu)."
 
 #. Type: boolean
 #. Description
 #: ../templates:40
-msgid ""
-"This setting does not apply to the 'mail' or 'none' frontends, and can be "
-"overridden with a command line option."
-msgstr ""
+msgid "This setting does not apply to the 'mail' or 'none' frontends, and can be overridden with a command line option."
+msgstr "Denna inställning gäller inte för gränssnitten \"e-post\" eller \"ingen\" och kan åsidosättas med en kommandoradsflagga."
 
 #. Type: boolean
 #. Description
 #: ../templates:52
-#, fuzzy
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "Till vem ska apt-listchanges skicka poster från förändringsloggar?"
+msgstr "Ska apt-listchanges hoppa över ändringar som redan har visats?"
 
 #. Type: boolean
 #. Description
 #: ../templates:52
-msgid ""
-"apt-listchanges has the capability to keep track of which changes have "
-"already been displayed, and to skip them in future invocations. This is "
-"useful, for example, when retrying an upgrade."
-msgstr ""
+msgid "apt-listchanges has the capability to keep track of which changes have already been displayed, and to skip them in future invocations. This is useful, for example, when retrying an upgrade."
+msgstr "apt-listchanges har färdigheten att hålla kontroll på vilka ändringar som redan har visats och kan hoppa över dem i framtida starter. Detta är användbart, till exempel, när en uppgradering upprepas."
 
 #. Type: select
 #. Choices
 #: ../templates:59
 msgid "news, both, changelogs"
-msgstr ""
+msgstr "nyheter, båda, ändringsloggar"
 
 #. Type: select
 #. Description
 #: ../templates:61
-#, fuzzy
 msgid "Which types of changes should be displayed with apt?"
-msgstr "Hur ska förändringsloggar visas som standard?"
+msgstr "Vilka typer av ändringar ska visas med apt?"
 
 #. Type: select
 #. Description
@@ -208,6 +163,9 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
+" nyheter - endast viktiga nyhetsposter\n"
+" båda - både nyheter och detaljerade ändringsloggar\n"
+" ändringsloggar - endast detaljerade ändringsloggar"
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 #~ msgstr "Ska apt-listchanges skriva över din /etc/apt/listchanges.conf"
@@ -223,3 +181,4 @@ msgstr ""
 #~ "conf genom att fråga dig frågor. Denna fil läses och behandlas vara gång "
 #~ "apt-listchanges körs, och den används för att ställa in normalvärden. "
 #~ "Alla alternativen kan åsidosättas på kommandoraden."
+

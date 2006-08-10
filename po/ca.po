@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.33\n"
-"POT-Creation-Date: Fri Jun 20 16:31:56 2003\n"
+"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
 "PO-Revision-Date: 2003-06-20 16:32+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -33,7 +33,7 @@ msgstr "Notes informatives"
 msgid "didn't find any valid .deb archives"
 msgstr "no s'han trobat fitxers .deb vàlids"
 
-#: ../apt_listchanges.py:191
+#: ../apt_listchanges.py:184
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -42,32 +42,32 @@ msgstr ""
 "(està Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version establert a "
 "2?)\n"
 
-#: ../apt_listchanges.py:234
+#: ../apt_listchanges.py:225
 msgid "Mailing changelogs to %s"
 msgstr "S'estan enviant els canvis a %s"
 
-#: ../apt_listchanges.py:238
+#: ../apt_listchanges.py:228
 msgid "apt-listchanges output for %s"
 msgstr "eixida d'apt-listchanges per a %s"
 
-#: ../apt_listchanges.py:260
-msgid "The %s frontend is deprecated, using pager"
+#: ../apt_listchanges.py:239
+msgid "The newt frontend is deprecated, using pager"
 msgstr "La interfície %s està descontinuada, s'utilitza el paginador"
 
-#: ../apt_listchanges.py:287
+#: ../apt_listchanges.py:266
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Voleu continuar? [Y/n] "
 
-#: ../apt_listchanges.py:301 ../apt_listchanges.py:327
-#: ../apt_listchanges.py:332
+#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
+#: ../apt_listchanges.py:306
 msgid "Reading changelogs"
 msgstr "S'estan llegint els canvis"
 
-#: ../apt_listchanges.py:332
+#: ../apt_listchanges.py:306
 msgid "Done"
 msgstr "Fet"
 
-#: ../apt_listchanges.py:375
+#: ../apt_listchanges.py:343
 msgid "%s exited with status %d"
 msgstr "%s ha eixit amb l'estat %d"
 

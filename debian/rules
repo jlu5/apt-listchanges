@@ -1,33 +1,19 @@
 #!/usr/bin/make -f
-# Sample debian/rules that uses debhelper.
-# GNU copyright 1997 to 1999 by Joey Hess.
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+export DH_COMPAT=5
 
-package=apt-listchanges
 version=$(shell dpkg-parsechangelog | sed -n -e '/^Version:/s/^Version: //p')
-tmp=`pwd`/debian/$(package)
 
-configure: configure-stamp
-configure-stamp:
-	dh_testdir
-# Add here commands to configure the package.
-
-	perl -pi.orig -e 's/##VERSION##/$(version)/g' apt_listchanges.py
-
-	touch configure-stamp
-
-build: configure-stamp build-stamp
+build: build-stamp
 build-stamp:
 	dh_testdir
-
-	touch build-stamp
+	perl -pi.orig -e 's/##VERSION##/$(version)/g' apt_listchanges.py
+	touch $@
 
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp configure-stamp
+	rm -f build-stamp
 
 	rm -f *.py[co] *~
 	$(MAKE) clean
@@ -39,7 +25,7 @@ install: build
 	dh_testroot
 	dh_clean -k
 
-	$(MAKE) install DESTDIR=$(tmp)
+	$(MAKE) install DESTDIR=debian/apt-listchanges
 
 # Build architecture-dependent files here.
 binary-arch: build install
@@ -51,26 +37,13 @@ binary-indep: build install
 	dh_testroot
 	dh_installdebconf	
 	dh_installdocs TODO
-#	dh_installexamples
-#	dh_installmenu
-#	dh_installemacsen
-#	dh_installpam
-#	dh_installinit
-#	dh_installcron
-#	dh_installmanpages
-#	dh_installinfo
-#	dh_undocumented
 	dh_installchangelogs 
 #	dh_link
 #	dh_strip
+	dh_pysupport
 	dh_compress
 	dh_fixperms
-	# You may want to make some executables suid here.
-#	dh_suidregister
-#	dh_makeshlibs
 	dh_installdeb
-#	dh_perl
-#	dh_shlibdeps
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb

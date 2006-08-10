@@ -22,7 +22,7 @@ MKINSTALLDIRS = ../mkinstalldirs
 CC = gcc
 GENCAT = gencat
 MSGFMT = /usr/bin/msgfmt --statistics
-XGETTEXT = /usr/bin/xgettext
+XGETTEXT = /usr/bin/pygettext
 MSGMERGE = msgmerge
 
 POFILES =  $(wildcard *.po)
@@ -43,8 +43,8 @@ all: $(PACKAGE).pot $(MOFILES)
 
 $(PACKAGE).pot: $(POTFILES)
 	if test -f $(XGETTEXT); then \
-               $(XGETTEXT) -L python --default-domain=$(PACKAGE) \
-                       --keyword=_ $(POTFILES) -o $(PACKAGE).pot; \
+		$(XGETTEXT) --default-domain=$(PACKAGE) \
+			--keyword=_ $(POTFILES); \
 	else \
 		touch $@; \
 	fi
