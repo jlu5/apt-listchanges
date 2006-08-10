@@ -25,7 +25,7 @@ install: build
 	dh_testroot
 	dh_clean -k
 
-	$(MAKE) install DESTDIR=debian/apt-listchanges
+	$(MAKE) install DESTDIR=$(shell pwd)/debian/apt-listchanges
 
 # Build architecture-dependent files here.
 binary-arch: build install

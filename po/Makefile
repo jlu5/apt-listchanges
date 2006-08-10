@@ -28,7 +28,7 @@ MSGMERGE = msgmerge
 POFILES =  $(wildcard *.po)
 MOFILES =  $(patsubst %.po,%.mo,$(POFILES))
 
-POTFILES = ../apt-listchanges ../apt_listchanges.py ../DebianControlParser.py
+POTFILES = ../apt-listchanges $(wildcard ../apt_listchanges/*.py)
 
 all: $(PACKAGE).pot $(MOFILES)
 
