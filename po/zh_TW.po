@@ -1,10 +1,10 @@
 # Traditional Chinese translation to apt-listchanges
 # Kanru Chen <koster@debian.org.tw>, 2005
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
+"POT-Creation-Date: 2006-08-10 18:25+CEST\n"
 "PO-Revision-Date: 2005-02-28 13:48+0800\n"
 "Last-Translator: Kanru Chen <koster@debian.org.tw>\n"
 "Language-Team: Chinese/Traditional <zh-l10n@linux.org.tw>\n"
@@ -13,28 +13,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
 
+#: ../apt-listchanges:86
+msgid "Unknown frontend: %s\n"
+msgstr ""
 
-#: ../apt-listchanges:109
+#: ../apt-listchanges:111
 msgid "%s: will be newly installed"
 msgstr "%s：將被全新安裝"
 
-#: ../apt-listchanges:121
+#: ../apt-listchanges:120
 msgid "%s: Version %s has already been seen"
 msgstr "%s：%s 版本已經被看過了"
 
-#: ../apt-listchanges:147
+#: ../apt-listchanges:153
+#, fuzzy
+msgid "News for %s"
+msgstr "%s 的改變"
+
+#: ../apt-listchanges:164
 msgid "Changes for %s"
 msgstr "%s 的改變"
 
-#: ../apt-listchanges:156
+#: ../apt-listchanges:180
 msgid "Informational notes"
 msgstr "訊息備忘"
 
-#: ../apt-listchanges:177
+#: ../apt-listchanges:196
+#, fuzzy
+msgid "apt-listchanges: changelogs for %s"
+msgstr "%s 的 apt-listchanges 輸出"
+
+#: ../apt-listchanges:200
+#, fuzzy
+msgid "apt-listchanges: news for %s"
+msgstr "%s 的 apt-listchanges 輸出"
+
+#: ../apt-listchanges:212
 msgid "didn't find any valid .deb archives"
 msgstr "沒有找到任何有效的 .deb 檔案"
 
-#: ../apt_listchanges.py:184
+#: ../apt_listchanges.py:212
+msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
+msgstr ""
+
+#: ../apt_listchanges.py:267
+msgid "Unknown option %s for --which.  Allowed are: %s."
+msgstr ""
+
+#: ../apt_listchanges.py:283
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -42,32 +68,28 @@ msgstr ""
 "從 apt 傳來的訊息缺少版本號或是存在錯誤的版本號\n"
 "(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version 被設為 2 了嗎？)\n"
 
-#: ../apt_listchanges.py:225
-msgid "Mailing changelogs to %s"
+#: ../apt_listchanges.py:326
+#, fuzzy
+msgid "Mailing %s: %s"
 msgstr "將改變紀錄(changelogs)寄給 %s"
 
-#: ../apt_listchanges.py:228
-msgid "apt-listchanges output for %s"
-msgstr "%s 的 apt-listchanges 輸出"
-
-#: ../apt_listchanges.py:239
-msgid "The newt frontend is deprecated, using pager"
+#: ../apt_listchanges.py:353
+#, fuzzy
+msgid "The %s frontend is deprecated, using pager"
 msgstr "newt 介面已被廢除，改用分頁器"
 
-#: ../apt_listchanges.py:266
+#: ../apt_listchanges.py:387
 msgid "Do you want to continue? [Y/n]? "
 msgstr "您想繼續嗎？[Y/n]？"
 
-#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
-#: ../apt_listchanges.py:306
+#: ../apt_listchanges.py:404 ../apt_listchanges.py:424
+#: ../apt_listchanges.py:432
 msgid "Reading changelogs"
 msgstr "讀取改變紀錄(changelogs)"
 
-#: ../apt_listchanges.py:306
+#: ../apt_listchanges.py:432
 msgid "Done"
 msgstr "完成"
 
-#: ../apt_listchanges.py:343
-msgid "%s exited with status %d"
-msgstr "%s 以狀態 %d 退出"
-
+#~ msgid "%s exited with status %d"
+#~ msgstr "%s 以狀態 %d 退出"

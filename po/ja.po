@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"POT-Creation-Date: 2005-07-16 02:46+JST\n"
+"POT-Creation-Date: 2006-08-10 18:25+CEST\n"
 "PO-Revision-Date: 2005-07-16 03:06+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Japanese \n"
@@ -14,39 +14,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8-bit\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: ../apt-listchanges:87
+#: ../apt-listchanges:86
 msgid "Unknown frontend: %s\n"
 msgstr "不明なフロントエンド: %s\n"
 
-#: ../apt-listchanges:112
+#: ../apt-listchanges:111
 msgid "%s: will be newly installed"
 msgstr "%s: を新規にインストールします"
 
-#: ../apt-listchanges:121
+#: ../apt-listchanges:120
 msgid "%s: Version %s has already been seen"
 msgstr "%s: バージョン %s は既にみられています"
 
-#: ../apt-listchanges:154
+#: ../apt-listchanges:153
 msgid "News for %s"
 msgstr "%s のニュース"
 
-#: ../apt-listchanges:165
+#: ../apt-listchanges:164
 msgid "Changes for %s"
 msgstr "%s の変更点"
 
-#: ../apt-listchanges:181
+#: ../apt-listchanges:180
 msgid "Informational notes"
 msgstr "情報メモ"
 
-#: ../apt-listchanges:197
+#: ../apt-listchanges:196
 msgid "apt-listchanges: changelogs for %s"
 msgstr "apt-listchanges: %s の changelog "
 
-#: ../apt-listchanges:201
+#: ../apt-listchanges:200
 msgid "apt-listchanges: news for %s"
 msgstr "apt-listchanges: %s のニュース"
 
-#: ../apt-listchanges:213
+#: ../apt-listchanges:212
 msgid "didn't find any valid .deb archives"
 msgstr "有効な.debアーカイブを見付ける事ができませんでした"
 

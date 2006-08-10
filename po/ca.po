@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.33\n"
-"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
+"POT-Creation-Date: 2006-08-10 18:25+CEST\n"
 "PO-Revision-Date: 2003-06-20 16:32+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -13,27 +13,54 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../apt-listchanges:109
+#: ../apt-listchanges:86
+msgid "Unknown frontend: %s\n"
+msgstr ""
+
+#: ../apt-listchanges:111
 msgid "%s: will be newly installed"
 msgstr "%s: s'instal·larà per primera vegada"
 
-#: ../apt-listchanges:121
+#: ../apt-listchanges:120
 msgid "%s: Version %s has already been seen"
 msgstr "%s: La versió %s ja s'ha vist"
 
-#: ../apt-listchanges:147
+#: ../apt-listchanges:153
+#, fuzzy
+msgid "News for %s"
+msgstr "Canvis per a %s"
+
+#: ../apt-listchanges:164
 msgid "Changes for %s"
 msgstr "Canvis per a %s"
 
-#: ../apt-listchanges:156
+#: ../apt-listchanges:180
 msgid "Informational notes"
 msgstr "Notes informatives"
 
-#: ../apt-listchanges:177
+#: ../apt-listchanges:196
+#, fuzzy
+msgid "apt-listchanges: changelogs for %s"
+msgstr "eixida d'apt-listchanges per a %s"
+
+#: ../apt-listchanges:200
+#, fuzzy
+msgid "apt-listchanges: news for %s"
+msgstr "eixida d'apt-listchanges per a %s"
+
+#: ../apt-listchanges:212
 msgid "didn't find any valid .deb archives"
 msgstr "no s'han trobat fitxers .deb vàlids"
 
-#: ../apt_listchanges.py:184
+#: ../apt_listchanges.py:212
+msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
+msgstr ""
+
+#: ../apt_listchanges.py:267
+msgid "Unknown option %s for --which.  Allowed are: %s."
+msgstr ""
+
+#: ../apt_listchanges.py:283
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -42,34 +69,31 @@ msgstr ""
 "(està Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version establert a "
 "2?)\n"
 
-#: ../apt_listchanges.py:225
-msgid "Mailing changelogs to %s"
+#: ../apt_listchanges.py:326
+#, fuzzy
+msgid "Mailing %s: %s"
 msgstr "S'estan enviant els canvis a %s"
 
-#: ../apt_listchanges.py:228
-msgid "apt-listchanges output for %s"
-msgstr "eixida d'apt-listchanges per a %s"
-
-#: ../apt_listchanges.py:239
-msgid "The newt frontend is deprecated, using pager"
+#: ../apt_listchanges.py:353
+#, fuzzy
+msgid "The %s frontend is deprecated, using pager"
 msgstr "La interfície %s està descontinuada, s'utilitza el paginador"
 
-#: ../apt_listchanges.py:266
+#: ../apt_listchanges.py:387
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Voleu continuar? [Y/n] "
 
-#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
-#: ../apt_listchanges.py:306
+#: ../apt_listchanges.py:404 ../apt_listchanges.py:424
+#: ../apt_listchanges.py:432
 msgid "Reading changelogs"
 msgstr "S'estan llegint els canvis"
 
-#: ../apt_listchanges.py:306
+#: ../apt_listchanges.py:432
 msgid "Done"
 msgstr "Fet"
 
-#: ../apt_listchanges.py:343
-msgid "%s exited with status %d"
-msgstr "%s ha eixit amb l'estat %d"
+#~ msgid "%s exited with status %d"
+#~ msgstr "%s ha eixit amb l'estat %d"
 
 #~ msgid "%s exited with signal %s"
 #~ msgstr "%s ha eixit amb el senyal %s"

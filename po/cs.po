@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"POT-Creation-Date: 2005-09-08 19:49+CEST\n"
+"POT-Creation-Date: 2006-08-10 18:25+CEST\n"
 "PO-Revision-Date: 2005-09-08 19:56+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
@@ -14,37 +14,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: ../apt-listchanges:112
+#: ../apt-listchanges:86
+msgid "Unknown frontend: %s\n"
+msgstr ""
+
+#: ../apt-listchanges:111
 msgid "%s: will be newly installed"
 msgstr "%s: bude nově instalován"
 
-#: ../apt-listchanges:121
+#: ../apt-listchanges:120
 msgid "%s: Version %s has already been seen"
 msgstr "%s: Verze %s již byla zobrazena"
 
-#: ../apt-listchanges:154
+#: ../apt-listchanges:153
 msgid "News for %s"
 msgstr "Novinky v %s"
 
-#: ../apt-listchanges:165
+#: ../apt-listchanges:164
 msgid "Changes for %s"
 msgstr "Změny v %s"
 
-#: ../apt-listchanges:181
+#: ../apt-listchanges:180
 msgid "Informational notes"
 msgstr "Informační poznámky"
 
-#: ../apt-listchanges:197
+#: ../apt-listchanges:196
 msgid "apt-listchanges: changelogs for %s"
 msgstr "apt-listchanges: změny pro %s"
 
-#: ../apt-listchanges:201
+#: ../apt-listchanges:200
 msgid "apt-listchanges: news for %s"
 msgstr "apt-listchanges: novinky pro %s"
 
-#: ../apt-listchanges:213
+#: ../apt-listchanges:212
 msgid "didn't find any valid .deb archives"
 msgstr "nebyly nalezeny žádné platné .deb archivy"
+
+#: ../apt_listchanges.py:212
+msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
+msgstr ""
+
+#: ../apt_listchanges.py:267
+msgid "Unknown option %s for --which.  Allowed are: %s."
+msgstr ""
 
 #: ../apt_listchanges.py:283
 msgid ""

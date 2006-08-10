@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.3\n"
-"POT-Creation-Date: Sun Feb 17 01:09:48 2002\n"
+"POT-Creation-Date: 2006-08-10 18:25+CEST\n"
 "PO-Revision-Date: 2002-02-01 15:28+0100\n"
 "Last-Translator: Leonard Michlmayr <leonard.michlmayr@ap.univie.ac.at>\n"
 "Language-Team: German <de@li.org>\n"
@@ -14,27 +14,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: ../apt-listchanges:109
+#: ../apt-listchanges:86
+msgid "Unknown frontend: %s\n"
+msgstr ""
+
+#: ../apt-listchanges:111
 msgid "%s: will be newly installed"
 msgstr "%s: wird erstmals installiert"
 
-#: ../apt-listchanges:121
+#: ../apt-listchanges:120
 msgid "%s: Version %s has already been seen"
 msgstr "%s: Version %s wurde schon einmal angezeigt"
 
-#: ../apt-listchanges:147
+#: ../apt-listchanges:153
+#, fuzzy
+msgid "News for %s"
+msgstr "Änderungen für %s"
+
+#: ../apt-listchanges:164
 msgid "Changes for %s"
 msgstr "Änderungen für %s"
 
-#: ../apt-listchanges:156
+#: ../apt-listchanges:180
 msgid "Informational notes"
 msgstr "Anmerkungen"
 
-#: ../apt-listchanges:177
+#: ../apt-listchanges:196
+#, fuzzy
+msgid "apt-listchanges: changelogs for %s"
+msgstr "apt-listchanges Ausgabe für %s"
+
+#: ../apt-listchanges:200
+#, fuzzy
+msgid "apt-listchanges: news for %s"
+msgstr "apt-listchanges Ausgabe für %s"
+
+#: ../apt-listchanges:212
 msgid "didn't find any valid .deb archives"
 msgstr "konnte keine gültigen .deb-Archive finden"
 
-#: ../apt_listchanges.py:184
+#: ../apt_listchanges.py:212
+msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
+msgstr ""
+
+#: ../apt_listchanges.py:267
+msgid "Unknown option %s for --which.  Allowed are: %s."
+msgstr ""
+
+#: ../apt_listchanges.py:283
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -43,34 +70,31 @@ msgstr ""
 "(ist Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version auf 2 "
 "gesetzt?)\n"
 
-#: ../apt_listchanges.py:225
-msgid "Mailing changelogs to %s"
+#: ../apt_listchanges.py:326
+#, fuzzy
+msgid "Mailing %s: %s"
 msgstr "Sende Changelogs an %s"
 
-#: ../apt_listchanges.py:228
-msgid "apt-listchanges output for %s"
-msgstr "apt-listchanges Ausgabe für %s"
-
-#: ../apt_listchanges.py:239
-msgid "The newt frontend is deprecated, using pager"
+#: ../apt_listchanges.py:353
+#, fuzzy
+msgid "The %s frontend is deprecated, using pager"
 msgstr "Das newt Frontend wird abgelehnt, benütze den Pager"
 
-#: ../apt_listchanges.py:266
+#: ../apt_listchanges.py:387
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Wollen Sie fortsetzen? [J/n]? "
 
-#: ../apt_listchanges.py:275 ../apt_listchanges.py:301
-#: ../apt_listchanges.py:306
+#: ../apt_listchanges.py:404 ../apt_listchanges.py:424
+#: ../apt_listchanges.py:432
 msgid "Reading changelogs"
 msgstr "Lese Changelogs"
 
-#: ../apt_listchanges.py:306
+#: ../apt_listchanges.py:432
 msgid "Done"
 msgstr "Fertig"
 
-#: ../apt_listchanges.py:343
-msgid "%s exited with status %d"
-msgstr "%s mit Status %d beendet"
+#~ msgid "%s exited with status %d"
+#~ msgstr "%s mit Status %d beendet"
 
 #~ msgid "%s exited with signal %s"
 #~ msgstr "%s mit dem Signal %s beendet"
