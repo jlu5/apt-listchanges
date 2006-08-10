@@ -1,4 +1,4 @@
-apt-listchanges (2.60.1) UNRELEASED; urgency=low
+apt-listchanges (2.60.1) unstable; urgency=low
 
   * Packaging:
     + add a dependency on mail-transport-agent (Closes: #280892, #327590).
@@ -14,7 +14,7 @@ apt-listchanges (2.60.1) UNRELEASED; urgency=low
     + use /usr/bin/hostname instead of gethostname that uses uname, so that
       different chroots have different names (Closes: #257734).
 
- -- Pierre Habouzit <madcoder@debian.org>  Thu, 10 Aug 2006 21:22:48 +0200
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 10 Aug 2006 21:28:36 +0200
 
 apt-listchanges (2.60) unstable; urgency=low
 
