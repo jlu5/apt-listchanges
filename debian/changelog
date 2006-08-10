@@ -1,4 +1,4 @@
-apt-listchanges (2.61) UNRELEASED; urgency=low
+apt-listchanges (2.60.1) UNRELEASED; urgency=low
 
   * Packaging:
     + add a dependency on mail-transport-agent (Closes: #280892, #327590).
@@ -10,7 +10,11 @@ apt-listchanges (2.61) UNRELEASED; urgency=low
     + update de.po, thanks to Jens Seidel (Closes: #313665).
     + Fix error in french manpage PAGER -> BROWSER (Closes: #367624).
 
- -- Pierre Habouzit <madcoder@debian.org>  Thu, 10 Aug 2006 20:56:39 +0200
+  * Features:
+    + use /usr/bin/hostname instead of gethostname that uses uname, so that
+      different chroots have different names (Closes: #257734).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 10 Aug 2006 21:22:48 +0200
 
 apt-listchanges (2.60) unstable; urgency=low
 

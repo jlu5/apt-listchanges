@@ -31,8 +31,8 @@ import apt_pkg
 import gettext
 import string
 import anydbm
+import commands
 from apt_listchanges import apt_listchanges,DebianControlParser
-from socket import gethostname
 
 def main():
     try:
@@ -181,17 +181,17 @@ def main():
 
     if news:
         frontend.display_output(news)
-        
+
     if changes:
         frontend.display_output(changes)
-        
+
     if news or changes:
         if config.confirm and not frontend.confirm():
             sys.stderr.write('Aborting.\n')
             sys.exit(10)
 
-        hostname = gethostname()
-        
+        hostname = commands.getoutput('hostname')
+
         if config.email_address and changes:
             subject = _("apt-listchanges: changelogs for %s") % hostname
             apt_listchanges.mail_changes(config.email_address, changes, subject)
