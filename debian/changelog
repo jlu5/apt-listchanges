@@ -1,10 +1,10 @@
-apt-listchanges (2.60.1) unstable; urgency=low
+apt-listchanges (2.61) unstable; urgency=low
 
   * Packaging:
     + add a dependency on mail-transport-agent (Closes: #280892, #327590).
     + update depends upon debconf (Closes: #331748).
-    + test if apt-listchanges is still there in 20listchanges before calling
-      it (Closes: #237334, #262682)
+    + move apt-listchanges away if uninstalled, reinstate it in postinst
+      (Closes: #237334, #262682)
 
   * l10n:
     + update de.po, thanks to Jens Seidel (Closes: #313665).
