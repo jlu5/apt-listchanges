@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.1\n"
-"POT-Creation-Date: 2006-08-11 16:26+CEST\n"
+"POT-Creation-Date: 2006-08-11 22:10+CEST\n"
 "PO-Revision-Date: 2002-05-12 07:39+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -12,54 +12,58 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: ../apt-listchanges:86
+#: ../apt-listchanges:87
 msgid "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges:111
+#: ../apt-listchanges:112
 msgid "%s: will be newly installed"
 msgstr "%s: paigaldatakse uuesti"
 
-#: ../apt-listchanges:120
+#: ../apt-listchanges:121
 msgid "%s: Version %s has already been seen"
 msgstr "%s: Versioon %s on juba nähtud"
 
-#: ../apt-listchanges:153
+#: ../apt-listchanges:154
 #, fuzzy
 msgid "News for %s"
 msgstr "Muudatused %s jaoks"
 
-#: ../apt-listchanges:164
+#: ../apt-listchanges:165
 msgid "Changes for %s"
 msgstr "Muudatused %s jaoks"
 
-#: ../apt-listchanges:180
+#: ../apt-listchanges:181
 msgid "Informational notes"
 msgstr "Informatiivsed märkused"
 
-#: ../apt-listchanges:196
+#: ../apt-listchanges:197
 #, fuzzy
 msgid "apt-listchanges: changelogs for %s"
 msgstr "apt-listchanges väljund %s jaoks"
 
-#: ../apt-listchanges:200
+#: ../apt-listchanges:201
 #, fuzzy
 msgid "apt-listchanges: news for %s"
 msgstr "apt-listchanges väljund %s jaoks"
 
-#: ../apt-listchanges:212
+#: ../apt-listchanges:213
 msgid "didn't find any valid .deb archives"
 msgstr "ei leia ühtegi töökorras .deb arhiivi"
 
-#: ../apt_listchanges/apt_listchanges.py:214
+#: ../apt_listchanges/apt_listchanges.py:120
+msgid "Ignoring `%s' (seems to be a directory !)"
+msgstr ""
+
+#: ../apt_listchanges/apt_listchanges.py:216
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:269
+#: ../apt_listchanges/apt_listchanges.py:271
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:285
+#: ../apt_listchanges/apt_listchanges.py:287
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -67,27 +71,27 @@ msgstr ""
 "Vale või puuduv VERSION apt torust\n"
 "(kas Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version on 2?)\n"
 
-#: ../apt_listchanges/apt_listchanges.py:328
+#: ../apt_listchanges/apt_listchanges.py:330
 #, fuzzy
 msgid "Mailing %s: %s"
 msgstr "Postitan muutuste logid aadressile %s"
 
-#: ../apt_listchanges/apt_listchanges.py:355
+#: ../apt_listchanges/apt_listchanges.py:357
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
 msgstr "Newt'i liides on taunitav, kasutan lehitsejat (pager)"
 
-#: ../apt_listchanges/apt_listchanges.py:400
+#: ../apt_listchanges/apt_listchanges.py:402
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Soovite jätkata [J/e]? "
 
-#: ../apt_listchanges/apt_listchanges.py:417
-#: ../apt_listchanges/apt_listchanges.py:437
-#: ../apt_listchanges/apt_listchanges.py:445
+#: ../apt_listchanges/apt_listchanges.py:419
+#: ../apt_listchanges/apt_listchanges.py:439
+#: ../apt_listchanges/apt_listchanges.py:447
 msgid "Reading changelogs"
 msgstr "Muudatuste logide lugemine"
 
-#: ../apt_listchanges/apt_listchanges.py:445
+#: ../apt_listchanges/apt_listchanges.py:447
 msgid "Done"
 msgstr "Korras"
 

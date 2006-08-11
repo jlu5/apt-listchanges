@@ -4,7 +4,7 @@ import DebianControlParser
 import apt_pkg
 import ConfigParser
 import getopt
-import os
+import os, os.path
 import re
 import string
 import sys
@@ -116,7 +116,9 @@ class Package:
         fd = None
         for filename in filenames:
             try:
-                if filename.endswith('.gz'):
+                if os.path.isdir(filename):
+                    print >> sys.stderr, _("Ignoring `%s' (seems to be a directory !)") % filename
+                elif filename.endswith('.gz'):
                     fd = gzip.GzipFile(filename)
                 else:
                     fd = open(filename)

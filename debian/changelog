@@ -17,6 +17,9 @@ apt-listchanges (2.62) UNRELEASED; urgency=low
 
   * Be sure that seen_new is always defined (Closes: #294420).
 
+  * Ignore when README.Debian/changelog.gz is a directory, just print a
+    warning (Closes: #362896).
+
  -- Pierre Habouzit <madcoder@debian.org>  Fri, 11 Aug 2006 17:18:17 +0200
 
 apt-listchanges (2.61) unstable; urgency=low

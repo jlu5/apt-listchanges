@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.27\n"
-"POT-Creation-Date: 2006-08-11 16:26+CEST\n"
+"POT-Creation-Date: 2006-08-11 22:10+CEST\n"
 "PO-Revision-Date: 2003-01-30 17:30+0100\n"
 "Last-Translator: Micha³ Politowski <l10n@mp.pl.eu.org>\n"
 "Language-Team: Polish\n"
@@ -14,54 +14,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: ../apt-listchanges:86
+#: ../apt-listchanges:87
 msgid "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges:111
+#: ../apt-listchanges:112
 msgid "%s: will be newly installed"
 msgstr "%s: nowo instalowany"
 
-#: ../apt-listchanges:120
+#: ../apt-listchanges:121
 msgid "%s: Version %s has already been seen"
 msgstr "%s: wesja %s zosta³a ju¿ obejrzana"
 
-#: ../apt-listchanges:153
+#: ../apt-listchanges:154
 #, fuzzy
 msgid "News for %s"
 msgstr "Zmiany w %s"
 
-#: ../apt-listchanges:164
+#: ../apt-listchanges:165
 msgid "Changes for %s"
 msgstr "Zmiany w %s"
 
-#: ../apt-listchanges:180
+#: ../apt-listchanges:181
 msgid "Informational notes"
 msgstr "Dodatkowe informacje"
 
-#: ../apt-listchanges:196
+#: ../apt-listchanges:197
 #, fuzzy
 msgid "apt-listchanges: changelogs for %s"
 msgstr "apt-listchanges: wyniki dla %s"
 
-#: ../apt-listchanges:200
+#: ../apt-listchanges:201
 #, fuzzy
 msgid "apt-listchanges: news for %s"
 msgstr "apt-listchanges: wyniki dla %s"
 
-#: ../apt-listchanges:212
+#: ../apt-listchanges:213
 msgid "didn't find any valid .deb archives"
 msgstr "nie znaleziono ¿adnych archiwów typu .deb"
 
-#: ../apt_listchanges/apt_listchanges.py:214
+#: ../apt_listchanges/apt_listchanges.py:120
+msgid "Ignoring `%s' (seems to be a directory !)"
+msgstr ""
+
+#: ../apt_listchanges/apt_listchanges.py:216
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:269
+#: ../apt_listchanges/apt_listchanges.py:271
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:285
+#: ../apt_listchanges/apt_listchanges.py:287
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -69,27 +73,27 @@ msgstr ""
 "B³êdna warto¶æ VERSION w potoku z apt lub jej brak\n"
 "(czy Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version ma warto¶æ 2?)\n"
 
-#: ../apt_listchanges/apt_listchanges.py:328
+#: ../apt_listchanges/apt_listchanges.py:330
 #, fuzzy
 msgid "Mailing %s: %s"
 msgstr "wysy³anie dzienników do %s"
 
-#: ../apt_listchanges/apt_listchanges.py:355
+#: ../apt_listchanges/apt_listchanges.py:357
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
 msgstr "Interfejs newt zosta³ zarzucony, zostanie u¿yty pager"
 
-#: ../apt_listchanges/apt_listchanges.py:400
+#: ../apt_listchanges/apt_listchanges.py:402
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Czy kontynuowaæ? [T/n] "
 
-#: ../apt_listchanges/apt_listchanges.py:417
-#: ../apt_listchanges/apt_listchanges.py:437
-#: ../apt_listchanges/apt_listchanges.py:445
+#: ../apt_listchanges/apt_listchanges.py:419
+#: ../apt_listchanges/apt_listchanges.py:439
+#: ../apt_listchanges/apt_listchanges.py:447
 msgid "Reading changelogs"
 msgstr "Odczytywanie dzienników zmian"
 
-#: ../apt_listchanges/apt_listchanges.py:445
+#: ../apt_listchanges/apt_listchanges.py:447
 msgid "Done"
 msgstr "Zrobione"
 
