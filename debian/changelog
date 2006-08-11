@@ -1,3 +1,10 @@
+apt-listchanges (2.62) UNRELEASED; urgency=low
+
+  * Switch to python2.4:
+    + use lgettext instead of gettext (Closes: #238203, #309470, #318581).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Fri, 11 Aug 2006 15:09:31 +0200
+
 apt-listchanges (2.61) unstable; urgency=low
 
   * Packaging:

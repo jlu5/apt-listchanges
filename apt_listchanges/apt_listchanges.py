@@ -23,7 +23,7 @@ import glob
 
 locale.setlocale(locale.LC_ALL,'')
 try:
-    _ = gettext.translation('apt-listchanges').gettext
+    _ = gettext.translation('apt-listchanges').lgettext
 except IOError:
     _ = lambda str: str
 
