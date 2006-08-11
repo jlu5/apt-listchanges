@@ -58,12 +58,12 @@ install: all
 
 mostlyclean:
 	rm -f core core.* *.pox $(PACKAGE).po *.new.po
-	rm -fr *.o
+	rm -fr *.o *.mo
 
 clean: mostlyclean
 
 distclean: clean
-	rm -f *.mo $(PACKAGE).pot
+	rm -f $(PACKAGE).pot
 
 update-po: Makefile
 	$(MAKE) $(PACKAGE).pot
