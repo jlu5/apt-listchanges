@@ -1,8 +1,8 @@
 apt-listchanges (2.62) UNRELEASED; urgency=low
 
-  * Packaging:
-    + debian/templates, use Christian Perrier's patch to make templates more
-      compliant to usual practices (Closes: #346053).
+  * debian/templates, use Christian Perrier's patch to make templates more
+    compliant to usual practices (Closes: #346053).
+    + update sv.po thanks to Daniel Nylander.
 
   * Encoding problems:
     + Switch to python2.4 to use lgettext instead of gettext
@@ -12,7 +12,7 @@ apt-listchanges (2.62) UNRELEASED; urgency=low
     + Specify encoding for the html generation (from the same patch).
     + Deal with badly encoded changelogs (assume latin1).
 
- -- Pierre Habouzit <madcoder@debian.org>  Fri, 11 Aug 2006 15:09:31 +0200
+ -- Pierre Habouzit <madcoder@debian.org>  Fri, 11 Aug 2006 17:18:17 +0200
 
 apt-listchanges (2.61) unstable; urgency=low
 
