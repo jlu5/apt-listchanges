@@ -15,6 +15,8 @@ apt-listchanges (2.62) UNRELEASED; urgency=low
     + Specify encoding for the html generation (from the same patch).
     + Deal with badly encoded changelogs (assume latin1).
 
+  * Be sure that seen_new is always defined (Closes: #294420).
+
  -- Pierre Habouzit <madcoder@debian.org>  Fri, 11 Aug 2006 17:18:17 +0200
 
 apt-listchanges (2.61) unstable; urgency=low
