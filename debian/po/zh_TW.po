@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.59\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-29 20:33-0700\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2006-08-11 16:20+0200\n"
 "PO-Revision-Date: 2005-02-04 16:47+0800\n"
 "Last-Translator: Asho Yeh <asho@debian.org.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -27,68 +27,76 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:3
-msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#: ../templates:1001
+msgid "pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "text"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "mail"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "none"
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "How should changes be displayed with apt?"
-msgstr "指定搭配 apt 使用時顯示更動部份的方式？"
+#: ../templates:1002
+msgid "Method for changes display:"
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr "apt-listchanges 有三種方式來顯示套件的更動部份。"
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "pager - 使用您偏好的分頁器來顯示更動部份"
+#: ../templates:1002
+msgid ""
+" pager         : use your preferred pager to display changes one page at\n"
+"                 a time;\n"
+" browser       : display HTML-formatted changes using a web browser;\n"
+" xterm-pager   : like pager, but in an xterm in the background;\n"
+" xterm-browser : like browser, but in an xterm in the background;\n"
+" text          : print changes to your terminal (without pausing);\n"
+" mail          : only send changes via mail;\n"
+" none          : do not run automatically from apt."
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "browser - 更動的部份以 HTML 格式輸出並用瀏覽器顯示"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "xterm-pager - 類似 pager，但在 xterm 的背景下"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "xterm-browser - 類似瀏覽器，但在 xterm 的背景下"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "text  - 印出更動的部份到終端機 (不會暫停)"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "mail  - Only send changes via mail"
-msgstr "mail  - 透過 mail 只送出更動的部份"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "none  - Do not run automatically from apt"
-msgstr "none  - 取消執行 apt 時自動執行 apt-listchanges"
-
-#. Type: select
-#. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "This setting can be overridden by a command-line option or an environment "
 "variable.  Note that you can still send a copy via mail with all of the "
@@ -98,28 +106,23 @@ msgstr ""
 "所有的前端訊息。"
 
 #. Type: string
-#. Default
-#: ../templates:29
-msgid "root"
-msgstr "root"
+#. Description
+#: ../templates:2001
+msgid "E-mail Address(es) which will receive changes:"
+msgstr ""
 
 #. Type: string
 #. Description
-#: ../templates:30
-msgid "To whom should apt-listchanges mail changes?"
-msgstr "apt-listchanges 要將更動的部份寄給誰？"
-
-#. Type: string
-#. Description
-#: ../templates:30
+#: ../templates:2001
+#, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  To what email "
-"address should they be sent?"
+"apt-listchanges can email a copy of displayed changes.  Please enter the "
+"email address the changes should be sent to."
 msgstr "apt-listchanges 能寄出顯示的更動部份。要寄到那一個 Email Address 呢？"
 
 #. Type: string
 #. Description
-#: ../templates:30
+#: ../templates:2001
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
@@ -127,14 +130,14 @@ msgstr "多個位址是可允許的，請用逗號(,)隔開。不想送出郵件
 
 #. Type: boolean
 #. Description
-#: ../templates:40
-msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changes?"
+#: ../templates:3001
+#, fuzzy
+msgid "Prompt for confirmation after displaying changes?"
 msgstr "是否 apt-listchanges 顯示完更動部份後要提出確認嗎？"
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
@@ -146,7 +149,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
@@ -156,13 +159,13 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "跳過 apt-listchanges 已顯示的更動嗎？"
 
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
@@ -173,19 +176,27 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:59
+#: ../templates:5001
 msgid "news, both, changelogs"
 msgstr "news, both, changelogs"
 
 #. Type: select
 #. Description
-#: ../templates:61
-msgid "Which types of changes should be displayed with apt?"
+#: ../templates:5002
+#, fuzzy
+msgid "Changes displayed with apt:"
+msgstr "指定搭配 apt 使用時顯示更動部份的方式？"
+
+#. Type: select
+#. Description
+#: ../templates:5002
+#, fuzzy
+msgid "Please choose which type of changes should be displayed with APT."
 msgstr "指定搭配 apt 使用時顯示更動部份的格式？"
 
 #. Type: select
 #. Description
-#: ../templates:61
+#: ../templates:5002
 msgid ""
 " news - important news items only\n"
 " both - both news and detailed changelogs\n"
@@ -194,3 +205,34 @@ msgstr ""
 " news - 只顯示重要的 news 項目\n"
 " both - news 和和詳細的更動記錄\n"
 " changelogs - 只顯示詳細的更動記錄"
+
+#~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#~ msgstr "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+
+#~ msgid ""
+#~ "pager - Use your preferred pager to display changes one page at a time"
+#~ msgstr "pager - 使用您偏好的分頁器來顯示更動部份"
+
+#~ msgid "browser - Display HTML-formatted changes using a web browser"
+#~ msgstr "browser - 更動的部份以 HTML 格式輸出並用瀏覽器顯示"
+
+#~ msgid "xterm-pager - Like pager, but in an xterm in the background"
+#~ msgstr "xterm-pager - 類似 pager，但在 xterm 的背景下"
+
+#~ msgid "xterm-browser - Like browser, but in an xterm in the background"
+#~ msgstr "xterm-browser - 類似瀏覽器，但在 xterm 的背景下"
+
+#~ msgid "text  - Print changes to your terminal (without pausing)"
+#~ msgstr "text  - 印出更動的部份到終端機 (不會暫停)"
+
+#~ msgid "mail  - Only send changes via mail"
+#~ msgstr "mail  - 透過 mail 只送出更動的部份"
+
+#~ msgid "none  - Do not run automatically from apt"
+#~ msgstr "none  - 取消執行 apt 時自動執行 apt-listchanges"
+
+#~ msgid "root"
+#~ msgstr "root"
+
+#~ msgid "To whom should apt-listchanges mail changes?"
+#~ msgstr "apt-listchanges 要將更動的部份寄給誰？"

@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges_2.42\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-29 20:33-0700\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2006-08-11 16:20+0200\n"
 "PO-Revision-Date: 2003-10-05 15:35+0600\n"
 "Last-Translator: Ilgiz Kalmetev <translator@ilgiz.pp.ru>\n"
 "Language-Team: russian <debian-russian@lists.debian.org>\n"
@@ -25,22 +25,55 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:3
-msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#: ../templates:1001
+msgid "pager"
 msgstr ""
-"просмотрщик, браузер, xterm-просмотрщик, xterm-браузер, текст, по почте, не "
-"отображать"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "text"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "mail"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "none"
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
-#, fuzzy
-msgid "How should changes be displayed with apt?"
-msgstr "Каким образом apt должен отображать журналы изменений?"
+#: ../templates:1002
+msgid "Method for changes display:"
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
+#: ../templates:1002
 #, fuzzy
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
@@ -50,56 +83,21 @@ msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
-#, fuzzy
-msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "просмотрщик - предпочитаемый Вами просмотрщик"
-
-#. Type: select
-#. Description
-#: ../templates:5
-#, fuzzy
-msgid "browser - Display HTML-formatted changes using a web browser"
+#: ../templates:1002
+msgid ""
+" pager         : use your preferred pager to display changes one page at\n"
+"                 a time;\n"
+" browser       : display HTML-formatted changes using a web browser;\n"
+" xterm-pager   : like pager, but in an xterm in the background;\n"
+" xterm-browser : like browser, but in an xterm in the background;\n"
+" text          : print changes to your terminal (without pausing);\n"
+" mail          : only send changes via mail;\n"
+" none          : do not run automatically from apt."
 msgstr ""
-"браузер - отображать журналы изменений, отформатированные в HTML, с помощью "
-"веб-браузера"
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "xterm-просмотрщик - Аналогично просто просмотрщику, но в окне xterm"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "xterm-браузер - Аналогично просто браузеру, но в окне xterm"
-
-#. Type: select
-#. Description
-#: ../templates:5
-#, fuzzy
-msgid "text  - Print changes to your terminal (without pausing)"
-msgstr ""
-"текст - Выводить журналы изменений на экран Вашего терминала (без пауз)"
-
-#. Type: select
-#. Description
-#: ../templates:5
-#, fuzzy
-msgid "mail  - Only send changes via mail"
-msgstr "по почте - только отправлять журналы изменений по почте"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "none  - Do not run automatically from apt"
-msgstr "не отображать - не запускать из apt автоматически"
-
-#. Type: select
-#. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "This setting can be overridden by a command-line option or an environment "
 "variable.  Note that you can still send a copy via mail with all of the "
@@ -110,32 +108,25 @@ msgstr ""
 "почте при любых способах отображения, кроме \"не отображать\"."
 
 #. Type: string
-#. Default
-#: ../templates:29
-msgid "root"
-msgstr "root"
+#. Description
+#: ../templates:2001
+msgid "E-mail Address(es) which will receive changes:"
+msgstr ""
 
 #. Type: string
 #. Description
-#: ../templates:30
-#, fuzzy
-msgid "To whom should apt-listchanges mail changes?"
-msgstr "Кому apt-listchanges должен отправлять записи журнала изменений?"
-
-#. Type: string
-#. Description
-#: ../templates:30
+#: ../templates:2001
 #, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  To what email "
-"address should they be sent?"
+"apt-listchanges can email a copy of displayed changes.  Please enter the "
+"email address the changes should be sent to."
 msgstr ""
 "apt-listchanges может отправлять копию отображаемых журналов изменений по "
 "электронной почте. Кому должна быть адресована эта почта?"
 
 #. Type: string
 #. Description
-#: ../templates:30
+#: ../templates:2001
 #, fuzzy
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
@@ -144,17 +135,16 @@ msgstr "Оставьте поле пустым, если вообще не хотите отправлять почту."
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 #, fuzzy
-msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changes?"
+msgid "Prompt for confirmation after displaying changes?"
 msgstr ""
 "Должен ли apt-listchanges выдавать ожидать подтверждения после отображения "
 "журнала изменений?"
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 #, fuzzy
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
@@ -169,7 +159,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
@@ -179,7 +169,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 #, fuzzy
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr ""
@@ -188,7 +178,7 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 #, fuzzy
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
@@ -201,25 +191,73 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:59
+#: ../templates:5001
 msgid "news, both, changelogs"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:61
+#: ../templates:5002
 #, fuzzy
-msgid "Which types of changes should be displayed with apt?"
+msgid "Changes displayed with apt:"
 msgstr "Каким образом apt должен отображать журналы изменений?"
 
 #. Type: select
 #. Description
-#: ../templates:61
+#: ../templates:5002
+#, fuzzy
+msgid "Please choose which type of changes should be displayed with APT."
+msgstr "Каким образом apt должен отображать журналы изменений?"
+
+#. Type: select
+#. Description
+#: ../templates:5002
 msgid ""
 " news - important news items only\n"
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
+
+#~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#~ msgstr ""
+#~ "просмотрщик, браузер, xterm-просмотрщик, xterm-браузер, текст, по почте, "
+#~ "не отображать"
+
+#, fuzzy
+#~ msgid ""
+#~ "pager - Use your preferred pager to display changes one page at a time"
+#~ msgstr "просмотрщик - предпочитаемый Вами просмотрщик"
+
+#, fuzzy
+#~ msgid "browser - Display HTML-formatted changes using a web browser"
+#~ msgstr ""
+#~ "браузер - отображать журналы изменений, отформатированные в HTML, с "
+#~ "помощью веб-браузера"
+
+#~ msgid "xterm-pager - Like pager, but in an xterm in the background"
+#~ msgstr "xterm-просмотрщик - Аналогично просто просмотрщику, но в окне xterm"
+
+#~ msgid "xterm-browser - Like browser, but in an xterm in the background"
+#~ msgstr "xterm-браузер - Аналогично просто браузеру, но в окне xterm"
+
+#, fuzzy
+#~ msgid "text  - Print changes to your terminal (without pausing)"
+#~ msgstr ""
+#~ "текст - Выводить журналы изменений на экран Вашего терминала (без пауз)"
+
+#, fuzzy
+#~ msgid "mail  - Only send changes via mail"
+#~ msgstr "по почте - только отправлять журналы изменений по почте"
+
+#~ msgid "none  - Do not run automatically from apt"
+#~ msgstr "не отображать - не запускать из apt автоматически"
+
+#~ msgid "root"
+#~ msgstr "root"
+
+#, fuzzy
+#~ msgid "To whom should apt-listchanges mail changes?"
+#~ msgstr "Кому apt-listchanges должен отправлять записи журнала изменений?"
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 #~ msgstr ""

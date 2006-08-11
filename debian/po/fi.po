@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-29 20:33-0700\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2006-08-11 16:20+0200\n"
 "PO-Revision-Date: 2005-02-01 10:20+0200\n"
 "Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
 "Language-Team: Finnish <debian-l10-finnish@lists.debian.org>\n"
@@ -25,68 +25,76 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:3
-msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr "sivutin, selain, xterm-sivutin, xterm-selain, teksti, posti, ei mikään"
+#: ../templates:1001
+msgid "pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "text"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "mail"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "none"
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "How should changes be displayed with apt?"
-msgstr "Miten muutokset näytetään aptin ajon yhteydessä?"
+#: ../templates:1002
+msgid "Method for changes display:"
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr "apt-listchanges osaa näyttää pakettien muutokset usealla eri tavalla."
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "sivutin - Lue muutokset sivu kerrallaan mielisivuttimellasi"
+#: ../templates:1002
+msgid ""
+" pager         : use your preferred pager to display changes one page at\n"
+"                 a time;\n"
+" browser       : display HTML-formatted changes using a web browser;\n"
+" xterm-pager   : like pager, but in an xterm in the background;\n"
+" xterm-browser : like browser, but in an xterm in the background;\n"
+" text          : print changes to your terminal (without pausing);\n"
+" mail          : only send changes via mail;\n"
+" none          : do not run automatically from apt."
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "selain - Näytä HTML-muotoillut muutokset www-selaimella"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "xterm-sivutin - Kuten sivutin, mutta xtermissä taustalla"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "xterm-selain - Kuten selain, mutta xtermissä taustalla"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "teksti - Tulosta muutokset päätteeseen (ilman taukoja)"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "mail  - Only send changes via mail"
-msgstr "posti - Lähetä muutokset postitse"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "none  - Do not run automatically from apt"
-msgstr "ei mikään - Älä aja automaattisesti aptista"
-
-#. Type: select
-#. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "This setting can be overridden by a command-line option or an environment "
 "variable.  Note that you can still send a copy via mail with all of the "
@@ -97,53 +105,57 @@ msgstr ""
 "liittymissä paitsi \"ei mikään\"."
 
 #. Type: string
-#. Default
-#: ../templates:29
-msgid "root"
-msgstr "root"
+#. Description
+#: ../templates:2001
+msgid "E-mail Address(es) which will receive changes:"
+msgstr ""
 
 #. Type: string
 #. Description
-#: ../templates:30
-msgid "To whom should apt-listchanges mail changes?"
-msgstr "Kenelle apt-listchanges lähettää muutokset?"
-
-#. Type: string
-#. Description
-#: ../templates:30
+#: ../templates:2001
+#, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  To what email "
-"address should they be sent?"
-msgstr "apt-listchanges voi lähettää muutoksista kopion sähköpostissa. Mihin osoitteeseen haluat niiden tulevan?"
+"apt-listchanges can email a copy of displayed changes.  Please enter the "
+"email address the changes should be sent to."
+msgstr ""
+"apt-listchanges voi lähettää muutoksista kopion sähköpostissa. Mihin "
+"osoitteeseen haluat niiden tulevan?"
 
 #. Type: string
 #. Description
-#: ../templates:30
+#: ../templates:2001
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
-msgstr "Pilkulla erottelemalla voit antaa useita osoitteita. Jätä tämä kohta tyhjäksi, jos et halua sähköpostia lähetettävän."
+msgstr ""
+"Pilkulla erottelemalla voit antaa useita osoitteita. Jätä tämä kohta "
+"tyhjäksi, jos et halua sähköpostia lähetettävän."
 
 #. Type: boolean
 #. Description
-#: ../templates:40
-msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changes?"
-msgstr "Pitäisikö apt-listchangesin kysyä vahvistusta muutoksien näytön jälkeen?"
+#: ../templates:3001
+#, fuzzy
+msgid "Prompt for confirmation after displaying changes?"
+msgstr ""
+"Pitäisikö apt-listchangesin kysyä vahvistusta muutoksien näytön jälkeen?"
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
-msgstr "Luettuasi muutosluettelon, apt-listchanges voi kysyä muutoslokien näyttämisen jälkeen haluatko jatkaa asennusta. Tästä on hyötyä aptin tekemässä automaattiajossa, koska saat mahdollisuuden keskeyttää päivityksen, jos et halua (vielä) tehdä jotain näkemääsi muutosta."
+msgstr ""
+"Luettuasi muutosluettelon, apt-listchanges voi kysyä muutoslokien "
+"näyttämisen jälkeen haluatko jatkaa asennusta. Tästä on hyötyä aptin "
+"tekemässä automaattiajossa, koska saat mahdollisuuden keskeyttää "
+"päivityksen, jos et halua (vielä) tehdä jotain näkemääsi muutosta."
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
@@ -153,34 +165,45 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "Haluatko apt-listchangesin ohittavan jo nähdyt muutokset?"
 
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
-msgstr "apt-listchanges voi pitää kirjaa jo näytetyistä muutoksista ja jättää nämä näyttämättä myöhemmin. Tästä on hyötyä esimerkiksi yritettäessä päivitystä uudelleen."
+msgstr ""
+"apt-listchanges voi pitää kirjaa jo näytetyistä muutoksista ja jättää nämä "
+"näyttämättä myöhemmin. Tästä on hyötyä esimerkiksi yritettäessä päivitystä "
+"uudelleen."
 
 #. Type: select
 #. Choices
-#: ../templates:59
+#: ../templates:5001
 msgid "news, both, changelogs"
 msgstr "uutiset, molemmat, muutoslokit"
 
 #. Type: select
 #. Description
-#: ../templates:61
-msgid "Which types of changes should be displayed with apt?"
+#: ../templates:5002
+#, fuzzy
+msgid "Changes displayed with apt:"
+msgstr "Miten muutokset näytetään aptin ajon yhteydessä?"
+
+#. Type: select
+#. Description
+#: ../templates:5002
+#, fuzzy
+msgid "Please choose which type of changes should be displayed with APT."
 msgstr "Minkä tyyppiset muutokset näytetään aptin ajon yhteydessä?"
 
 #. Type: select
 #. Description
-#: ../templates:61
+#: ../templates:5002
 msgid ""
 " news - important news items only\n"
 " both - both news and detailed changelogs\n"
@@ -189,6 +212,38 @@ msgstr ""
 " uutiset - ainoastaan tärkeät uutiset\n"
 " molemmat - sekä uutiset että tarkat muutoslokit\n"
 " muutoslokit - ainoastaan tarkat muutoslokit"
+
+#~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#~ msgstr ""
+#~ "sivutin, selain, xterm-sivutin, xterm-selain, teksti, posti, ei mikään"
+
+#~ msgid ""
+#~ "pager - Use your preferred pager to display changes one page at a time"
+#~ msgstr "sivutin - Lue muutokset sivu kerrallaan mielisivuttimellasi"
+
+#~ msgid "browser - Display HTML-formatted changes using a web browser"
+#~ msgstr "selain - Näytä HTML-muotoillut muutokset www-selaimella"
+
+#~ msgid "xterm-pager - Like pager, but in an xterm in the background"
+#~ msgstr "xterm-sivutin - Kuten sivutin, mutta xtermissä taustalla"
+
+#~ msgid "xterm-browser - Like browser, but in an xterm in the background"
+#~ msgstr "xterm-selain - Kuten selain, mutta xtermissä taustalla"
+
+#~ msgid "text  - Print changes to your terminal (without pausing)"
+#~ msgstr "teksti - Tulosta muutokset päätteeseen (ilman taukoja)"
+
+#~ msgid "mail  - Only send changes via mail"
+#~ msgstr "posti - Lähetä muutokset postitse"
+
+#~ msgid "none  - Do not run automatically from apt"
+#~ msgstr "ei mikään - Älä aja automaattisesti aptista"
+
+#~ msgid "root"
+#~ msgstr "root"
+
+#~ msgid "To whom should apt-listchanges mail changes?"
+#~ msgstr "Kenelle apt-listchanges lähettää muutokset?"
 
 #~ msgid ""
 #~ "apt-listchanges can configure all of the options in /etc/apt/listchanges."

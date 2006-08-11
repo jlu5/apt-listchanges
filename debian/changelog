@@ -1,7 +1,16 @@
 apt-listchanges (2.62) UNRELEASED; urgency=low
 
-  * Switch to python2.4:
-    + use lgettext instead of gettext (Closes: #238203, #309470, #318581).
+  * Packaging:
+    + debian/templates, use Christian Perrier's patch to make templates more
+      compliant to usual practices (Closes: #346053).
+
+  * Encoding problems:
+    + Switch to python2.4 to use lgettext instead of gettext
+      (Closes: #238203, #309470, #318581).
+    + Use current locale to display the changelogs, based on a patch from
+      Michael Piefel (Closes: #215045).
+    + Specify encoding for the html generation (from the same patch).
+    + Deal with badly encoded changelogs (assume latin1).
 
  -- Pierre Habouzit <madcoder@debian.org>  Fri, 11 Aug 2006 15:09:31 +0200
 

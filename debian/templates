@@ -1,24 +1,19 @@
 Template: apt-listchanges/frontend
 Type: select
-_Choices: pager, browser, xterm-pager, xterm-browser, text, mail, none
+__Choices: pager, browser, xterm-pager, xterm-browser, text, mail, none
 Default: pager
-_Description: How should changes be displayed with apt?
+_Description: Method for changes display:
  apt-listchanges can display package changes in a number of different
  ways.
  .
- pager - Use your preferred pager to display changes one page at a time
- .
- browser - Display HTML-formatted changes using a web browser
- .
- xterm-pager - Like pager, but in an xterm in the background
- .
- xterm-browser - Like browser, but in an xterm in the background
- .
- text  - Print changes to your terminal (without pausing)
- .
- mail  - Only send changes via mail
- .
- none  - Do not run automatically from apt
+  pager         : use your preferred pager to display changes one page at
+                  a time;
+  browser       : display HTML-formatted changes using a web browser;
+  xterm-pager   : like pager, but in an xterm in the background;
+  xterm-browser : like browser, but in an xterm in the background;
+  text          : print changes to your terminal (without pausing);
+  mail          : only send changes via mail;
+  none          : do not run automatically from apt.
  .
  This setting can be overridden by a command-line option or an environment
  variable.  Note that you can still send a copy via mail with all of the
@@ -26,10 +21,10 @@ _Description: How should changes be displayed with apt?
 
 Template: apt-listchanges/email-address
 Type: string
-_Default: root
-_Description: To whom should apt-listchanges mail changes?
- apt-listchanges can email a copy of displayed changes.  To what email
- address should they be sent?
+Default: root
+_Description: E-mail Address(es) which will receive changes:
+ apt-listchanges can email a copy of displayed changes.  Please enter
+ the email address the changes should be sent to.
  .
  Multiple addresses may be specified, delimited by commas.  Leave this
  empty if you do not want any email to be sent.
@@ -37,7 +32,7 @@ _Description: To whom should apt-listchanges mail changes?
 Template: apt-listchanges/confirm
 Type: boolean
 Default: false
-_Description: Should apt-listchanges prompt for confirmation after displaying changes?
+_Description: Prompt for confirmation after displaying changes?
  After giving you a chance to read the list of changes, apt-listchanges
  can ask whether or not you would like to continue. This is useful when
  running from apt, as it gives you a chance to abort the upgrade if you see
@@ -58,7 +53,9 @@ Template: apt-listchanges/which
 Type: select
 _Choices: news, both, changelogs
 Default: news
-_Description: Which types of changes should be displayed with apt?
+_Description: Changes displayed with apt:
+ Please choose which type of changes should be displayed with APT.
+ .
   news - important news items only
   both - both news and detailed changelogs
   changelogs - detailed changelogs only

@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-29 20:33-0700\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2006-08-11 16:20+0200\n"
 "PO-Revision-Date: 2004-07-04 20:43-0500\n"
 "Last-Translator: Bart Cornelis <cobaco@linux.be>\n"
 "Language-Team: debian-l10n-dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -23,94 +23,84 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#  Type: select
-#  Choices
 #. Type: select
 #. Choices
-#: ../templates:3
-msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr "pager, browser, xterm-pager, xterm-browser, tekst, e-mail, geen"
+#: ../templates:1001
+msgid "pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "text"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "mail"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "none"
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "Method for changes display:"
+msgstr ""
 
 #  Type: select
 #  Description
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "How should changes be displayed with apt?"
-msgstr "Hoe dient apt deze aanpassingen weer te geven?"
-
-#  Type: select
-#  Description
-#. Type: select
-#. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
 "apt-listchanges kan de aanpassingen op een aantal verschillende manieren "
 "tonen."
 
-#  Type: select
-#  Description
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "pager - Use your preferred pager to display changes one page at a time"
+#: ../templates:1002
+msgid ""
+" pager         : use your preferred pager to display changes one page at\n"
+"                 a time;\n"
+" browser       : display HTML-formatted changes using a web browser;\n"
+" xterm-pager   : like pager, but in an xterm in the background;\n"
+" xterm-browser : like browser, but in an xterm in the background;\n"
+" text          : print changes to your terminal (without pausing);\n"
+" mail          : only send changes via mail;\n"
+" none          : do not run automatically from apt."
 msgstr ""
-"pager - Gebruik uw favoriete pager om aanpassingen pagina voor pagina weer "
-"te geven"
 
 #  Type: select
 #  Description
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "browser - Toon in HTML opgemaakte aanpassingen via een webbrowser"
-
-#  Type: select
-#  Description
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "xterm-pager - Zoals pager, maar in een xterm in de achtergrond"
-
-#  Type: select
-#  Description
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "xterm-browser - Zoals browser, maar in een xterm in de achtergrond"
-
-#  Type: select
-#  Description
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "tekst - Toon aanpassingen op uw terminal (zonder te onderbreken)"
-
-#  Type: select
-#  Description
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "mail  - Only send changes via mail"
-msgstr "e-mail - Aanpassingen enkel via mail doorgeven"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "none  - Do not run automatically from apt"
-msgstr "geen - Laat niet automatisch door apt uitvoeren"
-
-#  Type: select
-#  Description
-#. Type: select
-#. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "This setting can be overridden by a command-line option or an environment "
 "variable.  Note that you can still send a copy via mail with all of the "
@@ -121,27 +111,20 @@ msgstr ""
 "steeds de mogelijkheid heeft omeen kopie door te mailen."
 
 #. Type: string
-#. Default
-#: ../templates:29
-msgid "root"
-msgstr "root"
+#. Description
+#: ../templates:2001
+msgid "E-mail Address(es) which will receive changes:"
+msgstr ""
 
 #  Type: string
 #  Description
 #. Type: string
 #. Description
-#: ../templates:30
-msgid "To whom should apt-listchanges mail changes?"
-msgstr "Naar wie wilt u dat apt-listchanges de aanpassingen stuurt?"
-
-#  Type: string
-#  Description
-#. Type: string
-#. Description
-#: ../templates:30
+#: ../templates:2001
+#, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  To what email "
-"address should they be sent?"
+"apt-listchanges can email a copy of displayed changes.  Please enter the "
+"email address the changes should be sent to."
 msgstr ""
 "U heeft er voor gekozen om de aanpassingen via e-mail te versturen. Naar "
 "welk e-mailadres wilt u deze aanpassingen versturen?"
@@ -150,7 +133,7 @@ msgstr ""
 #  Description
 #. Type: string
 #. Description
-#: ../templates:30
+#: ../templates:2001
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
@@ -162,9 +145,9 @@ msgstr ""
 #  Description
 #. Type: boolean
 #. Description
-#: ../templates:40
-msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changes?"
+#: ../templates:3001
+#, fuzzy
+msgid "Prompt for confirmation after displaying changes?"
 msgstr ""
 "Moet apt-listchanges om bevestiging vragen nadat de aanpassingen getoond "
 "zijn?"
@@ -173,7 +156,7 @@ msgstr ""
 #  Description
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
@@ -189,7 +172,7 @@ msgstr ""
 #  Description
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
@@ -201,7 +184,7 @@ msgstr ""
 #  Description
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "Wilt u dat apt-listchanges reeds verstuurde aanpassingen overslaat?"
 
@@ -209,7 +192,7 @@ msgstr "Wilt u dat apt-listchanges reeds verstuurde aanpassingen overslaat?"
 #  Description
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
@@ -223,7 +206,7 @@ msgstr ""
 #  Choices
 #. Type: select
 #. Choices
-#: ../templates:59
+#: ../templates:5001
 msgid "news, both, changelogs"
 msgstr "nieuws, beide, aanpassingslogboeken"
 
@@ -231,15 +214,25 @@ msgstr "nieuws, beide, aanpassingslogboeken"
 #  Description
 #. Type: select
 #. Description
-#: ../templates:61
-msgid "Which types of changes should be displayed with apt?"
+#: ../templates:5002
+#, fuzzy
+msgid "Changes displayed with apt:"
+msgstr "Hoe dient apt deze aanpassingen weer te geven?"
+
+#  Type: select
+#  Description
+#. Type: select
+#. Description
+#: ../templates:5002
+#, fuzzy
+msgid "Please choose which type of changes should be displayed with APT."
 msgstr "Welk type aanpassingen wilt u weergegeven zien in apt?"
 
 #  Type: select
 #  Description
 #. Type: select
 #. Description
-#: ../templates:61
+#: ../templates:5002
 msgid ""
 " news - important news items only\n"
 " both - both news and detailed changelogs\n"
@@ -248,3 +241,52 @@ msgstr ""
 " nieuws - enkel belangrijke niewsberichten\n"
 " beide - zowel nieuws als gedetaileerde aanpassingslogboeken\n"
 " aanpassingslogboeken - enkel gedetailleerde aanpassingslogboeken"
+
+#  Type: select
+#  Choices
+#~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#~ msgstr "pager, browser, xterm-pager, xterm-browser, tekst, e-mail, geen"
+
+#  Type: select
+#  Description
+#~ msgid ""
+#~ "pager - Use your preferred pager to display changes one page at a time"
+#~ msgstr ""
+#~ "pager - Gebruik uw favoriete pager om aanpassingen pagina voor pagina "
+#~ "weer te geven"
+
+#  Type: select
+#  Description
+#~ msgid "browser - Display HTML-formatted changes using a web browser"
+#~ msgstr "browser - Toon in HTML opgemaakte aanpassingen via een webbrowser"
+
+#  Type: select
+#  Description
+#~ msgid "xterm-pager - Like pager, but in an xterm in the background"
+#~ msgstr "xterm-pager - Zoals pager, maar in een xterm in de achtergrond"
+
+#  Type: select
+#  Description
+#~ msgid "xterm-browser - Like browser, but in an xterm in the background"
+#~ msgstr "xterm-browser - Zoals browser, maar in een xterm in de achtergrond"
+
+#  Type: select
+#  Description
+#~ msgid "text  - Print changes to your terminal (without pausing)"
+#~ msgstr "tekst - Toon aanpassingen op uw terminal (zonder te onderbreken)"
+
+#  Type: select
+#  Description
+#~ msgid "mail  - Only send changes via mail"
+#~ msgstr "e-mail - Aanpassingen enkel via mail doorgeven"
+
+#~ msgid "none  - Do not run automatically from apt"
+#~ msgstr "geen - Laat niet automatisch door apt uitvoeren"
+
+#~ msgid "root"
+#~ msgstr "root"
+
+#  Type: string
+#  Description
+#~ msgid "To whom should apt-listchanges mail changes?"
+#~ msgstr "Naar wie wilt u dat apt-listchanges de aanpassingen stuurt?"

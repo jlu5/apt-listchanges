@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.54\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-19 23:19+0900\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2006-08-11 16:20+0200\n"
 "PO-Revision-Date: 2004-04-19 23:26+0900\n"
 "Last-Translator: Kenshi Muto <kmuto@debian.org>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
@@ -25,74 +25,77 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:3
-msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#: ../templates:1001
+msgid "pager"
 msgstr ""
-"ページャ, ブラウザ, Xterm上のページャ, Xterm上のブラウザ, テキスト, メール, "
-"なし"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "text"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "mail"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "none"
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "How should changes be displayed with apt?"
-msgstr "変更内容を apt でどのように表示しますか?"
+#: ../templates:1002
+msgid "Method for changes display:"
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
-msgstr "apt-listchanges にはパッケージの変更内容を表示する方法がいくつかあります。"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "ページャ - 一度に 1 ページずつ変更を表示するために、あなたの好みのページャを使う"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "ブラウザ - Web ブラウザを使って、 HTML で整形された変更内容を表示する"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "xterm-pager - Like pager, but in an xterm in the background"
 msgstr ""
-"Xterm上のページャ - 「ページャ」と同じだが、 バックグラウンドで起動した "
-"Xterm の中に表示する"
+"apt-listchanges にはパッケージの変更内容を表示する方法がいくつかあります。"
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "xterm-browser - Like browser, but in an xterm in the background"
+#: ../templates:1002
+msgid ""
+" pager         : use your preferred pager to display changes one page at\n"
+"                 a time;\n"
+" browser       : display HTML-formatted changes using a web browser;\n"
+" xterm-pager   : like pager, but in an xterm in the background;\n"
+" xterm-browser : like browser, but in an xterm in the background;\n"
+" text          : print changes to your terminal (without pausing);\n"
+" mail          : only send changes via mail;\n"
+" none          : do not run automatically from apt."
 msgstr ""
-"Xterm上のブラウザ - 「ブラウザ」と同じだが、 バックグラウンドで起動した "
-"Xterm の中に表示する"
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "テキスト - 変更内容を端末に表示する (ページングを行わない)"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "mail  - Only send changes via mail"
-msgstr "メール - メールで変更内容を送るだけにする"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "none  - Do not run automatically from apt"
-msgstr "なし - apt から自動的には実行しない"
-
-#. Type: select
-#. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "This setting can be overridden by a command-line option or an environment "
 "variable.  Note that you can still send a copy via mail with all of the "
@@ -103,28 +106,25 @@ msgstr ""
 "はできます。"
 
 #. Type: string
-#. Default
-#: ../templates:29
-msgid "root"
-msgstr "root"
+#. Description
+#: ../templates:2001
+msgid "E-mail Address(es) which will receive changes:"
+msgstr ""
 
 #. Type: string
 #. Description
-#: ../templates:30
-msgid "To whom should apt-listchanges mail changes?"
-msgstr "変更内容を apt-listchanges から誰にメールしますか?"
-
-#. Type: string
-#. Description
-#: ../templates:30
+#: ../templates:2001
+#, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  To what email "
-"address should they be sent?"
-msgstr "apt-listchanges は表示した変更のコピーをメールで送ることができます。送るべきメールアドレスは何ですか?"
+"apt-listchanges can email a copy of displayed changes.  Please enter the "
+"email address the changes should be sent to."
+msgstr ""
+"apt-listchanges は表示した変更のコピーをメールで送ることができます。送るべき"
+"メールアドレスは何ですか?"
 
 #. Type: string
 #. Description
-#: ../templates:30
+#: ../templates:2001
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
@@ -134,24 +134,28 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:40
-msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changes?"
-msgstr "変更内容を表示したあと、 apt-listchanges で確認のプロンプトを表示しますか?"
+#: ../templates:3001
+#, fuzzy
+msgid "Prompt for confirmation after displaying changes?"
+msgstr ""
+"変更内容を表示したあと、 apt-listchanges で確認のプロンプトを表示しますか?"
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
-msgstr "変更内容を表示したあと、 apt-listchanges はあなたに継続するかどうか尋ねます。 変更が望まないもので適用したくないときに、 ここでアップグレードを中止できるようにすると、apt から実行する際に便利です。"
+msgstr ""
+"変更内容を表示したあと、 apt-listchanges はあなたに継続するかどうか尋ねま"
+"す。 変更が望まないもので適用したくないときに、 ここでアップグレードを中止で"
+"きるようにすると、apt から実行する際に便利です。"
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
@@ -161,34 +165,45 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "すでに見た変更内容は apt-listchanges で飛ばしますか?"
 
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
-msgstr "apt-listchanges は表示済みの変更内容の情報を保有する機能があるので、 以降の呼び出しではそれらの内容を飛ばすようにできます。 これはアップグレードを再試行するときなどに便利です。"
+msgstr ""
+"apt-listchanges は表示済みの変更内容の情報を保有する機能があるので、 以降の呼"
+"び出しではそれらの内容を飛ばすようにできます。 これはアップグレードを再試行す"
+"るときなどに便利です。"
 
 #. Type: select
 #. Choices
-#: ../templates:59
+#: ../templates:5001
 msgid "news, both, changelogs"
 msgstr "ニュース, 両方, changelog"
 
 #. Type: select
 #. Description
-#: ../templates:61
-msgid "Which types of changes should be displayed with apt?"
+#: ../templates:5002
+#, fuzzy
+msgid "Changes displayed with apt:"
 msgstr "変更内容を apt でどのように表示しますか?"
 
 #. Type: select
 #. Description
-#: ../templates:61
+#: ../templates:5002
+#, fuzzy
+msgid "Please choose which type of changes should be displayed with APT."
+msgstr "変更内容を apt でどのように表示しますか?"
+
+#. Type: select
+#. Description
+#: ../templates:5002
 msgid ""
 " news - important news items only\n"
 " both - both news and detailed changelogs\n"
@@ -197,3 +212,43 @@ msgstr ""
 "ニュース - 重要なニュース項目のみ\n"
 "両方 - ニュースと詳細な changelog の両方\n"
 "changelog - 詳細な changelog のみ"
+
+#~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#~ msgstr ""
+#~ "ページャ, ブラウザ, Xterm上のページャ, Xterm上のブラウザ, テキスト, メー"
+#~ "ル, なし"
+
+#~ msgid ""
+#~ "pager - Use your preferred pager to display changes one page at a time"
+#~ msgstr ""
+#~ "ページャ - 一度に 1 ページずつ変更を表示するために、あなたの好みのページャ"
+#~ "を使う"
+
+#~ msgid "browser - Display HTML-formatted changes using a web browser"
+#~ msgstr ""
+#~ "ブラウザ - Web ブラウザを使って、 HTML で整形された変更内容を表示する"
+
+#~ msgid "xterm-pager - Like pager, but in an xterm in the background"
+#~ msgstr ""
+#~ "Xterm上のページャ - 「ページャ」と同じだが、 バックグラウンドで起動した "
+#~ "Xterm の中に表示する"
+
+#~ msgid "xterm-browser - Like browser, but in an xterm in the background"
+#~ msgstr ""
+#~ "Xterm上のブラウザ - 「ブラウザ」と同じだが、 バックグラウンドで起動した "
+#~ "Xterm の中に表示する"
+
+#~ msgid "text  - Print changes to your terminal (without pausing)"
+#~ msgstr "テキスト - 変更内容を端末に表示する (ページングを行わない)"
+
+#~ msgid "mail  - Only send changes via mail"
+#~ msgstr "メール - メールで変更内容を送るだけにする"
+
+#~ msgid "none  - Do not run automatically from apt"
+#~ msgstr "なし - apt から自動的には実行しない"
+
+#~ msgid "root"
+#~ msgstr "root"
+
+#~ msgid "To whom should apt-listchanges mail changes?"
+#~ msgstr "変更内容を apt-listchanges から誰にメールしますか?"

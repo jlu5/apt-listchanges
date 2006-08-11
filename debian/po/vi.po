@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.59-0.2\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-29 20:33-0700\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2006-08-11 16:20+0200\n"
 "PO-Revision-Date: 2005-05-12 14:30+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
@@ -15,164 +15,233 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#.Type: select
-#.Choices
-#:../templates:3
-msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-msgstr "trình dàn trang, trình duyệt, trình dàn trang xterm, trình duyệt xterm, chữ thô, thư, không có"
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "pager"
+msgstr ""
 
-#.Type: select
-#.Description
-#:../templates:5
-msgid "How should changes be displayed with apt?"
-msgstr "Trình apt nên hiển thị các thay đổi như thế nào?"
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "browser"
+msgstr ""
 
-#.Type: select
-#.Description
-#:../templates:5
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "text"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "mail"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "none"
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid "Method for changes display:"
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../templates:1002
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
-msgstr "Trình apt-listchanges có hiển thị được các thay đổi về gói tin bằng một số cách khác nhau."
+msgstr ""
+"Trình apt-listchanges có hiển thị được các thay đổi về gói tin bằng một số "
+"cách khác nhau."
 
-#.Type: select
-#.Description
-#:../templates:5
-msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "trình dàn trang - sử dụng trình dàn trang ưa thích để hiển thị các thay đổi một trang trong mỗi lúc."
+#. Type: select
+#. Description
+#: ../templates:1002
+msgid ""
+" pager         : use your preferred pager to display changes one page at\n"
+"                 a time;\n"
+" browser       : display HTML-formatted changes using a web browser;\n"
+" xterm-pager   : like pager, but in an xterm in the background;\n"
+" xterm-browser : like browser, but in an xterm in the background;\n"
+" text          : print changes to your terminal (without pausing);\n"
+" mail          : only send changes via mail;\n"
+" none          : do not run automatically from apt."
+msgstr ""
 
-#.Type: select
-#.Description
-#:../templates:5
-msgid "browser - Display HTML-formatted changes using a web browser"
-msgstr "trình duyệt - hiển thị các thay đổi dạng HTML dùng trình duyệt Mạng"
-
-#.Type: select
-#.Description
-#:../templates:5
-msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "trình dàn trang xterm - như dùng trình dàn trang, nhưng mà có phiên bản xterm nhằm nền"
-
-#.Type: select
-#.Description
-#:../templates:5
-msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr "trình duyệt xterm - như dùng trình duyệt, nhưng mà có phiên bản xterm nhằm nền"
-
-#.Type: select
-#.Description
-#:../templates:5
-msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "chữ thô - in ra các thay đổi vào thiết bị cuối (không có tạm làm)"
-
-#.Type: select
-#.Description
-#:../templates:5
-msgid "mail  - Only send changes via mail"
-msgstr "thư - chỉ gửi thay đổi dùng  thư điện tử"
-
-#.Type: select
-#.Description
-#:../templates:5
-msgid "none  - Do not run automatically from apt"
-msgstr "không có - đừng tự động chạy tiến trình này từ trình apt"
-
-#.Type: select
-#.Description
-#:../templates:5
+#. Type: select
+#. Description
+#: ../templates:1002
 msgid ""
 "This setting can be overridden by a command-line option or an environment "
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
-msgstr "Có thể đè lên thiết lập này dùng tùy chọn dòng lệnh hay biến môi trường. Ghi chú là bạn vẫn còn có thể gởi một bản sao bằng thư dùng mọi tiền tiêu trừ «không có»."
+msgstr ""
+"Có thể đè lên thiết lập này dùng tùy chọn dòng lệnh hay biến môi trường. Ghi "
+"chú là bạn vẫn còn có thể gởi một bản sao bằng thư dùng mọi tiền tiêu trừ "
+"«không có»."
 
-#.Type: string
-#.Default
-#:../templates:29
-msgid "root"
-msgstr "người chủ"
+#. Type: string
+#. Description
+#: ../templates:2001
+msgid "E-mail Address(es) which will receive changes:"
+msgstr ""
 
-#.Type: string
-#.Description
-#:../templates:30
-msgid "To whom should apt-listchanges mail changes?"
-msgstr "Trình apt-listchanges nên gởi cho ai thư chứa thay đổi?"
-
-#.Type: string
-#.Description
-#:../templates:30
+#. Type: string
+#. Description
+#: ../templates:2001
+#, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  To what email "
-"address should they be sent?"
-msgstr "Trình apt-listchanges có gởi được một bản sao các thay đổi đã hiển thị. Nên gởi nó cho địa chi thư điện từ nào?"
+"apt-listchanges can email a copy of displayed changes.  Please enter the "
+"email address the changes should be sent to."
+msgstr ""
+"Trình apt-listchanges có gởi được một bản sao các thay đổi đã hiển thị. Nên "
+"gởi nó cho địa chi thư điện từ nào?"
 
-#.Type: string
-#.Description
-#:../templates:30
+#. Type: string
+#. Description
+#: ../templates:2001
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
-msgstr "Có ghi rõ được nhiều địa chỉ, định giới bằng dấu phẩy. Hãy bỏ trống nếu bạn không muốn trình apt-listchanges gởi thư nào."
+msgstr ""
+"Có ghi rõ được nhiều địa chỉ, định giới bằng dấu phẩy. Hãy bỏ trống nếu bạn "
+"không muốn trình apt-listchanges gởi thư nào."
 
-#.Type: boolean
-#.Description
-#:../templates:40
-msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changes?"
-msgstr "Trình apt-listchanges nên nhắc bạn xác nhận sau khi hiển thị thay đổi không?"
+#. Type: boolean
+#. Description
+#: ../templates:3001
+#, fuzzy
+msgid "Prompt for confirmation after displaying changes?"
+msgstr ""
+"Trình apt-listchanges nên nhắc bạn xác nhận sau khi hiển thị thay đổi không?"
 
-#.Type: boolean
-#.Description
-#:../templates:40
+#. Type: boolean
+#. Description
+#: ../templates:3001
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
-msgstr "Sau khi cho bạn dịp đọc danh sách thay đổi, trình apt-listchanges có thể hỏi bạn có muốn tiếp tục hay không. Làm như thế có ích khi chạy từ trình apt, vì nó cho bạn dịp hủy bỏ nâng cấp nếu thấy một thay đổi nào đó mà bạn chưa muốn áp dụng."
+msgstr ""
+"Sau khi cho bạn dịp đọc danh sách thay đổi, trình apt-listchanges có thể hỏi "
+"bạn có muốn tiếp tục hay không. Làm như thế có ích khi chạy từ trình apt, vì "
+"nó cho bạn dịp hủy bỏ nâng cấp nếu thấy một thay đổi nào đó mà bạn chưa muốn "
+"áp dụng."
 
-#.Type: boolean
-#.Description
-#:../templates:40
+#. Type: boolean
+#. Description
+#: ../templates:3001
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
-msgstr "Thiết lập này không áp dụng vào tiền tiêu «thư» hay «không có», và có thể đè lên nó dùng tùy chon dòng lệnh."
+msgstr ""
+"Thiết lập này không áp dụng vào tiền tiêu «thư» hay «không có», và có thể đè "
+"lên nó dùng tùy chon dòng lệnh."
 
-#.Type: boolean
-#.Description
-#:../templates:52
+#. Type: boolean
+#. Description
+#: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "Trình apt-listchanges nên bỏ qua các thay đổi mà bạn đã thấy không?"
 
-#.Type: boolean
-#.Description
-#:../templates:52
+#. Type: boolean
+#. Description
+#: ../templates:4001
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
-msgstr "Trình apt-listchanges có khả năng theo dõi thay đổi nào đã được hiển thị, vì vậy có thể bỏ qua chúng khi được gọi lần sau. Khả năng này có ích, lấy thí dụ, khi cố nâng cấp lại."
+msgstr ""
+"Trình apt-listchanges có khả năng theo dõi thay đổi nào đã được hiển thị, vì "
+"vậy có thể bỏ qua chúng khi được gọi lần sau. Khả năng này có ích, lấy thí "
+"dụ, khi cố nâng cấp lại."
 
-#.Type: select
-#.Choices
-#:../templates:59
+#. Type: select
+#. Choices
+#: ../templates:5001
 msgid "news, both, changelogs"
 msgstr "tin tức, cả hai, bản ghi thay đổi"
 
-#.Type: select
-#.Description
-#:../templates:61
-msgid "Which types of changes should be displayed with apt?"
+#. Type: select
+#. Description
+#: ../templates:5002
+#, fuzzy
+msgid "Changes displayed with apt:"
+msgstr "Trình apt nên hiển thị các thay đổi như thế nào?"
+
+#. Type: select
+#. Description
+#: ../templates:5002
+#, fuzzy
+msgid "Please choose which type of changes should be displayed with APT."
 msgstr "Trình apt nên hiển thị kiểu thay đổi nào?"
 
-#.Type: select
-#.Description
-#:../templates:61
+#. Type: select
+#. Description
+#: ../templates:5002
 msgid ""
 " news - important news items only\n"
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" tin tức 	 		chỉ mục tin tức quan trọng\n"
-" cả hai 			cả hai tin tức và bản ghi thay đổi cách chi tiết đều\n"
-" bản ghi thay đổi 	chỉ bản ghi thay đổi cách chi tiết"
+" tin tức \t \t\tchỉ mục tin tức quan trọng\n"
+" cả hai \t\t\tcả hai tin tức và bản ghi thay đổi cách chi tiết đều\n"
+" bản ghi thay đổi \tchỉ bản ghi thay đổi cách chi tiết"
+
+#~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#~ msgstr ""
+#~ "trình dàn trang, trình duyệt, trình dàn trang xterm, trình duyệt xterm, "
+#~ "chữ thô, thư, không có"
+
+#~ msgid ""
+#~ "pager - Use your preferred pager to display changes one page at a time"
+#~ msgstr ""
+#~ "trình dàn trang - sử dụng trình dàn trang ưa thích để hiển thị các thay "
+#~ "đổi một trang trong mỗi lúc."
+
+#~ msgid "browser - Display HTML-formatted changes using a web browser"
+#~ msgstr "trình duyệt - hiển thị các thay đổi dạng HTML dùng trình duyệt Mạng"
+
+#~ msgid "xterm-pager - Like pager, but in an xterm in the background"
+#~ msgstr ""
+#~ "trình dàn trang xterm - như dùng trình dàn trang, nhưng mà có phiên bản "
+#~ "xterm nhằm nền"
+
+#~ msgid "xterm-browser - Like browser, but in an xterm in the background"
+#~ msgstr ""
+#~ "trình duyệt xterm - như dùng trình duyệt, nhưng mà có phiên bản xterm "
+#~ "nhằm nền"
+
+#~ msgid "text  - Print changes to your terminal (without pausing)"
+#~ msgstr "chữ thô - in ra các thay đổi vào thiết bị cuối (không có tạm làm)"
+
+#~ msgid "mail  - Only send changes via mail"
+#~ msgstr "thư - chỉ gửi thay đổi dùng  thư điện tử"
+
+#~ msgid "none  - Do not run automatically from apt"
+#~ msgstr "không có - đừng tự động chạy tiến trình này từ trình apt"
+
+#~ msgid "root"
+#~ msgstr "người chủ"
+
+#~ msgid "To whom should apt-listchanges mail changes?"
+#~ msgstr "Trình apt-listchanges nên gởi cho ai thư chứa thay đổi?"

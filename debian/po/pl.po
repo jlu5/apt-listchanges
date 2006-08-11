@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-29 20:33-0700\n"
+"Report-Msgid-Bugs-To: madcoder@debian.org\n"
+"POT-Creation-Date: 2006-08-11 16:20+0200\n"
 "PO-Revision-Date: 2005-02-11 14:00 +0100\n"
 "Last-Translator: Marek Laska <tamcap@tamcap.one.pl>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
@@ -25,108 +25,105 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:3
-msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#: ../templates:1001
+msgid "pager"
 msgstr ""
-"pager, przegl±darka, pager w xtermie, przegl±darka w xtermie, tekst, poczta, "
-"nic"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "xterm-browser"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "text"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "mail"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "none"
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "How should changes be displayed with apt?"
-msgstr "Jak maj± byæ wy¶wietlane zmiany gdy u¿ywany jest apt?"
+#: ../templates:1002
+msgid "Method for changes display:"
+msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr "apt-listchanges mo¿e wy¶wietlaæ zmiany na ró¿ne sposoby."
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "pager - Use your preferred pager to display changes one page at a time"
-msgstr "pager - u¿ywa preferowanego programu stronicuj±cego (pagera)"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "browser - Display HTML-formatted changes using a web browser"
+#: ../templates:1002
+msgid ""
+" pager         : use your preferred pager to display changes one page at\n"
+"                 a time;\n"
+" browser       : display HTML-formatted changes using a web browser;\n"
+" xterm-pager   : like pager, but in an xterm in the background;\n"
+" xterm-browser : like browser, but in an xterm in the background;\n"
+" text          : print changes to your terminal (without pausing);\n"
+" mail          : only send changes via mail;\n"
+" none          : do not run automatically from apt."
 msgstr ""
-"przegl±darka - wy¶wietla w przegl±darce listê zmian sformatowan± w HTML"
 
 #. Type: select
 #. Description
-#: ../templates:5
-msgid "xterm-pager - Like pager, but in an xterm in the background"
-msgstr "pager w xtermie - pager uruchomiony w emulatorze terminala w tle"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "xterm-browser - Like browser, but in an xterm in the background"
-msgstr ""
-"przegl±darka w xtermie - przegl±darka uruchomiona w emulatorze "
-"terminala w tle"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "text  - Print changes to your terminal (without pausing)"
-msgstr "tekst - wypisuje zmiany na terminalu (bez stronicowania)"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "mail  - Only send changes via mail"
-msgstr "poczta - wy³±cznie wysy³a zmiany poczt± elektroniczn±"
-
-#. Type: select
-#. Description
-#: ../templates:5
-msgid "none  - Do not run automatically from apt"
-msgstr ""
-"nic - apt-listchanges nie jest uruchamiany automatycznie gdy uzywany jest apt"
-
-#. Type: select
-#. Description
-#: ../templates:5
+#: ../templates:1002
 msgid ""
 "This setting can be overridden by a command-line option or an environment "
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
 "To ustawienie mo¿na przes³oniæ parametrem linii poleceñ lub zmienn± "
-"¶rodowiska. Ka¿da metoda oprócz \"nic\" pozwala na wysy³anie kopii "
-"poczt± elektroniczn±."
-
-#. Type: string
-#. Default
-#: ../templates:29
-msgid "root"
-msgstr "root"
+"¶rodowiska. Ka¿da metoda oprócz \"nic\" pozwala na wysy³anie kopii poczt± "
+"elektroniczn±."
 
 #. Type: string
 #. Description
-#: ../templates:30
-msgid "To whom should apt-listchanges mail changes?"
-msgstr "Do kogo apt-listchanges ma wysy³aæ listy zmian?"
+#: ../templates:2001
+msgid "E-mail Address(es) which will receive changes:"
+msgstr ""
 
 #. Type: string
 #. Description
-#: ../templates:30
+#: ../templates:2001
+#, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  To what email "
-"address should they be sent?"
+"apt-listchanges can email a copy of displayed changes.  Please enter the "
+"email address the changes should be sent to."
 msgstr ""
 "apt-listchanges mo¿e wysy³aæ kopie wy¶wietlanych list zmian poczt± "
 "elektroniczn±. Pod jaki adres maj± byæ one wysy³ane?"
 
 #. Type: string
 #. Description
-#: ../templates:30
+#: ../templates:2001
 msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
@@ -136,15 +133,14 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:40
-msgid ""
-"Should apt-listchanges prompt for confirmation after displaying changes?"
-msgstr ""
-"Czy pytaæ o potwierdzenie po wy¶wietleniu zmian?"
+#: ../templates:3001
+#, fuzzy
+msgid "Prompt for confirmation after displaying changes?"
+msgstr "Czy pytaæ o potwierdzenie po wy¶wietleniu zmian?"
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "After giving you a chance to read the list of changes, apt-listchanges can "
 "ask whether or not you would like to continue. This is useful when running "
@@ -158,47 +154,55 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:40
+#: ../templates:3001
 msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"To ustawienie nie dotyczy metod \"poczta\" i \"nic\". Mo¿e byæ ono "
-"zniesione parametrem linii poleceñ."
+"To ustawienie nie dotyczy metod \"poczta\" i \"nic\". Mo¿e byæ ono zniesione "
+"parametrem linii poleceñ."
 
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "Czy apt-listchanges ma pomijaæ zmiany ju¿ wcze¶niej wy¶wietlone?"
 
 #. Type: boolean
 #. Description
-#: ../templates:52
+#: ../templates:4001
 msgid ""
 "apt-listchanges has the capability to keep track of which changes have "
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges mo¿e ¶ledziæ, które zmiany zosta³y wy¶wietlone"
-"wcze¶niej i pomijaæ je przy kolejnych wywo³aniach. Jest to u¿yteczne, "
-"na przyk³ad przy wznawianiu uaktualnienia."
+"apt-listchanges mo¿e ¶ledziæ, które zmiany zosta³y wy¶wietlonewcze¶niej i "
+"pomijaæ je przy kolejnych wywo³aniach. Jest to u¿yteczne, na przyk³ad przy "
+"wznawianiu uaktualnienia."
 
 #. Type: select
 #. Choices
-#: ../templates:59
+#: ../templates:5001
 msgid "news, both, changelogs"
 msgstr "wiadomo¶ci, wszystkie, dzienniki zmian"
 
 #. Type: select
 #. Description
-#: ../templates:61
-msgid "Which types of changes should be displayed with apt?"
+#: ../templates:5002
+#, fuzzy
+msgid "Changes displayed with apt:"
+msgstr "Jak maj± byæ wy¶wietlane zmiany gdy u¿ywany jest apt?"
+
+#. Type: select
+#. Description
+#: ../templates:5002
+#, fuzzy
+msgid "Please choose which type of changes should be displayed with APT."
 msgstr "Jakie typy zmian maj± byæ wy¶wietlane gdy u¿ywany jest apt?"
 
 #. Type: select
 #. Description
-#: ../templates:61
+#: ../templates:5002
 msgid ""
 " news - important news items only\n"
 " both - both news and detailed changelogs\n"
@@ -208,6 +212,43 @@ msgstr ""
 " wszystkie - zarówno wiadomo¶ci i dok³adne dzienniki zmian\n"
 " dzienniki zmian - tylko dok³adne dzinniki zmian"
 
+#~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+#~ msgstr ""
+#~ "pager, przegl±darka, pager w xtermie, przegl±darka w xtermie, tekst, "
+#~ "poczta, nic"
+
+#~ msgid ""
+#~ "pager - Use your preferred pager to display changes one page at a time"
+#~ msgstr "pager - u¿ywa preferowanego programu stronicuj±cego (pagera)"
+
+#~ msgid "browser - Display HTML-formatted changes using a web browser"
+#~ msgstr ""
+#~ "przegl±darka - wy¶wietla w przegl±darce listê zmian sformatowan± w HTML"
+
+#~ msgid "xterm-pager - Like pager, but in an xterm in the background"
+#~ msgstr "pager w xtermie - pager uruchomiony w emulatorze terminala w tle"
+
+#~ msgid "xterm-browser - Like browser, but in an xterm in the background"
+#~ msgstr ""
+#~ "przegl±darka w xtermie - przegl±darka uruchomiona w emulatorze terminala "
+#~ "w tle"
+
+#~ msgid "text  - Print changes to your terminal (without pausing)"
+#~ msgstr "tekst - wypisuje zmiany na terminalu (bez stronicowania)"
+
+#~ msgid "mail  - Only send changes via mail"
+#~ msgstr "poczta - wy³±cznie wysy³a zmiany poczt± elektroniczn±"
+
+#~ msgid "none  - Do not run automatically from apt"
+#~ msgstr ""
+#~ "nic - apt-listchanges nie jest uruchamiany automatycznie gdy uzywany jest "
+#~ "apt"
+
+#~ msgid "root"
+#~ msgstr "root"
+
+#~ msgid "To whom should apt-listchanges mail changes?"
+#~ msgstr "Do kogo apt-listchanges ma wysy³aæ listy zmian?"
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 #~ msgstr "Czy nadpisywaæ plik /etc/apt/listchanges.conf?"
