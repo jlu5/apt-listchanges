@@ -3,6 +3,7 @@ apt-listchanges (2.62) UNRELEASED; urgency=low
   * debian/templates, use Christian Perrier's patch to make templates more
     compliant to usual practices (Closes: #346053).
     + update sv.po thanks to Daniel Nylander.
+    + update pt.po thanks to Rui Pedro.
 
   * Encoding problems:
     + Switch to python2.4 to use lgettext instead of gettext
