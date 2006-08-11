@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+#vim:set fileencoding=utf-8:
 #
 #      apt-listchanges - Show changelog entries between the installed versions
 #        of a set of packages and the versions contained in corresponding

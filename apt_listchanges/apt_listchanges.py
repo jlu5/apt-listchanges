@@ -1,3 +1,5 @@
+#vim:set fileencoding=utf-8:
+
 import DebianControlParser
 import apt_pkg
 import ConfigParser
@@ -41,11 +43,11 @@ class Package:
 
     def __init__(self, path):
         self.path = path
-        
+
         parser = DebianControlParser.DebianControlParser()
         parser.readdeb(self.path)
         pkgdata = parser.stanzas[0]
-    
+
         self.binary = pkgdata.Package
         self.source = pkgdata.source()
         self.source_version = pkgdata.sourceversion()
@@ -86,9 +88,9 @@ class Package:
                 break
 
         shutil.rmtree(tempdir,1)
-        
+
         return (news, changelog)
-        
+
     def extract_contents(self, filenames):
         try:
             tempdir = tempfile.mkdtemp(prefix='apt-listchanges')
@@ -101,7 +103,7 @@ class Package:
             tempdir,
             ' '.join(map(lambda x: "'%s'" % x, filenames))
             )
-        
+
         # tar exits unsuccessfully if _any_ of the files we wanted
         # were not available, so we can't do much with its status
         os.system(extract_command)
@@ -208,7 +210,7 @@ class Config:
             fh = sys.stdout
         else:
             fh = sys.stderr
-            
+
         fh.write(_("Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"))
         sys.exit(exitcode)
 
@@ -291,7 +293,7 @@ def read_apt_pipeline(config):
             break
 
         (option, value) = aptconfig.rstrip().split('=', 1)
-        
+
         if option == 'quiet':
             config.quiet = int(value)
 
@@ -300,7 +302,7 @@ def read_apt_pipeline(config):
     for pkgline in sys.stdin.readlines():
         if not pkgline:
             break
-        
+
         (pkgname, oldversion, compare, newversion, filename) = pkgline.split()
         if compare != '<' or oldversion == '-':
             continue
@@ -319,7 +321,7 @@ def read_apt_pipeline(config):
     # reliable method for determining whether a package is Debian
     # native, this allows things to work, since Y will always be
     # configured first.
-    
+
     return map(lambda pkg: filenames[pkg], order)
 
 def mail_changes(address, changes, subject):
@@ -348,15 +350,15 @@ def make_frontend(name, packages,config):
                   'browser' : browser,
                   'xterm-pager' : xterm_pager,
                   'xterm-browser' : xterm_browser }
-    
+
     if name in ('newt','w3m','xterm-w3m'):
         sys.stderr.write((_("The %s frontend is deprecated, using pager") + '\n') % name)
         name = 'pager'
-        
+
     if not frontends.has_key(name):
         return None
     return frontends[name](packages,config)
-         
+
 class frontend:
     def __init__(self,packages,config):
         self.packages = packages
@@ -375,7 +377,18 @@ class frontend:
         pass
 
     def _render(self,text):
-        return text
+        newtext = []
+        for line in text.split('\n'):
+            try:
+                # changelogs are supposed to be in UTF-8
+                uline = line.decode('utf-8')
+            except UnicodeError:
+                # ... but handle gracefully if they aren't.
+                # (That's also the reason we do it line by line.)
+                # This is possibly wrong, but our best guess.
+                uline = line.decode('iso8859-1')
+            newtext.append(uline.encode(locale.getlocale()[1], 'replace'))
+        return '\n'.join(newtext)
 
     def confirm(self):
         return 1
@@ -398,7 +411,7 @@ class simpleprogress:
     def update_progress(self):
         if self.config.quiet > 1:
             return
-        
+
         if not hasattr(self,'message_printed'):
             self.message_printed = 1
             sys.stderr.write(_("Reading changelogs") + "...\n")
@@ -419,7 +432,7 @@ class fancyprogress:
             # First call
             self.progress = 0
             self.line_length = 0
-        
+
         self.progress += 1
         line = _("Reading changelogs") + "... %d%%" % (self.progress * 100 / self.packages)
         self.line_length = len(line)
@@ -435,7 +448,7 @@ class fancyprogress:
 class runcommand:
     mode = os.P_WAIT
     suffix = ''
-    
+
     def display_output(self, text):
         if self.mode == os.P_NOWAIT:
             if os.fork() != 0:
@@ -445,7 +458,7 @@ class runcommand:
         tmp.write(self._render(text))
         tmp.flush()
         shellcommand = self.get_command() + ' ' + tmp.name
-    
+
         status = os.spawnl(os.P_WAIT, '/bin/sh', 'sh', '-c', shellcommand)
         if status != 0:
             raise OSError('Subprocess ' + shellcommand + ' exited with status ' + str(status))
@@ -478,7 +491,7 @@ class xterm_pager(xterm):
 
 class html:
     suffix = '.html'
-    
+
     bug_re = re.compile('(?P<linktext>#(?P<bugnum>[1-9]\d+))', re.IGNORECASE)
     # regxlib.com
     email_re = re.compile(r'([a-zA-Z0-9_\-\.]+)@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)')
@@ -488,13 +501,21 @@ class html:
         htmltext.write('''<html>
         <head>
         <title>apt-listchanges output</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         </head>
 
         <body>
         <pre>
 ''')
         for line in text.split('\n'):
-            line = line.replace(
+            try:
+                # changelogs are supposed to be in UTF-8
+                uline = line.decode('utf-8')
+            except UnicodeError:
+                # ... but handle gracefully if they aren't.
+                # This is possibly wrong, but our best guess.
+                uline = line.decode('iso8859-1')
+            line = uline.encode('utf-8').replace(
                 '&', '&amp;').replace(
                 '<', '&lt;').replace(
                 '>','&gt;')

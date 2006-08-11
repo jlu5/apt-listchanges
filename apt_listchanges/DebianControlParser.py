@@ -14,10 +14,10 @@ class DebianControlParser:
         self.index[field] = {}
         for stanza in self.stanzas:
             self.index[field][getattr(stanza,field)] = stanza
-            
+
     class DebianControlStanza:
         sourceversionre = re.compile('\((?P<version>.*).*\)')
-        
+
         def __init__(self,str):
             field = None
 
@@ -61,11 +61,11 @@ class DebianControlParser:
         for chunk in open(file, 'r').read().split('\n\n'):
             if chunk:
                 self.stanzas.append(self.DebianControlStanza(chunk))
-    
+
     def readdeb(self,deb):
         fh=os.popen('dpkg-deb -f %s' % deb)
         self.stanzas.append(self.DebianControlStanza(fh.read()))
-                            
+
     def find(self,field,value):
         if self.index.has_key(field):
             if self.index[field].has_key(value):
