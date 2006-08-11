@@ -5,6 +5,7 @@ apt-listchanges (2.62) UNRELEASED; urgency=low
     + update sv.po thanks to Daniel Nylander.
     + add    pt.po thanks to Rui Pedro.
     + update fi.po thanks to Tommi Vainikainen.
+    + update da.po thanks to Claus Hindsgaul (Closes: #382537).
 
   * Encoding problems:
     + Switch to python2.4 to use lgettext instead of gettext
