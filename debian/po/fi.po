@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: apt-listchanges\n"
 "Report-Msgid-Bugs-To: madcoder@debian.org\n"
 "POT-Creation-Date: 2006-08-11 16:20+0200\n"
-"PO-Revision-Date: 2005-02-01 10:20+0200\n"
+"PO-Revision-Date: 2006-08-11 19:39+0300\n"
 "Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
 "Language-Team: Finnish <debian-l10-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,56 +27,56 @@ msgstr ""
 #. Choices
 #: ../templates:1001
 msgid "pager"
-msgstr ""
+msgstr "sivutin"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "browser"
-msgstr ""
+msgstr "selain"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "xterm-pager"
-msgstr ""
+msgstr "xterm-sivutin"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "xterm-browser"
-msgstr ""
+msgstr "xterm-selain"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "text"
-msgstr ""
+msgstr "teksti"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "mail"
-msgstr ""
+msgstr "s‰hkˆposti"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "none"
-msgstr ""
+msgstr "ei mik‰‰n"
 
 #. Type: select
 #. Description
 #: ../templates:1002
 msgid "Method for changes display:"
-msgstr ""
+msgstr "Muutosten n‰yttˆtapa:"
 
 #. Type: select
 #. Description
 #: ../templates:1002
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
-msgstr "apt-listchanges osaa n√§ytt√§√§ pakettien muutokset usealla eri tavalla."
+msgstr "apt-listchanges osaa n‰ytt‰‰ pakettien muutokset usealla eri tavalla."
 
 #. Type: select
 #. Description
@@ -91,6 +91,13 @@ msgid ""
 " mail          : only send changes via mail;\n"
 " none          : do not run automatically from apt."
 msgstr ""
+" sivutin       : k‰yt‰ lempisivutintasi n‰ytt‰m‰‰n muutokset sivu kerrallaan;\n"
+" selain        : n‰yt‰ HTML-muotoillut muutokset www-selaimella;\n"
+" xterm-sivutin : kuten sivutin, mutta xtermiss‰ taustalla;\n"
+" xterm-selain  : kuten selain, mutta xtermiss‰ taustalla;\n"
+" teksti        : tulosta muutokset p‰‰ttellesi (ilman taukoja);\n"
+" s‰hkˆposti    : l‰het‰ muutokset s‰hkˆpostilla;\n"
+" ei mik‰‰n     : ‰l‰ suorita automaattisesti aptista."
 
 #. Type: select
 #. Description
@@ -100,26 +107,23 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"T√§m√§ asetus voi syrj√§ytt√§√§ komentorivivalitsimen tai ymp√§rist√∂muuttujan.  "
-"Huomaa, ett√§ voit edelleen l√§hett√§√§ kopion postista kaikissa muissa "
-"liittymiss√§ paitsi \"ei mik√§√§n\"."
+"T‰m‰ asetus voi syrj‰ytt‰‰ komentorivivalitsimen tai ymp‰ristˆmuuttujan.  "
+"Huomaa, ett‰ voit edelleen l‰hett‰‰ kopion postista kaikissa muissa "
+"liittymiss‰ paitsi \"ei mik‰‰n\"."
 
 #. Type: string
 #. Description
 #: ../templates:2001
 msgid "E-mail Address(es) which will receive changes:"
-msgstr ""
+msgstr "S‰hkˆpostiosoite(et), joihin muutokset l‰hetet‰‰n:"
 
 #. Type: string
 #. Description
 #: ../templates:2001
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
-msgstr ""
-"apt-listchanges voi l√§hett√§√§ muutoksista kopion s√§hk√∂postissa. Mihin "
-"osoitteeseen haluat niiden tulevan?"
+msgstr "apt-listchanges voi l‰hett‰‰ muutoksista kopion s‰hkˆpostissa. Syˆt‰ osoitteet, joihin haluat muutokset l‰hetett‰v‰n."
 
 #. Type: string
 #. Description
@@ -128,16 +132,14 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Pilkulla erottelemalla voit antaa useita osoitteita. J√§t√§ t√§m√§ kohta "
-"tyhj√§ksi, jos et halua s√§hk√∂postia l√§hetett√§v√§n."
+"Pilkulla erottelemalla voit antaa useita osoitteita. J‰t‰ t‰m‰ kohta "
+"tyhj‰ksi, jos et halua s‰hkˆpostia l‰hetett‰v‰n."
 
 #. Type: boolean
 #. Description
 #: ../templates:3001
-#, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
-msgstr ""
-"Pit√§isik√∂ apt-listchangesin kysy√§ vahvistusta muutoksien n√§yt√∂n j√§lkeen?"
+msgstr "Kysyt‰‰nkˆ vahvistusta muutoksien n‰ytˆn j‰lkeen?"
 
 #. Type: boolean
 #. Description
@@ -148,10 +150,10 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Luettuasi muutosluettelon, apt-listchanges voi kysy√§ muutoslokien "
-"n√§ytt√§misen j√§lkeen haluatko jatkaa asennusta. T√§st√§ on hy√∂ty√§ aptin "
-"tekem√§ss√§ automaattiajossa, koska saat mahdollisuuden keskeytt√§√§ "
-"p√§ivityksen, jos et halua (viel√§) tehd√§ jotain n√§kem√§√§si muutosta."
+"Luettuasi muutosluettelon, apt-listchanges voi kysy‰ muutoslokien "
+"n‰ytt‰misen j‰lkeen haluatko jatkaa asennusta. T‰st‰ on hyˆty‰ aptin "
+"tekem‰ss‰ automaattiajossa, koska saat mahdollisuuden keskeytt‰‰ "
+"p‰ivityksen, jos et halua (viel‰) tehd‰ jotain n‰kem‰‰si muutosta."
 
 #. Type: boolean
 #. Description
@@ -160,14 +162,14 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"T√§t√§ asetusta ei huomioida \"posti\"- ja \"ei mik√§√§n\"-liittymiss√§. "
-"Asetuksen voi my√∂s ohittaa komentorivivalitsimella."
+"T‰t‰ asetusta ei huomioida \"posti\"- ja \"ei mik‰‰n\"-liittymiss‰. "
+"Asetuksen voi myˆs ohittaa komentorivivalitsimella."
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "Haluatko apt-listchangesin ohittavan jo n√§hdyt muutokset?"
+msgstr "Haluatko apt-listchangesin ohittavan jo n‰hdyt muutokset?"
 
 #. Type: boolean
 #. Description
@@ -177,8 +179,8 @@ msgid ""
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges voi pit√§√§ kirjaa jo n√§ytetyist√§ muutoksista ja j√§tt√§√§ n√§m√§ "
-"n√§ytt√§m√§tt√§ my√∂hemmin. T√§st√§ on hy√∂ty√§ esimerkiksi yritett√§ess√§ p√§ivityst√§ "
+"apt-listchanges voi pit‰‰ kirjaa jo n‰ytetyist‰ muutoksista ja j‰tt‰‰ n‰m‰ "
+"n‰ytt‰m‰tt‰ myˆhemmin. T‰st‰ on hyˆty‰ esimerkiksi yritett‰ess‰ p‰ivityst‰ "
 "uudelleen."
 
 #. Type: select
@@ -190,16 +192,14 @@ msgstr "uutiset, molemmat, muutoslokit"
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Changes displayed with apt:"
-msgstr "Miten muutokset n√§ytet√§√§n aptin ajon yhteydess√§?"
+msgstr "APTin ajossa n‰ytett‰v‰t muutokset:"
 
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Mink√§ tyyppiset muutokset n√§ytet√§√§n aptin ajon yhteydess√§?"
+msgstr "Valitse mink‰ tyyppiset muutokset n‰ytet‰‰n APTin ajon yhteydess‰."
 
 #. Type: select
 #. Description
@@ -209,41 +209,41 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" uutiset - ainoastaan t√§rke√§t uutiset\n"
-" molemmat - sek√§ uutiset ett√§ tarkat muutoslokit\n"
+" uutiset - ainoastaan t‰rke‰t uutiset\n"
+" molemmat - sek‰ uutiset ett‰ tarkat muutoslokit\n"
 " muutoslokit - ainoastaan tarkat muutoslokit"
 
 #~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 #~ msgstr ""
-#~ "sivutin, selain, xterm-sivutin, xterm-selain, teksti, posti, ei mik√§√§n"
+#~ "sivutin, selain, xterm-sivutin, xterm-selain, teksti, posti, ei mik‰‰n"
 
 #~ msgid ""
 #~ "pager - Use your preferred pager to display changes one page at a time"
 #~ msgstr "sivutin - Lue muutokset sivu kerrallaan mielisivuttimellasi"
 
 #~ msgid "browser - Display HTML-formatted changes using a web browser"
-#~ msgstr "selain - N√§yt√§ HTML-muotoillut muutokset www-selaimella"
+#~ msgstr "selain - N‰yt‰ HTML-muotoillut muutokset www-selaimella"
 
 #~ msgid "xterm-pager - Like pager, but in an xterm in the background"
-#~ msgstr "xterm-sivutin - Kuten sivutin, mutta xtermiss√§ taustalla"
+#~ msgstr "xterm-sivutin - Kuten sivutin, mutta xtermiss‰ taustalla"
 
 #~ msgid "xterm-browser - Like browser, but in an xterm in the background"
-#~ msgstr "xterm-selain - Kuten selain, mutta xtermiss√§ taustalla"
+#~ msgstr "xterm-selain - Kuten selain, mutta xtermiss‰ taustalla"
 
 #~ msgid "text  - Print changes to your terminal (without pausing)"
-#~ msgstr "teksti - Tulosta muutokset p√§√§tteeseen (ilman taukoja)"
+#~ msgstr "teksti - Tulosta muutokset p‰‰tteeseen (ilman taukoja)"
 
 #~ msgid "mail  - Only send changes via mail"
-#~ msgstr "posti - L√§het√§ muutokset postitse"
+#~ msgstr "posti - L‰het‰ muutokset postitse"
 
 #~ msgid "none  - Do not run automatically from apt"
-#~ msgstr "ei mik√§√§n - √Ñl√§ aja automaattisesti aptista"
+#~ msgstr "ei mik‰‰n - ƒl‰ aja automaattisesti aptista"
 
 #~ msgid "root"
 #~ msgstr "root"
 
 #~ msgid "To whom should apt-listchanges mail changes?"
-#~ msgstr "Kenelle apt-listchanges l√§hett√§√§ muutokset?"
+#~ msgstr "Kenelle apt-listchanges l‰hett‰‰ muutokset?"
 
 #~ msgid ""
 #~ "apt-listchanges can configure all of the options in /etc/apt/listchanges."
@@ -251,8 +251,8 @@ msgstr ""
 #~ "apt-listchanges is run, and is used to set defaults.  All of the options "
 #~ "can be overridden on the command line."
 #~ msgstr ""
-#~ "Voit luoda asetustiedoston /etc/apt/listchanges.conf vastaamalla n√§ihin "
-#~ "kysymyksiin. apt-listchanges lukee oletusasetuksensa t√§st√§ tiedostosta "
+#~ "Voit luoda asetustiedoston /etc/apt/listchanges.conf vastaamalla n‰ihin "
+#~ "kysymyksiin. apt-listchanges lukee oletusasetuksensa t‰st‰ tiedostosta "
 #~ "jokaisella ajokerralla. Kaikki asetukset on mahdollista ohittaa "
 #~ "komentorivivalitsimilla."
 
@@ -260,4 +260,4 @@ msgstr ""
 #~ "If you want to edit /etc/apt/listchanges.conf manually for whatever "
 #~ "reason, answer \"no\" now."
 #~ msgstr ""
-#~ "Jos haluat jostain syyst√§ muokata asetustiedostoa k√§sin, vastaa t√§h√§n ei."
+#~ "Jos haluat jostain syyst‰ muokata asetustiedostoa k‰sin, vastaa t‰h‰n ei."
