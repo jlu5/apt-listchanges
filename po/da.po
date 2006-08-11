@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
-"POT-Creation-Date: 2006-08-10 18:25+CEST\n"
+"POT-Creation-Date: 2006-08-11 16:26+CEST\n"
 "PO-Revision-Date: 2004-04-05 15:39+0200\n"
 "Last-Translator: Claus Hindsgaul <claus_h@image.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
@@ -55,15 +55,15 @@ msgstr "apt-listchanges uddata for %s"
 msgid "didn't find any valid .deb archives"
 msgstr "kunne ikke finde nogen gyldige .deb-arkiver"
 
-#: ../apt_listchanges.py:212
+#: ../apt_listchanges/apt_listchanges.py:214
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt_listchanges.py:267
+#: ../apt_listchanges/apt_listchanges.py:269
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt_listchanges.py:283
+#: ../apt_listchanges/apt_listchanges.py:285
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -71,26 +71,27 @@ msgstr ""
 "Forkert eller manglende VERSION i apt-datakanalen\n"
 "(er Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version sat til 2?)\n"
 
-#: ../apt_listchanges.py:326
+#: ../apt_listchanges/apt_listchanges.py:328
 #, fuzzy
 msgid "Mailing %s: %s"
 msgstr "Sender ændringslogs til %s"
 
-#: ../apt_listchanges.py:353
+#: ../apt_listchanges/apt_listchanges.py:355
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
 msgstr "newt-brugerfladen er forældet, benytter tekstviser"
 
-#: ../apt_listchanges.py:387
+#: ../apt_listchanges/apt_listchanges.py:400
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Ønsker du at fortsætte? [Y/n]? "
 
-#: ../apt_listchanges.py:404 ../apt_listchanges.py:424
-#: ../apt_listchanges.py:432
+#: ../apt_listchanges/apt_listchanges.py:417
+#: ../apt_listchanges/apt_listchanges.py:437
+#: ../apt_listchanges/apt_listchanges.py:445
 msgid "Reading changelogs"
 msgstr "Læser ændringslogs"
 
-#: ../apt_listchanges.py:432
+#: ../apt_listchanges/apt_listchanges.py:445
 msgid "Done"
 msgstr "Færdig"
 

@@ -21,5 +21,5 @@ install: all
 	$(MAKE) -C po install
 
 clean:
-	rm -f apt-listchanges.1
+	rm -f apt-listchanges*.1
 	make -C po clean

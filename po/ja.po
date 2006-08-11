@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"POT-Creation-Date: 2006-08-10 18:25+CEST\n"
+"POT-Creation-Date: 2006-08-11 16:26+CEST\n"
 "PO-Revision-Date: 2005-07-16 03:06+0900\n"
 "Last-Translator: Junichi Uekawa <dancer@debian.org>\n"
 "Language-Team: Japanese \n"
@@ -50,15 +50,15 @@ msgstr "apt-listchanges: %s のニュース"
 msgid "didn't find any valid .deb archives"
 msgstr "有効な.debアーカイブを見付ける事ができませんでした"
 
-#: ../apt_listchanges.py:212
+#: ../apt_listchanges/apt_listchanges.py:214
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr "使用方法: apt-listchanges [オプション] {--apt | ファイル名.deb ...}\n"
 
-#: ../apt_listchanges.py:267
+#: ../apt_listchanges/apt_listchanges.py:269
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr "--which に対しての不正なオプション %s です． 可能なオプションは: %s."
 
-#: ../apt_listchanges.py:283
+#: ../apt_listchanges/apt_listchanges.py:285
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -67,24 +67,25 @@ msgstr ""
 "(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version は 2になっています"
 "か?)\n"
 
-#: ../apt_listchanges.py:326
+#: ../apt_listchanges/apt_listchanges.py:328
 msgid "Mailing %s: %s"
 msgstr "%s にメール: %s"
 
-#: ../apt_listchanges.py:353
+#: ../apt_listchanges/apt_listchanges.py:355
 msgid "The %s frontend is deprecated, using pager"
 msgstr "%s フロントエンドは廃止されました， pagerを使います"
 
-#: ../apt_listchanges.py:387
+#: ../apt_listchanges/apt_listchanges.py:400
 msgid "Do you want to continue? [Y/n]? "
 msgstr "これでよろしいですか [Y(はい)/n(いいえ)]? "
 
-#: ../apt_listchanges.py:404 ../apt_listchanges.py:424
-#: ../apt_listchanges.py:432
+#: ../apt_listchanges/apt_listchanges.py:417
+#: ../apt_listchanges/apt_listchanges.py:437
+#: ../apt_listchanges/apt_listchanges.py:445
 msgid "Reading changelogs"
 msgstr "changelog を読んでいます"
 
-#: ../apt_listchanges.py:432
+#: ../apt_listchanges/apt_listchanges.py:445
 msgid "Done"
 msgstr "完了"
 

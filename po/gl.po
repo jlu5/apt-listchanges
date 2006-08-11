@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.4\n"
-"POT-Creation-Date: 2006-08-10 18:25+CEST\n"
+"POT-Creation-Date: 2006-08-11 16:26+CEST\n"
 "PO-Revision-Date: 2002-01-22 08:27+0100\n"
 "Last-Translator: Jacobo Tarrio <jtarrio@trasno.net>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
@@ -52,15 +52,15 @@ msgstr "Saída de apt-listchanges para %s"
 msgid "didn't find any valid .deb archives"
 msgstr "non se atopou ningún arquivo .deb válido"
 
-#: ../apt_listchanges.py:212
+#: ../apt_listchanges/apt_listchanges.py:214
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt_listchanges.py:267
+#: ../apt_listchanges/apt_listchanges.py:269
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt_listchanges.py:283
+#: ../apt_listchanges/apt_listchanges.py:285
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -68,26 +68,27 @@ msgstr ""
 "VERSION incorrecta ou omitida na canalización de apt\n"
 "(¿Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version vale 2?)\n"
 
-#: ../apt_listchanges.py:326
+#: ../apt_listchanges/apt_listchanges.py:328
 #, fuzzy
 msgid "Mailing %s: %s"
 msgstr "Enviando os rexistros de modificacións a %s"
 
-#: ../apt_listchanges.py:353
+#: ../apt_listchanges/apt_listchanges.py:355
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
 msgstr "A interface newt é obsoleta; emprégase o visor"
 
-#: ../apt_listchanges.py:387
+#: ../apt_listchanges/apt_listchanges.py:400
 msgid "Do you want to continue? [Y/n]? "
 msgstr "¿Quere continuar [Y/n]? "
 
-#: ../apt_listchanges.py:404 ../apt_listchanges.py:424
-#: ../apt_listchanges.py:432
+#: ../apt_listchanges/apt_listchanges.py:417
+#: ../apt_listchanges/apt_listchanges.py:437
+#: ../apt_listchanges/apt_listchanges.py:445
 msgid "Reading changelogs"
 msgstr "Lendo os rexistros de modificacións"
 
-#: ../apt_listchanges.py:432
+#: ../apt_listchanges/apt_listchanges.py:445
 msgid "Done"
 msgstr "Feito"
 

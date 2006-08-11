@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.6\n"
-"POT-Creation-Date: 2006-08-10 18:25+CEST\n"
+"POT-Creation-Date: 2006-08-11 16:26+CEST\n"
 "PO-Revision-Date: 2002-02-06 22:30+0200\n"
 "Last-Translator: Jaakko Kangasharju <ashar@iki.fi>\n"
 "Language-Team: Finnish <debian-l10-finnish@lists.debian.org>\n"
@@ -52,15 +52,15 @@ msgstr "apt-listchangesin tulostus koneelta %s"
 msgid "didn't find any valid .deb archives"
 msgstr "en löytänyt kelvollisia .deb-arkistoja"
 
-#: ../apt_listchanges.py:212
+#: ../apt_listchanges/apt_listchanges.py:214
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt_listchanges.py:267
+#: ../apt_listchanges/apt_listchanges.py:269
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt_listchanges.py:283
+#: ../apt_listchanges/apt_listchanges.py:285
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -68,26 +68,27 @@ msgstr ""
 "Väärä tai puuttuva VERSION putkessa aptilta\n"
 "(onko Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version arvoltaan 2?)\n"
 
-#: ../apt_listchanges.py:326
+#: ../apt_listchanges/apt_listchanges.py:328
 #, fuzzy
 msgid "Mailing %s: %s"
 msgstr "Postitan muutoslokit osoitteeseen %s"
 
-#: ../apt_listchanges.py:353
+#: ../apt_listchanges/apt_listchanges.py:355
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
 msgstr "Newt-liittymä on vanhentunut, käytän sivutinta"
 
-#: ../apt_listchanges.py:387
+#: ../apt_listchanges/apt_listchanges.py:400
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Haluatko jatkaa? [Kyllä=y/ei=n]? "
 
-#: ../apt_listchanges.py:404 ../apt_listchanges.py:424
-#: ../apt_listchanges.py:432
+#: ../apt_listchanges/apt_listchanges.py:417
+#: ../apt_listchanges/apt_listchanges.py:437
+#: ../apt_listchanges/apt_listchanges.py:445
 msgid "Reading changelogs"
 msgstr "Luen muutoslokeja"
 
-#: ../apt_listchanges.py:432
+#: ../apt_listchanges/apt_listchanges.py:445
 msgid "Done"
 msgstr "Valmis"
 
