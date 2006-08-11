@@ -52,7 +52,7 @@ def main():
     if config.apt_mode:
         debs = apt_listchanges.read_apt_pipeline(config)
 
-    if config.quiet >= 2 or config.frontend == 'none':
+    if config.frontend == 'none':
         sys.exit(0)
 
     # If apt is in quiet (loggable) mode, we should make our output
