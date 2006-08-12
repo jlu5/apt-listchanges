@@ -13,63 +13,63 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.54\n"
+"Project-Id-Version: apt-listchanges 2.62\n"
 "Report-Msgid-Bugs-To: madcoder@debian.org\n"
 "POT-Creation-Date: 2006-08-11 16:20+0200\n"
-"PO-Revision-Date: 2004-04-19 23:26+0900\n"
+"PO-Revision-Date: 2006-08-12 13:48+0900\n"
 "Last-Translator: Kenshi Muto <kmuto@debian.org>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=EUC-JP\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "pager"
-msgstr ""
+msgstr "ãƒšãƒ¼ã‚¸ãƒ£"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "browser"
-msgstr ""
+msgstr "ãƒ–ãƒ©ã‚¦ã‚¶"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "xterm-pager"
-msgstr ""
+msgstr "Xtermä¸Šã®ãƒšãƒ¼ã‚¸ãƒ£"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "xterm-browser"
-msgstr ""
+msgstr "Xtermä¸Šã®ãƒ–ãƒ©ã‚¦ã‚¶"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "text"
-msgstr ""
+msgstr "ãƒ†ã‚­ã‚¹ãƒˆ"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "mail"
-msgstr ""
+msgstr "ãƒ¡ãƒ¼ãƒ«"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "none"
-msgstr ""
+msgstr "ãªã—"
 
 #. Type: select
 #. Description
 #: ../templates:1002
 msgid "Method for changes display:"
-msgstr ""
+msgstr "å¤‰æ›´å†…å®¹ã®è¡¨ç¤ºæ–¹æ³•:"
 
 #. Type: select
 #. Description
@@ -77,7 +77,7 @@ msgstr ""
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"apt-listchanges ¤Ë¤Ï¥Ñ¥Ã¥±¡¼¥¸¤ÎÊÑ¹¹ÆâÍÆ¤òÉ½¼¨¤¹¤ëÊıË¡¤¬¤¤¤¯¤Ä¤«¤¢¤ê¤Ş¤¹¡£"
+"apt-listchanges ã«ã¯ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã®å¤‰æ›´å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹æ–¹æ³•ãŒã„ãã¤ã‹ã‚ã‚Šã¾ã™ã€‚"
 
 #. Type: select
 #. Description
@@ -92,6 +92,14 @@ msgid ""
 " mail          : only send changes via mail;\n"
 " none          : do not run automatically from apt."
 msgstr ""
+" ãƒšãƒ¼ã‚¸ãƒ£          : ä¸€åº¦ã« 1 ãƒšãƒ¼ã‚¸ãšã¤å¤‰æ›´ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã«ã€ã‚ãªãŸã®å¥½ã¿ã®\n"
+"                     ãƒšãƒ¼ã‚¸ãƒ£ã‚’ä½¿ã†\n"
+" ãƒ–ãƒ©ã‚¦ã‚¶          : Web ãƒ–ãƒ©ã‚¦ã‚¶ã‚’ä½¿ã£ã¦ã€HTML ã§æ•´å½¢ã•ã‚ŒãŸå¤‰æ›´å†…å®¹ã‚’è¡¨ç¤ºã™ã‚‹\n"
+" Xtermä¸Šã®ãƒšãƒ¼ã‚¸ãƒ£ : ã€Œãƒšãƒ¼ã‚¸ãƒ£ã€ã¨åŒã˜ã ãŒã€ãƒãƒƒã‚¯ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰ã§èµ·å‹•ã—ãŸ Xterm ã®ä¸­ã«è¡¨ç¤ºã™ã‚‹\n"
+" Xtermä¸Šã®ãƒ–ãƒ©ã‚¦ã‚¶ : ã€Œãƒ–ãƒ©ã‚¦ã‚¶ã€ã¨åŒã˜ã ãŒã€ãƒãƒƒã‚¯ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰ã§èµ·å‹•ã—ãŸ Xterm ã®ä¸­ã«è¡¨ç¤ºã™ã‚‹\n"
+" ãƒ†ã‚­ã‚¹ãƒˆ          : å¤‰æ›´å†…å®¹ã‚’ç«¯æœ«ã«è¡¨ç¤ºã™ã‚‹ (1ãƒšãƒ¼ã‚¸è¡¨ç¤ºå¾Œã®ä¸€æ™‚åœæ­¢ã¯ã—ãªã„)\n"
+" ãƒ¡ãƒ¼ãƒ«            : ãƒ¡ãƒ¼ãƒ«ã§å¤‰æ›´å†…å®¹ã‚’é€ã‚‹ã ã‘ã«ã™ã‚‹\n"
+" ãªã—              : apt ã‹ã‚‰è‡ªå‹•çš„ã«ã¯å®Ÿè¡Œã—ãªã„"
 
 #. Type: select
 #. Description
@@ -101,26 +109,23 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"¤³¤ÎÀßÄê¤Ï¥³¥Ş¥ó¥É¥é¥¤¥ó¥ª¥×¥·¥ç¥ó¤Ş¤¿¤Ï´Ä¶­ÊÑ¿ô¤«¤é¤Î¤ß¾å½ñ¤­¤Ç¤­¤ë¤â¤Î¤Ç"
-"¤¹¡£ ¡Ö¤Ê¤·¡×¤ò½ü¤¯¤¹¤Ù¤Æ¤Î¥Õ¥í¥ó¥È¥¨¥ó¥É¤Ç¤Ï¡¢ ¥á¡¼¥ë·ĞÍ³¤Ç¥³¥Ô¡¼¤òÁ÷¤ë¤³¤È"
-"¤Ï¤Ç¤­¤Ş¤¹¡£"
+"ã“ã®è¨­å®šã¯ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¾ãŸã¯ç’°å¢ƒå¤‰æ•°ã‹ã‚‰ã®ã¿ä¸Šæ›¸ãã§ãã‚‹ã‚‚ã®ã§"
+"ã™ã€‚ ã€Œãªã—ã€ã‚’é™¤ãã™ã¹ã¦ã®ãƒ•ãƒ­ãƒ³ãƒˆã‚¨ãƒ³ãƒ‰ã§ã¯ã€ ãƒ¡ãƒ¼ãƒ«çµŒç”±ã§ã‚³ãƒ”ãƒ¼ã‚’é€ã‚‹ã“ã¨"
+"ã¯ã§ãã¾ã™ã€‚"
 
 #. Type: string
 #. Description
 #: ../templates:2001
 msgid "E-mail Address(es) which will receive changes:"
-msgstr ""
+msgstr "å¤‰æ›´å†…å®¹ã‚’å—ã‘å–ã‚‹é›»å­ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹:"
 
 #. Type: string
 #. Description
 #: ../templates:2001
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
-msgstr ""
-"apt-listchanges ¤ÏÉ½¼¨¤·¤¿ÊÑ¹¹¤Î¥³¥Ô¡¼¤ò¥á¡¼¥ë¤ÇÁ÷¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£Á÷¤ë¤Ù¤­"
-"¥á¡¼¥ë¥¢¥É¥ì¥¹¤Ï²¿¤Ç¤¹¤«?"
+msgstr "apt-listchanges ã¯è¡¨ç¤ºã—ãŸå¤‰æ›´å†…å®¹ã®ã‚³ãƒ”ãƒ¼ã‚’ãƒ¡ãƒ¼ãƒ«ã§é€ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚å¤‰æ›´å†…å®¹ã‚’é€ã‚‹ã¹ããƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚"
 
 #. Type: string
 #. Description
@@ -129,16 +134,14 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"¥«¥ó¥Ş (,) ¤Ç¶èÀÚ¤Ã¤Æ¡¢ Ê£¿ô¤Î¥¢¥É¥ì¥¹¤ò»ØÄê¤¹¤ë¤³¤È¤â¤Ç¤­¤Ş¤¹¡£ ¥á¡¼¥ë¤òÃ¯¤Ë"
-"¤âÁ÷¤ê¤¿¤¯¤Ê¤¤¤È¤­¤Ë¤Ï¡¢ ¤³¤³¤ò¶õ¤Ë¤·¤Æ¤ª¤­¤Ş¤¹¡£"
+"ã‚«ãƒ³ãƒ (,) ã§åŒºåˆ‡ã£ã¦ã€ è¤‡æ•°ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã‚‚ã§ãã¾ã™ã€‚ ãƒ¡ãƒ¼ãƒ«ã‚’èª°ã«"
+"ã‚‚é€ã‚ŠãŸããªã„ã¨ãã«ã¯ã€ ã“ã“ã‚’ç©ºã«ã—ã¦ãŠãã¾ã™ã€‚"
 
 #. Type: boolean
 #. Description
 #: ../templates:3001
-#, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
-msgstr ""
-"ÊÑ¹¹ÆâÍÆ¤òÉ½¼¨¤·¤¿¤¢¤È¡¢ apt-listchanges ¤Ç³ÎÇ§¤Î¥×¥í¥ó¥×¥È¤òÉ½¼¨¤·¤Ş¤¹¤«?"
+msgstr "å¤‰æ›´å†…å®¹ã‚’è¡¨ç¤ºã—ãŸã‚ã¨ã€ ç¢ºèªã®ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã‚’è¡¨ç¤ºã—ã¾ã™ã‹?"
 
 #. Type: boolean
 #. Description
@@ -149,9 +152,9 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"ÊÑ¹¹ÆâÍÆ¤òÉ½¼¨¤·¤¿¤¢¤È¡¢ apt-listchanges ¤Ï¤¢¤Ê¤¿¤Ë·ÑÂ³¤¹¤ë¤«¤É¤¦¤«¿Ò¤Í¤Ş"
-"¤¹¡£ ÊÑ¹¹¤¬Ë¾¤Ş¤Ê¤¤¤â¤Î¤ÇÅ¬ÍÑ¤·¤¿¤¯¤Ê¤¤¤È¤­¤Ë¡¢ ¤³¤³¤Ç¥¢¥Ã¥×¥°¥ì¡¼¥É¤òÃæ»ß¤Ç"
-"¤­¤ë¤è¤¦¤Ë¤¹¤ë¤È¡¢apt ¤«¤é¼Â¹Ô¤¹¤ëºİ¤ËÊØÍø¤Ç¤¹¡£"
+"å¤‰æ›´å†…å®¹ã‚’è¡¨ç¤ºã—ãŸã‚ã¨ã€ apt-listchanges ã¯ã‚ãªãŸã«ç¶™ç¶šã™ã‚‹ã‹ã©ã†ã‹å°‹ã­ã¾"
+"ã™ã€‚ å¤‰æ›´ãŒæœ›ã¾ãªã„ã‚‚ã®ã§é©ç”¨ã—ãŸããªã„ã¨ãã«ã€ ã“ã“ã§ã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰ã‚’ä¸­æ­¢ã§"
+"ãã‚‹ã‚ˆã†ã«ã™ã‚‹ã¨ã€apt ã‹ã‚‰å®Ÿè¡Œã™ã‚‹éš›ã«ä¾¿åˆ©ã§ã™ã€‚"
 
 #. Type: boolean
 #. Description
@@ -160,14 +163,14 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"¤³¤ÎÀßÄê¤Ï¡Ö¥á¡¼¥ë¡×¤Ş¤¿¤Ï¡Ö¤Ê¤·¡×¤Î¥Õ¥í¥ó¥È¥¨¥ó¥É¤Ë¤ÏÅ¬ÍÑ¤µ¤ì¤Ş¤»¤ó¡£ ¥³¥Ş¥ó"
-"¥É¥é¥¤¥ó¤Î¥ª¥×¥·¥ç¥ó¤Ç¾å½ñ¤­¤¹¤ë¤³¤È¤Ï¤Ç¤­¤Ş¤¹¡£"
+"ã“ã®è¨­å®šã¯ã€Œãƒ¡ãƒ¼ãƒ«ã€ã¾ãŸã¯ã€Œãªã—ã€ã®ãƒ•ãƒ­ãƒ³ãƒˆã‚¨ãƒ³ãƒ‰ã«ã¯é©ç”¨ã•ã‚Œã¾ã›ã‚“ã€‚ ã‚³ãƒãƒ³"
+"ãƒ‰ãƒ©ã‚¤ãƒ³ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã§ä¸Šæ›¸ãã™ã‚‹ã“ã¨ã¯ã§ãã¾ã™ã€‚"
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "¤¹¤Ç¤Ë¸«¤¿ÊÑ¹¹ÆâÍÆ¤Ï apt-listchanges ¤ÇÈô¤Ğ¤·¤Ş¤¹¤«?"
+msgstr "ã™ã§ã«è¦‹ãŸå¤‰æ›´å†…å®¹ã¯ apt-listchanges ã§é£›ã°ã—ã¾ã™ã‹?"
 
 #. Type: boolean
 #. Description
@@ -177,29 +180,27 @@ msgid ""
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges ¤ÏÉ½¼¨ºÑ¤ß¤ÎÊÑ¹¹ÆâÍÆ¤Î¾ğÊó¤òÊİÍ­¤¹¤ëµ¡Ç½¤¬¤¢¤ë¤Î¤Ç¡¢ °Ê¹ß¤Î¸Æ"
-"¤Ó½Ğ¤·¤Ç¤Ï¤½¤ì¤é¤ÎÆâÍÆ¤òÈô¤Ğ¤¹¤è¤¦¤Ë¤Ç¤­¤Ş¤¹¡£ ¤³¤ì¤Ï¥¢¥Ã¥×¥°¥ì¡¼¥É¤òºÆ»î¹Ô¤¹"
-"¤ë¤È¤­¤Ê¤É¤ËÊØÍø¤Ç¤¹¡£"
+"apt-listchanges ã¯è¡¨ç¤ºæ¸ˆã¿ã®å¤‰æ›´å†…å®¹ã®æƒ…å ±ã‚’ä¿æœ‰ã™ã‚‹æ©Ÿèƒ½ãŒã‚ã‚‹ã®ã§ã€ ä»¥é™ã®å‘¼"
+"ã³å‡ºã—ã§ã¯ãã‚Œã‚‰ã®å†…å®¹ã‚’é£›ã°ã™ã‚ˆã†ã«ã§ãã¾ã™ã€‚ ã“ã‚Œã¯ã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰ã‚’å†è©¦è¡Œã™"
+"ã‚‹ã¨ããªã©ã«ä¾¿åˆ©ã§ã™ã€‚"
 
 #. Type: select
 #. Choices
 #: ../templates:5001
 msgid "news, both, changelogs"
-msgstr "¥Ë¥å¡¼¥¹, Î¾Êı, changelog"
+msgstr "ãƒ‹ãƒ¥ãƒ¼ã‚¹, ä¸¡æ–¹, changelog"
 
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Changes displayed with apt:"
-msgstr "ÊÑ¹¹ÆâÍÆ¤ò apt ¤Ç¤É¤Î¤è¤¦¤ËÉ½¼¨¤·¤Ş¤¹¤«?"
+msgstr "apt ã§è¡¨ç¤ºã™ã‚‹å¤‰æ›´å†…å®¹:"
 
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "ÊÑ¹¹ÆâÍÆ¤ò apt ¤Ç¤É¤Î¤è¤¦¤ËÉ½¼¨¤·¤Ş¤¹¤«?"
+msgstr "APTã§è¡¨ç¤ºã™ã¹ãå¤‰æ›´å†…å®¹ã®ç¨®é¡ã‚’é¸æŠã—ã¦ãã ã•ã„ã€‚"
 
 #. Type: select
 #. Description
@@ -209,46 +210,6 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-"¥Ë¥å¡¼¥¹ - ½ÅÍ×¤Ê¥Ë¥å¡¼¥¹¹àÌÜ¤Î¤ß\n"
-"Î¾Êı - ¥Ë¥å¡¼¥¹¤È¾ÜºÙ¤Ê changelog ¤ÎÎ¾Êı\n"
-"changelog - ¾ÜºÙ¤Ê changelog ¤Î¤ß"
-
-#~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-#~ msgstr ""
-#~ "¥Ú¡¼¥¸¥ã, ¥Ö¥é¥¦¥¶, Xterm¾å¤Î¥Ú¡¼¥¸¥ã, Xterm¾å¤Î¥Ö¥é¥¦¥¶, ¥Æ¥­¥¹¥È, ¥á¡¼"
-#~ "¥ë, ¤Ê¤·"
-
-#~ msgid ""
-#~ "pager - Use your preferred pager to display changes one page at a time"
-#~ msgstr ""
-#~ "¥Ú¡¼¥¸¥ã - °ìÅÙ¤Ë 1 ¥Ú¡¼¥¸¤º¤ÄÊÑ¹¹¤òÉ½¼¨¤¹¤ë¤¿¤á¤Ë¡¢¤¢¤Ê¤¿¤Î¹¥¤ß¤Î¥Ú¡¼¥¸¥ã"
-#~ "¤ò»È¤¦"
-
-#~ msgid "browser - Display HTML-formatted changes using a web browser"
-#~ msgstr ""
-#~ "¥Ö¥é¥¦¥¶ - Web ¥Ö¥é¥¦¥¶¤ò»È¤Ã¤Æ¡¢ HTML ¤ÇÀ°·Á¤µ¤ì¤¿ÊÑ¹¹ÆâÍÆ¤òÉ½¼¨¤¹¤ë"
-
-#~ msgid "xterm-pager - Like pager, but in an xterm in the background"
-#~ msgstr ""
-#~ "Xterm¾å¤Î¥Ú¡¼¥¸¥ã - ¡Ö¥Ú¡¼¥¸¥ã¡×¤ÈÆ±¤¸¤À¤¬¡¢ ¥Ğ¥Ã¥¯¥°¥é¥¦¥ó¥É¤Çµ¯Æ°¤·¤¿ "
-#~ "Xterm ¤ÎÃæ¤ËÉ½¼¨¤¹¤ë"
-
-#~ msgid "xterm-browser - Like browser, but in an xterm in the background"
-#~ msgstr ""
-#~ "Xterm¾å¤Î¥Ö¥é¥¦¥¶ - ¡Ö¥Ö¥é¥¦¥¶¡×¤ÈÆ±¤¸¤À¤¬¡¢ ¥Ğ¥Ã¥¯¥°¥é¥¦¥ó¥É¤Çµ¯Æ°¤·¤¿ "
-#~ "Xterm ¤ÎÃæ¤ËÉ½¼¨¤¹¤ë"
-
-#~ msgid "text  - Print changes to your terminal (without pausing)"
-#~ msgstr "¥Æ¥­¥¹¥È - ÊÑ¹¹ÆâÍÆ¤òÃ¼Ëö¤ËÉ½¼¨¤¹¤ë (¥Ú¡¼¥¸¥ó¥°¤ò¹Ô¤ï¤Ê¤¤)"
-
-#~ msgid "mail  - Only send changes via mail"
-#~ msgstr "¥á¡¼¥ë - ¥á¡¼¥ë¤ÇÊÑ¹¹ÆâÍÆ¤òÁ÷¤ë¤À¤±¤Ë¤¹¤ë"
-
-#~ msgid "none  - Do not run automatically from apt"
-#~ msgstr "¤Ê¤· - apt ¤«¤é¼«Æ°Åª¤Ë¤Ï¼Â¹Ô¤·¤Ê¤¤"
-
-#~ msgid "root"
-#~ msgstr "root"
-
-#~ msgid "To whom should apt-listchanges mail changes?"
-#~ msgstr "ÊÑ¹¹ÆâÍÆ¤ò apt-listchanges ¤«¤éÃ¯¤Ë¥á¡¼¥ë¤·¤Ş¤¹¤«?"
+"ãƒ‹ãƒ¥ãƒ¼ã‚¹ - é‡è¦ãªãƒ‹ãƒ¥ãƒ¼ã‚¹é …ç›®ã®ã¿\n"
+"ä¸¡æ–¹ - ãƒ‹ãƒ¥ãƒ¼ã‚¹ã¨è©³ç´°ãª changelog ã®ä¸¡æ–¹\n"
+"changelog - è©³ç´°ãª changelog ã®ã¿"
