@@ -29,10 +29,9 @@
 import sys
 import apt_pkg
 import gettext
-import string
 import anydbm
 import commands
-from apt_listchanges import apt_listchanges,DebianControlParser
+from apt_listchanges import apt_listchanges, DebianControlParser
 
 def main():
     try:
@@ -82,7 +81,7 @@ def main():
     # Flag for each source package, only set if changelogs were actually found
     found = {}
 
-    frontend = apt_listchanges.make_frontend(config.frontend,len(debs),config)
+    frontend = apt_listchanges.make_frontend(config.frontend, len(debs), config)
     if frontend == None:
         sys.stderr.write(_("Unknown frontend: %s\n") % config.frontend)
         sys.exit(1)
@@ -104,7 +103,7 @@ def main():
             if config.save_seen and seen.has_key(srcpackage):
                 fromversion = seen[srcpackage]
             else:
-                statusentry = status.find('Package',binpackage)
+                statusentry = status.find('Package', binpackage)
                 if statusentry and statusentry.installed():
                     fromversion = statusentry.sourceversion()
                 else:
@@ -112,7 +111,7 @@ def main():
                     notes.append(_("%s: will be newly installed") % binpackage)
                     continue
 
-        source_packages.setdefault(srcpackage,[]).append(binpackage)
+        source_packages.setdefault(srcpackage, []).append(binpackage)
 
         if found.has_key(srcpackage):
             continue
@@ -139,9 +138,9 @@ def main():
     if config.save_seen:
         seen.close()
 
-    for batch in (all_news,all_changelogs):
-        batch.sort(lambda a,b: -cmp(a.urgency,b.urgency) or
-                   cmp(a.package,b.package))
+    for batch in (all_news, all_changelogs):
+        batch.sort(lambda a, b: -cmp(a.urgency, b.urgency) or
+                   cmp(a.package, b.package))
 
     if config.headers:
         changes = ''
@@ -152,7 +151,7 @@ def main():
 
             package = rec.package
             header = _('News for %s') % package
-            if len(filter(lambda x: x != package,source_packages[package])) > 0:
+            if len(filter(lambda x: x != package, source_packages[package])) > 0:
                 # Differing source and binary packages
                 header += ' (' + ' '.join(source_packages[package]) + ')'
             news += '--- ' + header + ' ---\n' + rec.changes
@@ -163,19 +162,13 @@ def main():
 
             package = rec.package
             header = _('Changes for %s') % package
-            if len(filter(lambda x: x != package,source_packages[package])) > 0:
+            if len(filter(lambda x: x != package, source_packages[package])) > 0:
                 # Differing source and binary packages
                 header += ' (' + ' '.join(source_packages[package]) + ')'
             changes += '--- ' + header + ' ---\n' + rec.changes
     else:
-        if filter(lambda x: x.changes,all_news):
-            news = ''.join(map(lambda x: x.changes, all_news))
-        else:
-            news = ''
-        if filter(lambda x: x.changes,all_changelogs):
-            changes = ''.join(map(lambda x: x.changes, all_changelogs))
-        else:
-            changes = ''
+        news    = ''.join([x.changes for x in all_news       if x.changes])
+        changes = ''.join([x.changes for x in all_changelogs if x.changes])
 
     if config.verbose and len(notes) > 0:
         changes += _("Informational notes") + ":\n\n" + '\n'.join(notes)
@@ -204,7 +197,7 @@ def main():
         # Write out seen db
         if config.save_seen:
             seen = anydbm.open(config.save_seen, 'c')
-            for (key,value) in seen_new.items():
+            for (key, value) in seen_new.items():
                 seen[key] = value
             seen.close()
 
