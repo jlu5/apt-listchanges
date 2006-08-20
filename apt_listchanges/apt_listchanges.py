@@ -6,7 +6,6 @@ import ConfigParser
 import getopt
 import os, os.path
 import re
-import string
 import sys
 import gettext
 import email.Message
@@ -80,11 +79,7 @@ class Package:
         return (news, changelog)
 
     def extract_contents(self, filenames):
-        try:
-            tempdir = tempfile.mkdtemp(prefix='apt-listchanges')
-        except AttributeError:
-            tempdir = tempfile.mktemp()
-            os.mkdir(tempdir)
+        tempdir = tempfile.mkdtemp(prefix='apt-listchanges')
 
         extract_command = 'dpkg-deb --fsys-tarfile %s | tar xf - --wildcards -C %s %s 2>/dev/null' % (
             self.path, tempdir,
@@ -256,7 +251,7 @@ class Config:
                     self.which = arg
                 else:
                     print _('Unknown option %s for --which.  Allowed are: %s.') % \
-                        (arg, string.join(self.allowed_which, ", "))
+                        (arg, ', '.join(self.allowed_which))
                     sys.exit(1)
             elif opt == '--debug':
                 self.debug = 1
@@ -277,14 +272,12 @@ def read_apt_pipeline(config):
         sys.exit(1)
 
     while 1:
-        aptconfig = sys.stdin.readline()
-        if not aptconfig or aptconfig == '\n':
+        line = sys.stdin.readline().rstrip()
+        if not line:
             break
 
-        (option, value) = aptconfig.rstrip().split('=', 1)
-
-        if option == 'quiet':
-            config.quiet = int(value)
+        if line.startswith('quiet='):
+            config.quiet = int(line[len('quiet='):])
 
     filenames = {}
     order = []
