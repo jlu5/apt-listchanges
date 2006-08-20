@@ -70,22 +70,10 @@ class Package:
 
         tempdir = self.extract_contents(filenames)
 
-        news = None
-        for filename in news_filenames:
-            news = self.read_changelog(os.path.join(tempdir,filename),
-                                       since_version)
-            if news:
-                break
+        find_first = lambda acc, fname: acc or self.read_changelog(os.path.join(tempdir, fname), since_version)
 
-        changelog = None
-        for batch in (changelog_filenames, changelog_filenames_native):
-            for filename in batch:
-                changelog = self.read_changelog(os.path.join(tempdir,filename),
-                                                since_version)
-                if changelog:
-                    break
-            if changelog:
-                break
+        news       = reduce(find_first, news_filenames, None)
+        changelog  = reduce(find_first, changelog_filenames + changelog_filenames_native, None)
 
         shutil.rmtree(tempdir,1)
 
@@ -98,11 +86,10 @@ class Package:
             tempdir = tempfile.mktemp()
             os.mkdir(tempdir)
 
-        extract_command = 'dpkg-deb --fsys-tarfile %s |tar xf - --wildcards -C %s %s 2>/dev/null' % (
-            self.path,
-            tempdir,
-            ' '.join(map(lambda x: "'%s'" % x, filenames))
-            )
+        extract_command = 'dpkg-deb --fsys-tarfile %s | tar xf - --wildcards -C %s %s 2>/dev/null' % (
+            self.path, tempdir,
+            ' '.join(["'" + x + "'" for x in filenames])
+        )
 
         # tar exits unsuccessfully if _any_ of the files we wanted
         # were not available, so we can't do much with its status
