@@ -23,15 +23,14 @@
 #      MA 02111-1307 USA
 #
 
-# TODO:
-# debugging?
-
 import sys
 import apt_pkg
 import gettext
 import anydbm
 import commands
-from apt_listchanges import apt_listchanges, DebianControlParser
+
+sys.path.append('apt_listchanges', '/usr/share/apt-listchanges')
+import apt_listchanges, DebianControlParser
 
 def main():
     try:

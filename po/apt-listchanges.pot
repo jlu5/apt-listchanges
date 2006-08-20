@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2006-08-11 22:10+CEST\n"
+"POT-Creation-Date: 2006-08-20 18:47+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,81 +15,81 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: ../apt-listchanges:87
+#: ../apt-listchanges:85
 msgid ""
 "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges:112
+#: ../apt-listchanges:110
 msgid "%s: will be newly installed"
 msgstr ""
 
-#: ../apt-listchanges:121
+#: ../apt-listchanges:119
 msgid "%s: Version %s has already been seen"
 msgstr ""
 
-#: ../apt-listchanges:154
+#: ../apt-listchanges:152
 msgid "News for %s"
 msgstr ""
 
-#: ../apt-listchanges:165
+#: ../apt-listchanges:163
 msgid "Changes for %s"
 msgstr ""
 
-#: ../apt-listchanges:181
+#: ../apt-listchanges:173
 msgid "Informational notes"
 msgstr ""
 
-#: ../apt-listchanges:197
+#: ../apt-listchanges:189
 msgid "apt-listchanges: changelogs for %s"
 msgstr ""
 
-#: ../apt-listchanges:201
+#: ../apt-listchanges:193
 msgid "apt-listchanges: news for %s"
 msgstr ""
 
-#: ../apt-listchanges:213
+#: ../apt-listchanges:205
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:120
+#: ../apt_listchanges/apt_listchanges.py:102
 msgid "Ignoring `%s' (seems to be a directory !)"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:216
+#: ../apt_listchanges/apt_listchanges.py:198
 msgid ""
 "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:271
+#: ../apt_listchanges/apt_listchanges.py:253
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:287
+#: ../apt_listchanges/apt_listchanges.py:269
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:330
+#: ../apt_listchanges/apt_listchanges.py:310
 msgid "Mailing %s: %s"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:357
+#: ../apt_listchanges/apt_listchanges.py:337
 msgid "The %s frontend is deprecated, using pager"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:402
+#: ../apt_listchanges/apt_listchanges.py:382
 msgid "Do you want to continue? [Y/n]? "
 msgstr ""
 
+#: ../apt_listchanges/apt_listchanges.py:399
 #: ../apt_listchanges/apt_listchanges.py:419
-#: ../apt_listchanges/apt_listchanges.py:439
-#: ../apt_listchanges/apt_listchanges.py:447
+#: ../apt_listchanges/apt_listchanges.py:427
 msgid "Reading changelogs"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:447
+#: ../apt_listchanges/apt_listchanges.py:427
 msgid "Done"
 msgstr ""
 
