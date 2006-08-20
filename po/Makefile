@@ -28,7 +28,7 @@ MSGMERGE = msgmerge
 POFILES =  $(wildcard *.po)
 MOFILES =  $(patsubst %.po,%.mo,$(POFILES))
 
-POTFILES = ../apt-listchanges $(wildcard ../apt_listchanges/*.py)
+POTFILES = ../apt-listchanges.py $(wildcard ../apt-listchanges/*.py)
 
 all: $(PACKAGE).pot $(MOFILES)
 
