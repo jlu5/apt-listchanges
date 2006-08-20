@@ -29,7 +29,7 @@ import gettext
 import anydbm
 import commands
 
-sys.path.append('apt_listchanges', '/usr/share/apt-listchanges')
+sys.path += ['./apt-listchanges.d', '/usr/share/apt-listchanges']
 import apt_listchanges, DebianControlParser
 
 def main():
