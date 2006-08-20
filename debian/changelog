@@ -1,4 +1,7 @@
-apt-listchanges (2.62~experimental1) UNRELEASED; urgency=low
+apt-listchanges (2.62~experimental1) experimental; urgency=low
+
+  * Experimental upload as there is quite many changes, and that I'm waiting
+    for more translations to come in.
 
   * debian/templates, use Christian Perrier's patch to make templates more
     compliant to usual practices (Closes: #346053).
@@ -32,7 +35,7 @@ apt-listchanges (2.62~experimental1) UNRELEASED; urgency=low
   * Make apt-listchanges modules private, move things to apt-listchanges
     instead of apt_listchanges directory.
 
- -- Pierre Habouzit <madcoder@debian.org>  Fri, 11 Aug 2006 17:18:17 +0200
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 20 Aug 2006 19:10:25 +0200
 
 apt-listchanges (2.61) unstable; urgency=low
 
