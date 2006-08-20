@@ -1,4 +1,4 @@
-apt-listchanges (2.62) UNRELEASED; urgency=low
+apt-listchanges (2.62~experimental1) UNRELEASED; urgency=low
 
   * debian/templates, use Christian Perrier's patch to make templates more
     compliant to usual practices (Closes: #346053).
