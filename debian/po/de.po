@@ -16,8 +16,8 @@ msgstr ""
 "Project-Id-Version: apt-listchanges\n"
 "Report-Msgid-Bugs-To: madcoder@debian.org\n"
 "POT-Creation-Date: 2006-08-11 16:20+0200\n"
-"PO-Revision-Date: 2005-02-04 17:00-0100\n"
-"Last-Translator: Helge Kreutzmann <kreutzm@itp.uni-hannover.de>\n"
+"PO-Revision-Date: 2006-08-14 19:52+0100\n"
+"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: de <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
@@ -27,49 +27,49 @@ msgstr ""
 #. Choices
 #: ../templates:1001
 msgid "pager"
-msgstr ""
+msgstr "Anzeigeprogramm"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "browser"
-msgstr ""
+msgstr "Browser"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "xterm-pager"
-msgstr ""
+msgstr "xterm-Anzeigeprogramm"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "xterm-browser"
-msgstr ""
+msgstr "xterm-Browser"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "text"
-msgstr ""
+msgstr "Text"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "mail"
-msgstr ""
+msgstr "E-Mail"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "none"
-msgstr ""
+msgstr "Garnicht"
 
 #. Type: select
 #. Description
 #: ../templates:1002
 msgid "Method for changes display:"
-msgstr ""
+msgstr "Methode zum Anzeigen der Änderungen:"
 
 #. Type: select
 #. Description
@@ -93,6 +93,15 @@ msgid ""
 " mail          : only send changes via mail;\n"
 " none          : do not run automatically from apt."
 msgstr ""
+" Anzeigeprogramm : verwenden Sie Ihr bevorzugtes Anzeigeprogramm um eine Seite\n"
+"                   auf einmal anzuschauen;\n"
+" Browser         : zeige HTML-formatierte Änderungen mit einem Web-Browser;\n"
+" xterm-Anzeigeprogramm : wie Anzeigeprogramm, aber in einem Xterm im\n "
+"                         Hintergrund;\n"
+" xterm-browser   : wie Browser, aber in einem Xterm im Hintergrund;\n"
+" Text            : drucke Änderungen in Ihrem Terminal (ohne Pausierung);\n"
+" E-Mail          : sende Änderungen nur per E-Mail;\n"
+" Garnicht        : nicht automatisch von apt aus laufen."
 
 #. Type: select
 #. Description
@@ -103,25 +112,24 @@ msgid ""
 "frontends except 'none'."
 msgstr ""
 "Diese Einstellung kann mit einer Kommandozeilenoption oder einer "
-"Umgebungsvariablen umgangen werden. Beachten Sie, daß Sie auf jedenfall eine "
+"Umgebungsvariablen umgangen werden. Beachten Sie, dass Sie auf jeden Fall eine "
 "Kopie per E-Mail bekommen können, mit Ausnahme der Option »Garnicht«."
 
 #. Type: string
 #. Description
 #: ../templates:2001
 msgid "E-mail Address(es) which will receive changes:"
-msgstr ""
+msgstr "E-Mail-Adresse(n), die Änderungen erhalten werden:"
 
 #. Type: string
 #. Description
 #: ../templates:2001
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
 msgstr ""
-"apt-listchanges kann eine Kopie der angezeigten Änderungen versenden.  An "
-"welche E-Mail-Adresse sollen sie gesendet werden?"
+"apt-listchanges kann eine Kopie der angezeigten Änderungen versenden. Bitte "
+"geben Sie die E-Mail-Adresse ein, an die die Änderungen gesendet werden soll."
 
 #. Type: string
 #. Description
@@ -136,7 +144,6 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:3001
-#, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
 msgstr ""
 "Soll apt-listchanges nach dem Anzeigen der Änderungen um eine Bestätigung "
@@ -194,16 +201,15 @@ msgstr "News-Dateien, beide, Changelog-Dateien"
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Changes displayed with apt:"
-msgstr "Wie sollen die Änderungen mit apt angezeigt werden?"
+msgstr "Änderungen angezeigt mit apt:"
 
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Welche Arten von Änderungen sollen mit apt angezeigt werden?"
+msgstr ""
+"Bitte wählen Sie aus, welche Arten von Änderungen APT angezeigt werden sollen."
 
 #. Type: select
 #. Description

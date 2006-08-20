@@ -8,6 +8,9 @@ apt-listchanges (2.62) UNRELEASED; urgency=low
     + update da.po thanks to Claus Hindsgaul (Closes: #382537).
     + update ja.po thanks to Kenshi Muto (Closes: #382600).
     + update vi.po thanks to Clytie Siddall.
+    + update de.po thanks to Helge Kreutzmann.
+    + update es.po thanks to Ricardo Mones.
+    + update zh_TW.po thanks to Asho Yeh.
 
   * Encoding problems:
     + Switch to python2.4 to use lgettext instead of gettext
