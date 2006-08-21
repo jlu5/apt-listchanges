@@ -1,3 +1,10 @@
+apt-listchanges (2.62~experimental2) UNRELEASED; urgency=low
+
+  * templates translations:
+    + update gl.po thanks to Jacobo Tarrio.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Mon, 21 Aug 2006 03:13:23 +0200
+
 apt-listchanges (2.62~experimental1) experimental; urgency=low
 
   * Experimental upload as there is quite many changes, and that I'm waiting
