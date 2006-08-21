@@ -22,7 +22,7 @@ import glob
 # newt-like frontend, or maybe some GUI bit
 # keep track of tar/dpkg-deb errors like in pre-2.0
 
-locale.setlocale(locale.LC_ALL,'')
+locale.setlocale(locale.LC_ALL, '')
 try:
     _ = gettext.translation('apt-listchanges').lgettext
 except IOError:
@@ -74,7 +74,7 @@ class Package:
         news       = reduce(find_first, news_filenames, None)
         changelog  = reduce(find_first, changelog_filenames + changelog_filenames_native, None)
 
-        shutil.rmtree(tempdir,1)
+        shutil.rmtree(tempdir, 1)
 
         return (news, changelog)
 
@@ -135,7 +135,7 @@ class Package:
 
         return Changes(self.source, changes, urgency)
 
-    def _changelog_variations(self,filename):
+    def _changelog_variations(self, filename):
         formats = ['usr/doc/*/%s.gz',
                    'usr/share/doc/*/%s.gz',
                    'usr/doc/*/%s',
@@ -144,7 +144,7 @@ class Package:
                    './usr/share/doc/*/%s.gz',
                    './usr/doc/*/%s',
                    './usr/share/doc/*/%s']
-        return map(lambda format: format % filename, formats)
+        return [x % filename for x in formats]
 
 class Changes:
     def __init__(self, package, changes, urgency):
@@ -169,7 +169,7 @@ class Config:
         self.which = 'both'
         self.allowed_which = ('both', 'news', 'changelogs')
 
-    def read(self,file):
+    def read(self, file):
         self.parser = ConfigParser.ConfigParser()
         self.parser.read(file)
 
@@ -177,19 +177,17 @@ class Config:
         if self.parser.has_section(self.profile):
             for option in self.parser.options(self.profile):
                 value = None
-                if self.parser.has_option(self.profile,option):
-                    if option in ('confirm','run','show_all','headers','verbose'):
-                        value = self.parser.getboolean(self.profile,option)
+                if self.parser.has_option(self.profile, option):
+                    if option in ('confirm', 'run', 'show_all', 'headers', 'verbose'):
+                        value = self.parser.getboolean(self.profile, option)
                     else:
-                        value = self.parser.get(self.profile,option)
+                        value = self.parser.get(self.profile, option)
                 setattr(self, option, value)
 
-    def get(self,option,defvalue=None):
-        if hasattr(self,option):
-            return getattr(self,option)
-        return defvalue
+    def get(self, option, defvalue=None):
+        return getattr(self, option, defvalue)
 
-    def usage(self,exitcode):
+    def usage(self, exitcode):
         if exitcode == 0:
             fh = sys.stdout
         else:
@@ -199,7 +197,7 @@ class Config:
         sys.exit(exitcode)
 
 
-    def getopt(self,argv):
+    def getopt(self, argv):
         try:
             (optlist, args) = getopt.getopt(argv[1:], 'vf:s:cah', [
                 "apt", "verbose", "frontend=", "email-address=", "confirm",
@@ -307,7 +305,7 @@ def read_apt_pipeline(config):
     return map(lambda pkg: filenames[pkg], order)
 
 def mail_changes(address, changes, subject):
-    print "apt-listchanges: " + _("Mailing %s: %s") % (address,subject)
+    print "apt-listchanges: " + _("Mailing %s: %s") % (address, subject)
 
     message = email.Message.Message()
 # this way lies madness -mdz, 2003/06/29
@@ -325,7 +323,7 @@ def mail_changes(address, changes, subject):
     fh.write(message.as_string())
     fh.close()
 
-def make_frontend(name, packages,config):
+def make_frontend(name, packages, config):
     frontends = { 'text' : text,
                   'pager' : pager,
                   'mail' : mail,
@@ -333,16 +331,16 @@ def make_frontend(name, packages,config):
                   'xterm-pager' : xterm_pager,
                   'xterm-browser' : xterm_browser }
 
-    if name in ('newt','w3m','xterm-w3m'):
+    if name in ('newt', 'w3m', 'xterm-w3m'):
         sys.stderr.write((_("The %s frontend is deprecated, using pager") + '\n') % name)
         name = 'pager'
 
     if not frontends.has_key(name):
         return None
-    return frontends[name](packages,config)
+    return frontends[name](packages, config)
 
 class frontend:
-    def __init__(self,packages,config):
+    def __init__(self, packages, config):
         self.packages = packages
         self.config = config
 
@@ -352,13 +350,10 @@ class frontend:
     def progress_done(self):
         pass
 
-    def display_output(self,text):
-        self._display_output(self._render(text))
-
-    def _display_output(self,text):
+    def display_output(self, text):
         pass
 
-    def _render(self,text):
+    def _render(self, text):
         newtext = []
         for line in text.split('\n'):
             try:
@@ -378,39 +373,34 @@ class frontend:
 class ttyconfirm:
     def confirm(self):
         tty = open('/dev/tty', 'r+')
-        tty.write('apt-listchanges: ' +
-                       _('Do you want to continue? [Y/n]? '))
+        tty.write('apt-listchanges: ' + _('Do you want to continue? [Y/n]? '))
         tty.flush()
         response = tty.readline()
-        if response == '\n' or re.search(locale.nl_langinfo(locale.YESEXPR),
-                                         response):
-            return 1
-#         if re.match(locale.nl_langinfo(locale.NOEXPR),response[0]):
-#             return 0
-        return 0
+        return response == '\n' or re.search(locale.nl_langinfo(locale.YESEXPR),
+                                             response)
 
 class simpleprogress:
     def update_progress(self):
         if self.config.quiet > 1:
             return
 
-        if not hasattr(self,'message_printed'):
+        if not hasattr(self, 'message_printed'):
             self.message_printed = 1
             sys.stderr.write(_("Reading changelogs") + "...\n")
 
     def progress_done(self):
         pass
 
-class mail(simpleprogress,frontend):
+class mail(simpleprogress, frontend):
     pass
 
-class text(simpleprogress,ttyconfirm,frontend):
-    def display_output(self,text):
+class text(simpleprogress, ttyconfirm, frontend):
+    def display_output(self, text):
         sys.stdout.write(text)
 
 class fancyprogress:
     def update_progress(self):
-        if not hasattr(self,'progress'):
+        if not hasattr(self, 'progress'):
             # First call
             self.progress = 0
             self.line_length = 0
@@ -452,14 +442,14 @@ class runcommand:
     def get_command(self):
         return self.command
 
-class pager(runcommand,ttyconfirm,fancyprogress,frontend):
-    def __init__(self,*args):
-        apply(frontend.__init__,[self] + list(args))
+class pager(runcommand, ttyconfirm, fancyprogress, frontend):
+    def __init__(self, *args):
+        apply(frontend.__init__, [self] + list(args))
         self.command = self.config.get('pager', 'sensible-pager')
 
-class xterm(runcommand,ttyconfirm,fancyprogress,frontend):
-    def __init__(self,*args):
-        apply(frontend.__init__,[self] + list(args))
+class xterm(runcommand, ttyconfirm, fancyprogress, frontend):
+    def __init__(self, *args):
+        apply(frontend.__init__, [self] + list(args))
         self.mode = os.P_NOWAIT
         self.xterm = self.config.get('xterm', 'x-terminal-emulator')
 
@@ -467,8 +457,8 @@ class xterm(runcommand,ttyconfirm,fancyprogress,frontend):
         return self.xterm + ' -T apt-listchanges -e ' + self.xterm_command
 
 class xterm_pager(xterm):
-    def __init__(self,*args):
-        apply(xterm.__init__,[self] + list(args))
+    def __init__(self, *args):
+        apply(xterm.__init__, [self] + list(args))
         self.xterm_command = self.config.get('pager', 'sensible-pager')
 
 class html:
@@ -478,7 +468,7 @@ class html:
     # regxlib.com
     email_re = re.compile(r'([a-zA-Z0-9_\-\.]+)@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)')
 
-    def _render(self,text):
+    def _render(self, text):
         htmltext = cStringIO.StringIO()
         htmltext.write('''<html>
         <head>
@@ -487,8 +477,8 @@ class html:
         </head>
 
         <body>
-        <pre>
-''')
+        <pre>''')
+
         for line in text.split('\n'):
             try:
                 # changelogs are supposed to be in UTF-8
@@ -500,28 +490,22 @@ class html:
             line = uline.encode('utf-8').replace(
                 '&', '&amp;').replace(
                 '<', '&lt;').replace(
-                '>','&gt;')
-            line = re.sub(self.bug_re,
-                          r'<a href="http://bugs.debian.org/\g<bugnum>">\g<linktext></a>',
-                          line)
-            line = re.sub(self.email_re,
-                          r'<a href="mailto:\g<0>">\g<0></a>',
-                          line)
+                '>', '&gt;')
+            line = self.bug_re.sub(r'<a href="http://bugs.debian.org/\g<bugnum>">\g<linktext></a>', line)
+            line = self.email_re.sub(r'<a href="mailto:\g<0>">\g<0></a>', line)
             htmltext.write(line + '\n')
-        htmltext.write('''</body>
-        </pre>
-''')
+        htmltext.write('</pre></body></html>')
 
         return htmltext.getvalue()
 
-class browser(html,pager):
-    def __init__(self,*args):
-        apply(pager.__init__,[self] + list(args))
-        self.command = self.config.get('browser','sensible-browser')
+class browser(html, pager):
+    def __init__(self, *args):
+        apply(pager.__init__, [self] + list(args))
+        self.command = self.config.get('browser', 'sensible-browser')
 
-class xterm_browser(html,xterm):
-    def __init__(self,*args):
-        apply(xterm.__init__,[self] + list(args))
-        self.xterm_command = self.config.get('browser','sensible-browser')
+class xterm_browser(html, xterm):
+    def __init__(self, *args):
+        apply(xterm.__init__, [self] + list(args))
+        self.xterm_command = self.config.get('browser', 'sensible-browser')
 
 
