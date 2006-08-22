@@ -10,6 +10,8 @@ apt-listchanges (2.62~experimental2) UNRELEASED; urgency=low
 
   * Fix bug in html generation (generated html was obviously invalid).
 
+  * Only Recommend a MTA as it's not needed using pager. (Closes: #384165)
+
  -- Pierre Habouzit <madcoder@debian.org>  Mon, 21 Aug 2006 03:13:23 +0200
 
 apt-listchanges (2.62~experimental1) experimental; urgency=low

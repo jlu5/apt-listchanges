@@ -11,7 +11,8 @@ Build-Depends-Indep: docbook-to-man, gettext, python-dev, po-debconf,
 Package: apt-listchanges
 Architecture: all
 Depends: ${python:Depends}, apt (>= 0.5.3), python-apt, debconf | debconf-2.0,
- ucf (>= 0.28), debianutils (>= 2.0.2), exim4 | mail-transport-agent
+ ucf (>= 0.28), debianutils (>= 2.0.2)
+Recommends: exim4 | mail-transport-agent
 Suggests: x-terminal-emulator, www-browser
 Description: Display change history from .deb archives
  apt-listchanges is a tool to show what has been changed in a new
