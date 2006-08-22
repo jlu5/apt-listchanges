@@ -4,6 +4,7 @@ apt-listchanges (2.62~experimental2) UNRELEASED; urgency=low
     + update gl.po thanks to Jacobo Tarrio.
     + update ca.po thanks to Jordi Mallach (Closes: #383980).
     + update pt.po thanks to Rui Pedro.
+    + update nl.po thanks to Bart Cornelis.
 
   * More python simplifications.
 
