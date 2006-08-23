@@ -1,4 +1,4 @@
-apt-listchanges (2.62~experimental2) UNRELEASED; urgency=low
+apt-listchanges (2.62) unstable; urgency=low
 
   * templates translations:
     + update gl.po thanks to Jacobo Tarrio.
@@ -13,7 +13,7 @@ apt-listchanges (2.62~experimental2) UNRELEASED; urgency=low
 
   * Only Recommend a MTA as it's not needed using pager. (Closes: #384165)
 
- -- Pierre Habouzit <madcoder@debian.org>  Mon, 21 Aug 2006 03:13:23 +0200
+ -- Pierre Habouzit <madcoder@debian.org>  Wed, 23 Aug 2006 13:11:59 +0200
 
 apt-listchanges (2.62~experimental1) experimental; urgency=low
 
