@@ -364,7 +364,7 @@ class frontend:
                 # (That's also the reason we do it line by line.)
                 # This is possibly wrong, but our best guess.
                 uline = line.decode('iso8859-1')
-            newtext.append(uline.encode(locale.getlocale()[1], 'replace'))
+            newtext.append(uline.encode(locale.getlocale()[1] or 'ascii', 'replace'))
         return '\n'.join(newtext)
 
     def confirm(self):
