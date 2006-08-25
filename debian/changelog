@@ -2,7 +2,7 @@ apt-listchanges (2.63) UNRELEASED; urgency=low
 
   * When run in locale 'C', the code fails because getlocale()[1] is None.
     default to 'ascii' in that case, that is the sole sane choice, user has to
-    set its locale if that does not suits him. (Closes: #384413).
+    set his locale if that does not suits him. (Closes: #384413, #384574).
 
  -- Pierre Habouzit <madcoder@debian.org>  Thu, 24 Aug 2006 11:00:50 +0200
 
