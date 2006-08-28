@@ -1,3 +1,12 @@
+apt-listchanges (2.64) UNRELEASED; urgency=low
+
+  * Italian translations thanks to Luca Monducci:
+    + man page,
+    + debconf template,
+    + program translations.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Mon, 28 Aug 2006 08:40:27 +0200
+
 apt-listchanges (2.63) unstable; urgency=low
 
   * When run in locale 'C', the code fails because getlocale()[1] is None.
