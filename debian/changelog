@@ -1,6 +1,6 @@
 apt-listchanges (2.64) UNRELEASED; urgency=low
 
-  * Italian translations thanks to Luca Monducci:
+  * Italian translations thanks to Luca Monducci (Closes: #384805):
     + man page,
     + debconf template,
     + program translations.
