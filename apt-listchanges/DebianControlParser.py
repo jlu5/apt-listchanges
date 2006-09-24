@@ -12,7 +12,7 @@ class DebianControlStanza:
         for line in str.split('\n'):
             if not line:
                 break
-            if line[0] == ' ':
+            if line[0] in (' ', '\t'):
                 if field:
                     setattr(self, field, getattr(self, field) + '\n' + line)
             else:

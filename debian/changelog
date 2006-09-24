@@ -1,11 +1,17 @@
-apt-listchanges (2.64) UNRELEASED; urgency=low
+apt-listchanges (2.64) unstable; urgency=low
 
-  * Italian translations thanks to Luca Monducci (Closes: #384805):
+  * Be less strict on rfc822-like parse, accept continuation lines starting
+    with \t (Closes: 388861).
+
+  * Italian translations thanks to Luca Monducci (Closes: 384805):
     + man page,
     + debconf template,
     + program translations.
 
- -- Pierre Habouzit <madcoder@debian.org>  Mon, 28 Aug 2006 08:40:27 +0200
+  * French translations thanks to Christian Perrier
+    (Closes: 386808, 386807, 387223).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 24 Sep 2006 16:15:59 +0200
 
 apt-listchanges (2.63) unstable; urgency=low
 
