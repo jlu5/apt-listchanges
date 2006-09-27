@@ -2,7 +2,7 @@ apt-listchanges (2.65) UNRELEASED; urgency=low
 
   * Change confirm semantics: negative value means confirmation cannot be run.
     Assume we don't want to save our state in that case, and proceed as usual
-    (Closes: 355399)
+    (Closes: 311919, 355399)
 
  -- Pierre Habouzit <madcoder@debian.org>  Thu, 28 Sep 2006 01:46:06 +0200
 
