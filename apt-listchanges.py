@@ -179,9 +179,14 @@ def main():
         frontend.display_output(changes)
 
     if news or changes:
-        if config.confirm and not frontend.confirm():
-            sys.stderr.write('Aborting.\n')
-            sys.exit(10)
+        if config.confirm:
+            ans = frontend.confirm()
+            if ans == 0:
+                sys.stderr.write(_('Aborting')+'.\n')
+                sys.exit(10)
+            if ans <= 0:
+                sys.stderr.write(_("Confirmation failed, don't save seen state")+'.\n')
+                config.save_seen = False
 
         hostname = commands.getoutput('hostname')
 

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2006-08-28 08:43+CEST\n"
+"POT-Creation-Date: 2006-09-28 01:47+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,15 +40,23 @@ msgstr ""
 msgid "Informational notes"
 msgstr ""
 
-#: ../apt-listchanges.py:189
+#: ../apt-listchanges.py:185
+msgid "Aborting"
+msgstr ""
+
+#: ../apt-listchanges.py:188
+msgid "Confirmation failed, don't save seen state"
+msgstr ""
+
+#: ../apt-listchanges.py:194
 msgid "apt-listchanges: changelogs for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:193
+#: ../apt-listchanges.py:198
 msgid "apt-listchanges: news for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:205
+#: ../apt-listchanges.py:210
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
@@ -79,17 +87,17 @@ msgstr ""
 msgid "The %s frontend is deprecated, using pager"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:376
+#: ../apt-listchanges/apt_listchanges.py:379
 msgid "Do you want to continue? [Y/n]? "
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:389
-#: ../apt-listchanges/apt_listchanges.py:409
-#: ../apt-listchanges/apt_listchanges.py:417
+#: ../apt-listchanges/apt_listchanges.py:392
+#: ../apt-listchanges/apt_listchanges.py:412
+#: ../apt-listchanges/apt_listchanges.py:420
 msgid "Reading changelogs"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:417
+#: ../apt-listchanges/apt_listchanges.py:420
 msgid "Done"
 msgstr ""
 

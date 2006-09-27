@@ -372,7 +372,10 @@ class frontend:
 
 class ttyconfirm:
     def confirm(self):
-        tty = open('/dev/tty', 'r+')
+        try:
+            tty = open('/dev/tty', 'r+')
+        except IOError, e:
+            return -1
         tty.write('apt-listchanges: ' + _('Do you want to continue? [Y/n]? '))
         tty.flush()
         response = tty.readline()
