@@ -467,7 +467,9 @@ class xterm_pager(xterm):
 class html:
     suffix = '.html'
 
-    bug_re = re.compile('(?P<linktext>#(?P<bugnum>[1-9]\d+))', re.IGNORECASE)
+    bug_stanza_re = re.compile(r'(?:closes:\s*(?:bug)?\#?\s?\d+(?:,\s*(?:bug)?\#?\s?\d+)*|#\d+)', re.I)
+    bug_re        = re.compile('(?P<linktext>#?(?P<bugnum>\d+))', re.I)
+    bug_fmt       = r'<a href="http://bugs.debian.org/\g<bugnum>">\g<linktext></a>'
     # regxlib.com
     email_re = re.compile(r'([a-zA-Z0-9_\-\.]+)@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)')
 
@@ -494,7 +496,7 @@ class html:
                 '&', '&amp;').replace(
                 '<', '&lt;').replace(
                 '>', '&gt;')
-            line = self.bug_re.sub(r'<a href="http://bugs.debian.org/\g<bugnum>">\g<linktext></a>', line)
+            line = self.bug_stanza_re.sub(lambda m: self.bug_re.sub(self.bug_fmt, m.group(0)), line)
             line = self.email_re.sub(r'<a href="mailto:\g<0>">\g<0></a>', line)
             htmltext.write(line + '\n')
         htmltext.write('</pre></body></html>')

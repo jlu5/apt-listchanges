@@ -1,10 +1,13 @@
-apt-listchanges (2.65) UNRELEASED; urgency=low
+apt-listchanges (2.65) unstable; urgency=low
 
   * Change confirm semantics: negative value means confirmation cannot be run.
     Assume we don't want to save our state in that case, and proceed as usual
-    (Closes: 311919, 355399)
+    (Closes: 311919, 355399).
 
- -- Pierre Habouzit <madcoder@debian.org>  Thu, 28 Sep 2006 01:46:06 +0200
+  * Use more clever regexps (even sub regexps !) to render Closes: nnnnnn
+    correctly (Closes: 316531).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 28 Sep 2006 14:21:41 +0200
 
 apt-listchanges (2.64) unstable; urgency=low
 
