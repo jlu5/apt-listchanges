@@ -184,9 +184,9 @@ def main():
             if ans == 0:
                 sys.stderr.write(_('Aborting')+'.\n')
                 sys.exit(10)
-            if ans <= 0:
+            if ans < 0:
                 sys.stderr.write(_("Confirmation failed, don't save seen state")+'.\n')
-                config.save_seen = False
+                sys.exit(0)
 
         hostname = commands.getoutput('hostname')
 
