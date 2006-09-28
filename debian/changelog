@@ -4,8 +4,8 @@ apt-listchanges (2.65) unstable; urgency=low
     Assume we don't want to save our state in that case, and proceed as usual
     (Closes: 311919, 355399).
 
-  * Use more clever regexps (even sub regexps !) to render Closes: nnnnnn
-    correctly (Closes: 316531).
+  * Use more clever regexps (even sub regexps!) to recognize Closes: 316531
+    correctly (the recursion is a courtesy of Christoph Berg).
 
  -- Pierre Habouzit <madcoder@debian.org>  Thu, 28 Sep 2006 14:21:41 +0200
 
