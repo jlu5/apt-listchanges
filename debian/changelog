@@ -1,3 +1,10 @@
+apt-listchanges (2.66) UNRELEASED; urgency=low
+
+  * Remove cruft in postinst for versions older than sarge ones.
+  * Remove /var/lib/apt/listchanges.db at purge (Closes: 319603).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Mon,  2 Oct 2006 22:15:39 +0200
+
 apt-listchanges (2.65) unstable; urgency=low
 
   * Change confirm semantics: negative value means confirmation cannot be run.

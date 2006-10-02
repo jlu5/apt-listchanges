@@ -9,8 +9,8 @@ if [ "$1" = "remove" ]; then
 fi
 
 if [ "$1" = "purge" ]; then
-    rm -f /etc/apt-listchanges.conf /etc/apt-listchanges.conf.old
     rm -f $hook.disabled
+    rm -f /var/lib/apt/listchanges.db
     if wich ucf >/dev/null 2>&1; then
         ucf -p /etc/apt/listchanges.conf
     fi
