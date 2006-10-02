@@ -4,6 +4,8 @@ apt-listchanges (2.66) UNRELEASED; urgency=low
   * Remove /var/lib/apt/listchanges.db at purge (Closes: 319603).
   * Use 8bit encoding for the mails, so that they are greppable again
     (Closes: 211714)
+  * If we are hit by a signal, abort with exit 10, making the upgrade fail.
+    (Closes: 338717, 301604)
 
  -- Pierre Habouzit <madcoder@debian.org>  Mon,  2 Oct 2006 22:44:44 +0200
 
