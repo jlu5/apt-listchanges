@@ -1,4 +1,4 @@
-apt-listchanges (2.66) UNRELEASED; urgency=low
+apt-listchanges (2.66) unstable; urgency=low
 
   * Remove cruft in postinst for versions older than sarge ones.
   * Remove /var/lib/apt/listchanges.db at purge (Closes: 319603).
@@ -7,7 +7,7 @@ apt-listchanges (2.66) UNRELEASED; urgency=low
   * If we are hit by a signal, abort with exit 10, making the upgrade fail.
     (Closes: 338717, 301604)
 
- -- Pierre Habouzit <madcoder@debian.org>  Mon,  2 Oct 2006 22:44:44 +0200
+ -- Pierre Habouzit <madcoder@debian.org>  Mon,  2 Oct 2006 23:09:47 +0200
 
 apt-listchanges (2.65) unstable; urgency=low
 
