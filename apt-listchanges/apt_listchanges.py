@@ -10,6 +10,7 @@ import sys
 import gettext
 import email.Message
 import email.Header
+import email.Charset
 import locale
 import cStringIO
 import tempfile
@@ -307,19 +308,15 @@ def read_apt_pipeline(config):
 def mail_changes(address, changes, subject):
     print "apt-listchanges: " + _("Mailing %s: %s") % (address, subject)
 
-    message = email.Message.Message()
-# this way lies madness -mdz, 2003/06/29
-#     try:
-#         subject = email.Header.Header(subject,
-#                                       locale.nl_langinfo(locale.CODESET))
-#     except:
-#         subject = email.Header.Header(subject, 'UTF-8')
-
+    charset = email.Charset.Charset('utf-8')
+    charset.body_encoding = '8bit'
+    charset.header_encoding = email.Charset.QP
+    message = email.Message.Message(charset)
     message['Subject'] = subject
     message['To'] = address
-    message.set_payload(changes, 'utf-8')
+    message.set_payload(changes)
 
-    fh = os.popen('/usr/sbin/sendmail -t', 'w')
+    fh = os.popen('/usr/sbin/sendmail -oi -t', 'w')
     fh.write(message.as_string())
     fh.close()
 
