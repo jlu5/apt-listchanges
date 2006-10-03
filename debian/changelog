@@ -1,3 +1,9 @@
+apt-listchanges (2.67) unstable; urgency=low
+
+  * Fix confirm behaviour, broken in 2.65 upload (Closes: 390784).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Tue,  3 Oct 2006 10:01:27 +0200
+
 apt-listchanges (2.66) unstable; urgency=low
 
   * Remove cruft in postinst for versions older than sarge ones.

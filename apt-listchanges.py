@@ -181,10 +181,10 @@ def main():
     if news or changes:
         if config.confirm:
             ans = frontend.confirm()
-            if ans == 0:
+            if not ans:
                 sys.stderr.write(_('Aborting')+'.\n')
                 sys.exit(10)
-            if ans < 0:
+            elif ans < 0:
                 sys.stderr.write(_("Confirmation failed, don't save seen state")+'.\n')
                 sys.exit(0)
 
