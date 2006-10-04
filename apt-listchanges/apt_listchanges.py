@@ -311,7 +311,8 @@ def mail_changes(address, changes, subject):
     charset = email.Charset.Charset('utf-8')
     charset.body_encoding = '8bit'
     charset.header_encoding = email.Charset.QP
-    message = email.Message.Message(charset)
+    message = email.Message.Message()
+    message.set_charset(charset)
     message['Subject'] = subject
     message['To'] = address
     message.set_payload(changes)
