@@ -1,3 +1,18 @@
+apt-listchanges (2.70) unstable; urgency=low
+
+  [ Damien Laniel ]
+  * Fixed the postrm script to remove /etc/apt/listchanges.conf on purge
+    and rewrote the test for ucf existence (was using "which" which isn't
+    essential)
+  * Fixed the postinst script not to use ucf if /etc/apt/listchanges.conf
+    doesn't exist, ie was purged
+
+  [ Pierre Habouzit ]
+  * Use Damien's patch that also should fix the `code 10 ` postinst problem.
+    (Closes: 391628, 390997)
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sat,  7 Oct 2006 22:00:54 +0200
+
 apt-listchanges (2.69) unstable; urgency=low
 
   * Final upload targetting etch, the l10n upload:

@@ -11,9 +11,10 @@ fi
 if [ "$1" = "purge" ]; then
     rm -f $hook.disabled
     rm -f /var/lib/apt/listchanges.db
-    if wich ucf >/dev/null 2>&1; then
+    if [ ucf --help > /dev/null 2>&1 ]; then
         ucf -p /etc/apt/listchanges.conf
     fi
+    rm -f /etc/apt/listchanges.conf
 fi
 
 #DEBHELPER#
