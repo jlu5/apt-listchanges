@@ -1,3 +1,11 @@
+apt-listchanges (2.69) unstable; urgency=low
+
+  * Final upload targetting etch, the l10n upload:
+    + fr.po thanks to Christian Perrier (Closes: 390979),
+    + es.po thanks to Javier Fernández-Sanguino Peña (Closes: 391114).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sat,  7 Oct 2006 17:39:53 +0200
+
 apt-listchanges (2.68) unstable; urgency=low
 
   * Fix the mail instantiation, thanks to Daniel Lublin (Closes: 391016).
