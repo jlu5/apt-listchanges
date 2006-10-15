@@ -3,12 +3,14 @@ apt-listchanges (2.71) UNRELEASED; urgency=low
   [ Packaging ]
 
   * Simplify debian/config from old cruft from 1.x series.
+  * Update debian/copyright.
 
   [ Library ]
 
   * DebianControl* classes are renamed into Control*.
   * Move Packages, Changes classes (and Control* ones) into DebianFiles.py.
   * Move Config to ALCConfig.py.
+  * Add copyright statements in .py's.
 
  -- Pierre Habouzit <madcoder@debian.org>  Sun, 15 Oct 2006 16:10:20 +0200
 
