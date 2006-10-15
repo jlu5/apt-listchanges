@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2006-09-28 01:47+CEST\n"
+"POT-Creation-Date: 2006-10-11 21:53+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,44 +60,44 @@ msgstr ""
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:102
+#: ../apt-listchanges/apt_listchanges.py:103
 msgid "Ignoring `%s' (seems to be a directory !)"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:196
+#: ../apt-listchanges/apt_listchanges.py:197
 msgid ""
 "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:251
+#: ../apt-listchanges/apt_listchanges.py:252
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:267
+#: ../apt-listchanges/apt_listchanges.py:268
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:308
+#: ../apt-listchanges/apt_listchanges.py:309
 msgid "Mailing %s: %s"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:335
+#: ../apt-listchanges/apt_listchanges.py:333
 msgid "The %s frontend is deprecated, using pager"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:379
+#: ../apt-listchanges/apt_listchanges.py:377
 msgid "Do you want to continue? [Y/n]? "
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:392
-#: ../apt-listchanges/apt_listchanges.py:412
-#: ../apt-listchanges/apt_listchanges.py:420
+#: ../apt-listchanges/apt_listchanges.py:390
+#: ../apt-listchanges/apt_listchanges.py:410
+#: ../apt-listchanges/apt_listchanges.py:418
 msgid "Reading changelogs"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:420
+#: ../apt-listchanges/apt_listchanges.py:418
 msgid "Done"
 msgstr ""
 

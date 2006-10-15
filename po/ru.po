@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges_2.42\n"
-"POT-Creation-Date: 2006-08-11 22:10+CEST\n"
+"POT-Creation-Date: 2006-10-11 21:53+CEST\n"
 "PO-Revision-Date: 2003-10-05 15:35+0600\n"
 "Last-Translator: Ilgiz Kalmetev <translator@ilgiz.pp.ru>\n"
 "Language-Team: russian <debian-russian@lists.debian.org>\n"
@@ -22,80 +22,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.1\n"
 
-#: ../apt-listchanges:87
+#: ../apt-listchanges.py:85
 msgid "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges:112
+#: ../apt-listchanges.py:110
 msgid "%s: will be newly installed"
 msgstr ""
 
-#: ../apt-listchanges:121
+#: ../apt-listchanges.py:119
 msgid "%s: Version %s has already been seen"
 msgstr ""
 
-#: ../apt-listchanges:154
+#: ../apt-listchanges.py:152
 msgid "News for %s"
 msgstr ""
 
-#: ../apt-listchanges:165
+#: ../apt-listchanges.py:163
 msgid "Changes for %s"
 msgstr ""
 
-#: ../apt-listchanges:181
+#: ../apt-listchanges.py:173
 msgid "Informational notes"
 msgstr ""
 
-#: ../apt-listchanges:197
+#: ../apt-listchanges.py:185
+msgid "Aborting"
+msgstr ""
+
+#: ../apt-listchanges.py:188
+msgid "Confirmation failed, don't save seen state"
+msgstr ""
+
+#: ../apt-listchanges.py:194
 #, fuzzy
 msgid "apt-listchanges: changelogs for %s"
 msgstr "Кому apt-listchanges должен отправлять записи журнала изменений?"
 
-#: ../apt-listchanges:201
+#: ../apt-listchanges.py:198
 msgid "apt-listchanges: news for %s"
 msgstr ""
 
-#: ../apt-listchanges:213
+#: ../apt-listchanges.py:210
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:120
+#: ../apt-listchanges/apt_listchanges.py:103
 msgid "Ignoring `%s' (seems to be a directory !)"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:216
+#: ../apt-listchanges/apt_listchanges.py:197
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:271
+#: ../apt-listchanges/apt_listchanges.py:252
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:287
+#: ../apt-listchanges/apt_listchanges.py:268
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:330
+#: ../apt-listchanges/apt_listchanges.py:309
 msgid "Mailing %s: %s"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:357
+#: ../apt-listchanges/apt_listchanges.py:333
 msgid "The %s frontend is deprecated, using pager"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:402
+#: ../apt-listchanges/apt_listchanges.py:377
 msgid "Do you want to continue? [Y/n]? "
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:419
-#: ../apt_listchanges/apt_listchanges.py:439
-#: ../apt_listchanges/apt_listchanges.py:447
+#: ../apt-listchanges/apt_listchanges.py:390
+#: ../apt-listchanges/apt_listchanges.py:410
+#: ../apt-listchanges/apt_listchanges.py:418
 msgid "Reading changelogs"
 msgstr ""
 
-#: ../apt_listchanges/apt_listchanges.py:447
+#: ../apt-listchanges/apt_listchanges.py:418
 msgid "Done"
 msgstr ""
 
