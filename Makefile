@@ -21,9 +21,12 @@ install: all
 	    install -m 644 $$man $(DESTDIR)/usr/share/man/$$lang/man1/apt-listchanges.1; \
 	done
 	# l10n
-	$(MAKE) -C po install
+	$(MAKE) -C po $@
 
 clean:
 	rm -f apt-listchanges*.1
 	rm -f apt-listchanges/*.pyc
 	make -C po clean
+
+update-po:
+	$(MAKE) -C po $@
