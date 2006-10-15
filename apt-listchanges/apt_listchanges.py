@@ -1,6 +1,6 @@
 #vim:set fileencoding=utf-8:
 
-import DebianControlParser
+import ControlParser
 import apt_pkg
 import ConfigParser
 import getopt
@@ -44,7 +44,7 @@ class Package:
     def __init__(self, path):
         self.path = path
 
-        parser = DebianControlParser.DebianControlParser()
+        parser = ControlParser.ControlParser()
         parser.readdeb(self.path)
         pkgdata = parser.stanzas[0]
 

@@ -30,7 +30,7 @@ import anydbm
 import commands
 
 sys.path += ['./apt-listchanges', '/usr/share/apt-listchanges']
-import apt_listchanges, DebianControlParser
+import apt_listchanges, ControlParser
 
 def main():
     try:
@@ -61,7 +61,7 @@ def main():
         config.frontend = 'mail'
 
     if not config.show_all:
-        status = DebianControlParser.DebianControlParser()
+        status = ControlParser.ControlParser()
         status.readfile('/var/lib/dpkg/status')
         status.makeindex('Package')
 

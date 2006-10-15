@@ -3,7 +3,7 @@ import os, re
 # TODO:
 # indexed lookups by package at least, maybe by arbitrary field
 
-class DebianControlStanza:
+class ControlStanza:
     sourceversionre = re.compile('\((?P<version>.*).*\)')
 
     def __init__(self, str):
@@ -33,7 +33,7 @@ class DebianControlStanza:
         return hasattr(self, 'Status') and self.Status.split(' ')[2] == 'installed'
 
 
-class DebianControlParser:
+class ControlParser:
     def __init__(self):
         self.stanzas = []
         self.index = {}
@@ -44,11 +44,11 @@ class DebianControlParser:
             self.index[field][getattr(stanza, field)] = stanza
 
     def readfile(self, file):
-        self.stanzas += [DebianControlStanza(x) for x in open(file, 'r').read().split('\n\n') if x]
+        self.stanzas += [ControlStanza(x) for x in open(file, 'r').read().split('\n\n') if x]
 
     def readdeb(self, deb):
         fh = os.popen('dpkg-deb -f %s' % deb)
-        self.stanzas.append(DebianControlStanza(fh.read()))
+        self.stanzas.append(ControlStanza(fh.read()))
 
     def find(self, field, value):
         if self.index.has_key(field):
@@ -62,4 +62,4 @@ class DebianControlParser:
                     return stanza
         return None
 
-__all__ = [ 'DebianControlParser' ]
+__all__ = [ 'ControlParser' ]
