@@ -7,6 +7,7 @@ apt-listchanges (2.71) UNRELEASED; urgency=low
   [ Library ]
 
   * DebianControl* classes are renamed into Control*
+  * Move Packages, Changes classes (and Control* ones) into DebianFiles.py.
 
  -- Pierre Habouzit <madcoder@debian.org>  Sun, 15 Oct 2006 16:10:20 +0200
 

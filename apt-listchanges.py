@@ -30,7 +30,7 @@ import anydbm
 import commands
 
 sys.path += ['./apt-listchanges', '/usr/share/apt-listchanges']
-import apt_listchanges, ControlParser
+import apt_listchanges, DebianFiles
 
 def main():
     try:
@@ -61,7 +61,7 @@ def main():
         config.frontend = 'mail'
 
     if not config.show_all:
-        status = ControlParser.ControlParser()
+        status = DebianFiles.ControlParser()
         status.readfile('/var/lib/dpkg/status')
         status.makeindex('Package')
 
@@ -87,7 +87,7 @@ def main():
 
     # Main loop
     for deb in debs:
-        pkg = apt_listchanges.Package(deb)
+        pkg = DebianFiles.Package(deb)
         binpackage = pkg.binary
         srcpackage = pkg.source
         srcversion = pkg.source_version
