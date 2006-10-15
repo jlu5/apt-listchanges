@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"POT-Creation-Date: 2006-10-15 17:46+CEST\n"
+"POT-Creation-Date: 2006-10-15 18:20+CEST\n"
 "PO-Revision-Date: 2004-02-03 05:53+1300\n"
 "Last-Translator: Carlos Z.F. Liu <carlos_liu@yahoo.com>\n"
 "Language-Team: Chinese/Simplified <i18n-translation@lists.linux.net.cn>\n"
@@ -13,66 +13,66 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: ../apt-listchanges.py:85
+#: ../apt-listchanges.py:88
 msgid "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges.py:110
+#: ../apt-listchanges.py:113
 msgid "%s: will be newly installed"
 msgstr "%s：将被全新安装"
 
-#: ../apt-listchanges.py:119
+#: ../apt-listchanges.py:122
 msgid "%s: Version %s has already been seen"
 msgstr "%s：%s 版已经被看过了"
 
-#: ../apt-listchanges.py:152
+#: ../apt-listchanges.py:155
 #, fuzzy
 msgid "News for %s"
 msgstr "%s 的变更"
 
-#: ../apt-listchanges.py:163
+#: ../apt-listchanges.py:166
 msgid "Changes for %s"
 msgstr "%s 的变更"
 
-#: ../apt-listchanges.py:173
+#: ../apt-listchanges.py:176
 msgid "Informational notes"
 msgstr "信息备忘"
 
-#: ../apt-listchanges.py:185
+#: ../apt-listchanges.py:188
 msgid "Aborting"
 msgstr ""
 
-#: ../apt-listchanges.py:188
+#: ../apt-listchanges.py:191
 msgid "Confirmation failed, don't save seen state"
 msgstr ""
 
-#: ../apt-listchanges.py:194
+#: ../apt-listchanges.py:197
 #, fuzzy
 msgid "apt-listchanges: changelogs for %s"
 msgstr "%s 的 apt-listchanges 输出"
 
-#: ../apt-listchanges.py:198
+#: ../apt-listchanges.py:201
 #, fuzzy
 msgid "apt-listchanges: news for %s"
 msgstr "%s 的 apt-listchanges 输出"
 
-#: ../apt-listchanges.py:210
+#: ../apt-listchanges.py:213
 msgid "didn't find any valid .deb archives"
 msgstr "没有找到任何有效的 .deb 档案"
 
-#: ../apt-listchanges/ALCConfig.py:57
+#: ../apt-listchanges/ALCConfig.py:78
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt-listchanges/ALCConfig.py:112
+#: ../apt-listchanges/ALCConfig.py:133
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt-listchanges/DebianFiles.py:150
+#: ../apt-listchanges/DebianFiles.py:174
 msgid "Ignoring `%s' (seems to be a directory !)"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:26
+#: ../apt-listchanges/apt_listchanges.py:48
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -80,27 +80,27 @@ msgstr ""
 "从 apt 传送来的信息缺少版本号或者存在错误的版本号\n"
 "(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version 被设为 2 了吗？)\n"
 
-#: ../apt-listchanges/apt_listchanges.py:67
+#: ../apt-listchanges/apt_listchanges.py:89
 #, fuzzy
 msgid "Mailing %s: %s"
 msgstr "将变更记录(changelogs)邮寄给 %s"
 
-#: ../apt-listchanges/apt_listchanges.py:91
+#: ../apt-listchanges/apt_listchanges.py:113
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
 msgstr "newt 界面已被废除，改用分页器"
 
-#: ../apt-listchanges/apt_listchanges.py:135
+#: ../apt-listchanges/apt_listchanges.py:157
 msgid "Do you want to continue? [Y/n]? "
 msgstr "您想继续吗？[Y/n]？"
 
-#: ../apt-listchanges/apt_listchanges.py:148
-#: ../apt-listchanges/apt_listchanges.py:168
-#: ../apt-listchanges/apt_listchanges.py:176
+#: ../apt-listchanges/apt_listchanges.py:170
+#: ../apt-listchanges/apt_listchanges.py:190
+#: ../apt-listchanges/apt_listchanges.py:198
 msgid "Reading changelogs"
 msgstr "读取变更记录(changelogs)"
 
-#: ../apt-listchanges/apt_listchanges.py:176
+#: ../apt-listchanges/apt_listchanges.py:198
 msgid "Done"
 msgstr "完成"
 

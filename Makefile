@@ -1,10 +1,9 @@
-all:
+all::
 	docbook-to-man apt-listchanges.sgml > apt-listchanges.1
 	docbook-to-man apt-listchanges.es.sgml > apt-listchanges.es.1
 	docbook-to-man apt-listchanges.fr.sgml > apt-listchanges.fr.1
-	make -C po
 
-install: all
+install:: all
 	# modules
 	install -d $(DESTDIR)/usr/share/apt-listchanges
 	install -m 644 apt-listchanges/* $(DESTDIR)/usr/share/apt-listchanges
@@ -20,13 +19,10 @@ install: all
 	    install -d $(DESTDIR)/usr/share/man/$$lang/man1;                \
 	    install -m 644 $$man $(DESTDIR)/usr/share/man/$$lang/man1/apt-listchanges.1; \
 	done
-	# l10n
-	$(MAKE) -C po $@
 
-clean:
+clean::
 	rm -f apt-listchanges*.1
 	rm -f apt-listchanges/*.pyc
-	make -C po clean
 
-update-po:
+all install clean update-po::
 	$(MAKE) -C po $@

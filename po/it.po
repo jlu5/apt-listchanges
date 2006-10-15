@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.62 italian translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-15 17:46+CEST\n"
+"POT-Creation-Date: 2006-10-15 18:20+CEST\n"
 "PO-Revision-Date: 2006-08-26 10:37+0200\n"
 "Last-Translator: Luca Monducci <luca.mo@tiscali.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
@@ -15,63 +15,63 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../apt-listchanges.py:85
+#: ../apt-listchanges.py:88
 msgid "Unknown frontend: %s\n"
 msgstr "Interfaccia sconosciuta: %s\n"
 
-#: ../apt-listchanges.py:110
+#: ../apt-listchanges.py:113
 msgid "%s: will be newly installed"
 msgstr "%s: verrà installato per la prima volta"
 
-#: ../apt-listchanges.py:119
+#: ../apt-listchanges.py:122
 msgid "%s: Version %s has already been seen"
 msgstr "%s : La versione %s è già stata mostrata"
 
-#: ../apt-listchanges.py:152
+#: ../apt-listchanges.py:155
 msgid "News for %s"
 msgstr "Notizie per %s"
 
-#: ../apt-listchanges.py:163
+#: ../apt-listchanges.py:166
 msgid "Changes for %s"
 msgstr "Modifiche per %s"
 
-#: ../apt-listchanges.py:173
+#: ../apt-listchanges.py:176
 msgid "Informational notes"
 msgstr "Note informative"
 
-#: ../apt-listchanges.py:185
+#: ../apt-listchanges.py:188
 msgid "Aborting"
 msgstr ""
 
-#: ../apt-listchanges.py:188
+#: ../apt-listchanges.py:191
 msgid "Confirmation failed, don't save seen state"
 msgstr ""
 
-#: ../apt-listchanges.py:194
+#: ../apt-listchanges.py:197
 msgid "apt-listchanges: changelogs for %s"
 msgstr "apt-listchanges: changelog per %s"
 
-#: ../apt-listchanges.py:198
+#: ../apt-listchanges.py:201
 msgid "apt-listchanges: news for %s"
 msgstr "apt-listchanges: notizie per %s"
 
-#: ../apt-listchanges.py:210
+#: ../apt-listchanges.py:213
 msgid "didn't find any valid .deb archives"
 msgstr "impossibile trovare un archivio .deb valido"
 
-#: ../apt-listchanges/ALCConfig.py:57
+#: ../apt-listchanges/ALCConfig.py:78
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr "Uso: apt-listchanges [opzioni] {--apt | nomefile.deb ...}\n"
 
-#: ../apt-listchanges/ALCConfig.py:112
+#: ../apt-listchanges/ALCConfig.py:133
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr "Opzione %s non valida con --which. Quelle consentite sono: %s."
 
-#: ../apt-listchanges/DebianFiles.py:150
+#: ../apt-listchanges/DebianFiles.py:174
 msgid "Ignoring `%s' (seems to be a directory !)"
 msgstr "Ignorata «%s» (sembra essere una directory!)"
 
-#: ../apt-listchanges/apt_listchanges.py:26
+#: ../apt-listchanges/apt_listchanges.py:48
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -79,24 +79,24 @@ msgstr ""
 "Il valore VERSION dalla pipe apt è sbagliato o inesistente\n"
 "(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version è impostato a 2?)\n"
 
-#: ../apt-listchanges/apt_listchanges.py:67
+#: ../apt-listchanges/apt_listchanges.py:89
 msgid "Mailing %s: %s"
 msgstr "Invio di %s: %s"
 
-#: ../apt-listchanges/apt_listchanges.py:91
+#: ../apt-listchanges/apt_listchanges.py:113
 msgid "The %s frontend is deprecated, using pager"
 msgstr "L'interfaccia %s è deprecata, viene usata pager"
 
-#: ../apt-listchanges/apt_listchanges.py:135
+#: ../apt-listchanges/apt_listchanges.py:157
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Continuare [S/n]? "
 
-#: ../apt-listchanges/apt_listchanges.py:148
-#: ../apt-listchanges/apt_listchanges.py:168
-#: ../apt-listchanges/apt_listchanges.py:176
+#: ../apt-listchanges/apt_listchanges.py:170
+#: ../apt-listchanges/apt_listchanges.py:190
+#: ../apt-listchanges/apt_listchanges.py:198
 msgid "Reading changelogs"
 msgstr "Lettura dei changelog"
 
-#: ../apt-listchanges/apt_listchanges.py:176
+#: ../apt-listchanges/apt_listchanges.py:198
 msgid "Done"
 msgstr "Fatto"

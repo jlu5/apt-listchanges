@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.1\n"
-"POT-Creation-Date: 2006-10-15 17:46+CEST\n"
+"POT-Creation-Date: 2006-10-15 18:20+CEST\n"
 "PO-Revision-Date: 2002-05-12 07:39+0200\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -12,66 +12,66 @@ msgstr ""
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: ../apt-listchanges.py:85
+#: ../apt-listchanges.py:88
 msgid "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges.py:110
+#: ../apt-listchanges.py:113
 msgid "%s: will be newly installed"
 msgstr "%s: paigaldatakse uuesti"
 
-#: ../apt-listchanges.py:119
+#: ../apt-listchanges.py:122
 msgid "%s: Version %s has already been seen"
 msgstr "%s: Versioon %s on juba nähtud"
 
-#: ../apt-listchanges.py:152
+#: ../apt-listchanges.py:155
 #, fuzzy
 msgid "News for %s"
 msgstr "Muudatused %s jaoks"
 
-#: ../apt-listchanges.py:163
+#: ../apt-listchanges.py:166
 msgid "Changes for %s"
 msgstr "Muudatused %s jaoks"
 
-#: ../apt-listchanges.py:173
+#: ../apt-listchanges.py:176
 msgid "Informational notes"
 msgstr "Informatiivsed märkused"
 
-#: ../apt-listchanges.py:185
+#: ../apt-listchanges.py:188
 msgid "Aborting"
 msgstr ""
 
-#: ../apt-listchanges.py:188
+#: ../apt-listchanges.py:191
 msgid "Confirmation failed, don't save seen state"
 msgstr ""
 
-#: ../apt-listchanges.py:194
+#: ../apt-listchanges.py:197
 #, fuzzy
 msgid "apt-listchanges: changelogs for %s"
 msgstr "apt-listchanges väljund %s jaoks"
 
-#: ../apt-listchanges.py:198
+#: ../apt-listchanges.py:201
 #, fuzzy
 msgid "apt-listchanges: news for %s"
 msgstr "apt-listchanges väljund %s jaoks"
 
-#: ../apt-listchanges.py:210
+#: ../apt-listchanges.py:213
 msgid "didn't find any valid .deb archives"
 msgstr "ei leia ühtegi töökorras .deb arhiivi"
 
-#: ../apt-listchanges/ALCConfig.py:57
+#: ../apt-listchanges/ALCConfig.py:78
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt-listchanges/ALCConfig.py:112
+#: ../apt-listchanges/ALCConfig.py:133
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt-listchanges/DebianFiles.py:150
+#: ../apt-listchanges/DebianFiles.py:174
 msgid "Ignoring `%s' (seems to be a directory !)"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:26
+#: ../apt-listchanges/apt_listchanges.py:48
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -79,27 +79,27 @@ msgstr ""
 "Vale või puuduv VERSION apt torust\n"
 "(kas Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version on 2?)\n"
 
-#: ../apt-listchanges/apt_listchanges.py:67
+#: ../apt-listchanges/apt_listchanges.py:89
 #, fuzzy
 msgid "Mailing %s: %s"
 msgstr "Postitan muutuste logid aadressile %s"
 
-#: ../apt-listchanges/apt_listchanges.py:91
+#: ../apt-listchanges/apt_listchanges.py:113
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
 msgstr "Newt'i liides on taunitav, kasutan lehitsejat (pager)"
 
-#: ../apt-listchanges/apt_listchanges.py:135
+#: ../apt-listchanges/apt_listchanges.py:157
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Soovite jätkata [J/e]? "
 
-#: ../apt-listchanges/apt_listchanges.py:148
-#: ../apt-listchanges/apt_listchanges.py:168
-#: ../apt-listchanges/apt_listchanges.py:176
+#: ../apt-listchanges/apt_listchanges.py:170
+#: ../apt-listchanges/apt_listchanges.py:190
+#: ../apt-listchanges/apt_listchanges.py:198
 msgid "Reading changelogs"
 msgstr "Muudatuste logide lugemine"
 
-#: ../apt-listchanges/apt_listchanges.py:176
+#: ../apt-listchanges/apt_listchanges.py:198
 msgid "Done"
 msgstr "Korras"
 

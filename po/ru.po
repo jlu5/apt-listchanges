@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges_2.42\n"
-"POT-Creation-Date: 2006-10-15 17:46+CEST\n"
+"POT-Creation-Date: 2006-10-15 18:20+CEST\n"
 "PO-Revision-Date: 2003-10-05 15:35+0600\n"
 "Last-Translator: Ilgiz Kalmetev <translator@ilgiz.pp.ru>\n"
 "Language-Team: russian <debian-russian@lists.debian.org>\n"
@@ -22,88 +22,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.0.1\n"
 
-#: ../apt-listchanges.py:85
+#: ../apt-listchanges.py:88
 msgid "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges.py:110
+#: ../apt-listchanges.py:113
 msgid "%s: will be newly installed"
 msgstr ""
 
-#: ../apt-listchanges.py:119
+#: ../apt-listchanges.py:122
 msgid "%s: Version %s has already been seen"
 msgstr ""
 
-#: ../apt-listchanges.py:152
+#: ../apt-listchanges.py:155
 msgid "News for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:163
+#: ../apt-listchanges.py:166
 msgid "Changes for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:173
+#: ../apt-listchanges.py:176
 msgid "Informational notes"
 msgstr ""
 
-#: ../apt-listchanges.py:185
+#: ../apt-listchanges.py:188
 msgid "Aborting"
 msgstr ""
 
-#: ../apt-listchanges.py:188
+#: ../apt-listchanges.py:191
 msgid "Confirmation failed, don't save seen state"
 msgstr ""
 
-#: ../apt-listchanges.py:194
+#: ../apt-listchanges.py:197
 #, fuzzy
 msgid "apt-listchanges: changelogs for %s"
 msgstr "Кому apt-listchanges должен отправлять записи журнала изменений?"
 
-#: ../apt-listchanges.py:198
+#: ../apt-listchanges.py:201
 msgid "apt-listchanges: news for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:210
+#: ../apt-listchanges.py:213
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
-#: ../apt-listchanges/ALCConfig.py:57
+#: ../apt-listchanges/ALCConfig.py:78
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt-listchanges/ALCConfig.py:112
+#: ../apt-listchanges/ALCConfig.py:133
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt-listchanges/DebianFiles.py:150
+#: ../apt-listchanges/DebianFiles.py:174
 msgid "Ignoring `%s' (seems to be a directory !)"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:26
+#: ../apt-listchanges/apt_listchanges.py:48
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:67
+#: ../apt-listchanges/apt_listchanges.py:89
 msgid "Mailing %s: %s"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:91
+#: ../apt-listchanges/apt_listchanges.py:113
 msgid "The %s frontend is deprecated, using pager"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:135
+#: ../apt-listchanges/apt_listchanges.py:157
 msgid "Do you want to continue? [Y/n]? "
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:148
-#: ../apt-listchanges/apt_listchanges.py:168
-#: ../apt-listchanges/apt_listchanges.py:176
+#: ../apt-listchanges/apt_listchanges.py:170
+#: ../apt-listchanges/apt_listchanges.py:190
+#: ../apt-listchanges/apt_listchanges.py:198
 msgid "Reading changelogs"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:176
+#: ../apt-listchanges/apt_listchanges.py:198
 msgid "Done"
 msgstr ""
 
