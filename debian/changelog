@@ -1,3 +1,9 @@
+apt-listchanges (2.71) UNRELEASED; urgency=low
+
+  * Simplify debian/config from old cruft from 1.x series.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 15 Oct 2006 16:10:20 +0200
+
 apt-listchanges (2.70) unstable; urgency=low
 
   [ Damien Laniel ]
