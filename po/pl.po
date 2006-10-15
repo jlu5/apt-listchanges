@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.27\n"
-"POT-Creation-Date: 2006-10-11 21:53+CEST\n"
+"POT-Creation-Date: 2006-10-15 17:46+CEST\n"
 "PO-Revision-Date: 2003-01-30 17:30+0100\n"
 "Last-Translator: Micha³ Politowski <l10n@mp.pl.eu.org>\n"
 "Language-Team: Polish\n"
@@ -61,19 +61,19 @@ msgstr "apt-listchanges: wyniki dla %s"
 msgid "didn't find any valid .deb archives"
 msgstr "nie znaleziono ¿adnych archiwów typu .deb"
 
-#: ../apt-listchanges/apt_listchanges.py:103
-msgid "Ignoring `%s' (seems to be a directory !)"
-msgstr ""
-
-#: ../apt-listchanges/apt_listchanges.py:197
+#: ../apt-listchanges/ALCConfig.py:57
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:252
+#: ../apt-listchanges/ALCConfig.py:112
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:268
+#: ../apt-listchanges/DebianFiles.py:150
+msgid "Ignoring `%s' (seems to be a directory !)"
+msgstr ""
+
+#: ../apt-listchanges/apt_listchanges.py:26
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -81,27 +81,27 @@ msgstr ""
 "B³êdna warto¶æ VERSION w potoku z apt lub jej brak\n"
 "(czy Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version ma warto¶æ 2?)\n"
 
-#: ../apt-listchanges/apt_listchanges.py:309
+#: ../apt-listchanges/apt_listchanges.py:67
 #, fuzzy
 msgid "Mailing %s: %s"
 msgstr "wysy³anie dzienników do %s"
 
-#: ../apt-listchanges/apt_listchanges.py:333
+#: ../apt-listchanges/apt_listchanges.py:91
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
 msgstr "Interfejs newt zosta³ zarzucony, zostanie u¿yty pager"
 
-#: ../apt-listchanges/apt_listchanges.py:377
+#: ../apt-listchanges/apt_listchanges.py:135
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Czy kontynuowaæ? [T/n] "
 
-#: ../apt-listchanges/apt_listchanges.py:390
-#: ../apt-listchanges/apt_listchanges.py:410
-#: ../apt-listchanges/apt_listchanges.py:418
+#: ../apt-listchanges/apt_listchanges.py:148
+#: ../apt-listchanges/apt_listchanges.py:168
+#: ../apt-listchanges/apt_listchanges.py:176
 msgid "Reading changelogs"
 msgstr "Odczytywanie dzienników zmian"
 
-#: ../apt-listchanges/apt_listchanges.py:418
+#: ../apt-listchanges/apt_listchanges.py:176
 msgid "Done"
 msgstr "Zrobione"
 

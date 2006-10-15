@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"POT-Creation-Date: 2006-10-11 21:53+CEST\n"
+"POT-Creation-Date: 2006-10-15 17:46+CEST\n"
 "PO-Revision-Date: 2005-02-28 13:48+0800\n"
 "Last-Translator: Kanru Chen <koster@debian.org.tw>\n"
 "Language-Team: Chinese/Traditional <zh-l10n@linux.org.tw>\n"
@@ -60,19 +60,19 @@ msgstr "%s 的 apt-listchanges 輸出"
 msgid "didn't find any valid .deb archives"
 msgstr "沒有找到任何有效的 .deb 檔案"
 
-#: ../apt-listchanges/apt_listchanges.py:103
-msgid "Ignoring `%s' (seems to be a directory !)"
-msgstr ""
-
-#: ../apt-listchanges/apt_listchanges.py:197
+#: ../apt-listchanges/ALCConfig.py:57
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:252
+#: ../apt-listchanges/ALCConfig.py:112
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:268
+#: ../apt-listchanges/DebianFiles.py:150
+msgid "Ignoring `%s' (seems to be a directory !)"
+msgstr ""
+
+#: ../apt-listchanges/apt_listchanges.py:26
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -80,27 +80,27 @@ msgstr ""
 "從 apt 傳來的訊息缺少版本號或是存在錯誤的版本號\n"
 "(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version 被設為 2 了嗎？)\n"
 
-#: ../apt-listchanges/apt_listchanges.py:309
+#: ../apt-listchanges/apt_listchanges.py:67
 #, fuzzy
 msgid "Mailing %s: %s"
 msgstr "將改變紀錄(changelogs)寄給 %s"
 
-#: ../apt-listchanges/apt_listchanges.py:333
+#: ../apt-listchanges/apt_listchanges.py:91
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
 msgstr "newt 介面已被廢除，改用分頁器"
 
-#: ../apt-listchanges/apt_listchanges.py:377
+#: ../apt-listchanges/apt_listchanges.py:135
 msgid "Do you want to continue? [Y/n]? "
 msgstr "您想繼續嗎？[Y/n]？"
 
-#: ../apt-listchanges/apt_listchanges.py:390
-#: ../apt-listchanges/apt_listchanges.py:410
-#: ../apt-listchanges/apt_listchanges.py:418
+#: ../apt-listchanges/apt_listchanges.py:148
+#: ../apt-listchanges/apt_listchanges.py:168
+#: ../apt-listchanges/apt_listchanges.py:176
 msgid "Reading changelogs"
 msgstr "讀取改變紀錄(changelogs)"
 
-#: ../apt-listchanges/apt_listchanges.py:418
+#: ../apt-listchanges/apt_listchanges.py:176
 msgid "Done"
 msgstr "完成"
 

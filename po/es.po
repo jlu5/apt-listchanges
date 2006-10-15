@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.4\n"
-"POT-Creation-Date: 2006-10-11 21:53+CEST\n"
+"POT-Creation-Date: 2006-10-15 17:46+CEST\n"
 "PO-Revision-Date: 2006-09-23 13:36+0200\n"
 "Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
 "Language-Team: Debian Spanish Team <debian-l10n-spanish@lists.debian.org>\n"
@@ -62,19 +62,19 @@ msgstr "apt-listchanges: noticias de %s"
 msgid "didn't find any valid .deb archives"
 msgstr "no se ha encontrado ningún fichero .deb válido"
 
-#: ../apt-listchanges/apt_listchanges.py:103
-msgid "Ignoring `%s' (seems to be a directory !)"
-msgstr "Se ignorará «%s» (¡parece tratarse de un directorio!)"
-
-#: ../apt-listchanges/apt_listchanges.py:197
+#: ../apt-listchanges/ALCConfig.py:57
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr "Modo de uso: apt-listchanges [opciones] {--apt | archivo.deb ...}\n"
 
-#: ../apt-listchanges/apt_listchanges.py:252
+#: ../apt-listchanges/ALCConfig.py:112
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr "Opción desconocida %s para --which. Se puede utilizar: %s."
 
-#: ../apt-listchanges/apt_listchanges.py:268
+#: ../apt-listchanges/DebianFiles.py:150
+msgid "Ignoring `%s' (seems to be a directory !)"
+msgstr "Se ignorará «%s» (¡parece tratarse de un directorio!)"
+
+#: ../apt-listchanges/apt_listchanges.py:26
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -82,25 +82,25 @@ msgstr ""
 "VERSION errónea o inexistente desde la tubería de apt\n"
 "(¿Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version vale 2?)\n"
 
-#: ../apt-listchanges/apt_listchanges.py:309
+#: ../apt-listchanges/apt_listchanges.py:67
 msgid "Mailing %s: %s"
 msgstr "Enviando por correo %s: %s"
 
-#: ../apt-listchanges/apt_listchanges.py:333
+#: ../apt-listchanges/apt_listchanges.py:91
 msgid "The %s frontend is deprecated, using pager"
 msgstr "La interfaz %s está obsoleta, usando el paginador"
 
-#: ../apt-listchanges/apt_listchanges.py:377
+#: ../apt-listchanges/apt_listchanges.py:135
 msgid "Do you want to continue? [Y/n]? "
 msgstr "¿Quiere continuar? [Y/n] "
 
-#: ../apt-listchanges/apt_listchanges.py:390
-#: ../apt-listchanges/apt_listchanges.py:410
-#: ../apt-listchanges/apt_listchanges.py:418
+#: ../apt-listchanges/apt_listchanges.py:148
+#: ../apt-listchanges/apt_listchanges.py:168
+#: ../apt-listchanges/apt_listchanges.py:176
 msgid "Reading changelogs"
 msgstr "Leyendo lista de cambios"
 
-#: ../apt-listchanges/apt_listchanges.py:418
+#: ../apt-listchanges/apt_listchanges.py:176
 msgid "Done"
 msgstr "Hecho."
 

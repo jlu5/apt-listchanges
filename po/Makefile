@@ -16,11 +16,7 @@ subdir = po
 srcdir = .
 
 INSTALL = /usr/bin/install -c
-INSTALL_DATA = ${INSTALL} -m 644
-MKINSTALLDIRS = ../mkinstalldirs
 
-CC = gcc
-GENCAT = gencat
 MSGFMT = /usr/bin/msgfmt --statistics
 XGETTEXT = /usr/bin/pygettext
 MSGMERGE = msgmerge
@@ -28,7 +24,7 @@ MSGMERGE = msgmerge
 POFILES =  $(wildcard *.po)
 MOFILES =  $(patsubst %.po,%.mo,$(POFILES))
 
-POTFILES = ../apt-listchanges.py $(wildcard ../apt-listchanges/*.py)
+SRCFILES = ../apt-listchanges.py $(wildcard ../apt-listchanges/*.py)
 
 all: $(PACKAGE).pot $(MOFILES)
 
@@ -37,30 +33,23 @@ all: $(PACKAGE).pot $(MOFILES)
 .po.mo:
 	$(MSGFMT) -o $@ $<
 
-# Note: Target 'all' must not depend on target '$(srcdir)/$(PACKAGE).pot',
-# otherwise packages like GCC can not be built if only parts of the source
-# have been downloaded.
-
-$(PACKAGE).pot: $(POTFILES)
+$(PACKAGE).pot: $(SRCFILES)
 	if test -f $(XGETTEXT); then \
-		$(XGETTEXT) --default-domain=$(PACKAGE) \
-			--keyword=_ $(POTFILES); \
+	    $(XGETTEXT) --default-domain=$(PACKAGE) --keyword=_ $(SRCFILES); \
 	else \
-		touch $@; \
+	    touch $@; \
 	fi
 
 install: all
 	for file in $(MOFILES); do \
-                lang=`echo $$file | sed 's/\.mo//'`; \
-                install -d $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/; \
-                install -m 0644 $$file $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(PACKAGE).mo; \
+	    lang=`echo $$file | sed 's/\.mo//'`; \
+	    install -d $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/; \
+	    install -m 0644 $$file $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(PACKAGE).mo; \
         done
 
-mostlyclean:
+clean:
 	rm -f core core.* *.pox $(PACKAGE).po *.new.po
 	rm -fr *.o *.mo
-
-clean: mostlyclean
 
 distclean: clean
 	rm -f $(PACKAGE).pot
@@ -71,14 +60,14 @@ update-po: Makefile
         cd $(srcdir); \
         catalogs='$(MOFILES)'; \
         for cat in $$catalogs; do \
-          cat=`basename $$cat`; \
-          lang=`echo $$cat | sed 's/\.mo$$//'`; \
-          echo "$$lang:"; \
-          if $(MSGMERGE) $$lang.po $(PACKAGE).pot -o $$lang.new.po; then \
-            mv -f $$lang.new.po $$lang.po; \
-          else \
-            echo "msgmerge for $$cat failed!"; \
-            rm -f $$lang.new.po; \
-          fi; \
+            cat=`basename $$cat`; \
+            lang=`echo $$cat | sed 's/\.mo$$//'`; \
+            echo "$$lang:"; \
+            if $(MSGMERGE) $$lang.po $(PACKAGE).pot -o $$lang.new.po; then \
+                mv -f $$lang.new.po $$lang.po; \
+            else \
+                echo "msgmerge for $$cat failed!"; \
+                rm -f $$lang.new.po; \
+            fi; \
         done
 
