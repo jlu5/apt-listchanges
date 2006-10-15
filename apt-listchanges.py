@@ -30,7 +30,7 @@ import anydbm
 import commands
 
 sys.path += ['./apt-listchanges', '/usr/share/apt-listchanges']
-import apt_listchanges, DebianFiles
+import apt_listchanges, DebianFiles, ALCConfig
 
 def main():
     try:
@@ -38,7 +38,7 @@ def main():
     except IOError:
         _ = lambda str: str
 
-    config = apt_listchanges.Config()
+    config = ALCConfig.ALCConfig()
     config.read('/etc/apt/listchanges.conf')
     debs = config.getopt(sys.argv)
 

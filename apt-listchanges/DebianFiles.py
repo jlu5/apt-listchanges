@@ -26,6 +26,7 @@ def numeric_urgency(u):
 
     return urgency_map.get(u.lower(), 5)
 
+
 class ControlStanza:
     sourceversionre = re.compile('\((?P<version>.*).*\)')
 
@@ -54,7 +55,6 @@ class ControlStanza:
 
     def installed(self):
         return hasattr(self, 'Status') and self.Status.split(' ')[2] == 'installed'
-
 
 class ControlParser:
     def __init__(self):
