@@ -36,10 +36,11 @@ import gettext
 # TODO:
 # indexed lookups by package at least, maybe by arbitrary field
 
-try:
-    _ = gettext.translation('apt-listchanges').lgettext
-except IOError:
-    _ = lambda str: str
+def _(x):
+    try:
+        return gettext.translation('apt-listchanges').lgettext(x)
+    except:
+        return x
 
 def numeric_urgency(u):
     urgency_map = { 'low' : 1,

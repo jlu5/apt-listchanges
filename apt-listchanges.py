@@ -35,10 +35,11 @@ sys.path += ['./apt-listchanges', '/usr/share/apt-listchanges']
 import apt_listchanges, DebianFiles, ALCConfig
 
 locale.setlocale(locale.LC_ALL, '')
-try:
-    _ = gettext.translation('apt-listchanges').lgettext
-except IOError:
-    _ = lambda str: str
+def _(x):
+    try:
+        return gettext.translation('apt-listchanges').lgettext(x)
+    except:
+        return x
 
 def main():
     config = ALCConfig.ALCConfig()

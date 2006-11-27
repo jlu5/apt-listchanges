@@ -37,10 +37,11 @@ import tempfile
 # newt-like frontend, or maybe some GUI bit
 # keep track of tar/dpkg-deb errors like in pre-2.0
 
-try:
-    _ = gettext.translation('apt-listchanges').lgettext
-except IOError:
-    _ = lambda str: str
+def _(x):
+    try:
+        return gettext.translation('apt-listchanges').lgettext(x)
+    except:
+        return x
 
 def read_apt_pipeline(config):
     version = sys.stdin.readline().rstrip()
@@ -290,5 +291,4 @@ class xterm_browser(html, xterm):
     def __init__(self, *args):
         apply(xterm.__init__, [self] + list(args))
         self.xterm_command = self.config.get('browser', 'sensible-browser')
-
 

@@ -1,3 +1,12 @@
+apt-listchanges (2.72~0) UNRELEASED; urgency=low
+
+  * Hack function _(x) so that it works even with LANGUAGE set and LC_CTYPE
+    set to C (Closes: #397108). It can lead to curious half translated
+    messages, but say that to python locale handling that is completely
+    braindead.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Tue, 28 Nov 2006 00:16:07 +0100
+
 apt-listchanges (2.71) UNRELEASED; urgency=low
 
   [ Packaging ]

@@ -29,10 +29,11 @@ import sys, os
 import re
 import gettext
 
-try:
-    _ = gettext.translation('apt-listchanges').lgettext
-except IOError:
-    _ = lambda str: str
+def _(x):
+    try:
+        return gettext.translation('apt-listchanges').lgettext(x)
+    except:
+        return x
 
 class ALCConfig:
     def __init__(self):
