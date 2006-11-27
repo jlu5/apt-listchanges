@@ -1,4 +1,6 @@
-apt-listchanges (2.72) unstable; urgency=low
+apt-listchanges (2.71) unstable; urgency=low
+
+  [ Fixes ]
 
   * Hack function _(x) so that it works even with LANGUAGE set and LC_CTYPE
     set to C (Closes: #397108). It can lead to curious half translated
@@ -8,10 +10,6 @@ apt-listchanges (2.72) unstable; urgency=low
   * Update program's fr.po thanks to Christian Perrier (Closes: 393621).
   * Update portuguese debconf template translations thanks to Rui Branco
     (Closes: 396643).
-
- -- Pierre Habouzit <madcoder@debian.org>  Tue, 28 Nov 2006 00:16:07 +0100
-
-apt-listchanges (2.71) UNRELEASED; urgency=low
 
   [ Packaging ]
 
@@ -25,7 +23,7 @@ apt-listchanges (2.71) UNRELEASED; urgency=low
   * Move Config to ALCConfig.py.
   * Add copyright statements in .py's.
 
- -- Pierre Habouzit <madcoder@debian.org>  Sun, 15 Oct 2006 16:10:20 +0200
+ -- Pierre Habouzit <madcoder@debian.org>  Tue, 28 Nov 2006 00:21:20 +0100
 
 apt-listchanges (2.70) unstable; urgency=low
 
