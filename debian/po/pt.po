@@ -2,19 +2,20 @@
 # 2005, Rui Branco <ruipb@netcabo.pt>>
 # 2005-09-25 - Rui Branco <ruipb@netcabo.pt> - initial translation
 # 2006-08-21 Rui Branco <ruipb@debianpt.org> - 10u2f
-# 
+# 2006-11-01 Rui Branco <ruipb@debianpt.org> - 4f
+#
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.62\n"
+"Project-Id-Version: apt-listchanges 2.70\n"
 "Report-Msgid-Bugs-To: madcoder@debian.org\n"
 "POT-Creation-Date: 2006-08-11 16:20+0200\n"
-"PO-Revision-Date: 2006-08-21 09:42+0100\n"
+"PO-Revision-Date: 2006-11-01 21:55+0000\n"
 "Last-Translator: Rui Branco <ruipb@netcabo.pt>\n"
 "Language-Team: Portuguese <traduz@debianpt.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);"
 
 #. Type: select
 #. Choices
@@ -86,9 +87,10 @@ msgid ""
 " mail          : only send changes via mail;\n"
 " none          : do not run automatically from apt."
 msgstr ""
-" pager         : utilize o seu pager favorito para visualizar as modificações página\n"
-"                 a página;\n"
-" browser       : visualizar as modificações em formato HTML utilizando um browser web;\n"
+" pager         : utilize o seu pager favorito para visualizar as "
+"                 modificações página a página;\n"
+" browser       : visualizar as modificações em formato HTML utilizando um "
+"                 browser web;\n"
 " xterm-pager   : como um pager, mas com uma consola xterm em fundo;\n"
 " xterm-browser : como um browser, mas·com·uma·consola·xterm·em·fundo;\n"
 " text          : envia as modificações para o seu terminal (sem pausa);\n"
@@ -111,18 +113,18 @@ msgstr ""
 #. Description
 #: ../templates:2001
 msgid "E-mail Address(es) which will receive changes:"
-msgstr "Endereço(s) E-mail que recerá as modificações:"
+msgstr "Endereço(s) E-mail que receberá as modificações:"
 
 #. Type: string
 #. Description
 #: ../templates:2001
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
 msgstr ""
-"O apt-listchanges pode enviar uma cópia em email das modificações "
-"visualizadas.  Para que endereço de email deverão ser estas enviadas?"
+"O apt-listchanges pode enviar por email uma cópia das modificações "
+"visualizadas.  Por favor introduza o endereço de email para onde estas "
+"deverão ser estas enviadas."
 
 #. Type: string
 #. Description
@@ -137,10 +139,8 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:3001
-#, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
-msgstr ""
-"Deverá o apt-listchanges pedir confirmação após mostrar as modificações?"
+msgstr "Pedir confirmação após mostrar as modificações?"
 
 #. Type: boolean
 #. Description
@@ -152,9 +152,10 @@ msgid ""
 "you do not want to apply (yet)."
 msgstr ""
 "Depois de lhe possibilidade de ler a lista de modificações, o apt-"
-"listchanges pode pedir-lhe se quer ou não continuar. Esta função é útil quando "
-"se encontra a correr o apt, já que lhe ofereçe uma possibilidade de cancelar "
-"a actualização se detectar uma modificação que não queira aplicar na altura."
+"listchanges pode pedir-lhe se quer ou não continuar. Esta função é útil "
+"quando se encontra a correr o apt, já que lhe oferece uma possibilidade de "
+"cancelar a actualização se detectar uma modificação que não queira aplicar "
+"na altura."
 
 #. Type: boolean
 #. Description
@@ -170,8 +171,7 @@ msgstr ""
 #. Description
 #: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr ""
-"Deverá o apt-listchanges ignorar as modificações que tenham já sido "
+msgstr "Deverá o apt-listchanges ignorar as modificações que tenham já sido "
 "visualizadas?"
 
 #. Type: boolean
@@ -195,16 +195,14 @@ msgstr "news, both, changelogs"
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Changes displayed with apt:"
-msgstr "Como deverão ser visualizadas as modificações com o apt?"
+msgstr "Modificações visualizadas com o apt:"
 
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Que tipos de modificações deverão ser visualizadas com o apt?"
+msgstr "Por favor escolha que tipo de modificações devem visualizadas com o APT."
 
 #. Type: select
 #. Description

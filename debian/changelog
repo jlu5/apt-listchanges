@@ -1,9 +1,13 @@
-apt-listchanges (2.72~0) UNRELEASED; urgency=low
+apt-listchanges (2.72) unstable; urgency=low
 
   * Hack function _(x) so that it works even with LANGUAGE set and LC_CTYPE
     set to C (Closes: #397108). It can lead to curious half translated
     messages, but say that to python locale handling that is completely
     braindead.
+
+  * Update program's fr.po thanks to Christian Perrier (Closes: 393621).
+  * Update portuguese debconf template translations thanks to Rui Branco
+    (Closes: 396643).
 
  -- Pierre Habouzit <madcoder@debian.org>  Tue, 28 Nov 2006 00:16:07 +0100
 
