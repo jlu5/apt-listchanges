@@ -1,3 +1,10 @@
+apt-listchanges (2.72) unstable; urgency=high
+
+  * Fix missing import in DebianFiles.py, thanks to Julián Hernández Gómez.
+    (Closes: 400744).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Tue, 28 Nov 2006 15:41:16 +0100
+
 apt-listchanges (2.71) unstable; urgency=low
 
   [ Fixes ]

@@ -32,6 +32,7 @@ import glob
 import shutil
 
 import gettext
+import apt_pkg
 
 # TODO:
 # indexed lookups by package at least, maybe by arbitrary field
