@@ -16,60 +16,60 @@ msgstr ""
 "Project-Id-Version: apt-listchanges\n"
 "Report-Msgid-Bugs-To: madcoder@debian.org\n"
 "POT-Creation-Date: 2006-08-11 16:20+0200\n"
-"PO-Revision-Date: 2004-07-11 22:05+0200\n"
-"Last-Translator: Jan Outrata <outrataj@upcase.inf.upol.cz>\n"
-"Language-Team: Czech <provoz@debian.cz>\n"
+"PO-Revision-Date: 2007-01-21 19:37+0100\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "pager"
-msgstr ""
+msgstr "pager"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "browser"
-msgstr ""
+msgstr "browser"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "xterm-pager"
-msgstr ""
+msgstr "xterm-pager"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "xterm-browser"
-msgstr ""
+msgstr "xterm-browser"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "text"
-msgstr ""
+msgstr "text"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "mail"
-msgstr ""
+msgstr "poÅ¡ta"
 
 #. Type: select
 #. Choices
 #: ../templates:1001
 msgid "none"
-msgstr ""
+msgstr "Å¾Ã¡dnÃ½"
 
 #. Type: select
 #. Description
 #: ../templates:1002
 msgid "Method for changes display:"
-msgstr ""
+msgstr "ZpÅ¯sob zobrazenÃ­ zmÄ›n:"
 
 #. Type: select
 #. Description
@@ -77,7 +77,7 @@ msgstr ""
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"apt-listchanges mù¾e zobrazovat zmìny v balíècích mnoha rùznımi zpùsoby."
+"apt-listchanges mÅ¯Å¾e zobrazovat zmÄ›ny v balÃ­cÃ­ch mnoha rÅ¯znÃ½mi zpÅ¯soby."
 
 #. Type: select
 #. Description
@@ -92,6 +92,14 @@ msgid ""
 " mail          : only send changes via mail;\n"
 " none          : do not run automatically from apt."
 msgstr ""
+" pager         : zobrazÃ­ zmÄ›ny pomocÃ­ vaÅ¡eho oblÃ­benÃ©ho pageru;\n"
+" browser       : zobrazÃ­ HTML-formÃ¡tovanÃ© zmÄ›ny pomocÃ­ webovÃ©ho\n"
+"                 prohlÃ­Å¾eÄe;\n"
+" xterm-pager   : jako pager, ale v xtermu na pozadÃ­;\n"
+" xterm-browser : jako browser, ale v xtermu na pozadÃ­;\n"
+" text          : vypÃ­Å¡e zmÄ›ny na terminÃ¡l (bez pauzy);\n"
+" poÅ¡ta         : pouze zaÅ¡le zmÄ›ny poÅ¡tou;\n"
+" Å¾Ã¡dnÃ½         : nespouÅ¡tÃ­ se z aptu automaticky."
 
 #. Type: select
 #. Description
@@ -101,26 +109,25 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Volba pøíkazové øádky nebo promìnná prostøedí má pøednost pøed tímto "
-"nastavením. Poznamenejme, ¾e stále mù¾ete zaslat kopii mailem se v¹emi "
-"frontendy kromì 'nijak'."
+"Parametr pÅ™Ã­kazovÃ© Å™Ã¡dky nebo promÄ›nnÃ¡ prostÅ™edÃ­ mÃ¡ pÅ™ed tÃ­mto nastavenÃ­m "
+"pÅ™ednost. Poznamenejme, Å¾e paralelnÄ› ke vÅ¡em zpÅ¯sobÅ¯m (kromÄ› 'Å¾Ã¡dnÃ½') "
+"mÅ¯Å¾ete zaslat kopii zmÄ›n i poÅ¡tou."
 
 #. Type: string
 #. Description
 #: ../templates:2001
 msgid "E-mail Address(es) which will receive changes:"
-msgstr ""
+msgstr "EmailovÃ¡ adresa (adresy), kam zasÃ­lat zmÄ›ny:"
 
 #. Type: string
 #. Description
 #: ../templates:2001
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
 msgstr ""
-"apt-listchanges mù¾e zaslat emailem kopii zobrazovanıch zmìn. Na jakou "
-"emailovou adresu mají bıt zaslány?"
+"apt-listchanges mÅ¯Å¾e zasÃ­lat emailem kopii zobrazovanÃ½ch zmÄ›n. Zadejte "
+"prosÃ­m emailovou adresu, kam majÃ­ bÃ½t zasÃ­lÃ¡ny."
 
 #. Type: string
 #. Description
@@ -129,15 +136,14 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Mù¾ete zadat více adres, oddìlenıch èárkami. Nechte pole prázdné, pokud "
-"nechcete zasílat ¾ádné emaily."
+"MÅ¯Å¾ete zadat vÃ­ce adres, oddÄ›lenÃ½ch ÄÃ¡rkami. Nechte pole prÃ¡zdnÃ©, pokud "
+"nechcete zasÃ­lat Å¾Ã¡dnÃ© emaily."
 
 #. Type: boolean
 #. Description
 #: ../templates:3001
-#, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
-msgstr "Má se apt-listchanges ptát na potvrzení po zobrazení zmìn?"
+msgstr "PtÃ¡t se na potvrzenÃ­ po zobrazenÃ­ zmÄ›n?"
 
 #. Type: boolean
 #. Description
@@ -148,10 +154,10 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Po zobrazení seznamu zmìn se mù¾e apt-listchanges zeptat, jestli chcete "
-"pokraèovat nebo ne. Toto je u¾iteèné pøi spu¹tìní z apt, proto¾e vám to dává "
-"¹anci pøeru¹it aktualizaci, pokud uvidíte zmìnu, kterou nechcete aplikovat "
-"(momentálnì)."
+"Po zobrazenÃ­ seznamu zmÄ›n se mÅ¯Å¾e apt-listchanges zeptat, jestli chcete "
+"pokraÄovat nebo ne. Toto je uÅ¾iteÄnÃ© pÅ™i spuÅ¡tÄ›nÃ­ z apt, protoÅ¾e vÃ¡m to dÃ¡vÃ¡ "
+"Å¡anci pÅ™eruÅ¡it aktualizaci, pokud uvidÃ­te zmÄ›nu, kterou zatÃ­m nechcete "
+"aplikovat."
 
 #. Type: boolean
 #. Description
@@ -160,14 +166,14 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Toto nastavení neplatí pro frontendy 'mail' nebo 'nijak' a volba pøíkazové "
-"øádky má pøed ním pøednost."
+"Toto nastavenÃ­ neplatÃ­ pro frontendy 'mail' nebo 'Å¾Ã¡dnÃ½' a parametr na "
+"pÅ™Ã­kazovÃ© Å™Ã¡dce mÃ¡ pÅ™ed nÃ­m pÅ™ednost."
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "Má apt-listchanges pøeskoèit zmìny, které ji¾ byly shlédnuty?"
+msgstr "MÃ¡ apt-listchanges pÅ™eskoÄit zmÄ›ny, kterÃ© jiÅ¾ byly shlÃ©dnuty?"
 
 #. Type: boolean
 #. Description
@@ -177,29 +183,27 @@ msgid ""
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges má schopnost zaznamenat si, které zmìny ji¾ byly zobrazeny, "
-"a pøeskoèit je pøi dal¹ích spu¹tìních. Toto je u¾iteèné napøíklad pøi "
-"opìtovném pokusu o aktualizaci."
+"apt-listchanges mÃ¡ schopnost zaznamenat si, kterÃ© zmÄ›ny jiÅ¾ byly zobrazeny, "
+"a pÅ™eskoÄit je pÅ™i dalÅ¡Ã­ch spuÅ¡tÄ›nÃ­ch. Toto je uÅ¾iteÄnÃ© napÅ™Ã­klad pÅ™i "
+"opÄ›tovnÃ©m pokusu o aktualizaci."
 
 #. Type: select
 #. Choices
 #: ../templates:5001
 msgid "news, both, changelogs"
-msgstr "novinky, obojí, changelogy"
+msgstr "novinky, obojÃ­, soubory zmÄ›n"
 
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Changes displayed with apt:"
-msgstr "Jak se mají zobrazovat zmìny s apt?"
+msgstr "ZmÄ›ny, kterÃ© se majÃ­ zobrazovat pomocÃ­ apt:"
 
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Které typy zmìn se mají zobrazovat s apt?"
+msgstr "Vyberte, kterÃ© typy zmÄ›n se majÃ­ zobrazovat pomocÃ­ APT."
 
 #. Type: select
 #. Description
@@ -209,38 +213,6 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" novinky - jen dùle¾ité novinky\n"
-" obojí - novinky i detailní seznamy zmìn\n"
-" changelogy - jen detailní seznamy zmìn"
-
-#~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
-#~ msgstr "pager, browser, xterm-pager, xterm-browser, text, mail, nijak"
-
-#~ msgid ""
-#~ "pager - Use your preferred pager to display changes one page at a time"
-#~ msgstr ""
-#~ "pager - Pou¾ije vá¹ oblíbenı stránkovaè pro zobrazení zmìn po stránkách"
-
-#~ msgid "browser - Display HTML-formatted changes using a web browser"
-#~ msgstr "browser - Zobrazí HTML-formátované zmìny pomocí web prohlí¾eèe"
-
-#~ msgid "xterm-pager - Like pager, but in an xterm in the background"
-#~ msgstr "xterm-pager - Jako pager, ale v xtermu na pozadí"
-
-#~ msgid "xterm-browser - Like browser, but in an xterm in the background"
-#~ msgstr "xterm-browser - Jako browser, ale v xtermu na pozadí"
-
-#~ msgid "text  - Print changes to your terminal (without pausing)"
-#~ msgstr "text - Vypí¹e zmìny na terminál (bez pøestávky)"
-
-#~ msgid "mail  - Only send changes via mail"
-#~ msgstr "mail - Jen po¹le zmìny mailem"
-
-#~ msgid "none  - Do not run automatically from apt"
-#~ msgstr "nijak - Nespou¹tìt automaticky z apt"
-
-#~ msgid "root"
-#~ msgstr "root"
-
-#~ msgid "To whom should apt-listchanges mail changes?"
-#~ msgstr "Komu má apt-listchanges zasílat mailem zmìny?"
+" novinky - jen dÅ¯leÅ¾itÃ© novinky\n"
+" obojÃ­ - novinky i podrobnÃ© seznamy zmÄ›n\n"
+" soubory zmÄ›n - jen podrobnÃ© seznamy zmÄ›n"
