@@ -1,3 +1,9 @@
+apt-listchanges (2.72.2) UNRELEASED; urgency=low
+
+  * Remove useless pt_PT.po (Closes: 408880).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Tue,  6 Feb 2007 11:05:23 +0100
+
 apt-listchanges (2.72.1) unstable; urgency=low
 
   * Add Czech debconf messages thanks to Miroslav Kure (Closes: 407827).
