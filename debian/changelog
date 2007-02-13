@@ -1,6 +1,7 @@
 apt-listchanges (2.72.2) UNRELEASED; urgency=low
 
   * Remove useless pt_PT.po (Closes: 408880).
+  * Update nl.po thans to Frans Pop (Closes: 410544).
 
  -- Pierre Habouzit <madcoder@debian.org>  Tue,  6 Feb 2007 11:05:23 +0100
 
