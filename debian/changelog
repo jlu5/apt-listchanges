@@ -1,10 +1,10 @@
-apt-listchanges (2.72.2) UNRELEASED; urgency=low
+apt-listchanges (2.72.2) unstable; urgency=low
 
   * Remove useless pt_PT.po (Closes: 408880).
   * Update nl.po thans to Frans Pop (Closes: 410544).
   * Remove old .pyo/.pyc from quite older packages (Closes: 397107).
 
- -- Pierre Habouzit <madcoder@debian.org>  Tue,  6 Feb 2007 11:05:23 +0100
+ -- Pierre Habouzit <madcoder@debian.org>  Tue, 13 Feb 2007 10:43:11 +0100
 
 apt-listchanges (2.72.1) unstable; urgency=low
 
