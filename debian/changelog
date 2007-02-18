@@ -1,4 +1,4 @@
-apt-listchanges (2.72.3) unstable; urgency=low
+apt-listchanges (2.72.4) unstable; urgency=low
 
   * Big l10n upload, thanks to many contributors, especially Christian
     Perrier, Frans Pop and Jens Seidel. (Closes: 411340, 410544).
