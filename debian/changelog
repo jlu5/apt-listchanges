@@ -1,3 +1,11 @@
+apt-listchanges (2.72.3) unstable; urgency=low
+
+  * Big l10n upload, thanks to many contributors, especially Christian
+    Perrier, Frans Pop and Jens Seidel. (Closes: 411340, 410544).
+  * preinst: rm -f ... || true is useless.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 18 Feb 2007 21:18:02 +0100
+
 apt-listchanges (2.72.2) unstable; urgency=low
 
   * Remove useless pt_PT.po (Closes: 408880).

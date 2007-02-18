@@ -5,10 +5,10 @@ set -e
 hook=/etc/apt/apt.conf.d/20listchanges
 
 if test -d /usr/lib/site-python; then
-    rm -f /usr/lib/site-python/apt_listchanges.pyo     || true
-    rm -f /usr/lib/site-python/apt_listchanges.pyc     || true
-    rm -f /usr/lib/site-python/DebianControlParser.pyo || true
-    rm -f /usr/lib/site-python/DebianControlParser.pyo || true
+    rm -f /usr/lib/site-python/apt_listchanges.pyo
+    rm -f /usr/lib/site-python/apt_listchanges.pyc
+    rm -f /usr/lib/site-python/DebianControlParser.pyo
+    rm -f /usr/lib/site-python/DebianControlParser.pyo
 fi
 
 if [ -f $hook.disabled ]; then

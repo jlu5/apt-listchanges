@@ -1,13 +1,13 @@
 # Catalan translation of apt-listchanges Debconf templates
-# Copyright © 2003, 2005 Software In the Public Interest, Inc.
-# Jordi Mallach <jordi@debian.org>, 2003, 2005.
+# Copyright © 2003, 2005, 2007 Software In the Public Interest, Inc.
+# Jordi Mallach <jordi@debian.org>, 2003, 2005, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.57\n"
+"Project-Id-Version: apt-listchanges 2.72.2\n"
 "Report-Msgid-Bugs-To: madcoder@debian.org\n"
 "POT-Creation-Date: 2006-08-11 16:20+0200\n"
-"PO-Revision-Date: 2005-01-29 12:42+0100\n"
+"PO-Revision-Date: 2007-02-09 15:42+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -113,13 +113,12 @@ msgstr "Adreces de correu que rebran els canvis:"
 #. Type: string
 #. Description
 #: ../templates:2001
-#, fuzzy
 msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
 msgstr ""
-"apt-listchanges pot enviar per correu una còpia dels canvis mostrats. A "
-"quina adreça voleu que s'envien?"
+"apt-listchanges pot enviar per correu una còpia dels canvis mostrats. "
+"Introduïu l'adreça de correu on voleu que s'envien."
 
 #. Type: string
 #. Description
@@ -134,10 +133,9 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:3001
-#, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
 msgstr ""
-"Voleu que l'apt-listchanges demane confirmació després de mostrar els canvis?"
+"Voleu que se us demane confirmació després de mostrar els canvis?"
 
 #. Type: boolean
 #. Description
@@ -190,16 +188,14 @@ msgstr "notícies, ambdós, registres"
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Changes displayed with apt:"
-msgstr "Com voleu que es mostren els canvis amb l'apt?"
+msgstr "Canvis mostrats amb l'apt:"
 
 #. Type: select
 #. Description
 #: ../templates:5002
-#, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Quin tipus de canvis voleu que es mostren amb l'apt?"
+msgstr "Seleccioneu el tipus de canvis que voleu que es mostren amb l'APT."
 
 #. Type: select
 #. Description
