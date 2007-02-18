@@ -1,3 +1,9 @@
+apt-listchanges (2.72.5) unstable; urgency=low
+
+  * Fix a typo in the preinst: .pyo -> .pyc, thanks to Marc Brockschmidt.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 18 Feb 2007 23:39:32 +0100
+
 apt-listchanges (2.72.4) unstable; urgency=low
 
   * Big l10n upload, thanks to many contributors, especially Christian

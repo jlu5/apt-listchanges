@@ -8,7 +8,7 @@ if test -d /usr/lib/site-python; then
     rm -f /usr/lib/site-python/apt_listchanges.pyo
     rm -f /usr/lib/site-python/apt_listchanges.pyc
     rm -f /usr/lib/site-python/DebianControlParser.pyo
-    rm -f /usr/lib/site-python/DebianControlParser.pyo
+    rm -f /usr/lib/site-python/DebianControlParser.pyc
 fi
 
 if [ -f $hook.disabled ]; then
