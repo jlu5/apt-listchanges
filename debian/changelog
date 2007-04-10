@@ -9,8 +9,9 @@ apt-listchanges (2.73) UNRELEASED; urgency=low
   * Fix buggy man pages wrongly stating that --which=both was default whereas
     it's --which=news (Closes: 417931):
      + [es] update thanks to Martin Ferrari.
+     + [it] update thanks to Francesco Pedrini.
 
- -- Pierre Habouzit <madcoder@debian.org>  Wed, 11 Apr 2007 00:48:31 +0200
+ -r Pierre Habouzit <madcoder@debian.org>  Wed, 11 Apr 2007 00:48:31 +0200
 
 apt-listchanges (2.72.5) unstable; urgency=low
 

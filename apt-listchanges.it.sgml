@@ -255,7 +255,7 @@
             notizie &laquo;news&raquo; (da NEWS.Debian e altre fonti),
             storico delle modifiche &laquo;changelogs&raquo; (da
             changelog.Debian e altre fonti) o entrambi &laquo;both&raquo;.
-            Il comportamento predefinito &egrave; mostrare entrambe le cose.
+            Il comportamento predefinito &egrave; mostrare solo le notizie.
           </para>
         </listitem>
       </varlistentry>
