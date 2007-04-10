@@ -248,7 +248,7 @@ versión 1.6 del CVS de
 	  <PARA>
 	    Esta opción indica si se deben mostrar la noticias (de NEWS.Debian
 	    et al.), registros de cambios (de changelog.Debian et al.) o
-	    ambos. Por omisión se muestran ambos.
+	    ambos. Por omisión sólo se muestran las noticias.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>

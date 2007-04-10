@@ -7,7 +7,8 @@ apt-listchanges (2.73) UNRELEASED; urgency=low
     Pryzby (Closes: 343423).
 
   * Fix buggy man pages wrongly stating that --which=both was default whereas
-    it's --which=news (Closes: 417931).
+    it's --which=news (Closes: 417931):
+     + [es] update thanks to Martin Ferrari.
 
  -- Pierre Habouzit <madcoder@debian.org>  Wed, 11 Apr 2007 00:48:31 +0200
 
