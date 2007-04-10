@@ -31,11 +31,7 @@ then
     db_get apt-listchanges/which
     echo "which=$RET" >> $PREFERENCES.new
 
-    if [ -f $PREFERENCES ]; then
-        ucf --debconf-ok $PREFERENCES.new $PREFERENCES
-    else
-        mv $PREFERENCES.new $PREFERENCES
-    fi
+    ucf --debconf-ok $PREFERENCES.new $PREFERENCES
     rm -f $PREFERENCES.new
 
     ## Cleanup from older versions

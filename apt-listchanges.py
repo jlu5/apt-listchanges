@@ -24,7 +24,7 @@
 #   MA 02111-1307 USA
 #
 
-import sys
+import sys, os
 import apt_pkg
 import locale
 import gettext
@@ -52,7 +52,13 @@ def main():
     apt_pkg.InitSystem()
 
     if config.apt_mode:
+        # stdin is a pipe
         debs = apt_listchanges.read_apt_pipeline(config)
+
+    # Give any forked processes (eg. lynx) a normal stdin;
+    # See Debian Bug #343423
+    os.close(0)
+    tty = open('/dev/tty', 'r+')
 
     if config.frontend == 'none':
         sys.exit(0)
