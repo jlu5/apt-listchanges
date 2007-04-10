@@ -245,7 +245,7 @@
 	  <PARA>
 	    This option selects whether news (from NEWS.Debian et
 	    al.), changelogs (from changelog.Debian et al.) or both
-	    should be displayed.  The default is to display both.
+	    should be displayed.  The default is to display only news.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>

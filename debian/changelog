@@ -6,6 +6,9 @@ apt-listchanges (2.73) UNRELEASED; urgency=low
   * Fix a problem with applications running in a terminal, thanks to Justin
     Pryzby (Closes: 343423).
 
+  * Fix buggy man pages wrongly stating that --which=both was default whereas
+    it's --which=news (Closes: 417931).
+
  -- Pierre Habouzit <madcoder@debian.org>  Wed, 11 Apr 2007 00:48:31 +0200
 
 apt-listchanges (2.72.5) unstable; urgency=low

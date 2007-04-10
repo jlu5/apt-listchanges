@@ -250,7 +250,7 @@
             Cette option permet de choisir entre l'affichage des messages
             de nouveautés (récupérés dans NEWS.Debian et d'autres), des journaux de
             modifications (récupérés dans changelog.Debian et d'autres) ou des deux.
-            Par défaut, les deux sont affichés.
+            Par défaut, uniquement les nouveautés sont affichées.
           </PARA>
         </LISTITEM>
       </VARLISTENTRY>
