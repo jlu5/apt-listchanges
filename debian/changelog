@@ -1,7 +1,7 @@
 apt-listchanges (2.73) UNRELEASED; urgency=low
 
   * Fix a problem in how configuration file is handled with ucf, thanks to
-    Franck Küster (Closes: 412925).
+    Franck Küster (Closes: 393470, 393886, 412925).
 
   * Fix a problem with applications running in a terminal, thanks to Justin
     Pryzby (Closes: 343423).
