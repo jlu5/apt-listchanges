@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-02-18 21:24+CET\n"
+"POT-Creation-Date: 2007-04-11 01:36+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,48 +15,48 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: ../apt-listchanges.py:89
+#: ../apt-listchanges.py:95
 msgid ""
 "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges.py:114
+#: ../apt-listchanges.py:120
 msgid "%s: will be newly installed"
 msgstr ""
 
-#: ../apt-listchanges.py:123
+#: ../apt-listchanges.py:129
 msgid "%s: Version %s has already been seen"
 msgstr ""
 
-#: ../apt-listchanges.py:156
+#: ../apt-listchanges.py:162
 msgid "News for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:167
+#: ../apt-listchanges.py:173
 msgid "Changes for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:177
+#: ../apt-listchanges.py:183
 msgid "Informational notes"
 msgstr ""
 
-#: ../apt-listchanges.py:189
+#: ../apt-listchanges.py:195
 msgid "Aborting"
 msgstr ""
 
-#: ../apt-listchanges.py:192
+#: ../apt-listchanges.py:198
 msgid "Confirmation failed, don't save seen state"
 msgstr ""
 
-#: ../apt-listchanges.py:198
+#: ../apt-listchanges.py:204
 msgid "apt-listchanges: changelogs for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:202
+#: ../apt-listchanges.py:208
 msgid "apt-listchanges: news for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:214
+#: ../apt-listchanges.py:220
 msgid "didn't find any valid .deb archives"
 msgstr ""
 

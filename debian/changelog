@@ -1,3 +1,9 @@
+apt-listchanges (2.73.1) unstable; urgency=low
+
+  * Only open /dev/tty if present (Closes: 311919).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 19 Apr 2007 12:07:47 +0200
+
 apt-listchanges (2.73) unstable; urgency=low
 
   * Fix a problem in how configuration file is handled with ucf, thanks to
