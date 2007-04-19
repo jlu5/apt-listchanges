@@ -1,3 +1,9 @@
+apt-listchanges (2.73.2) unstable; urgency=low
+
+  * Only open /dev/tty if present (Closes: 311919), properly this time.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 19 Apr 2007 23:42:19 +0200
+
 apt-listchanges (2.73.1) unstable; urgency=low
 
   * Only open /dev/tty if present (Closes: 311919).
