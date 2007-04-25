@@ -60,7 +60,7 @@ def main():
         # See Debian Bug #343423
         tty = open('/dev/tty', 'r+')
         os.close(0)
-        os.dup2(tty.fileno, 0)
+        os.dup2(tty.fileno(), 0)
         tty.close()
     except:
         pass
