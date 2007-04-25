@@ -55,11 +55,15 @@ def main():
         # stdin is a pipe
         debs = apt_listchanges.read_apt_pipeline(config)
 
-    if os.access('/dev/tty', os.R_OK):
+    try:
         # Give any forked processes (eg. lynx) a normal stdin;
         # See Debian Bug #343423
-        os.close(0)
         tty = open('/dev/tty', 'r+')
+        os.close(0)
+        os.dup2(tty.fileno, 0)
+        tty.close()
+    except:
+        pass
 
     if config.frontend == 'none':
         sys.exit(0)
