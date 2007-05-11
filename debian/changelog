@@ -1,3 +1,10 @@
+apt-listchanges (2.74) UNRELEASED; urgency=low
+
+  * binNMUs were not shown because we tracked source packages versions, and
+    not binary package ones (Closes: 423371).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Fri, 11 May 2007 23:46:41 +0200
+
 apt-listchanges (2.73.3) unstable; urgency=low
 
   * It seems that even if present, /dev/tty cannot always be opened, fall back
