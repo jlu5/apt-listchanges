@@ -1,3 +1,10 @@
+apt-listchanges (2.73.3) unstable; urgency=low
+
+  * It seems that even if present, /dev/tty cannot always be opened, fall back
+    to a brute force try/except block (Closes: 311919).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Fri, 11 May 2007 23:12:05 +0200
+
 apt-listchanges (2.73.2) unstable; urgency=low
 
   * Only open /dev/tty if present (Closes: 311919), properly this time.
