@@ -105,13 +105,11 @@ def main():
         pkg = DebianFiles.Package(deb)
         binpackage = pkg.binary
         srcpackage = pkg.source
-        srcversion = pkg.source_version
+        srcversion = pkg.Version # XXX take the real version or we'll lose binNMUs
 
         frontend.update_progress()
         # Show changes later than fromversion
         fromversion = None
-
-        #print "Processing %s (%s)" % (binpackage, srcpackage)
 
         if not config.show_all:
             if config.save_seen and seen.has_key(srcpackage):
@@ -119,7 +117,7 @@ def main():
             else:
                 statusentry = status.find('Package', binpackage)
                 if statusentry and statusentry.installed():
-                    fromversion = statusentry.sourceversion()
+                    fromversion = statusentry.Version
                 else:
                     # Package not installed or seen
                     notes.append(_("%s: will be newly installed") % binpackage)

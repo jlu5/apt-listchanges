@@ -54,8 +54,6 @@ def numeric_urgency(u):
 
 
 class ControlStanza:
-    sourceversionre = re.compile('\((?P<version>.*).*\)')
-
     def __init__(self, str):
         field = None
 
@@ -71,13 +69,6 @@ class ControlStanza:
 
     def source(self):
         return getattr(self, 'Source', self.Package).split(' ')[0]
-
-    def sourceversion(self):
-        if hasattr(self, 'Source'):
-            m = self.sourceversionre.search(self.Source)
-            if m:
-                return m.group('version')
-        return getattr(self, 'Version', None)
 
     def installed(self):
         return hasattr(self, 'Status') and self.Status.split(' ')[2] == 'installed'
@@ -121,9 +112,9 @@ class Package:
         parser.readdeb(self.path)
         pkgdata = parser.stanzas[0]
 
-        self.binary = pkgdata.Package
-        self.source = pkgdata.source()
-        self.source_version = pkgdata.sourceversion()
+        self.binary  = pkgdata.Package
+        self.source  = pkgdata.source()
+        self.Version = pkgdata.Version
 
     def extract_changes(self, which, since_version=None):
         '''Extract changelog entries, news or both from the package.
