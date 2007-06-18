@@ -1,0 +1,32 @@
+apt-listchanges
+===============
+
+******************************************************************************
+Due to the demand, here is a quick overview of how apt-listchanges works.
+******************************************************************************
+
+While upgrading a package _package_, apt-listchanges does the following:
+
+1. finds the name of its _source package_ ;
+2. see if this _source package_ has already showed up in its status database
+   or not, if not jump to 4 ;
+3. read _package_ changelog from its .deb and append the data to the data to
+   be shown ;
+4. update this _source package_ as seen in the status database.
+
+This is done for every package that is going to be installed or upgraded.
+
+The reasons for a changelog not to show up are:
+* you never installed any binary package from a that source package before,
+  meaning that `apt-listchanges` breaks each time a source package is renamed,
+  I can't fix that ;
+* there is no new changelog entry:
+  - `apt-get install --reinstall`) ;
+  - or you already installed a binary package from the same source and the
+    same version.
+* `apt-listchanges` was unable to guess the package source name (should not
+  happen);
+* `apt-listchanges` was unable to find the Debian changelog in the binary
+  package (should not happen either).
+
+
