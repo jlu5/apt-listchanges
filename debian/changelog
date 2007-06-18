@@ -1,10 +1,10 @@
-apt-listchanges (2.74) UNRELEASED; urgency=low
+apt-listchanges (2.74) unstable; urgency=low
 
   * binNMUs were not shown because we tracked source packages versions, and
     not binary package ones (Closes: 423371).
   * Document apt-listchanges internals (Closes: 411075).
 
- -- Pierre Habouzit <madcoder@debian.org>  Mon, 18 Jun 2007 15:18:50 +0100
+ -- Pierre Habouzit <madcoder@debian.org>  Mon, 18 Jun 2007 15:22:43 +0100
 
 apt-listchanges (2.73.3) unstable; urgency=low
 
