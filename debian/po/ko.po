@@ -20,7 +20,7 @@ msgstr ""
 "Last-Translator:  Eungkyu Song <eungkyu@sparcs.kaist.ac.kr>\n"
 "Language-Team:  Eungkyu Song <eungkyu@sparcs.kaist.ac.kr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=EUC-KR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: select
@@ -78,7 +78,7 @@ msgstr ""
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"apt-listchanges´Â changelog Ç×¸ñÀ» ¿©·¯°¡Áö ¹æ¹ıÀ¸·Î Ç¥½ÃÇÒ ¼ö ÀÖ½À´Ï´Ù."
+"apt-listchangesëŠ” changelog í•­ëª©ì„ ì—¬ëŸ¬ê°€ì§€ ë°©ë²•ìœ¼ë¡œ í‘œì‹œí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤."
 
 #. Type: select
 #. Description
@@ -117,8 +117,8 @@ msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
 msgstr ""
-"EmailÀ» ÅëÇØ changelog Ç×¸ñÀ¸·Î º¸³»µµ·Ï ¼±ÅÃÇß½À´Ï´Ù.  ¾î¶² ÁÖ¼Ò·Î ±×°ÍÀ» º¸"
-"³¾±î¿ä?"
+"Emailì„ í†µí•´ changelog í•­ëª©ìœ¼ë¡œ ë³´ë‚´ë„ë¡ ì„ íƒí–ˆìŠµë‹ˆë‹¤.  ì–´ë–¤ ì£¼ì†Œë¡œ ê·¸ê²ƒì„ ë³´"
+"ë‚¼ê¹Œìš”?"
 
 #. Type: string
 #. Description
@@ -133,7 +133,7 @@ msgstr ""
 #: ../templates:3001
 #, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
-msgstr "changelog¸¦ Ç¥½ÃÇÑ ´ÙÀ½¿¡ È®ÀÎÇÏ´Â Áú¹®À» ÇÒ±î¿ä?"
+msgstr "changelogë¥¼ í‘œì‹œí•œ ë‹¤ìŒì— í™•ì¸í•˜ëŠ” ì§ˆë¬¸ì„ í• ê¹Œìš”?"
 
 #. Type: boolean
 #. Description
@@ -145,9 +145,9 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"changelog Ç×¸ñÀ» Ç¥½ÃÇÑ ´ÙÀ½¿¡, apt-listchanges´Â °è¼ÓÇÒÁö ¸»Áö Áú¹®À» ÇÒ ¼ö "
-"ÀÖ½À´Ï´Ù. ÀÌ°ÍÀº apt·ÎºÎÅÍ ½ÇÇàµÉ ¶§ À¯¿ëÇÕ´Ï´Ù. (¾ÆÁ÷) ¿øÇÏÁö ¾Ê´Â º¯°æÀ» È®"
-"ÀÎÇßÀ» ¶§ ¾÷±×·¹ÀÌµå¸¦ Ãë¼ÒÇÒ ±âÈ¸¸¦ ÁÖ±â ¶§¹®ÀÔ´Ï´Ù."
+"changelog í•­ëª©ì„ í‘œì‹œí•œ ë‹¤ìŒì—, apt-listchangesëŠ” ê³„ì†í• ì§€ ë§ì§€ ì§ˆë¬¸ì„ í•  ìˆ˜ "
+"ìˆìŠµë‹ˆë‹¤. ì´ê²ƒì€ aptë¡œë¶€í„° ì‹¤í–‰ë  ë•Œ ìœ ìš©í•©ë‹ˆë‹¤. (ì•„ì§) ì›í•˜ì§€ ì•ŠëŠ” ë³€ê²½ì„ í™•"
+"ì¸í–ˆì„ ë•Œ ì—…ê·¸ë ˆì´ë“œë¥¼ ì·¨ì†Œí•  ê¸°íšŒë¥¼ ì£¼ê¸° ë•Œë¬¸ì…ë‹ˆë‹¤."
 
 #. Type: boolean
 #. Description
@@ -157,15 +157,15 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"ÀÌ ¼³Á¤Àº apt·ÎºÎÅÍ ½ÇÇàÇÒ ¶§¸¸ Àû¿ëµË´Ï´Ù.  ´Ù¸¥ °æ¿ì¿¡´Â, ¸í·ÉÁÙ ¿É¼ÇÀ¸·Î "
-"¿äÃ»ÇÒ ¼ö ÀÖ½À´Ï´Ù."
+"ì´ ì„¤ì •ì€ aptë¡œë¶€í„° ì‹¤í–‰í•  ë•Œë§Œ ì ìš©ë©ë‹ˆë‹¤.  ë‹¤ë¥¸ ê²½ìš°ì—ëŠ”, ëª…ë ¹ì¤„ ì˜µì…˜ìœ¼ë¡œ "
+"ìš”ì²­í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤."
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
 #, fuzzy
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "´©±¸¿¡°Ô changelog Ç×¸ñÀ¸·Î mail·Î º¸³¾±î¿ä?"
+msgstr "ëˆ„êµ¬ì—ê²Œ changelog í•­ëª©ìœ¼ë¡œ mailë¡œ ë³´ë‚¼ê¹Œìš”?"
 
 #. Type: boolean
 #. Description
@@ -187,14 +187,14 @@ msgstr ""
 #: ../templates:5002
 #, fuzzy
 msgid "Changes displayed with apt:"
-msgstr "±âº»ÀûÀ¸·Î ¾î¶»°Ô changelog¸¦ Ç¥½ÃÇÏ°Ô ÇÒ±î¿ä?"
+msgstr "ê¸°ë³¸ì ìœ¼ë¡œ ì–´ë–»ê²Œ changelogë¥¼ í‘œì‹œí•˜ê²Œ í• ê¹Œìš”?"
 
 #. Type: select
 #. Description
 #: ../templates:5002
 #, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "±âº»ÀûÀ¸·Î ¾î¶»°Ô changelog¸¦ Ç¥½ÃÇÏ°Ô ÇÒ±î¿ä?"
+msgstr "ê¸°ë³¸ì ìœ¼ë¡œ ì–´ë–»ê²Œ changelogë¥¼ í‘œì‹œí•˜ê²Œ í• ê¹Œìš”?"
 
 #. Type: select
 #. Description
@@ -208,37 +208,37 @@ msgstr ""
 #, fuzzy
 #~ msgid ""
 #~ "pager - Use your preferred pager to display changes one page at a time"
-#~ msgstr "pager - ¼±È£ÇÏ´Â pager¸¦ »ç¿ëÇÕ´Ï´Ù"
+#~ msgstr "pager - ì„ í˜¸í•˜ëŠ” pagerë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤"
 
 #, fuzzy
 #~ msgid "browser - Display HTML-formatted changes using a web browser"
-#~ msgstr "xterm-pager - ¼±È£ÇÏ´Â pager¸¦ ¹é±×¶ó¿îµåÀÇ xterm ¾È¿¡¼­ »ç¿ëÇÕ´Ï´Ù"
+#~ msgstr "xterm-pager - ì„ í˜¸í•˜ëŠ” pagerë¥¼ ë°±ê·¸ë¼ìš´ë“œì˜ xterm ì•ˆì—ì„œ ì‚¬ìš©í•©ë‹ˆë‹¤"
 
 #, fuzzy
 #~ msgid "xterm-pager - Like pager, but in an xterm in the background"
 #~ msgstr ""
-#~ "newt - ÅØ½ºÆ®¸ğµå Ã¢À» »ç¿ëÇÏ´Â, ÅÍ¹Ì³Î ±×·¡ÇÈ ÀÎÅÍÆäÀÌ½º¸¦ »ç¿ëÇÕ´Ï´Ù (ÀÌ"
-#~ "°ÍÀ» »ç¿ëÇÏ±â À§ÇØ¼­´Â libnewt-perl¸¦ ¼³Ä¡ÇØ¾ß ÇÕ´Ï´Ù)"
+#~ "newt - í…ìŠ¤íŠ¸ëª¨ë“œ ì°½ì„ ì‚¬ìš©í•˜ëŠ”, í„°ë¯¸ë„ ê·¸ë˜í”½ ì¸í„°í˜ì´ìŠ¤ë¥¼ ì‚¬ìš©í•©ë‹ˆë‹¤ (ì´"
+#~ "ê²ƒì„ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œëŠ” libnewt-perlë¥¼ ì„¤ì¹˜í•´ì•¼ í•©ë‹ˆë‹¤)"
 
 #, fuzzy
 #~ msgid "xterm-browser - Like browser, but in an xterm in the background"
-#~ msgstr "text  - changelog¸¦ ÅÍ¹Ì³Î¿¡ Ãâ·ÂÇÕ´Ï´Ù (ÁßÁö ¾øÀÌ)"
+#~ msgstr "text  - changelogë¥¼ í„°ë¯¸ë„ì— ì¶œë ¥í•©ë‹ˆë‹¤ (ì¤‘ì§€ ì—†ì´)"
 
 #, fuzzy
 #~ msgid "text  - Print changes to your terminal (without pausing)"
 #~ msgstr ""
-#~ "mail  - EmailÀ» °ÅÃÄ¼­ changelog¸¦ º¸³À´Ï´Ù (ÁÖ¼Ò¸¦ ¹°¾îº¼ °ÍÀÔ´Ï´Ù)"
+#~ "mail  - Emailì„ ê±°ì³ì„œ changelogë¥¼ ë³´ëƒ…ë‹ˆë‹¤ (ì£¼ì†Œë¥¼ ë¬¼ì–´ë³¼ ê²ƒì…ë‹ˆë‹¤)"
 
 #, fuzzy
 #~ msgid "mail  - Only send changes via mail"
-#~ msgstr "ÀÌ ¼³Á¤Àº ¸í·ÉÇà ¿É¼Ç¿¡¼­ ¹«½ÃÇÒ ¼ö ÀÖ½À´Ï´Ù."
+#~ msgstr "ì´ ì„¤ì •ì€ ëª…ë ¹í–‰ ì˜µì…˜ì—ì„œ ë¬´ì‹œí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤."
 
 #, fuzzy
 #~ msgid "To whom should apt-listchanges mail changes?"
-#~ msgstr "´©±¸¿¡°Ô changelog Ç×¸ñÀ¸·Î mail·Î º¸³¾±î¿ä?"
+#~ msgstr "ëˆ„êµ¬ì—ê²Œ changelog í•­ëª©ìœ¼ë¡œ mailë¡œ ë³´ë‚¼ê¹Œìš”?"
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
-#~ msgstr "apt-listchanges°¡ /etc/apt/listchanges.conf¸¦ µ¤¾î¾²µµ·Ï ÇÒ±î¿ä?"
+#~ msgstr "apt-listchangesê°€ /etc/apt/listchanges.confë¥¼ ë®ì–´ì“°ë„ë¡ í• ê¹Œìš”?"
 
 #~ msgid ""
 #~ "apt-listchanges can configure all of the options in /etc/apt/listchanges."
@@ -246,13 +246,13 @@ msgstr ""
 #~ "apt-listchanges is run, and is used to set defaults.  All of the options "
 #~ "can be overridden on the command line."
 #~ msgstr ""
-#~ "apt-listchanges´Â /etc/apt/listchanges.confÀÇ ¸ğµç ¿É¼ÇÀ» Áú¹®À¸·Î ¼³Á¤ÇÒ "
-#~ "¼ö ÀÖ½À´Ï´Ù. ÀÌ ÆÄÀÏÀº apt-listchanges°¡ ½ÇÇàµÉ ¶§¸¶´Ù ÀĞ°í, ±âº»°ªÀ» ¼³Á¤"
-#~ "ÇÏ±â À§ÇØ¼­ ¾²ÀÔ´Ï´Ù.  ¸ğµç ¿É¼ÇÀº ¸í·ÉÁÙ¿¡¼­ ¹«½ÃµÉ ¼ö ÀÖ½À´Ï´Ù."
+#~ "apt-listchangesëŠ” /etc/apt/listchanges.confì˜ ëª¨ë“  ì˜µì…˜ì„ ì§ˆë¬¸ìœ¼ë¡œ ì„¤ì •í•  "
+#~ "ìˆ˜ ìˆìŠµë‹ˆë‹¤. ì´ íŒŒì¼ì€ apt-listchangesê°€ ì‹¤í–‰ë  ë•Œë§ˆë‹¤ ì½ê³ , ê¸°ë³¸ê°’ì„ ì„¤ì •"
+#~ "í•˜ê¸° ìœ„í•´ì„œ ì“°ì…ë‹ˆë‹¤.  ëª¨ë“  ì˜µì…˜ì€ ëª…ë ¹ì¤„ì—ì„œ ë¬´ì‹œë  ìˆ˜ ìˆìŠµë‹ˆë‹¤."
 
 #~ msgid ""
 #~ "If you want to edit /etc/apt/listchanges.conf manually for whatever "
 #~ "reason, answer \"no\" now."
 #~ msgstr ""
-#~ "¾î¶² ÀÌÀ¯¿¡µç /etc/apt/listchanges.conf¸¦ ¼Õ¼ö ¼öÁ¤ÇÏ°í ½Í´Ù¸é, Áö±İ \"¾Æ"
-#~ "´Ï¿À\"¿¡ ´äÇÏ¼¼¿ä."
+#~ "ì–´ë–¤ ì´ìœ ì—ë“  /etc/apt/listchanges.confë¥¼ ì†ìˆ˜ ìˆ˜ì •í•˜ê³  ì‹¶ë‹¤ë©´, ì§€ê¸ˆ \"ì•„"
+#~ "ë‹ˆì˜¤\"ì— ë‹µí•˜ì„¸ìš”."

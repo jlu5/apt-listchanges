@@ -10,26 +10,26 @@ msgstr ""
 "Last-Translator: Christian Perrier <bubulle@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n>1;\n"
 
 #: ../apt-listchanges.py:85
 msgid "Unknown frontend: %s\n"
-msgstr "Interface inconnue : %s\n"
+msgstr "Interface inconnueÂ : %s\n"
 
 #: ../apt-listchanges.py:110
 msgid "%s: will be newly installed"
-msgstr "%s : sera installé pour la première fois"
+msgstr "%sÂ : sera installÃ© pour la premiÃ¨re fois"
 
 #: ../apt-listchanges.py:119
 msgid "%s: Version %s has already been seen"
-msgstr "%s : la version %s a déjà été vue"
+msgstr "%sÂ : la version %s a dÃ©jÃ  Ã©tÃ© vue"
 
 #: ../apt-listchanges.py:152
 msgid "News for %s"
-msgstr "Nouveautés pour %s"
+msgstr "NouveautÃ©s pour %s"
 
 #: ../apt-listchanges.py:163
 msgid "Changes for %s"
@@ -45,15 +45,15 @@ msgstr "Abandon"
 
 #: ../apt-listchanges.py:188
 msgid "Confirmation failed, don't save seen state"
-msgstr "Échec de la confirmation, état vu (« seen ») non sauvegardé"
+msgstr "Ã‰chec de la confirmation, Ã©tat vu (Â«Â seenÂ Â») non sauvegardÃ©"
 
 #: ../apt-listchanges.py:194
 msgid "apt-listchanges: changelogs for %s"
-msgstr "apt-listchanges : journaux des modifications (« changelogs ») pour %s"
+msgstr "apt-listchangesÂ : journaux des modifications (Â«Â changelogsÂ Â») pour %s"
 
 #: ../apt-listchanges.py:198
 msgid "apt-listchanges: news for %s"
-msgstr "apt-listchanges : nouveautés pour %s"
+msgstr "apt-listchangesÂ : nouveautÃ©s pour %s"
 
 #: ../apt-listchanges.py:210
 msgid "didn't find any valid .deb archives"
@@ -61,15 +61,15 @@ msgstr "impossible de trouver une archive .deb valide"
 
 #: ../apt-listchanges/apt_listchanges.py:103
 msgid "Ignoring `%s' (seems to be a directory !)"
-msgstr "« %s » ignoré (semble être un répertoire)"
+msgstr "Â«Â %sÂ Â» ignorÃ© (semble Ãªtre un rÃ©pertoire)"
 
 #: ../apt-listchanges/apt_listchanges.py:197
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
-msgstr "Syntaxe : apt-listchanges [options] {--apt | fichier.deb ...}\n"
+msgstr "SyntaxeÂ : apt-listchanges [options] {--apt | fichier.deb ...}\n"
 
 #: ../apt-listchanges/apt_listchanges.py:252
 msgid "Unknown option %s for --which.  Allowed are: %s."
-msgstr "Option %s inconnue pour --which. Les options valables sont : %s"
+msgstr "Option %s inconnue pour --which. Les options valables sontÂ : %s"
 
 #: ../apt-listchanges/apt_listchanges.py:268
 msgid ""
@@ -77,26 +77,26 @@ msgid ""
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 "VERSION incorrecte ou manquante dans l'affichage d'apt\n"
-"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version est-il bien à 2 ?)\n"
+"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version est-il bien Ã  2Â ?)\n"
 
 #: ../apt-listchanges/apt_listchanges.py:309
 msgid "Mailing %s: %s"
-msgstr "Envoi des modifications par courriel à %s : %s"
+msgstr "Envoi des modifications par courriel Ã  %sÂ : %s"
 
 #: ../apt-listchanges/apt_listchanges.py:333
 msgid "The %s frontend is deprecated, using pager"
-msgstr "L'interface %s est obsolète, utilisation de l'afficheur page à page"
+msgstr "L'interface %s est obsolÃ¨te, utilisation de l'afficheur page Ã  page"
 
 #: ../apt-listchanges/apt_listchanges.py:377
 msgid "Do you want to continue? [Y/n]? "
-msgstr "Souhaitez-vous continuer [O/n] ? "
+msgstr "Souhaitez-vous continuer [O/n]Â ? "
 
 #: ../apt-listchanges/apt_listchanges.py:390
 #: ../apt-listchanges/apt_listchanges.py:410
 #: ../apt-listchanges/apt_listchanges.py:418
 msgid "Reading changelogs"
-msgstr "Lecture des fichiers de modifications (« changelog »)"
+msgstr "Lecture des fichiers de modifications (Â«Â changelogÂ Â»)"
 
 #: ../apt-listchanges/apt_listchanges.py:418
 msgid "Done"
-msgstr "Terminé"
+msgstr "TerminÃ©"

@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Jaakko Kangasharju <ashar@iki.fi>\n"
 "Language-Team: Finnish <debian-l10-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../apt-listchanges.py:88
@@ -23,7 +23,7 @@ msgstr "%s on uusi asennus"
 
 #: ../apt-listchanges.py:122
 msgid "%s: Version %s has already been seen"
-msgstr "Paketin %s versio %s on n‰hty aiemmin"
+msgstr "Paketin %s versio %s on n√§hty aiemmin"
 
 #: ../apt-listchanges.py:155
 #, fuzzy
@@ -58,7 +58,7 @@ msgstr "apt-listchangesin tulostus koneelta %s"
 
 #: ../apt-listchanges.py:213
 msgid "didn't find any valid .deb archives"
-msgstr "en lˆyt‰nyt kelvollisia .deb-arkistoja"
+msgstr "en l√∂yt√§nyt kelvollisia .deb-arkistoja"
 
 #: ../apt-listchanges/ALCConfig.py:78
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
@@ -77,7 +77,7 @@ msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
-"V‰‰r‰ tai puuttuva VERSION putkessa aptilta\n"
+"V√§√§r√§ tai puuttuva VERSION putkessa aptilta\n"
 "(onko Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version arvoltaan 2?)\n"
 
 #: ../apt-listchanges/apt_listchanges.py:89
@@ -88,11 +88,11 @@ msgstr "Postitan muutoslokit osoitteeseen %s"
 #: ../apt-listchanges/apt_listchanges.py:113
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
-msgstr "Newt-liittym‰ on vanhentunut, k‰yt‰n sivutinta"
+msgstr "Newt-liittym√§ on vanhentunut, k√§yt√§n sivutinta"
 
 #: ../apt-listchanges/apt_listchanges.py:157
 msgid "Do you want to continue? [Y/n]? "
-msgstr "Haluatko jatkaa? [Kyll‰=y/ei=n]? "
+msgstr "Haluatko jatkaa? [Kyll√§=y/ei=n]? "
 
 #: ../apt-listchanges/apt_listchanges.py:170
 #: ../apt-listchanges/apt_listchanges.py:190

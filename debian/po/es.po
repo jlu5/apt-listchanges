@@ -12,8 +12,8 @@
 #    Developers do not need to manually edit POT or PO files.
 #
 # Jordi Mallach <jordi@debian.org>, 2002
-# David Martínez Moreno <ender@debian.org>, 2002
-# Carlos Valdivia Yagüe <valyag@dat.etsit.upm.es>, 2003
+# David MartÃ­nez Moreno <ender@debian.org>, 2002
+# Carlos Valdivia YagÃ¼e <valyag@dat.etsit.upm.es>, 2003
 # Ricardo Mones <mones@debian.org>, 2005-2006
 #
 msgid ""
@@ -25,7 +25,7 @@ msgstr ""
 "Last-Translator: Ricardo Mones <mones@debian.org>\n"
 "Language-Team: Debian L10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: select
@@ -74,7 +74,7 @@ msgstr "ninguna"
 #. Description
 #: ../templates:1002
 msgid "Method for changes display:"
-msgstr "Método para la visualización de cambios:"
+msgstr "MÃ©todo para la visualizaciÃ³n de cambios:"
 
 #. Type: select
 #. Description
@@ -98,13 +98,13 @@ msgid ""
 " none          : do not run automatically from apt."
 msgstr ""
 " paginador       : use su paginador preferido para mostrar los cambios\n"
-"                 : una página de cada vez,\n"
+"                 : una pÃ¡gina de cada vez,\n"
 " navegador       : mostrar los cambios en formato HTML con un navegador,\n"
 " paginador-xterm : como paginador, pero en una xterm en segundo plano,\n"
 " navegador-xterm : como navegador, pero en una xterm en segundo plano,\n"
 " texto           : escribir los cambios en la terminal (sin pausas),\n"
-" correo          : enviar los cambios sólo por correo,\n"
-" ninguna         : no ejecutar automáticamente desde apt."
+" correo          : enviar los cambios sÃ³lo por correo,\n"
+" ninguna         : no ejecutar automÃ¡ticamente desde apt."
 
 #. Type: select
 #. Description
@@ -114,16 +114,16 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Puede reemplazar esta configuración usando una opción en la línea de órdenes "
-"o con una variable de entorno. Tenga en cuenta que aún así puede mandar una "
+"Puede reemplazar esta configuraciÃ³n usando una opciÃ³n en la lÃ­nea de Ã³rdenes "
+"o con una variable de entorno. Tenga en cuenta que aÃºn asÃ­ puede mandar una "
 "copia por correo habiendo seleccionado cualquiera de las maneras de mostrar "
-"los cambios, excepto con «ninguna»."
+"los cambios, excepto con Â«ningunaÂ»."
 
 #. Type: string
 #. Description
 #: ../templates:2001
 msgid "E-mail Address(es) which will receive changes:"
-msgstr "Dirección(es) de correo que recibirán los cambios:"
+msgstr "DirecciÃ³n(es) de correo que recibirÃ¡n los cambios:"
 
 #. Type: string
 #. Description
@@ -133,7 +133,7 @@ msgid ""
 "email address the changes should be sent to."
 msgstr ""
 "apt-listchanges puede enviar una copia de los cambios mostrados. Por favor "
-"introduzca la dirección de correo a la desee que se envíen."
+"introduzca la direcciÃ³n de correo a la desee que se envÃ­en."
 
 #. Type: string
 #. Description
@@ -142,14 +142,14 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Se pueden indicar múltiples direcciones, separadas por comas. Déjelo en "
-"blanco si no quiere que se mande ningún correo."
+"Se pueden indicar mÃºltiples direcciones, separadas por comas. DÃ©jelo en "
+"blanco si no quiere que se mande ningÃºn correo."
 
 #. Type: boolean
 #. Description
 #: ../templates:3001
 msgid "Prompt for confirmation after displaying changes?"
-msgstr "¿Pedir confirmación después de mostrar los cambios?"
+msgstr "Â¿Pedir confirmaciÃ³n despuÃ©s de mostrar los cambios?"
 
 #. Type: boolean
 #. Description
@@ -160,10 +160,10 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Después de darle la oportunidad de mostrar los cambios, apt-listchanges "
-"puede preguntar si quiere o no continuar. Ésto es útil cuando se ejecuta "
-"desde apt, ya que le ofrece la oportunidad de abortar la actualización si ve "
-"algún cambio que no quiere aplicar (aún)."
+"DespuÃ©s de darle la oportunidad de mostrar los cambios, apt-listchanges "
+"puede preguntar si quiere o no continuar. Ã‰sto es Ãºtil cuando se ejecuta "
+"desde apt, ya que le ofrece la oportunidad de abortar la actualizaciÃ³n si ve "
+"algÃºn cambio que no quiere aplicar (aÃºn)."
 
 #. Type: boolean
 #. Description
@@ -172,14 +172,14 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Esta opción no afecta a las maneras de mostrar los cambios «correo» o "
-"«ninguna» y se puede modificar desde la línea de comandos."
+"Esta opciÃ³n no afecta a las maneras de mostrar los cambios Â«correoÂ» o "
+"Â«ningunaÂ» y se puede modificar desde la lÃ­nea de comandos."
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "¿Debería apt-listchanges ignorar los cambios que ya se han visto?"
+msgstr "Â¿DeberÃ­a apt-listchanges ignorar los cambios que ya se han visto?"
 
 #. Type: boolean
 #. Description
@@ -190,8 +190,8 @@ msgid ""
 "useful, for example, when retrying an upgrade."
 msgstr ""
 "apt-listchanges puede hacer un seguimiento de los cambios que ya se han "
-"mostrado anteriormente, e ignorarlos en futuras ejecuciones. Esto es útil, "
-"por ejemplo, cuando se reintenta una actualización."
+"mostrado anteriormente, e ignorarlos en futuras ejecuciones. Esto es Ãºtil, "
+"por ejemplo, cuando se reintenta una actualizaciÃ³n."
 
 #. Type: select
 #. Choices
@@ -209,7 +209,7 @@ msgstr "Cambios mostrados con apt:"
 #. Description
 #: ../templates:5002
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Por favor elija qué tipos de cambios deberían mostrarse con APT."
+msgstr "Por favor elija quÃ© tipos de cambios deberÃ­an mostrarse con APT."
 
 #. Type: select
 #. Description
@@ -219,7 +219,6 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" noticias - sólo las noticias importantes\n"
+" noticias - sÃ³lo las noticias importantes\n"
 " ambos - noticias y listas de cambios detallados\n"
-" cambios - sólo las listas de cambios detallados"
-
+" cambios - sÃ³lo las listas de cambios detallados"

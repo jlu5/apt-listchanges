@@ -87,10 +87,10 @@ msgid ""
 " mail          : only send changes via mail;\n"
 " none          : do not run automatically from apt."
 msgstr ""
-" pager         : utilize o seu pager favorito para visualizar as "
-"                 modificações página a página;\n"
-" browser       : visualizar as modificações em formato HTML utilizando um "
-"                 browser web;\n"
+" pager         : utilize o seu pager favorito para visualizar "
+"as                  modificações página a página;\n"
+" browser       : visualizar as modificações em formato HTML utilizando "
+"um                  browser web;\n"
 " xterm-pager   : como um pager, mas com uma consola xterm em fundo;\n"
 " xterm-browser : como um browser, mas·com·uma·consola·xterm·em·fundo;\n"
 " text          : envia as modificações para o seu terminal (sem pausa);\n"
@@ -171,7 +171,8 @@ msgstr ""
 #. Description
 #: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "Deverá o apt-listchanges ignorar as modificações que tenham já sido "
+msgstr ""
+"Deverá o apt-listchanges ignorar as modificações que tenham já sido "
 "visualizadas?"
 
 #. Type: boolean
@@ -202,7 +203,8 @@ msgstr "Modificações visualizadas com o apt:"
 #. Description
 #: ../templates:5002
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Por favor escolha que tipo de modificações devem visualizadas com o APT."
+msgstr ""
+"Por favor escolha que tipo de modificações devem visualizadas com o APT."
 
 #. Type: select
 #. Description

@@ -24,7 +24,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Type: select
 #. Choices
@@ -77,7 +78,8 @@ msgstr "Метод показа изменений:"
 #. Type: select
 #. Description
 #: ../templates:1002
-msgid "apt-listchanges can display package changes in a number of different ways."
+msgid ""
+"apt-listchanges can display package changes in a number of different ways."
 msgstr ""
 "apt-listchanges может отображать записи журнала изменений в пакете "
 "несколькими способами."
@@ -95,7 +97,8 @@ msgid ""
 " mail          : only send changes via mail;\n"
 " none          : do not run automatically from apt."
 msgstr ""
-" пейджер       : предпочитаемый пейджер для постраничного просмотра изменений;\n"
+" пейджер       : предпочитаемый пейджер для постраничного просмотра "
+"изменений;\n"
 " браузер       : просмотр изменений в формате HTML через веб браузер;\n"
 " xterm-пейджер : то же, что и пейджер, но в окне xterm;\n"
 " xterm-браузер : то же, что и браузер, но в окне xterm;\n"
@@ -128,8 +131,8 @@ msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
 msgstr ""
-"apt-listchanges может отправлять копию отображаемых изменений по "
-"электронной почте. Укажите кому должна быть адресована эта почта."
+"apt-listchanges может отправлять копию отображаемых изменений по электронной "
+"почте. Укажите кому должна быть адресована эта почта."
 
 #. Type: string
 #. Description
@@ -138,9 +141,8 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Можно указать несколько адресов, перечислив их через запятую. "
-"Оставьте поле пустым, если не хотите отправлять изменения по "
-"почте."
+"Можно указать несколько адресов, перечислив их через запятую. Оставьте поле "
+"пустым, если не хотите отправлять изменения по почте."
 
 #. Type: boolean
 #. Description
@@ -159,8 +161,8 @@ msgid ""
 msgstr ""
 "После отображения журнала изменений apt-listchanges может спросить нужно ли "
 "продолжать или нет. Это полезно при запуске из apt, так как позволяет "
-"прервать обновление пакета, если вы видите, что в пакете произошли (пока) "
-"не устраивающие вас изменения."
+"прервать обновление пакета, если вы видите, что в пакете произошли (пока) не "
+"устраивающие вас изменения."
 
 #. Type: boolean
 #. Description
@@ -177,8 +179,7 @@ msgstr ""
 #: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr ""
-"Должен ли apt-listchanges пропускать изменения, которые уже "
-"просматривались?"
+"Должен ли apt-listchanges пропускать изменения, которые уже просматривались?"
 
 #. Type: boolean
 #. Description
@@ -220,4 +221,3 @@ msgstr ""
 " новости   - только важные новости\n"
 " все       - новости и изменения\n"
 " изменения - только изменения"
-

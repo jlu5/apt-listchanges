@@ -12,7 +12,7 @@ msgstr ""
 "Last-Translator: Luca Monducci <luca.mo@tiscali.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../apt-listchanges.py:88
@@ -21,11 +21,11 @@ msgstr "Interfaccia sconosciuta: %s\n"
 
 #: ../apt-listchanges.py:113
 msgid "%s: will be newly installed"
-msgstr "%s: verrà installato per la prima volta"
+msgstr "%s: verrÃ  installato per la prima volta"
 
 #: ../apt-listchanges.py:122
 msgid "%s: Version %s has already been seen"
-msgstr "%s : La versione %s è già stata mostrata"
+msgstr "%sÂ : La versione %s Ã¨ giÃ  stata mostrata"
 
 #: ../apt-listchanges.py:155
 msgid "News for %s"
@@ -69,15 +69,15 @@ msgstr "Opzione %s non valida con --which. Quelle consentite sono: %s."
 
 #: ../apt-listchanges/DebianFiles.py:174
 msgid "Ignoring `%s' (seems to be a directory !)"
-msgstr "Ignorata «%s» (sembra essere una directory!)"
+msgstr "Ignorata Â«%sÂ» (sembra essere una directory!)"
 
 #: ../apt-listchanges/apt_listchanges.py:48
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
-"Il valore VERSION dalla pipe apt è sbagliato o inesistente\n"
-"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version è impostato a 2?)\n"
+"Il valore VERSION dalla pipe apt Ã¨ sbagliato o inesistente\n"
+"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version Ã¨ impostato a 2?)\n"
 
 #: ../apt-listchanges/apt_listchanges.py:89
 msgid "Mailing %s: %s"
@@ -85,7 +85,7 @@ msgstr "Invio di %s: %s"
 
 #: ../apt-listchanges/apt_listchanges.py:113
 msgid "The %s frontend is deprecated, using pager"
-msgstr "L'interfaccia %s è deprecata, viene usata pager"
+msgstr "L'interfaccia %s Ã¨ deprecata, viene usata pager"
 
 #: ../apt-listchanges/apt_listchanges.py:157
 msgid "Do you want to continue? [Y/n]? "

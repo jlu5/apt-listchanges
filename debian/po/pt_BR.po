@@ -17,10 +17,10 @@ msgstr ""
 "Report-Msgid-Bugs-To: madcoder@debian.org\n"
 "POT-Creation-Date: 2006-08-11 16:20+0200\n"
 "PO-Revision-Date: 2004-07-31 22:02-0300\n"
-"Last-Translator: André Luís Lopes <andrelop@debian.org>\n"
+"Last-Translator: AndrÃ© LuÃ­s Lopes <andrelop@debian.org>\n"
 "Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: select
@@ -77,7 +77,7 @@ msgstr ""
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"O apt-listchanges pode exibir mudanças nos pacotes de diversas maneiras "
+"O apt-listchanges pode exibir mudanÃ§as nos pacotes de diversas maneiras "
 "diferentes."
 
 #. Type: select
@@ -102,9 +102,9 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Essa configuração pode ser sobreescrita por uma opção de linha de comando ou "
-"uma variável de ambiente. Note que você ainda pode enviar uma cópia dos "
-"changelogs via e-mail usando todos os frontends, exceto a opção 'nenhum'."
+"Essa configuraÃ§Ã£o pode ser sobreescrita por uma opÃ§Ã£o de linha de comando ou "
+"uma variÃ¡vel de ambiente. Note que vocÃª ainda pode enviar uma cÃ³pia dos "
+"changelogs via e-mail usando todos os frontends, exceto a opÃ§Ã£o 'nenhum'."
 
 #. Type: string
 #. Description
@@ -120,8 +120,8 @@ msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
 msgstr ""
-"O apt-listchanges pode enviar uma cópia das mudanças exibidas via e-mail. "
-"Para qual endereço de e-mail as mesmas devem ser enviadas ?"
+"O apt-listchanges pode enviar uma cÃ³pia das mudanÃ§as exibidas via e-mail. "
+"Para qual endereÃ§o de e-mail as mesmas devem ser enviadas ?"
 
 #. Type: string
 #. Description
@@ -130,15 +130,15 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Múltiplos endereços podem ser especificados, separados por vírgulas. "
-"Mantenha em branco caso você não deseje que nenhuma mensagem seja enviada."
+"MÃºltiplos endereÃ§os podem ser especificados, separados por vÃ­rgulas. "
+"Mantenha em branco caso vocÃª nÃ£o deseje que nenhuma mensagem seja enviada."
 
 #. Type: boolean
 #. Description
 #: ../templates:3001
 #, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
-msgstr "O apt-listchanges deverá pedir confirmação após exibir as mudanças ?"
+msgstr "O apt-listchanges deverÃ¡ pedir confirmaÃ§Ã£o apÃ³s exibir as mudanÃ§as ?"
 
 #. Type: boolean
 #. Description
@@ -149,11 +149,11 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Depois de lhe oferecer a chance de ler a lista de mudanças, o apt-"
-"listchanges pode perguntar se você deseja ou não continuar. Isto é útil "
-"quando o apt-listchanges é executado a partir do apt, já que lhe oferece uma "
-"oportunidade de abortar a atualização caso você perceba alguma mudança que "
-"não deseje que seja aplicada (ainda)."
+"Depois de lhe oferecer a chance de ler a lista de mudanÃ§as, o apt-"
+"listchanges pode perguntar se vocÃª deseja ou nÃ£o continuar. Isto Ã© Ãºtil "
+"quando o apt-listchanges Ã© executado a partir do apt, jÃ¡ que lhe oferece uma "
+"oportunidade de abortar a atualizaÃ§Ã£o caso vocÃª perceba alguma mudanÃ§a que "
+"nÃ£o deseje que seja aplicada (ainda)."
 
 #. Type: boolean
 #. Description
@@ -162,14 +162,14 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Essa configuração não se aplica aos frontends \"e-mail\" e \"nenhum\", e "
-"pode ser forçada com uma opção de linha de comando."
+"Essa configuraÃ§Ã£o nÃ£o se aplica aos frontends \"e-mail\" e \"nenhum\", e "
+"pode ser forÃ§ada com uma opÃ§Ã£o de linha de comando."
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "O apt-listchanges deverá omitir as mudanças que já foram vistas ?"
+msgstr "O apt-listchanges deverÃ¡ omitir as mudanÃ§as que jÃ¡ foram vistas ?"
 
 #. Type: boolean
 #. Description
@@ -179,29 +179,29 @@ msgid ""
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"O apt-listchanges possui a habilidade de lembrar quais mudanças já foram "
-"exibidas e omití-las em invocações futuras. Isto é útil, por exemplo, quando "
-"você estiver fazendo uma segunda tentativa de atualização."
+"O apt-listchanges possui a habilidade de lembrar quais mudanÃ§as jÃ¡ foram "
+"exibidas e omitÃ­-las em invocaÃ§Ãµes futuras. Isto Ã© Ãºtil, por exemplo, quando "
+"vocÃª estiver fazendo uma segunda tentativa de atualizaÃ§Ã£o."
 
 #. Type: select
 #. Choices
 #: ../templates:5001
 msgid "news, both, changelogs"
-msgstr "notícias, ambos, logs de mudanças"
+msgstr "notÃ­cias, ambos, logs de mudanÃ§as"
 
 #. Type: select
 #. Description
 #: ../templates:5002
 #, fuzzy
 msgid "Changes displayed with apt:"
-msgstr "Como as mudanças devem ser exibidas com o apt ?"
+msgstr "Como as mudanÃ§as devem ser exibidas com o apt ?"
 
 #. Type: select
 #. Description
 #: ../templates:5002
 #, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Como as mudanças devem ser exibidas com o apt ?"
+msgstr "Como as mudanÃ§as devem ser exibidas com o apt ?"
 
 #. Type: select
 #. Description
@@ -211,9 +211,9 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" notícias         - somente itens de notícias importantes\n"
-" ambos            - ambos notícias e logs de mudanças detalhados\n"
-" logs de mudanças - somente logs de mudanças detalhados"
+" notÃ­cias         - somente itens de notÃ­cias importantes\n"
+" ambos            - ambos notÃ­cias e logs de mudanÃ§as detalhados\n"
+" logs de mudanÃ§as - somente logs de mudanÃ§as detalhados"
 
 #~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 #~ msgstr ""
@@ -223,12 +223,12 @@ msgstr ""
 #~ msgid ""
 #~ "pager - Use your preferred pager to display changes one page at a time"
 #~ msgstr ""
-#~ "paginador - Utiliza seu paginador preferido para exibir mudanças, uma "
-#~ "página por vez"
+#~ "paginador - Utiliza seu paginador preferido para exibir mudanÃ§as, uma "
+#~ "pÃ¡gina por vez"
 
 #~ msgid "browser - Display HTML-formatted changes using a web browser"
 #~ msgstr ""
-#~ "navegador - Exibe as mundaças formatadas em HTML usando um navegador web"
+#~ "navegador - Exibe as mundaÃ§as formatadas em HTML usando um navegador web"
 
 #~ msgid "xterm-pager - Like pager, but in an xterm in the background"
 #~ msgstr ""
@@ -239,19 +239,19 @@ msgstr ""
 #~ "navegador-xterm - Como o navegador, mas em um xterm em segundo plano"
 
 #~ msgid "text  - Print changes to your terminal (without pausing)"
-#~ msgstr "texto - Imprime as mudanças em seu terminal (sem pausas)"
+#~ msgstr "texto - Imprime as mudanÃ§as em seu terminal (sem pausas)"
 
 #~ msgid "mail  - Only send changes via mail"
-#~ msgstr "e-mail - Envia as mudanças somente via e-mail"
+#~ msgstr "e-mail - Envia as mudanÃ§as somente via e-mail"
 
 #~ msgid "none  - Do not run automatically from apt"
-#~ msgstr "nenhuma - Não executa automaticamente a partir do apt"
+#~ msgstr "nenhuma - NÃ£o executa automaticamente a partir do apt"
 
 #~ msgid "root"
 #~ msgstr "root"
 
 #~ msgid "To whom should apt-listchanges mail changes?"
-#~ msgstr "Para quem o apt-listchanges deve enviar as mudanças via e-mail ?"
+#~ msgstr "Para quem o apt-listchanges deve enviar as mudanÃ§as via e-mail ?"
 
 #~ msgid "Should apt-listchanges overwrite your /etc/apt/listchanges.conf?"
 #~ msgstr "apt-listchanges deve modificar seu /etc/apt/listchanges.conf?"
@@ -262,14 +262,14 @@ msgstr ""
 #~ "apt-listchanges is run, and is used to set defaults.  All of the options "
 #~ "can be overridden on the command line."
 #~ msgstr ""
-#~ "apt-listchanges pode configurar todas as opções em /etc/apt/listchanges."
-#~ "conf lhe fazendo algumas perguntas. Este arquivo é lido e processado toda "
-#~ "vez que apt-listchanges é executado, e é usado para definir defaults. "
-#~ "Todas as opções podem ser modificadas na linha de comando."
+#~ "apt-listchanges pode configurar todas as opÃ§Ãµes em /etc/apt/listchanges."
+#~ "conf lhe fazendo algumas perguntas. Este arquivo Ã© lido e processado toda "
+#~ "vez que apt-listchanges Ã© executado, e Ã© usado para definir defaults. "
+#~ "Todas as opÃ§Ãµes podem ser modificadas na linha de comando."
 
 #~ msgid ""
 #~ "If you want to edit /etc/apt/listchanges.conf manually for whatever "
 #~ "reason, answer \"no\" now."
 #~ msgstr ""
-#~ "Se você quer editar /etc/apt/listchanges.conf mannualmente por qualquer "
-#~ "razão, responda \"não\" agora."
+#~ "Se vocÃª quer editar /etc/apt/listchanges.conf mannualmente por qualquer "
+#~ "razÃ£o, responda \"nÃ£o\" agora."

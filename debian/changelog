@@ -1,3 +1,9 @@
+apt-listchanges (2.75) UNRELEASED; urgency=low
+
+  * Recode po files in utf-8 (Closes: 391014).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 05 Aug 2007 18:08:21 +0200
+
 apt-listchanges (2.74) unstable; urgency=low
 
   * binNMUs were not shown because we tracked source packages versions, and

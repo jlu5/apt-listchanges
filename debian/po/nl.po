@@ -22,7 +22,7 @@ msgstr ""
 "Last-Translator: Frans Pop <elendil@planet.nl>\n"
 "Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
@@ -79,8 +79,10 @@ msgstr "Methode voor het tonen van wijzigingen:"
 #. Type: select
 #. Description
 #: ../templates:1002
-msgid "apt-listchanges can display package changes in a number of different ways."
-msgstr "apt-listchanges kan wijzigingen in pakketten op diverse manieren tonen."
+msgid ""
+"apt-listchanges can display package changes in a number of different ways."
+msgstr ""
+"apt-listchanges kan wijzigingen in pakketten op diverse manieren tonen."
 
 #. Type: select
 #. Description
@@ -133,8 +135,8 @@ msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
 msgstr ""
-"apt-listchanges kan een e-mail versturen met een kopie van de getoonde wijzigingen. "
-"Naar welk e-mailadres moeten de wijzigingen worden verstuurd?"
+"apt-listchanges kan een e-mail versturen met een kopie van de getoonde "
+"wijzigingen. Naar welk e-mailadres moeten de wijzigingen worden verstuurd?"
 
 #  Type: string
 #  Description
@@ -181,8 +183,8 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Deze instelling is niet van toepassing op de frontends 'e-mail' en 'geen', en "
-"kan alleen worden ingesteld met een commandoregel-optie."
+"Deze instelling is niet van toepassing op de frontends 'e-mail' en 'geen', "
+"en kan alleen worden ingesteld met een commandoregel-optie."
 
 #  Type: boolean
 #  Description
@@ -203,7 +205,7 @@ msgid ""
 "useful, for example, when retrying an upgrade."
 msgstr ""
 "apt-listchanges kan bijhouden welke wijzigingen reeds getoond zijn, zodat "
-"elke wijziging slechts éénmaal getoond wordt. Dit is nuttig wanneer u, "
+"elke wijziging slechts Ã©Ã©nmaal getoond wordt. Dit is nuttig wanneer u, "
 "bijvoorbeeld, een opwaardering opnieuw dient uit te voeren."
 
 #  Type: select
@@ -243,4 +245,3 @@ msgstr ""
 " nieuws - alleen belangrijke nieuwsberichten\n"
 " beide - zowel nieuws als gedetailleerde changelogs\n"
 " changelogs - alleen gedetailleerde changelogs"
-

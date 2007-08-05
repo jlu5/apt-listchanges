@@ -20,7 +20,7 @@ msgstr ""
 "Last-Translator: Asho Yeh <asho@debian.org.tw>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Chinese\n"
 "X-Poedit-Country: TAIWAN\n"
@@ -76,7 +76,8 @@ msgstr "改變顯示的方法："
 #. Type: select
 #. Description
 #: ../templates:1002
-msgid "apt-listchanges can display package changes in a number of different ways."
+msgid ""
+"apt-listchanges can display package changes in a number of different ways."
 msgstr "apt-listchanges 有三種方式來顯示套件的更動部份。"
 
 #. Type: select
@@ -104,8 +105,13 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:1002
-msgid "This setting can be overridden by a command-line option or an environment variable.  Note that you can still send a copy via mail with all of the frontends except 'none'."
-msgstr "該設定可由命令列參數或環境變數強制改變。注意的是您仍可寄出除了 \"none\" 之外所有的前端訊息。"
+msgid ""
+"This setting can be overridden by a command-line option or an environment "
+"variable.  Note that you can still send a copy via mail with all of the "
+"frontends except 'none'."
+msgstr ""
+"該設定可由命令列參數或環境變數強制改變。注意的是您仍可寄出除了 \"none\" 之外"
+"所有的前端訊息。"
 
 #. Type: string
 #. Description
@@ -116,13 +122,17 @@ msgstr "接收更動記綠的電子郵件信箱："
 #. Type: string
 #. Description
 #: ../templates:2001
-msgid "apt-listchanges can email a copy of displayed changes.  Please enter the email address the changes should be sent to."
+msgid ""
+"apt-listchanges can email a copy of displayed changes.  Please enter the "
+"email address the changes should be sent to."
 msgstr "apt-listchanges 能寄出顯示更動部份時的畫面。請輸入寄送的電子郵件信箱。"
 
 #. Type: string
 #. Description
 #: ../templates:2001
-msgid "Multiple addresses may be specified, delimited by commas.  Leave this empty if you do not want any email to be sent."
+msgid ""
+"Multiple addresses may be specified, delimited by commas.  Leave this empty "
+"if you do not want any email to be sent."
 msgstr "多個位址是可允許的，請用逗號(,)隔開。不想送出郵件的話請保留空白。"
 
 #. Type: boolean
@@ -134,14 +144,24 @@ msgstr "顯示完更動部份後是否要提出確認？"
 #. Type: boolean
 #. Description
 #: ../templates:3001
-msgid "After giving you a chance to read the list of changes, apt-listchanges can ask whether or not you would like to continue. This is useful when running from apt, as it gives you a chance to abort the upgrade if you see a change you do not want to apply (yet)."
-msgstr "從您有機會閱讀更動的列表後，apt-listchanges 會詢問您是否要繼續。搭配 apt 執行時是非常有用的，因為這允許您看到不期望的更動時可以中止升級的動作。"
+msgid ""
+"After giving you a chance to read the list of changes, apt-listchanges can "
+"ask whether or not you would like to continue. This is useful when running "
+"from apt, as it gives you a chance to abort the upgrade if you see a change "
+"you do not want to apply (yet)."
+msgstr ""
+"從您有機會閱讀更動的列表後，apt-listchanges 會詢問您是否要繼續。搭配 apt 執行"
+"時是非常有用的，因為這允許您看到不期望的更動時可以中止升級的動作。"
 
 #. Type: boolean
 #. Description
 #: ../templates:3001
-msgid "This setting does not apply to the 'mail' or 'none' frontends, and can be overridden with a command line option."
-msgstr "該設定不會套用到 \"mail\" 或 \"none\" 前端訊息，使用命令列參數可以強制改變這些設定。"
+msgid ""
+"This setting does not apply to the 'mail' or 'none' frontends, and can be "
+"overridden with a command line option."
+msgstr ""
+"該設定不會套用到 \"mail\" 或 \"none\" 前端訊息，使用命令列參數可以強制改變這"
+"些設定。"
 
 #. Type: boolean
 #. Description
@@ -152,8 +172,13 @@ msgstr "跳過 apt-listchanges 已顯示的更動嗎？"
 #. Type: boolean
 #. Description
 #: ../templates:4001
-msgid "apt-listchanges has the capability to keep track of which changes have already been displayed, and to skip them in future invocations. This is useful, for example, when retrying an upgrade."
-msgstr "apt-listchanges 會記錄已顯示的更動部份，未來遇到相同的情況會自動跳過。這個功能很有用，例如重複嘗試升級時。"
+msgid ""
+"apt-listchanges has the capability to keep track of which changes have "
+"already been displayed, and to skip them in future invocations. This is "
+"useful, for example, when retrying an upgrade."
+msgstr ""
+"apt-listchanges 會記錄已顯示的更動部份，未來遇到相同的情況會自動跳過。這個功"
+"能很有用，例如重複嘗試升級時。"
 
 #. Type: select
 #. Choices
@@ -187,23 +212,31 @@ msgstr ""
 
 #~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 #~ msgstr "pager, browser, xterm-pager, xterm-browser, text, mail, none"
+
 #~ msgid ""
 #~ "pager - Use your preferred pager to display changes one page at a time"
 #~ msgstr "pager - 使用您偏好的分頁器來顯示更動部份"
+
 #~ msgid "browser - Display HTML-formatted changes using a web browser"
 #~ msgstr "browser - 更動的部份以 HTML 格式輸出並用瀏覽器顯示"
+
 #~ msgid "xterm-pager - Like pager, but in an xterm in the background"
 #~ msgstr "xterm-pager - 類似 pager，但在 xterm 的背景下"
+
 #~ msgid "xterm-browser - Like browser, but in an xterm in the background"
 #~ msgstr "xterm-browser - 類似瀏覽器，但在 xterm 的背景下"
+
 #~ msgid "text  - Print changes to your terminal (without pausing)"
 #~ msgstr "text  - 印出更動的部份到終端機 (不會暫停)"
+
 #~ msgid "mail  - Only send changes via mail"
 #~ msgstr "mail  - 透過 mail 只送出更動的部份"
+
 #~ msgid "none  - Do not run automatically from apt"
 #~ msgstr "none  - 取消執行 apt 時自動執行 apt-listchanges"
+
 #~ msgid "root"
 #~ msgstr "root"
+
 #~ msgid "To whom should apt-listchanges mail changes?"
 #~ msgstr "apt-listchanges 要將更動的部份寄給誰？"
-

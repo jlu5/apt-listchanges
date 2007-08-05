@@ -1,5 +1,5 @@
 # Galician translation of apt-listchanges
-# Copyright (C) 2001 Jacobo Tarrío Barreiro, jtarrio@gpul.org
+# Copyright (C) 2001 Jacobo TarrÃ­o Barreiro, jtarrio@gpul.org
 # Jacobo Tarrio <jtarrio@gpul.org>, 2001.
 #
 msgid ""
@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Jacobo Tarrio <jtarrio@trasno.net>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../apt-listchanges.py:88
@@ -23,7 +23,7 @@ msgstr "%s: hase instalar por primeira vez"
 
 #: ../apt-listchanges.py:122
 msgid "%s: Version %s has already been seen"
-msgstr "%s: a versión %s xa está instalada"
+msgstr "%s: a versiÃ³n %s xa estÃ¡ instalada"
 
 #: ../apt-listchanges.py:155
 #, fuzzy
@@ -49,16 +49,16 @@ msgstr ""
 #: ../apt-listchanges.py:197
 #, fuzzy
 msgid "apt-listchanges: changelogs for %s"
-msgstr "Saída de apt-listchanges para %s"
+msgstr "SaÃ­da de apt-listchanges para %s"
 
 #: ../apt-listchanges.py:201
 #, fuzzy
 msgid "apt-listchanges: news for %s"
-msgstr "Saída de apt-listchanges para %s"
+msgstr "SaÃ­da de apt-listchanges para %s"
 
 #: ../apt-listchanges.py:213
 msgid "didn't find any valid .deb archives"
-msgstr "non se atopou ningún arquivo .deb válido"
+msgstr "non se atopou ningÃºn arquivo .deb vÃ¡lido"
 
 #: ../apt-listchanges/ALCConfig.py:78
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
@@ -77,28 +77,28 @@ msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
-"VERSION incorrecta ou omitida na canalización de apt\n"
-"(¿Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version vale 2?)\n"
+"VERSION incorrecta ou omitida na canalizaciÃ³n de apt\n"
+"(Â¿Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version vale 2?)\n"
 
 #: ../apt-listchanges/apt_listchanges.py:89
 #, fuzzy
 msgid "Mailing %s: %s"
-msgstr "Enviando os rexistros de modificacións a %s"
+msgstr "Enviando os rexistros de modificaciÃ³ns a %s"
 
 #: ../apt-listchanges/apt_listchanges.py:113
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
-msgstr "A interface newt é obsoleta; emprégase o visor"
+msgstr "A interface newt Ã© obsoleta; emprÃ©gase o visor"
 
 #: ../apt-listchanges/apt_listchanges.py:157
 msgid "Do you want to continue? [Y/n]? "
-msgstr "¿Quere continuar [Y/n]? "
+msgstr "Â¿Quere continuar [Y/n]? "
 
 #: ../apt-listchanges/apt_listchanges.py:170
 #: ../apt-listchanges/apt_listchanges.py:190
 #: ../apt-listchanges/apt_listchanges.py:198
 msgid "Reading changelogs"
-msgstr "Lendo os rexistros de modificacións"
+msgstr "Lendo os rexistros de modificaciÃ³ns"
 
 #: ../apt-listchanges/apt_listchanges.py:198
 msgid "Done"
@@ -111,22 +111,22 @@ msgstr "Feito"
 #~ msgstr "%s saiu co sinal %s"
 
 #~ msgid "Must specify either --apt or filenames to process!"
-#~ msgstr "Débese especificar ou ben --apt ou uns ficheiros para procesar."
+#~ msgstr "DÃ©bese especificar ou ben --apt ou uns ficheiros para procesar."
 
 #~ msgid "Unable to determine package name for %s"
 #~ msgstr "Non se puido determina-lo nome do paquete de %s"
 
 #~ msgid "Unable to determine version for %s"
-#~ msgstr "Non se puido determina-la versión de %s"
+#~ msgstr "Non se puido determina-la versiÃ³n de %s"
 
 #~ msgid "Unable to determine source package name for %s"
 #~ msgstr "Non se puido determina-lo nome do paquete fonte de %s"
 
 #~ msgid "%s: Version %s is older than installed version (%s)"
-#~ msgstr "%s: a versión %s é máis vella cá versión instalada (%s)"
+#~ msgstr "%s: a versiÃ³n %s Ã© mÃ¡is vella cÃ¡ versiÃ³n instalada (%s)"
 
 #~ msgid "Error output follows"
-#~ msgstr "A saída do erro vén a continuación"
+#~ msgstr "A saÃ­da do erro vÃ©n a continuaciÃ³n"
 
 #~ msgid "In order to use the newt frontend, you must install libnewt-perl"
 #~ msgstr ""
@@ -136,7 +136,7 @@ msgstr "Feito"
 #~ msgstr "Examinando os paquetes..."
 
 #~ msgid "Displaying changelogs"
-#~ msgstr "Amosando os rexistros de modificacións"
+#~ msgstr "Amosando os rexistros de modificaciÃ³ns"
 
 #~ msgid "Unable to open tty for confirmation, assuming yes"
 #~ msgstr "Non se puido abrir un terminal para confirmar, suponse que si"
@@ -145,7 +145,7 @@ msgstr "Feito"
 #~ msgstr "Non se puido abri-lo ficheiro temporal %s: %s"
 
 #~ msgid "Changelogs mailed to %s"
-#~ msgstr "Enviáronse os rexistros de modificacións a %s"
+#~ msgstr "EnviÃ¡ronse os rexistros de modificaciÃ³ns a %s"
 
 #~ msgid "Wrong or missing VERSION from apt pipeline"
 #~ msgstr "VERSION incorrecta ou inexistente nos datos procedentes de apt"

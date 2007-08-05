@@ -20,7 +20,7 @@ msgstr ""
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: de <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: select
@@ -69,7 +69,7 @@ msgstr "Gar nicht"
 #. Description
 #: ../templates:1002
 msgid "Method for changes display:"
-msgstr "Methode zum Anzeigen der Änderungen:"
+msgstr "Methode zum Anzeigen der Ã„nderungen:"
 
 #. Type: select
 #. Description
@@ -77,7 +77,7 @@ msgstr "Methode zum Anzeigen der Änderungen:"
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"apt-listchanges kann die Änderungen in Paketen auf mehrere verschiedene "
+"apt-listchanges kann die Ã„nderungen in Paketen auf mehrere verschiedene "
 "Arten anzeigen."
 
 #. Type: select
@@ -95,14 +95,14 @@ msgid ""
 msgstr ""
 " Anzeigeprogramm: verwenden Sie Ihr bevorzugtes Anzeigeprogramm, um\n"
 "                  eine Seite auf einmal anzuschauen;\n"
-" Browser        : zeigt HTML-formatierte Änderungen mit einem\n"
+" Browser        : zeigt HTML-formatierte Ã„nderungen mit einem\n"
 "                  Web-Browser;\n"
 " xterm-Anzeigeprogramm: wie Anzeigeprogramm, aber in einem Xterm im\n"
 "                        Hintergrund;\n"
 " xterm-browser  : wie Browser, aber in einem Xterm im Hintergrund;\n"
-" Text           : drucke Änderungen in Ihrem Terminal (ohne\n"
+" Text           : drucke Ã„nderungen in Ihrem Terminal (ohne\n"
 "                  Pausierung);\n"
-" E-Mail         : sende Änderungen nur per E-Mail;\n"
+" E-Mail         : sende Ã„nderungen nur per E-Mail;\n"
 " Gar nicht      : nicht automatisch von apt aus laufen."
 
 #. Type: select
@@ -114,14 +114,14 @@ msgid ""
 "frontends except 'none'."
 msgstr ""
 "Diese Einstellung kann mit einer Kommandozeilenoption oder einer "
-"Umgebungsvariablen umgangen werden. Beachten Sie, dass Sie auf jeden Fall eine "
-"Kopie per E-Mail bekommen können, mit Ausnahme der Option »Gar nicht«."
+"Umgebungsvariablen umgangen werden. Beachten Sie, dass Sie auf jeden Fall "
+"eine Kopie per E-Mail bekommen kÃ¶nnen, mit Ausnahme der Option Â»Gar nichtÂ«."
 
 #. Type: string
 #. Description
 #: ../templates:2001
 msgid "E-mail Address(es) which will receive changes:"
-msgstr "E-Mail-Adresse(n), die Änderungen erhalten werden:"
+msgstr "E-Mail-Adresse(n), die Ã„nderungen erhalten werden:"
 
 #. Type: string
 #. Description
@@ -130,8 +130,8 @@ msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
 msgstr ""
-"apt-listchanges kann eine Kopie der angezeigten Änderungen versenden. Bitte "
-"geben Sie die E-Mail-Adresse ein, an die die Änderungen gesendet werden soll."
+"apt-listchanges kann eine Kopie der angezeigten Ã„nderungen versenden. Bitte "
+"geben Sie die E-Mail-Adresse ein, an die die Ã„nderungen gesendet werden soll."
 
 #. Type: string
 #. Description
@@ -140,15 +140,15 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Mehrere Adressen können, durch Kommata getrennt, angegeben werden. Lassen Sie "
-"dies frei, wenn Sie keinen E-Mail-Versand wünschen."
+"Mehrere Adressen kÃ¶nnen, durch Kommata getrennt, angegeben werden. Lassen "
+"Sie dies frei, wenn Sie keinen E-Mail-Versand wÃ¼nschen."
 
 #. Type: boolean
 #. Description
 #: ../templates:3001
 msgid "Prompt for confirmation after displaying changes?"
 msgstr ""
-"Soll apt-listchanges nach dem Anzeigen der Änderungen um eine Bestätigung "
+"Soll apt-listchanges nach dem Anzeigen der Ã„nderungen um eine BestÃ¤tigung "
 "bitten?"
 
 #. Type: boolean
@@ -160,10 +160,10 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"apt-listchanges kann Sie nach dem Anzeigen der Änderungen fragen, ob Sie "
-"fortfahren wollen. Das ist nützlich, wenn apt-listchanges von apt gestartet "
+"apt-listchanges kann Sie nach dem Anzeigen der Ã„nderungen fragen, ob Sie "
+"fortfahren wollen. Das ist nÃ¼tzlich, wenn apt-listchanges von apt gestartet "
 "wird, da Sie so Gelegenheit haben, das Upgrade abzubrechen, wenn Sie "
-"Änderungen bemerken, die Sie (noch) nicht wollen."
+"Ã„nderungen bemerken, die Sie (noch) nicht wollen."
 
 #. Type: boolean
 #. Description
@@ -172,7 +172,7 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Diese Einstellung funktioniert nicht mit der »E-Mail«- oder »Gar nicht«-"
+"Diese Einstellung funktioniert nicht mit der Â»E-MailÂ«- oder Â»Gar nichtÂ«-"
 "Schnittstelle. Die Einstellung kann durch Kommandozeilenoptionen aufgehoben "
 "werden."
 
@@ -180,7 +180,7 @@ msgstr ""
 #. Description
 #: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "Sollen bereits gesehene Einträge übersprungen werden?"
+msgstr "Sollen bereits gesehene EintrÃ¤ge Ã¼bersprungen werden?"
 
 #. Type: boolean
 #. Description
@@ -190,9 +190,9 @@ msgid ""
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges kann sich merken, welche Changelog-Einträge bereits "
-"angezeigt wurden, und diese bei späteren Aufrufen übergehen. Das ist zum "
-"Beispiel nützlich, wenn Sie ein Upgrade wiederholen."
+"apt-listchanges kann sich merken, welche Changelog-EintrÃ¤ge bereits "
+"angezeigt wurden, und diese bei spÃ¤teren Aufrufen Ã¼bergehen. Das ist zum "
+"Beispiel nÃ¼tzlich, wenn Sie ein Upgrade wiederholen."
 
 #. Type: select
 #. Choices
@@ -204,14 +204,15 @@ msgstr "News-Dateien, beide, Changelog-Dateien"
 #. Description
 #: ../templates:5002
 msgid "Changes displayed with apt:"
-msgstr "Mit apt angezeigte Änderungen:"
+msgstr "Mit apt angezeigte Ã„nderungen:"
 
 #. Type: select
 #. Description
 #: ../templates:5002
 msgid "Please choose which type of changes should be displayed with APT."
 msgstr ""
-"Bitte wählen Sie aus, welche Arten von Änderungen von APT angezeigt werden sollen."
+"Bitte wÃ¤hlen Sie aus, welche Arten von Ã„nderungen von APT angezeigt werden "
+"sollen."
 
 #. Type: select
 #. Description
@@ -223,5 +224,4 @@ msgid ""
 msgstr ""
 " News-Dateien - Nur wichtige Neuigkeiten\n"
 " Beide - Sowohl News und detaillierte Changelogs\n"
-" Changelog-Dateien - Nur detaillierte Changelogs (Änderungen)"
-
+" Changelog-Dateien - Nur detaillierte Changelogs (Ã„nderungen)"

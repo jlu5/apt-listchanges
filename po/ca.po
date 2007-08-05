@@ -10,7 +10,7 @@ msgstr ""
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../apt-listchanges.py:88
@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../apt-listchanges.py:113
 msgid "%s: will be newly installed"
-msgstr "%s: s'instal∑lar‡ per primera vegada"
+msgstr "%s: s'instal¬∑lar√† per primera vegada"
 
 #: ../apt-listchanges.py:122
 msgid "%s: Version %s has already been seen"
-msgstr "%s: La versiÛ %s ja s'ha vist"
+msgstr "%s: La versi√≥ %s ja s'ha vist"
 
 #: ../apt-listchanges.py:155
 #, fuzzy
@@ -58,7 +58,7 @@ msgstr "eixida d'apt-listchanges per a %s"
 
 #: ../apt-listchanges.py:213
 msgid "didn't find any valid .deb archives"
-msgstr "no s'han trobat fitxers .deb v‡lids"
+msgstr "no s'han trobat fitxers .deb v√†lids"
 
 #: ../apt-listchanges/ALCConfig.py:78
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
@@ -77,8 +77,8 @@ msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
-"VERSION errÚnia o inexistent provinent de la tuberia d'apt\n"
-"(est‡ Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version establert a "
+"VERSION err√≤nia o inexistent provinent de la tuberia d'apt\n"
+"(est√† Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version establert a "
 "2?)\n"
 
 #: ../apt-listchanges/apt_listchanges.py:89
@@ -89,7 +89,7 @@ msgstr "S'estan enviant els canvis a %s"
 #: ../apt-listchanges/apt_listchanges.py:113
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
-msgstr "La interfÌcie %s est‡ descontinuada, s'utilitza el paginador"
+msgstr "La interf√≠cie %s est√† descontinuada, s'utilitza el paginador"
 
 #: ../apt-listchanges/apt_listchanges.py:157
 msgid "Do you want to continue? [Y/n]? "
@@ -118,13 +118,13 @@ msgstr "Fet"
 #~ msgstr "No es pot determinar el nom del paquet per al fitxer %s"
 
 #~ msgid "Unable to determine version for file %s"
-#~ msgstr "No es pot determinar la versiÛ per al fitxer %s"
+#~ msgstr "No es pot determinar la versi√≥ per al fitxer %s"
 
 #~ msgid "%s: Version %s changes have already been seen"
-#~ msgstr "%s: La versiÛ %s ja est‡ instal∑lada"
+#~ msgstr "%s: La versi√≥ %s ja est√† instal¬∑lada"
 
 #~ msgid "%s: Version %s is older than installed version (%s)"
-#~ msgstr "%s: La versiÛ %s Ès mÈs antiga que la versiÛ instal∑lada (%s)"
+#~ msgstr "%s: La versi√≥ %s √©s m√©s antiga que la versi√≥ instal¬∑lada (%s)"
 
 #~ msgid "Error output follows"
 #~ msgstr "La sortida de errada segueix"
@@ -136,7 +136,7 @@ msgstr "Fet"
 #~ msgstr "S'estan mostrant els canvis"
 
 #~ msgid "Unable to open tty for confirmation, assuming yes"
-#~ msgstr "No es pot obrir la tty per demanar confirmaciÛ, s'assumeix sÌ"
+#~ msgstr "No es pot obrir la tty per demanar confirmaci√≥, s'assumeix s√≠"
 
 #~ msgid "Unable to open temporary file %s: %s"
 #~ msgstr "No es pot obrir el fitxer temporal %s: %s"

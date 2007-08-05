@@ -85,7 +85,8 @@ msgid ""
 msgstr ""
 "paginador:       utilitza el vostre paginador preferit per a mostrar els\n"
 "                 canvis un a l'hora\n"
-"navegador:       mostra els canvis en format HTML utilitzant un navegador web\n"
+"navegador:       mostra els canvis en format HTML utilitzant un navegador "
+"web\n"
 "paginador-xterm: com el paginador, però dins d'un xterm en segon pla\n"
 "navegador-xterm: com el navegador, però dins d'un xterm en segon pla\n"
 "text:            mostra els canvis al vostre terminal (sense fer cap pausa)\n"
@@ -134,8 +135,7 @@ msgstr ""
 #. Description
 #: ../templates:3001
 msgid "Prompt for confirmation after displaying changes?"
-msgstr ""
-"Voleu que se us demane confirmació després de mostrar els canvis?"
+msgstr "Voleu que se us demane confirmació després de mostrar els canvis?"
 
 #. Type: boolean
 #. Description

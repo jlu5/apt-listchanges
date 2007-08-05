@@ -110,8 +110,8 @@ msgid ""
 "frontends except 'none'."
 msgstr ""
 "Parametr příkazové řádky nebo proměnná prostředí má před tímto nastavením "
-"přednost. Poznamenejme, že paralelně ke všem způsobům (kromě 'žádný') "
-"můžete zaslat kopii změn i poštou."
+"přednost. Poznamenejme, že paralelně ke všem způsobům (kromě 'žádný') můžete "
+"zaslat kopii změn i poštou."
 
 #. Type: string
 #. Description

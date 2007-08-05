@@ -1,10 +1,10 @@
 # Spanish po-file for apt-listchanges
 # Copyright (C) 2001, 2002 Free Software Foundation, Inc.
 # Jordi Mallach <jordi@debian.org>, 2001, 2002.
-# David Martínez <ender@debian.org>
+# David MartÃ­nez <ender@debian.org>
 # Ricardo Mones  <mones@aic.uniovi.es>, 2002
 #
-# Notas de traducción:
+# Notas de traducciÃ³n:
 # - changelogs: lista de cambios
 #
 msgid ""
@@ -12,10 +12,10 @@ msgstr ""
 "Project-Id-Version: apt-listchanges 2.4\n"
 "POT-Creation-Date: 2006-10-15 18:20+CEST\n"
 "PO-Revision-Date: 2006-09-23 13:36+0200\n"
-"Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
+"Last-Translator: Javier FernÃ¡ndez-Sanguino <jfs@debian.org>\n"
 "Language-Team: Debian Spanish Team <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../apt-listchanges.py:88
@@ -24,11 +24,11 @@ msgstr "Interfaz desconocido: %s\n"
 
 #: ../apt-listchanges.py:113
 msgid "%s: will be newly installed"
-msgstr "%s: se instalará por primera vez"
+msgstr "%s: se instalarÃ¡ por primera vez"
 
 #: ../apt-listchanges.py:122
 msgid "%s: Version %s has already been seen"
-msgstr "%s: La versión %s ya se ha visualizado"
+msgstr "%s: La versiÃ³n %s ya se ha visualizado"
 
 #: ../apt-listchanges.py:155
 msgid "News for %s"
@@ -60,7 +60,7 @@ msgstr "apt-listchanges: noticias de %s"
 
 #: ../apt-listchanges.py:213
 msgid "didn't find any valid .deb archives"
-msgstr "no se ha encontrado ningún fichero .deb válido"
+msgstr "no se ha encontrado ningÃºn fichero .deb vÃ¡lido"
 
 #: ../apt-listchanges/ALCConfig.py:78
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
@@ -68,19 +68,19 @@ msgstr "Modo de uso: apt-listchanges [opciones] {--apt | archivo.deb ...}\n"
 
 #: ../apt-listchanges/ALCConfig.py:133
 msgid "Unknown option %s for --which.  Allowed are: %s."
-msgstr "Opción desconocida %s para --which. Se puede utilizar: %s."
+msgstr "OpciÃ³n desconocida %s para --which. Se puede utilizar: %s."
 
 #: ../apt-listchanges/DebianFiles.py:174
 msgid "Ignoring `%s' (seems to be a directory !)"
-msgstr "Se ignorará «%s» (¡parece tratarse de un directorio!)"
+msgstr "Se ignorarÃ¡ Â«%sÂ» (Â¡parece tratarse de un directorio!)"
 
 #: ../apt-listchanges/apt_listchanges.py:48
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
-"VERSION errónea o inexistente desde la tubería de apt\n"
-"(¿Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version vale 2?)\n"
+"VERSION errÃ³nea o inexistente desde la tuberÃ­a de apt\n"
+"(Â¿Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version vale 2?)\n"
 
 #: ../apt-listchanges/apt_listchanges.py:89
 msgid "Mailing %s: %s"
@@ -88,11 +88,11 @@ msgstr "Enviando por correo %s: %s"
 
 #: ../apt-listchanges/apt_listchanges.py:113
 msgid "The %s frontend is deprecated, using pager"
-msgstr "La interfaz %s está obsoleta, usando el paginador"
+msgstr "La interfaz %s estÃ¡ obsoleta, usando el paginador"
 
 #: ../apt-listchanges/apt_listchanges.py:157
 msgid "Do you want to continue? [Y/n]? "
-msgstr "¿Quiere continuar? [Y/n] "
+msgstr "Â¿Quiere continuar? [Y/n] "
 
 #: ../apt-listchanges/apt_listchanges.py:170
 #: ../apt-listchanges/apt_listchanges.py:190
@@ -108,22 +108,22 @@ msgstr "Hecho."
 #~ msgstr "%s ha salido con el estado %d"
 
 #~ msgid "%s exited with signal %s"
-#~ msgstr "%s ha salido con la señal %s"
+#~ msgstr "%s ha salido con la seÃ±al %s"
 
 #~ msgid "Must specify either --apt or filenames to process!"
-#~ msgstr "¡Tiene que especificar --apt o bien los paquetes a procesar!"
+#~ msgstr "Â¡Tiene que especificar --apt o bien los paquetes a procesar!"
 
 #~ msgid "Unable to determine package name for file %s"
 #~ msgstr "No se puede determinar el nombre del paquete para el fichero %s"
 
 #~ msgid "Unable to determine version for file %s"
-#~ msgstr "No se puede determinar la versión para el fichero %s"
+#~ msgstr "No se puede determinar la versiÃ³n para el fichero %s"
 
 #~ msgid "%s: Version %s is already installed"
-#~ msgstr "%s: La versión %s ya está instalada"
+#~ msgstr "%s: La versiÃ³n %s ya estÃ¡ instalada"
 
 #~ msgid "%s: Version %s is older than installed version (%s)"
-#~ msgstr "%s: La versión %s es más antigua que la versión instalada (%s)"
+#~ msgstr "%s: La versiÃ³n %s es mÃ¡s antigua que la versiÃ³n instalada (%s)"
 
 #~ msgid "Error output follows"
 #~ msgstr "La salida de error es la siguiente"
@@ -138,7 +138,7 @@ msgstr "Hecho."
 #~ msgstr "Mostrando lista de cambios"
 
 #~ msgid "Unable to open tty for confirmation, assuming yes"
-#~ msgstr "No se puede abrir la tty para pedir confirmación, asumiendo sí"
+#~ msgstr "No se puede abrir la tty para pedir confirmaciÃ³n, asumiendo sÃ­"
 
 #~ msgid "Unable to open temporary file %s: %s"
 #~ msgstr "No se puede abrir archivo temporal %s: %s"
@@ -147,4 +147,4 @@ msgstr "Hecho."
 #~ msgstr "Lista de cambios enviados a %s"
 
 #~ msgid "Wrong or missing VERSION from apt pipeline"
-#~ msgstr "VERSION errónea o inexistente proviniente de la tubería de apt"
+#~ msgstr "VERSION errÃ³nea o inexistente proviniente de la tuberÃ­a de apt"

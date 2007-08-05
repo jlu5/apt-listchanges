@@ -12,7 +12,7 @@ msgstr ""
 "Last-Translator: Luca Monducci <luca.mo@tiscali.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Type: select
@@ -69,7 +69,7 @@ msgstr "Metodo per mostrare le modifiche:"
 msgid ""
 "apt-listchanges can display package changes in a number of different ways."
 msgstr ""
-"apt-listchanges può mostrare le modifiche di un pacchetto in molti modi "
+"apt-listchanges puÃ² mostrare le modifiche di un pacchetto in molti modi "
 "diversi."
 
 #. Type: select
@@ -89,8 +89,8 @@ msgstr ""
 "                 una pagina alla volta;\n"
 " browser       : Mostra le modifiche formattate in HTML usando un\n"
 "                 browser web;\n"
-" xterm-pager   : Come «pager» ma all'interno di un xterm in background;\n"
-" xterm-browser : Come «browser» ma all'interno di un xterm in background;\n"
+" xterm-pager   : Come Â«pagerÂ» ma all'interno di un xterm in background;\n"
+" xterm-browser : Come Â«browserÂ» ma all'interno di un xterm in background;\n"
 " text          : Mostra le modifiche sul terminale (senza pause);\n"
 " mail          : Invia le modifiche per posta elettronica;\n"
 " none          : Non viene eseguito automaticamente da APT."
@@ -103,9 +103,9 @@ msgid ""
 "variable.  Note that you can still send a copy via mail with all of the "
 "frontends except 'none'."
 msgstr ""
-"Questa impostazione può essere ignorata tramite un'opzione sulla riga di "
+"Questa impostazione puÃ² essere ignorata tramite un'opzione sulla riga di "
 "comando o con una variabile d'ambiente. Notare che con tutte le interfacce, "
-"eccetto «none», è possibile inviare una copia per posta elettronica."
+"eccetto Â«noneÂ», Ã¨ possibile inviare una copia per posta elettronica."
 
 #. Type: string
 #. Description
@@ -120,7 +120,7 @@ msgid ""
 "apt-listchanges can email a copy of displayed changes.  Please enter the "
 "email address the changes should be sent to."
 msgstr ""
-"apt-listchanges può inviare via email una copia delle modifiche mostrate. "
+"apt-listchanges puÃ² inviare via email una copia delle modifiche mostrate. "
 "Inserire gli indirizzi a cui deve essere inviata."
 
 #. Type: string
@@ -130,7 +130,7 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas.  Leave this empty "
 "if you do not want any email to be sent."
 msgstr ""
-"Si possono specificare più indirizzi separandoli con delle virgole. Lasciare "
+"Si possono specificare piÃ¹ indirizzi separandoli con delle virgole. Lasciare "
 "il campo vuoto se non si vuole inviare nessuna email."
 
 #. Type: boolean
@@ -148,9 +148,9 @@ msgid ""
 "from apt, as it gives you a chance to abort the upgrade if you see a change "
 "you do not want to apply (yet)."
 msgstr ""
-"Dopo aver dato l'opportunità di leggere l'elenco delle modifiche, apt-"
-"listchanges può chiedere se si vuole continuare. Questo è utile quando viene "
-"eseguito da APT perché permette di interrompere l'aggiornamento se si nota "
+"Dopo aver dato l'opportunitÃ  di leggere l'elenco delle modifiche, apt-"
+"listchanges puÃ² chiedere se si vuole continuare. Questo Ã¨ utile quando viene "
+"eseguito da APT perchÃ© permette di interrompere l'aggiornamento se si nota "
 "un cambiamento che non si desidera (ancora) applicare."
 
 #. Type: boolean
@@ -160,14 +160,14 @@ msgid ""
 "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 "overridden with a command line option."
 msgstr ""
-"Questa impostazione non si applica alle interfacce «mail» e «none» e può "
+"Questa impostazione non si applica alle interfacce Â«mailÂ» e Â«noneÂ» e puÃ² "
 "essere ignorata tramite un'opzione sulla riga di comando."
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "apt-listchanges deve ignorare le modifiche già mostrate?"
+msgstr "apt-listchanges deve ignorare le modifiche giÃ  mostrate?"
 
 #. Type: boolean
 #. Description
@@ -177,8 +177,8 @@ msgid ""
 "already been displayed, and to skip them in future invocations. This is "
 "useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges è in grado di tener traccia delle modifiche che sono già "
-"state mostrate e di ignorarle nelle successive esecuzioni. Questo è utile, "
+"apt-listchanges Ã¨ in grado di tener traccia delle modifiche che sono giÃ  "
+"state mostrate e di ignorarle nelle successive esecuzioni. Questo Ã¨ utile, "
 "per esempio, quando si riprova nuovamente un aggiornamento."
 
 #. Type: select
@@ -207,6 +207,6 @@ msgid ""
 " both - both news and detailed changelogs\n"
 " changelogs - detailed changelogs only"
 msgstr ""
-" notizie - solo le notizie più importanti\n"
+" notizie - solo le notizie piÃ¹ importanti\n"
 " tutto - le notizie e lo storico delle modifiche\n"
 " changelog - solo lo storico delle modifiche"
