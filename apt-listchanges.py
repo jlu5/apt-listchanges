@@ -81,7 +81,12 @@ def main():
         status.makeindex('Package')
 
     if config.save_seen:
-        seen = anydbm.open(config.save_seen, 'c')
+        try:
+            seen = anydbm.open(config.save_seen, 'c')
+            seen.has_key('foo%0')
+        except:
+            sys.stderr.write(_("database %s failed to load.\n") % config.save_seen)
+            sys.exit(1)
         # Will replace seen after changes have actually been seen
         seen_new = {}
 
