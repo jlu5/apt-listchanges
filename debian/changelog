@@ -1,7 +1,8 @@
 apt-listchanges (2.75) UNRELEASED; urgency=low
 
   * Recode po files in utf-8 (Closes: 391014).
-  * Gracefully fail if the database cannot be loaded (Closes: 444478).
+  * Fail gracefully if the database cannot be loaded (Closes: 444478).
+  * Fail gracefully if on Ubuntu with braindead locales (Closes: 431364).
 
  -- Pierre Habouzit <madcoder@debian.org>  Sun, 05 Aug 2007 18:08:21 +0200
 

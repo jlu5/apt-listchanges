@@ -34,7 +34,12 @@ import commands
 sys.path += ['./apt-listchanges', '/usr/share/apt-listchanges']
 import apt_listchanges, DebianFiles, ALCConfig
 
-locale.setlocale(locale.LC_ALL, '')
+try:
+    locale.setlocale(locale.LC_ALL, '')
+except locale.Error:
+    sys.stderr.write(_("Can't set locale; make sure $LC_* and $LANG are correct!\n"))
+    sys.exit(1)
+
 def _(x):
     try:
         return gettext.translation('apt-listchanges').lgettext(x)
