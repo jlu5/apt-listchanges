@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-05-11 23:53+CEST\n"
+"POT-Creation-Date: 2007-11-18 23:51+CET\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,48 +15,58 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: ../apt-listchanges.py:100
+#: ../apt-listchanges.py:40
+msgid ""
+"Can't set locale; make sure $LC_* and $LANG are correct!\n"
+msgstr ""
+
+#: ../apt-listchanges.py:92
+msgid ""
+"database %s failed to load.\n"
+msgstr ""
+
+#: ../apt-listchanges.py:109
 msgid ""
 "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges.py:123
+#: ../apt-listchanges.py:132
 msgid "%s: will be newly installed"
 msgstr ""
 
-#: ../apt-listchanges.py:132
+#: ../apt-listchanges.py:141
 msgid "%s: Version %s has already been seen"
 msgstr ""
 
-#: ../apt-listchanges.py:165
+#: ../apt-listchanges.py:174
 msgid "News for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:176
+#: ../apt-listchanges.py:185
 msgid "Changes for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:186
+#: ../apt-listchanges.py:195
 msgid "Informational notes"
 msgstr ""
 
-#: ../apt-listchanges.py:198
+#: ../apt-listchanges.py:207
 msgid "Aborting"
 msgstr ""
 
-#: ../apt-listchanges.py:201
+#: ../apt-listchanges.py:210
 msgid "Confirmation failed, don't save seen state"
 msgstr ""
 
-#: ../apt-listchanges.py:207
+#: ../apt-listchanges.py:216
 msgid "apt-listchanges: changelogs for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:211
+#: ../apt-listchanges.py:220
 msgid "apt-listchanges: news for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:223
+#: ../apt-listchanges.py:232
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
@@ -69,35 +79,54 @@ msgstr ""
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
+#: ../apt-listchanges/AptListChangesGtk.py:77
+msgid "Continue Installation?"
+msgstr ""
+
+#: ../apt-listchanges/AptListChangesGtk.py:77
+msgid "You can abort the installation if you select 'no'."
+msgstr ""
+
 #: ../apt-listchanges/DebianFiles.py:167
 msgid "Ignoring `%s' (seems to be a directory !)"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:49
+#: ../apt-listchanges/apt_listchanges.py:51
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:90
+#: ../apt-listchanges/apt_listchanges.py:92
 msgid "Mailing %s: %s"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:114
+#: ../apt-listchanges/apt_listchanges.py:116
 msgid "The %s frontend is deprecated, using pager"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:158
+#: ../apt-listchanges/apt_listchanges.py:120
+msgid "The mail frontend needs a installed 'sendmail', using pager"
+msgstr ""
+
+#: ../apt-listchanges/apt_listchanges.py:132
+msgid ""
+"The gtk frontend needs a working python-gtk2 and python-glade2.\n"
+"Those imports can not be found. Falling back to pager.\n"
+"The error is: %s\n"
+msgstr ""
+
+#: ../apt-listchanges/apt_listchanges.py:182
 msgid "Do you want to continue? [Y/n]? "
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:171
-#: ../apt-listchanges/apt_listchanges.py:191
-#: ../apt-listchanges/apt_listchanges.py:199
+#: ../apt-listchanges/apt_listchanges.py:195
+#: ../apt-listchanges/apt_listchanges.py:215
+#: ../apt-listchanges/apt_listchanges.py:223
 msgid "Reading changelogs"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:199
+#: ../apt-listchanges/apt_listchanges.py:223
 msgid "Done"
 msgstr ""
 

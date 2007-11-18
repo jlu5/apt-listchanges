@@ -18,11 +18,10 @@ try:
     locale.setlocale(locale.LC_ALL,'')
 except locale.Error:
     sys.stderr.write("Can't set locale; make sure $LC_* and $LANG are correct!\n")
-try:
-    def _(x):
+def _(x):
+    try:
         return gettext.translation('apt-listchanges').lgettext(x)
-except:
-    _ = lambda x: x
+    except: return x
 
 class gtk2(frontend):
     def flush_interface(self):

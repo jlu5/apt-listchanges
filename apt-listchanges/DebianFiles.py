@@ -37,11 +37,10 @@ import apt_pkg
 # TODO:
 # indexed lookups by package at least, maybe by arbitrary field
 
-try:
-    def _(x):
+def _(x):
+    try:
         return gettext.translation('apt-listchanges').lgettext(x)
-except:
-    _ = lambda x: x
+    except: return x
 
 def numeric_urgency(u):
     urgency_map = { 'low' : 1,

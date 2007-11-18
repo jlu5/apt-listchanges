@@ -39,11 +39,10 @@ import tempfile
 # newt-like frontend, or maybe some GUI bit
 # keep track of tar/dpkg-deb errors like in pre-2.0
 
-try:
-    def _(x):
+def _(x):
+    try:
         return gettext.translation('apt-listchanges').lgettext(x)
-except:
-    _ = lambda x: x
+    except: return x
 
 def read_apt_pipeline(config):
     version = sys.stdin.readline().rstrip()
