@@ -1,4 +1,4 @@
-apt-listchanges (2.75) UNRELEASED; urgency=low
+apt-listchanges (2.75) unstable; urgency=low
 
   * Recode po files in utf-8 (Closes: 391014).
   * Fail gracefully if the database cannot be loaded (Closes: 444478).
@@ -6,8 +6,10 @@ apt-listchanges (2.75) UNRELEASED; urgency=low
   * take a patch back from Ubuntu, I'm happy their users contribute back more
     diligently than their developpers. apt-listchanges on debian gains a new
     gtk front-end (Closes: #451845).
+  * debian/control: add the vcs-* headers so that noone can pretend he cannot
+    send patches.
 
- -- Pierre Habouzit <madcoder@debian.org>  Sun, 05 Aug 2007 18:08:21 +0200
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 18 Nov 2007 23:40:24 +0100
 
 apt-listchanges (2.74) unstable; urgency=low
 
