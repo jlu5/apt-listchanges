@@ -1,7 +1,5 @@
 #!/usr/bin/make -f
 
-export DH_COMPAT=5
-
 version=$(shell dpkg-parsechangelog | sed -n -e '/^Version:/s/^Version: //p')
 
 build: build-stamp
