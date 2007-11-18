@@ -8,6 +8,7 @@ apt-listchanges (2.75) unstable; urgency=low
     gtk front-end (Closes: 451845).
   * debian/control: add the vcs-* headers so that noone can pretend he cannot
     send patches.
+  * fix wrong path in the .es documentation (good eyes lintian !).
 
  -- Pierre Habouzit <madcoder@debian.org>  Sun, 18 Nov 2007 23:40:24 +0100
 

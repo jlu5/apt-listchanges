@@ -64,7 +64,7 @@ versión 1.6 del CVS de
       Esto se realiza extrayendo las entradas relevantes de los ficheros
       NEWS.Debian y changelog<optional>.Debian</optional>, normalmente se
       encuentran en
-      <filename>/usr/doc/</filename><replaceable>paquete</replaceable>, de los
+      <filename>/usr/share/doc/</filename><replaceable>paquete</replaceable>, de los
       archivos de paquetes Debian.
     </para>
 
