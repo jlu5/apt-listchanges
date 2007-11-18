@@ -1,6 +1,6 @@
 Template: apt-listchanges/frontend
 Type: select
-__Choices: pager, browser, xterm-pager, xterm-browser, text, mail, none
+__Choices: pager, gtk, browser, xterm-pager, xterm-browser, text, mail, none
 Default: pager
 _Description: Method for changes display:
  apt-listchanges can display package changes in a number of different
@@ -8,6 +8,7 @@ _Description: Method for changes display:
  .
   pager         : use your preferred pager to display changes one page at
                   a time;
+  gtk           : Display changes in a Gtk window;
   browser       : display HTML-formatted changes using a web browser;
   xterm-pager   : like pager, but in an xterm in the background;
   xterm-browser : like browser, but in an xterm in the background;

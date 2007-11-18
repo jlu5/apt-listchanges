@@ -23,7 +23,9 @@
 #   MA 02111-1307 USA
 #
 
-import sys, os
+import sys
+import os
+import os.path
 import re
 import gettext
 import locale
@@ -37,11 +39,11 @@ import tempfile
 # newt-like frontend, or maybe some GUI bit
 # keep track of tar/dpkg-deb errors like in pre-2.0
 
-def _(x):
-    try:
+try:
+    def _(x):
         return gettext.translation('apt-listchanges').lgettext(x)
-    except:
-        return x
+except:
+    _ = lambda x: x
 
 def read_apt_pipeline(config):
     version = sys.stdin.readline().rstrip()
@@ -113,6 +115,28 @@ def make_frontend(name, packages, config):
     if name in ('newt', 'w3m', 'xterm-w3m'):
         sys.stderr.write((_("The %s frontend is deprecated, using pager") + '\n') % name)
         name = 'pager'
+
+    if name == "mail" and not os.path.exists("/usr/sbin/sendmail"):
+        sys.stderr.write((_("The mail frontend needs a installed 'sendmail', using pager") + '\n'))
+        name = 'pager'
+        
+    # TODO: it would probably be nice to have a frontends subdir and
+    # import from that. that would mean a uniform mechanism for all
+    # frontends (that would become small files inside
+    if name == "gtk":
+        if os.environ.has_key("DISPLAY"):
+            try:
+                gtk = __import__("AptListChangesGtk")
+                frontends[name] = gtk.gtk2
+            except ImportError, e:
+                sys.stderr.write(_("The gtk frontend needs a working python-gtk2 "
+                                   "and python-glade2.\n"
+                                   "Those imports can not be found. Falling back "
+                                   "to pager.\n"
+                                   "The error is: %s\n") % e)
+                name = 'pager'
+        else:
+            name = 'pager'
 
     if not frontends.has_key(name):
         return None

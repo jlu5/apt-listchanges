@@ -6,13 +6,13 @@ Uploaders: Matt Zimmerman <mdz@debian.org>
 Standards-Version: 3.7.2
 Build-Depends: debhelper (>= 5)
 Build-Depends-Indep: docbook-to-man, gettext, python-dev, po-debconf,
- python-support (>= 0.4.0)
+ python-support (>= 0.4.0), libexpat1-dev
 
 Package: apt-listchanges
 Architecture: all
 Depends: ${python:Depends}, apt (>= 0.5.3), python-apt, debconf | debconf-2.0,
  ucf (>= 0.28), debianutils (>= 2.0.2)
-Recommends: exim4 | mail-transport-agent
+Recommends: exim4 | mail-transport-agent, python-glade2, python-gtk2
 Suggests: x-terminal-emulator, www-browser
 Description: Display change history from .deb archives
  apt-listchanges is a tool to show what has been changed in a new

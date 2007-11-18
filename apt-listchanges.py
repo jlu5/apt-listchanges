@@ -40,11 +40,10 @@ except locale.Error:
     sys.stderr.write(_("Can't set locale; make sure $LC_* and $LANG are correct!\n"))
     sys.exit(1)
 
-def _(x):
-    try:
-        return gettext.translation('apt-listchanges').lgettext(x)
-    except:
-        return x
+try:
+    def _(x): return gettext.translation('apt-listchanges').lgettext(x)
+except:
+    _ = lambda x: x
 
 def main():
     config = ALCConfig.ALCConfig()
