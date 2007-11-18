@@ -15,8 +15,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.72.1\n"
-"Report-Msgid-Bugs-To: madcoder@debian.org\n"
-"POT-Creation-Date: 2006-08-11 16:20+0200\n"
+"Report-Msgid-Bugs-To: Source: apt-listchanges@packages.debian.org\n"
+"POT-Creation-Date: 2007-11-18 23:44+0100\n"
 "PO-Revision-Date: 2007-02-11 16:45+0300\n"
 "Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -32,6 +32,12 @@ msgstr ""
 #: ../templates:1001
 msgid "pager"
 msgstr "пейджер"
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "gtk"
+msgstr ""
 
 #. Type: select
 #. Choices
@@ -87,9 +93,20 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:1002
+#, fuzzy
+#| msgid ""
+#| " pager         : use your preferred pager to display changes one page at\n"
+#| "                 a time;\n"
+#| " browser       : display HTML-formatted changes using a web browser;\n"
+#| " xterm-pager   : like pager, but in an xterm in the background;\n"
+#| " xterm-browser : like browser, but in an xterm in the background;\n"
+#| " text          : print changes to your terminal (without pausing);\n"
+#| " mail          : only send changes via mail;\n"
+#| " none          : do not run automatically from apt."
 msgid ""
 " pager         : use your preferred pager to display changes one page at\n"
 "                 a time;\n"
+" gtk           : Display changes in a Gtk window;\n"
 " browser       : display HTML-formatted changes using a web browser;\n"
 " xterm-pager   : like pager, but in an xterm in the background;\n"
 " xterm-browser : like browser, but in an xterm in the background;\n"

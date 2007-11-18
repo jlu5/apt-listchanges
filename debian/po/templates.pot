@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: madcoder@debian.org\n"
-"POT-Creation-Date: 2006-08-11 16:20+0200\n"
+"Report-Msgid-Bugs-To: Source: apt-listchanges@packages.debian.org\n"
+"POT-Creation-Date: 2007-11-18 23:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,12 @@ msgstr ""
 #. Choices
 #: ../templates:1001
 msgid "pager"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:1001
+msgid "gtk"
 msgstr ""
 
 #. Type: select
@@ -77,6 +83,7 @@ msgstr ""
 msgid ""
 " pager         : use your preferred pager to display changes one page at\n"
 "                 a time;\n"
+" gtk           : Display changes in a Gtk window;\n"
 " browser       : display HTML-formatted changes using a web browser;\n"
 " xterm-pager   : like pager, but in an xterm in the background;\n"
 " xterm-browser : like browser, but in an xterm in the background;\n"
