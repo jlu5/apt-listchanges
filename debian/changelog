@@ -1,3 +1,12 @@
+apt-listchanges (2.76) UNRELEASED; urgency=low
+
+  * Add patch from Michael Vogt to support launchpad bug numbers
+    (Closes: 451995, 454581).
+  * Add patch from Felipe Sateler to have a better title to html output
+    (Closes: 431501).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 06 Dec 2007 14:38:24 +0100
+
 apt-listchanges (2.75) unstable; urgency=low
 
   * Recode po files in utf-8 (Closes: 391014).

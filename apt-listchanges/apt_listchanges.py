@@ -269,7 +269,12 @@ class xterm_pager(xterm):
 class html:
     suffix = '.html'
 
-    bug_stanza_re = re.compile(r'(?:closes:\s*(?:bug)?\#?\s?\d+(?:,\s*(?:bug)?\#?\s?\d+)*|#\d+)', re.I)
+    # LP bug-closing format requires the colon after "LP", but many people
+    # say "LP #123456" when talking informally about bugs.
+    lp_bug_stanza_re = re.compile(r'(?:lp:?\s+\#\d+(?:,\s*\#\d+)*)', re.I)
+    lp_bug_re        = re.compile('(?P<linktext>#(?P<bugnum>\d+))', re.I)
+    lp_bug_fmt       = r'<a href="https://launchpad.net/bugs/\g<bugnum>">\g<linktext></a>'
+    bug_stanza_re = re.compile(r'(?:closes:\s*(?:bug)?\#?\s?\d+(?:,\s*(?:bug)?\#?\s?\d+)*|(?<!">)#\d+)', re.I)
     bug_re        = re.compile('(?P<linktext>#?(?P<bugnum>\d+))', re.I)
     bug_fmt       = r'<a href="http://bugs.debian.org/\g<bugnum>">\g<linktext></a>'
     # regxlib.com
@@ -298,6 +303,7 @@ class html:
                 '&', '&amp;').replace(
                 '<', '&lt;').replace(
                 '>', '&gt;')
+            line = self.lp_bug_stanza_re.sub(lambda m: self.lp_bug_re.sub(self.lp_bug_fmt, m.group(0)), line)
             line = self.bug_stanza_re.sub(lambda m: self.bug_re.sub(self.bug_fmt, m.group(0)), line)
             line = self.email_re.sub(r'<a href="mailto:\g<0>">\g<0></a>', line)
             htmltext.write(line + '\n')
