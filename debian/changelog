@@ -3,9 +3,8 @@ apt-listchanges (2.75) unstable; urgency=low
   * Recode po files in utf-8 (Closes: 391014).
   * Fail gracefully if the database cannot be loaded (Closes: 444478).
   * Fail gracefully if on Ubuntu with braindead locales (Closes: 431364).
-  * take a patch back from Ubuntu, I'm happy their users contribute back more
-    diligently than their developpers. apt-listchanges on Debian gains a new
-    gtk front-end (Closes: 451845).
+  * apt-listchanges on Debian gains a new gtk front-end (Closes: 451845),
+    thanks to Michael Vogt.
   * debian/control: add the vcs-* headers so that noone can pretend he cannot
     send patches.
   * fix wrong path in the .es documentation (good eyes lintian !).

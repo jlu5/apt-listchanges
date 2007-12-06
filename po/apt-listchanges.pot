@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-11-18 23:51+CET\n"
+"POT-Creation-Date: 2007-11-18 23:59+CET\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,63 +70,63 @@ msgstr ""
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
-#: ../apt-listchanges/ALCConfig.py:79
+#: ../apt-listchanges/ALCConfig.py:78
 msgid ""
 "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt-listchanges/ALCConfig.py:134
+#: ../apt-listchanges/ALCConfig.py:133
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt-listchanges/AptListChangesGtk.py:77
+#: ../apt-listchanges/AptListChangesGtk.py:76
 msgid "Continue Installation?"
 msgstr ""
 
-#: ../apt-listchanges/AptListChangesGtk.py:77
+#: ../apt-listchanges/AptListChangesGtk.py:76
 msgid "You can abort the installation if you select 'no'."
 msgstr ""
 
-#: ../apt-listchanges/DebianFiles.py:167
+#: ../apt-listchanges/DebianFiles.py:166
 msgid "Ignoring `%s' (seems to be a directory !)"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:51
+#: ../apt-listchanges/apt_listchanges.py:50
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:92
+#: ../apt-listchanges/apt_listchanges.py:91
 msgid "Mailing %s: %s"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:116
+#: ../apt-listchanges/apt_listchanges.py:115
 msgid "The %s frontend is deprecated, using pager"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:120
+#: ../apt-listchanges/apt_listchanges.py:119
 msgid "The mail frontend needs a installed 'sendmail', using pager"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:132
+#: ../apt-listchanges/apt_listchanges.py:131
 msgid ""
 "The gtk frontend needs a working python-gtk2 and python-glade2.\n"
 "Those imports can not be found. Falling back to pager.\n"
 "The error is: %s\n"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:182
+#: ../apt-listchanges/apt_listchanges.py:181
 msgid "Do you want to continue? [Y/n]? "
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:195
-#: ../apt-listchanges/apt_listchanges.py:215
-#: ../apt-listchanges/apt_listchanges.py:223
+#: ../apt-listchanges/apt_listchanges.py:194
+#: ../apt-listchanges/apt_listchanges.py:214
+#: ../apt-listchanges/apt_listchanges.py:222
 msgid "Reading changelogs"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:223
+#: ../apt-listchanges/apt_listchanges.py:222
 msgid "Done"
 msgstr ""
 
