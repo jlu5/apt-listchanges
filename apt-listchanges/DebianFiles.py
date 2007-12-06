@@ -31,16 +31,11 @@ import errno
 import glob
 import shutil
 
-import gettext
 import apt_pkg
+from ALChacks import *
 
 # TODO:
 # indexed lookups by package at least, maybe by arbitrary field
-
-def _(x):
-    try:
-        return gettext.translation('apt-listchanges').lgettext(x)
-    except: return x
 
 def numeric_urgency(u):
     urgency_map = { 'low' : 1,

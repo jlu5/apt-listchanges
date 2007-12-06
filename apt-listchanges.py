@@ -26,24 +26,12 @@
 
 import sys, os
 import apt_pkg
-import locale
-import gettext
 import anydbm
 import commands
 
 sys.path += ['./apt-listchanges', '/usr/share/apt-listchanges']
+from ALChacks import *
 import apt_listchanges, DebianFiles, ALCConfig
-
-try:
-    locale.setlocale(locale.LC_ALL, '')
-except locale.Error:
-    sys.stderr.write(_("Can't set locale; make sure $LC_* and $LANG are correct!\n"))
-    sys.exit(1)
-
-def _(x):
-    try:
-        return gettext.translation('apt-listchanges').lgettext(x)
-    except: return x
 
 def main():
     config = ALCConfig.ALCConfig()

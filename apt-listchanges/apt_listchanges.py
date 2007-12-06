@@ -27,22 +27,17 @@ import sys
 import os
 import os.path
 import re
-import gettext
 import locale
 import email.Message
 import email.Header
 import email.Charset
 import cStringIO
 import tempfile
+from ALChacks import *
 
 # TODO:
 # newt-like frontend, or maybe some GUI bit
 # keep track of tar/dpkg-deb errors like in pre-2.0
-
-def _(x):
-    try:
-        return gettext.translation('apt-listchanges').lgettext(x)
-    except: return x
 
 def read_apt_pipeline(config):
     version = sys.stdin.readline().rstrip()

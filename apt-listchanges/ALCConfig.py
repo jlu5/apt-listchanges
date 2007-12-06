@@ -27,12 +27,8 @@ import ConfigParser
 import getopt
 import sys, os
 import re
-import gettext
 
-def _(x):
-    try:
-        return gettext.translation('apt-listchanges').lgettext(x)
-    except: return x
+from ALChacks import *
 
 class ALCConfig:
     def __init__(self):
