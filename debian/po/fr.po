@@ -1,16 +1,9 @@
+# Translation of apt-listchanges debconf templates to French
+# Copyright (C) 2007 Christian Perrier <bubulle@debian.org>
+# This file is distributed under the same license as the apt-listchanges package.
 #
-#    Translators, if you are not familiar with the PO format, gettext
-#    documentation is worth reading, especially sections dedicated to
-#    this format, e.g. by running:
-#         info -n '(gettext)PO Files'
-#         info -n '(gettext)Header Entry'
-#
-#    Some information specific to po-debconf are available at
-#            /usr/share/doc/po-debconf/README-trans
-#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
-#
-#    Developers do not need to manually edit POT or PO files.
-#
+# Christian Perrier <bubulle@debian.org>, 2007.
+# Denis Barbier <barbier@linuxfr.org>, -2006
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
@@ -33,7 +26,7 @@ msgstr "Pageur"
 #. Choices
 #: ../templates:1001
 msgid "gtk"
-msgstr ""
+msgstr "GTK"
 
 #. Type: select
 #. Choices
@@ -113,6 +106,7 @@ msgstr ""
 " Pageur           : utilise votre pageur (logiciel de pagination)\n"
 "                    préféré (« more », « less », etc.) pour afficher\n"
 "                    les changements page par page ;\n"
+" GTK              : affiche les changements dans une fenêtre GTK ;\n"
 " Navigateur       : affiche dans un navigateur les changements au\n"
 "                    format HTML ;\n"
 " Pageur xterm     : utilise votre pageur préféré dans un xterm lancé\n"
