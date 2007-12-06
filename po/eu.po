@@ -1,0 +1,107 @@
+# apt-listchanges basque translation
+# Copyright (C) YEAR ORGANIZATION
+# Piarres Beobide <pi@beobide.net>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: apt-listchanges 2.73\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-15 18:20+CEST\n"
+"PO-Revision-Date: 2007-04-17 12:55+0200\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
+"Language-Team: Euskara <LL@librezale.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 0.10.1\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: ../apt-listchanges.py:88
+msgid ""
+"Unknown frontend: %s\n"
+msgstr ""
+"Interfaze ezezaguna: %s\n"
+
+#: ../apt-listchanges.py:113
+msgid "%s: will be newly installed"
+msgstr "%s: berriz instalatuko da"
+
+#: ../apt-listchanges.py:122
+msgid "%s: Version %s has already been seen"
+msgstr "%s: %s bertsioa dagoeneko ikusia izan da"
+
+#: ../apt-listchanges.py:155
+msgid "News for %s"
+msgstr "%s-ren berriak"
+
+#: ../apt-listchanges.py:166
+msgid "Changes for %s"
+msgstr "%s-ren aldaketak"
+
+#: ../apt-listchanges.py:176
+msgid "Informational notes"
+msgstr "Argibide oharrak"
+
+#: ../apt-listchanges.py:188
+msgid "Aborting"
+msgstr "Uzten"
+
+#: ../apt-listchanges.py:191
+msgid "Confirmation failed, don't save seen state"
+msgstr "Berrespenak huts egin du, ez gorde ikuste egoera"
+
+#: ../apt-listchanges.py:197
+msgid "apt-listchanges: changelogs for %s"
+msgstr "apt-listchanges: %s-ren aldaketa erregistroak"
+
+#: ../apt-listchanges.py:201
+msgid "apt-listchanges: news for %s"
+msgstr "apt-listchanges: %s-ren berriak"
+
+#: ../apt-listchanges.py:213
+msgid "didn't find any valid .deb archives"
+msgstr "ez du baliozko .deb fitxategirik aurkitu"
+
+#: ../apt-listchanges/ALCConfig.py:78
+msgid ""
+"Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
+msgstr ""
+"Erabilera: apt-listchanges [aukerak] {--apt | fitxategia.deb ...}\n"
+
+#: ../apt-listchanges/ALCConfig.py:133
+msgid "Unknown option %s for --which.  Allowed are: %s."
+msgstr "%s aukera ezezaguna --wich-rentzat.  Onartutakoak: %s."
+
+#: ../apt-listchanges/DebianFiles.py:174
+msgid "Ignoring `%s' (seems to be a directory !)"
+msgstr "`%s' alde batetara uzten (direktorio bat dela dirudi !)"
+
+#: ../apt-listchanges/apt_listchanges.py:48
+msgid ""
+"Wrong or missing VERSION from apt pipeline\n"
+"(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
+msgstr ""
+"BERTSIO okerra edo falta da apt hodian\n"
+"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version 2-ra ezarririk dago?)\n"
+
+#: ../apt-listchanges/apt_listchanges.py:89
+msgid "Mailing %s: %s"
+msgstr "%s postaz bidaltzen: %s"
+
+#: ../apt-listchanges/apt_listchanges.py:113
+msgid "The %s frontend is deprecated, using pager"
+msgstr "%s interfazea zaharkiturik dago, orrialdekatzailea erabiliko da"
+
+#: ../apt-listchanges/apt_listchanges.py:157
+msgid "Do you want to continue? [Y/n]? "
+msgstr "Aurrera jarraitu nahi al duzu? [B/e]"
+
+#: ../apt-listchanges/apt_listchanges.py:170
+#: ../apt-listchanges/apt_listchanges.py:190
+#: ../apt-listchanges/apt_listchanges.py:198
+msgid "Reading changelogs"
+msgstr "Aldaketa erregistroak irakurtzen"
+
+#: ../apt-listchanges/apt_listchanges.py:198
+msgid "Done"
+msgstr "Eginda"

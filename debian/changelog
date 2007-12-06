@@ -4,6 +4,7 @@ apt-listchanges (2.76) UNRELEASED; urgency=low
     (Closes: 451995, 454581).
   * Add patch from Felipe Sateler to have a better title to html output
     (Closes: 431501).
+  * Add po/eu.po from Piarres Beobide (Closes: 419673).
 
  -- Pierre Habouzit <madcoder@debian.org>  Thu, 06 Dec 2007 14:38:24 +0100
 
