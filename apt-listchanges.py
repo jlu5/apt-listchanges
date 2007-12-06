@@ -195,9 +195,11 @@ def main():
         changes += _("Informational notes") + ":\n\n" + '\n'.join(notes)
 
     if news:
+        frontend.set_title( _('apt-listchanges: News') )
         frontend.display_output(news)
 
     if changes:
+        frontend.set_title( _('apt-listchanges: Changelogs') )
         frontend.display_output(changes)
 
     if news or changes:

@@ -172,6 +172,9 @@ class frontend:
     def confirm(self):
         return 1
 
+    def set_title(self, text):
+        pass
+
 class ttyconfirm:
     def confirm(self):
         try:
@@ -280,11 +283,15 @@ class html:
     # regxlib.com
     email_re = re.compile(r'([a-zA-Z0-9_\-\.]+)@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)')
 
+    title = '''apt-listchanges output'''
+
     def _render(self, text):
         htmltext = cStringIO.StringIO()
         htmltext.write('''<html>
         <head>
-        <title>apt-listchanges output</title>
+        <title>''')
+        htmltext.write(self.title)
+        htmltext.write('''</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         </head>
 
@@ -315,6 +322,8 @@ class browser(html, pager):
     def __init__(self, *args):
         apply(pager.__init__, [self] + list(args))
         self.command = self.config.get('browser', 'sensible-browser')
+    def set_title(self, text):
+        self.title = text
 
 class xterm_browser(html, xterm):
     def __init__(self, *args):
