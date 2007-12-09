@@ -1,4 +1,4 @@
-apt-listchanges (2.77) UNRELEASED; urgency=low
+apt-listchanges (2.77) unstable; urgency=low
 
   * Clean up debian/preinst: removing the pyo/pyc was needed for sarge -> etch
     upgrades only.
@@ -8,7 +8,7 @@ apt-listchanges (2.77) UNRELEASED; urgency=low
   * Fix the postrm that checked for ucf presence the wrong way
     (Closes: 440384).
 
- -- Pierre Habouzit <madcoder@debian.org>  Thu, 06 Dec 2007 15:00:39 +0100
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 09 Dec 2007 18:03:50 +0100
 
 apt-listchanges (2.76) unstable; urgency=low
 
