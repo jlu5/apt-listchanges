@@ -178,6 +178,16 @@
 	    </VARLISTENTRY>
 
 	    <VARLISTENTRY>
+	      <TERM>gtk</TERM>
+	      <LISTITEM>
+		<PARA>
+                  Spawns a gtk window to display the changelogs. Needs
+                  python-glade2, python-gtk2 to be installed.
+		</PARA>
+	      </LISTITEM>
+	    </VARLISTENTRY>
+
+	    <VARLISTENTRY>
 	      <TERM>none</TERM>
 	      <LISTITEM>
 		<PARA>
