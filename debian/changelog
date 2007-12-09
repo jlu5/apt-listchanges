@@ -2,6 +2,7 @@ apt-listchanges (2.77) unstable; urgency=low
 
   * Clean up debian/preinst: removing the pyo/pyc was needed for sarge -> etch
     upgrades only.
+  * Bump Standards-Version to 3.7.3, no changes required.
   * Fix the email header encoding issue, it's not a python bug after all
     (Closes: 391014).
   * Document the gtk frontend in the manpage (Closes: 452500).
