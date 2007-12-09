@@ -5,6 +5,8 @@ apt-listchanges (2.77) UNRELEASED; urgency=low
   * Fix the email header encoding issue, it's not a python bug after all
     (Closes: 391014).
   * Document the gtk frontend in the manpage (Closes: 452500).
+  * Fix the postrm that checked for ucf presence the wrong way
+    (Closes: 440384).
 
  -- Pierre Habouzit <madcoder@debian.org>  Thu, 06 Dec 2007 15:00:39 +0100
 
