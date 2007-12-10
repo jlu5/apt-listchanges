@@ -90,7 +90,7 @@ def mail_changes(address, changes, subject):
     charset.header_encoding = email.Charset.QP
     message = email.Message.Message()
     message.set_charset(charset)
-    message['Subject'] = email.Header(subject, 'utf-8')
+    message['Subject'] = email.Header.Header(subject, 'utf-8')
     message['To'] = address
     message.set_payload(changes)
 
