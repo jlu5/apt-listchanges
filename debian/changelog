@@ -1,3 +1,10 @@
+apt-listchanges (2.79) UNRELEASED; urgency=low
+
+  * Force locale to C if python does not groks the locale at all
+    (Closes: 455811)
+
+ -- Pierre Habouzit <madcoder@debian.org>  Wed, 12 Dec 2007 00:55:32 +0100
+
 apt-listchanges (2.78) unstable; urgency=medium
 
   * Stupid typo in the apt_listchanges module, for the mail front-end.
