@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-12-10 17:46+CET\n"
+"POT-Creation-Date: 2007-12-12 11:33+CET\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt-listchanges/ALChacks.py:31
+#: ../apt-listchanges/ALChacks.py:32
 msgid ""
 "Can't set locale; make sure $LC_* and $LANG are correct!\n"
 msgstr ""

@@ -2,6 +2,7 @@ apt-listchanges (2.79) UNRELEASED; urgency=low
 
   * Force locale to C if python does not groks the locale at all
     (Closes: 455811)
+  * Force unicode for subject (Closes: 455704).
 
  -- Pierre Habouzit <madcoder@debian.org>  Wed, 12 Dec 2007 00:55:32 +0100
 
