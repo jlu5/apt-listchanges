@@ -14,9 +14,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"Report-Msgid-Bugs-To: Source: apt-listchanges@packages.debian.org\n"
-"POT-Creation-Date: 2007-11-18 23:44+0100\n"
-"PO-Revision-Date: 2007-01-21 19:37+0100\n"
+"Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-24 16:37+0100\n"
+"PO-Revision-Date: 2007-12-26 16:45+0100\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,211 +25,227 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "pager"
 msgstr "pager"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
-msgid "gtk"
-msgstr ""
-
-#. Type: select
-#. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "browser"
 msgstr "browser"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "xterm-pager"
 msgstr "xterm-pager"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "xterm-browser"
 msgstr "xterm-browser"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
+msgid "gtk"
+msgstr "gtk"
+
+#. Type: select
+#. Choices
+#: ../templates:2001
 msgid "text"
 msgstr "text"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "mail"
 msgstr "pošta"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "none"
-msgstr "žádný"
+msgstr "žádné"
 
 #. Type: select
 #. Description
-#: ../templates:1002
-msgid "Method for changes display:"
+#: ../templates:2002
+msgid "Method to be used to display changes:"
 msgstr "Způsob zobrazení změn:"
 
 #. Type: select
 #. Description
-#: ../templates:1002
+#: ../templates:2002
 msgid ""
-"apt-listchanges can display package changes in a number of different ways."
-msgstr ""
-"apt-listchanges může zobrazovat změny v balících mnoha různými způsoby."
+"Changes in packages can be displayed in various ways by apt-listchanges:"
+msgstr "apt-listchanges umí zobrazit změny v balících různými způsoby:"
 
 #. Type: select
 #. Description
-#: ../templates:1002
-#, fuzzy
-#| msgid ""
-#| " pager         : use your preferred pager to display changes one page at\n"
-#| "                 a time;\n"
-#| " browser       : display HTML-formatted changes using a web browser;\n"
-#| " xterm-pager   : like pager, but in an xterm in the background;\n"
-#| " xterm-browser : like browser, but in an xterm in the background;\n"
-#| " text          : print changes to your terminal (without pausing);\n"
-#| " mail          : only send changes via mail;\n"
-#| " none          : do not run automatically from apt."
+#: ../templates:2002
 msgid ""
-" pager         : use your preferred pager to display changes one page at\n"
-"                 a time;\n"
-" gtk           : Display changes in a Gtk window;\n"
-" browser       : display HTML-formatted changes using a web browser;\n"
-" xterm-pager   : like pager, but in an xterm in the background;\n"
-" xterm-browser : like browser, but in an xterm in the background;\n"
-" text          : print changes to your terminal (without pausing);\n"
-" mail          : only send changes via mail;\n"
-" none          : do not run automatically from apt."
+" pager        : display changes one page at a time;\n"
+" browser      : display HTML-formatted changes using a web browser;\n"
+" xterm-pager  : like pager, but in an xterm in the background;\n"
+" xterm-browser: like browser, but in an xterm in the background;\n"
+" gtk          : display changes in a GTK window;\n"
+" text         : print changes to the terminal (without pausing);\n"
+" mail         : only send changes via e-mail;\n"
+" none         : do not run automatically from APT."
 msgstr ""
-" pager         : zobrazí změny pomocí vašeho oblíbeného pageru;\n"
-" browser       : zobrazí HTML-formátované změny pomocí webového\n"
-"                 prohlížeče;\n"
-" xterm-pager   : jako pager, ale v xtermu na pozadí;\n"
-" xterm-browser : jako browser, ale v xtermu na pozadí;\n"
-" text          : vypíše změny na terminál (bez pauzy);\n"
-" pošta         : pouze zašle změny poštou;\n"
-" žádný         : nespouští se z aptu automaticky."
+" pager        : zobrazí změny programem more, less, apod.;\n"
+" browser      : zobrazí HTML-formátované změny pomocí webového\n"
+"                prohlížeče;\n"
+" xterm-pager  : jako pager, ale v xtermu na pozadí;\n"
+" xterm-browser: jako browser, ale v xtermu na pozadí;\n"
+" gtk          : zobrazí změny v GTK okně;\n"
+" text         : vypíše změny na terminál (bez pauzy);\n"
+" pošta        : pouze zašle změny elektronickou poštou;\n"
+" žádné        : nespouští se z APTu automaticky."
 
 #. Type: select
 #. Description
-#: ../templates:1002
+#: ../templates:2002
 msgid ""
-"This setting can be overridden by a command-line option or an environment "
-"variable.  Note that you can still send a copy via mail with all of the "
-"frontends except 'none'."
+"This setting can be overridden at execution time. By default, all the "
+"options except for 'none' will also send copies by mail."
 msgstr ""
-"Parametr příkazové řádky nebo proměnná prostředí má před tímto nastavením "
-"přednost. Poznamenejme, že paralelně ke všem způsobům (kromě 'žádný') můžete "
-"zaslat kopii změn i poštou."
+"Toto nastavení lze změnit parametrem na příkazové řádce. Ve výchozím "
+"nastavení posílají všechny možnosti (kromě „žádné“) kopii emailem."
 
 #. Type: string
 #. Description
-#: ../templates:2001
-msgid "E-mail Address(es) which will receive changes:"
+#: ../templates:3001
+msgid "E-mail address(es) which will receive changes:"
 msgstr "Emailová adresa (adresy), kam zasílat změny:"
 
 #. Type: string
 #. Description
-#: ../templates:2001
+#: ../templates:3001
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  Please enter the "
-"email address the changes should be sent to."
+"Optionally, apt-listchanges can e-mail a copy of displayed changes to a "
+"specified address."
 msgstr ""
-"apt-listchanges může zasílat emailem kopii zobrazovaných změn. Zadejte "
-"prosím emailovou adresu, kam mají být zasílány."
+"apt-listchanges může volitelně zasílat emailem kopii zobrazovaných změn na "
+"zadanou adresu."
 
 #. Type: string
 #. Description
-#: ../templates:2001
+#: ../templates:3001
 msgid ""
-"Multiple addresses may be specified, delimited by commas.  Leave this empty "
-"if you do not want any email to be sent."
+"Multiple addresses may be specified, delimited by commas. Leaving this field "
+"empty disables mail notifications."
 msgstr ""
-"Můžete zadat více adres, oddělených čárkami. Nechte pole prázdné, pokud "
-"nechcete zasílat žádné emaily."
+"Lze zadat i více adres, stačí je oddělit čárkami. Pokud nechcete zasílat "
+"tyto emaily, ponechte prázdné."
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 msgid "Prompt for confirmation after displaying changes?"
 msgstr "Ptát se na potvrzení po zobrazení změn?"
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 msgid ""
-"After giving you a chance to read the list of changes, apt-listchanges can "
-"ask whether or not you would like to continue. This is useful when running "
-"from apt, as it gives you a chance to abort the upgrade if you see a change "
-"you do not want to apply (yet)."
+"After displaying the list of changes, apt-listchanges can pause with a "
+"confirmation prompt. This is useful when running from APT, as it offers an "
+"opportunity to abort the upgrade if a change is unwelcome."
 msgstr ""
 "Po zobrazení seznamu změn se může apt-listchanges zeptat, jestli chcete "
-"pokračovat nebo ne. Toto je užitečné při spuštění z apt, protože vám to dává "
+"pokračovat nebo ne. To je užitečné při spuštění z APT, protože vám to dává "
 "šanci přerušit aktualizaci, pokud uvidíte změnu, kterou zatím nechcete "
 "aplikovat."
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 msgid ""
-"This setting does not apply to the 'mail' or 'none' frontends, and can be "
-"overridden with a command line option."
+"This can be overridden at execution time, and has no effect if the "
+"configured frontend option is 'mail' or 'none'."
 msgstr ""
-"Toto nastavení neplatí pro frontendy 'mail' nebo 'žádný' a parametr na "
-"příkazové řádce má před ním přednost."
+"Zvolené chování lze změnit před spuštěním programu. Používáte-li rozhraní "
+"„pošta“ nebo „žádné“, nemá toto nastavení žádný vliv.."
 
 #. Type: boolean
 #. Description
-#: ../templates:4001
+#: ../templates:5001
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "Má apt-listchanges přeskočit změny, které již byly shlédnuty?"
 
 #. Type: boolean
 #. Description
-#: ../templates:4001
+#: ../templates:5001
 msgid ""
-"apt-listchanges has the capability to keep track of which changes have "
-"already been displayed, and to skip them in future invocations. This is "
-"useful, for example, when retrying an upgrade."
+"A record of already displayed changes can be kept in order to avoid "
+"displaying them again. This is useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges má schopnost zaznamenat si, které změny již byly zobrazeny, "
-"a přeskočit je při dalších spuštěních. Toto je užitečné například při "
-"opětovném pokusu o aktualizaci."
+"apt-listchanges si může zapamatovat, které změny již byly zobrazeny, a při "
+"dalších spuštěních je přeskočit. To je užitečné například při opětovném "
+"pokusu o aktualizaci."
 
 #. Type: select
 #. Choices
-#: ../templates:5001
-msgid "news, both, changelogs"
-msgstr "novinky, obojí, soubory změn"
+#: ../templates:6001
+msgid "news"
+msgstr "novinky"
+
+#. Type: select
+#. Choices
+#: ../templates:6001
+msgid "changelogs"
+msgstr "seznamy změn"
+
+#. Type: select
+#. Choices
+#: ../templates:6001
+msgid "both"
+msgstr "obojí"
 
 #. Type: select
 #. Description
-#: ../templates:5002
-msgid "Changes displayed with apt:"
-msgstr "Změny, které se mají zobrazovat pomocí apt:"
+#: ../templates:6002
+msgid "Changes displayed with APT:"
+msgstr "Změny, které se mají zobrazovat pomocí APT:"
 
 #. Type: select
 #. Description
-#: ../templates:5002
+#: ../templates:6002
 msgid "Please choose which type of changes should be displayed with APT."
 msgstr "Vyberte, které typy změn se mají zobrazovat pomocí APT."
 
 #. Type: select
 #. Description
-#: ../templates:5002
+#: ../templates:6002
 msgid ""
-" news - important news items only\n"
-" both - both news and detailed changelogs\n"
-" changelogs - detailed changelogs only"
+" news      : important news items only;\n"
+" changelogs: detailed changelogs only;\n"
+" both      : news and changelogs."
 msgstr ""
-" novinky - jen důležité novinky\n"
-" obojí - novinky i podrobné seznamy změn\n"
-" soubory změn - jen podrobné seznamy změn"
+" novinky     : jen důležité novinky;\n"
+" seznamy změn: jen podrobné seznamy změn;\n"
+" obojí       : novinky i podrobné seznamy změn."
+
+#~| msgid ""
+#~| "apt-listchanges can display package changes in a number of different "
+#~| "ways."
+#~ msgid ""
+#~ "Package changes may be displayed by apt-listchanges in a number of "
+#~ "different ways."
+#~ msgstr ""
+#~ "apt-listchanges může zobrazovat změny v balících mnoha různými způsoby."
+
+#~| msgid ""
+#~| "This setting does not apply to the 'mail' or 'none' frontends, and can "
+#~| "be overridden with a command line option."
+#~ msgid ""
+#~ "This setting does not apply to the 'mail' or 'none' frontends, and can be "
+#~ "overridden at execution time."
+#~ msgstr ""
+#~ "Toto nastavení se nevztahuje na rozhraní „mail“ a „žádné“. Parametr na "
+#~ "příkazové řádce má před tímto nastavením přednost."

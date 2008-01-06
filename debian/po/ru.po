@@ -1,4 +1,4 @@
-# translation of apt-listchanges_2.72.1_debconf_ru.po to Russian
+# translation of ru.po to Russian
 #
 #    Translators, if you are not familiar with the PO format, gettext
 #    documentation is worth reading, especially sections dedicated to
@@ -14,10 +14,10 @@
 # Yuri Kozlov <kozlov.y@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.72.1\n"
-"Report-Msgid-Bugs-To: Source: apt-listchanges@packages.debian.org\n"
-"POT-Creation-Date: 2007-11-18 23:44+0100\n"
-"PO-Revision-Date: 2007-02-11 16:45+0300\n"
+"Project-Id-Version: 2.76\n"
+"Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-24 16:37+0100\n"
+"PO-Revision-Date: 2007-12-29 18:12+0300\n"
 "Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,212 +29,209 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "pager"
 msgstr "пейджер"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
-msgid "gtk"
-msgstr ""
-
-#. Type: select
-#. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "browser"
 msgstr "браузер"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "xterm-pager"
 msgstr "xterm-пейджер"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "xterm-browser"
 msgstr "xterm-браузер"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
+msgid "gtk"
+msgstr "gtk"
+
+#. Type: select
+#. Choices
+#: ../templates:2001
 msgid "text"
 msgstr "текст"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "mail"
 msgstr "почта"
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "none"
 msgstr "не выводить"
 
 #. Type: select
 #. Description
-#: ../templates:1002
-msgid "Method for changes display:"
+#: ../templates:2002
+msgid "Method to be used to display changes:"
 msgstr "Метод показа изменений:"
 
 #. Type: select
 #. Description
-#: ../templates:1002
+#: ../templates:2002
 msgid ""
-"apt-listchanges can display package changes in a number of different ways."
+"Changes in packages can be displayed in various ways by apt-listchanges:"
 msgstr ""
-"apt-listchanges может отображать записи журнала изменений в пакете "
-"несколькими способами."
+"apt-listchanges может отображать изменения в пакете несколькими способами:"
 
 #. Type: select
 #. Description
-#: ../templates:1002
-#, fuzzy
-#| msgid ""
-#| " pager         : use your preferred pager to display changes one page at\n"
-#| "                 a time;\n"
-#| " browser       : display HTML-formatted changes using a web browser;\n"
-#| " xterm-pager   : like pager, but in an xterm in the background;\n"
-#| " xterm-browser : like browser, but in an xterm in the background;\n"
-#| " text          : print changes to your terminal (without pausing);\n"
-#| " mail          : only send changes via mail;\n"
-#| " none          : do not run automatically from apt."
+#: ../templates:2002
 msgid ""
-" pager         : use your preferred pager to display changes one page at\n"
-"                 a time;\n"
-" gtk           : Display changes in a Gtk window;\n"
-" browser       : display HTML-formatted changes using a web browser;\n"
-" xterm-pager   : like pager, but in an xterm in the background;\n"
-" xterm-browser : like browser, but in an xterm in the background;\n"
-" text          : print changes to your terminal (without pausing);\n"
-" mail          : only send changes via mail;\n"
-" none          : do not run automatically from apt."
+" pager        : display changes one page at a time;\n"
+" browser      : display HTML-formatted changes using a web browser;\n"
+" xterm-pager  : like pager, but in an xterm in the background;\n"
+" xterm-browser: like browser, but in an xterm in the background;\n"
+" gtk          : display changes in a GTK window;\n"
+" text         : print changes to the terminal (without pausing);\n"
+" mail         : only send changes via e-mail;\n"
+" none         : do not run automatically from APT."
 msgstr ""
-" пейджер       : предпочитаемый пейджер для постраничного просмотра "
-"изменений;\n"
-" браузер       : просмотр изменений в формате HTML через веб браузер;\n"
-" xterm-пейджер : то же, что и пейджер, но в окне xterm;\n"
-" xterm-браузер : то же, что и браузер, но в окне xterm;\n"
-" текст         : вывести изменения на терминал (без пауз);\n"
-" почта         : послать изменения по почте;\n"
-" не выводить   : не запускать из apt автоматически."
+" пейджер       : постраничный просмотр изменений\n"
+" браузер       : просмотр изменений в формате HTML через веб-браузер\n"
+" xterm-пейджер : то же, что и пейджер, но в окне xterm\n"
+" xterm-браузер : то же, что и браузер, но в окне xterm\n"
+" gtk          : вывод изменений в окне GTK\n"
+" текст         : вывод изменений на терминал (без пауз)\n"
+" почта         : отправка изменений по почте\n"
+" не выводить   : не запускать из APT автоматически."
 
 #. Type: select
 #. Description
-#: ../templates:1002
+#: ../templates:2002
 msgid ""
-"This setting can be overridden by a command-line option or an environment "
-"variable.  Note that you can still send a copy via mail with all of the "
-"frontends except 'none'."
+"This setting can be overridden at execution time. By default, all the "
+"options except for 'none' will also send copies by mail."
 msgstr ""
-"Эта настройка может быть изменена параметром командной строки или переменной "
-"окружения. Обратите внимание, что вы по-прежнему будете получать копию по "
-"почте при любых способах отображения, кроме \"не выводить\"."
+"Эта настройка может быть изменена во время исполнения. По умолчанию, при "
+"любом способе отображения, кроме \"не выводить\", также отправляется копия "
+"по почте."
 
 #. Type: string
 #. Description
-#: ../templates:2001
-msgid "E-mail Address(es) which will receive changes:"
-msgstr "E-mail адрес(а), на который будут отправлены изменения:"
+#: ../templates:3001
+msgid "E-mail address(es) which will receive changes:"
+msgstr "Эл. адрес(а), на который будут отправлены изменения:"
 
 #. Type: string
 #. Description
-#: ../templates:2001
+#: ../templates:3001
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  Please enter the "
-"email address the changes should be sent to."
+"Optionally, apt-listchanges can e-mail a copy of displayed changes to a "
+"specified address."
 msgstr ""
 "apt-listchanges может отправлять копию отображаемых изменений по электронной "
-"почте. Укажите кому должна быть адресована эта почта."
+"почте на указанный адрес."
 
 #. Type: string
 #. Description
-#: ../templates:2001
+#: ../templates:3001
 msgid ""
-"Multiple addresses may be specified, delimited by commas.  Leave this empty "
-"if you do not want any email to be sent."
+"Multiple addresses may be specified, delimited by commas. Leaving this field "
+"empty disables mail notifications."
 msgstr ""
-"Можно указать несколько адресов, перечислив их через запятую. Оставьте поле "
-"пустым, если не хотите отправлять изменения по почте."
+"Можно указать несколько адресов, перечислив их через запятую. Чтобы "
+"выключить отправку по почте оставьте поле пустым."
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 msgid "Prompt for confirmation after displaying changes?"
 msgstr "Ожидать подтверждения после показа изменений?"
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 msgid ""
-"After giving you a chance to read the list of changes, apt-listchanges can "
-"ask whether or not you would like to continue. This is useful when running "
-"from apt, as it gives you a chance to abort the upgrade if you see a change "
-"you do not want to apply (yet)."
+"After displaying the list of changes, apt-listchanges can pause with a "
+"confirmation prompt. This is useful when running from APT, as it offers an "
+"opportunity to abort the upgrade if a change is unwelcome."
 msgstr ""
 "После отображения журнала изменений apt-listchanges может спросить нужно ли "
-"продолжать или нет. Это полезно при запуске из apt, так как позволяет "
-"прервать обновление пакета, если вы видите, что в пакете произошли (пока) не "
+"продолжать или нет. Это полезно при запуске из APT, так как позволяет "
+"прервать обновление пакета, если вы видите, что в пакете произошли не "
 "устраивающие вас изменения."
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 msgid ""
-"This setting does not apply to the 'mail' or 'none' frontends, and can be "
-"overridden with a command line option."
+"This can be overridden at execution time, and has no effect if the "
+"configured frontend option is 'mail' or 'none'."
 msgstr ""
-"Эта опция не применима при использовании методов отображения \"почта\" и "
-"\"не выводить\", и может быть изменена значением параметра командной строки."
+"Эта настройка может быть изменена во время исполнения и не учитывается, если "
+"способом отображения задано \"не выводить\" или \"почта\"."
 
 #. Type: boolean
 #. Description
-#: ../templates:4001
+#: ../templates:5001
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr ""
 "Должен ли apt-listchanges пропускать изменения, которые уже просматривались?"
 
 #. Type: boolean
 #. Description
-#: ../templates:4001
+#: ../templates:5001
 msgid ""
-"apt-listchanges has the capability to keep track of which changes have "
-"already been displayed, and to skip them in future invocations. This is "
-"useful, for example, when retrying an upgrade."
+"A record of already displayed changes can be kept in order to avoid "
+"displaying them again. This is useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges может отслеживать изменения, которые уже были показаны и "
-"пропускать их в будущем. Это полезно, например, при последующих обновлениях."
+"Есть возможность запоминать уже отображавшиеся изменения, чтобы пропускать "
+"их в будущем. Это полезно, например, при повторных попытках обновления."
 
 #. Type: select
 #. Choices
-#: ../templates:5001
-msgid "news, both, changelogs"
-msgstr "новости, все, изменения"
+#: ../templates:6001
+msgid "news"
+msgstr "новости"
+
+#. Type: select
+#. Choices
+#: ../templates:6001
+msgid "changelogs"
+msgstr "изменения"
+
+#. Type: select
+#. Choices
+#: ../templates:6001
+msgid "both"
+msgstr "все"
 
 #. Type: select
 #. Description
-#: ../templates:5002
-msgid "Changes displayed with apt:"
-msgstr "Отображаемые изменения с apt:"
+#: ../templates:6002
+msgid "Changes displayed with APT:"
+msgstr "Отображаемые изменения с APT:"
 
 #. Type: select
 #. Description
-#: ../templates:5002
+#: ../templates:6002
 msgid "Please choose which type of changes should be displayed with APT."
 msgstr "Выберите тип изменений, которые должны отображаться с APT."
 
 #. Type: select
 #. Description
-#: ../templates:5002
+#: ../templates:6002
 msgid ""
-" news - important news items only\n"
-" both - both news and detailed changelogs\n"
-" changelogs - detailed changelogs only"
+" news      : important news items only;\n"
+" changelogs: detailed changelogs only;\n"
+" both      : news and changelogs."
 msgstr ""
-" новости   - только важные новости\n"
-" все       - новости и изменения\n"
-" изменения - только изменения"
+" новости   : только важные новости\n"
+" изменения : только изменения\n"
+" все       : новости и изменения"

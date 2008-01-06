@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"Report-Msgid-Bugs-To: Source: apt-listchanges@packages.debian.org\n"
-"POT-Creation-Date: 2007-11-18 23:44+0100\n"
+"Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-24 16:37+0100\n"
 "PO-Revision-Date: 2005-02-11 14:00 +0100\n"
 "Last-Translator: Marek Laska <tamcap@tamcap.one.pl>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
@@ -25,134 +25,138 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "pager"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
-msgid "gtk"
-msgstr ""
-
-#. Type: select
-#. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "browser"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "xterm-pager"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "xterm-browser"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
+msgid "gtk"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:2001
 msgid "text"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "mail"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "none"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:1002
-msgid "Method for changes display:"
+#: ../templates:2002
+msgid "Method to be used to display changes:"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:1002
+#: ../templates:2002
 msgid ""
-"apt-listchanges can display package changes in a number of different ways."
-msgstr "apt-listchanges może wyświetlać zmiany na różne sposoby."
-
-#. Type: select
-#. Description
-#: ../templates:1002
-msgid ""
-" pager         : use your preferred pager to display changes one page at\n"
-"                 a time;\n"
-" gtk           : Display changes in a Gtk window;\n"
-" browser       : display HTML-formatted changes using a web browser;\n"
-" xterm-pager   : like pager, but in an xterm in the background;\n"
-" xterm-browser : like browser, but in an xterm in the background;\n"
-" text          : print changes to your terminal (without pausing);\n"
-" mail          : only send changes via mail;\n"
-" none          : do not run automatically from apt."
+"Changes in packages can be displayed in various ways by apt-listchanges:"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:1002
+#: ../templates:2002
 msgid ""
-"This setting can be overridden by a command-line option or an environment "
-"variable.  Note that you can still send a copy via mail with all of the "
-"frontends except 'none'."
+" pager        : display changes one page at a time;\n"
+" browser      : display HTML-formatted changes using a web browser;\n"
+" xterm-pager  : like pager, but in an xterm in the background;\n"
+" xterm-browser: like browser, but in an xterm in the background;\n"
+" gtk          : display changes in a GTK window;\n"
+" text         : print changes to the terminal (without pausing);\n"
+" mail         : only send changes via e-mail;\n"
+" none         : do not run automatically from APT."
 msgstr ""
-"To ustawienie można przesłonić parametrem linii poleceń lub zmienną "
-"środowiska. Każda metoda oprócz \"nic\" pozwala na wysyłanie kopii pocztą "
-"elektroniczną."
 
-#. Type: string
+#. Type: select
 #. Description
-#: ../templates:2001
-msgid "E-mail Address(es) which will receive changes:"
+#: ../templates:2002
+msgid ""
+"This setting can be overridden at execution time. By default, all the "
+"options except for 'none' will also send copies by mail."
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../templates:2001
+#: ../templates:3001
+msgid "E-mail address(es) which will receive changes:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../templates:3001
 #, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  Please enter the "
-"email address the changes should be sent to."
+"Optionally, apt-listchanges can e-mail a copy of displayed changes to a "
+"specified address."
 msgstr ""
 "apt-listchanges może wysyłać kopie wyświetlanych list zmian pocztą "
 "elektroniczną. Pod jaki adres mają być one wysyłane?"
 
 #. Type: string
 #. Description
-#: ../templates:2001
+#: ../templates:3001
+#, fuzzy
+#| msgid ""
+#| "Multiple addresses may be specified, delimited by commas.  Leave this "
+#| "empty if you do not want any email to be sent."
 msgid ""
-"Multiple addresses may be specified, delimited by commas.  Leave this empty "
-"if you do not want any email to be sent."
+"Multiple addresses may be specified, delimited by commas. Leaving this field "
+"empty disables mail notifications."
 msgstr ""
 "Wiele różnych adresów należy oddzielać przecinkiem. Należy pozostawić to  "
 "pole puste, jeśli listy nie powinny być wysyłane."
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 #, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
 msgstr "Czy pytać o potwierdzenie po wyświetleniu zmian?"
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
+#, fuzzy
+#| msgid ""
+#| "After giving you a chance to read the list of changes, apt-listchanges "
+#| "can ask whether or not you would like to continue. This is useful when "
+#| "running from apt, as it gives you a chance to abort the upgrade if you "
+#| "see a change you do not want to apply (yet)."
 msgid ""
-"After giving you a chance to read the list of changes, apt-listchanges can "
-"ask whether or not you would like to continue. This is useful when running "
-"from apt, as it gives you a chance to abort the upgrade if you see a change "
-"you do not want to apply (yet)."
+"After displaying the list of changes, apt-listchanges can pause with a "
+"confirmation prompt. This is useful when running from APT, as it offers an "
+"opportunity to abort the upgrade if a change is unwelcome."
 msgstr ""
 "Po wyświetleniu listy zmian apt-listchanges może zapytać o kontynuację "
 "działania. Jest to użyteczne gdy apt-listchanges jest uruchamiany przez apt, "
@@ -161,27 +165,29 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 msgid ""
-"This setting does not apply to the 'mail' or 'none' frontends, and can be "
-"overridden with a command line option."
+"This can be overridden at execution time, and has no effect if the "
+"configured frontend option is 'mail' or 'none'."
 msgstr ""
-"To ustawienie nie dotyczy metod \"poczta\" i \"nic\". Może być ono zniesione "
-"parametrem linii poleceń."
 
 #. Type: boolean
 #. Description
-#: ../templates:4001
+#: ../templates:5001
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "Czy apt-listchanges ma pomijać zmiany już wcześniej wyświetlone?"
 
 #. Type: boolean
 #. Description
-#: ../templates:4001
+#: ../templates:5001
+#, fuzzy
+#| msgid ""
+#| "apt-listchanges has the capability to keep track of which changes have "
+#| "already been displayed, and to skip them in future invocations. This is "
+#| "useful, for example, when retrying an upgrade."
 msgid ""
-"apt-listchanges has the capability to keep track of which changes have "
-"already been displayed, and to skip them in future invocations. This is "
-"useful, for example, when retrying an upgrade."
+"A record of already displayed changes can be kept in order to avoid "
+"displaying them again. This is useful, for example, when retrying an upgrade."
 msgstr ""
 "apt-listchanges może śledzić, które zmiany zostały wyświetlonewcześniej i "
 "pomijać je przy kolejnych wywołaniach. Jest to użyteczne, na przykład przy "
@@ -189,35 +195,83 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:5001
-msgid "news, both, changelogs"
+#: ../templates:6001
+msgid "news"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:6001
+#, fuzzy
+#| msgid "news, both, changelogs"
+msgid "changelogs"
 msgstr "wiadomości, wszystkie, dzienniki zmian"
 
 #. Type: select
+#. Choices
+#: ../templates:6001
+msgid "both"
+msgstr ""
+
+#. Type: select
 #. Description
-#: ../templates:5002
+#: ../templates:6002
 #, fuzzy
-msgid "Changes displayed with apt:"
+msgid "Changes displayed with APT:"
 msgstr "Jak mają być wyświetlane zmiany gdy używany jest apt?"
 
 #. Type: select
 #. Description
-#: ../templates:5002
+#: ../templates:6002
 #, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
 msgstr "Jakie typy zmian mają być wyświetlane gdy używany jest apt?"
 
 #. Type: select
 #. Description
-#: ../templates:5002
+#: ../templates:6002
+#, fuzzy
+#| msgid ""
+#| " news - important news items only\n"
+#| " both - both news and detailed changelogs\n"
+#| " changelogs - detailed changelogs only"
 msgid ""
-" news - important news items only\n"
-" both - both news and detailed changelogs\n"
-" changelogs - detailed changelogs only"
+" news      : important news items only;\n"
+" changelogs: detailed changelogs only;\n"
+" both      : news and changelogs."
 msgstr ""
 " wiadomości - tylko ważne wiadomości\n"
 " wszystkie - zarówno wiadomości i dokładne dzienniki zmian\n"
 " dzienniki zmian - tylko dokładne dzinniki zmian"
+
+#, fuzzy
+#~| msgid ""
+#~| "apt-listchanges can display package changes in a number of different "
+#~| "ways."
+#~ msgid ""
+#~ "Package changes may be displayed by apt-listchanges in a number of "
+#~ "different ways."
+#~ msgstr "apt-listchanges może wyświetlać zmiany na różne sposoby."
+
+#, fuzzy
+#~| msgid ""
+#~| "This setting does not apply to the 'mail' or 'none' frontends, and can "
+#~| "be overridden with a command line option."
+#~ msgid ""
+#~ "This setting does not apply to the 'mail' or 'none' frontends, and can be "
+#~ "overridden at execution time."
+#~ msgstr ""
+#~ "To ustawienie nie dotyczy metod \"poczta\" i \"nic\". Może być ono "
+#~ "zniesione parametrem linii poleceń."
+
+#~ msgid ""
+#~ "This setting can be overridden by a command-line option or an environment "
+#~ "variable.  Note that you can still send a copy via mail with all of the "
+#~ "frontends except 'none'."
+#~ msgstr ""
+#~ "To ustawienie można przesłonić parametrem linii poleceń lub zmienną "
+#~ "środowiska. Każda metoda oprócz \"nic\" pozwala na wysyłanie kopii pocztą "
+#~ "elektroniczną."
 
 #~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 #~ msgstr ""

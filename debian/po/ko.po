@@ -14,8 +14,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
-"Report-Msgid-Bugs-To: Source: apt-listchanges@packages.debian.org\n"
-"POT-Creation-Date: 2007-11-18 23:44+0100\n"
+"Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-24 16:37+0100\n"
 "PO-Revision-Date: 2004-04-29 20:33-0700\n"
 "Last-Translator:  Eungkyu Song <eungkyu@sparcs.kaist.ac.kr>\n"
 "Language-Team:  Eungkyu Song <eungkyu@sparcs.kaist.ac.kr>\n"
@@ -25,132 +25,127 @@ msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "pager"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
-msgid "gtk"
-msgstr ""
-
-#. Type: select
-#. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "browser"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "xterm-pager"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "xterm-browser"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
+msgid "gtk"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:2001
 msgid "text"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "mail"
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:1001
+#: ../templates:2001
 msgid "none"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:1002
-msgid "Method for changes display:"
+#: ../templates:2002
+msgid "Method to be used to display changes:"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:1002
-#, fuzzy
+#: ../templates:2002
 msgid ""
-"apt-listchanges can display package changes in a number of different ways."
-msgstr ""
-"apt-listchanges는 changelog 항목을 여러가지 방법으로 표시할 수 있습니다."
-
-#. Type: select
-#. Description
-#: ../templates:1002
-msgid ""
-" pager         : use your preferred pager to display changes one page at\n"
-"                 a time;\n"
-" gtk           : Display changes in a Gtk window;\n"
-" browser       : display HTML-formatted changes using a web browser;\n"
-" xterm-pager   : like pager, but in an xterm in the background;\n"
-" xterm-browser : like browser, but in an xterm in the background;\n"
-" text          : print changes to your terminal (without pausing);\n"
-" mail          : only send changes via mail;\n"
-" none          : do not run automatically from apt."
+"Changes in packages can be displayed in various ways by apt-listchanges:"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:1002
+#: ../templates:2002
 msgid ""
-"This setting can be overridden by a command-line option or an environment "
-"variable.  Note that you can still send a copy via mail with all of the "
-"frontends except 'none'."
+" pager        : display changes one page at a time;\n"
+" browser      : display HTML-formatted changes using a web browser;\n"
+" xterm-pager  : like pager, but in an xterm in the background;\n"
+" xterm-browser: like browser, but in an xterm in the background;\n"
+" gtk          : display changes in a GTK window;\n"
+" text         : print changes to the terminal (without pausing);\n"
+" mail         : only send changes via e-mail;\n"
+" none         : do not run automatically from APT."
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../templates:2002
+msgid ""
+"This setting can be overridden at execution time. By default, all the "
+"options except for 'none' will also send copies by mail."
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../templates:2001
-msgid "E-mail Address(es) which will receive changes:"
+#: ../templates:3001
+msgid "E-mail address(es) which will receive changes:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../templates:2001
+#: ../templates:3001
 #, fuzzy
 msgid ""
-"apt-listchanges can email a copy of displayed changes.  Please enter the "
-"email address the changes should be sent to."
+"Optionally, apt-listchanges can e-mail a copy of displayed changes to a "
+"specified address."
 msgstr ""
 "Email을 통해 changelog 항목으로 보내도록 선택했습니다.  어떤 주소로 그것을 보"
 "낼까요?"
 
 #. Type: string
 #. Description
-#: ../templates:2001
+#: ../templates:3001
 msgid ""
-"Multiple addresses may be specified, delimited by commas.  Leave this empty "
-"if you do not want any email to be sent."
+"Multiple addresses may be specified, delimited by commas. Leaving this field "
+"empty disables mail notifications."
 msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 #, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
 msgstr "changelog를 표시한 다음에 확인하는 질문을 할까요?"
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
+#: ../templates:4001
 #, fuzzy
 msgid ""
-"After giving you a chance to read the list of changes, apt-listchanges can "
-"ask whether or not you would like to continue. This is useful when running "
-"from apt, as it gives you a chance to abort the upgrade if you see a change "
-"you do not want to apply (yet)."
+"After displaying the list of changes, apt-listchanges can pause with a "
+"confirmation prompt. This is useful when running from APT, as it offers an "
+"opportunity to abort the upgrade if a change is unwelcome."
 msgstr ""
 "changelog 항목을 표시한 다음에, apt-listchanges는 계속할지 말지 질문을 할 수 "
 "있습니다. 이것은 apt로부터 실행될 때 유용합니다. (아직) 원하지 않는 변경을 확"
@@ -158,59 +153,82 @@ msgstr ""
 
 #. Type: boolean
 #. Description
-#: ../templates:3001
-#, fuzzy
+#: ../templates:4001
 msgid ""
-"This setting does not apply to the 'mail' or 'none' frontends, and can be "
-"overridden with a command line option."
+"This can be overridden at execution time, and has no effect if the "
+"configured frontend option is 'mail' or 'none'."
 msgstr ""
-"이 설정은 apt로부터 실행할 때만 적용됩니다.  다른 경우에는, 명령줄 옵션으로 "
-"요청할 수 있습니다."
 
 #. Type: boolean
 #. Description
-#: ../templates:4001
+#: ../templates:5001
 #, fuzzy
 msgid "Should apt-listchanges skip changes that have already been seen?"
 msgstr "누구에게 changelog 항목으로 mail로 보낼까요?"
 
 #. Type: boolean
 #. Description
-#: ../templates:4001
+#: ../templates:5001
 msgid ""
-"apt-listchanges has the capability to keep track of which changes have "
-"already been displayed, and to skip them in future invocations. This is "
-"useful, for example, when retrying an upgrade."
+"A record of already displayed changes can be kept in order to avoid "
+"displaying them again. This is useful, for example, when retrying an upgrade."
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../templates:5001
-msgid "news, both, changelogs"
+#: ../templates:6001
+msgid "news"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:6001
+msgid "changelogs"
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../templates:6001
+msgid "both"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../templates:5002
+#: ../templates:6002
 #, fuzzy
-msgid "Changes displayed with apt:"
+msgid "Changes displayed with APT:"
 msgstr "기본적으로 어떻게 changelog를 표시하게 할까요?"
 
 #. Type: select
 #. Description
-#: ../templates:5002
+#: ../templates:6002
 #, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
 msgstr "기본적으로 어떻게 changelog를 표시하게 할까요?"
 
 #. Type: select
 #. Description
-#: ../templates:5002
+#: ../templates:6002
 msgid ""
-" news - important news items only\n"
-" both - both news and detailed changelogs\n"
-" changelogs - detailed changelogs only"
+" news      : important news items only;\n"
+" changelogs: detailed changelogs only;\n"
+" both      : news and changelogs."
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "Package changes may be displayed by apt-listchanges in a number of "
+#~ "different ways."
+#~ msgstr ""
+#~ "apt-listchanges는 changelog 항목을 여러가지 방법으로 표시할 수 있습니다."
+
+#, fuzzy
+#~ msgid ""
+#~ "This setting does not apply to the 'mail' or 'none' frontends, and can be "
+#~ "overridden at execution time."
+#~ msgstr ""
+#~ "이 설정은 apt로부터 실행할 때만 적용됩니다.  다른 경우에는, 명령줄 옵션으"
+#~ "로 요청할 수 있습니다."
 
 #, fuzzy
 #~ msgid ""

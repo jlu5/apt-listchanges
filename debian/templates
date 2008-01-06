@@ -1,62 +1,66 @@
+# These templates have been reviewed by the debian-l10n-english
+# team
+#
+# If modifications/additions/rewording are needed, please ask
+# debian-l10n-english@lists.debian.org for advice.
+#
+# Even minor modifications require translation updates and such
+# changes should be coordinated with translators and reviewers.
+
 Template: apt-listchanges/frontend
 Type: select
-__Choices: pager, gtk, browser, xterm-pager, xterm-browser, text, mail, none
+__Choices: pager, browser, xterm-pager, xterm-browser, gtk, text, mail, none
 Default: pager
-_Description: Method for changes display:
- apt-listchanges can display package changes in a number of different
- ways.
+_Description: Method to be used to display changes:
+ Changes in packages can be displayed in various ways by apt-listchanges:
  .
-  pager         : use your preferred pager to display changes one page at
-                  a time;
-  gtk           : Display changes in a Gtk window;
-  browser       : display HTML-formatted changes using a web browser;
-  xterm-pager   : like pager, but in an xterm in the background;
-  xterm-browser : like browser, but in an xterm in the background;
-  text          : print changes to your terminal (without pausing);
-  mail          : only send changes via mail;
-  none          : do not run automatically from apt.
+  pager        : display changes one page at a time;
+  browser      : display HTML-formatted changes using a web browser;
+  xterm-pager  : like pager, but in an xterm in the background;
+  xterm-browser: like browser, but in an xterm in the background;
+  gtk          : display changes in a GTK window;
+  text         : print changes to the terminal (without pausing);
+  mail         : only send changes via e-mail;
+  none         : do not run automatically from APT.
  .
- This setting can be overridden by a command-line option or an environment
- variable.  Note that you can still send a copy via mail with all of the
- frontends except 'none'.
+ This setting can be overridden at execution time. By default, all the
+ options except for 'none' will also send copies by mail.
 
 Template: apt-listchanges/email-address
 Type: string
 Default: root
-_Description: E-mail Address(es) which will receive changes:
- apt-listchanges can email a copy of displayed changes.  Please enter
- the email address the changes should be sent to.
+_Description: E-mail address(es) which will receive changes:
+ Optionally, apt-listchanges can e-mail a copy of displayed changes to
+ a specified address.
  .
- Multiple addresses may be specified, delimited by commas.  Leave this
- empty if you do not want any email to be sent.
+ Multiple addresses may be specified, delimited by commas. Leaving this
+ field empty disables mail notifications.
 
 Template: apt-listchanges/confirm
 Type: boolean
 Default: false
 _Description: Prompt for confirmation after displaying changes?
- After giving you a chance to read the list of changes, apt-listchanges
- can ask whether or not you would like to continue. This is useful when
- running from apt, as it gives you a chance to abort the upgrade if you see
- a change you do not want to apply (yet).
+ After displaying the list of changes, apt-listchanges can pause with
+ a confirmation prompt. This is useful when running from APT, as it
+ offers an opportunity to abort the upgrade if a change is unwelcome.
  .
- This setting does not apply to the 'mail' or 'none' frontends, and can be
- overridden with a command line option.
+ This can be overridden at execution time, and has no effect if the
+ configured frontend option is 'mail' or 'none'.
 
 Template: apt-listchanges/save-seen
 Type: boolean
 Default: true
 _Description: Should apt-listchanges skip changes that have already been seen?
- apt-listchanges has the capability to keep track of which changes
- have already been displayed, and to skip them in future
- invocations. This is useful, for example, when retrying an upgrade.
+ A record of already displayed changes can be kept in order to avoid
+ displaying them again. This is useful, for example, when retrying an upgrade.
 
 Template: apt-listchanges/which
 Type: select
-_Choices: news, both, changelogs
+__Choices: news, changelogs, both
 Default: news
-_Description: Changes displayed with apt:
+_Description: Changes displayed with APT:
  Please choose which type of changes should be displayed with APT.
  .
-  news - important news items only
-  both - both news and detailed changelogs
-  changelogs - detailed changelogs only
+  news      : important news items only;
+  changelogs: detailed changelogs only;
+  both      : news and changelogs.

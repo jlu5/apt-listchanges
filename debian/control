@@ -16,13 +16,14 @@ Depends: ${python:Depends}, apt (>= 0.5.3), python-apt, debconf | debconf-2.0,
  ucf (>= 0.28), debianutils (>= 2.0.2)
 Recommends: exim4 | mail-transport-agent, python-glade2, python-gtk2
 Suggests: x-terminal-emulator, www-browser
-Description: Display change history from .deb archives
- apt-listchanges is a tool to show what has been changed in a new
- version of a Debian package, as compared to the version currently
- installed on the system.  It does this by extracting the relevant
- entries from the Debian changelog file, and the NEWS.Debian file.
+Description: package change history notification tool
+ The tool apt-listchanges can compare a new version of a
+ package with the one currently installed and show what has been
+ changed, by extracting the relevant entries from the Debian changelog
+ and NEWS files.
  .
  It can be run on several .deb archives at a time to get a list of all
- of the changes that would be effected by installing or upgrading a
- group of packages.  It can be configured to do this automatically
- during upgrades using apt.
+ changes that would be caused by installing or upgrading a group of
+ packages. When configured as an APT plugin it will do this
+ automatically during upgrades.
+

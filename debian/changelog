@@ -1,3 +1,27 @@
+apt-listchanges (2.80) unstable; urgency=low
+
+  [ Christian Perrier ]
+  * Debconf templates and debian/control reviewed by the debian-l10n-
+    English team as part of the Smith review project. Closes: #455772
+  * [Debconf translation updates]
+  * Japanese. Closes: #455864
+  * Basque. Closes: #455885
+  * Galician. Closes: #455984
+  * German. Closes: #456238
+  * Portuguese. Closes: #456364
+  * Norwegian Bokmål. Closes: #456397
+  * Spanish. Closes: #456412
+  * Italian. Closes: #456511
+  * Vietnamese. Closes: #457310
+  * Czech. Closes: #457676
+  * Finnish. Closes: #457779
+  * Russian. Closes: #457874
+  * Dutch; Flemish. Closes: #458310
+  * French. Closes: #458513
+  * Japanese. Closes: #455864
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 06 Jan 2008 11:44:16 +0100
+
 apt-listchanges (2.79) unstable; urgency=medium
 
   * Force locale to C if python does not groks the locale at all

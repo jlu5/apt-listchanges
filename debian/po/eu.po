@@ -1,66 +1,68 @@
-# Translation of apt-listchanges debconf templates to German
-# Copyright (C) Helge Kreutzmann <debian@helgefjell.de>, 2006, 2007.
-# This file is distributed under the same license as the apt-listchanges package.
+# translation of apt-listchanges-templates.po to Euskara
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 #
+# Piarres Beobide <pi@beobide.net>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.76\n"
+"Project-Id-Version: apt-listchanges-templates\n"
 "Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
 "POT-Creation-Date: 2007-12-24 16:37+0100\n"
-"PO-Revision-Date: 2007-12-13 22:09+0100\n"
-"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
-"Language-Team: de <debian-l10n-german@lists.debian.org>\n"
+"PO-Revision-Date: 2007-12-12 12:31+0100\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
+"Language-Team: Euskara <Librezale@librezale.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "pager"
-msgstr "Anzeigeprogramm"
+msgstr "orrialdekatzailea"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "browser"
-msgstr "Browser"
+msgstr "nabigatzailea"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "xterm-pager"
-msgstr "Xterm-Anzeigeprogramm"
+msgstr "xterm-orrialdekatzailea"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "xterm-browser"
-msgstr "Xterm-Browser"
+msgstr "xterm-nabigatzailea"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "gtk"
-msgstr "GTK"
+msgstr "gtk"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "text"
-msgstr "Text"
+msgstr "testua"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "mail"
-msgstr "E-Mail"
+msgstr "posta"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "none"
-msgstr "Gar nicht"
+msgstr "bat ere ez"
 
 #. Type: select
 #. Description
@@ -68,7 +70,7 @@ msgstr "Gar nicht"
 #, fuzzy
 #| msgid "Method for changes display:"
 msgid "Method to be used to display changes:"
-msgstr "Methode zum Anzeigen der Änderungen:"
+msgstr "Aldaketak bistaratzeko metodoa:"
 
 #. Type: select
 #. Description
@@ -100,17 +102,16 @@ msgid ""
 " mail         : only send changes via e-mail;\n"
 " none         : do not run automatically from APT."
 msgstr ""
-" Anzeigeprogramm: zeigt die Änderungen seitenweise an\n"
-" Browser        : zeigt HTML-formatierte Änderungen mit einem\n"
-"                  Web-Browser an\n"
-" Xterm-Anzeigeprogramm: wie Anzeigeprogramm, aber in einem Xterm im\n"
-"                        Hintergrund\n"
-" Xterm-Browser  : wie Browser, aber in einem Xterm im Hintergrund\n"
-" GTK            : zeigt die Änderungen in einem GTK-Fenster\n"
-" Text           : schreibt die Änderungen in ein Terminal (ohne "
-"Unterbrechung)\n"
-" E-Mail         : sendet die Änderungen nur per E-Mail\n"
-" Gar nicht      : nicht automatisch von APT aus ausführen."
+" orrialdekatzailea       : aldaketak orriz-orri bistarazi;\n"
+" nabigatzailea           : HTML formatuko aldaketak nabigatzaile bate bidez "
+"bistarazi;\n"
+" xterm-orrialdekatzailea : orrialdekatzailea bezala baina xterm baten "
+"barruan;\n"
+" xterm-nabigatzailea     : nabigatzailea bezala xterm baten barruan;\n"
+" gtk                     : aldaketak GTK leiho batetan bistarazi;\n"
+" testua                  : aldaketak terminalean inprimatu (pausarik gabe);\n"
+" posta                   : aldaketak posta bidez bidali bakarrik;\n"
+" bat ere ez              : Ez abiarazi automatikoki ATP.tik."
 
 #. Type: select
 #. Description
@@ -123,14 +124,14 @@ msgid ""
 "This setting can be overridden at execution time. By default, all the "
 "options except for 'none' will also send copies by mail."
 msgstr ""
-"Diese Einstellung kann bei der Ausführung überschrieben werden. Alle "
-"Oberflächen außer »Gar nicht« können auch eine Kopie per E-Mail verschicken."
+"Ezarpen hauek exekuzio orduan gainidatzi daitezke. Interfaze guztiak baina "
+"'bat ere ez' erabiltzean kopia bat postaz bidaliko da."
 
 #. Type: string
 #. Description
 #: ../templates:3001
 msgid "E-mail address(es) which will receive changes:"
-msgstr "E-Mail-Adresse(n), die die Änderungen erhalten werden:"
+msgstr "Aldaketa berriak jasoko dituen helbidea(k):"
 
 #. Type: string
 #. Description
@@ -139,8 +140,8 @@ msgid ""
 "Optionally, apt-listchanges can e-mail a copy of displayed changes to a "
 "specified address."
 msgstr ""
-"Apt-listchanges kann optional eine Kopie der angezeigten Änderungen an eine "
-"angegebene Adresse versenden."
+"Aukera apt-listchanges bistarazitako aldaketen kopia bat ezarritako eposta "
+"helbidera bidali dezake."
 
 #. Type: string
 #. Description
@@ -149,16 +150,14 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas. Leaving this field "
 "empty disables mail notifications."
 msgstr ""
-"Mehrere Adressen können, durch Kommata getrennt, angegeben werden. Falls Sie "
-"dieses Feld leer lassen wird der E-Mail-Versand deaktiviert."
+"Hainbat helbide ezarri daitezke, gakoz bereizirik. Hutsik utziaz eposta "
+"bidezko berri emateak ezgaituko dira."
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
 msgid "Prompt for confirmation after displaying changes?"
-msgstr ""
-"Soll Apt-listchanges nach dem Anzeigen der Änderungen um eine Bestätigung "
-"bitten?"
+msgstr "Berrespena eskatu aldaketak bistarazi ondoren?"
 
 #. Type: boolean
 #. Description
@@ -173,10 +172,9 @@ msgid ""
 "confirmation prompt. This is useful when running from APT, as it offers an "
 "opportunity to abort the upgrade if a change is unwelcome."
 msgstr ""
-"Nachdem Apt-listchanges die Änderungen angezeigt hat, kann es unterbrechen "
-"und um eine Bestätigung bitten. Das ist nützlich, wenn Apt-listchanges von "
-"APT gestartet wird, da so eine Gelegenheit gegeben wird, das Upgrade "
-"abzubrechen, falls eine Änderungen nicht gewünscht wird."
+"Aldaketa zerrenda bistarazi ondoren, apt-listachanges gelditu egin daiteke "
+"aurrera jarraitzeko berrespenaren zain. Hau erabilgarri da berau APT "
+"barnetik deitzean aldaketak gustuko ez direnean eguneraketa bertan uzteko."
 
 #. Type: boolean
 #. Description
@@ -189,14 +187,16 @@ msgid ""
 "This can be overridden at execution time, and has no effect if the "
 "configured frontend option is 'mail' or 'none'."
 msgstr ""
-"Diese Einstellung kann bei der Ausführung überschrieben werden. Alle "
-"Oberflächen außer »Gar nicht« können auch eine Kopie per E-Mail verschicken."
+"Ezarpen hauek exekuzio orduan gainidatzi daitezke. Interfaze guztiak baina "
+"'bat ere ez' erabiltzean kopia bat postaz bidaliko da."
 
 #. Type: boolean
 #. Description
 #: ../templates:5001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "Soll Apt-listchanges bereits gesehene Einträge überspringen?"
+msgstr ""
+"Apt-listchanges-ek dagoeneko ikusiak dauden aldaketak albo batetara utzi "
+"behar al ditu?"
 
 #. Type: boolean
 #. Description
@@ -205,41 +205,40 @@ msgid ""
 "A record of already displayed changes can be kept in order to avoid "
 "displaying them again. This is useful, for example, when retrying an upgrade."
 msgstr ""
-"Es kann vermerkt werden, welche Änderungen bereits angezeigt wurden, um ein "
-"erneutes Anzeigen zu vermeiden. Dies ist beispielsweise nützlich, falls ein "
-"Upgrade erneut versucht wird."
+"Dagoeneko ikusi diren aldaketen erregistro bat gordeko da berriz bistaratzea "
+"saihesteko. Hau erabilgarri izan daiteke adibidez bertsio-berritze bat "
+"berriz saiatzean."
 
 #. Type: select
 #. Choices
 #: ../templates:6001
 msgid "news"
-msgstr "News-Dateien"
+msgstr "berriak"
 
 #. Type: select
 #. Choices
 #: ../templates:6001
 msgid "changelogs"
-msgstr "Changelog-Dateien"
+msgstr "aldaketa-erregistroak"
 
 #. Type: select
 #. Choices
 #: ../templates:6001
 msgid "both"
-msgstr "beide"
+msgstr "biak"
 
 #. Type: select
 #. Description
 #: ../templates:6002
 msgid "Changes displayed with APT:"
-msgstr "Mit APT angezeigte Änderungen:"
+msgstr "APT bidez bistarazitako aldaketak:"
 
 #. Type: select
 #. Description
 #: ../templates:6002
 msgid "Please choose which type of changes should be displayed with APT."
 msgstr ""
-"Bitte wählen Sie aus, welche Arten von Änderungen von APT angezeigt werden "
-"sollen."
+"Mesedez hautatu zein aldaketa mota bistarazi behar diren APT erabiltzean."
 
 #. Type: select
 #. Description
@@ -249,30 +248,19 @@ msgid ""
 " changelogs: detailed changelogs only;\n"
 " both      : news and changelogs."
 msgstr ""
-" News-Dateien     : Nur wichtige Neuigkeiten\n"
-" Changelog-Dateien: Nur detaillierte Changelogs (Änderungen)\n"
-" Beide            : Wichtige Neuigkeiten und detaillierte Changelogs"
+" berriak               : elementu berri garrantzitsuak bakarrik;\n"
+" aldaketa-erregistroak : zehazturiko aldaketa-erregistroak bakarrik;\n"
+" biak                  : berriak eta aldaketa-erregistroak."
 
 #~ msgid ""
 #~ "Package changes may be displayed by apt-listchanges in a number of "
 #~ "different ways."
 #~ msgstr ""
-#~ "Paketänderungen können durch Apt-listchanges auf viele verschiedene Arten "
-#~ "dargestellt werden."
+#~ "Pakete aldaketak modu ezberdinetan bistarazi ditzake apt-listchages-ek."
 
 #~ msgid ""
 #~ "This setting does not apply to the 'mail' or 'none' frontends, and can be "
 #~ "overridden at execution time."
 #~ msgstr ""
-#~ "Diese Einstellung gilt nicht für die »E-Mail«- oder »Gar nicht«-"
-#~ "Schnittstelle. Die Einstellung kann bei der Ausführung überschrieben "
-#~ "werden."
-
-#~ msgid ""
-#~ "This setting can be overridden by a command-line option or an environment "
-#~ "variable.  Note that you can still send a copy via mail with all of the "
-#~ "frontends except 'none'."
-#~ msgstr ""
-#~ "Diese Einstellung kann mit einer Kommandozeilenoption oder einer "
-#~ "Umgebungsvariablen umgangen werden. Beachten Sie, dass Sie auf jeden Fall "
-#~ "eine Kopie per E-Mail senden können, mit Ausnahme der Option »Gar nicht«."
+#~ "Ezarpen hauek ez dute eragiten 'posta' eta 'bat ere ez' interfazeekin, "
+#~ "etaexekuzio momentuan gainidatzi daitezke."
