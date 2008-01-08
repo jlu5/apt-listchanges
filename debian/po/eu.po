@@ -1,14 +1,14 @@
-# translation of apt-listchanges-templates.po to Euskara
+# translation of eu.449dgt.po to Euskara
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Piarres Beobide <pi@beobide.net>, 2007.
+# Piarres Beobide <pi@beobide.net>, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges-templates\n"
+"Project-Id-Version: eu.449dgt\n"
 "Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
 "POT-Creation-Date: 2007-12-24 16:37+0100\n"
-"PO-Revision-Date: 2007-12-12 12:31+0100\n"
+"PO-Revision-Date: 2008-01-07 10:03+0100\n"
 "Last-Translator: Piarres Beobide <pi@beobide.net>\n"
 "Language-Team: Euskara <Librezale@librezale.org>\n"
 "MIME-Version: 1.0\n"
@@ -67,22 +67,19 @@ msgstr "bat ere ez"
 #. Type: select
 #. Description
 #: ../templates:2002
-#, fuzzy
 #| msgid "Method for changes display:"
 msgid "Method to be used to display changes:"
-msgstr "Aldaketak bistaratzeko metodoa:"
+msgstr "Aldaketak bistaratzeko erabiliko den metodoa:"
 
 #. Type: select
 #. Description
 #: ../templates:2002
-msgid ""
-"Changes in packages can be displayed in various ways by apt-listchanges:"
-msgstr ""
+msgid "Changes in packages can be displayed in various ways by apt-listchanges:"
+msgstr "Paketeetako aldaketak metodo ezberdinez bistarazi daitezke apt-listchanges-ekin:"
 
 #. Type: select
 #. Description
 #: ../templates:2002
-#, fuzzy
 #| msgid ""
 #| " pager        : display changes one page at a time;\n"
 #| " browser      : display HTML-formatted changes using a web browser;\n"
@@ -110,13 +107,12 @@ msgstr ""
 " xterm-nabigatzailea     : nabigatzailea bezala xterm baten barruan;\n"
 " gtk                     : aldaketak GTK leiho batetan bistarazi;\n"
 " testua                  : aldaketak terminalean inprimatu (pausarik gabe);\n"
-" posta                   : aldaketak posta bidez bidali bakarrik;\n"
-" bat ere ez              : Ez abiarazi automatikoki ATP.tik."
+" posta                   : aldaketak bakarrik posta bidez bidali;\n"
+" bat ere ez              : Ez abiarazi automatikoki ATP-tik."
 
 #. Type: select
 #. Description
 #: ../templates:2002
-#, fuzzy
 #| msgid ""
 #| "This setting can be overridden at execution time. All frontends but "
 #| "'none' can also mail a copy."
@@ -124,8 +120,8 @@ msgid ""
 "This setting can be overridden at execution time. By default, all the "
 "options except for 'none' will also send copies by mail."
 msgstr ""
-"Ezarpen hauek exekuzio orduan gainidatzi daitezke. Interfaze guztiak baina "
-"'bat ere ez' erabiltzean kopia bat postaz bidaliko da."
+"Ezarpen hauek exekuzioan gainidatzi daitezke. 'bat ere ez' ez beste "
+"Interfaze erabiltzean kopia bat postaz bidaliko da."
 
 #. Type: string
 #. Description
@@ -162,7 +158,6 @@ msgstr "Berrespena eskatu aldaketak bistarazi ondoren?"
 #. Type: boolean
 #. Description
 #: ../templates:4001
-#, fuzzy
 #| msgid ""
 #| "After displaying the list of changes, apt-listchanges may pause with a "
 #| "confirmation prompt. This is useful when running from APT, as it offers "
@@ -173,13 +168,13 @@ msgid ""
 "opportunity to abort the upgrade if a change is unwelcome."
 msgstr ""
 "Aldaketa zerrenda bistarazi ondoren, apt-listachanges gelditu egin daiteke "
-"aurrera jarraitzeko berrespenaren zain. Hau erabilgarri da berau APT "
-"barnetik deitzean aldaketak gustuko ez direnean eguneraketa bertan uzteko."
+"aurrera jarraitzeko berrespenaren zain. Hau erabilgarri da berau APT barnetik "
+"deitzean aldaketak gustuko ez direnean eguneraketa bertan uzteko aukera "
+"ematen bait du."
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
-#, fuzzy
 #| msgid ""
 #| "This setting can be overridden at execution time. All frontends but "
 #| "'none' can also mail a copy."
@@ -187,8 +182,8 @@ msgid ""
 "This can be overridden at execution time, and has no effect if the "
 "configured frontend option is 'mail' or 'none'."
 msgstr ""
-"Ezarpen hauek exekuzio orduan gainidatzi daitezke. Interfaze guztiak baina "
-"'bat ere ez' erabiltzean kopia bat postaz bidaliko da."
+"Hau exekuzioan gainidatzi daitezke, eta ez dute eraginik "
+"konfiguratutako interfazea 'posta' edo 'bat ere ez' denean."
 
 #. Type: boolean
 #. Description
@@ -237,8 +232,7 @@ msgstr "APT bidez bistarazitako aldaketak:"
 #. Description
 #: ../templates:6002
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr ""
-"Mesedez hautatu zein aldaketa mota bistarazi behar diren APT erabiltzean."
+msgstr "Mesedez hautatu zein aldaketa mota bistarazi behar diren APT erabiltzean."
 
 #. Type: select
 #. Description
@@ -252,15 +246,3 @@ msgstr ""
 " aldaketa-erregistroak : zehazturiko aldaketa-erregistroak bakarrik;\n"
 " biak                  : berriak eta aldaketa-erregistroak."
 
-#~ msgid ""
-#~ "Package changes may be displayed by apt-listchanges in a number of "
-#~ "different ways."
-#~ msgstr ""
-#~ "Pakete aldaketak modu ezberdinetan bistarazi ditzake apt-listchages-ek."
-
-#~ msgid ""
-#~ "This setting does not apply to the 'mail' or 'none' frontends, and can be "
-#~ "overridden at execution time."
-#~ msgstr ""
-#~ "Ezarpen hauek ez dute eragiten 'posta' eta 'bat ere ez' interfazeekin, "
-#~ "etaexekuzio momentuan gainidatzi daitezke."
