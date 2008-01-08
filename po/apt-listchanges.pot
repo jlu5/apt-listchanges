@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2007-12-12 11:33+CET\n"
+"POT-Creation-Date: 2008-01-08 23:33+CET\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,11 +87,11 @@ msgid ""
 "Can't set locale; make sure $LC_* and $LANG are correct!\n"
 msgstr ""
 
-#: ../apt-listchanges/AptListChangesGtk.py:67
+#: ../apt-listchanges/AptListChangesGtk.py:68
 msgid "Continue Installation?"
 msgstr ""
 
-#: ../apt-listchanges/AptListChangesGtk.py:67
+#: ../apt-listchanges/AptListChangesGtk.py:68
 msgid "You can abort the installation if you select 'no'."
 msgstr ""
 
@@ -109,32 +109,32 @@ msgstr ""
 msgid "Mailing %s: %s"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:110
+#: ../apt-listchanges/apt_listchanges.py:111
 msgid "The %s frontend is deprecated, using pager"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:114
+#: ../apt-listchanges/apt_listchanges.py:115
 msgid "The mail frontend needs a installed 'sendmail', using pager"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:126
+#: ../apt-listchanges/apt_listchanges.py:127
 msgid ""
 "The gtk frontend needs a working python-gtk2 and python-glade2.\n"
 "Those imports can not be found. Falling back to pager.\n"
 "The error is: %s\n"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:179
+#: ../apt-listchanges/apt_listchanges.py:180
 msgid "Do you want to continue? [Y/n]? "
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:192
-#: ../apt-listchanges/apt_listchanges.py:212
-#: ../apt-listchanges/apt_listchanges.py:220
+#: ../apt-listchanges/apt_listchanges.py:193
+#: ../apt-listchanges/apt_listchanges.py:213
+#: ../apt-listchanges/apt_listchanges.py:221
 msgid "Reading changelogs"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:220
+#: ../apt-listchanges/apt_listchanges.py:221
 msgid "Done"
 msgstr ""
 

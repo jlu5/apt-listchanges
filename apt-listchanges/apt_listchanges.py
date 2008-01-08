@@ -114,7 +114,7 @@ def make_frontend(name, packages, config):
     if name == "mail" and not os.path.exists("/usr/sbin/sendmail"):
         sys.stderr.write((_("The mail frontend needs a installed 'sendmail', using pager") + '\n'))
         name = 'pager'
-        
+
     # TODO: it would probably be nice to have a frontends subdir and
     # import from that. that would mean a uniform mechanism for all
     # frontends (that would become small files inside

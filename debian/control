@@ -1,6 +1,6 @@
 Source: apt-listchanges
 Section: utils
-Priority: optional
+Priority: standard
 Maintainer: Pierre Habouzit <madcoder@debian.org>
 Uploaders: Matt Zimmerman <mdz@debian.org>
 Standards-Version: 3.7.3
@@ -14,8 +14,8 @@ Package: apt-listchanges
 Architecture: all
 Depends: ${python:Depends}, apt (>= 0.5.3), python-apt, debconf | debconf-2.0,
  ucf (>= 0.28), debianutils (>= 2.0.2)
-Recommends: exim4 | mail-transport-agent, python-glade2, python-gtk2
-Suggests: x-terminal-emulator, www-browser
+Recommends: exim4 | mail-transport-agent
+Suggests: x-terminal-emulator, www-browser, python-glade2, python-gtk2
 Description: package change history notification tool
  The tool apt-listchanges can compare a new version of a
  package with the one currently installed and show what has been

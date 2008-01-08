@@ -1,5 +1,7 @@
 apt-listchanges (2.81) UNRELEASED; urgency=low
 
+  * debian/control: Bump priority to standard, as discussed on debian-devel,
+    and don't recommend python-{glade,gtk} because of that (Closes: 459258).
   * Check for the .glade file existence before passing it to glade, to avoid
     spurious error messages (Closes: 454161).
 
