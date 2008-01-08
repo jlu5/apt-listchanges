@@ -28,6 +28,7 @@ class gtk2(frontend):
     def __init__(self, packages, config):
         frontend.__init__(self,packages, config)
         try:
+            file("apt-listchanges/apt-listchanges.glade").close()
             self.glade = gtk.glade.XML("apt-listchanges/apt-listchanges.glade")
         except:
             self.glade = gtk.glade.XML("/usr/share/apt-listchanges/apt-listchanges.glade")
