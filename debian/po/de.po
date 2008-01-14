@@ -1,13 +1,13 @@
-# Translation of apt-listchanges debconf templates to German
-# Copyright (C) Helge Kreutzmann <debian@helgefjell.de>, 2006, 2007.
+# Translation of apt-listchanges debconf templates to Germah
+# Copyright (C) Helge Kreutzmann <debian@helgefjell.de>, 2006, 2007, 2008.
 # This file is distributed under the same license as the apt-listchanges package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.76\n"
+"Project-Id-Version: apt-listchanges 2.80\n"
 "Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
 "POT-Creation-Date: 2007-12-24 16:37+0100\n"
-"PO-Revision-Date: 2007-12-13 22:09+0100\n"
+"PO-Revision-Date: 2008-01-09 11:39+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: de <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,10 +65,8 @@ msgstr "Gar nicht"
 #. Type: select
 #. Description
 #: ../templates:2002
-#, fuzzy
-#| msgid "Method for changes display:"
 msgid "Method to be used to display changes:"
-msgstr "Methode zum Anzeigen der Änderungen:"
+msgstr "Methode, die zum Anzeigen der Änderungen verwendet wird:"
 
 #. Type: select
 #. Description
@@ -76,20 +74,12 @@ msgstr "Methode zum Anzeigen der Änderungen:"
 msgid ""
 "Changes in packages can be displayed in various ways by apt-listchanges:"
 msgstr ""
+"Änderungen in Paketen können von Apt-listchanges auf verschiedene Arten "
+"dargestellt werden:"
 
 #. Type: select
 #. Description
 #: ../templates:2002
-#, fuzzy
-#| msgid ""
-#| " pager        : display changes one page at a time;\n"
-#| " browser      : display HTML-formatted changes using a web browser;\n"
-#| " xterm-pager  : like pager, but in an xterm in the background;\n"
-#| " xterm-browser: like browser, but in an xterm in the background;\n"
-#| " gtk          : display changes in a GTK window;\n"
-#| " text         : print changes to the terminal (without pausing);\n"
-#| " mail         : only send changes via mail;\n"
-#| " none         : do not run automatically from APT."
 msgid ""
 " pager        : display changes one page at a time;\n"
 " browser      : display HTML-formatted changes using a web browser;\n"
@@ -115,16 +105,12 @@ msgstr ""
 #. Type: select
 #. Description
 #: ../templates:2002
-#, fuzzy
-#| msgid ""
-#| "This setting can be overridden at execution time. All frontends but "
-#| "'none' can also mail a copy."
 msgid ""
 "This setting can be overridden at execution time. By default, all the "
 "options except for 'none' will also send copies by mail."
 msgstr ""
-"Diese Einstellung kann bei der Ausführung überschrieben werden. Alle "
-"Oberflächen außer »Gar nicht« können auch eine Kopie per E-Mail verschicken."
+"Diese Einstellung kann bei der Ausführung überschrieben werden. Standardmäßig "
+"werden alle Oberflächen außer »Gar nicht« auch eine Kopie per E-Mail verschicken."
 
 #. Type: string
 #. Description
@@ -163,11 +149,6 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:4001
-#, fuzzy
-#| msgid ""
-#| "After displaying the list of changes, apt-listchanges may pause with a "
-#| "confirmation prompt. This is useful when running from APT, as it offers "
-#| "an opportunity to abort the upgrade if a change is unwelcome."
 msgid ""
 "After displaying the list of changes, apt-listchanges can pause with a "
 "confirmation prompt. This is useful when running from APT, as it offers an "
@@ -181,16 +162,12 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../templates:4001
-#, fuzzy
-#| msgid ""
-#| "This setting can be overridden at execution time. All frontends but "
-#| "'none' can also mail a copy."
 msgid ""
 "This can be overridden at execution time, and has no effect if the "
 "configured frontend option is 'mail' or 'none'."
 msgstr ""
-"Diese Einstellung kann bei der Ausführung überschrieben werden. Alle "
-"Oberflächen außer »Gar nicht« können auch eine Kopie per E-Mail verschicken."
+"Dies kann bei der Ausführung überschrieben werden und hat keinen Effekt, "
+"falls die konfigurierte Oberflächenoption »E-Mail« oder »Gar nicht« lautet."
 
 #. Type: boolean
 #. Description
