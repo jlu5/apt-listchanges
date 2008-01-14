@@ -1,3 +1,10 @@
+apt-listchanges (2.72.5.etch1) UNRELEASED; urgency=low
+
+  * fix a potential security issue in apt-listchanges import paths, thanks for
+    Felipe Sateler for the heads up.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Mon, 14 Jan 2008 09:57:07 +0100
+
 apt-listchanges (2.72.5) unstable; urgency=low
 
   * Fix a typo in the preinst: .pyo -> .pyc, thanks to Marc Brockschmidt.

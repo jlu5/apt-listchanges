@@ -24,14 +24,14 @@
 #   MA 02111-1307 USA
 #
 
-import sys
+import sys, os, os.path
 import apt_pkg
 import locale
 import gettext
 import anydbm
 import commands
 
-sys.path += ['./apt-listchanges', '/usr/share/apt-listchanges']
+sys.path += [os.path.dirname(sys.argv[0]) + '/apt-listchanges', '/usr/share/apt-listchanges']
 import apt_listchanges, DebianFiles, ALCConfig
 
 locale.setlocale(locale.LC_ALL, '')
