@@ -46,6 +46,7 @@ class ALCConfig:
         self.profile = None
         self.which = 'both'
         self.allowed_which = ('both', 'news', 'changelogs')
+        self.since = None
 
     def read(self, file):
         self.parser = ConfigParser.ConfigParser()
@@ -79,8 +80,8 @@ class ALCConfig:
         try:
             (optlist, args) = getopt.getopt(argv[1:], 'vf:s:cah', [
                 "apt", "verbose", "frontend=", "email-address=", "confirm",
-                "all", "headers", "save_seen=", "debug", "which=", "help",
-                "profile="])
+                "all", "headers", "save_seen=", "since=", "debug", "which=",
+                "help", "profile="])
         except getopt.GetoptError:
             return None
 
@@ -116,6 +117,8 @@ class ALCConfig:
                 self.email_address = arg
             elif opt in ('-c', '--confirm'):
                 self.confirm = 1
+            elif opt in ('--since'):
+                self.since = arg
             elif opt in ('-a', '--all'):
                 self.show_all = 1
             elif opt in ('-h', '--headers'):
@@ -137,6 +140,11 @@ class ALCConfig:
         if self.save_seen == 'none':
             self.save_seen = None
 
+        if self.since is not None:
+            if len(args) is not 1:
+                print _('--since=<version> expects a only path to a .deb')
+                sys.exit(1)
+            self.save_seen = None
         return args
 
 __all__ = [ 'ALCConfig' ]

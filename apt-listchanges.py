@@ -111,6 +111,8 @@ def main():
         if not config.show_all:
             if config.save_seen and seen.has_key(srcpackage):
                 fromversion = seen[srcpackage]
+            elif config.since:
+                fromversion = config.since
             else:
                 statusentry = status.find('Package', binpackage)
                 if statusentry and statusentry.installed():
