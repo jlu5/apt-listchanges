@@ -6,6 +6,7 @@ apt-listchanges (2.83) UNRELEASED; urgency=low
     - Basque. Closes: #501010
     - Traditional Chinese. Closes: #501034
     - Simplified Chinese. Closes: #501039
+    - Swedish. Closes: #501051
 
  -- Christian Perrier <bubulle@debian.org>  Sun, 05 Oct 2008 17:59:10 +0200
 
