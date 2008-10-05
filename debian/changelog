@@ -1,3 +1,10 @@
+apt-listchanges (2.83) UNRELEASED; urgency=low
+
+  * Programs translation updates:
+    - French. Closes: #469248
+
+ -- Christian Perrier <bubulle@debian.org>  Sun, 05 Oct 2008 17:59:10 +0200
+
 apt-listchanges (2.82) unstable; urgency=high
 
   * fix a potential security issue in apt-listchanges import paths, thanks for

@@ -1,12 +1,12 @@
-# translation of fr.po to French
-# Copyright (C) YEAR ORGANIZATION.
+# translation of apt-listchanges to French
+# Copyright (C) 2008 Christian Perrier <bubulle@debian.org>
 #
-# Christian Perrier <bubulle@debian.org>, 2004, 2006.
+# Christian Perrier <bubulle@debian.org>, 2004, 2006, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: fr\n"
-"POT-Creation-Date: 2006-10-12 13:21+CEST\n"
-"PO-Revision-Date: 2006-10-12 18:15+0200\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2008-01-08 23:33+CET\n"
+"PO-Revision-Date: 2008-02-16 20:08+0100\n"
 "Last-Translator: Christian Perrier <bubulle@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,63 +15,89 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: ../apt-listchanges.py:85
+#: ../apt-listchanges.py:80
+msgid "database %s failed to load.\n"
+msgstr "échec du chargement de la base de données %s.\n"
+
+#: ../apt-listchanges.py:97
 msgid "Unknown frontend: %s\n"
 msgstr "Interface inconnue : %s\n"
 
-#: ../apt-listchanges.py:110
+#: ../apt-listchanges.py:120
 msgid "%s: will be newly installed"
 msgstr "%s : sera installé pour la première fois"
 
-#: ../apt-listchanges.py:119
+#: ../apt-listchanges.py:129
 msgid "%s: Version %s has already been seen"
 msgstr "%s : la version %s a déjà été vue"
 
-#: ../apt-listchanges.py:152
+#: ../apt-listchanges.py:162
 msgid "News for %s"
 msgstr "Nouveautés pour %s"
 
-#: ../apt-listchanges.py:163
+#: ../apt-listchanges.py:173
 msgid "Changes for %s"
 msgstr "Modifications pour %s"
 
-#: ../apt-listchanges.py:173
+#: ../apt-listchanges.py:183
 msgid "Informational notes"
 msgstr "Notes d'information"
 
-#: ../apt-listchanges.py:185
+#: ../apt-listchanges.py:186
+msgid "apt-listchanges: News"
+msgstr "apt-listchanges : nouveautés"
+
+#: ../apt-listchanges.py:190
+msgid "apt-listchanges: Changelogs"
+msgstr "apt-listchanges : journaux des modifications (« changelogs »)"
+
+#: ../apt-listchanges.py:197
 msgid "Aborting"
 msgstr "Abandon"
 
-#: ../apt-listchanges.py:188
+#: ../apt-listchanges.py:200
 msgid "Confirmation failed, don't save seen state"
 msgstr "Échec de la confirmation, état vu (« seen ») non sauvegardé"
 
-#: ../apt-listchanges.py:194
+#: ../apt-listchanges.py:206
 msgid "apt-listchanges: changelogs for %s"
 msgstr "apt-listchanges : journaux des modifications (« changelogs ») pour %s"
 
-#: ../apt-listchanges.py:198
+#: ../apt-listchanges.py:210
 msgid "apt-listchanges: news for %s"
 msgstr "apt-listchanges : nouveautés pour %s"
 
-#: ../apt-listchanges.py:210
+#: ../apt-listchanges.py:222
 msgid "didn't find any valid .deb archives"
 msgstr "impossible de trouver une archive .deb valide"
 
-#: ../apt-listchanges/apt_listchanges.py:103
-msgid "Ignoring `%s' (seems to be a directory !)"
-msgstr "« %s » ignoré (semble être un répertoire)"
-
-#: ../apt-listchanges/apt_listchanges.py:197
+#: ../apt-listchanges/ALCConfig.py:74
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr "Syntaxe : apt-listchanges [options] {--apt | fichier.deb ...}\n"
 
-#: ../apt-listchanges/apt_listchanges.py:252
+#: ../apt-listchanges/ALCConfig.py:129
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr "Option %s inconnue pour --which. Les options valables sont : %s"
 
-#: ../apt-listchanges/apt_listchanges.py:268
+#: ../apt-listchanges/ALChacks.py:32
+msgid "Can't set locale; make sure $LC_* and $LANG are correct!\n"
+msgstr ""
+"Impossible de charger la « locale » : veuillez contrôler les\n"
+"variables $LC_* et $LANG.\n"
+
+#: ../apt-listchanges/AptListChangesGtk.py:68
+msgid "Continue Installation?"
+msgstr "Faut-il poursuivre l'installation ?"
+
+#: ../apt-listchanges/AptListChangesGtk.py:68
+msgid "You can abort the installation if you select 'no'."
+msgstr "Vous pouvez interrompre l'installation en répondant négativement."
+
+#: ../apt-listchanges/DebianFiles.py:161
+msgid "Ignoring `%s' (seems to be a directory !)"
+msgstr "« %s » ignoré (semble être un répertoire)"
+
+#: ../apt-listchanges/apt_listchanges.py:45
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -79,24 +105,40 @@ msgstr ""
 "VERSION incorrecte ou manquante dans l'affichage d'apt\n"
 "(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version est-il bien à 2 ?)\n"
 
-#: ../apt-listchanges/apt_listchanges.py:309
+#: ../apt-listchanges/apt_listchanges.py:86
 msgid "Mailing %s: %s"
 msgstr "Envoi des modifications par courriel à %s : %s"
 
-#: ../apt-listchanges/apt_listchanges.py:333
+#: ../apt-listchanges/apt_listchanges.py:111
 msgid "The %s frontend is deprecated, using pager"
 msgstr "L'interface %s est obsolète, utilisation de l'afficheur page à page"
 
-#: ../apt-listchanges/apt_listchanges.py:377
+#: ../apt-listchanges/apt_listchanges.py:115
+msgid "The mail frontend needs a installed 'sendmail', using pager"
+msgstr ""
+"L'interface courriel a besoin d'un « sendmail » installé. L'afficheur page à "
+"page sera utilisé."
+
+#: ../apt-listchanges/apt_listchanges.py:127
+msgid ""
+"The gtk frontend needs a working python-gtk2 and python-glade2.\n"
+"Those imports can not be found. Falling back to pager.\n"
+"The error is: %s\n"
+msgstr ""
+"L'interface GTK a besoin de python-gtk2 et python-glade2.\n"
+"Ces modules n'ont pas été trouvés. Retour à l'afficheur page à page.\n"
+"L'erreur est :%s\n"
+
+#: ../apt-listchanges/apt_listchanges.py:180
 msgid "Do you want to continue? [Y/n]? "
 msgstr "Souhaitez-vous continuer [O/n] ? "
 
-#: ../apt-listchanges/apt_listchanges.py:390
-#: ../apt-listchanges/apt_listchanges.py:410
-#: ../apt-listchanges/apt_listchanges.py:418
+#: ../apt-listchanges/apt_listchanges.py:193
+#: ../apt-listchanges/apt_listchanges.py:213
+#: ../apt-listchanges/apt_listchanges.py:221
 msgid "Reading changelogs"
 msgstr "Lecture des fichiers de modifications (« changelog »)"
 
-#: ../apt-listchanges/apt_listchanges.py:418
+#: ../apt-listchanges/apt_listchanges.py:221
 msgid "Done"
 msgstr "Terminé"
