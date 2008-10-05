@@ -4,8 +4,8 @@ Priority: standard
 Maintainer: Pierre Habouzit <madcoder@debian.org>
 Uploaders: Matt Zimmerman <mdz@debian.org>
 Standards-Version: 3.7.3
-Vcs-Browser: http://git.madism.org/?p=apt-listchanges.git;a=summary
-Vcs-Git: git://git.madism.org/apt-listchanges.git
+Vcs-Browser: http://git.madism.org/?p=apps/apt-listchanges.git;a=summary
+Vcs-Git: git://git.madism.org/apps/apt-listchanges.git
 Build-Depends: debhelper (>= 5)
 Build-Depends-Indep: docbook-to-man, gettext, python-dev, po-debconf,
  python-support (>= 0.4.0), libexpat1-dev

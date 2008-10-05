@@ -1,5 +1,6 @@
 apt-listchanges (2.83) UNRELEASED; urgency=low
 
+  [ Christian Perrier ]
   * Fix extra space before exclamation mark in an error
     message. Translations unfuzied.
   * Programs translation updates:
@@ -15,7 +16,12 @@ apt-listchanges (2.83) UNRELEASED; urgency=low
     - Swedish. Closes: #492092
     - Simplified Chinese. Closes: #501039
 
- -- Christian Perrier <bubulle@debian.org>  Sun, 05 Oct 2008 17:59:10 +0200
+  [ Pierre Habouzit ]
+  * Fix the Vcs-* header to add the missing "apps/" in it.
+  * Thanks a lot to Christian for his invaluable help and the 11 patches he
+    sent me.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Sun, 05 Oct 2008 18:49:57 +0200
 
 apt-listchanges (2.82) unstable; urgency=high
 
