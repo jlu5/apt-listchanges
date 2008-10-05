@@ -11,13 +11,17 @@
 #
 #    Developers do not need to manually edit POT or PO files.
 #
+# Translators:
+# Carlos Z.F. Liu <carlos_liu@yahoo.com>, 2005
+# Deng Xiyue <manphiz@gmail.com>, 2008
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges debconf\n"
 "Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
 "POT-Creation-Date: 2007-12-24 16:37+0100\n"
-"PO-Revision-Date: 2005-01-30 18:32+1300\n"
-"Last-Translator: Carlos Z.F. Liu <carlos_liu@yahoo.com>\n"
+"PO-Revision-Date: 2008-10-03 22:20+0800\n"
+"Last-Translator: Deng Xiyue <manphiz@gmail.com>\n"
 "Language-Team: Debian Chinese [GB] <debian-chinese-gb@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,62 +31,62 @@ msgstr ""
 #. Choices
 #: ../templates:2001
 msgid "pager"
-msgstr ""
+msgstr "分页器"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "browser"
-msgstr ""
+msgstr "浏览器"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "xterm-pager"
-msgstr ""
+msgstr "xterm-分页器"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "xterm-browser"
-msgstr ""
+msgstr "xterm-浏览器"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "gtk"
-msgstr ""
+msgstr "gtk"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "text"
-msgstr ""
+msgstr "文本"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "mail"
-msgstr ""
+msgstr "邮件"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "none"
-msgstr ""
+msgstr "无"
 
 #. Type: select
 #. Description
 #: ../templates:2002
 msgid "Method to be used to display changes:"
-msgstr ""
+msgstr "用来显式改变的方式："
 
 #. Type: select
 #. Description
 #: ../templates:2002
 msgid ""
 "Changes in packages can be displayed in various ways by apt-listchanges:"
-msgstr ""
+msgstr "apt-listchanges 可以使用不同的方式显式软件包的改变："
 
 #. Type: select
 #. Description
@@ -97,6 +101,14 @@ msgid ""
 " mail         : only send changes via e-mail;\n"
 " none         : do not run automatically from APT."
 msgstr ""
+" 分页器       : 每次只显式一页改变内容；\n"
+" 浏览器       : 使用网页浏览器显式 HTML 格式的改变内容；\n"
+" xterm-分页器 : 与分页器类似，但显式在后台的 xterm 中；\n"
+" xterm-浏览器 : 与浏览器类似，但显式在后台的 xterm 中；\n"
+" gtk          : 在 GTK 窗口里显式改变内容；\n"
+" 文本         : 将改变内容打印到终端(没有停顿)；\n"
+" 邮件         : 仅将改变内容通过电子邮件发送；\n"
+" 无           : 不从 APT 中自动运行。"
 
 #. Type: select
 #. Description
@@ -105,59 +117,48 @@ msgid ""
 "This setting can be overridden at execution time. By default, all the "
 "options except for 'none' will also send copies by mail."
 msgstr ""
+"此设置可以在执行期被覆盖掉。默认情况下，除“无”以外所有选项都会通过邮件发送副"
+"本。"
 
 #. Type: string
 #. Description
 #: ../templates:3001
 msgid "E-mail address(es) which will receive changes:"
-msgstr ""
+msgstr "接收改变内容的电子邮件地址："
 
 #. Type: string
 #. Description
 #: ../templates:3001
-#, fuzzy
 msgid ""
 "Optionally, apt-listchanges can e-mail a copy of displayed changes to a "
 "specified address."
 msgstr ""
-"apt-changelogs 可以邮寄所显示的变更内容的副本。该把它寄到哪个邮件地址呢？"
+"可选的，apt-listchanges 将所显示的变更内容的副本通过电子邮件发到指定地址。"
 
 #. Type: string
 #. Description
 #: ../templates:3001
-#, fuzzy
-#| msgid ""
-#| "Multiple addresses may be specified, delimited by commas.  Leave this "
-#| "empty if you do not want any email to be sent."
 msgid ""
 "Multiple addresses may be specified, delimited by commas. Leaving this field "
 "empty disables mail notifications."
-msgstr "您可以指定多个邮件地址，用逗号分隔开。如果您不想寄出任何邮件，请置空。"
+msgstr "您可以指定多个邮件地址，用逗号分隔开。置空此项将关闭邮件通知。"
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
-#, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
-msgstr "需要 apt-listchanges 在显示变更内容后提示您确认吗？"
+msgstr "在显示变更内容后提示您确认吗？"
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
-#, fuzzy
-#| msgid ""
-#| "After giving you a chance to read the list of changes, apt-listchanges "
-#| "can ask whether or not you would like to continue. This is useful when "
-#| "running from apt, as it gives you a chance to abort the upgrade if you "
-#| "see a change you do not want to apply (yet)."
 msgid ""
 "After displaying the list of changes, apt-listchanges can pause with a "
 "confirmation prompt. This is useful when running from APT, as it offers an "
 "opportunity to abort the upgrade if a change is unwelcome."
 msgstr ""
-"在显示了变更内容之后，apt-listchanges 可以询问您是否要继续。这对从 apt 中运行"
-"是非常有用的，如果您在变更内容中看到了一个不想要的变动，您还会有一个机会来中"
-"止升级。"
+"在显示变更内容之后，apt-listchanges 会停顿并显式确认提示。这对于从 APT 中运行"
+"是非常有用的，因为如果您看到了一个不想要的变动，它还给您一个机会来中止升级。"
 
 #. Type: boolean
 #. Description
@@ -166,6 +167,7 @@ msgid ""
 "This can be overridden at execution time, and has no effect if the "
 "configured frontend option is 'mail' or 'none'."
 msgstr ""
+"此选项可以在执行时被覆盖，并且如果设置前端选项为“邮件”或“无”的话将不起作用。"
 
 #. Type: boolean
 #. Description
@@ -176,68 +178,54 @@ msgstr "apt-listchanges 是否应该忽略那些已经被看过的变更内容�
 #. Type: boolean
 #. Description
 #: ../templates:5001
-#, fuzzy
-#| msgid ""
-#| "apt-listchanges has the capability to keep track of which changes have "
-#| "already been displayed, and to skip them in future invocations. This is "
-#| "useful, for example, when retrying an upgrade."
 msgid ""
 "A record of already displayed changes can be kept in order to avoid "
 "displaying them again. This is useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges 可以跟踪哪些变更内容已经被显示过了，并在将来的使用过程中忽略"
-"它们。这会是很有用的，例如，当您尝试重新进行升级时。"
+"已经显式过的变更内容的记录将会保存下来以避免它们被再次显式。这会是很有用的，"
+"例如，当您尝试重新进行升级时。"
 
 #. Type: select
 #. Choices
 #: ../templates:6001
 msgid "news"
-msgstr ""
+msgstr "新内容"
 
 #. Type: select
 #. Choices
 #: ../templates:6001
-#, fuzzy
-#| msgid "news, both, changelogs"
 msgid "changelogs"
-msgstr "新闻, 两者皆显示, 变更记录"
+msgstr "变更记录"
 
 #. Type: select
 #. Choices
 #: ../templates:6001
 msgid "both"
-msgstr ""
+msgstr "两者皆显示"
 
 #. Type: select
 #. Description
 #: ../templates:6002
-#, fuzzy
 msgid "Changes displayed with APT:"
-msgstr "apt 该如何显示变更内容？"
+msgstr "由 APT 显示的变更内容："
 
 #. Type: select
 #. Description
 #: ../templates:6002
-#, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "apt 该显示哪种变更内容呢？"
+msgstr "请选择 APT 该显示哪种变更内容。"
 
 #. Type: select
 #. Description
 #: ../templates:6002
-#, fuzzy
-#| msgid ""
-#| " news - important news items only\n"
-#| " both - both news and detailed changelogs\n"
-#| " changelogs - detailed changelogs only"
 msgid ""
 " news      : important news items only;\n"
 " changelogs: detailed changelogs only;\n"
 " both      : news and changelogs."
 msgstr ""
-" 新闻 - 仅显示重要的新项目\n"
-" 两者皆显示 - 同时显示新闻和变更记录\n"
-" 变更刻录 - 仅显示详细的变更记录(changelogs)"
+" 新内容    : 仅显示重要的新项目\n"
+" 变更记录  : 仅显示详细的变更记录(changelogs)\n"
+" 两者皆显示: 同时显示新闻和变更记录"
 
 #, fuzzy
 #~| msgid ""
