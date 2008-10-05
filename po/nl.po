@@ -73,7 +73,7 @@ msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr "Onbekende optie %s voor '--which'. Mogelijk zijn: %s."
 
 #: ../apt-listchanges/DebianFiles.py:174
-msgid "Ignoring `%s' (seems to be a directory !)"
+msgid "Ignoring `%s' (seems to be a directory!)"
 msgstr "'%s' wordt genegeerd (is waarschijnlijk een map)"
 
 #: ../apt-listchanges/apt_listchanges.py:48

@@ -158,7 +158,7 @@ class Package:
         for filename in filenames:
             try:
                 if os.path.isdir(filename):
-                    print >> sys.stderr, _("Ignoring `%s' (seems to be a directory !)") % filename
+                    print >> sys.stderr, _("Ignoring `%s' (seems to be a directory!)") % filename
                 elif filename.endswith('.gz'):
                     fd = gzip.GzipFile(filename)
                 else:

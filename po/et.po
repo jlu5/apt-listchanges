@@ -95,7 +95,7 @@ msgid "You can abort the installation if you select 'no'."
 msgstr "Valides 'ei' on võimalik paigaldamine katkestada."
 
 #: ../apt-listchanges/DebianFiles.py:161
-msgid "Ignoring `%s' (seems to be a directory !)"
+msgid "Ignoring `%s' (seems to be a directory!)"
 msgstr "'%s' eiramine (paistab, et see on kataloog!)"
 
 #: ../apt-listchanges/apt_listchanges.py:45

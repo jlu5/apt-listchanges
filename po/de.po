@@ -68,8 +68,7 @@ msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr "Unbekannte Option %s für --which. Erlaubt sind: %s."
 
 #: ../apt-listchanges/DebianFiles.py:174
-# FIXME: s/ !/!/
-msgid "Ignoring `%s' (seems to be a directory !)"
+msgid "Ignoring `%s' (seems to be a directory!)"
 msgstr "Ignoriere »%s« (scheint ein Verzeichnis zu sein!)"
 
 #: ../apt-listchanges/apt_listchanges.py:48

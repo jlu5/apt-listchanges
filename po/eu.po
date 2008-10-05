@@ -94,8 +94,8 @@ msgid "You can abort the installation if you select 'no'."
 msgstr "Instalazioa utzi dezakezu 'ez' hautatuaz."
 
 #: ../apt-listchanges/DebianFiles.py:161
-msgid "Ignoring `%s' (seems to be a directory !)"
-msgstr "`%s' alde batetara uzten (direktorio bat dela dirudi !)"
+msgid "Ignoring `%s' (seems to be a directory!)"
+msgstr "`%s' alde batetara uzten (direktorio bat dela dirudi!)"
 
 #: ../apt-listchanges/apt_listchanges.py:45
 msgid ""

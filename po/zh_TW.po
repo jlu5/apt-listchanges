@@ -90,7 +90,7 @@ msgid "You can abort the installation if you select 'no'."
 msgstr "你可以選擇 'no' 放棄安裝程序。"
 
 #: ../apt-listchanges/DebianFiles.py:161
-msgid "Ignoring `%s' (seems to be a directory !)"
+msgid "Ignoring `%s' (seems to be a directory!)"
 msgstr "忽略 `%s' (看來是個目錄！)"
 
 #: ../apt-listchanges/apt_listchanges.py:45

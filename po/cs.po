@@ -94,7 +94,7 @@ msgstr "Zvolíte-li „ne“, instalace se přeruší."
 
 #: ../apt-listchanges/DebianFiles.py:161
 #, fuzzy
-msgid "Ignoring `%s' (seems to be a directory !)"
+msgid "Ignoring `%s' (seems to be a directory!)"
 msgstr "Ignoruji „%s“ (zdá se, že jde o adresář!)"
 
 #: ../apt-listchanges/apt_listchanges.py:45
