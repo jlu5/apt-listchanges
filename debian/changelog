@@ -11,6 +11,7 @@ apt-listchanges (2.83) UNRELEASED; urgency=low
     - Swedish. Closes: #501051
     - Japanese.
     - Czech. Closes: #501212
+    - Italian. Closes: #501238
   * Debconf translations:
     - Swedish. Closes: #492092
     - Simplified Chinese. Closes: #501039
