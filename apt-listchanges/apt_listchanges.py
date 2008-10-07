@@ -177,7 +177,7 @@ class ttyconfirm:
             tty = open('/dev/tty', 'r+')
         except IOError, e:
             return -1
-        tty.write('apt-listchanges: ' + _('Do you want to continue? [Y/n]? '))
+        tty.write('apt-listchanges: ' + _('Do you want to continue? [Y/n] '))
         tty.flush()
         response = tty.readline()
         return response == '\n' or re.search(locale.nl_langinfo(locale.YESEXPR),

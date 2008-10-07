@@ -91,7 +91,7 @@ msgid "The %s frontend is deprecated, using pager"
 msgstr "La interfaz %s está obsoleta, usando el paginador"
 
 #: ../apt-listchanges/apt_listchanges.py:157
-msgid "Do you want to continue? [Y/n]? "
+msgid "Do you want to continue? [Y/n] "
 msgstr "¿Quiere continuar? [Y/n] "
 
 #: ../apt-listchanges/apt_listchanges.py:170

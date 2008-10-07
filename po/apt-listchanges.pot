@@ -125,7 +125,7 @@ msgid ""
 msgstr ""
 
 #: ../apt-listchanges/apt_listchanges.py:180
-msgid "Do you want to continue? [Y/n]? "
+msgid "Do you want to continue? [Y/n] "
 msgstr ""
 
 #: ../apt-listchanges/apt_listchanges.py:193

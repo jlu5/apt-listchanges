@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.27\n"
-"POT-Creation-Date: 2006-10-15 18:20+CEST\n"
+"POT-Creation-Date: 2008-01-08 23:33+CET\n"
 "PO-Revision-Date: 2003-01-30 17:30+0100\n"
 "Last-Translator: Michał Politowski <l10n@mp.pl.eu.org>\n"
 "Language-Team: Polish\n"
@@ -14,66 +14,92 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: ../apt-listchanges.py:88
+#: ../apt-listchanges.py:80
+msgid "database %s failed to load.\n"
+msgstr ""
+
+#: ../apt-listchanges.py:97
 msgid "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges.py:113
+#: ../apt-listchanges.py:120
 msgid "%s: will be newly installed"
 msgstr "%s: nowo instalowany"
 
-#: ../apt-listchanges.py:122
+#: ../apt-listchanges.py:129
 msgid "%s: Version %s has already been seen"
 msgstr "%s: wesja %s została już obejrzana"
 
-#: ../apt-listchanges.py:155
+#: ../apt-listchanges.py:162
 #, fuzzy
 msgid "News for %s"
 msgstr "Zmiany w %s"
 
-#: ../apt-listchanges.py:166
+#: ../apt-listchanges.py:173
 msgid "Changes for %s"
 msgstr "Zmiany w %s"
 
-#: ../apt-listchanges.py:176
+#: ../apt-listchanges.py:183
 msgid "Informational notes"
 msgstr "Dodatkowe informacje"
 
-#: ../apt-listchanges.py:188
+#: ../apt-listchanges.py:186
+#, fuzzy
+msgid "apt-listchanges: News"
+msgstr "apt-listchanges: wyniki dla %s"
+
+#: ../apt-listchanges.py:190
+#, fuzzy
+msgid "apt-listchanges: Changelogs"
+msgstr "apt-listchanges: wyniki dla %s"
+
+#: ../apt-listchanges.py:197
 msgid "Aborting"
 msgstr ""
 
-#: ../apt-listchanges.py:191
+#: ../apt-listchanges.py:200
 msgid "Confirmation failed, don't save seen state"
 msgstr ""
 
-#: ../apt-listchanges.py:197
+#: ../apt-listchanges.py:206
 #, fuzzy
 msgid "apt-listchanges: changelogs for %s"
 msgstr "apt-listchanges: wyniki dla %s"
 
-#: ../apt-listchanges.py:201
+#: ../apt-listchanges.py:210
 #, fuzzy
 msgid "apt-listchanges: news for %s"
 msgstr "apt-listchanges: wyniki dla %s"
 
-#: ../apt-listchanges.py:213
+#: ../apt-listchanges.py:222
 msgid "didn't find any valid .deb archives"
 msgstr "nie znaleziono żadnych archiwów typu .deb"
 
-#: ../apt-listchanges/ALCConfig.py:78
+#: ../apt-listchanges/ALCConfig.py:74
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt-listchanges/ALCConfig.py:133
+#: ../apt-listchanges/ALCConfig.py:129
 msgid "Unknown option %s for --which.  Allowed are: %s."
 msgstr ""
 
-#: ../apt-listchanges/DebianFiles.py:174
-msgid "Ignoring `%s' (seems to be a directory!)"
+#: ../apt-listchanges/ALChacks.py:32
+msgid "Can't set locale; make sure $LC_* and $LANG are correct!\n"
 msgstr ""
 
-#: ../apt-listchanges/apt_listchanges.py:48
+#: ../apt-listchanges/AptListChangesGtk.py:68
+msgid "Continue Installation?"
+msgstr ""
+
+#: ../apt-listchanges/AptListChangesGtk.py:68
+msgid "You can abort the installation if you select 'no'."
+msgstr ""
+
+#: ../apt-listchanges/DebianFiles.py:161
+msgid "Ignoring `%s' (seems to be a directory !)"
+msgstr ""
+
+#: ../apt-listchanges/apt_listchanges.py:45
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
@@ -81,27 +107,39 @@ msgstr ""
 "Błędna wartość VERSION w potoku z apt lub jej brak\n"
 "(czy Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version ma wartość 2?)\n"
 
-#: ../apt-listchanges/apt_listchanges.py:89
+#: ../apt-listchanges/apt_listchanges.py:86
 #, fuzzy
 msgid "Mailing %s: %s"
 msgstr "wysyłanie dzienników do %s"
 
-#: ../apt-listchanges/apt_listchanges.py:113
+#: ../apt-listchanges/apt_listchanges.py:111
 #, fuzzy
 msgid "The %s frontend is deprecated, using pager"
 msgstr "Interfejs newt został zarzucony, zostanie użyty pager"
 
-#: ../apt-listchanges/apt_listchanges.py:157
-msgid "Do you want to continue? [Y/n]? "
+#: ../apt-listchanges/apt_listchanges.py:115
+#, fuzzy
+msgid "The mail frontend needs a installed 'sendmail', using pager"
+msgstr "Interfejs newt został zarzucony, zostanie użyty pager"
+
+#: ../apt-listchanges/apt_listchanges.py:127
+msgid ""
+"The gtk frontend needs a working python-gtk2 and python-glade2.\n"
+"Those imports can not be found. Falling back to pager.\n"
+"The error is: %s\n"
+msgstr ""
+
+#: ../apt-listchanges/apt_listchanges.py:180
+msgid "Do you want to continue? [Y/n] "
 msgstr "Czy kontynuować? [T/n] "
 
-#: ../apt-listchanges/apt_listchanges.py:170
-#: ../apt-listchanges/apt_listchanges.py:190
-#: ../apt-listchanges/apt_listchanges.py:198
+#: ../apt-listchanges/apt_listchanges.py:193
+#: ../apt-listchanges/apt_listchanges.py:213
+#: ../apt-listchanges/apt_listchanges.py:221
 msgid "Reading changelogs"
 msgstr "Odczytywanie dzienników zmian"
 
-#: ../apt-listchanges/apt_listchanges.py:198
+#: ../apt-listchanges/apt_listchanges.py:221
 msgid "Done"
 msgstr "Zrobione"
 

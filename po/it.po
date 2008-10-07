@@ -127,8 +127,8 @@ msgstr ""
 "L'errore è: %s\n"
 
 #: ../apt-listchanges/apt_listchanges.py:180
-msgid "Do you want to continue? [Y/n]? "
-msgstr "Continuare [S/n]? "
+msgid "Do you want to continue? [Y/n] "
+msgstr "Continuare [S/n] "
 
 #: ../apt-listchanges/apt_listchanges.py:193
 #: ../apt-listchanges/apt_listchanges.py:213

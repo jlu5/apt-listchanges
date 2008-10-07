@@ -91,8 +91,8 @@ msgid "The %s frontend is deprecated, using pager"
 msgstr "A interface newt é obsoleta; emprégase o visor"
 
 #: ../apt-listchanges/apt_listchanges.py:157
-msgid "Do you want to continue? [Y/n]? "
-msgstr "¿Quere continuar [Y/n]? "
+msgid "Do you want to continue? [Y/n] "
+msgstr "¿Quere continuar [Y/n] "
 
 #: ../apt-listchanges/apt_listchanges.py:170
 #: ../apt-listchanges/apt_listchanges.py:190

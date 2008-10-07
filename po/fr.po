@@ -130,8 +130,8 @@ msgstr ""
 "L'erreur est :%s\n"
 
 #: ../apt-listchanges/apt_listchanges.py:180
-msgid "Do you want to continue? [Y/n]? "
-msgstr "Souhaitez-vous continuer [O/n] ? "
+msgid "Do you want to continue? [Y/n] "
+msgstr "Souhaitez-vous continuer ? [O/n]  "
 
 #: ../apt-listchanges/apt_listchanges.py:193
 #: ../apt-listchanges/apt_listchanges.py:213

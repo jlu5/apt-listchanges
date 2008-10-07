@@ -2,6 +2,8 @@ apt-listchanges (2.83) UNRELEASED; urgency=low
 
   * Fix extra space before exclamation mark in an error
     message. Translations unfuzied.
+  * Fix extra question mark in one string. Translations
+    unfuzzied and fixed when they had two question marks too.
   * Programs translation updates:
     - French. Closes: #469248
     - Estonian. Closes: #500979
