@@ -15,10 +15,12 @@ apt-listchanges (2.83) UNRELEASED; urgency=low
     - Czech. Closes: #501212
     - Italian. Closes: #501238
     - German. Closes: #501265
+    - Russian. Closes: #501469
   * Debconf translations:
     - Swedish. Closes: #492092
     - Simplified Chinese. Closes: #501039
     - Polish. Closes: #501296
+  * Russian. Closes: #501469
 
  -- Christian Perrier <bubulle@debian.org>  Sun, 05 Oct 2008 17:59:10 +0200
 
