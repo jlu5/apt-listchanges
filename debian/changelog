@@ -15,6 +15,7 @@ apt-listchanges (2.83) UNRELEASED; urgency=low
   * Debconf translations:
     - Swedish. Closes: #492092
     - Simplified Chinese. Closes: #501039
+    - Polish. Closes: #501296
 
  -- Christian Perrier <bubulle@debian.org>  Sun, 05 Oct 2008 17:59:10 +0200
 
