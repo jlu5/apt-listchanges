@@ -11,7 +11,7 @@ apt-listchanges (2.83) UNRELEASED; urgency=low
     - Traditional Chinese. Closes: #501034
     - Simplified Chinese. Closes: #501039
     - Swedish. Closes: #501051
-    - Japanese.
+    - Japanese. Closes: #501530
     - Czech. Closes: #501212
     - Italian. Closes: #501238
     - German. Closes: #501265
