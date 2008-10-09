@@ -128,8 +128,8 @@ msgstr ""
 "エラーは:\n"
 
 #: ../apt-listchanges/apt_listchanges.py:180
-msgid "Do you want to continue? [Y/n]? "
-msgstr "これでよろしいですか [Y(はい)/n(いいえ)]? "
+msgid "Do you want to continue? [Y/n] "
+msgstr "これでよろしいですか [Y(はい)/n(いいえ)] "
 
 #: ../apt-listchanges/apt_listchanges.py:193
 #: ../apt-listchanges/apt_listchanges.py:213

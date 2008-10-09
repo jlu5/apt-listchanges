@@ -124,7 +124,7 @@ msgstr ""
 "錯誤：%s\n"
 
 #: ../apt-listchanges/apt_listchanges.py:180
-msgid "Do you want to continue? [Y/n]? "
+msgid "Do you want to continue? [Y/n] "
 msgstr "您想繼續嗎？[Y/n]？"
 
 #: ../apt-listchanges/apt_listchanges.py:193

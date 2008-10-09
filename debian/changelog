@@ -1,8 +1,10 @@
-apt-listchanges (2.83) UNRELEASED; urgency=low
+apt-listchanges (2.83) unstable; urgency=low
 
   [ Christian Perrier ]
   * Fix extra space before exclamation mark in an error
     message. Translations unfuzied.
+  * Fix extra question mark in one string. Translations
+    unfuzzied and fixed when they had two question marks too.
   * Programs translation updates:
     - French. Closes: #469248
     - Estonian. Closes: #500979
@@ -10,18 +12,26 @@ apt-listchanges (2.83) UNRELEASED; urgency=low
     - Traditional Chinese. Closes: #501034
     - Simplified Chinese. Closes: #501039
     - Swedish. Closes: #501051
-    - Japanese.
+    - Japanese. Closes: #501530
     - Czech. Closes: #501212
+    - Italian. Closes: #501238
+    - German. Closes: #501265
+    - Russian. Closes: #501469
+    - Portuguese. Closes: #501494
+    - Polish. Closes: #501496
+    - Dutch. Closes: #501621
   * Debconf translations:
     - Swedish. Closes: #492092
     - Simplified Chinese. Closes: #501039
+    - Polish. Closes: #501296
+  * Russian. Closes: #501469
 
   [ Pierre Habouzit ]
   * Fix the Vcs-* header to add the missing "apps/" in it.
-  * Thanks a lot to Christian for his invaluable help and the 11 patches he
+  * Thanks a lot to Christian for his invaluable help and the 23 patches he
     sent me.
 
- -- Pierre Habouzit <madcoder@debian.org>  Sun, 05 Oct 2008 18:49:57 +0200
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 09 Oct 2008 11:29:41 +0200
 
 apt-listchanges (2.82) unstable; urgency=high
 

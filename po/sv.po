@@ -128,7 +128,7 @@ msgstr ""
 "Felet är: %s\n"
 
 #: ../apt-listchanges/apt_listchanges.py:180
-msgid "Do you want to continue? [Y/n]? "
+msgid "Do you want to continue? [Y/n] "
 msgstr "Vill du fortsätta? [J/n]?"
 
 #: ../apt-listchanges/apt_listchanges.py:193

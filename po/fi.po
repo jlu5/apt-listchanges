@@ -91,8 +91,8 @@ msgid "The %s frontend is deprecated, using pager"
 msgstr "Newt-liittymä on vanhentunut, käytän sivutinta"
 
 #: ../apt-listchanges/apt_listchanges.py:157
-msgid "Do you want to continue? [Y/n]? "
-msgstr "Haluatko jatkaa? [Kyllä=y/ei=n]? "
+msgid "Do you want to continue? [Y/n] "
+msgstr "Haluatko jatkaa? [Kyllä=y/ei=n] "
 
 #: ../apt-listchanges/apt_listchanges.py:170
 #: ../apt-listchanges/apt_listchanges.py:190

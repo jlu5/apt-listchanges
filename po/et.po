@@ -131,8 +131,8 @@ msgstr ""
 "Veateade: %s\n"
 
 #: ../apt-listchanges/apt_listchanges.py:180
-msgid "Do you want to continue? [Y/n]? "
-msgstr "Soovite jätkata [J/e]? "
+msgid "Do you want to continue? [Y/n] "
+msgstr "Soovite jätkata [J/e] "
 
 #: ../apt-listchanges/apt_listchanges.py:193
 #: ../apt-listchanges/apt_listchanges.py:213
