@@ -18,6 +18,7 @@ apt-listchanges (2.83) UNRELEASED; urgency=low
     - Russian. Closes: #501469
     - Portuguese. Closes: #501494
     - Polish (partial). Closes: #501496
+    - Dutch. Closes: #501621
   * Debconf translations:
     - Swedish. Closes: #492092
     - Simplified Chinese. Closes: #501039
