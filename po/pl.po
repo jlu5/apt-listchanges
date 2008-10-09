@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.27\n"
 "POT-Creation-Date: 2008-01-08 23:33+CET\n"
-"PO-Revision-Date: 2008-10-07 22:32+0200\n"
+"PO-Revision-Date: 2008-10-08 09:42+0200\n"
 "Last-Translator: Michał Politowski <l10n@mp.pl.eu.org>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: ../apt-listchanges.py:80
 msgid "database %s failed to load.\n"
-msgstr ""
+msgstr "nie udało się odczytać bazy %s\n"
 
 #: ../apt-listchanges.py:97
 msgid "Unknown frontend: %s\n"
@@ -43,16 +43,12 @@ msgid "Informational notes"
 msgstr "Dodatkowe informacje"
 
 #: ../apt-listchanges.py:186
-#, fuzzy
-#| msgid "apt-listchanges: news for %s"
 msgid "apt-listchanges: News"
-msgstr "apt-listchanges: nowości dla komputera %s"
+msgstr "apt-listchanges: nowości"
 
 #: ../apt-listchanges.py:190
-#, fuzzy
-#| msgid "apt-listchanges: changelogs for %s"
 msgid "apt-listchanges: Changelogs"
-msgstr "apt-listchanges: dzienniki zmian dla koputera %s"
+msgstr "apt-listchanges: dzienniki zmian"
 
 #: ../apt-listchanges.py:197
 msgid "Aborting"
@@ -85,14 +81,16 @@ msgstr "Nieznana wartość \"%s\" opcji --which. Dopuszczalne wartości: %s."
 #: ../apt-listchanges/ALChacks.py:32
 msgid "Can't set locale; make sure $LC_* and $LANG are correct!\n"
 msgstr ""
+"Błąd ustawień językowych. Należy sprawdzić czy $LC_* i $LANG mają poprawne "
+"wartości!\n"
 
 #: ../apt-listchanges/AptListChangesGtk.py:68
 msgid "Continue Installation?"
-msgstr ""
+msgstr "Kontynuować instalację?"
 
 #: ../apt-listchanges/AptListChangesGtk.py:68
 msgid "You can abort the installation if you select 'no'."
-msgstr ""
+msgstr "Odpowiedź \"nie\" spowoduje przerwanie instalacji."
 
 #: ../apt-listchanges/DebianFiles.py:161
 msgid "Ignoring `%s' (seems to be a directory!)"
@@ -115,10 +113,8 @@ msgid "The %s frontend is deprecated, using pager"
 msgstr "Interfejs \"%s\" został zarzucony, zostanie użyty pager"
 
 #: ../apt-listchanges/apt_listchanges.py:115
-#, fuzzy
-#| msgid "The %s frontend is deprecated, using pager"
 msgid "The mail frontend needs a installed 'sendmail', using pager"
-msgstr "Interfejs \"%s\" został zarzucony, zostanie użyty pager"
+msgstr "Interfejs pocztowy wymaga programu sendmail, zostanie użyty pager"
 
 #: ../apt-listchanges/apt_listchanges.py:127
 msgid ""
@@ -126,6 +122,10 @@ msgid ""
 "Those imports can not be found. Falling back to pager.\n"
 "The error is: %s\n"
 msgstr ""
+"Interfejs \"gtk\" wymaga działających bibliotek python-gtk2 i python-"
+"glade2.\n"
+"Nie udało się ich znaleźć. Zostanie użyty interfejs \"pager\".\n"
+"Komunikat błędu: %s\n"
 
 #: ../apt-listchanges/apt_listchanges.py:180
 msgid "Do you want to continue? [Y/n] "
