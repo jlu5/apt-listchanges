@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.27\n"
 "POT-Creation-Date: 2008-01-08 23:33+CET\n"
-"PO-Revision-Date: 2003-01-30 17:30+0100\n"
+"PO-Revision-Date: 2008-10-07 22:32+0200\n"
 "Last-Translator: Michał Politowski <l10n@mp.pl.eu.org>\n"
-"Language-Team: Polish\n"
+"Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../apt-listchanges.py:97
 msgid "Unknown frontend: %s\n"
-msgstr ""
+msgstr "Nieznany interfejs: %s\n"
 
 #: ../apt-listchanges.py:120
 msgid "%s: will be newly installed"
@@ -31,9 +31,8 @@ msgid "%s: Version %s has already been seen"
 msgstr "%s: wesja %s została już obejrzana"
 
 #: ../apt-listchanges.py:162
-#, fuzzy
 msgid "News for %s"
-msgstr "Zmiany w %s"
+msgstr "Nowości w %s"
 
 #: ../apt-listchanges.py:173
 msgid "Changes for %s"
@@ -45,31 +44,31 @@ msgstr "Dodatkowe informacje"
 
 #: ../apt-listchanges.py:186
 #, fuzzy
+#| msgid "apt-listchanges: news for %s"
 msgid "apt-listchanges: News"
-msgstr "apt-listchanges: wyniki dla %s"
+msgstr "apt-listchanges: nowości dla komputera %s"
 
 #: ../apt-listchanges.py:190
 #, fuzzy
+#| msgid "apt-listchanges: changelogs for %s"
 msgid "apt-listchanges: Changelogs"
-msgstr "apt-listchanges: wyniki dla %s"
+msgstr "apt-listchanges: dzienniki zmian dla koputera %s"
 
 #: ../apt-listchanges.py:197
 msgid "Aborting"
-msgstr ""
+msgstr "Przerwano"
 
 #: ../apt-listchanges.py:200
 msgid "Confirmation failed, don't save seen state"
-msgstr ""
+msgstr "Błąd przy pytaniu o potwierdzenie. Stan nie zostanie zapisany"
 
 #: ../apt-listchanges.py:206
-#, fuzzy
 msgid "apt-listchanges: changelogs for %s"
-msgstr "apt-listchanges: wyniki dla %s"
+msgstr "apt-listchanges: dzienniki zmian dla koputera %s"
 
 #: ../apt-listchanges.py:210
-#, fuzzy
 msgid "apt-listchanges: news for %s"
-msgstr "apt-listchanges: wyniki dla %s"
+msgstr "apt-listchanges: nowości dla komputera %s"
 
 #: ../apt-listchanges.py:222
 msgid "didn't find any valid .deb archives"
@@ -77,11 +76,11 @@ msgstr "nie znaleziono żadnych archiwów typu .deb"
 
 #: ../apt-listchanges/ALCConfig.py:74
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
-msgstr ""
+msgstr "Użycie: apt-listchanges [opcje] {--apt | plik.deb ...}\n"
 
 #: ../apt-listchanges/ALCConfig.py:129
 msgid "Unknown option %s for --which.  Allowed are: %s."
-msgstr ""
+msgstr "Nieznana wartość \"%s\" opcji --which. Dopuszczalne wartości: %s."
 
 #: ../apt-listchanges/ALChacks.py:32
 msgid "Can't set locale; make sure $LC_* and $LANG are correct!\n"
@@ -96,8 +95,8 @@ msgid "You can abort the installation if you select 'no'."
 msgstr ""
 
 #: ../apt-listchanges/DebianFiles.py:161
-msgid "Ignoring `%s' (seems to be a directory !)"
-msgstr ""
+msgid "Ignoring `%s' (seems to be a directory!)"
+msgstr "Zignorowano \"%s\" (jest katalogiem!)"
 
 #: ../apt-listchanges/apt_listchanges.py:45
 msgid ""
@@ -108,19 +107,18 @@ msgstr ""
 "(czy Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version ma wartość 2?)\n"
 
 #: ../apt-listchanges/apt_listchanges.py:86
-#, fuzzy
 msgid "Mailing %s: %s"
-msgstr "wysyłanie dzienników do %s"
+msgstr "Poczta do %s: %s"
 
 #: ../apt-listchanges/apt_listchanges.py:111
-#, fuzzy
 msgid "The %s frontend is deprecated, using pager"
-msgstr "Interfejs newt został zarzucony, zostanie użyty pager"
+msgstr "Interfejs \"%s\" został zarzucony, zostanie użyty pager"
 
 #: ../apt-listchanges/apt_listchanges.py:115
 #, fuzzy
+#| msgid "The %s frontend is deprecated, using pager"
 msgid "The mail frontend needs a installed 'sendmail', using pager"
-msgstr "Interfejs newt został zarzucony, zostanie użyty pager"
+msgstr "Interfejs \"%s\" został zarzucony, zostanie użyty pager"
 
 #: ../apt-listchanges/apt_listchanges.py:127
 msgid ""
@@ -142,6 +140,3 @@ msgstr "Odczytywanie dzienników zmian"
 #: ../apt-listchanges/apt_listchanges.py:221
 msgid "Done"
 msgstr "Zrobione"
-
-#~ msgid "%s exited with status %d"
-#~ msgstr "%s zakończony z kodem %d"
