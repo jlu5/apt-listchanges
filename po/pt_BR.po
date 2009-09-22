@@ -1,111 +1,149 @@
-#
-#    Translators, if you are not familiar with the PO format, gettext
-#    documentation is worth reading, especially sections dedicated to
-#    this format, e.g. by running:
-#         info -n '(gettext)PO Files'
-#         info -n '(gettext)Header Entry'
-#
-#    Some information specific to po-debconf are available at
-#            /usr/share/doc/po-debconf/README-trans
-#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
-#
-#    Developers do not need to manually edit POT or PO files.
+# apt-listchanges Brazilian Portuguese translation
+# Copyright (c) 2003-2008 apt-listchanges's COPYRIGHT HOLDER
+# This file is distributed under the same license as the apt-listchanges.
+# André Luís Lopes <andrelop@debian.org>, 2003.
+# Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges-2.24\n"
-"POT-Creation-Date: 2006-10-15 18:20+CEST\n"
-"PO-Revision-Date: 2003-01-17 21:07-0300\n"
-"Last-Translator: André Luís Lopes <andrelop@ig.com.br>\n"
-"Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
+"POT-Creation-Date: 2008-01-08 23:33+CET\n"
+"PO-Revision-Date: 2008-10-09 02:47-0300\n"
+"Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
+"Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
+"org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../apt-listchanges.py:88
+#: ../apt-listchanges.py:80
+msgid "database %s failed to load.\n"
+msgstr "falha ao carregar o banco de dados %s.\n"
+
+#: ../apt-listchanges.py:97
 msgid "Unknown frontend: %s\n"
-msgstr ""
+msgstr "Interface desconhecida: %s\n"
 
-#: ../apt-listchanges.py:113
+#: ../apt-listchanges.py:120
 msgid "%s: will be newly installed"
-msgstr ""
+msgstr "%s: será instalado como novo"
 
-#: ../apt-listchanges.py:122
+#: ../apt-listchanges.py:129
 msgid "%s: Version %s has already been seen"
-msgstr ""
+msgstr "%s: Versão %s já foi vista"
 
-#: ../apt-listchanges.py:155
+#: ../apt-listchanges.py:162
 msgid "News for %s"
-msgstr ""
+msgstr "Notícias para %s"
 
-#: ../apt-listchanges.py:166
+#: ../apt-listchanges.py:173
 msgid "Changes for %s"
-msgstr ""
+msgstr "Mudanças para %s"
 
-#: ../apt-listchanges.py:176
+#: ../apt-listchanges.py:183
 msgid "Informational notes"
-msgstr ""
+msgstr "Notas informativas"
 
-#: ../apt-listchanges.py:188
-msgid "Aborting"
-msgstr ""
+#: ../apt-listchanges.py:186
+msgid "apt-listchanges: News"
+msgstr "apt-listchanges: Notícias"
 
-#: ../apt-listchanges.py:191
-msgid "Confirmation failed, don't save seen state"
-msgstr ""
+#: ../apt-listchanges.py:190
+msgid "apt-listchanges: Changelogs"
+msgstr "apt-listchanges: Logs de mudanças"
 
 #: ../apt-listchanges.py:197
-#, fuzzy
+msgid "Aborting"
+msgstr "Abortando"
+
+#: ../apt-listchanges.py:200
+msgid "Confirmation failed, don't save seen state"
+msgstr ""
+"Confirmação falhou, não salve o estado de visualizados (\"seen state\")"
+
+#: ../apt-listchanges.py:206
 msgid "apt-listchanges: changelogs for %s"
-msgstr "Para quem apt-listchanges deve enviar as entradas de changelog?"
+msgstr "apt-listchanges: logs de mudanças para %s"
 
-#: ../apt-listchanges.py:201
+#: ../apt-listchanges.py:210
 msgid "apt-listchanges: news for %s"
-msgstr ""
+msgstr "apt-listchanges: notícias para %s"
 
-#: ../apt-listchanges.py:213
+#: ../apt-listchanges.py:222
 msgid "didn't find any valid .deb archives"
-msgstr ""
+msgstr "não encontrou nenhum arquivo .deb válido"
 
-#: ../apt-listchanges/ALCConfig.py:78
+#: ../apt-listchanges/ALCConfig.py:74
 msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
-msgstr ""
+msgstr "Uso: apt-listchanges [opções] {--apt | arquivo.deb ...}\n"
 
-#: ../apt-listchanges/ALCConfig.py:133
+#: ../apt-listchanges/ALCConfig.py:129
 msgid "Unknown option %s for --which.  Allowed are: %s."
-msgstr ""
+msgstr "Opção desconhecida %s para --which. Opções permitidas são: %s."
 
-#: ../apt-listchanges/DebianFiles.py:174
+#: ../apt-listchanges/ALChacks.py:32
+msgid "Can't set locale; make sure $LC_* and $LANG are correct!\n"
+msgstr ""
+"Não foi possível definir \"locale\"; tenha certeza de que $LC_* e $LANG "
+"estão corretos!\n"
+
+#: ../apt-listchanges/AptListChangesGtk.py:68
+msgid "Continue Installation?"
+msgstr "Continuar a instalação?"
+
+#: ../apt-listchanges/AptListChangesGtk.py:68
+msgid "You can abort the installation if you select 'no'."
+msgstr "Você pode abortar a instalação se selecionar 'não'."
+
+#: ../apt-listchanges/DebianFiles.py:161
 msgid "Ignoring `%s' (seems to be a directory!)"
-msgstr ""
+msgstr "Ignorando '%s' (parece ser um diretório!)"
 
-#: ../apt-listchanges/apt_listchanges.py:48
+#: ../apt-listchanges/apt_listchanges.py:45
 msgid ""
 "Wrong or missing VERSION from apt pipeline\n"
 "(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
+"VERSÃO (\"VERSION\") incorreta ou faltando a partir do \"pipeline\" apt\n"
+"(o Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version está como 2?)\n"
 
-#: ../apt-listchanges/apt_listchanges.py:89
+#: ../apt-listchanges/apt_listchanges.py:86
 msgid "Mailing %s: %s"
-msgstr ""
+msgstr "Enviando e-mail %s: %s"
 
-#: ../apt-listchanges/apt_listchanges.py:113
+#: ../apt-listchanges/apt_listchanges.py:111
 msgid "The %s frontend is deprecated, using pager"
-msgstr ""
+msgstr "A interface %s é obsoleta, usando pager"
 
-#: ../apt-listchanges/apt_listchanges.py:157
+#: ../apt-listchanges/apt_listchanges.py:115
+msgid "The mail frontend needs a installed 'sendmail', using pager"
+msgstr "A interface e-mail precisa de um 'sendmail' instalado, usando pager"
+
+#: ../apt-listchanges/apt_listchanges.py:127
+msgid ""
+"The gtk frontend needs a working python-gtk2 and python-glade2.\n"
+"Those imports can not be found. Falling back to pager.\n"
+"The error is: %s\n"
+msgstr ""
+"A interface gtk precisa do python-gtk2 e python-glade2 funcionando.\n"
+"Estas extensões não puderam ser encontradas. Optando pelo pager.\n"
+"O erro é: %s\n"
+
+#: ../apt-listchanges/apt_listchanges.py:180
+#, fuzzy
+#| msgid "Do you want to continue? [Y/n]? "
 msgid "Do you want to continue? [Y/n] "
-msgstr ""
+msgstr "Você quer continuar? [S/n]"
 
-#: ../apt-listchanges/apt_listchanges.py:170
-#: ../apt-listchanges/apt_listchanges.py:190
-#: ../apt-listchanges/apt_listchanges.py:198
+#: ../apt-listchanges/apt_listchanges.py:193
+#: ../apt-listchanges/apt_listchanges.py:213
+#: ../apt-listchanges/apt_listchanges.py:221
 msgid "Reading changelogs"
-msgstr ""
+msgstr "Lendo logs de mudanças"
 
-#: ../apt-listchanges/apt_listchanges.py:198
+#: ../apt-listchanges/apt_listchanges.py:221
 msgid "Done"
-msgstr ""
+msgstr "Feito"
 
 #~ msgid "pager, browser, xterm-pager, xterm-browser, text, mail, none"
 #~ msgstr ""

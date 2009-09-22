@@ -3,6 +3,7 @@ apt-listchanges (2.83.1) UNRELEASED; urgency=low
   * Apt-listchanges moves to collab-maint.
   * Fix pending l10n issues. Program translations:
     - Simplified Chinese. Closes: #501042
+    - Brazilian Portuguese. Closes: #501637
 
  -- Pierre Habouzit <madcoder@debian.org>  Tue, 22 Sep 2009 09:40:47 +0200
 
