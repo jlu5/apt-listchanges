@@ -1,3 +1,9 @@
+apt-listchanges (2.83.1) UNRELEASED; urgency=low
+
+  * Apt-listchanges moves to collab-maint.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Tue, 22 Sep 2009 09:40:47 +0200
+
 apt-listchanges (2.83) unstable; urgency=low
 
   [ Christian Perrier ]
