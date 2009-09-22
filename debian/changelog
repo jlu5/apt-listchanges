@@ -4,6 +4,9 @@ apt-listchanges (2.83.1) UNRELEASED; urgency=low
   * Fix pending l10n issues. Program translations:
     - Simplified Chinese. Closes: #501042
     - Brazilian Portuguese. Closes: #501637
+  * Fix pending l10n issues. Debconf translations:
+    - Brazilian Portuguese (Felipe Augusto van de Wiel (faw)).
+      Closes: #501639
 
  -- Pierre Habouzit <madcoder@debian.org>  Tue, 22 Sep 2009 09:40:47 +0200
 

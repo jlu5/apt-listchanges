@@ -1,81 +1,77 @@
-#
-#    Translators, if you are not familiar with the PO format, gettext
-#    documentation is worth reading, especially sections dedicated to
-#    this format, e.g. by running:
-#         info -n '(gettext)PO Files'
-#         info -n '(gettext)Header Entry'
-#
-#    Some information specific to po-debconf are available at
-#            /usr/share/doc/po-debconf/README-trans
-#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
-#
-#    Developers do not need to manually edit POT or PO files.
+# apt-listchanges Brazilian Portuguese PO debconf translation 
+# Copyright (C) 2006 THE apt-listchanges'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the apt-listchanges 
+#   package.
+# André Luís Lopes <andrelop@debian.org>, 2004.
+# Felipe Augusto van de Wiel (faw) <faw@debian.org>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges\n"
 "Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
 "POT-Creation-Date: 2007-12-24 16:37+0100\n"
-"PO-Revision-Date: 2004-07-31 22:02-0300\n"
-"Last-Translator: André Luís Lopes <andrelop@debian.org>\n"
-"Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
+"PO-Revision-Date: 2008-10-09 03:37-0300\n"
+"Last-Translator: Felipe Augusto van de Wiel (faw) <faw@debian.org>\n"
+"Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
+"org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"pt_BR utf-8\n"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "pager"
-msgstr ""
+msgstr "paginador"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "browser"
-msgstr ""
+msgstr "navegador"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "xterm-pager"
-msgstr ""
+msgstr "xterm-paginador"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "xterm-browser"
-msgstr ""
+msgstr "xterm-navegador"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "gtk"
-msgstr ""
+msgstr "gtk"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "text"
-msgstr ""
+msgstr "texto"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "mail"
-msgstr ""
+msgstr "e-mail"
 
 #. Type: select
 #. Choices
 #: ../templates:2001
 msgid "none"
-msgstr ""
+msgstr "nenhum"
 
 #. Type: select
 #. Description
 #: ../templates:2002
 msgid "Method to be used to display changes:"
-msgstr ""
+msgstr "Método a ser usado para exibir as mudanças:"
 
 #. Type: select
 #. Description
@@ -83,6 +79,8 @@ msgstr ""
 msgid ""
 "Changes in packages can be displayed in various ways by apt-listchanges:"
 msgstr ""
+"Mudanças nos pacotes podem ser exibidas de várias formas pelo apt-"
+"listchanges:"
 
 #. Type: select
 #. Description
@@ -97,6 +95,17 @@ msgid ""
 " mail         : only send changes via e-mail;\n"
 " none         : do not run automatically from APT."
 msgstr ""
+" paginador      : exibe mudanças, uma página de cada vez;\n"
+" navegador      : exibe mudanças formatas em HTML usando um\n"
+"                  navegador web;\n"
+" xterm-paginador: similar ao paginador, mas em um xterm em\n"
+"                  segundo plano;\n"
+" xterm-navegador: similar ao navegador, mas em um xterm em\n"
+"                  segundo plano;\n"
+" gtk            : exibe mudanças em uma janela GTK;\n"
+" texto          : imprime mudanças para um terminal (sem pausa);\n"
+" e-mail         : só envia as mudanças por e-mail;\n"
+" nenhum         : não executar automaticamente a partir do APT."
 
 #. Type: select
 #. Description
@@ -105,64 +114,53 @@ msgid ""
 "This setting can be overridden at execution time. By default, all the "
 "options except for 'none' will also send copies by mail."
 msgstr ""
+"Esta configuração pode ser sobrescrita em tempo de execução. Por padrão, "
+"todas as opções exceto 'nenhum' também enviarão cópias por e-mail."
 
 #. Type: string
 #. Description
 #: ../templates:3001
 msgid "E-mail address(es) which will receive changes:"
-msgstr ""
+msgstr "Endereço(s) de e-mail que receberá(ão) as mudanças:"
 
 #. Type: string
 #. Description
 #: ../templates:3001
-#, fuzzy
 msgid ""
 "Optionally, apt-listchanges can e-mail a copy of displayed changes to a "
 "specified address."
 msgstr ""
-"O apt-listchanges pode enviar uma cópia das mudanças exibidas via e-mail. "
-"Para qual endereço de e-mail as mesmas devem ser enviadas ?"
+"Opcionalmente, o apt-listchanges pode enviar uma cópia das mudanças exibidas "
+"para um endereço de e-mail especificado."
 
 #. Type: string
 #. Description
 #: ../templates:3001
-#, fuzzy
-#| msgid ""
-#| "Multiple addresses may be specified, delimited by commas.  Leave this "
-#| "empty if you do not want any email to be sent."
 msgid ""
 "Multiple addresses may be specified, delimited by commas. Leaving this field "
 "empty disables mail notifications."
 msgstr ""
-"Múltiplos endereços podem ser especificados, separados por vírgulas. "
-"Mantenha em branco caso você não deseje que nenhuma mensagem seja enviada."
+"Múltiplos endereços podem ser especificados, separados por vírgulas. Deixar "
+"este campo em branco desabilita as notificações por e-mail."
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
-#, fuzzy
 msgid "Prompt for confirmation after displaying changes?"
-msgstr "O apt-listchanges deverá pedir confirmação após exibir as mudanças ?"
+msgstr "Pedir confirmação após exibir as mudanças?"
 
 #. Type: boolean
 #. Description
 #: ../templates:4001
-#, fuzzy
-#| msgid ""
-#| "After giving you a chance to read the list of changes, apt-listchanges "
-#| "can ask whether or not you would like to continue. This is useful when "
-#| "running from apt, as it gives you a chance to abort the upgrade if you "
-#| "see a change you do not want to apply (yet)."
 msgid ""
 "After displaying the list of changes, apt-listchanges can pause with a "
 "confirmation prompt. This is useful when running from APT, as it offers an "
 "opportunity to abort the upgrade if a change is unwelcome."
 msgstr ""
-"Depois de lhe oferecer a chance de ler a lista de mudanças, o apt-"
-"listchanges pode perguntar se você deseja ou não continuar. Isto é útil "
-"quando o apt-listchanges é executado a partir do apt, já que lhe oferece uma "
-"oportunidade de abortar a atualização caso você perceba alguma mudança que "
-"não deseje que seja aplicada (ainda)."
+"Após exibir a lista de mudanças, o apt-listchanges pode fazer uma pausa em "
+"uma solicitação de confirmação. Isto é útil quando o apt-listchanges é "
+"executado a partir do APT, já que te dá uma oportunidade de abortar a "
+"atualização se uma mudança não é bem vinda."
 
 #. Type: boolean
 #. Description
@@ -171,79 +169,68 @@ msgid ""
 "This can be overridden at execution time, and has no effect if the "
 "configured frontend option is 'mail' or 'none'."
 msgstr ""
+"Isto pode ser sobrescrito em tempo de execução e não possui efeito se a "
+"opção de interface configurada é 'e-mail' ou 'nenhum'."
 
 #. Type: boolean
 #. Description
 #: ../templates:5001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "O apt-listchanges deverá omitir as mudanças que já foram vistas ?"
+msgstr "O apt-listchanges deverá omitir as mudanças que já foram vistas?"
 
 #. Type: boolean
 #. Description
 #: ../templates:5001
-#, fuzzy
-#| msgid ""
-#| "apt-listchanges has the capability to keep track of which changes have "
-#| "already been displayed, and to skip them in future invocations. This is "
-#| "useful, for example, when retrying an upgrade."
 msgid ""
 "A record of already displayed changes can be kept in order to avoid "
 "displaying them again. This is useful, for example, when retrying an upgrade."
 msgstr ""
-"O apt-listchanges possui a habilidade de lembrar quais mudanças já foram "
-"exibidas e omití-las em invocações futuras. Isto é útil, por exemplo, quando "
-"você estiver fazendo uma segunda tentativa de atualização."
+"Um registro de mudanças já exibidas pode ser mantido para evitar que elas "
+"sejam exibidas novamente. Isto é útil, por exemplo, quando você estiver "
+"repetindo uma tentativa de atualização."
 
 #. Type: select
 #. Choices
 #: ../templates:6001
 msgid "news"
-msgstr ""
+msgstr "notícias"
 
 #. Type: select
 #. Choices
 #: ../templates:6001
-#, fuzzy
-#| msgid "news, both, changelogs"
 msgid "changelogs"
-msgstr "notícias, ambos, logs de mudanças"
+msgstr "logs de mudanças"
 
 #. Type: select
 #. Choices
 #: ../templates:6001
 msgid "both"
-msgstr ""
+msgstr "ambos"
 
 #. Type: select
 #. Description
 #: ../templates:6002
-#, fuzzy
 msgid "Changes displayed with APT:"
-msgstr "Como as mudanças devem ser exibidas com o apt ?"
+msgstr "Mudanças exibidas com o APT:"
 
 #. Type: select
 #. Description
 #: ../templates:6002
-#, fuzzy
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Como as mudanças devem ser exibidas com o apt ?"
+msgstr ""
+"Por favor, escolha quais tipos de mudanças deverão ser exibidas com o APT."
 
 #. Type: select
 #. Description
 #: ../templates:6002
-#, fuzzy
-#| msgid ""
-#| " news - important news items only\n"
-#| " both - both news and detailed changelogs\n"
-#| " changelogs - detailed changelogs only"
 msgid ""
 " news      : important news items only;\n"
 " changelogs: detailed changelogs only;\n"
 " both      : news and changelogs."
 msgstr ""
-" notícias         - somente itens de notícias importantes\n"
-" ambos            - ambos notícias e logs de mudanças detalhados\n"
-" logs de mudanças - somente logs de mudanças detalhados"
+" notícias        : somente itens de notícias importantes;\n"
+" logs de mudanças: somente logs de mudanças detalhados;\n"
+" ambos           : notícias e logs de mudanças."
 
 #, fuzzy
 #~| msgid ""
