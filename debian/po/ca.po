@@ -1,13 +1,13 @@
 # Catalan translation of apt-listchanges Debconf templates
 # Copyright © 2003, 2005, 2007 Software In the Public Interest, Inc.
-# Jordi Mallach <jordi@debian.org>, 2003, 2005, 2007.
+# Jordi Mallach <jordi@debian.org>, 2003, 2005, 2007, 2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.72.2\n"
+"Project-Id-Version: apt-listchanges 2.83.1\n"
 "Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
 "POT-Creation-Date: 2007-12-24 16:37+0100\n"
-"PO-Revision-Date: 2007-02-09 15:42+0100\n"
+"PO-Revision-Date: 2009-09-28 00:41+0200\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "navegador-xterm"
 #. Choices
 #: ../templates:2001
 msgid "gtk"
-msgstr ""
+msgstr "gtk"
 
 #. Type: select
 #. Choices
@@ -65,10 +65,8 @@ msgstr "cap"
 #. Type: select
 #. Description
 #: ../templates:2002
-#, fuzzy
-#| msgid "Method for changes display:"
 msgid "Method to be used to display changes:"
-msgstr "Mètode per a mostrar els canvis:"
+msgstr "Mètode a emprar per a mostrar els canvis:"
 
 #. Type: select
 #. Description
@@ -76,20 +74,11 @@ msgstr "Mètode per a mostrar els canvis:"
 msgid ""
 "Changes in packages can be displayed in various ways by apt-listchanges:"
 msgstr ""
+"apt-listchanges pot mostrar els canvis als paquets de diverses maneres:"
 
 #. Type: select
 #. Description
 #: ../templates:2002
-#, fuzzy
-#| msgid ""
-#| " pager         : use your preferred pager to display changes one page at\n"
-#| "                 a time;\n"
-#| " browser       : display HTML-formatted changes using a web browser;\n"
-#| " xterm-pager   : like pager, but in an xterm in the background;\n"
-#| " xterm-browser : like browser, but in an xterm in the background;\n"
-#| " text          : print changes to your terminal (without pausing);\n"
-#| " mail          : only send changes via mail;\n"
-#| " none          : do not run automatically from apt."
 msgid ""
 " pager        : display changes one page at a time;\n"
 " browser      : display HTML-formatted changes using a web browser;\n"
@@ -100,15 +89,15 @@ msgid ""
 " mail         : only send changes via e-mail;\n"
 " none         : do not run automatically from APT."
 msgstr ""
-"paginador:       utilitza el vostre paginador preferit per a mostrar els\n"
-"                 canvis un a l'hora\n"
+"paginador:       mostrar els canvis de pàgina en pàgina\n"
 "navegador:       mostra els canvis en format HTML utilitzant un navegador "
 "web\n"
 "paginador-xterm: com el paginador, però dins d'un xterm en segon pla\n"
 "navegador-xterm: com el navegador, però dins d'un xterm en segon pla\n"
-"text:            mostra els canvis al vostre terminal (sense fer cap pausa)\n"
+"gtk:             mostra els canvis en una finestra GTK\n"
+"text:            mostra els canvis al terminal (sense fer cap pausa)\n"
 "correu:          envia els canvis només per correu\n"
-"cap:             no s'executa automàticament des d'apt"
+"cap:             no s'executa automàticament des de l'APT"
 
 #. Type: select
 #. Description
@@ -117,42 +106,34 @@ msgid ""
 "This setting can be overridden at execution time. By default, all the "
 "options except for 'none' will also send copies by mail."
 msgstr ""
+"Aquest paràmetre es pot substituir en temps d'execució. Per defecte, totes "
+"les opcions excepte «cap» també enviaran còpies per correu."
 
 #. Type: string
 #. Description
 #: ../templates:3001
-#, fuzzy
-#| msgid "E-mail Address(es) which will receive changes:"
 msgid "E-mail address(es) which will receive changes:"
 msgstr "Adreces de correu que rebran els canvis:"
 
 #. Type: string
 #. Description
 #: ../templates:3001
-#, fuzzy
-#| msgid ""
-#| "apt-listchanges can email a copy of displayed changes.  Please enter the "
-#| "email address the changes should be sent to."
 msgid ""
 "Optionally, apt-listchanges can e-mail a copy of displayed changes to a "
 "specified address."
 msgstr ""
-"apt-listchanges pot enviar per correu una còpia dels canvis mostrats. "
-"Introduïu l'adreça de correu on voleu que s'envien."
+"Opcionalment, apt-listchanges pot enviar per correu una còpia dels canvis "
+"mostrats a una adreça especificada."
 
 #. Type: string
 #. Description
 #: ../templates:3001
-#, fuzzy
-#| msgid ""
-#| "Multiple addresses may be specified, delimited by commas.  Leave this "
-#| "empty if you do not want any email to be sent."
 msgid ""
 "Multiple addresses may be specified, delimited by commas. Leaving this field "
 "empty disables mail notifications."
 msgstr ""
-"Es poden especificar adreces múltiples, delimitades per comes. Deixeu això "
-"buit si no voleu que s'envie cap correu."
+"Es poden especificar adreces múltiples, delimitades per comes. Si es deixa "
+"això buit s'inhabiliten les notificacions per correu."
 
 #. Type: boolean
 #. Description
@@ -163,21 +144,15 @@ msgstr "Voleu que se us demane confirmació després de mostrar els canvis?"
 #. Type: boolean
 #. Description
 #: ../templates:4001
-#, fuzzy
-#| msgid ""
-#| "After giving you a chance to read the list of changes, apt-listchanges "
-#| "can ask whether or not you would like to continue. This is useful when "
-#| "running from apt, as it gives you a chance to abort the upgrade if you "
-#| "see a change you do not want to apply (yet)."
 msgid ""
 "After displaying the list of changes, apt-listchanges can pause with a "
 "confirmation prompt. This is useful when running from APT, as it offers an "
 "opportunity to abort the upgrade if a change is unwelcome."
 msgstr ""
-"Després de donar-vos l'oportunitat de llegir els canvis, apt-listchanges pot "
-"preguntar si voleu o no continuar. Açò es útil si s'està executant des "
-"d'apt, ja que voa dona l'oportunitat d'avortar l'actualització si veieu un "
-"canvi que (encara) no voleu aplicar."
+"Després de mostrar-vos la llista de canvis, apt-listchanges pot posar-se "
+"enpausa amb un indicador de confirmació. Açò és útil si s'està executant des "
+"de l'APT, ja ofereix una oportunitat d'avortar l'actualització si un canvi "
+"no és vol aplicar."
 
 #. Type: boolean
 #. Description
@@ -186,6 +161,8 @@ msgid ""
 "This can be overridden at execution time, and has no effect if the "
 "configured frontend option is 'mail' or 'none'."
 msgstr ""
+"Això es pot substituir en temps d'execució, i no té cap efecte si l'opció "
+"d'interfície configurada és «correu» o «cap»."
 
 #. Type: boolean
 #. Description
@@ -196,46 +173,37 @@ msgstr "Voleu que l'apt-listchanges descarte els canvis que ja s'han mostrat?"
 #. Type: boolean
 #. Description
 #: ../templates:5001
-#, fuzzy
-#| msgid ""
-#| "apt-listchanges has the capability to keep track of which changes have "
-#| "already been displayed, and to skip them in future invocations. This is "
-#| "useful, for example, when retrying an upgrade."
 msgid ""
 "A record of already displayed changes can be kept in order to avoid "
 "displaying them again. This is useful, for example, when retrying an upgrade."
 msgstr ""
-"apt-listchanges té l'habilitat de fer un seguiment dels canvis que ja s'han "
-"mostrat anteriorment, i pot descartar-los en futures invocacions. Açò és "
-"útil, per exemple, quan es torna a intentar una actualització."
+"Es pot guardar un registre dels canvis que ja s'han mostrat, i així poder "
+"evitar que es tornen a mostrar. Açò és útil, per exemple, quan es torna a "
+"intentar una actualització."
 
 #. Type: select
 #. Choices
 #: ../templates:6001
 msgid "news"
-msgstr ""
+msgstr "notícies"
 
 #. Type: select
 #. Choices
 #: ../templates:6001
-#, fuzzy
-#| msgid "news, both, changelogs"
 msgid "changelogs"
-msgstr "notícies, ambdós, registres"
+msgstr "registres"
 
 #. Type: select
 #. Choices
 #: ../templates:6001
 msgid "both"
-msgstr ""
+msgstr "ambdós"
 
 #. Type: select
 #. Description
 #: ../templates:6002
-#, fuzzy
-#| msgid "Changes displayed with apt:"
 msgid "Changes displayed with APT:"
-msgstr "Canvis mostrats amb l'apt:"
+msgstr "Canvis mostrats amb l'APT:"
 
 #. Type: select
 #. Description
@@ -246,40 +214,14 @@ msgstr "Seleccioneu el tipus de canvis que voleu que es mostren amb l'APT."
 #. Type: select
 #. Description
 #: ../templates:6002
-#, fuzzy
-#| msgid ""
-#| " news - important news items only\n"
-#| " both - both news and detailed changelogs\n"
-#| " changelogs - detailed changelogs only"
 msgid ""
 " news      : important news items only;\n"
 " changelogs: detailed changelogs only;\n"
 " both      : news and changelogs."
 msgstr ""
-" notícies - només els elements de notícies importants\n"
-" ambdós - tant les notícies com els canvis detallats\n"
-" registres - només els canvis detallats"
-
-#, fuzzy
-#~| msgid ""
-#~| "apt-listchanges can display package changes in a number of different "
-#~| "ways."
-#~ msgid ""
-#~ "Package changes may be displayed by apt-listchanges in a number of "
-#~ "different ways."
-#~ msgstr ""
-#~ "apt-listchanges pot mostrar els canvis als paquets de diferents maneres."
-
-#, fuzzy
-#~| msgid ""
-#~| "This setting does not apply to the 'mail' or 'none' frontends, and can "
-#~| "be overridden with a command line option."
-#~ msgid ""
-#~ "This setting does not apply to the 'mail' or 'none' frontends, and can be "
-#~ "overridden at execution time."
-#~ msgstr ""
-#~ "Aquesta opció no és aplicable a les interfícies «mail» o «cap» i pot ser "
-#~ "reemplaçada amb una opció de la línia d'ordres."
+" notícies: només els elements de notícies importants\n"
+" registres: només els canvis detallats\n"
+" ambdós: notícies i canvis"
 
 #~ msgid ""
 #~ "This setting can be overridden by a command-line option or an environment "

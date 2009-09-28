@@ -1,5 +1,6 @@
 apt-listchanges (2.83.1) UNRELEASED; urgency=low
 
+  [ Pierre Habouzit ]
   * Apt-listchanges moves to collab-maint.
   * Fix pending l10n issues. Program translations:
     - Simplified Chinese. Closes: #501042
@@ -7,6 +8,9 @@ apt-listchanges (2.83.1) UNRELEASED; urgency=low
   * Fix pending l10n issues. Debconf translations:
     - Brazilian Portuguese (Felipe Augusto van de Wiel (faw)).
       Closes: #501639
+
+  [ Christian Perrier ]
+  * Catalan (Jordi Mallach).  Closes: #548654
 
  -- Pierre Habouzit <madcoder@debian.org>  Tue, 22 Sep 2009 09:40:47 +0200
 
