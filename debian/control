@@ -12,8 +12,8 @@ Build-Depends-Indep: docbook-to-man, gettext, python-dev, po-debconf,
 
 Package: apt-listchanges
 Architecture: all
-Depends: ${python:Depends}, apt (>= 0.5.3), python-apt, debconf | debconf-2.0,
- ucf (>= 0.28), debianutils (>= 2.0.2)
+Depends: ${python:Depends}, apt (>= 0.5.3), python-apt, 
+ ucf (>= 0.28), debianutils (>= 2.0.2), ${misc:Depends}
 Recommends: exim4 | mail-transport-agent
 Suggests: x-terminal-emulator, www-browser, python-glade2, python-gtk2
 Description: package change history notification tool

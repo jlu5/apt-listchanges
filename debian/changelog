@@ -11,6 +11,10 @@ apt-listchanges (2.83.1) UNRELEASED; urgency=low
   * Fix pending l10n issues. Debconf translations:
     - Brazilian Portuguese (Felipe Augusto van de Wiel (faw)).
       Closes: #501639
+  * Add ${misc:Depends} to dependencies to properly
+    deal with dependencies implied by some debhelper
+    utilities. As a consequence, drop the dependency on
+    debconf.
 
  -- Pierre Habouzit <madcoder@debian.org>  Tue, 22 Sep 2009 09:40:47 +0200
 
