@@ -1,4 +1,7 @@
-apt-listchanges (2.83.1) UNRELEASED; urgency=low
+apt-listchanges (2.83+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload with maintainer's agreement
+    (he likes living dangerously)
 
   [ Pierre Habouzit ]
   * Apt-listchanges moves to collab-maint.
@@ -16,7 +19,7 @@ apt-listchanges (2.83.1) UNRELEASED; urgency=low
     utilities. As a consequence, drop the dependency on
     debconf.
 
- -- Pierre Habouzit <madcoder@debian.org>  Tue, 22 Sep 2009 09:40:47 +0200
+ -- Christian Perrier <bubulle@debian.org>  Tue, 29 Sep 2009 23:16:26 +0200
 
 apt-listchanges (2.83) unstable; urgency=low
 
