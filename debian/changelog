@@ -1,3 +1,9 @@
+apt-listchanges (2.84) UNRELEASED; urgency=low
+
+  * Fix typo in Polish translation. Closes: #510618
+
+ -- Christian Perrier <bubulle@debian.org>  Mon, 19 Oct 2009 22:59:10 +0200
+
 apt-listchanges (2.83+nmu1) unstable; urgency=low
 
   * Non-maintainer upload with maintainer's agreement

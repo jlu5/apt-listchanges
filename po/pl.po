@@ -60,7 +60,7 @@ msgstr "Błąd przy pytaniu o potwierdzenie. Stan nie zostanie zapisany"
 
 #: ../apt-listchanges.py:206
 msgid "apt-listchanges: changelogs for %s"
-msgstr "apt-listchanges: dzienniki zmian dla koputera %s"
+msgstr "apt-listchanges: dzienniki zmian dla komputera %s"
 
 #: ../apt-listchanges.py:210
 msgid "apt-listchanges: news for %s"
