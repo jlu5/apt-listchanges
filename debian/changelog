@@ -1,4 +1,4 @@
-apt-listchanges (2.84) UNRELEASED; urgency=low
+apt-listchanges (2.84) unstable; urgency=low
 
   [ Christian Perrier ]
   * Fix typo in Polish translation. Closes: #510618
