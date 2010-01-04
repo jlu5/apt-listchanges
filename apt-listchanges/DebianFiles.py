@@ -110,7 +110,7 @@ class Package:
         self.source  = pkgdata.source()
         self.Version = pkgdata.Version
 
-    def extract_changes(self, which, since_version=None):
+    def extract_changes(self, which, since_version=None, reverse=None):
         '''Extract changelog entries, news or both from the package.
         If since_version is specified, only return entries later than the specified version.
         returns a sequence of Changes objects.'''
@@ -128,7 +128,7 @@ class Package:
 
         tempdir = self.extract_contents(filenames)
 
-        find_first = lambda acc, fname: acc or self.read_changelog(os.path.join(tempdir, fname), since_version)
+        find_first = lambda acc, fname: acc or self.read_changelog(os.path.join(tempdir, fname), since_version, reverse)
 
         news       = reduce(find_first, news_filenames, None)
         changelog  = reduce(find_first, changelog_filenames + changelog_filenames_native, None)
@@ -151,7 +151,7 @@ class Package:
 
         return tempdir
 
-    def read_changelog(self, filename, since_version):
+    def read_changelog(self, filename, since_version, reverse=False):
         filenames = glob.glob(filename)
 
         fd = None
@@ -174,11 +174,14 @@ class Package:
             return None
 
         urgency = numeric_urgency('low')
-        changes = ''
+        entry = ''
+        entries = []
         is_debian_changelog = 0
         for line in fd.readlines():
             match = self.changelog_header.match(line)
             if match:
+                entries += [entry]
+                entry = ''
                 is_debian_changelog = 1
                 if since_version:
                     if apt_pkg.VersionCompare(match.group('version'),
@@ -187,10 +190,14 @@ class Package:
                                       urgency)
                     else:
                         break
-            changes += line
+            entry += line
 
         if not is_debian_changelog:
             return None
+
+        if reverse:
+            entries.reverse()
+        changes = "".join(entries)
 
         return Changes(self.source, changes, urgency)
 

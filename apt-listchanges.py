@@ -132,7 +132,7 @@ def main():
                                                                       srcversion))
             continue
 
-        (news, changelog) = pkg.extract_changes(config.which, fromversion)
+        (news, changelog) = pkg.extract_changes(config.which, fromversion, config.reverse)
 
         if news or changelog:
             found[srcpackage] = 1

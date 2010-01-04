@@ -1,8 +1,13 @@
 apt-listchanges (2.84) UNRELEASED; urgency=low
 
+  [ Christian Perrier ]
   * Fix typo in Polish translation. Closes: #510618
 
- -- Christian Perrier <bubulle@debian.org>  Mon, 19 Oct 2009 22:59:10 +0200
+  [ Thadeu Lima de Souza Cascardo ]
+  * Introduce the --reverse option to list entries in the reverse order.
+    Closes: #172113:
+
+ -- Thadeu Lima de Souza Cascardo <cascardo@minaslivre.org>  Mon, 04 Jan 2010 12:17:21 -0200
 
 apt-listchanges (2.83+nmu1) unstable; urgency=low
 

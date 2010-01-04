@@ -47,6 +47,7 @@ class ALCConfig:
         self.which = 'both'
         self.allowed_which = ('both', 'news', 'changelogs')
         self.since = None
+        self.reverse = False
 
     def read(self, file):
         self.parser = ConfigParser.ConfigParser()
@@ -57,7 +58,7 @@ class ALCConfig:
             for option in self.parser.options(self.profile):
                 value = None
                 if self.parser.has_option(self.profile, option):
-                    if option in ('confirm', 'run', 'show_all', 'headers', 'verbose'):
+                    if option in ('confirm', 'run', 'show_all', 'headers', 'verbose', 'reverse'):
                         value = self.parser.getboolean(self.profile, option)
                     else:
                         value = self.parser.get(self.profile, option)
@@ -81,7 +82,7 @@ class ALCConfig:
             (optlist, args) = getopt.getopt(argv[1:], 'vf:s:cah', [
                 "apt", "verbose", "frontend=", "email-address=", "confirm",
                 "all", "headers", "save_seen=", "since=", "debug", "which=",
-                "help", "profile="])
+                "help", "profile=", "reverse"])
         except getopt.GetoptError:
             return None
 
@@ -134,6 +135,8 @@ class ALCConfig:
                     sys.exit(1)
             elif opt == '--debug':
                 self.debug = 1
+            elif opt == '--reverse':
+                self.reverse = 1
 
         if self.email_address == 'none':
             self.email_address = None
