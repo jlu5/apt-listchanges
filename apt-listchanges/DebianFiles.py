@@ -184,7 +184,7 @@ class Package:
                 entry = ''
                 is_debian_changelog = 1
                 if since_version:
-                    if apt_pkg.VersionCompare(match.group('version'),
+                    if apt_pkg.version_compare(match.group('version'),
                                               since_version) > 0:
                         urgency = max(numeric_urgency(match.group('urgency')),
                                       urgency)

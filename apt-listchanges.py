@@ -41,7 +41,7 @@ def main():
     if (debs == None or len(debs) == 0) and not config.apt_mode:
         config.usage(1);
 
-    apt_pkg.InitSystem()
+    apt_pkg.init_system()
 
     if config.apt_mode:
         # stdin is a pipe
@@ -127,7 +127,7 @@ def main():
         if found.has_key(srcpackage):
             continue
 
-        if not config.show_all and apt_pkg.VersionCompare(fromversion, srcversion) >= 0:
+        if not config.show_all and apt_pkg.version_compare(fromversion, srcversion) >= 0:
             notes.append(_("%s: Version %s has already been seen") % (binpackage,
                                                                       srcversion))
             continue
