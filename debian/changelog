@@ -2,8 +2,9 @@ apt-listchanges (2.85) UNRELEASED; urgency=low
 
   * debian/control
     - added myself to Uploaders
+    - removed b-d-i for python-dev, not needed for building the package
 
- -- Sandro Tosi <morph@debian.org>  Fri, 19 Mar 2010 07:24:33 +0100
+ -- Sandro Tosi <morph@debian.org>  Fri, 19 Mar 2010 17:54:14 +0100
 
 apt-listchanges (2.84) unstable; urgency=low
 
