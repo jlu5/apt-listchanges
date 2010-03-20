@@ -5,8 +5,11 @@ apt-listchanges (2.85) UNRELEASED; urgency=low
     - removed b-d-i for python-dev, not needed for building the package
   * debian/config
     - add 'set -e' explicitly, and not only in the shebang
+  * po/ar.po
+    - added Arabic translation; thanks to Ossama Khayat for the report and
+      patch; Closes: #501636
 
- -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 00:43:47 +0100
+ -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 08:39:03 +0100
 
 apt-listchanges (2.84) unstable; urgency=low
 
