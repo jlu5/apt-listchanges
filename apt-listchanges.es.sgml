@@ -237,7 +237,7 @@ versión 1.6 del CVS de
 	    versión de un paquete para la que se han mostrado los cambios, para
 	    así, evitar mostrar los mismos cambios en futuras ejecuciones. La
 	    base de datos se guarda en el fichero especificado. Especifique
-	    'none' para deshabilitar esta característica.
+	    &laquo;none&raquo; para deshabilitar esta característica.
 	  </PARA>
 	</LISTITEM>
       </VARLISTENTRY>

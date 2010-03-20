@@ -13,8 +13,10 @@ apt-listchanges (2.85) UNRELEASED; urgency=low
       Klode for the report and patch; Closes: #572062
   * debian/copyright
     - refer to GPL-2 local license file
+  * apt-listchanges.es.sgml
+    - use escape sequence instead of apex in 'save_seen' description
 
- -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 09:30:31 +0100
+ -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 09:38:07 +0100
 
 apt-listchanges (2.84) unstable; urgency=low
 
