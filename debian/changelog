@@ -11,8 +11,10 @@ apt-listchanges (2.85) UNRELEASED; urgency=low
   * apt-listchanges.py, apt-listchanges/DebianFiles.py, debian/control
     - update for upcoming python-apt API transition; thanks to Julian Andres
       Klode for the report and patch; Closes: #572062
+  * debian/copyright
+    - refer to GPL-2 local license file
 
- -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 09:28:48 +0100
+ -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 09:30:31 +0100
 
 apt-listchanges (2.84) unstable; urgency=low
 
