@@ -17,7 +17,7 @@ While upgrading a package _package_, apt-listchanges does the following:
 This is done for every package that is going to be installed or upgraded.
 
 The reasons for a changelog not to show up are:
-* you never installed any binary package from a that source package before,
+* you never installed any binary package from that source package before,
   meaning that `apt-listchanges` breaks each time a source package is renamed,
   I can't fix that ;
 * there is no new changelog entry:
