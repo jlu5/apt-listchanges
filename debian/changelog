@@ -17,8 +17,11 @@ apt-listchanges (2.85) UNRELEASED; urgency=low
     - use escape sequence instead of apex in 'save_seen' description
   * debian/README.Debian
     - fix a typo; thanks to Paul Menzel for report and patch; Closes: #516141
+  * po/et.po
+    - updated Estonian translation; thanks to Ivar Smolin for the report and
+      patch; Closes: #576325
 
- -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 11:33:20 +0100
+ -- Sandro Tosi <morph@debian.org>  Sat, 03 Apr 2010 11:36:05 +0200
 
 apt-listchanges (2.84) unstable; urgency=low
 
