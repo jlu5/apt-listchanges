@@ -195,6 +195,9 @@ class Package:
         if not is_debian_changelog:
             return None
 
+        if not changes.endswith('\n\n'):
+            changes += '\n'
+
         if reverse:
             entries.reverse()
         changes = "".join(entries)
