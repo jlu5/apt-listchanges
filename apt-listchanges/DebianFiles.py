@@ -82,6 +82,12 @@ class ControlParser:
 
     def readdeb(self, deb):
         fh = os.popen('dpkg-deb -f %s' % deb)
+
+        # Only if the command above succeedes
+        res = fh.read()
+        if not res:
+            sys.exit(1)
+
         self.stanzas.append(ControlStanza(fh.read()))
 
     def find(self, field, value):
