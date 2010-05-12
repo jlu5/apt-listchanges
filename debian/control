@@ -3,7 +3,7 @@ Section: utils
 Priority: standard
 Maintainer: Pierre Habouzit <madcoder@debian.org>
 Uploaders: Matt Zimmerman <mdz@debian.org>, Thadeu Lima de Souza Cascardo <cascardo@minaslivre.org>, Sandro Tosi <morph@debian.org>
-Standards-Version: 3.7.3
+Standards-Version: 3.8.4
 Vcs-Browser: http://git.debian.org/?p=collab-maint/apt-listchanges.git;a=summary
 Vcs-Git: git://git.debian.org/git/collab-maint/apt-listchanges.git
 Build-Depends: debhelper (>= 5)
