@@ -25,8 +25,6 @@ apt-listchanges (2.85) UNRELEASED; urgency=low
     - add a blank line at the end of NEWS entry (if it's not already there);
       thanks to Martin Michlmayr for the report and to Morita Sho for the patch;
       Closes: #247356
-    - don't crash if a deb file is not readable, exit instead; thanks to Carl
-      Chenet for the report and patch; Closes: #522700
 
  -- Sandro Tosi <morph@debian.org>  Wed, 12 May 2010 21:29:53 +0200
 
