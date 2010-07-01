@@ -1,4 +1,4 @@
-apt-listchanges (2.85) UNRELEASED; urgency=low
+apt-listchanges (2.85) unstable; urgency=low
 
   * debian/control
     - added myself to Uploaders
@@ -26,7 +26,7 @@ apt-listchanges (2.85) UNRELEASED; urgency=low
       thanks to Martin Michlmayr for the report and to Morita Sho for the patch;
       Closes: #247356
 
- -- Sandro Tosi <morph@debian.org>  Fri, 02 Jul 2010 00:27:10 +0200
+ -- Sandro Tosi <morph@debian.org>  Fri, 02 Jul 2010 00:27:28 +0200
 
 apt-listchanges (2.84) unstable; urgency=low
 
