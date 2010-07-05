@@ -199,7 +199,7 @@ class Package:
             entries.reverse()
         changes = "".join(entries)
 
-        if not changes.endswith('\n\n'):
+        if changes and not changes.endswith('\n\n'):
             changes += '\n'
 
         return Changes(self.source, changes, urgency)

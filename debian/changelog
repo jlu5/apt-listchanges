@@ -1,4 +1,12 @@
-apt-listchanges (2.85) UNRELEASED; urgency=low
+apt-listchanges (2.85.1) UNRELEASED; urgency=low
+
+  * apt-listchanges/DebianFiles.py
+    - add an empty line (if missing) only if there's something to display;
+      thanks to Julien Cristau for the report; Closes: #587957
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 05 Jul 2010 20:58:39 +0200
+
+apt-listchanges (2.85) unstable; urgency=low
 
   * debian/control
     - added myself to Uploaders
@@ -26,7 +34,7 @@ apt-listchanges (2.85) UNRELEASED; urgency=low
       thanks to Martin Michlmayr for the report and to Morita Sho for the patch;
       Closes: #247356
 
- -- Sandro Tosi <morph@debian.org>  Fri, 02 Jul 2010 00:27:10 +0200
+ -- Sandro Tosi <morph@debian.org>  Fri, 02 Jul 2010 00:27:28 +0200
 
 apt-listchanges (2.84) unstable; urgency=low
 
