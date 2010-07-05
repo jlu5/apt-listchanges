@@ -1,10 +1,10 @@
-apt-listchanges (2.85.1) UNRELEASED; urgency=low
+apt-listchanges (2.85.1) unstable; urgency=low
 
   * apt-listchanges/DebianFiles.py
     - add an empty line (if missing) only if there's something to display;
       thanks to Julien Cristau for the report; Closes: #587957
 
- -- Sandro Tosi <morph@debian.org>  Mon, 05 Jul 2010 20:58:39 +0200
+ -- Sandro Tosi <morph@debian.org>  Mon, 05 Jul 2010 21:02:52 +0200
 
 apt-listchanges (2.85) unstable; urgency=low
 
