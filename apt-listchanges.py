@@ -82,8 +82,8 @@ def main():
         # Will replace seen after changes have actually been seen
         seen_new = {}
 
-    all_news = []
-    all_changelogs = []
+    all_news = {}
+    all_changelogs = {}
     notes = []
 
     # Mapping of source->binary packages
@@ -116,7 +116,7 @@ def main():
             else:
                 statusentry = status.find('Package', binpackage)
                 if statusentry and statusentry.installed():
-                    fromversion = statusentry.Version
+                    fromversion = statusentry.version()
                 else:
                     # Package not installed or seen
                     notes.append(_("%s: will be newly installed") % binpackage)
@@ -124,7 +124,14 @@ def main():
 
         source_packages.setdefault(srcpackage, []).append(binpackage)
 
-        if found.has_key(srcpackage):
+        # For packages with non uniform binary versions wrt the source
+        # version, the version reported for the binary package is the source
+        # one, which lacks binNMU.
+        #
+        # This is why even if we've seen a package we may miss bits of
+        # changelog in some odd cases
+        if found.has_key(srcpackage) and \
+                apt_pkg.version_compare(srcversion, found[srcpackage]) <= 0:
             continue
 
         if not config.show_all and apt_pkg.version_compare(fromversion, srcversion) >= 0:
@@ -135,12 +142,11 @@ def main():
         (news, changelog) = pkg.extract_changes(config.which, fromversion, config.reverse)
 
         if news or changelog:
-            found[srcpackage] = 1
+            found[srcpackage] = srcversion
             if news:
-                all_news.append(news)
+                all_news[srcpackage] = news
             if changelog:
-                all_changelogs.append(changelog)
-
+                all_changelogs[srcpackage] = changelog
             if config.save_seen:
                 seen_new[srcpackage] = srcversion
 
@@ -149,6 +155,8 @@ def main():
     if config.save_seen:
         seen.close()
 
+    all_news = all_news.values()
+    all_changelogs = all_changelogs.values()
     for batch in (all_news, all_changelogs):
         batch.sort(lambda a, b: -cmp(a.urgency, b.urgency) or
                    cmp(a.package, b.package))

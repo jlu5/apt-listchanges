@@ -1,3 +1,10 @@
+apt-listchanges (2.86) UNRELEASED; urgency=low
+
+  * apt-listchanges no longer supposes that binary packages all have the same
+    version for a given source package; Closes: #525978, #491306
+
+ -- Pierre Habouzit <madcoder@debian.org>  Wed, 07 Jul 2010 16:01:23 +0200
+
 apt-listchanges (2.85.1) unstable; urgency=low
 
   * apt-listchanges/DebianFiles.py

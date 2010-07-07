@@ -48,6 +48,8 @@ def numeric_urgency(u):
 
 
 class ControlStanza:
+    source_version_re = re.compile('^\S+ \((?P<version>.*)\).*')
+
     def __init__(self, str):
         field = None
 
@@ -66,6 +68,14 @@ class ControlStanza:
 
     def installed(self):
         return hasattr(self, 'Status') and self.Status.split(' ')[2] == 'installed'
+
+    def version(self):
+        if hasattr(self, 'Source'):
+            match = self.source_version_re.match(self.Source)
+            if match:
+                return match.group('version')
+        return self.Version
+
 
 class ControlParser:
     def __init__(self):
@@ -108,7 +118,7 @@ class Package:
 
         self.binary  = pkgdata.Package
         self.source  = pkgdata.source()
-        self.Version = pkgdata.Version
+        self.Version = pkgdata.version()
 
     def extract_changes(self, which, since_version=None, reverse=None):
         '''Extract changelog entries, news or both from the package.
