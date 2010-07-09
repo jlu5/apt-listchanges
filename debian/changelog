@@ -1,4 +1,4 @@
-apt-listchanges (2.86) UNRELEASED; urgency=low
+apt-listchanges (2.85.2) UNRELEASED; urgency=low
 
   * apt-listchanges no longer supposes that binary packages all have the same
     version for a given source package; Closes: #525978, #491306
