@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2008-01-08 23:33+CET\n"
+"POT-Creation-Date: 2010-07-09 15:16+CEST\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,61 +25,65 @@ msgid ""
 "Unknown frontend: %s\n"
 msgstr ""
 
-#: ../apt-listchanges.py:120
+#: ../apt-listchanges.py:122
 msgid "%s: will be newly installed"
 msgstr ""
 
-#: ../apt-listchanges.py:129
+#: ../apt-listchanges.py:138
 msgid "%s: Version %s has already been seen"
 msgstr ""
 
-#: ../apt-listchanges.py:162
+#: ../apt-listchanges.py:172
 msgid "News for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:173
+#: ../apt-listchanges.py:183
 msgid "Changes for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:183
+#: ../apt-listchanges.py:193
 msgid "Informational notes"
 msgstr ""
 
-#: ../apt-listchanges.py:186
+#: ../apt-listchanges.py:196
 msgid "apt-listchanges: News"
 msgstr ""
 
-#: ../apt-listchanges.py:190
+#: ../apt-listchanges.py:200
 msgid "apt-listchanges: Changelogs"
 msgstr ""
 
-#: ../apt-listchanges.py:197
+#: ../apt-listchanges.py:207
 msgid "Aborting"
 msgstr ""
 
-#: ../apt-listchanges.py:200
+#: ../apt-listchanges.py:210
 msgid "Confirmation failed, don't save seen state"
 msgstr ""
 
-#: ../apt-listchanges.py:206
+#: ../apt-listchanges.py:216
 msgid "apt-listchanges: changelogs for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:210
+#: ../apt-listchanges.py:220
 msgid "apt-listchanges: news for %s"
 msgstr ""
 
-#: ../apt-listchanges.py:222
+#: ../apt-listchanges.py:232
 msgid "didn't find any valid .deb archives"
 msgstr ""
 
-#: ../apt-listchanges/ALCConfig.py:74
+#: ../apt-listchanges/ALCConfig.py:76
 msgid ""
 "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
 msgstr ""
 
-#: ../apt-listchanges/ALCConfig.py:129
+#: ../apt-listchanges/ALCConfig.py:133
 msgid "Unknown option %s for --which.  Allowed are: %s."
+msgstr ""
+
+#: ../apt-listchanges/ALCConfig.py:148
+msgid "--since=<version> expects a only path to a .deb"
 msgstr ""
 
 #: ../apt-listchanges/ALChacks.py:32
@@ -95,7 +99,7 @@ msgstr ""
 msgid "You can abort the installation if you select 'no'."
 msgstr ""
 
-#: ../apt-listchanges/DebianFiles.py:161
+#: ../apt-listchanges/DebianFiles.py:171
 msgid "Ignoring `%s' (seems to be a directory!)"
 msgstr ""
 
