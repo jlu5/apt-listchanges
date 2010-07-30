@@ -70,11 +70,24 @@ class ControlStanza:
         return hasattr(self, 'Status') and self.Status.split(' ')[2] == 'installed'
 
     def version(self):
+        """
+        This function returns the version of the package. One would like it to
+        be the "binary" version, though we have the tough case of source
+        package whose binary packages versioning scheme is different from the
+        source one (see OOo, linux-source, ...).
+
+        This code does the following, if the Source field is set with a
+        specified version, then we use the binary version if and only if the
+        source version is a prefix. We must do that because of binNMUs.
+        """
+        v = self.Version
         if hasattr(self, 'Source'):
             match = self.source_version_re.match(self.Source)
             if match:
-                return match.group('version')
-        return self.Version
+                sv = match.group('version')
+                if not v.startswith(sv):
+                    return sv
+        return v
 
 
 class ControlParser:
