@@ -1,8 +1,14 @@
 apt-listchanges (2.85.3) UNRELEASED; urgency=low
 
+  [ Pierre Habouzit ]
   * Make apt-listchanges guess about binNMUs again; Closes: 590989
 
- -- Pierre Habouzit <madcoder@debian.org>  Fri, 30 Jul 2010 23:12:37 +0200
+  [ Sandro Tosi ]
+  * debian/README.Debian
+    - reported the workaround used to recover from situation like in #587952;
+      we can't do anything else but to document it, so this also Closes: #587952
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 31 Jul 2010 11:01:20 +0200
 
 apt-listchanges (2.85.2) unstable; urgency=low
 
