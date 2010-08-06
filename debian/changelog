@@ -1,4 +1,4 @@
-apt-listchanges (2.85.3) UNRELEASED; urgency=low
+apt-listchanges (2.85.3) unstable; urgency=low
 
   [ Pierre Habouzit ]
   * Make apt-listchanges guess about binNMUs again; Closes: 590989
@@ -10,7 +10,7 @@ apt-listchanges (2.85.3) UNRELEASED; urgency=low
   * debian/control
     - remove Matt Zimmerman from Uploaders: thx for your work! Closes: #521476
 
- -- Sandro Tosi <morph@debian.org>  Sat, 31 Jul 2010 11:37:20 +0200
+ -- Sandro Tosi <morph@debian.org>  Fri, 06 Aug 2010 17:13:16 +0200
 
 apt-listchanges (2.85.2) unstable; urgency=low
 
