@@ -90,7 +90,7 @@ def mail_changes(address, changes, subject):
     charset.header_encoding = email.Charset.QP
     message = email.Message.Message()
     message.set_charset(charset)
-    subject = unicode(subject.decode(locale.getlocale()[1] or 'ascii', 'replace'))
+    subject = unicode(subject.decode(locale.getpreferredencoding() or 'ascii', 'replace'))
     message['Subject'] = email.Header.Header(subject, 'utf-8')
     message['To'] = address
     message.set_payload(changes)
@@ -162,7 +162,7 @@ class frontend:
                 # (That's also the reason we do it line by line.)
                 # This is possibly wrong, but our best guess.
                 uline = line.decode('iso8859-1')
-            newtext.append(uline.encode(locale.getlocale()[1] or 'ascii', 'replace'))
+            newtext.append(uline.encode(locale.getpreferredencoding() or 'ascii', 'replace'))
         return '\n'.join(newtext)
 
     def confirm(self):
