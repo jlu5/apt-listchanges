@@ -30,6 +30,7 @@ import gzip
 import errno
 import glob
 import shutil
+import signal
 
 import apt_pkg
 from ALChacks import *
@@ -170,7 +171,11 @@ class Package:
 
         # tar exits unsuccessfully if _any_ of the files we wanted
         # were not available, so we can't do much with its status
-        os.system(extract_command)
+        status = os.system(extract_command)
+
+        if os.WIFSIGNALED(status) and os.WTERMSIG(status) == signal.SIGINT:
+            shutil.rmtree(tempdir, 1)
+            raise KeyboardInterrupt
 
         return tempdir
 
