@@ -1,3 +1,16 @@
+apt-listchanges (2.85.4) unstable; urgency=low
+
+  [ Pierre Habouzit ]
+  * make apt-listchange interruptible by ^C (Closes: #456271)
+  * Use pythonism to guess the encoding to use (Closes: #511448) -
+    thanks to Joerg Woelke <joewoe@fsmail.de>
+
+  [ Sandro Tosi ]
+  * Updated French translation; thanks to Christian Perrier; Closes:
+    #593224
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 19 Sep 2010 15:19:16 +0200
+
 apt-listchanges (2.85.3) unstable; urgency=low
 
   [ Pierre Habouzit ]
