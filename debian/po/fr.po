@@ -1,229 +1,149 @@
-# Translation of apt-listchanges debconf templates to French
-# Copyright (C) 2007 Christian Perrier <bubulle@debian.org>
-# This file is distributed under the same license as the apt-listchanges package.
+# translation of apt-listchanges to French
+# Copyright (C) 2008 Christian Perrier <bubulle@debian.org>
 #
-# Christian Perrier <bubulle@debian.org>, 2007, 2008.
-# Denis Barbier <barbier@linuxfr.org>
+# Christian Perrier <bubulle@debian.org>, 2004, 2006, 2008, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
-"POT-Creation-Date: 2007-12-24 16:37+0100\n"
-"PO-Revision-Date: 2008-01-01 12:21+0100\n"
+"POT-Creation-Date: 2010-07-09 15:16+CEST\n"
+"PO-Revision-Date: 2010-08-16 08:50-0400\n"
 "Last-Translator: Christian Perrier <bubulle@debian.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#. Type: select
-#. Choices
-#: ../templates:2001
-msgid "pager"
-msgstr "Pageur"
+#: ../apt-listchanges.py:80
+msgid "database %s failed to load.\n"
+msgstr "échec du chargement de la base de données %s.\n"
 
-#. Type: select
-#. Choices
-#: ../templates:2001
-msgid "browser"
-msgstr "Navigateur"
+#: ../apt-listchanges.py:97
+msgid "Unknown frontend: %s\n"
+msgstr "Interface inconnue : %s\n"
 
-#. Type: select
-#. Choices
-#: ../templates:2001
-msgid "xterm-pager"
-msgstr "Pageur xterm"
+#: ../apt-listchanges.py:122
+msgid "%s: will be newly installed"
+msgstr "%s : sera installé pour la première fois"
 
-#. Type: select
-#. Choices
-#: ../templates:2001
-msgid "xterm-browser"
-msgstr "Navigateur xterm"
+#: ../apt-listchanges.py:138
+msgid "%s: Version %s has already been seen"
+msgstr "%s : la version %s a déjà été vue"
 
-#. Type: select
-#. Choices
-#: ../templates:2001
-msgid "gtk"
-msgstr "GTK"
+#: ../apt-listchanges.py:172
+msgid "News for %s"
+msgstr "Nouveautés pour %s"
 
-#. Type: select
-#. Choices
-#: ../templates:2001
-msgid "text"
-msgstr "Texte"
+#: ../apt-listchanges.py:183
+msgid "Changes for %s"
+msgstr "Modifications pour %s"
 
-#. Type: select
-#. Choices
-#: ../templates:2001
-msgid "mail"
-msgstr "Courriel"
+#: ../apt-listchanges.py:193
+msgid "Informational notes"
+msgstr "Notes d'information"
 
-#. Type: select
-#. Choices
-#: ../templates:2001
-msgid "none"
-msgstr "Aucun"
+#: ../apt-listchanges.py:196
+msgid "apt-listchanges: News"
+msgstr "apt-listchanges : nouveautés"
 
-#. Type: select
-#. Description
-#: ../templates:2002
-msgid "Method to be used to display changes:"
-msgstr "Méthode d'affichage des changements :"
+#: ../apt-listchanges.py:200
+msgid "apt-listchanges: Changelogs"
+msgstr "apt-listchanges : journaux des modifications (« changelogs »)"
 
-#. Type: select
-#. Description
-#: ../templates:2002
-msgid ""
-"Changes in packages can be displayed in various ways by apt-listchanges:"
+#: ../apt-listchanges.py:207
+msgid "Aborting"
+msgstr "Abandon"
+
+#: ../apt-listchanges.py:210
+msgid "Confirmation failed, don't save seen state"
+msgstr "Échec de la confirmation, état vu (« seen ») non sauvegardé"
+
+#: ../apt-listchanges.py:216
+msgid "apt-listchanges: changelogs for %s"
+msgstr "apt-listchanges : journaux des modifications (« changelogs ») pour %s"
+
+#: ../apt-listchanges.py:220
+msgid "apt-listchanges: news for %s"
+msgstr "apt-listchanges : nouveautés pour %s"
+
+#: ../apt-listchanges.py:232
+msgid "didn't find any valid .deb archives"
+msgstr "impossible de trouver une archive .deb valide"
+
+#: ../apt-listchanges/ALCConfig.py:76
+msgid "Usage: apt-listchanges [options] {--apt | filename.deb ...}\n"
+msgstr "Syntaxe : apt-listchanges [options] {--apt | fichier.deb ...}\n"
+
+#: ../apt-listchanges/ALCConfig.py:133
+msgid "Unknown option %s for --which.  Allowed are: %s."
+msgstr "Option %s inconnue pour --which. Les options valables sont : %s"
+
+#: ../apt-listchanges/ALCConfig.py:148
+msgid "--since=<version> expects a only path to a .deb"
+msgstr "--since=<version> a besoin du chemin d'accès à un fichier .deb"
+
+#: ../apt-listchanges/ALChacks.py:32
+msgid "Can't set locale; make sure $LC_* and $LANG are correct!\n"
 msgstr ""
-"Les modifications intervenues dans les paquets peuvent être affichées de "
-"plusieurs manières par apt-listchanges :"
+"Impossible de charger la « locale » : veuillez contrôler les\n"
+"variables $LC_* et $LANG.\n"
 
-#. Type: select
-#. Description
-#: ../templates:2002
+#: ../apt-listchanges/AptListChangesGtk.py:68
+msgid "Continue Installation?"
+msgstr "Faut-il poursuivre l'installation ?"
+
+#: ../apt-listchanges/AptListChangesGtk.py:68
+msgid "You can abort the installation if you select 'no'."
+msgstr "Vous pouvez interrompre l'installation en répondant négativement."
+
+#: ../apt-listchanges/DebianFiles.py:171
+msgid "Ignoring `%s' (seems to be a directory!)"
+msgstr "« %s » ignoré (semble être un répertoire)"
+
+#: ../apt-listchanges/apt_listchanges.py:45
 msgid ""
-" pager        : display changes one page at a time;\n"
-" browser      : display HTML-formatted changes using a web browser;\n"
-" xterm-pager  : like pager, but in an xterm in the background;\n"
-" xterm-browser: like browser, but in an xterm in the background;\n"
-" gtk          : display changes in a GTK window;\n"
-" text         : print changes to the terminal (without pausing);\n"
-" mail         : only send changes via e-mail;\n"
-" none         : do not run automatically from APT."
+"Wrong or missing VERSION from apt pipeline\n"
+"(is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)\n"
 msgstr ""
-" Pageur           : utilise un pageur (logiciel de pagination) ;\n"
-" Navigateur       : affiche dans un navigateur ;\n"
-" Pageur xterm     : pageur dans un xterm en tâche de fond ;\n"
-" Navigateur xterm : navigateur dans un xterm en tâche de fond ;\n"
-" GTK              : affiche dans une fenêtre GTK ;\n"
-" Texte            : affiche sur le terminal (sans pause) ;\n"
-" Courriel         : envoie les changements par courrier électronique ;\n"
-" Aucun            : ne pas exécuter apt-listchanges depuis APT."
+"VERSION incorrecte ou manquante dans l'affichage d'apt\n"
+"(Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version est-il bien à 2 ?)\n"
 
-#. Type: select
-#. Description
-#: ../templates:2002
+#: ../apt-listchanges/apt_listchanges.py:86
+msgid "Mailing %s: %s"
+msgstr "Envoi des modifications par courriel à %s : %s"
+
+#: ../apt-listchanges/apt_listchanges.py:111
+msgid "The %s frontend is deprecated, using pager"
+msgstr "L'interface %s est obsolète, utilisation de l'afficheur page à page"
+
+#: ../apt-listchanges/apt_listchanges.py:115
+msgid "The mail frontend needs a installed 'sendmail', using pager"
+msgstr ""
+"L'interface courriel a besoin d'un « sendmail » installé. L'afficheur page à "
+"page sera utilisé."
+
+#: ../apt-listchanges/apt_listchanges.py:127
 msgid ""
-"This setting can be overridden at execution time. By default, all the "
-"options except for 'none' will also send copies by mail."
+"The gtk frontend needs a working python-gtk2 and python-glade2.\n"
+"Those imports can not be found. Falling back to pager.\n"
+"The error is: %s\n"
 msgstr ""
-"Ce réglage peut être remplacé par un autre à l'exécution de la commande. "
-"Pour tous les choix (sauf « Aucun »), une copie sera également envoyée par "
-"courrier électronique."
+"L'interface GTK a besoin de python-gtk2 et python-glade2.\n"
+"Ces modules n'ont pas été trouvés. Retour à l'afficheur page à page.\n"
+"L'erreur est :%s\n"
 
-#. Type: string
-#. Description
-#: ../templates:3001
-msgid "E-mail address(es) which will receive changes:"
-msgstr "Adresse(s) électronique(s) de réception des changements :"
+#: ../apt-listchanges/apt_listchanges.py:180
+msgid "Do you want to continue? [Y/n] "
+msgstr "Souhaitez-vous continuer ? [O/n]  "
 
-#. Type: string
-#. Description
-#: ../templates:3001
-msgid ""
-"Optionally, apt-listchanges can e-mail a copy of displayed changes to a "
-"specified address."
-msgstr ""
-"Apt-listchanges peut envoyer une copie des changements par courrier "
-"électronique."
+#: ../apt-listchanges/apt_listchanges.py:193
+#: ../apt-listchanges/apt_listchanges.py:213
+#: ../apt-listchanges/apt_listchanges.py:221
+msgid "Reading changelogs"
+msgstr "Lecture des fichiers de modifications (« changelog »)"
 
-#. Type: string
-#. Description
-#: ../templates:3001
-msgid ""
-"Multiple addresses may be specified, delimited by commas. Leaving this field "
-"empty disables mail notifications."
-msgstr ""
-"Plusieurs adresses peuvent être utilisées et doivent alors être séparées par "
-"des virgules. Si ce champ est laissé vide, les notifications par courrier "
-"électronique seront désactivées."
-
-#. Type: boolean
-#. Description
-#: ../templates:4001
-msgid "Prompt for confirmation after displaying changes?"
-msgstr "Faut-il demander une confirmation après l'affichage des changements ?"
-
-#. Type: boolean
-#. Description
-#: ../templates:4001
-msgid ""
-"After displaying the list of changes, apt-listchanges can pause with a "
-"confirmation prompt. This is useful when running from APT, as it offers an "
-"opportunity to abort the upgrade if a change is unwelcome."
-msgstr ""
-"Après vous avoir montré les changements, apt-listchanges peut s'interrompre "
-"avec demande de confirmation. Cette fonctionnalité est utile quand apt-"
-"listchanges est lancé à partir d'APT, car cela permet d'annuler une mise à "
-"jour en cas de changement non désiré."
-
-#. Type: boolean
-#. Description
-#: ../templates:4001
-msgid ""
-"This can be overridden at execution time, and has no effect if the "
-"configured frontend option is 'mail' or 'none'."
-msgstr ""
-"Ce réglage peut être remplacé par un autre à l'exécution de la commande et "
-"n'a pas d'effet si la méthode d'envoi choisie est « Aucun » ou « Courriel ». "
-
-#. Type: boolean
-#. Description
-#: ../templates:5001
-msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "Faut-il ignorer les changements déjà affichés ?"
-
-#. Type: boolean
-#. Description
-#: ../templates:5001
-msgid ""
-"A record of already displayed changes can be kept in order to avoid "
-"displaying them again. This is useful, for example, when retrying an upgrade."
-msgstr ""
-"Un enregistrement des changements déjà affichés est conservé, ce qui permet "
-"de les ignorer ultérieurement. Cela peut être utile, par exemple, lors d'une "
-"nouvelle tentative de mise à jour."
-
-#. Type: select
-#. Choices
-#: ../templates:6001
-msgid "news"
-msgstr "Nouveautés"
-
-#. Type: select
-#. Choices
-#: ../templates:6001
-msgid "changelogs"
-msgstr "Journaux"
-
-#. Type: select
-#. Choices
-#: ../templates:6001
-msgid "both"
-msgstr "Les deux"
-
-#. Type: select
-#. Description
-#: ../templates:6002
-msgid "Changes displayed with APT:"
-msgstr "Changements affichés avec APT :"
-
-#. Type: select
-#. Description
-#: ../templates:6002
-msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Veuillez choisir le type de changements affichés avec apt."
-
-#. Type: select
-#. Description
-#: ../templates:6002
-msgid ""
-" news      : important news items only;\n"
-" changelogs: detailed changelogs only;\n"
-" both      : news and changelogs."
-msgstr ""
-" Nouveautés : seulement les nouveautés importantes ;\n"
-" Journaux   : seulement les journaux des changements détaillés ;\n"
-" Les deux   : nouveautés et journaux."
+#: ../apt-listchanges/apt_listchanges.py:221
+msgid "Done"
+msgstr "Terminé"
