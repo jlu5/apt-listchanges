@@ -1,3 +1,10 @@
+apt-listchanges (2.85.5) unstable; urgency=low
+
+  * Update the program French PO file, and revert the wrongly changed
+    Debconf PO file; really Closes: #593224
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 20 Sep 2010 23:11:15 +0200
+
 apt-listchanges (2.85.4) unstable; urgency=low
 
   [ Pierre Habouzit ]
