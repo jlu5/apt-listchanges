@@ -5,7 +5,7 @@ set -e
 hook=/etc/apt/apt.conf.d/20listchanges
 
 if [ "$1" = "remove" ]; then
-    mv $hook $hook.disabled
+    test -e $hook && mv $hook $hook.disabled
 fi
 
 if [ "$1" = "purge" ]; then
