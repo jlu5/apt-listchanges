@@ -1,3 +1,15 @@
+apt-listchanges (2.85.6) unstable; urgency=low
+
+  * Update the program Danish PO file; thanks to Joe Dalton; Closes:
+    #602226
+  * Update the program Catalan PO file; thanks to Jordi Mallach
+  * make postrm be idempotent; thanks to Gonzalo Pérez de Olaguer
+    Córdoba; Closes: #602742
+  * Update PO Debconf Chinese (traditional) translation; thanks to Asho
+    Yeh
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 16 Nov 2010 22:20:39 +0100
+
 apt-listchanges (2.85.5) unstable; urgency=low
 
   * Update the program French PO file, and revert the wrongly changed
