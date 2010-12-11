@@ -1,3 +1,10 @@
+apt-listchanges (2.85.7) unstable; urgency=low
+
+  * Update the program Catalan PO file; thanks to Jordi Mallach; Closes:
+    #606799
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 11 Dec 2010 21:27:48 +0100
+
 apt-listchanges (2.85.6) unstable; urgency=low
 
   * Update the program Danish PO file; thanks to Joe Dalton; Closes:
