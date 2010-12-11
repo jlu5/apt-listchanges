@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.85.5\n"
+"Project-Id-Version: apt-listchanges 2.85.7\n"
 "POT-Creation-Date: 2006-10-15 18:20+CEST\n"
-"PO-Revision-Date: 2010-11-05 16:35+0100\n"
+"PO-Revision-Date: 2010-12-11 19:44+0100\n"
 "Last-Translator: Jordi Mallach <jordi@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -48,11 +48,11 @@ msgstr "Ha fallat la confirmació, no es desa l'estat de visualització"
 
 #: ../apt-listchanges.py:197
 msgid "apt-listchanges: changelogs for %s"
-msgstr "apt-listchanges: canvis al paquet %s"
+msgstr "apt-listchanges: canvis per a %s"
 
 #: ../apt-listchanges.py:201
 msgid "apt-listchanges: news for %s"
-msgstr "apt-listchanges: notícies del paquet %s"
+msgstr "apt-listchanges: notícies per a %s"
 
 #: ../apt-listchanges.py:213
 msgid "didn't find any valid .deb archives"
