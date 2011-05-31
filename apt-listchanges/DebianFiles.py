@@ -223,6 +223,9 @@ class Package:
         if not is_debian_changelog:
             return None
 
+        if entry != '':
+           entries += [entry]
+
         if reverse:
             entries.reverse()
         changes = "".join(entries)
