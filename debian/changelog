@@ -1,3 +1,11 @@
+apt-listchanges (2.85.8) unstable; urgency=low
+
+  * Update the debconf Danish PO file; thanks to Joe Dalton; Closes: #610566
+  * Don't skip the very first entry when the NEWS file is added; thanks to Ryo
+    IGARASHI for the report and to Robert Luberda for the patch; Closes: #590541
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 31 May 2011 11:57:14 +0200
+
 apt-listchanges (2.85.7) unstable; urgency=low
 
   * Update the program Catalan PO file; thanks to Jordi Mallach; Closes:
