@@ -248,6 +248,8 @@ class runcommand:
 
 class pager(runcommand, ttyconfirm, fancyprogress, frontend):
     def __init__(self, *args):
+        if not 'LESS' in os.environ:
+            os.environ['LESS'] = "-P?e(q to quit)"
         apply(frontend.__init__, [self] + list(args))
         self.command = self.config.get('pager', 'sensible-pager')
 
