@@ -42,7 +42,7 @@ class gtk2(frontend):
     def display_output(self,text):
         self.button_close.set_sensitive(True)
         buf = self.glade.get_widget("textview_main").get_buffer()
-        buf.set_text(unicode(text, 'latin-1').encode("UTF-8"))
+        buf.set_text(self._render(text))
         gtk.main()
 
     def update_progress(self):
