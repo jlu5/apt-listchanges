@@ -2,7 +2,9 @@
 
 version=$(shell dpkg-parsechangelog | sed -n -e '/^Version:/s/^Version: //p')
 
-build: build-stamp
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
 build-stamp:
 	dh_testdir
 	perl -pi.orig -e 's/##VERSION##/$(version)/g' apt_listchanges.py
