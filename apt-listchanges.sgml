@@ -250,6 +250,17 @@
       </VARLISTENTRY>
 
       <VARLISTENTRY>
+	<TERM><OPTION>--since=version</OPTION></TERM>
+	<LISTITEM>
+	  <PARA>
+	    This option will cause apt-listchanges to show the entries later
+	    than the specified version. With this option, the only other
+	    argument you can pass is the path to a .deb file.
+	  </PARA>
+	</LISTITEM>
+      </VARLISTENTRY>
+
+      <VARLISTENTRY>
 	<TERM><OPTION>--which={news|changelogs|both}</OPTION></TERM>
 	<LISTITEM>
 	  <PARA>
@@ -297,6 +308,15 @@
           <replaceable>name</replaceable> corresponds to a section in
           <filename>/etc/apt/listchanges.conf</filename>.  The default
           when invoked from apt is "apt", and "cmdline" otherwise.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><option>--reverse</option></term>
+        <listitem>
+          <para>
+            Show the changelog entries in reverse order.
           </para>
         </listitem>
       </varlistentry>
