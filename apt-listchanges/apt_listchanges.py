@@ -91,6 +91,7 @@ def mail_changes(address, changes, subject):
     message = email.Message.Message()
     message.set_charset(charset)
     subject = unicode(subject.decode(locale.getpreferredencoding() or 'ascii', 'replace'))
+    message['Auto-Submitted'] = 'auto-generated'
     message['Subject'] = email.Header.Header(subject, 'utf-8')
     message['To'] = address
     message.set_payload(changes)
