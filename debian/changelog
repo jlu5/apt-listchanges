@@ -1,3 +1,20 @@
+apt-listchanges (2.85.9) unstable; urgency=low
+
+  * Add helpful message to exit from less; thanks to Stuart Prescott for report
+    and patch; Closes: #633645
+  * use _render() to show test in GTK frontend; Closes: #551537
+  * add --since and --reverse to manpage; thanks to Rogério Brito for the
+    report; Closes: #620548
+  * bump Standards-Version to 3.9.2 (no changes needed)
+  * fix build* targets
+  * add source format + compression options
+  * added Auto-Submitted header to mails; thanks to Lee Maguire for the report;
+    Closes: #641228
+  * Add the debconf Slovak PO file; thanks to Slavko for the patch;
+    Closes: #614207
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 17 Feb 2012 21:32:26 +0100
+
 apt-listchanges (2.85.8) unstable; urgency=low
 
   * Update the debconf Danish PO file; thanks to Joe Dalton; Closes: #610566
