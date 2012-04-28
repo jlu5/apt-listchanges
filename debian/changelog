@@ -7,6 +7,7 @@ apt-listchanges (2.85.10) UNRELEASED; urgency=low
   [ Josh Triplett ]
   * Avoid throwing an exception when sendmail does not exist. (Closes: 666086)
   * Move mail-transport-agent from Recommends to Suggests. (Closes: 599667)
+  * Change exim4 to default-mta in Suggests.
 
  -- Pierre Habouzit <madcoder@debian.org>  Wed, 09 May 2012 22:27:16 +0200
 

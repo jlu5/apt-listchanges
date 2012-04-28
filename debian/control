@@ -15,7 +15,7 @@ Architecture: all
 Depends: ${python:Depends}, apt (>= 0.5.3), python-apt (>= 0.7.93),
  ucf (>= 0.28), debianutils (>= 2.0.2), ${misc:Depends}
 Suggests: x-terminal-emulator, www-browser, python-glade2, python-gtk2,
- exim4 | mail-transport-agent
+ default-mta | mail-transport-agent
 Description: package change history notification tool
  The tool apt-listchanges can compare a new version of a
  package with the one currently installed and show what has been
