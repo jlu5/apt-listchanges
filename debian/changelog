@@ -4,6 +4,9 @@ apt-listchanges (2.85.10) UNRELEASED; urgency=low
   * Remove myself from Maintainer/Uploader as I won't work on it anymore, put
     Sandro in charge, since well, it just makes reality official.
 
+  [ Josh Triplett ]
+  * Avoid throwing an exception when sendmail does not exist. (Closes: 666086)
+
  -- Pierre Habouzit <madcoder@debian.org>  Wed, 09 May 2012 22:27:16 +0200
 
 apt-listchanges (2.85.9) unstable; urgency=low

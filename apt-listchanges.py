@@ -212,13 +212,14 @@ def main():
 
         hostname = commands.getoutput('hostname')
 
-        if config.email_address and changes:
-            subject = _("apt-listchanges: changelogs for %s") % hostname
-            apt_listchanges.mail_changes(config.email_address, changes, subject)
+        if config.email_address and os.path.exists("/usr/sbin/sendmail"):
+            if changes:
+                subject = _("apt-listchanges: changelogs for %s") % hostname
+                apt_listchanges.mail_changes(config.email_address, changes, subject)
 
-        if config.email_address and news:
-            subject = _("apt-listchanges: news for %s") % hostname
-            apt_listchanges.mail_changes(config.email_address, news, subject)
+            if news:
+                subject = _("apt-listchanges: news for %s") % hostname
+                apt_listchanges.mail_changes(config.email_address, news, subject)
 
         # Write out seen db
         if config.save_seen:
