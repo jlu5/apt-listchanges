@@ -1,8 +1,8 @@
 Source: apt-listchanges
 Section: utils
 Priority: standard
-Maintainer: Pierre Habouzit <madcoder@debian.org>
-Uploaders: Thadeu Lima de Souza Cascardo <cascardo@minaslivre.org>, Sandro Tosi <morph@debian.org>
+Maintainer: Sandro Tosi <morph@debian.org>
+Uploaders: Thadeu Lima de Souza Cascardo <cascardo@minaslivre.org>
 Standards-Version: 3.9.2
 Vcs-Browser: http://git.debian.org/?p=collab-maint/apt-listchanges.git;a=summary
 Vcs-Git: git://git.debian.org/git/collab-maint/apt-listchanges.git
