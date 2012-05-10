@@ -231,7 +231,7 @@ class runcommand:
             if os.fork() != 0:
                 return
 
-        tmp = tempfile.NamedTemporaryFile(suffix=self.suffix)
+        tmp = tempfile.NamedTemporaryFile(prefix="apt-listchanges-tmp", suffix=self.suffix)
         tmp.write(self._render(text))
         tmp.flush()
         shellcommand = self.get_command() + ' ' + tmp.name
