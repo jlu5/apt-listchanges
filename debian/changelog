@@ -9,7 +9,10 @@ apt-listchanges (2.85.10) UNRELEASED; urgency=low
   * Move mail-transport-agent from Recommends to Suggests. (Closes: 599667)
   * Change exim4 to default-mta in Suggests.
 
- -- Pierre Habouzit <madcoder@debian.org>  Wed, 09 May 2012 22:27:16 +0200
+  [ Sandro Tosi ]
+  * Bump Standards-Version to 3.9.3 (no changes needed)
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 03 Jun 2012 12:31:08 +0200
 
 apt-listchanges (2.85.9) unstable; urgency=low
 
