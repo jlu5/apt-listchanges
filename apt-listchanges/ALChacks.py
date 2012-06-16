@@ -29,7 +29,7 @@ import sys
 try:
     locale.setlocale(locale.LC_ALL, '')
 except locale.Error:
-    sys.stderr.write(_("Can't set locale; make sure $LC_* and $LANG are correct!\n"))
+    sys.stderr.write("Can't set locale; make sure $LC_* and $LANG are correct!\n")
     locale.setlocale(locale.LC_ALL, 'C')
 
 def _(x):
