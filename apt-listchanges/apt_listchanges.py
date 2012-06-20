@@ -103,6 +103,7 @@ def mail_changes(address, changes, subject):
 def make_frontend(name, packages, config):
     frontends = { 'text' : text,
                   'pager' : pager,
+                  'debconf': debconf,
                   'mail' : mail,
                   'browser' : browser,
                   'xterm-pager' : xterm_pager,
@@ -171,6 +172,50 @@ class frontend:
 
     def set_title(self, text):
         pass
+
+class debconf(frontend):
+    def set_title(self, text):
+        self.title = text
+
+    def display_output(self, text):
+        import socket
+        import debconf as dc
+        if 'DEBIAN_FRONTEND' not in os.environ or os.environ['DEBIAN_FRONTEND'] != 'passthrough':
+            return
+        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM, 0)
+        sock.connect(os.environ['DEBCONF_PIPE'])
+        dcfd = sock.makefile()
+        sock.close()
+        db = dc.Debconf(read=dcfd, write=dcfd)
+        tmp = tempfile.NamedTemporaryFile(prefix="apt-listchanges-tmp")
+        os.fchmod(tmp.fileno(), 0644)
+        tmp.write('''Template: apt-listchanges/info
+Type: title
+Description: NEWS
+
+Template: apt-listchanges/title
+Type: title
+Description: ${title}
+
+Template: apt-listchanges/news
+Type: note
+Description: ${packages} packages''')
+        for line in text.split('\n'):
+            if line.strip():
+                tmp.write('  ' + line + '\n')
+            else:
+                tmp.write(' .\n')
+        tmp.flush()
+        db.command('x_loadtemplatefile', tmp.name)
+        tmp.close()
+        db.info('apt-listchanges/info')
+        db.subst('apt-listchanges/title', 'title', self.title)
+        db.subst('apt-listchanges/news', 'packages', self.packages)
+        db.settitle('apt-listchanges/title')
+        db.fset('apt-listchanges/news', 'seen', 'false')
+        db.input('high', 'apt-listchanges/news')
+        db.go()
+        dcfd.close()
 
 class ttyconfirm:
     def confirm(self):
