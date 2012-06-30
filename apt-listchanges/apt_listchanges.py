@@ -80,7 +80,7 @@ def read_apt_pipeline(config):
     # native, this allows things to work, since Y will always be
     # configured first.
 
-    return map(lambda pkg: filenames[pkg], order)
+    return [filenames[pkg] for pkg in order if pkg in filenames]
 
 def mail_changes(address, changes, subject):
     print "apt-listchanges: " + _("Mailing %s: %s") % (address, subject)
