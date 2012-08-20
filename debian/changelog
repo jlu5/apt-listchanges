@@ -1,3 +1,15 @@
+apt-listchanges (2.85.12~exp1) experimental; urgency=low
+
+  [ Julien Cristau ]
+  * [022b79c] apt-listchanges: debconf passthrough frontend for use with
+    packagekit; Closes: #678311
+
+  [ Sandro Tosi ]
+  * [7bbe068] don't show changes only for packages configured early; thanks to
+    Zack Weinberg for the patch; Closes: #573013
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 21 Aug 2012 01:20:55 +0200
+
 apt-listchanges (2.85.11) unstable; urgency=low
 
   * Don't use _() if we can't set requested locale; thanks to Ansgar Burchardt
