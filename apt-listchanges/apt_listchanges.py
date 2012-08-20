@@ -40,7 +40,11 @@ from ALChacks import *
 # keep track of tar/dpkg-deb errors like in pre-2.0
 
 def read_apt_pipeline(config):
+    if config.debug:
+        sys.stderr.write("APT pipeline messages:\n")
     version = sys.stdin.readline().rstrip()
+    if config.debug:
+        sys.stderr.write("\t%s\n" % version)
     if version != "VERSION 2":
         sys.stderr.write(_('''Wrong or missing VERSION from apt pipeline
 (is Dpkg::Tools::Options::/usr/bin/apt-listchanges::Version set to 2?)
@@ -49,15 +53,21 @@ def read_apt_pipeline(config):
 
     while 1:
         line = sys.stdin.readline().rstrip()
+        if config.debug:
+            sys.stderr.write("\t%s\n" % line)
         if not line:
             break
-
         if line.startswith('quiet='):
             config.quiet = int(line[len('quiet='):])
 
     filenames = {}
-    order = []
+    toconfig = []
+    toremove = []
+
     for pkgline in sys.stdin.readlines():
+        pkgline = pkgline.rstrip()
+        if config.debug:
+            sys.stderr.write("\t%s\n" % pkgline)
         if not pkgline:
             break
 
@@ -66,9 +76,9 @@ def read_apt_pipeline(config):
             continue
 
         if filename == '**CONFIGURE**':
-            order.append(pkgname)
-        elif filename == '**REMOVE**':
-            continue
+            toconfig.append(pkgname)
+        elif filename == '**REMOVE**' or filename == '**ERROR**':
+            toremove.append(pkgname)
         else:
             filenames[pkgname] = filename
 
@@ -80,7 +90,21 @@ def read_apt_pipeline(config):
     # native, this allows things to work, since Y will always be
     # configured first.
 
-    return [filenames[pkg] for pkg in order if pkg in filenames]
+    # apt doesn't explicitly configure everything anymore, so sort
+    # the things to be configured first, and then do everything else
+    # in alphabetical order.  Also, drop from the list everything
+    # that's to be removed.
+    for pkg in toremove:
+        del filenames[pkg]
+
+    ordered_filenames = []
+    for pkg in toconfig:
+        if pkg in filenames:
+            ordered_filenames.append(filenames[pkg])
+            del filenames[pkg]
+
+    ordered_filenames.extend(sorted(filenames.values()))
+    return ordered_filenames
 
 def mail_changes(address, changes, subject):
     print "apt-listchanges: " + _("Mailing %s: %s") % (address, subject)

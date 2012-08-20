@@ -47,6 +47,11 @@ def main():
         # stdin is a pipe
         debs = apt_listchanges.read_apt_pipeline(config)
 
+    if config.debug:
+        sys.stderr.write("To list:\n")
+        for d in debs: sys.stderr.write("\t%s\n" % d)
+        sys.stderr.write("\n")
+
     try:
         # Give any forked processes (eg. lynx) a normal stdin;
         # See Debian Bug #343423
