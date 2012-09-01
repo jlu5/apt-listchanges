@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: apt-listchanges 2.4\n"
 "POT-Creation-Date: 2006-10-15 18:20+CEST\n"
-"PO-Revision-Date: 2006-09-23 13:36+0200\n"
+"PO-Revision-Date: 2012-09-01 13:54+0200\n"
 "Last-Translator: Javier Fernández-Sanguino <jfs@debian.org>\n"
 "Language-Team: Debian Spanish Team <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,11 +44,11 @@ msgstr "Notas informativas"
 
 #: ../apt-listchanges.py:188
 msgid "Aborting"
-msgstr ""
+msgstr "Abortando"
 
 #: ../apt-listchanges.py:191
 msgid "Confirmation failed, don't save seen state"
-msgstr ""
+msgstr "Fallo de confirmación, no se guardará el estado visualizado"
 
 #: ../apt-listchanges.py:197
 msgid "apt-listchanges: changelogs for %s"
