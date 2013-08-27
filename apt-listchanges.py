@@ -89,6 +89,7 @@ def main():
 
     all_news = {}
     all_changelogs = {}
+    all_binnmus = {}
     notes = []
 
     # Mapping of source->binary packages
@@ -144,7 +145,7 @@ def main():
                                                                       srcversion))
             continue
 
-        (news, changelog) = pkg.extract_changes(config.which, fromversion, config.reverse)
+        (news, changelog, binnmu) = pkg.extract_changes(config.which, fromversion, config.reverse)
 
         if news or changelog:
             found[srcpackage] = srcversion
@@ -152,6 +153,8 @@ def main():
                 all_news[srcpackage] = news
             if changelog:
                 all_changelogs[srcpackage] = changelog
+            if binnmu:
+                all_binnmus[srcpackage] = binnmu
             if config.save_seen:
                 seen_new[srcpackage] = srcversion
 
@@ -162,9 +165,13 @@ def main():
 
     all_news = all_news.values()
     all_changelogs = all_changelogs.values()
-    for batch in (all_news, all_changelogs):
+    all_binnmus = all_binnmus.values()
+    for batch in (all_news, all_changelogs, all_binnmus):
         batch.sort(lambda a, b: -cmp(a.urgency, b.urgency) or
                    cmp(a.package, b.package))
+
+    # FIXME: two headers with -h
+    all_changelogs = all_binnmus + all_changelogs
 
     if config.headers:
         changes = ''

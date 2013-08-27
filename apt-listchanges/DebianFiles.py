@@ -31,6 +31,7 @@ import errno
 import glob
 import shutil
 import signal
+import subprocess
 
 import apt_pkg
 from ALChacks import *
@@ -139,8 +140,11 @@ class Package:
         If since_version is specified, only return entries later than the specified version.
         returns a sequence of Changes objects.'''
 
+        arch = subprocess.check_output(['dpkg-architecture', '-qDEB_HOST_ARCH']).rstrip()
+
         news_filenames = self._changelog_variations('NEWS.Debian')
         changelog_filenames = self._changelog_variations('changelog.Debian')
+        changelog_filenames_binnmu = self._changelog_variations('changelog.Debian.' + arch)
         changelog_filenames_native = self._changelog_variations('changelog')
 
         filenames = []
@@ -148,6 +152,7 @@ class Package:
             filenames.extend(news_filenames)
         if which == 'both' or which == 'changelogs':
             filenames.extend(changelog_filenames)
+            filenames.extend(changelog_filenames_binnmu)
             filenames.extend(changelog_filenames_native)
 
         tempdir = self.extract_contents(filenames)
@@ -156,10 +161,11 @@ class Package:
 
         news       = reduce(find_first, news_filenames, None)
         changelog  = reduce(find_first, changelog_filenames + changelog_filenames_native, None)
+        binnmu     = reduce(find_first, changelog_filenames_binnmu, None)
 
         shutil.rmtree(tempdir, 1)
 
-        return (news, changelog)
+        return (news, changelog, binnmu)
 
     def extract_contents(self, filenames):
         tempdir = tempfile.mkdtemp(prefix='apt-listchanges')
