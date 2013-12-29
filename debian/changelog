@@ -1,4 +1,4 @@
-apt-listchanges (2.85.12~exp2) UNRELEASED; urgency=low
+apt-listchanges (2.85.12) unstable; urgency=low
 
   * Update the program Spanish PO file; thanks to Javier Fernandez-Sanguino;
     Closes: #686426
@@ -9,7 +9,7 @@ apt-listchanges (2.85.12~exp2) UNRELEASED; urgency=low
   * bump Standards-Version to 3.9.5 (no changes needed)
   * Use Alioth canonical URLs
 
- -- Sandro Tosi <morph@debian.org>  Sun, 29 Dec 2013 13:11:16 +0100
+ -- Sandro Tosi <morph@debian.org>  Sun, 29 Dec 2013 13:31:26 +0100
 
 apt-listchanges (2.85.12~exp1) experimental; urgency=low
 
