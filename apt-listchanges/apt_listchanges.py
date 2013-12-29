@@ -223,7 +223,7 @@ Description: ${title}
 
 Template: apt-listchanges/news
 Type: note
-Description: ${packages} packages''')
+Description: ${packages} packages\n''')
         for line in text.split('\n'):
             if line.strip():
                 tmp.write('  ' + line + '\n')
