@@ -3,7 +3,7 @@ Section: utils
 Priority: standard
 Maintainer: Sandro Tosi <morph@debian.org>
 Uploaders: Thadeu Lima de Souza Cascardo <cascardo@minaslivre.org>
-Standards-Version: 3.9.3
+Standards-Version: 3.9.5
 Vcs-Browser: http://git.debian.org/?p=collab-maint/apt-listchanges.git;a=summary
 Vcs-Git: git://git.debian.org/git/collab-maint/apt-listchanges.git
 Build-Depends: debhelper (>= 5)
