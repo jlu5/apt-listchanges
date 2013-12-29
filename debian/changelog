@@ -2,8 +2,10 @@ apt-listchanges (2.85.12~exp2) UNRELEASED; urgency=low
 
   * Update the program Spanish PO file; thanks to Javier Fernandez-Sanguino;
     Closes: #686426
+  * Handle new format of binNMUs; thanks to Thorsten Glaser for the report and
+    to Simon Ruderich for the patch; Closes: #718770
 
- -- Sandro Tosi <morph@debian.org>  Sat, 01 Sep 2012 22:21:15 +0200
+ -- Sandro Tosi <morph@debian.org>  Sun, 29 Dec 2013 12:54:31 +0100
 
 apt-listchanges (2.85.12~exp1) experimental; urgency=low
 
