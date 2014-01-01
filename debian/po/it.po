@@ -1,14 +1,13 @@
 # Italian (it) translation of po-debconf templates for apt-listchanges.
-# Copyright (C) 2005 Software in the Public Interest
 # This file is distributed under the same license as the apt-listchanges package.
-# Luca Monducci <luca.mo@tiscali.it>, 2005-2008
+# Luca Monducci <luca.mo@tiscali.it>, 2005-2013
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: apt-listchanges 2.76 debconf templates\n"
+"Project-Id-Version: apt-listchanges 2.85.12 debconf templates\n"
 "Report-Msgid-Bugs-To: apt-listchanges@packages.debian.org\n"
 "POT-Creation-Date: 2007-12-24 16:37+0100\n"
-"PO-Revision-Date: 2008-01-01 21:04+0100\n"
+"PO-Revision-Date: 2013-08-18 11:34+0200\n"
 "Last-Translator: Luca Monducci <luca.mo@tiscali.it>\n"
 "Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -135,9 +134,8 @@ msgid ""
 "Multiple addresses may be specified, delimited by commas. Leaving this field "
 "empty disables mail notifications."
 msgstr ""
-"Si possono specificare più indirizzi separandoli con delle virgole. "
-"Lasciando vuoto questo campo si disabilitano le notifiche via posta "
-"elettronica."
+"È possibile specificare più indirizzi separandoli con delle virgole. Per "
+"disabilitare le notifiche via posta elettronica, lasciare vuoto questo campo."
 
 #. Type: boolean
 #. Description
@@ -172,7 +170,7 @@ msgstr ""
 #. Description
 #: ../templates:5001
 msgid "Should apt-listchanges skip changes that have already been seen?"
-msgstr "apt-listchanges deve ignorare i cambiamenti già mostrate?"
+msgstr "apt-listchanges deve ignorare i cambiamenti già mostrati?"
 
 #. Type: boolean
 #. Description
@@ -181,8 +179,8 @@ msgid ""
 "A record of already displayed changes can be kept in order to avoid "
 "displaying them again. This is useful, for example, when retrying an upgrade."
 msgstr ""
-"È possibile tener traccia dei cambiamenti già mostrate per evitare di "
-"mostrarle nuovamente in seguito. Questo è utile, per esempio, quando si "
+"È possibile tener traccia dei cambiamenti già mostrati per evitare di "
+"mostrarli nuovamente in seguito. Questo è utile, per esempio, quando si "
 "riprova un aggiornamento."
 
 #. Type: select
@@ -213,7 +211,7 @@ msgstr "Cambiamenti da mostrare con APT:"
 #. Description
 #: ../templates:6002
 msgid "Please choose which type of changes should be displayed with APT."
-msgstr "Scegliere il tipo di cambiamenti che devono essere mostrati con APT."
+msgstr "Scegliere il tipo di cambiamenti da mostrati con APT."
 
 #. Type: select
 #. Description

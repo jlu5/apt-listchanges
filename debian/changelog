@@ -2,8 +2,10 @@ apt-listchanges (2.85.13) UNRELEASED; urgency=low
 
   * Add missing dep on dpkg-dev, required to run dpkg-architecture; thanks to
     Ben Armstrong for the report; Closes: #733825
+  * Fixed grammar in debconf Italian text; thanks to Riccardo Boninsegna for the
+    report and to Luca Monducci for the patch; Closes: #709222
 
- -- Sandro Tosi <morph@debian.org>  Wed, 01 Jan 2014 15:45:47 +0100
+ -- Sandro Tosi <morph@debian.org>  Wed, 01 Jan 2014 15:50:27 +0100
 
 apt-listchanges (2.85.12) unstable; urgency=low
 
