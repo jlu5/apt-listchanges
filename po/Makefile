@@ -18,13 +18,14 @@ srcdir = .
 INSTALL = /usr/bin/install -c
 
 MSGFMT = /usr/bin/msgfmt --statistics
-XGETTEXT = /usr/bin/pygettext
+XGETTEXT = /usr/bin/xgettext
 MSGMERGE = msgmerge
 
 POFILES =  $(wildcard *.po)
 MOFILES =  $(patsubst %.po,%.mo,$(POFILES))
 
-SRCFILES = ../apt-listchanges.py $(wildcard ../apt-listchanges/*.py)
+SRCFILES = ../apt-listchanges.py $(wildcard ../apt-listchanges/*.py) \
+	../apt-listchanges/apt-listchanges.glade
 
 all: $(PACKAGE).pot $(MOFILES)
 
@@ -35,8 +36,9 @@ all: $(PACKAGE).pot $(MOFILES)
 
 $(PACKAGE).pot: $(SRCFILES)
 	if test -f $(XGETTEXT); then \
-	    $(XGETTEXT) --default-domain=$(PACKAGE) --keyword=_ $(SRCFILES); \
+	    $(XGETTEXT) --default-domain=$(PACKAGE) -k_ $(SRCFILES) -o$@; \
 	else \
+	    echo "Warning: $@ is not updated"; \
 	    touch $@; \
 	fi
 
