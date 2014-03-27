@@ -32,7 +32,7 @@
       <child>
 	<widget class="GtkLabel" id="label_header">
 	  <property name="visible">True</property>
-	  <property name="label" translatable="yes" context="yes">&lt;big&gt;&lt;b&gt;Changelogs&lt;/b&gt;&lt;/big&gt;
+	  <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;Changelogs&lt;/b&gt;&lt;/big&gt;
 
 The following changes are found in the packages you are about to install:</property>
 	  <property name="use_underline">True</property>
