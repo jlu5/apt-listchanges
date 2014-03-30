@@ -13,7 +13,7 @@ Build-Depends-Indep: docbook-to-man, gettext, po-debconf, libexpat1-dev,
 Package: apt-listchanges
 Architecture: all
 Depends: ${python:Depends}, apt (>= 0.5.3), python-apt (>= 0.7.93),
- ucf (>= 0.28), debianutils (>= 2.0.2), dpkg-dev, ${misc:Depends}
+ ucf (>= 0.28), debianutils (>= 2.0.2), ${misc:Depends}
 Suggests: x-terminal-emulator, www-browser, python-glade2, python-gtk2,
  default-mta | mail-transport-agent
 Description: package change history notification tool

@@ -1,3 +1,12 @@
+apt-listchanges (2.85.14) UNRELEASED; urgency=medium
+
+  [ Chris Boot ]
+  * Use the package's Architecture field when looking for binNMU changelogs.
+    This removes the use of dpkg-architecture and thus the dependency on
+    dpkg-dev. Closes: #733921
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 30 Mar 2014 22:14:11 +0200
+
 apt-listchanges (2.85.13) unstable; urgency=low
 
   * Add missing dep on dpkg-dev, required to run dpkg-architecture; thanks to

@@ -134,17 +134,16 @@ class Package:
         self.binary  = pkgdata.Package
         self.source  = pkgdata.source()
         self.Version = pkgdata.version()
+        self.arch = pkgdata.Architecture
 
     def extract_changes(self, which, since_version=None, reverse=None):
         '''Extract changelog entries, news or both from the package.
         If since_version is specified, only return entries later than the specified version.
         returns a sequence of Changes objects.'''
 
-        arch = subprocess.check_output(['dpkg-architecture', '-qDEB_HOST_ARCH']).rstrip()
-
         news_filenames = self._changelog_variations('NEWS.Debian')
         changelog_filenames = self._changelog_variations('changelog.Debian')
-        changelog_filenames_binnmu = self._changelog_variations('changelog.Debian.' + arch)
+        changelog_filenames_binnmu = self._changelog_variations('changelog.Debian.' + self.arch)
         changelog_filenames_native = self._changelog_variations('changelog')
 
         filenames = []
