@@ -5,8 +5,10 @@ apt-listchanges (2.85.14) UNRELEASED; urgency=medium
     This removes the use of dpkg-architecture and thus the dependency on
     dpkg-dev. Closes: #733921
 
-  [ Sandro Tosi ]
-  * Update Russian translation; thanks to Sergey Alyoshin; Closes: #742826
+  [ Sergey Alyoshin ]
+  * Add .glade file to translation and use xgettext
+  * Mark message as translatable in .glade file
+  * Update Russian translation; Closes: #742826
 
  -- Sandro Tosi <morph@debian.org>  Wed, 02 Apr 2014 21:54:45 +0200
 
