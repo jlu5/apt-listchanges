@@ -1,3 +1,10 @@
+apt-listchanges (2.85.14) UNRELEASED; urgency=medium
+
+  * Acknowledge NMU; thanks to Ben Hutchings for it; Closes: #718770, #733921,
+    #742826
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 02 Jan 2015 23:48:23 +0000
+
 apt-listchanges (2.85.13+nmu1) unstable; urgency=medium
 
   [ Ben Hutchings ]
