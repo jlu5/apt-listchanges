@@ -65,6 +65,10 @@ def main():
     if config.frontend == 'none':
         sys.exit(0)
 
+    # Force quiet (loggable) mode if not running interactively
+    if not sys.stdout.isatty() and not config.quiet:
+        config.quiet = 1
+
     # If apt is in quiet (loggable) mode, we should make our output
     # loggable too
     if config.quiet == 1:
