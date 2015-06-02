@@ -26,8 +26,12 @@
 
 import sys, os, os.path
 import apt_pkg
-import anydbm
-import commands
+try:
+    import subprocess
+    from dbm import ndbm
+except ImportError:
+    import anydbm as ndbm
+    import commands as subprocess
 
 sys.path += [os.path.dirname(sys.argv[0]) + '/apt-listchanges', '/usr/share/apt-listchanges']
 from ALChacks import *
@@ -83,8 +87,8 @@ def main():
 
     if config.save_seen:
         try:
-            seen = anydbm.open(config.save_seen, 'c')
-            seen.has_key('foo%0')
+            seen = dbm.ndbm.open(config.save_seen, 'c')
+            'foo%0' in seen
         except:
             sys.stderr.write(_("database %s failed to load.\n") % config.save_seen)
             sys.exit(1)
@@ -119,7 +123,7 @@ def main():
         fromversion = None
 
         if not config.show_all:
-            if config.save_seen and seen.has_key(srcpackage):
+            if config.save_seen and srcpakge in seen:
                 fromversion = seen[srcpackage]
             elif config.since:
                 fromversion = config.since
@@ -140,7 +144,7 @@ def main():
         #
         # This is why even if we've seen a package we may miss bits of
         # changelog in some odd cases
-        if found.has_key(srcpackage) and \
+        if srcpackage in found and \
                 apt_pkg.version_compare(srcversion, found[srcpackage]) <= 0:
             continue
 
@@ -186,7 +190,7 @@ def main():
 
             package = rec.package
             header = _('News for %s') % package
-            if len(filter(lambda x: x != package, source_packages[package])) > 0:
+            if len([x for x in source_packages[package] if x != package]) > 0:
                 # Differing source and binary packages
                 header += ' (' + ' '.join(source_packages[package]) + ')'
             news += '--- ' + header + ' ---\n' + rec.changes
@@ -197,7 +201,7 @@ def main():
 
             package = rec.package
             header = _('Changes for %s') % package
-            if len(filter(lambda x: x != package, source_packages[package])) > 0:
+            if len([x for x in source_packages[package] if x != package]) > 0:
                 # Differing source and binary packages
                 header += ' (' + ' '.join(source_packages[package]) + ')'
             changes += '--- ' + header + ' ---\n' + rec.changes
@@ -226,7 +230,7 @@ def main():
                 sys.stderr.write(_("Confirmation failed, don't save seen state")+'.\n')
                 sys.exit(0)
 
-        hostname = commands.getoutput('hostname')
+        hostname = subprocess.getoutput('hostname')
 
         if config.email_address and os.path.exists("/usr/sbin/sendmail"):
             if changes:
@@ -239,7 +243,7 @@ def main():
 
         # Write out seen db
         if config.save_seen:
-            seen = anydbm.open(config.save_seen, 'c')
+            seen = dbm.ndbm.open(config.save_seen, 'c')
             for (key, value) in seen_new.items():
                 seen[key] = value
             seen.close()
