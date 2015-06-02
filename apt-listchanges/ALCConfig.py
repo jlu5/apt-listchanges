@@ -23,7 +23,10 @@
 #   MA 02111-1307 USA
 #
 
-import ConfigParser
+try:
+    import ConfigParser
+except ImportError:
+    import configparser as ConfigParser
 import getopt
 import sys, os
 import re
@@ -130,8 +133,8 @@ class ALCConfig:
                 if arg in self.allowed_which:
                     self.which = arg
                 else:
-                    print _('Unknown option %s for --which.  Allowed are: %s.') % \
-                        (arg, ', '.join(self.allowed_which))
+                    print(_('Unknown option %s for --which.  Allowed are: %s.') % \
+                        (arg, ', '.join(self.allowed_which)))
                     sys.exit(1)
             elif opt == '--debug':
                 self.debug = 1
@@ -145,7 +148,7 @@ class ALCConfig:
 
         if self.since is not None:
             if len(args) is not 1:
-                print _('--since=<version> expects a only path to a .deb')
+                print(_('--since=<version> expects a only path to a .deb'))
                 sys.exit(1)
             self.save_seen = None
         return args

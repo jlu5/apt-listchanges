@@ -25,15 +25,20 @@
 
 import sys
 import os
-import os.path
 import re
 import locale
 import email.Message
 import email.Header
 import email.Charset
-import cStringIO
+try:
+    import io
+except ImportError:
+    import cStringIO as io
 import tempfile
 from ALChacks import *
+
+if sys.version_info[0] >= 3:
+    unicode = str
 
 # TODO:
 # newt-like frontend, or maybe some GUI bit
@@ -107,7 +112,7 @@ def read_apt_pipeline(config):
     return ordered_filenames
 
 def mail_changes(address, changes, subject):
-    print "apt-listchanges: " + _("Mailing %s: %s") % (address, subject)
+    print("apt-listchanges: " + _("Mailing %s: %s") % (address, subject))
 
     charset = email.Charset.Charset('utf-8')
     charset.body_encoding = '8bit'
@@ -145,13 +150,13 @@ def make_frontend(name, packages, config):
     # import from that. that would mean a uniform mechanism for all
     # frontends (that would become small files inside
     if name == "gtk":
-        if os.environ.has_key("DISPLAY"):
+        if "DISPLAY" in os.environ:
             try:
                 gtk = __import__("AptListChangesGtk")
                 frontends[name] = gtk.gtk2
-            except ImportError, e:
-                sys.stderr.write(_("The gtk frontend needs a working python-gtk2 "
-                                   "and python-glade2.\n"
+            except ImportError as e:
+                sys.stderr.write(_("The gtk frontend needs a working python-gi "
+                                   "and python-gobject-2.\n"
                                    "Those imports can not be found. Falling back "
                                    "to pager.\n"
                                    "The error is: %s\n") % e)
@@ -159,7 +164,7 @@ def make_frontend(name, packages, config):
         else:
             name = 'pager'
 
-    if not frontends.has_key(name):
+    if name not in frontends:
         return None
     return frontends[name](packages, config)
 
@@ -212,7 +217,7 @@ class debconf(frontend):
         sock.close()
         db = dc.Debconf(read=dcfd, write=dcfd)
         tmp = tempfile.NamedTemporaryFile(prefix="apt-listchanges-tmp")
-        os.fchmod(tmp.fileno(), 0644)
+        os.fchmod(tmp.fileno(), 0o644)
         tmp.write('''Template: apt-listchanges/info
 Type: title
 Description: NEWS
@@ -245,7 +250,7 @@ class ttyconfirm:
     def confirm(self):
         try:
             tty = open('/dev/tty', 'r+')
-        except IOError, e:
+        except IOError as e:
             return -1
         tty.write('apt-listchanges: ' + _('Do you want to continue? [Y/n] '))
         tty.flush()
@@ -320,12 +325,12 @@ class pager(runcommand, ttyconfirm, fancyprogress, frontend):
     def __init__(self, *args):
         if not 'LESS' in os.environ:
             os.environ['LESS'] = "-P?e(q to quit)"
-        apply(frontend.__init__, [self] + list(args))
+        frontend.__init__(*[self] + list(args))
         self.command = self.config.get('pager', 'sensible-pager')
 
 class xterm(runcommand, ttyconfirm, fancyprogress, frontend):
     def __init__(self, *args):
-        apply(frontend.__init__, [self] + list(args))
+        frontend.__init__(*[self] + list(args))
         self.mode = os.P_NOWAIT
         self.xterm = self.config.get('xterm', 'x-terminal-emulator')
 
@@ -334,7 +339,7 @@ class xterm(runcommand, ttyconfirm, fancyprogress, frontend):
 
 class xterm_pager(xterm):
     def __init__(self, *args):
-        apply(xterm.__init__, [self] + list(args))
+        xterm.__init__(*[self] + list(args))
         self.xterm_command = self.config.get('pager', 'sensible-pager')
 
 class html:
@@ -354,7 +359,7 @@ class html:
     title = '''apt-listchanges output'''
 
     def _render(self, text):
-        htmltext = cStringIO.StringIO()
+        htmltext = io.StringIO()
         htmltext.write('''<html>
         <head>
         <title>''')
@@ -388,13 +393,13 @@ class html:
 
 class browser(html, pager):
     def __init__(self, *args):
-        apply(pager.__init__, [self] + list(args))
+        pager.__init__(*[self] + list(args))
         self.command = self.config.get('browser', 'sensible-browser')
     def set_title(self, text):
         self.title = text
 
 class xterm_browser(html, xterm):
     def __init__(self, *args):
-        apply(xterm.__init__, [self] + list(args))
+        xterm.__init__(*[self] + list(args))
         self.xterm_command = self.config.get('browser', 'sensible-browser')
 

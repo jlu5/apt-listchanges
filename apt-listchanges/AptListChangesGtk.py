@@ -2,48 +2,55 @@
 
 from apt_listchanges import frontend
 
-import pygtk
-pygtk.require('2.0')
-import gtk
-import gobject
-import gtk.glade
+import gi
+gi.require_version('Gtk', '3.0')
+import gettext
+
+from gi.repository import Gtk
+from gi.repository import GObject
+# import Gtk.glade
 
 from ALChacks import *
 
 # set the i18n dirs
-gtk.glade.bindtextdomain("apt-listchanges", "/usr/share/locale")
-gtk.glade.textdomain("apt-listchanges")
+gettext.bindtextdomain("apt-listchanges", "/usr/share/locale")
+gettext.textdomain("apt-listchanges")
 
 class gtk2(frontend):
     def flush_interface(self):
-        while gtk.events_pending():
-            gtk.main_iteration()
+        while Gtk.events_pending():
+            Gtk.main_iteration()
 
     def cb_close(self, widget):
         if self.button_close.get_property("sensitive") == False:
             # window manager was used to close before the parsing was complete
             sys.exit()
-        gtk.main_quit()
+        Gtk.main_quit()
 
     def __init__(self, packages, config):
         frontend.__init__(self,packages, config)
         try:
-            file("apt-listchanges/apt-listchanges.glade").close()
-            self.glade = gtk.glade.XML("apt-listchanges/apt-listchanges.glade")
+            file("apt-listchanges/apt-listchanges.ui").close()
+            self.builder = Gtk.Builder()
+            self.builder.add_from_file("apt-listchanges/apt-listchanges.ui")
+            self.builder.connect_signals(self)
         except:
-            self.glade = gtk.glade.XML("/usr/share/apt-listchanges/apt-listchanges.glade")
-        self.window_main = self.glade.get_widget("window_main")
+            self.builder.add_from_file("/usr/share/apt-listchanges/apt-listchanges.ui")
+        self.window_main = self.builder.get_object("window_main")
         self.window_main.connect("destroy", self.cb_close)
-        self.glade.signal_connect("on_button_close_clicked", self.cb_close)
-        self.progressbar_main = self.glade.get_widget("progressbar_main")
-        self.button_close = self.glade.get_widget("button_close")
+        handlers = {
+            "on_button_close_clicked": self.cb_close
+        }
+        self.progressbar_main = self.builder.get_object("progressbar_main")
+        self.button_close = self.builder.get_object("button_close")
+        self.builder.connect_signals(handlers)
         self.flush_interface()
 
     def display_output(self,text):
         self.button_close.set_sensitive(True)
-        buf = self.glade.get_widget("textview_main").get_buffer()
+        buf = self.builder.get_object("textview_main").get_buffer()
         buf.set_text(self._render(text))
-        gtk.main()
+        Gtk.main()
 
     def update_progress(self):
         if not hasattr(self,'progress'):
@@ -60,12 +67,12 @@ class gtk2(frontend):
         self.flush_interface()
 
     def confirm(self):
-        m = gtk.MessageDialog(self.window_main,
-                              gtk.DIALOG_MODAL,
-                              gtk.MESSAGE_QUESTION,
-                              gtk.BUTTONS_YES_NO)
-        m.set_default_response(gtk.RESPONSE_YES)
+        m = Gtk.MessageDialog(self.window_main,
+                              Gtk.DialogFlags.MODAL,
+                              Gtk.MessageType.QUESTION,
+                              Gtk.ButtonsType.YES_NO)
+        m.set_default_response(Gtk.ResponseType.YES)
         m.set_markup("<big><b>%s</b></big>\n\n%s" % (_("Continue Installation?"), _("You can abort the installation if you select 'no'.")))
-        if m.run() == gtk.RESPONSE_NO:
+        if m.run() == Gtk.ResponseType.NO:
             return False
         return True

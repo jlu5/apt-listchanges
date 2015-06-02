@@ -23,8 +23,9 @@
 #   MA 02111-1307 USA
 #
 
+from __future__ import print_function
 import re
-import sys, os, os.path
+import sys, os
 import tempfile
 import gzip
 import errno
@@ -35,6 +36,7 @@ import subprocess
 
 import apt_pkg
 from ALChacks import *
+from functools import reduce
 
 # TODO:
 # indexed lookups by package at least, maybe by arbitrary field
@@ -110,8 +112,8 @@ class ControlParser:
         self.stanzas.append(ControlStanza(fh.read()))
 
     def find(self, field, value):
-        if self.index.has_key(field):
-            if self.index[field].has_key(value):
+        if field in self.index:
+            if value in self.index[field]:
                 return self.index[field][value]
             else:
                 return None
@@ -191,13 +193,13 @@ class Package:
         for filename in filenames:
             try:
                 if os.path.isdir(filename):
-                    print >> sys.stderr, _("Ignoring `%s' (seems to be a directory!)") % filename
+                    print(_("Ignoring `%s' (seems to be a directory!)") % filename, file=sys.stderr)
                 elif filename.endswith('.gz'):
                     fd = gzip.GzipFile(filename)
                 else:
                     fd = open(filename)
                 break
-            except IOError, e:
+            except IOError as e:
                 if e.errno == errno.ENOENT:
                     pass
                 else:
