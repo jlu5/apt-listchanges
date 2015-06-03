@@ -176,6 +176,14 @@
                 </PARA>
               </LISTITEM>
             </VARLISTENTRY>
+	    <VARLISTENTRY>
+	      <TERM>gtk</TERM>
+	      <LISTITEM>
+		<PARA>
+                  Ouvre une fenêtre pour afficher les modifications. Il est nécessaire que python3-gi soit installé.
+		</PARA>
+	      </LISTITEM>
+	    </VARLISTENTRY>
 
             <VARLISTENTRY>
               <TERM>none</TERM>

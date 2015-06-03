@@ -182,7 +182,7 @@
 	      <LISTITEM>
 		<PARA>
                   Spawns a gtk window to display the changelogs. Needs
-                  python-glade2, python-gtk2 to be installed.
+                  python3-gi to be installed.
 		</PARA>
 	      </LISTITEM>
 	    </VARLISTENTRY>
