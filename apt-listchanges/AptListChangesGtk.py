@@ -8,6 +8,7 @@ import gettext
 
 from gi.repository import Gtk
 from gi.repository import GObject
+import sys
 
 from ALChacks import *
 
@@ -21,10 +22,8 @@ class gtk2(frontend):
             Gtk.main_iteration()
 
     def cb_close(self, widget):
-        if self.button_close.get_property("sensitive") == False:
-            # window manager was used to close before the parsing was complete
-            sys.exit()
         Gtk.main_quit()
+        sys.exit()
 
     def __init__(self, packages, config):
         frontend.__init__(self,packages, config)
@@ -36,7 +35,7 @@ class gtk2(frontend):
         self.window_main = self.builder.get_object("window_main")
         handlers = {
             "on_button_close_clicked": self.cb_close,
-            "on_window_main_destroy_event": self.cb_close,
+            "on_window_main_destroy": self.cb_close,
         }
         self.progressbar_main = self.builder.get_object("progressbar_main")
         self.button_close = self.builder.get_object("button_close")

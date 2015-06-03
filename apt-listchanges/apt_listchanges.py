@@ -27,9 +27,9 @@ import sys
 import os
 import re
 import locale
-import email.Message
-import email.Header
-import email.Charset
+import email.message
+import email.header
+import email.charset
 try:
     import io
 except ImportError:
