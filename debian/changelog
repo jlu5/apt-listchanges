@@ -1,11 +1,15 @@
-apt-listchanges (2.85.14) UNRELEASED; urgency=medium
+apt-listchanges (2.85.14~py3port1) unstable; urgency=medium
 
+  [ Sandro Tosi ]
   * Acknowledge NMU; thanks to Ben Hutchings for it; Closes: #718770, #733921,
     #742826
   * Force quite mode when not running in a TTY; thanks to Micah Anderson for the
     report and to Thomas Parmelan for the patch; Closes: #610012
 
- -- Sandro Tosi <morph@debian.org>  Sat, 03 Jan 2015 00:04:57 +0000
+  [ James Lu ]
+  * Port to Python 3.
+
+ -- James Lu <glolol1@hotmail.com>  Tue, 02 Jun 2015 20:08:29 -0700
 
 apt-listchanges (2.85.13+nmu1) unstable; urgency=medium
 
