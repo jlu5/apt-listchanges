@@ -25,7 +25,7 @@ POFILES =  $(wildcard *.po)
 MOFILES =  $(patsubst %.po,%.mo,$(POFILES))
 
 SRCFILES = ../apt-listchanges.py $(wildcard ../apt-listchanges/*.py) \
-	../apt-listchanges/apt-listchanges.glade
+	../apt-listchanges/apt-listchanges.ui
 
 all: $(PACKAGE).pot $(MOFILES)
 

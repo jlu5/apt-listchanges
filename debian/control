@@ -3,18 +3,19 @@ Section: utils
 Priority: standard
 Maintainer: Sandro Tosi <morph@debian.org>
 Uploaders: Thadeu Lima de Souza Cascardo <cascardo@minaslivre.org>
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/apt-listchanges.git;a=summary
 Vcs-Git: git://anonscm.debian.org/collab-maint/apt-listchanges.git
 Build-Depends: debhelper (>= 5)
 Build-Depends-Indep: docbook-to-man, gettext, po-debconf, libexpat1-dev,
- python-support (>= 0.4.0)
+ python3:any
+X-Python-Version: >= 3.4
 
 Package: apt-listchanges
 Architecture: all
-Depends: ${python:Depends}, apt (>= 0.5.3), python-apt (>= 0.7.93),
+Depends: ${python3:Depends}, apt (>= 0.5.3), python3-apt (>= 0.7.93),
  ucf (>= 0.28), debianutils (>= 2.0.2), ${misc:Depends}
-Suggests: x-terminal-emulator, www-browser, python-glade2, python-gtk2,
+Suggests: x-terminal-emulator, www-browser, python3-gi,
  default-mta | mail-transport-agent
 Description: package change history notification tool
  The tool apt-listchanges can compare a new version of a
