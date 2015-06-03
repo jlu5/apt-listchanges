@@ -23,7 +23,7 @@
 #   MA 02111-1307 USA
 #
 
-from __future__ import print_function
+from __future__ import print_function, unicode_literals
 import re
 import sys, os
 import tempfile
@@ -54,10 +54,10 @@ def numeric_urgency(u):
 class ControlStanza:
     source_version_re = re.compile('^\S+ \((?P<version>.*)\).*')
 
-    def __init__(self, str):
+    def __init__(self, s):
         field = None
 
-        for line in str.split('\n'):
+        for line in s.split('\n'):
             if not line:
                 break
             if line[0] in (' ', '\t'):
@@ -86,7 +86,7 @@ class ControlStanza:
         """
         v = self.Version
         if hasattr(self, 'Source'):
-            match = self.source_version_re.match(self.Source)
+            match = self.source_version_re.match(self.Source.decode('utf-8'))
             if match:
                 sv = match.group('version')
                 if not v.startswith(sv):
@@ -105,7 +105,10 @@ class ControlParser:
             self.index[field][getattr(stanza, field)] = stanza
 
     def readfile(self, file):
-        self.stanzas += [ControlStanza(x) for x in open(file, 'r').read().split('\n\n') if x]
+        try:
+            self.stanzas += [ControlStanza(x) for x in open(file, 'r').read().split('\n\n') if x]
+        except UnicodeDecodeError:
+            self.stanzas += [ControlStanza(x) for x in open(file, 'r').read().decode('utf-8').split('\n\n') if x]
 
     def readdeb(self, deb):
         fh = os.popen('dpkg-deb -f %s' % deb)
@@ -213,6 +216,7 @@ class Package:
         entries = []
         is_debian_changelog = 0
         for line in fd.readlines():
+            line = line.decode('utf-8')
             match = self.changelog_header.match(line)
             if match:
                 entries += [entry]

@@ -171,12 +171,11 @@ def main():
     if config.save_seen:
         seen.close()
 
-    all_news = all_news.values()
-    all_changelogs = all_changelogs.values()
-    all_binnmus = all_binnmus.values()
+    all_news = list(all_news.values())
+    all_changelogs = list(all_changelogs.values())
+    all_binnmus = list(all_binnmus.values())
     for batch in (all_news, all_changelogs, all_binnmus):
-        batch.sort(lambda a, b: -cmp(a.urgency, b.urgency) or
-                   cmp(a.package, b.package))
+        batch.sort(key=lambda x: x.urgency or x.package)
 
     # FIXME: two headers with -h
     all_changelogs = all_binnmus + all_changelogs

@@ -23,6 +23,7 @@
 #   MA 02111-1307 USA
 #
 
+# Implicitly use Unicode for all strings
 import sys
 import os
 import re
@@ -31,9 +32,9 @@ import email.message
 import email.header
 import email.charset
 try:
-    import io
+    import StringIO as io
 except ImportError:
-    import cStringIO as io
+    import io
 import tempfile
 from ALChacks import *
 
@@ -186,13 +187,16 @@ class frontend:
         for line in text.split('\n'):
             try:
                 # changelogs are supposed to be in UTF-8
-                uline = line.decode('utf-8')
+                if sys.version_info[0] < 3:
+                    uline = line.decode('utf-8')
+                else:
+                    uline = line
             except UnicodeError:
                 # ... but handle gracefully if they aren't.
                 # (That's also the reason we do it line by line.)
                 # This is possibly wrong, but our best guess.
                 uline = line.decode('iso8859-1')
-            newtext.append(uline.encode(locale.getpreferredencoding() or 'ascii', 'replace'))
+            newtext.append(uline)
         return '\n'.join(newtext)
 
     def confirm(self):
@@ -217,7 +221,7 @@ class debconf(frontend):
         db = dc.Debconf(read=dcfd, write=dcfd)
         tmp = tempfile.NamedTemporaryFile(prefix="apt-listchanges-tmp")
         os.fchmod(tmp.fileno(), 0o644)
-        tmp.write('''Template: apt-listchanges/info
+        tmp.write(b'''Template: apt-listchanges/info
 Type: title
 Description: NEWS
 
@@ -305,7 +309,7 @@ class runcommand:
                 return
 
         tmp = tempfile.NamedTemporaryFile(prefix="apt-listchanges-tmp", suffix=self.suffix)
-        tmp.write(self._render(text))
+        tmp.write(self._render(text).encode('utf-8'))
         tmp.flush()
         shellcommand = self.get_command() + ' ' + tmp.name
 
@@ -373,15 +377,20 @@ class html:
         for line in text.split('\n'):
             try:
                 # changelogs are supposed to be in UTF-8
-                uline = line.decode('utf-8')
+                if sys.version_info[0] < 3:
+                    uline = line.decode('utf-8')
+                else:
+                    uline = line
             except UnicodeError:
                 # ... but handle gracefully if they aren't.
                 # This is possibly wrong, but our best guess.
                 uline = line.decode('iso8859-1')
             line = uline.encode('utf-8').replace(
-                '&', '&amp;').replace(
-                '<', '&lt;').replace(
-                '>', '&gt;')
+                b'&', b'&amp;').replace(
+                b'<', b'&lt;').replace(
+                b'>', b'&gt;')
+            if sys.version_info[0] >= 3:
+                line = line.decode('utf-8')
             line = self.lp_bug_stanza_re.sub(lambda m: self.lp_bug_re.sub(self.lp_bug_fmt, m.group(0)), line)
             line = self.bug_stanza_re.sub(lambda m: self.bug_re.sub(self.bug_fmt, m.group(0)), line)
             line = self.email_re.sub(r'<a href="mailto:\g<0>">\g<0></a>', line)
