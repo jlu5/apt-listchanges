@@ -30,7 +30,7 @@ class gtk2(frontend):
         self.builder = Gtk.Builder()
         try:
             self.builder.add_from_file("apt-listchanges/apt-listchanges.ui")
-        except ValueError:
+        except Glib.Error:
             self.builder.add_from_file("/usr/share/apt-listchanges/apt-listchanges.ui")
         self.window_main = self.builder.get_object("window_main")
         handlers = {

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #vim:set fileencoding=utf-8:
 #
 #   apt-listchanges - Show changelog entries between the installed versions
@@ -87,7 +87,7 @@ def main():
 
     if config.save_seen:
         try:
-            seen = dbm.ndbm.open(config.save_seen, 'c')
+            seen = ndbm.open(config.save_seen, 'c')
             'foo%0' in seen
         except:
             sys.stderr.write(_("database %s failed to load.\n") % config.save_seen)
@@ -123,7 +123,7 @@ def main():
         fromversion = None
 
         if not config.show_all:
-            if config.save_seen and srcpakge in seen:
+            if config.save_seen and srcpackage in seen:
                 fromversion = seen[srcpackage]
             elif config.since:
                 fromversion = config.since
@@ -242,7 +242,7 @@ def main():
 
         # Write out seen db
         if config.save_seen:
-            seen = dbm.ndbm.open(config.save_seen, 'c')
+            seen = ndbm.open(config.save_seen, 'c')
             for (key, value) in seen_new.items():
                 seen[key] = value
             seen.close()
