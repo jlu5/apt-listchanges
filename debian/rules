@@ -2,51 +2,15 @@
 
 version=$(shell dpkg-parsechangelog --show-field version)
 
-build: build-arch build-indep
-build-arch: build-stamp
-build-indep: build-stamp
-build-stamp:
-	dh_testdir
+%:
+	dh $@
+
+override_dh_auto_build:
 	perl -pi.orig -e 's/##VERSION##/$(version)/g' apt_listchanges.py
-	touch $@
+	dh_auto_build
 
-clean:
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp
-
-	rm -f *.py[co] *~
-	$(MAKE) clean
-
-	dh_clean
-
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k
-
+override_dh_auto_install:
 	$(MAKE) install DESTDIR=$(shell pwd)/debian/apt-listchanges
 
-# Build architecture-dependent files here.
-binary-arch: build install
-
-# Build architecture-independent files here.
-binary-indep: build install
-#	dh_testversion
-	dh_testdir
-	dh_testroot
-	dh_installdebconf	
+override_dh_installdocs:
 	dh_installdocs TODO
-	dh_installchangelogs 
-#	dh_link
-#	dh_strip
-	dh_pysupport
-	dh_compress
-	dh_fixperms
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install

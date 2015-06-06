@@ -6,8 +6,9 @@ apt-listchanges (2.85.14) UNRELEASED; urgency=medium
     report and to Thomas Parmelan for the patch; Closes: #610012
   * Bump debhelper compat to 9
   * Use dpkg-parsechangelog --show-field
+  * convert d/rules to DH sequencer
 
- -- Sandro Tosi <morph@debian.org>  Sat, 06 Jun 2015 18:30:58 -0400
+ -- Sandro Tosi <morph@debian.org>  Sat, 06 Jun 2015 19:43:17 -0400
 
 apt-listchanges (2.85.13+nmu1) unstable; urgency=medium
 
