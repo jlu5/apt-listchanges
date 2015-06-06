@@ -4,8 +4,9 @@ apt-listchanges (2.85.14) UNRELEASED; urgency=medium
     #742826
   * Force quite mode when not running in a TTY; thanks to Micah Anderson for the
     report and to Thomas Parmelan for the patch; Closes: #610012
+  * Bump debhelper compat to 9
 
- -- Sandro Tosi <morph@debian.org>  Sat, 03 Jan 2015 00:04:57 +0000
+ -- Sandro Tosi <morph@debian.org>  Sat, 06 Jun 2015 17:19:30 -0400
 
 apt-listchanges (2.85.13+nmu1) unstable; urgency=medium
 
