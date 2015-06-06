@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-version=$(shell dpkg-parsechangelog | sed -n -e '/^Version:/s/^Version: //p')
+version=$(shell dpkg-parsechangelog --show-field version)
 
 build: build-arch build-indep
 build-arch: build-stamp
