@@ -1,4 +1,4 @@
-apt-listchanges (2.85.14) UNRELEASED; urgency=medium
+apt-listchanges (2.85.14) unstable; urgency=medium
 
   * Acknowledge NMU; thanks to Ben Hutchings for it; Closes: #718770, #733921,
     #742826
@@ -10,7 +10,7 @@ apt-listchanges (2.85.14) UNRELEASED; urgency=medium
   * Switch to dh_python2; Closes: #785943
   * Bump Standards-Version to 3.9.6 (no changes needed)
 
- -- Sandro Tosi <morph@debian.org>  Sat, 06 Jun 2015 20:20:45 -0400
+ -- Sandro Tosi <morph@debian.org>  Sat, 06 Jun 2015 20:24:29 -0400
 
 apt-listchanges (2.85.13+nmu1) unstable; urgency=medium
 
