@@ -3,7 +3,7 @@
 version=$(shell dpkg-parsechangelog --show-field version)
 
 %:
-	dh $@
+	dh $@ --with python2
 
 override_dh_auto_build:
 	perl -pi.orig -e 's/##VERSION##/$(version)/g' apt_listchanges.py
