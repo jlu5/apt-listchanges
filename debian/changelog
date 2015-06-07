@@ -1,12 +1,25 @@
-apt-listchanges (2.85.14~py3port1) unstable; urgency=medium
+apt-listchanges (2.85.14+py3port2) unstable; urgency=medium
 
-  [ Sandro Tosi ]
+  * Merge upstream version 2.85.14.
+
+ -- James Lu <glolol1@hotmail.com>  Sun, 07 Jun 2015 13:08:02 -0700
+
+apt-listchanges (2.85.14) unstable; urgency=medium
+
   * Acknowledge NMU; thanks to Ben Hutchings for it; Closes: #718770, #733921,
     #742826
   * Force quite mode when not running in a TTY; thanks to Micah Anderson for the
     report and to Thomas Parmelan for the patch; Closes: #610012
+  * Bump debhelper compat to 9
+  * Use dpkg-parsechangelog --show-field
+  * convert d/rules to DH sequencer
+  * Switch to dh_python2; Closes: #785943
+  * Bump Standards-Version to 3.9.6 (no changes needed)
 
-  [ James Lu ]
+ -- Sandro Tosi <morph@debian.org>  Sat, 06 Jun 2015 20:24:29 -0400
+
+apt-listchanges (2.85.14~py3port1) unstable; urgency=medium
+
   * Port to Python 3.
 
  -- James Lu <glolol1@hotmail.com>  Tue, 02 Jun 2015 20:08:29 -0700
