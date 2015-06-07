@@ -8,8 +8,9 @@ apt-listchanges (2.85.14) UNRELEASED; urgency=medium
   * Use dpkg-parsechangelog --show-field
   * convert d/rules to DH sequencer
   * Switch to dh_python2; Closes: #785943
+  * Bump Standards-Version to 3.9.6 (no changes needed)
 
- -- Sandro Tosi <morph@debian.org>  Sat, 06 Jun 2015 20:18:57 -0400
+ -- Sandro Tosi <morph@debian.org>  Sat, 06 Jun 2015 20:20:45 -0400
 
 apt-listchanges (2.85.13+nmu1) unstable; urgency=medium
 
