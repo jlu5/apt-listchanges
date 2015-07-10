@@ -86,7 +86,7 @@ class ControlStanza:
         """
         v = self.Version
         if hasattr(self, 'Source'):
-            match = self.source_version_re.match(self.Source.decode('utf-8'))
+            match = self.source_version_re.match(self.Source)
             if match:
                 sv = match.group('version')
                 if not v.startswith(sv):
@@ -216,7 +216,6 @@ class Package:
         entries = []
         is_debian_changelog = 0
         for line in fd.readlines():
-            line = line.decode('utf-8')
             match = self.changelog_header.match(line)
             if match:
                 entries += [entry]
