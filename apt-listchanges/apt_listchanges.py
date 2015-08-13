@@ -23,7 +23,6 @@
 #   MA 02111-1307 USA
 #
 
-# Implicitly use Unicode for all strings
 import sys
 import os
 import re
@@ -31,15 +30,9 @@ import locale
 import email.message
 import email.header
 import email.charset
-try:
-    import StringIO as io
-except ImportError:
-    import io
+import io
 import tempfile
 from ALChacks import *
-
-if sys.version_info[0] >= 3:
-    unicode = str
 
 # TODO:
 # newt-like frontend, or maybe some GUI bit
@@ -120,7 +113,7 @@ def mail_changes(address, changes, subject):
     charset.header_encoding = email.Charset.QP
     message = email.Message.Message()
     message.set_charset(charset)
-    subject = unicode(subject.decode(locale.getpreferredencoding() or 'ascii', 'replace'))
+    subject = subject.decode(locale.getpreferredencoding() or 'ascii', 'replace')
     message['Auto-Submitted'] = 'auto-generated'
     message['Subject'] = email.Header.Header(subject, 'utf-8')
     message['To'] = address
@@ -187,10 +180,7 @@ class frontend:
         for line in text.split('\n'):
             try:
                 # changelogs are supposed to be in UTF-8
-                if sys.version_info[0] < 3:
-                    uline = line.decode('utf-8')
-                else:
-                    uline = line
+                uline = line.decode('utf-8')
             except UnicodeError:
                 # ... but handle gracefully if they aren't.
                 # (That's also the reason we do it line by line.)
@@ -377,10 +367,7 @@ class html:
         for line in text.split('\n'):
             try:
                 # changelogs are supposed to be in UTF-8
-                if sys.version_info[0] < 3:
-                    uline = line.decode('utf-8')
-                else:
-                    uline = line
+                uline = line.decode('utf-8')
             except UnicodeError:
                 # ... but handle gracefully if they aren't.
                 # This is possibly wrong, but our best guess.
@@ -389,8 +376,6 @@ class html:
                 b'&', b'&amp;').replace(
                 b'<', b'&lt;').replace(
                 b'>', b'&gt;')
-            if sys.version_info[0] >= 3:
-                line = line.decode('utf-8')
             line = self.lp_bug_stanza_re.sub(lambda m: self.lp_bug_re.sub(self.lp_bug_fmt, m.group(0)), line)
             line = self.bug_stanza_re.sub(lambda m: self.bug_re.sub(self.bug_fmt, m.group(0)), line)
             line = self.email_re.sub(r'<a href="mailto:\g<0>">\g<0></a>', line)

@@ -26,12 +26,8 @@
 
 import sys, os, os.path
 import apt_pkg
-try:
-    import subprocess
-    from dbm import ndbm
-except ImportError:
-    import anydbm as ndbm
-    import commands as subprocess
+import subprocess
+from dbm import ndbm
 
 sys.path += [os.path.dirname(sys.argv[0]) + '/apt-listchanges', '/usr/share/apt-listchanges']
 from ALChacks import *

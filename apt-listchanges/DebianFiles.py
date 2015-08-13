@@ -23,7 +23,6 @@
 #   MA 02111-1307 USA
 #
 
-from __future__ import print_function, unicode_literals
 import re
 import sys, os
 import tempfile
@@ -105,10 +104,7 @@ class ControlParser:
             self.index[field][getattr(stanza, field)] = stanza
 
     def readfile(self, file):
-        try:
-            self.stanzas += [ControlStanza(x) for x in open(file, 'r').read().split('\n\n') if x]
-        except UnicodeDecodeError:
-            self.stanzas += [ControlStanza(x) for x in open(file, 'r').read().decode('utf-8').split('\n\n') if x]
+        self.stanzas += [ControlStanza(x) for x in open(file, 'r').read().split('\n\n') if x]
 
     def readdeb(self, deb):
         fh = os.popen('dpkg-deb -f %s' % deb)
