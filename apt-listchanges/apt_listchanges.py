@@ -108,14 +108,13 @@ def read_apt_pipeline(config):
 def mail_changes(address, changes, subject):
     print("apt-listchanges: " + _("Mailing %s: %s") % (address, subject))
 
-    charset = email.Charset.Charset('utf-8')
+    charset = email.charset.Charset('utf-8')
     charset.body_encoding = '8bit'
-    charset.header_encoding = email.Charset.QP
-    message = email.Message.Message()
+    charset.header_encoding = email.charset.QP
+    message = email.message.Message()
     message.set_charset(charset)
-    subject = subject.decode(locale.getpreferredencoding() or 'ascii', 'replace')
     message['Auto-Submitted'] = 'auto-generated'
-    message['Subject'] = email.Header.Header(subject, 'utf-8')
+    message['Subject'] = email.header.Header(subject, 'utf-8')
     message['To'] = address
     message.set_payload(changes)
 
@@ -354,17 +353,10 @@ class html:
         <pre>''')
 
         for line in text.split('\n'):
-            try:
-                # changelogs are supposed to be in UTF-8
-                uline = line.decode('utf-8')
-            except UnicodeError:
-                # ... but handle gracefully if they aren't.
-                # This is possibly wrong, but our best guess.
-                uline = line.decode('iso8859-1')
-            line = uline.encode('utf-8').replace(
+            line = line.encode('utf-8').replace(
                 b'&', b'&amp;').replace(
                 b'<', b'&lt;').replace(
-                b'>', b'&gt;')
+                b'>', b'&gt;').decode('utf-8')
             line = self.lp_bug_stanza_re.sub(lambda m: self.lp_bug_re.sub(self.lp_bug_fmt, m.group(0)), line)
             line = self.bug_stanza_re.sub(lambda m: self.bug_re.sub(self.bug_fmt, m.group(0)), line)
             line = self.email_re.sub(r'<a href="mailto:\g<0>">\g<0></a>', line)
