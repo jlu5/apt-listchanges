@@ -23,6 +23,7 @@
 #   MA 02111-1307 USA
 #
 
+from __future__ import print_function, unicode_literals
 import re
 import sys, os
 import tempfile
@@ -85,7 +86,7 @@ class ControlStanza:
         """
         v = self.Version
         if hasattr(self, 'Source'):
-            match = self.source_version_re.match(self.Source.decode('utf-8'))
+            match = self.source_version_re.match(self.Source)
             if match:
                 sv = match.group('version')
                 if not v.startswith(sv):
@@ -104,7 +105,10 @@ class ControlParser:
             self.index[field][getattr(stanza, field)] = stanza
 
     def readfile(self, file):
-        self.stanzas += [ControlStanza(x) for x in open(file, 'r').read().split('\n\n') if x]
+        try:
+            self.stanzas += [ControlStanza(x) for x in open(file, 'r').read().split('\n\n') if x]
+        except UnicodeDecodeError:
+            self.stanzas += [ControlStanza(x) for x in open(file, 'r').read().decode('utf-8').split('\n\n') if x]
 
     def readdeb(self, deb):
         fh = os.popen('dpkg-deb -f %s' % deb)

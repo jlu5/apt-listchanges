@@ -176,18 +176,7 @@ class frontend:
         pass
 
     def _render(self, text):
-        newtext = []
-        for line in text.split('\n'):
-            try:
-                # changelogs are supposed to be in UTF-8
-                uline = line.decode('utf-8')
-            except UnicodeError:
-                # ... but handle gracefully if they aren't.
-                # (That's also the reason we do it line by line.)
-                # This is possibly wrong, but our best guess.
-                uline = line.decode('iso8859-1')
-            newtext.append(uline)
-        return '\n'.join(newtext)
+        return text
 
     def confirm(self):
         return 1
