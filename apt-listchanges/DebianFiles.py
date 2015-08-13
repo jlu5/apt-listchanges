@@ -86,7 +86,7 @@ class ControlStanza:
         """
         v = self.Version
         if hasattr(self, 'Source'):
-            match = self.source_version_re.match(self.Source.decode('utf-8'))
+            match = self.source_version_re.match(self.Source)
             if match:
                 sv = match.group('version')
                 if not v.startswith(sv):

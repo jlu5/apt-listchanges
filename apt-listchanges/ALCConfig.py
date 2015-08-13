@@ -23,10 +23,7 @@
 #   MA 02111-1307 USA
 #
 
-try:
-    import ConfigParser
-except ImportError:
-    import configparser as ConfigParser
+import configparser
 import getopt
 import sys, os
 import re
@@ -53,7 +50,7 @@ class ALCConfig:
         self.reverse = False
 
     def read(self, file):
-        self.parser = ConfigParser.ConfigParser()
+        self.parser = configparser.ConfigParser()
         self.parser.read(file)
 
     def expose(self):

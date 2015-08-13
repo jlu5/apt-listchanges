@@ -4,3 +4,13 @@ version=$(shell dpkg-parsechangelog --show-field version)
 
 %:
 	dh $@ --with python3
+
+override_dh_auto_build:
+	perl -pi.orig -e 's/##VERSION##/$(version)/g' apt_listchanges.py
+	dh_auto_build
+
+override_dh_auto_install:
+	$(MAKE) install DESTDIR=$(shell pwd)/debian/apt-listchanges
+
+override_dh_installdocs:
+	dh_installdocs TODO

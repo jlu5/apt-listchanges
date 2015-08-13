@@ -23,7 +23,6 @@
 #   MA 02111-1307 USA
 #
 
-# Implicitly use Unicode for all strings
 import sys
 import os
 import re
@@ -31,15 +30,9 @@ import locale
 import email.message
 import email.header
 import email.charset
-try:
-    import StringIO as io
-except ImportError:
-    import io
+import io
 import tempfile
 from ALChacks import *
-
-if sys.version_info[0] >= 3:
-    unicode = str
 
 # TODO:
 # newt-like frontend, or maybe some GUI bit
@@ -115,14 +108,13 @@ def read_apt_pipeline(config):
 def mail_changes(address, changes, subject):
     print("apt-listchanges: " + _("Mailing %s: %s") % (address, subject))
 
-    charset = email.Charset.Charset('utf-8')
+    charset = email.charset.Charset('utf-8')
     charset.body_encoding = '8bit'
-    charset.header_encoding = email.Charset.QP
-    message = email.Message.Message()
+    charset.header_encoding = email.charset.QP
+    message = email.message.Message()
     message.set_charset(charset)
-    subject = unicode(subject.decode(locale.getpreferredencoding() or 'ascii', 'replace'))
     message['Auto-Submitted'] = 'auto-generated'
-    message['Subject'] = email.Header.Header(subject, 'utf-8')
+    message['Subject'] = email.header.Header(subject, 'utf-8')
     message['To'] = address
     message.set_payload(changes)
 
@@ -156,7 +148,7 @@ def make_frontend(name, packages, config):
                 gtk = __import__("AptListChangesGtk")
                 frontends[name] = gtk.gtk2
             except ImportError as e:
-                sys.stderr.write(_("The gtk frontend needs a working python-gi.\n"
+                sys.stderr.write(_("The gtk frontend needs a working python3-gi.\n"
                                    "Those imports can not be found. Falling back "
                                    "to pager.\n"
                                    "The error is: %s\n") % e)
@@ -183,21 +175,7 @@ class frontend:
         pass
 
     def _render(self, text):
-        newtext = []
-        for line in text.split('\n'):
-            try:
-                # changelogs are supposed to be in UTF-8
-                if sys.version_info[0] < 3:
-                    uline = line.decode('utf-8')
-                else:
-                    uline = line
-            except UnicodeError:
-                # ... but handle gracefully if they aren't.
-                # (That's also the reason we do it line by line.)
-                # This is possibly wrong, but our best guess.
-                uline = line.decode('iso8859-1')
-            newtext.append(uline)
-        return '\n'.join(newtext)
+        return text
 
     def confirm(self):
         return 1
@@ -375,22 +353,10 @@ class html:
         <pre>''')
 
         for line in text.split('\n'):
-            try:
-                # changelogs are supposed to be in UTF-8
-                if sys.version_info[0] < 3:
-                    uline = line.decode('utf-8')
-                else:
-                    uline = line
-            except UnicodeError:
-                # ... but handle gracefully if they aren't.
-                # This is possibly wrong, but our best guess.
-                uline = line.decode('iso8859-1')
-            line = uline.encode('utf-8').replace(
+            line = line.encode('utf-8').replace(
                 b'&', b'&amp;').replace(
                 b'<', b'&lt;').replace(
-                b'>', b'&gt;')
-            if sys.version_info[0] >= 3:
-                line = line.decode('utf-8')
+                b'>', b'&gt;').decode('utf-8')
             line = self.lp_bug_stanza_re.sub(lambda m: self.lp_bug_re.sub(self.lp_bug_fmt, m.group(0)), line)
             line = self.bug_stanza_re.sub(lambda m: self.bug_re.sub(self.bug_fmt, m.group(0)), line)
             line = self.email_re.sub(r'<a href="mailto:\g<0>">\g<0></a>', line)
