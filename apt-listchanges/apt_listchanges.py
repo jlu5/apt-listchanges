@@ -148,7 +148,7 @@ def make_frontend(name, packages, config):
                 gtk = __import__("AptListChangesGtk")
                 frontends[name] = gtk.gtk2
             except ImportError as e:
-                sys.stderr.write(_("The gtk frontend needs a working python-gi.\n"
+                sys.stderr.write(_("The gtk frontend needs a working python3-gi.\n"
                                    "Those imports can not be found. Falling back "
                                    "to pager.\n"
                                    "The error is: %s\n") % e)

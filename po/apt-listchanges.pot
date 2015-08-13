@@ -104,7 +104,7 @@ msgstr ""
 #: ../apt-listchanges/apt_listchanges.py:159
 #, python-format
 msgid ""
-"The gtk frontend needs a working python-gi.\n"
+"The gtk frontend needs a working python3-gi.\n"
 "Those imports can not be found. Falling back to pager.\n"
 "The error is: %s\n"
 msgstr ""
