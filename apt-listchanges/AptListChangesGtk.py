@@ -1,13 +1,11 @@
-# check if gtk is avialable
-
 from apt_listchanges import frontend
 
+# check if gtk is available
 import gi
 gi.require_version('Gtk', '3.0')
 import gettext
 
-from gi.repository import Gtk
-from gi.repository import GObject
+from gi.repository import Gtk, GObject, GLib
 import sys
 
 from ALChacks import *
@@ -30,7 +28,7 @@ class gtk2(frontend):
         self.builder = Gtk.Builder()
         try:
             self.builder.add_from_file("apt-listchanges/apt-listchanges.ui")
-        except Glib.Error:
+        except GLib.Error:
             self.builder.add_from_file("/usr/share/apt-listchanges/apt-listchanges.ui")
         self.window_main = self.builder.get_object("window_main")
         handlers = {
