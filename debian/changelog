@@ -1,4 +1,10 @@
-apt-listchanges (2.85.14+py3port3) UNRELEASED; urgency=medium
+apt-listchanges (2.85.14+py3port4) experimental; urgency=medium
+
+  * Fix GTK frontend (GLib import was missing)
+
+ -- James Lu <bitflip3@gmail.com>  Sun, 10 Jan 2016 19:08:50 -0800
+
+apt-listchanges (2.85.14+py3port3) experimental; urgency=medium
 
   * Test build.
 
